@@ -1,1 +1,1810 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Church numerals"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Church_encoding#Church_numerals" Description="Church numerals"/><expression tag="String.Text" Value="are the representations of natural numbers under"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Church_encoding" Description="Church encoding."/></expression><expression tag="String.Text" Value="In this script is shown how to represent natural numbers with the Church encoding, and perform some arithmetic operations with them."/><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Church_numerals" Description="Church numerals"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Requirements from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Church_encoding#Church_numerals" Description="Church encoding of natural numbers,"/><expression tag="String.Text" Value="the number N is encoded by a function that applies its first argument N times to its second argument."/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Church zero"/></expression><expression tag="String.Text" Value="always returns the identity function, regardless of its first argument. In other words, the first argument is not applied to the second argument at all."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Church one"/></expression><expression tag="String.Text" Value="applies its first argument f just once to its second argument x, yielding f(x)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Church two"/></expression><expression tag="String.Text" Value="applies its first argument f twice to its second argument x, yielding f(f(x))"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="and each successive Church numeral applies its first argument one additional time to its second argument, f(f(f(x))), f(f(f(f(x)))) ... The Church numeral 4, for example, returns a quadruple composition of the function supplied as its first argument."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Arithmetic operations on natural numbers can be similarly"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Church_encoding#Calculation_with_Church_numerals" Description="represented as functions on Church numerals."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In your language define:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Church Zero"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A Church successor function (a function on a Church numeral which returns the next Church numeral in the series)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Functions for Addition, Multiplication and Exponentiation over Church numerals"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A function to convert integers to corresponding Church numerals"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="And a function to convert Church numerals to corresponding integers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="You should:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Derive Church numerals three and four in terms of Church zero and a Church successor function"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Use Church numeral arithmetic to obtain the the sum and the product of Church 3 and Church 4"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Similarly obtain 4^3 and 3^4 in terms of Church numerals, using a Church numeral exponentiation function"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Convert each result back to an integer, and return it or print it to the console"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solutions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Church numeral zero"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="By definition:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="ChurchZero"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="The succesor function"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The succesor function is defined as:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Symbolic.LambdaBuilder"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The orange mapping symbol is a lambda expression builder: It creates a lambda expression where its components (variables, body) are calculated from other expressions."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Subsecuent Church numerals from the Church numeral zero and the succesor function"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="ChurchOne"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchZero"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="ChurchTwo"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchOne"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="ChurchThree"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchTwo"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="ChurchFour"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchThree"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="The sum function"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The sum function is defined as:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPlus"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Symbolic.LambdaBuilder"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Example. Adding the numeral 3 and 4:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPlus"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchThree"/><expression tag="Symbolic.Symbol" Name="ChurchFour"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="The product function"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The product function is defined as:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchMultiplication"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Symbolic.LambdaBuilder"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/></expression></expression><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Example. Multiplying the numeral 3 and 4:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchMultiplication"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchThree"/><expression tag="Symbolic.Symbol" Name="ChurchFour"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="The exponentiation function"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The exponentiation function is defined as:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPow"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Symbolic.LambdaBuilder"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="Symbolic.Symbol" Name="f"/></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Example. Powering the numerals"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value="and"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression><expression tag="String.Text" Value=":"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPow"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchFour"/><expression tag="Symbolic.Symbol" Name="ChurchThree"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPow"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchThree"/><expression tag="Symbolic.Symbol" Name="ChurchFour"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Conversion from Church numerals to integers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It is achieved giving an incrementer as function, and a value of zero to a given Church numeral:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchToInteger"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="List.List"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Number" Value="0"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Example:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchToInteger"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchThree"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="3"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Conversion from integers to Church numerals"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It is achieved calling recursively the succesor function from a Church numeral zero."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Conditional"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Symbolic.Symbol" Name="ChurchZero"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Example:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Results as integers, operands given as Church numerals"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It calculates 3 + 4, 3 × 4,"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value="and"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression><expression tag="String.Text" Value=":"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchToInteger"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPlus"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchThree"/><expression tag="Symbolic.Symbol" Name="ChurchFour"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="7"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchToInteger"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchMultiplication"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchThree"/><expression tag="Symbolic.Symbol" Name="ChurchFour"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="12"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchToInteger"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPow"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchFour"/><expression tag="Symbolic.Symbol" Name="ChurchThree"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="64"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchToInteger"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPow"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ChurchThree"/><expression tag="Symbolic.Symbol" Name="ChurchFour"/><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="81"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Results as integers, operands converted from integers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It calculates 3 + 4, 3 × 4,"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value="and"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression><expression tag="String.Text" Value=":"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchToInteger"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPlus"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="7"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchToInteger"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchMultiplication"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="12"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchToInteger"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPow"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="64"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchToInteger"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChurchPow"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IntegerToChurch"/><expression tag="List.List"><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="81"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621570852356"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Church numerals"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Church_encoding#Church_numerals" Description="Church numerals"/>
+				<expression tag="String.Text" Value="are the representations of natural numbers under"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Church_encoding" Description="Church encoding."/>
+			</expression>
+			<expression tag="String.Text" Value="In this script is shown how to represent natural numbers with the Church encoding, and perform some arithmetic operations with them."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Church_numerals" Description="Church numerals"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Requirements from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Church_encoding#Church_numerals" Description="Church encoding of natural numbers,"/>
+				<expression tag="String.Text" Value="the number N is encoded by a function that applies its first argument N times to its second argument."/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Church zero"/>
+					</expression>
+					<expression tag="String.Text" Value="always returns the identity function, regardless of its first argument. In other words, the first argument is not applied to the second argument at all."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Church one"/>
+					</expression>
+					<expression tag="String.Text" Value="applies its first argument f just once to its second argument x, yielding f(x)"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Church two"/>
+					</expression>
+					<expression tag="String.Text" Value="applies its first argument f twice to its second argument x, yielding f(f(x))"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="and each successive Church numeral applies its first argument one additional time to its second argument, f(f(f(x))), f(f(f(f(x)))) ... The Church numeral 4, for example, returns a quadruple composition of the function supplied as its first argument."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Arithmetic operations on natural numbers can be similarly"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Church_encoding#Calculation_with_Church_numerals" Description="represented as functions on Church numerals."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In your language define:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Church zero"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="A Church successor function (a function on a Church numeral which returns the next Church numeral in the series)"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Functions for addition, multiplication and exponentiation over Church numerals"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="A function to convert integers to corresponding Church numerals"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="And a function to convert Church numerals to corresponding integers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="You should:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Derive Church numerals three and four in terms of Church zero and a Church successor function"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Use Church numeral arithmetic to obtain the the sum and the product of Church 3 and Church 4"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Similarly obtain"/>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Math.Number" Value="4"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="String.Text" Value="and"/>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+					<expression tag="String.Text" Value="in terms of Church numerals, using a Church numeral exponentiation function"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Convert each result back to an integer, and return it or print it to the console"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solutions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Church numeral zero"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="By definition:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="ChurchZero"/>
+			<expression tag="Symbolic.Lambda">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="The succesor function"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The succesor function is defined as:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.LambdaBuilder">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Symbolic.LambdaApplication">
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.LambdaApplication">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The orange mapping symbol is a lambda expression builder: It creates a lambda expression where its components (variables, body) are calculated from other expressions."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Subsecuent Church numerals from the Church numeral zero and the succesor function"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="ChurchOne"/>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="ChurchZero"/>
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="ChurchTwo"/>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="ChurchOne"/>
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.LambdaApplication">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="ChurchTwo"/>
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.LambdaApplication">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="ChurchFour"/>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.LambdaApplication">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.LambdaApplication">
+										<expression tag="Symbolic.Symbol" Name="f"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="The sum function"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The sum function is defined as:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ChurchPlus"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="m"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.LambdaBuilder">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Symbolic.LambdaApplication">
+					<expression tag="Symbolic.Symbol" Name="m"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="Symbolic.LambdaApplication">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Example. Adding the numeral 3 and 4:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchPlus"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+				<expression tag="Symbolic.Symbol" Name="ChurchFour"/>
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.LambdaApplication">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.LambdaApplication">
+										<expression tag="Symbolic.Symbol" Name="f"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.LambdaApplication">
+												<expression tag="Symbolic.Symbol" Name="f"/>
+												<expression tag="List.List">
+													<expression tag="Symbolic.LambdaApplication">
+														<expression tag="Symbolic.Symbol" Name="f"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.LambdaApplication">
+																<expression tag="Symbolic.Symbol" Name="f"/>
+																<expression tag="List.List">
+																	<expression tag="Symbolic.Symbol" Name="x"/>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="The product function"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The product function is defined as:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ChurchMultiplication"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="m"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.LambdaBuilder">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Symbolic.LambdaApplication">
+					<expression tag="Symbolic.Symbol" Name="m"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.LambdaApplication">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Example. Multiplying the numeral 3 and 4:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchMultiplication"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+				<expression tag="Symbolic.Symbol" Name="ChurchFour"/>
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.LambdaApplication">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.LambdaApplication">
+										<expression tag="Symbolic.Symbol" Name="f"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.LambdaApplication">
+												<expression tag="Symbolic.Symbol" Name="f"/>
+												<expression tag="List.List">
+													<expression tag="Symbolic.LambdaApplication">
+														<expression tag="Symbolic.Symbol" Name="f"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.LambdaApplication">
+																<expression tag="Symbolic.Symbol" Name="f"/>
+																<expression tag="List.List">
+																	<expression tag="Symbolic.LambdaApplication">
+																		<expression tag="Symbolic.Symbol" Name="f"/>
+																		<expression tag="List.List">
+																			<expression tag="Symbolic.LambdaApplication">
+																				<expression tag="Symbolic.Symbol" Name="f"/>
+																				<expression tag="List.List">
+																					<expression tag="Symbolic.LambdaApplication">
+																						<expression tag="Symbolic.Symbol" Name="f"/>
+																						<expression tag="List.List">
+																							<expression tag="Symbolic.LambdaApplication">
+																								<expression tag="Symbolic.Symbol" Name="f"/>
+																								<expression tag="List.List">
+																									<expression tag="Symbolic.LambdaApplication">
+																										<expression tag="Symbolic.Symbol" Name="f"/>
+																										<expression tag="List.List">
+																											<expression tag="Symbolic.Symbol" Name="x"/>
+																										</expression>
+																									</expression>
+																								</expression>
+																							</expression>
+																						</expression>
+																					</expression>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="The exponentiation function"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The exponentiation function is defined as:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ChurchPow"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="m"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.LambdaBuilder">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Symbolic.LambdaApplication">
+					<expression tag="Symbolic.LambdaApplication">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="m"/>
+							<expression tag="Symbolic.Symbol" Name="f"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Example. Powering the numerals"/>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="String.Text" Value="and"/>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="4"/>
+			</expression>
+			<expression tag="String.Text" Value=":"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchPow"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="ChurchFour"/>
+				<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.LambdaApplication">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.LambdaApplication">
+										<expression tag="Symbolic.Symbol" Name="f"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.LambdaApplication">
+												<expression tag="Symbolic.Symbol" Name="f"/>
+												<expression tag="List.List">
+													<expression tag="Symbolic.LambdaApplication">
+														<expression tag="Symbolic.Symbol" Name="f"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.LambdaApplication">
+																<expression tag="Symbolic.Symbol" Name="f"/>
+																<expression tag="List.List">
+																	<expression tag="Symbolic.LambdaApplication">
+																		<expression tag="Symbolic.Symbol" Name="f"/>
+																		<expression tag="List.List">
+																			<expression tag="Symbolic.LambdaApplication">
+																				<expression tag="Symbolic.Symbol" Name="f"/>
+																				<expression tag="List.List">
+																					<expression tag="Symbolic.LambdaApplication">
+																						<expression tag="Symbolic.Symbol" Name="f"/>
+																						<expression tag="List.List">
+																							<expression tag="Symbolic.LambdaApplication">
+																								<expression tag="Symbolic.Symbol" Name="f"/>
+																								<expression tag="List.List">
+																									<expression tag="Symbolic.LambdaApplication">
+																										<expression tag="Symbolic.Symbol" Name="f"/>
+																										<expression tag="List.List">
+																											<expression tag="Symbolic.LambdaApplication">
+																												<expression tag="Symbolic.Symbol" Name="f"/>
+																												<expression tag="List.List">
+																													<expression tag="Symbolic.LambdaApplication">
+																														<expression tag="Symbolic.Symbol" Name="f"/>
+																														<expression tag="List.List">
+																															<expression tag="Symbolic.LambdaApplication">
+																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																<expression tag="List.List">
+																																	<expression tag="Symbolic.LambdaApplication">
+																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																		<expression tag="List.List">
+																																			<expression tag="Symbolic.LambdaApplication">
+																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																				<expression tag="List.List">
+																																					<expression tag="Symbolic.LambdaApplication">
+																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																						<expression tag="List.List">
+																																							<expression tag="Symbolic.LambdaApplication">
+																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																								<expression tag="List.List">
+																																									<expression tag="Symbolic.LambdaApplication">
+																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																										<expression tag="List.List">
+																																											<expression tag="Symbolic.LambdaApplication">
+																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																												<expression tag="List.List">
+																																													<expression tag="Symbolic.LambdaApplication">
+																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																														<expression tag="List.List">
+																																															<expression tag="Symbolic.LambdaApplication">
+																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																<expression tag="List.List">
+																																																	<expression tag="Symbolic.LambdaApplication">
+																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																		<expression tag="List.List">
+																																																			<expression tag="Symbolic.LambdaApplication">
+																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																				<expression tag="List.List">
+																																																					<expression tag="Symbolic.LambdaApplication">
+																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																						<expression tag="List.List">
+																																																							<expression tag="Symbolic.LambdaApplication">
+																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																								<expression tag="List.List">
+																																																									<expression tag="Symbolic.LambdaApplication">
+																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																										<expression tag="List.List">
+																																																											<expression tag="Symbolic.LambdaApplication">
+																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																												<expression tag="List.List">
+																																																													<expression tag="Symbolic.LambdaApplication">
+																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																														<expression tag="List.List">
+																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																<expression tag="List.List">
+																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																		<expression tag="List.List">
+																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																				<expression tag="List.List">
+																																																																					<expression tag="Symbolic.LambdaApplication">
+																																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																						<expression tag="List.List">
+																																																																							<expression tag="Symbolic.LambdaApplication">
+																																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																								<expression tag="List.List">
+																																																																									<expression tag="Symbolic.LambdaApplication">
+																																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																										<expression tag="List.List">
+																																																																											<expression tag="Symbolic.LambdaApplication">
+																																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																												<expression tag="List.List">
+																																																																													<expression tag="Symbolic.LambdaApplication">
+																																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																														<expression tag="List.List">
+																																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																<expression tag="List.List">
+																																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																		<expression tag="List.List">
+																																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																				<expression tag="List.List">
+																																																																																					<expression tag="Symbolic.LambdaApplication">
+																																																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																						<expression tag="List.List">
+																																																																																							<expression tag="Symbolic.LambdaApplication">
+																																																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																								<expression tag="List.List">
+																																																																																									<expression tag="Symbolic.LambdaApplication">
+																																																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																										<expression tag="List.List">
+																																																																																											<expression tag="Symbolic.LambdaApplication">
+																																																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																												<expression tag="List.List">
+																																																																																													<expression tag="Symbolic.LambdaApplication">
+																																																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																														<expression tag="List.List">
+																																																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																<expression tag="List.List">
+																																																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																		<expression tag="List.List">
+																																																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																				<expression tag="List.List">
+																																																																																																					<expression tag="Symbolic.LambdaApplication">
+																																																																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																						<expression tag="List.List">
+																																																																																																							<expression tag="Symbolic.LambdaApplication">
+																																																																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																								<expression tag="List.List">
+																																																																																																									<expression tag="Symbolic.LambdaApplication">
+																																																																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																										<expression tag="List.List">
+																																																																																																											<expression tag="Symbolic.LambdaApplication">
+																																																																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																												<expression tag="List.List">
+																																																																																																													<expression tag="Symbolic.LambdaApplication">
+																																																																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																														<expression tag="List.List">
+																																																																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																<expression tag="List.List">
+																																																																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																		<expression tag="List.List">
+																																																																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																				<expression tag="List.List">
+																																																																																																																					<expression tag="Symbolic.LambdaApplication">
+																																																																																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																						<expression tag="List.List">
+																																																																																																																							<expression tag="Symbolic.LambdaApplication">
+																																																																																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																								<expression tag="List.List">
+																																																																																																																									<expression tag="Symbolic.LambdaApplication">
+																																																																																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																										<expression tag="List.List">
+																																																																																																																											<expression tag="Symbolic.LambdaApplication">
+																																																																																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																												<expression tag="List.List">
+																																																																																																																													<expression tag="Symbolic.LambdaApplication">
+																																																																																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																														<expression tag="List.List">
+																																																																																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																<expression tag="List.List">
+																																																																																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																		<expression tag="List.List">
+																																																																																																																																			<expression tag="Symbolic.Symbol" Name="x"/>
+																																																																																																																																		</expression>
+																																																																																																																																	</expression>
+																																																																																																																																</expression>
+																																																																																																																															</expression>
+																																																																																																																														</expression>
+																																																																																																																													</expression>
+																																																																																																																												</expression>
+																																																																																																																											</expression>
+																																																																																																																										</expression>
+																																																																																																																									</expression>
+																																																																																																																								</expression>
+																																																																																																																							</expression>
+																																																																																																																						</expression>
+																																																																																																																					</expression>
+																																																																																																																				</expression>
+																																																																																																																			</expression>
+																																																																																																																		</expression>
+																																																																																																																	</expression>
+																																																																																																																</expression>
+																																																																																																															</expression>
+																																																																																																														</expression>
+																																																																																																													</expression>
+																																																																																																												</expression>
+																																																																																																											</expression>
+																																																																																																										</expression>
+																																																																																																									</expression>
+																																																																																																								</expression>
+																																																																																																							</expression>
+																																																																																																						</expression>
+																																																																																																					</expression>
+																																																																																																				</expression>
+																																																																																																			</expression>
+																																																																																																		</expression>
+																																																																																																	</expression>
+																																																																																																</expression>
+																																																																																															</expression>
+																																																																																														</expression>
+																																																																																													</expression>
+																																																																																												</expression>
+																																																																																											</expression>
+																																																																																										</expression>
+																																																																																									</expression>
+																																																																																								</expression>
+																																																																																							</expression>
+																																																																																						</expression>
+																																																																																					</expression>
+																																																																																				</expression>
+																																																																																			</expression>
+																																																																																		</expression>
+																																																																																	</expression>
+																																																																																</expression>
+																																																																															</expression>
+																																																																														</expression>
+																																																																													</expression>
+																																																																												</expression>
+																																																																											</expression>
+																																																																										</expression>
+																																																																									</expression>
+																																																																								</expression>
+																																																																							</expression>
+																																																																						</expression>
+																																																																					</expression>
+																																																																				</expression>
+																																																																			</expression>
+																																																																		</expression>
+																																																																	</expression>
+																																																																</expression>
+																																																															</expression>
+																																																														</expression>
+																																																													</expression>
+																																																												</expression>
+																																																											</expression>
+																																																										</expression>
+																																																									</expression>
+																																																								</expression>
+																																																							</expression>
+																																																						</expression>
+																																																					</expression>
+																																																				</expression>
+																																																			</expression>
+																																																		</expression>
+																																																	</expression>
+																																																</expression>
+																																															</expression>
+																																														</expression>
+																																													</expression>
+																																												</expression>
+																																											</expression>
+																																										</expression>
+																																									</expression>
+																																								</expression>
+																																							</expression>
+																																						</expression>
+																																					</expression>
+																																				</expression>
+																																			</expression>
+																																		</expression>
+																																	</expression>
+																																</expression>
+																															</expression>
+																														</expression>
+																													</expression>
+																												</expression>
+																											</expression>
+																										</expression>
+																									</expression>
+																								</expression>
+																							</expression>
+																						</expression>
+																					</expression>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchPow"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+				<expression tag="Symbolic.Symbol" Name="ChurchFour"/>
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.LambdaApplication">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.LambdaApplication">
+										<expression tag="Symbolic.Symbol" Name="f"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.LambdaApplication">
+												<expression tag="Symbolic.Symbol" Name="f"/>
+												<expression tag="List.List">
+													<expression tag="Symbolic.LambdaApplication">
+														<expression tag="Symbolic.Symbol" Name="f"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.LambdaApplication">
+																<expression tag="Symbolic.Symbol" Name="f"/>
+																<expression tag="List.List">
+																	<expression tag="Symbolic.LambdaApplication">
+																		<expression tag="Symbolic.Symbol" Name="f"/>
+																		<expression tag="List.List">
+																			<expression tag="Symbolic.LambdaApplication">
+																				<expression tag="Symbolic.Symbol" Name="f"/>
+																				<expression tag="List.List">
+																					<expression tag="Symbolic.LambdaApplication">
+																						<expression tag="Symbolic.Symbol" Name="f"/>
+																						<expression tag="List.List">
+																							<expression tag="Symbolic.LambdaApplication">
+																								<expression tag="Symbolic.Symbol" Name="f"/>
+																								<expression tag="List.List">
+																									<expression tag="Symbolic.LambdaApplication">
+																										<expression tag="Symbolic.Symbol" Name="f"/>
+																										<expression tag="List.List">
+																											<expression tag="Symbolic.LambdaApplication">
+																												<expression tag="Symbolic.Symbol" Name="f"/>
+																												<expression tag="List.List">
+																													<expression tag="Symbolic.LambdaApplication">
+																														<expression tag="Symbolic.Symbol" Name="f"/>
+																														<expression tag="List.List">
+																															<expression tag="Symbolic.LambdaApplication">
+																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																<expression tag="List.List">
+																																	<expression tag="Symbolic.LambdaApplication">
+																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																		<expression tag="List.List">
+																																			<expression tag="Symbolic.LambdaApplication">
+																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																				<expression tag="List.List">
+																																					<expression tag="Symbolic.LambdaApplication">
+																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																						<expression tag="List.List">
+																																							<expression tag="Symbolic.LambdaApplication">
+																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																								<expression tag="List.List">
+																																									<expression tag="Symbolic.LambdaApplication">
+																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																										<expression tag="List.List">
+																																											<expression tag="Symbolic.LambdaApplication">
+																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																												<expression tag="List.List">
+																																													<expression tag="Symbolic.LambdaApplication">
+																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																														<expression tag="List.List">
+																																															<expression tag="Symbolic.LambdaApplication">
+																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																<expression tag="List.List">
+																																																	<expression tag="Symbolic.LambdaApplication">
+																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																		<expression tag="List.List">
+																																																			<expression tag="Symbolic.LambdaApplication">
+																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																				<expression tag="List.List">
+																																																					<expression tag="Symbolic.LambdaApplication">
+																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																						<expression tag="List.List">
+																																																							<expression tag="Symbolic.LambdaApplication">
+																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																								<expression tag="List.List">
+																																																									<expression tag="Symbolic.LambdaApplication">
+																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																										<expression tag="List.List">
+																																																											<expression tag="Symbolic.LambdaApplication">
+																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																												<expression tag="List.List">
+																																																													<expression tag="Symbolic.LambdaApplication">
+																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																														<expression tag="List.List">
+																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																<expression tag="List.List">
+																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																		<expression tag="List.List">
+																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																				<expression tag="List.List">
+																																																																					<expression tag="Symbolic.LambdaApplication">
+																																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																						<expression tag="List.List">
+																																																																							<expression tag="Symbolic.LambdaApplication">
+																																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																								<expression tag="List.List">
+																																																																									<expression tag="Symbolic.LambdaApplication">
+																																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																										<expression tag="List.List">
+																																																																											<expression tag="Symbolic.LambdaApplication">
+																																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																												<expression tag="List.List">
+																																																																													<expression tag="Symbolic.LambdaApplication">
+																																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																														<expression tag="List.List">
+																																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																<expression tag="List.List">
+																																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																		<expression tag="List.List">
+																																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																				<expression tag="List.List">
+																																																																																					<expression tag="Symbolic.LambdaApplication">
+																																																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																						<expression tag="List.List">
+																																																																																							<expression tag="Symbolic.LambdaApplication">
+																																																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																								<expression tag="List.List">
+																																																																																									<expression tag="Symbolic.LambdaApplication">
+																																																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																										<expression tag="List.List">
+																																																																																											<expression tag="Symbolic.LambdaApplication">
+																																																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																												<expression tag="List.List">
+																																																																																													<expression tag="Symbolic.LambdaApplication">
+																																																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																														<expression tag="List.List">
+																																																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																<expression tag="List.List">
+																																																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																		<expression tag="List.List">
+																																																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																				<expression tag="List.List">
+																																																																																																					<expression tag="Symbolic.LambdaApplication">
+																																																																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																						<expression tag="List.List">
+																																																																																																							<expression tag="Symbolic.LambdaApplication">
+																																																																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																								<expression tag="List.List">
+																																																																																																									<expression tag="Symbolic.LambdaApplication">
+																																																																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																										<expression tag="List.List">
+																																																																																																											<expression tag="Symbolic.LambdaApplication">
+																																																																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																												<expression tag="List.List">
+																																																																																																													<expression tag="Symbolic.LambdaApplication">
+																																																																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																														<expression tag="List.List">
+																																																																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																<expression tag="List.List">
+																																																																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																		<expression tag="List.List">
+																																																																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																				<expression tag="List.List">
+																																																																																																																					<expression tag="Symbolic.LambdaApplication">
+																																																																																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																						<expression tag="List.List">
+																																																																																																																							<expression tag="Symbolic.LambdaApplication">
+																																																																																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																								<expression tag="List.List">
+																																																																																																																									<expression tag="Symbolic.LambdaApplication">
+																																																																																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																										<expression tag="List.List">
+																																																																																																																											<expression tag="Symbolic.LambdaApplication">
+																																																																																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																												<expression tag="List.List">
+																																																																																																																													<expression tag="Symbolic.LambdaApplication">
+																																																																																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																														<expression tag="List.List">
+																																																																																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																<expression tag="List.List">
+																																																																																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																		<expression tag="List.List">
+																																																																																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																				<expression tag="List.List">
+																																																																																																																																					<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																						<expression tag="List.List">
+																																																																																																																																							<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																								<expression tag="List.List">
+																																																																																																																																									<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																										<expression tag="List.List">
+																																																																																																																																											<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																												<expression tag="List.List">
+																																																																																																																																													<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																														<expression tag="List.List">
+																																																																																																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																<expression tag="List.List">
+																																																																																																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																		<expression tag="List.List">
+																																																																																																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																				<expression tag="List.List">
+																																																																																																																																																					<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																						<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																						<expression tag="List.List">
+																																																																																																																																																							<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																								<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																								<expression tag="List.List">
+																																																																																																																																																									<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																										<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																										<expression tag="List.List">
+																																																																																																																																																											<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																												<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																												<expression tag="List.List">
+																																																																																																																																																													<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																														<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																														<expression tag="List.List">
+																																																																																																																																																															<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																																<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																																<expression tag="List.List">
+																																																																																																																																																																	<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																																		<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																																		<expression tag="List.List">
+																																																																																																																																																																			<expression tag="Symbolic.LambdaApplication">
+																																																																																																																																																																				<expression tag="Symbolic.Symbol" Name="f"/>
+																																																																																																																																																																				<expression tag="List.List">
+																																																																																																																																																																					<expression tag="Symbolic.Symbol" Name="x"/>
+																																																																																																																																																																				</expression>
+																																																																																																																																																																			</expression>
+																																																																																																																																																																		</expression>
+																																																																																																																																																																	</expression>
+																																																																																																																																																																</expression>
+																																																																																																																																																															</expression>
+																																																																																																																																																														</expression>
+																																																																																																																																																													</expression>
+																																																																																																																																																												</expression>
+																																																																																																																																																											</expression>
+																																																																																																																																																										</expression>
+																																																																																																																																																									</expression>
+																																																																																																																																																								</expression>
+																																																																																																																																																							</expression>
+																																																																																																																																																						</expression>
+																																																																																																																																																					</expression>
+																																																																																																																																																				</expression>
+																																																																																																																																																			</expression>
+																																																																																																																																																		</expression>
+																																																																																																																																																	</expression>
+																																																																																																																																																</expression>
+																																																																																																																																															</expression>
+																																																																																																																																														</expression>
+																																																																																																																																													</expression>
+																																																																																																																																												</expression>
+																																																																																																																																											</expression>
+																																																																																																																																										</expression>
+																																																																																																																																									</expression>
+																																																																																																																																								</expression>
+																																																																																																																																							</expression>
+																																																																																																																																						</expression>
+																																																																																																																																					</expression>
+																																																																																																																																				</expression>
+																																																																																																																																			</expression>
+																																																																																																																																		</expression>
+																																																																																																																																	</expression>
+																																																																																																																																</expression>
+																																																																																																																															</expression>
+																																																																																																																														</expression>
+																																																																																																																													</expression>
+																																																																																																																												</expression>
+																																																																																																																											</expression>
+																																																																																																																										</expression>
+																																																																																																																									</expression>
+																																																																																																																								</expression>
+																																																																																																																							</expression>
+																																																																																																																						</expression>
+																																																																																																																					</expression>
+																																																																																																																				</expression>
+																																																																																																																			</expression>
+																																																																																																																		</expression>
+																																																																																																																	</expression>
+																																																																																																																</expression>
+																																																																																																															</expression>
+																																																																																																														</expression>
+																																																																																																													</expression>
+																																																																																																												</expression>
+																																																																																																											</expression>
+																																																																																																										</expression>
+																																																																																																									</expression>
+																																																																																																								</expression>
+																																																																																																							</expression>
+																																																																																																						</expression>
+																																																																																																					</expression>
+																																																																																																				</expression>
+																																																																																																			</expression>
+																																																																																																		</expression>
+																																																																																																	</expression>
+																																																																																																</expression>
+																																																																																															</expression>
+																																																																																														</expression>
+																																																																																													</expression>
+																																																																																												</expression>
+																																																																																											</expression>
+																																																																																										</expression>
+																																																																																									</expression>
+																																																																																								</expression>
+																																																																																							</expression>
+																																																																																						</expression>
+																																																																																					</expression>
+																																																																																				</expression>
+																																																																																			</expression>
+																																																																																		</expression>
+																																																																																	</expression>
+																																																																																</expression>
+																																																																															</expression>
+																																																																														</expression>
+																																																																													</expression>
+																																																																												</expression>
+																																																																											</expression>
+																																																																										</expression>
+																																																																									</expression>
+																																																																								</expression>
+																																																																							</expression>
+																																																																						</expression>
+																																																																					</expression>
+																																																																				</expression>
+																																																																			</expression>
+																																																																		</expression>
+																																																																	</expression>
+																																																																</expression>
+																																																															</expression>
+																																																														</expression>
+																																																													</expression>
+																																																												</expression>
+																																																											</expression>
+																																																										</expression>
+																																																									</expression>
+																																																								</expression>
+																																																							</expression>
+																																																						</expression>
+																																																					</expression>
+																																																				</expression>
+																																																			</expression>
+																																																		</expression>
+																																																	</expression>
+																																																</expression>
+																																															</expression>
+																																														</expression>
+																																													</expression>
+																																												</expression>
+																																											</expression>
+																																										</expression>
+																																									</expression>
+																																								</expression>
+																																							</expression>
+																																						</expression>
+																																					</expression>
+																																				</expression>
+																																			</expression>
+																																		</expression>
+																																	</expression>
+																																</expression>
+																															</expression>
+																														</expression>
+																													</expression>
+																												</expression>
+																											</expression>
+																										</expression>
+																									</expression>
+																								</expression>
+																							</expression>
+																						</expression>
+																					</expression>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Conversion from Church numerals to integers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It is achieved giving an incrementer as function, and a value of zero to a given Church numeral:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ChurchToInteger"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Example:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchToInteger"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="3"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Conversion from integers to Church numerals"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It is achieved calling recursively the succesor function from a Church numeral zero."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Conditional">
+				<expression tag="Relation.Equals">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="ChurchZero"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ChurchSuccesor"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Example:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.LambdaApplication">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.LambdaApplication">
+										<expression tag="Symbolic.Symbol" Name="f"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.LambdaApplication">
+												<expression tag="Symbolic.Symbol" Name="f"/>
+												<expression tag="List.List">
+													<expression tag="Symbolic.LambdaApplication">
+														<expression tag="Symbolic.Symbol" Name="f"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.LambdaApplication">
+																<expression tag="Symbolic.Symbol" Name="f"/>
+																<expression tag="List.List">
+																	<expression tag="Symbolic.LambdaApplication">
+																		<expression tag="Symbolic.Symbol" Name="f"/>
+																		<expression tag="List.List">
+																			<expression tag="Symbolic.LambdaApplication">
+																				<expression tag="Symbolic.Symbol" Name="f"/>
+																				<expression tag="List.List">
+																					<expression tag="Symbolic.LambdaApplication">
+																						<expression tag="Symbolic.Symbol" Name="f"/>
+																						<expression tag="List.List">
+																							<expression tag="Symbolic.Symbol" Name="x"/>
+																						</expression>
+																					</expression>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Results as integers, operands given as Church numerals"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It calculates 3 + 4, 3 × 4,"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="String.Text" Value=":"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchToInteger"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ChurchPlus"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+						<expression tag="Symbolic.Symbol" Name="ChurchFour"/>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="7"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchToInteger"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ChurchMultiplication"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+						<expression tag="Symbolic.Symbol" Name="ChurchFour"/>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="12"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchToInteger"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ChurchPow"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="ChurchFour"/>
+						<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="64"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchToInteger"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ChurchPow"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="ChurchThree"/>
+						<expression tag="Symbolic.Symbol" Name="ChurchFour"/>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="81"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Results as integers, operands converted from integers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It calculates 3 + 4, 3 × 4,"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="String.Text" Value=":"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchToInteger"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ChurchPlus"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="4"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="7"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchToInteger"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ChurchMultiplication"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="4"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="12"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchToInteger"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ChurchPow"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="4"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="64"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChurchToInteger"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ChurchPow"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IntegerToChurch"/>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="4"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="81"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621570800000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

@@ -1,0 +1,597 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.chemistry,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Chemical calculator"/>
+				</expression>
+			</expression>
+			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution:"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Molar mass"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="compound"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.ComparativeSwitch">
+				<expression tag="Expression.Tag">
+					<expression tag="Symbolic.Symbol" Name="compound"/>
+				</expression>
+				<expression tag="String.String" Value="Chemistry.HomonuclearCompound"/>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="compound"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Molar mass"/>
+						<expression tag="List.List">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="compound"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="String.String" Value="Chemistry.HeteronuclearCompound"/>
+				<expression tag="Math.Arithmetic.Summation">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Molar mass"/>
+						<expression tag="List.List">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="compound"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Expression.Cardinality">
+						<expression tag="Symbolic.Symbol" Name="compound"/>
+					</expression>
+				</expression>
+				<expression tag="Chemistry.GetMass">
+					<expression tag="Symbolic.Symbol" Name="compound"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Notes:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Expression.Tag">
+						<expression tag="String.Text" Value="expression"/>
+					</expression>
+					<expression tag="String.Text" Value="expression retrieves the tag of an expression. For example, when it is called on an homonuclear compund expression, it retrieves the string expression representing the string"/>
+					<expression tag="String.String" Value="Chemistry.HomonuclearCompound"/>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Expression.Cardinality">
+						<expression tag="String.Text" Value="expression"/>
+					</expression>
+					<expression tag="String.Text" Value="retrieves the cardinality of the expression, this is, the number of subexpressions it has. If the expression is a heteronuclear compund it gives the number of elements being composed."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the expression given as parameter is a heteronuclear compound expression, the molar mass is the sum of the molar masses of each component. Note that this function is recursivelly called."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the expression given as parameter is a homonuclear compund  expression, the molar mass is the product of the number of the group (the second component) and the molar mass of the expression (the first component). Note that this function is recursivelly called."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Elsewhere, the result is the call of the"/>
+					<expression tag="Chemistry.GetMass">
+						<expression tag="String.Text" Value="expression"/>
+					</expression>
+					<expression tag="String.Text" Value="with the expression given as parameter."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Use cases"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Let us calculate the molar mass of the chemical formulae given as use cases:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="c"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Molar mass"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="c"/>
+			<expression tag="List.List">
+				<expression tag="Chemistry.Element.Hydrogen"/>
+				<expression tag="Chemistry.HomonuclearCompound">
+					<expression tag="Chemistry.Element.Hydrogen"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Chemistry.HeteronuclearCompound">
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Hydrogen"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Chemistry.Element.Oxygen"/>
+				</expression>
+				<expression tag="Chemistry.HeteronuclearCompound">
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Hydrogen"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Oxygen"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+				<expression tag="Chemistry.HomonuclearCompound">
+					<expression tag="Chemistry.HeteronuclearCompound">
+						<expression tag="Chemistry.Element.Hydrogen"/>
+						<expression tag="Chemistry.Element.Oxygen"/>
+					</expression>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Chemistry.HeteronuclearCompound">
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Hydrogen"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Chemistry.Element.Sulfur"/>
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Oxygen"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+				<expression tag="Chemistry.HeteronuclearCompound">
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Sodium"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Chemistry.Element.Sulfur"/>
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Oxygen"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+				<expression tag="Chemistry.HeteronuclearCompound">
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Carbon"/>
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Hydrogen"/>
+						<expression tag="Math.Number" Value="12"/>
+					</expression>
+				</expression>
+				<expression tag="Chemistry.HeteronuclearCompound">
+					<expression tag="Chemistry.Element.Carbon"/>
+					<expression tag="Chemistry.Element.Oxygen"/>
+					<expression tag="Chemistry.Element.Oxygen"/>
+					<expression tag="Chemistry.Element.Hydrogen"/>
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.HeteronuclearCompound">
+							<expression tag="Chemistry.Element.Carbon"/>
+							<expression tag="Chemistry.HomonuclearCompound">
+								<expression tag="Chemistry.HeteronuclearCompound">
+									<expression tag="Chemistry.Element.Carbon"/>
+									<expression tag="Chemistry.HomonuclearCompound">
+										<expression tag="Chemistry.Element.Hydrogen"/>
+										<expression tag="Math.Number" Value="3"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Chemistry.HeteronuclearCompound">
+						<expression tag="Chemistry.Element.Carbon"/>
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Hydrogen"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Chemistry.HeteronuclearCompound">
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Carbon"/>
+						<expression tag="Math.Number" Value="27"/>
+					</expression>
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Hydrogen"/>
+						<expression tag="Math.Number" Value="46"/>
+					</expression>
+					<expression tag="Chemistry.Element.Oxygen"/>
+				</expression>
+				<expression tag="Chemistry.Element.Ununennium"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="c"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Molar mass"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="c"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.Element.Hydrogen"/>
+					<expression tag="Math.Number" Value="1.008"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Hydrogen"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Number" Value="2.016"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.HeteronuclearCompound">
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Hydrogen"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Chemistry.Element.Oxygen"/>
+					</expression>
+					<expression tag="Math.Number" Value="18.015"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.HeteronuclearCompound">
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Hydrogen"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Oxygen"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="34.014"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.HeteronuclearCompound">
+							<expression tag="Chemistry.Element.Hydrogen"/>
+							<expression tag="Chemistry.Element.Oxygen"/>
+						</expression>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Number" Value="34.014"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.HeteronuclearCompound">
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Hydrogen"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Chemistry.Element.Sulfur"/>
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Oxygen"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="98.072"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.HeteronuclearCompound">
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Sodium"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Chemistry.Element.Sulfur"/>
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Oxygen"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="142.03553856"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.HeteronuclearCompound">
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Carbon"/>
+							<expression tag="Math.Number" Value="6"/>
+						</expression>
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Hydrogen"/>
+							<expression tag="Math.Number" Value="12"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="84.162"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.HeteronuclearCompound">
+						<expression tag="Chemistry.Element.Carbon"/>
+						<expression tag="Chemistry.Element.Oxygen"/>
+						<expression tag="Chemistry.Element.Oxygen"/>
+						<expression tag="Chemistry.Element.Hydrogen"/>
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.HeteronuclearCompound">
+								<expression tag="Chemistry.Element.Carbon"/>
+								<expression tag="Chemistry.HomonuclearCompound">
+									<expression tag="Chemistry.HeteronuclearCompound">
+										<expression tag="Chemistry.Element.Carbon"/>
+										<expression tag="Chemistry.HomonuclearCompound">
+											<expression tag="Chemistry.Element.Hydrogen"/>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Chemistry.HeteronuclearCompound">
+							<expression tag="Chemistry.Element.Carbon"/>
+							<expression tag="Chemistry.HomonuclearCompound">
+								<expression tag="Chemistry.Element.Hydrogen"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="186.295"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.HeteronuclearCompound">
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Carbon"/>
+							<expression tag="Math.Number" Value="27"/>
+						</expression>
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Chemistry.Element.Hydrogen"/>
+							<expression tag="Math.Number" Value="46"/>
+						</expression>
+						<expression tag="Chemistry.Element.Oxygen"/>
+					</expression>
+					<expression tag="Math.Number" Value="386.664"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Chemistry.Element.Ununennium"/>
+					<expression tag="Math.Number" Value="315."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Using it symbolically"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Fōrmulæ is a symbolic language. Although chemical elements expressions are intended to be used to create chemical formulae, other expressions can be used, specially symbols, as in the following examples:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Example 1."/>
+				</expression>
+				<expression tag="String.Text" Value="Using a symbol to denote and unspecified number of repetitions in a homonuclear compound expression."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For this exercise, n is a free symbol (a symbol with no associated value)."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Molar mass"/>
+			<expression tag="List.List">
+				<expression tag="Chemistry.HeteronuclearCompound">
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Hydrogen"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="Chemistry.Element.Oxygen"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Number" Value="15.999"/>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="1.008"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Example 2."/>
+				</expression>
+				<expression tag="String.Text" Value="Using a symbol to denote an unspecified chemical element."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For this exercise, X is a free symbol (a symbol with no associated value)."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Molar mass"/>
+			<expression tag="List.List">
+				<expression tag="Chemistry.HeteronuclearCompound">
+					<expression tag="Chemistry.HomonuclearCompound">
+						<expression tag="Chemistry.Element.Hydrogen"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="X"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Number" Value="2.016"/>
+			<expression tag="Chemistry.GetMass">
+				<expression tag="Symbolic.Symbol" Name="X"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Example 3."/>
+				</expression>
+				<expression tag="String.Text" Value="Using symbols to denote an unspecified chemical element and an unspecified number of repetitions."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For this exercise, X and n are free symbols (symbols with no associated values)."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Molar mass"/>
+			<expression tag="List.List">
+				<expression tag="Chemistry.HomonuclearCompound">
+					<expression tag="Symbolic.Symbol" Name="X"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="Chemistry.GetMass">
+				<expression tag="Symbolic.Symbol" Name="X"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Example 4."/>
+				</expression>
+				<expression tag="String.Text" Value="Using symbols to denote different unspecified chemical elements."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For this exercise, X, Y and Z are free symbols (symbols with no associated values)."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Molar mass"/>
+			<expression tag="List.List">
+				<expression tag="Chemistry.HeteronuclearCompound">
+					<expression tag="Symbolic.Symbol" Name="X"/>
+					<expression tag="Symbolic.Symbol" Name="Y"/>
+					<expression tag="Symbolic.Symbol" Name="Z"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Chemistry.GetMass">
+				<expression tag="Symbolic.Symbol" Name="X"/>
+			</expression>
+			<expression tag="Chemistry.GetMass">
+				<expression tag="Symbolic.Symbol" Name="Y"/>
+			</expression>
+			<expression tag="Chemistry.GetMass">
+				<expression tag="Symbolic.Symbol" Name="Z"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Example 5."/>
+				</expression>
+				<expression tag="String.Text" Value="Other combinations."/>
+			</expression>
+			<expression tag="String.Text" Value="For this exercise, X, Y, Z, n and m are free symbols (symbols with no associated values)."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Molar mass"/>
+			<expression tag="List.List">
+				<expression tag="Chemistry.HomonuclearCompound">
+					<expression tag="Chemistry.HeteronuclearCompound">
+						<expression tag="Symbolic.Symbol" Name="X"/>
+						<expression tag="Chemistry.HomonuclearCompound">
+							<expression tag="Symbolic.Symbol" Name="Y"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="Z"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="m"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Symbolic.Symbol" Name="m"/>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Chemistry.GetMass">
+					<expression tag="Symbolic.Symbol" Name="X"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Chemistry.GetMass">
+						<expression tag="Symbolic.Symbol" Name="Y"/>
+					</expression>
+				</expression>
+				<expression tag="Chemistry.GetMass">
+					<expression tag="Symbolic.Symbol" Name="Z"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modification:"/>
+				<expression tag="Time.Time" Value="1651902060000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

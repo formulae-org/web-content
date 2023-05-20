@@ -1,1 +1,1064 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Egyptian fractions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="An"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Egyptian_fraction" Description="Egyptian fractions"/><expression tag="String.Text" Value="is a finite sum of distinct"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Unit_fraction" Description="unit fractions,"/><expression tag="String.Text" Value="such as"/></expression><expression tag="Typesetting.Centering"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="16"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="That is, each fraction in the expression has a numerator equal to 1 and a denominator that is a positive integer, and all the denominators differ from each other. The value of an expression of this type is a positive rational number"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="a"/><expression tag="String.Text" Value="b"/></expression><expression tag="String.Text" Value="for instance the Egyptian fraction above sums to"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="43"/><expression tag="Math.Number" Value="48"/></expression><expression tag="String.Text" Value="Every positive rational number can be represented by an Egyptian fraction. Sums of this type, and similar sums also including"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value="and"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression><expression tag="String.Text" Value="as summands, were used as a serious notation for rational numbers by the ancient Egyptians, and continued to be used by other civilizations into medieval times. In modern mathematical notation, Egyptian fractions have been superseded by vulgar fractions and decimal notation. However, Egyptian fractions continue to be an object of study in modern number theory and recreational mathematics, as well as in modern historical studies of ancient mathematics."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Fibonacci's"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Greedy_algorithm_for_Egyptian_fractions" Description="Greedy algorithm for Egyptian fractions"/><expression tag="String.Text" Value="expands the fraction"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="x"/><expression tag="String.Text" Value="y"/></expression><expression tag="String.Text" Value="to be represented by repeatedly performing the replacement"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="x"/><expression tag="String.Text" Value="y"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Ceiling"><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="y"/><expression tag="String.Text" Value="x"/></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Arithmetic.ModE"><expression tag="Math.Arithmetic.Negative"><expression tag="String.Text" Value="y"/></expression><expression tag="String.Text" Value="x"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="String.Text" Value="y"/><expression tag="Math.Arithmetic.Ceiling"><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="y"/><expression tag="String.Text" Value="x"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, a program to generate the Egyptian fractions for a given fraction is presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Egyptian_fractions" Description="Egyptian fractions"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Egyptian fractions"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="part"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="List.List"/></expression></expression><expression tag="Programming.Until"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Programming.Conditional"><expression tag="Math.Arithmetic.IsInteger"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="part"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Ceiling"><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression><expression tag="Programming.IfElse"><expression tag="Logic.Conjunction"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="part"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Relation.Greater"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="result"/></expression><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Symbolic.Symbol" Name="part"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Arithmetic.ModE"><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Arithmetic.Ceiling"><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Symbolic.Symbol" Name="result"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 1 (from Rosetta code)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Test cases for"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="43"/><expression tag="Math.Number" Value="48"/></expression><expression tag="String.Text" Value="and"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="121"/></expression><expression tag="String.Text" Value="and"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2014"/><expression tag="Math.Number" Value="59"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Egyptian fractions"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="43"/><expression tag="Math.Number" Value="48"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="16"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Egyptian fractions"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="121"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="25"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="757"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="763309"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="873960180913"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1527612795642093418846225"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Egyptian fractions"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2014"/><expression tag="Math.Number" Value="59"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="34"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="8"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="95"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="14947"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="670223480"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Another test cases:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Egyptian fractions"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="97"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="13"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="181"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="38041"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1736503177"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3769304102927363485"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="18943537893793408504192074528154430149"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="538286441900380211365817285104907086347439746130226973253778132494225813153"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="579504587067542801713103191859918608251030291952195423583529357653899418686342360361798689053273749372615043661810228371898539583862011424993909789665"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Egyptian fractions"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="44"/><expression tag="Math.Number" Value="53"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="13"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="307"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="120871"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="20453597227"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="697249399186783218655"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1458470173998990524806872692984177836808420"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Egyptian fractions"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="97"/><expression tag="Math.Number" Value="53"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="13"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="307"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="120871"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="20453597227"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="697249399186783218655"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1458470173998990524806872692984177836808420"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 2 (from Rosetta code)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For all proper fractions"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="a"/><expression tag="String.Text" Value="b"/></expression><expression tag="String.Text" Value="where a and b are positive one-or two-digit (decimal) integers, find and show an Egyptian fraction that has:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The largest number of terms"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The largest denominator"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following program does the job:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Stats"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="maxSize"/><expression tag="Symbolic.Symbol" Name="maxDen"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="fractionsMaxSize"/><expression tag="Symbolic.Symbol" Name="fractionsMaxDen"/><expression tag="Symbolic.Symbol" Name="listMaxDen"/><expression tag="Symbolic.Symbol" Name="fraction"/><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="fraction"/><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="num"/><expression tag="Symbolic.Symbol" Name="den"/></expression></expression><expression tag="Programming.If"><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="fraction"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="num"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Egyptian fractions"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="fraction"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="list"/></expression></expression><expression tag="Programming.IfElse"><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="maxSize"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="maxSize"/><expression tag="Symbolic.Symbol" Name="c"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="fractionsMaxSize"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="fraction"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="fractionsMaxSize"/><expression tag="Symbolic.Symbol" Name="fraction"/></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="maxSize"/></expression></expression></expression><expression tag="Programming.IfElse"><expression tag="Relation.Greater"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Symbolic.Symbol" Name="maxDen"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="maxDen"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="fractionsMaxDen"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="fraction"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="fractionsMaxDen"/><expression tag="Symbolic.Symbol" Name="fraction"/></expression><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Symbolic.Symbol" Name="maxDen"/></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="den"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="num"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="10"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="num"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="10"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Largest number of items"/><expression tag="Symbolic.Symbol" Name="maxSize"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Fractions(s) with this number"/><expression tag="Symbolic.Symbol" Name="fractionsMaxSize"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Largest denominator"/><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="s"/><expression tag="String.ToString"><expression tag="Symbolic.Symbol" Name="maxDen"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="l"/><expression tag="String.Length"><expression tag="Symbolic.Symbol" Name="s"/></expression></expression></expression></expression><expression tag="Programming.Conditional"><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="l"/><expression tag="Math.Number" Value="20"/></expression><expression tag="String.ToText"><expression tag="String.Concatenation"><expression tag="String.String" Value="(A number of "/><expression tag="String.ToString"><expression tag="String.Length"><expression tag="Symbolic.Symbol" Name="s"/></expression></expression><expression tag="String.String" Value=" digits)"/></expression></expression><expression tag="Symbolic.Symbol" Name="maxDen"/></expression></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Fraction(s) with this denominator"/><expression tag="Symbolic.Symbol" Name="fractionsMaxDen"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Stats"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Largest number of items"/><expression tag="Math.Number" Value="3"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Fractions(s) with this number"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="7"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="7"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="7"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="8"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="9"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="9"/></expression></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Largest denominator"/><expression tag="Math.Number" Value="231"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Fraction(s) with this denominator"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Stats"/><expression tag="List.List"><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Largest number of items"/><expression tag="Math.Number" Value="8"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Fractions(s) with this number"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="97"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="44"/><expression tag="Math.Number" Value="53"/></expression></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Largest denominator"/><expression tag="String.Text" Value="(A number of 150 digits)"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Fraction(s) with this denominator"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="97"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 3 (from Rosetta code)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For all one-, two-, and three-digit integers, find and show (as above). (extra credit)"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Stats"/><expression tag="List.List"><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Largest number of items"/><expression tag="Math.Number" Value="13"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Fractions(s) with this number"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="529"/><expression tag="Math.Number" Value="914"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="641"/><expression tag="Math.Number" Value="796"/></expression></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Largest denominator"/><expression tag="String.Text" Value="(A number of 2847 digits)"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Fraction(s) with this denominator"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="36"/><expression tag="Math.Number" Value="457"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="529"/><expression tag="Math.Number" Value="914"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621575693843"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.visualization,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.expression,org.formulae.logic,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Egyptian fractions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="An"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Egyptian_fraction" Description="Egyptian fractions"/>
+				<expression tag="String.Text" Value="is a finite sum of distinct"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Unit_fraction" Description="unit fractions,"/>
+				<expression tag="String.Text" Value="such as"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="16"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="That is, each fraction in the expression has a numerator equal to 1 and a denominator that is a positive integer, and all the denominators differ from each other. The value of an expression of this type is a positive rational number"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="String.Text" Value="a"/>
+					<expression tag="String.Text" Value="b"/>
+				</expression>
+				<expression tag="String.Text" Value="for instance the Egyptian fraction above sums to"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="43"/>
+					<expression tag="Math.Number" Value="48"/>
+				</expression>
+				<expression tag="String.Text" Value="Every positive rational number can be represented by an Egyptian fraction. Sums of this type, and similar sums also including"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="String.Text" Value="as summands, were used as a serious notation for rational numbers by the ancient Egyptians, and continued to be used by other civilizations into medieval times. In modern mathematical notation, Egyptian fractions have been superseded by vulgar fractions and decimal notation. However, Egyptian fractions continue to be an object of study in modern number theory and recreational mathematics, as well as in modern historical studies of ancient mathematics."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Fibonacci's"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Greedy_algorithm_for_Egyptian_fractions" Description="Greedy algorithm for Egyptian fractions"/>
+				<expression tag="String.Text" Value="expands the fraction"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="String.Text" Value="x"/>
+					<expression tag="String.Text" Value="y"/>
+				</expression>
+				<expression tag="String.Text" Value="to be represented by repeatedly performing the replacement"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="String.Text" Value="x"/>
+						<expression tag="String.Text" Value="y"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Ceiling">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="y"/>
+									<expression tag="String.Text" Value="x"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Arithmetic.Mod">
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="String.Text" Value="y"/>
+								</expression>
+								<expression tag="String.Text" Value="x"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="String.Text" Value="y"/>
+								<expression tag="Math.Arithmetic.Ceiling">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="String.Text" Value="y"/>
+										<expression tag="String.Text" Value="x"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, a program to generate the Egyptian fractions for a given fraction is presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Egyptian_fractions" Description="Egyptian fractions"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Egyptian fractions"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Symbolic.Symbol" Name="part"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.SetEuclideanDivisionMode">
+					<expression tag="Math.Arithmetic.EuclideanMode"/>
+				</expression>
+				<expression tag="Programming.Until">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="y"/>
+							</expression>
+							<expression tag="Programming.Conditional">
+								<expression tag="Math.Arithmetic.IsInteger">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+								</expression>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="List.List">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="part"/>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Arithmetic.Ceiling">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Symbolic.Symbol" Name="y"/>
+										<expression tag="Symbolic.Symbol" Name="x"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.IfElse">
+							<expression tag="Logic.Conjunction">
+								<expression tag="Relation.Equals">
+									<expression tag="Symbolic.Symbol" Name="part"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Relation.Greater">
+									<expression tag="Expression.Cardinality">
+										<expression tag="Symbolic.Symbol" Name="result"/>
+									</expression>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="result"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="result"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Expression.Append">
+								<expression tag="Symbolic.Symbol" Name="result"/>
+								<expression tag="Symbolic.Symbol" Name="part"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Arithmetic.Mod">
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="y"/>
+									<expression tag="Math.Arithmetic.Ceiling">
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Symbolic.Symbol" Name="y"/>
+											<expression tag="Symbolic.Symbol" Name="x"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Relation.Equals">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="result"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 1 (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Test cases for"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="43"/>
+					<expression tag="Math.Number" Value="48"/>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="121"/>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="2014"/>
+					<expression tag="Math.Number" Value="59"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Egyptian fractions"/>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="43"/>
+					<expression tag="Math.Number" Value="48"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="16"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="16"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="43"/>
+			<expression tag="Math.Number" Value="48"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Egyptian fractions"/>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="121"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="25"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="757"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="763309"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="873960180913"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="1527612795642093418846225"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Egyptian fractions"/>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="2014"/>
+					<expression tag="Math.Number" Value="59"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="34"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="8"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="95"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="14947"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="670223480"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Another test cases:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Egyptian fractions"/>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="97"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="13"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="181"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="38041"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="1736503177"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="3769304102927363485"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="18943537893793408504192074528154430149"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="538286441900380211365817285104907086347439746130226973253778132494225813153"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="579504587067542801713103191859918608251030291952195423583529357653899418686342360361798689053273749372615043661810228371898539583862011424993909789665"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Egyptian fractions"/>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="44"/>
+					<expression tag="Math.Number" Value="53"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="4"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="13"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="307"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="120871"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="20453597227"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="697249399186783218655"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="1458470173998990524806872692984177836808420"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Egyptian fractions"/>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="97"/>
+					<expression tag="Math.Number" Value="53"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="4"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="13"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="307"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="120871"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="20453597227"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="697249399186783218655"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="1458470173998990524806872692984177836808420"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="A very &quot;bad&quot; case, described"/>
+			</expression>
+			<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Greedy_algorithm_for_Egyptian_fractions" Description="here"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="list"/>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Egyptian fractions"/>
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="31"/>
+						<expression tag="Math.Number" Value="311"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="11"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="115"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="13567"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="190623619"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="37683192230798623"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="1474639245038064805618553239385819"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="6282064830907475241488361969438561945345146728472670819223737927491"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="88794761714380272370776980577645173756219418675465883264352512409455121337904828443991088127009686860773433365578560447706704202571442"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="10512679610551430142527019069243726537657697481173207671777451274738131628925803271867814022393045648665029685128382916273179762396153519628323248083003822425487488634231345062054795762603034905961817989777156212899360720202337147464827341362787615894599932662616041044"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="165774648891155653397505674533090159125535871930462860656970269559627941788554106200168791623521750041239534051095699060789389125077857303859666982820664719385515251324884858101847171516073096421492956782615005358839866154780828525617446316410815186100116536949326900306243944112252586679093335138382811157639218273065803596196213165302226894008345928763638042726115333267665551063389105351695132474137732870084097508955394611583774672615134933554967552956322987957892035735018515253294468391507193780103523857555002910253864573222873860"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Summation">
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Symbolic.Symbol" Name="list"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="31"/>
+			<expression tag="Math.Number" Value="311"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 2 (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For all proper fractions"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="String.Text" Value="a"/>
+					<expression tag="String.Text" Value="b"/>
+				</expression>
+				<expression tag="String.Text" Value="where a and b are positive one-or two-digit (decimal) integers, find and show an Egyptian fraction that has:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The largest number of terms"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The largest denominator"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following program does the job:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Stats"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="maxSize"/>
+							<expression tag="Symbolic.Symbol" Name="maxDen"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="fractionsMaxSize"/>
+						<expression tag="Symbolic.Symbol" Name="fractionsMaxDen"/>
+						<expression tag="Symbolic.Symbol" Name="listMaxDen"/>
+						<expression tag="Symbolic.Symbol" Name="fraction"/>
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.ForFromTo">
+						<expression tag="Programming.Block" Description="block" Expanded="True">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="fraction"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Symbolic.Symbol" Name="num"/>
+									<expression tag="Symbolic.Symbol" Name="den"/>
+								</expression>
+							</expression>
+							<expression tag="Programming.If">
+								<expression tag="Relation.Equals">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="fraction"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="num"/>
+								</expression>
+								<expression tag="Programming.Block" Description="block" Expanded="True">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="list"/>
+										<expression tag="Symbolic.Function">
+											<expression tag="Symbolic.Symbol" Name="Egyptian fractions"/>
+											<expression tag="List.List">
+												<expression tag="Symbolic.Symbol" Name="fraction"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="c"/>
+										<expression tag="Expression.Cardinality">
+											<expression tag="Symbolic.Symbol" Name="list"/>
+										</expression>
+									</expression>
+									<expression tag="Programming.IfElse">
+										<expression tag="Relation.Greater">
+											<expression tag="Symbolic.Symbol" Name="c"/>
+											<expression tag="Symbolic.Symbol" Name="maxSize"/>
+										</expression>
+										<expression tag="Programming.Block" Description="block" Expanded="True">
+											<expression tag="Symbolic.Assignment">
+												<expression tag="Symbolic.Symbol" Name="maxSize"/>
+												<expression tag="Symbolic.Symbol" Name="c"/>
+											</expression>
+											<expression tag="Symbolic.Assignment">
+												<expression tag="Symbolic.Symbol" Name="fractionsMaxSize"/>
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="fraction"/>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Programming.InvertedIf">
+											<expression tag="Expression.Append">
+												<expression tag="Symbolic.Symbol" Name="fractionsMaxSize"/>
+												<expression tag="Symbolic.Symbol" Name="fraction"/>
+											</expression>
+											<expression tag="Relation.Equals">
+												<expression tag="Symbolic.Symbol" Name="c"/>
+												<expression tag="Symbolic.Symbol" Name="maxSize"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Programming.IfElse">
+										<expression tag="Relation.Greater">
+											<expression tag="Expression.Child">
+												<expression tag="Symbolic.Symbol" Name="list"/>
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="c"/>
+													<expression tag="Math.Number" Value="2"/>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Symbol" Name="maxDen"/>
+										</expression>
+										<expression tag="Programming.Block" Description="block" Expanded="True">
+											<expression tag="Symbolic.Assignment">
+												<expression tag="Symbolic.Symbol" Name="maxDen"/>
+												<expression tag="Expression.Child">
+													<expression tag="Symbolic.Symbol" Name="list"/>
+													<expression tag="List.List">
+														<expression tag="Symbolic.Symbol" Name="c"/>
+														<expression tag="Math.Number" Value="2"/>
+													</expression>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Assignment">
+												<expression tag="Symbolic.Symbol" Name="fractionsMaxDen"/>
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="fraction"/>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Programming.InvertedIf">
+											<expression tag="Expression.Append">
+												<expression tag="Symbolic.Symbol" Name="fractionsMaxDen"/>
+												<expression tag="Symbolic.Symbol" Name="fraction"/>
+											</expression>
+											<expression tag="Relation.Equals">
+												<expression tag="Expression.Child">
+													<expression tag="Symbolic.Symbol" Name="list"/>
+													<expression tag="List.List">
+														<expression tag="Symbolic.Symbol" Name="c"/>
+														<expression tag="Math.Number" Value="2"/>
+													</expression>
+												</expression>
+												<expression tag="Symbolic.Symbol" Name="maxDen"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="den"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="num"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Math.Number" Value="10"/>
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="num"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Math.Number" Value="10"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Largest number of items"/>
+							<expression tag="Symbolic.Symbol" Name="maxSize"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Fractions(s) with this number"/>
+							<expression tag="Symbolic.Symbol" Name="fractionsMaxSize"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Largest denominator"/>
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Symbolic.Local">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Assignment">
+											<expression tag="Symbolic.Symbol" Name="s"/>
+											<expression tag="String.ToString">
+												<expression tag="Symbolic.Symbol" Name="maxDen"/>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Assignment">
+											<expression tag="Symbolic.Symbol" Name="l"/>
+											<expression tag="String.Length">
+												<expression tag="Symbolic.Symbol" Name="s"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Programming.Conditional">
+									<expression tag="Relation.Greater">
+										<expression tag="Symbolic.Symbol" Name="l"/>
+										<expression tag="Math.Number" Value="20"/>
+									</expression>
+									<expression tag="String.ToText">
+										<expression tag="String.Concatenation">
+											<expression tag="String.String" Value="(A number of "/>
+											<expression tag="String.ToString">
+												<expression tag="String.Length">
+													<expression tag="Symbolic.Symbol" Name="s"/>
+												</expression>
+											</expression>
+											<expression tag="String.String" Value=" digits)"/>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="maxDen"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Fraction(s) with this denominator"/>
+							<expression tag="Symbolic.Symbol" Name="fractionsMaxDen"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Stats"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Largest number of items"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Fractions(s) with this number"/>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="6"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="Math.Number" Value="8"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="Math.Number" Value="9"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="8"/>
+							<expression tag="Math.Number" Value="9"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Largest denominator"/>
+					<expression tag="Math.Number" Value="231"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Fraction(s) with this denominator"/>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Stats"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Largest number of items"/>
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Fractions(s) with this number"/>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="8"/>
+							<expression tag="Math.Number" Value="97"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="44"/>
+							<expression tag="Math.Number" Value="53"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Largest denominator"/>
+					<expression tag="String.Text" Value="(A number of 150 digits)"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Fraction(s) with this denominator"/>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="8"/>
+							<expression tag="Math.Number" Value="97"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 3 (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For all one-, two-, and three-digit integers, find and show (as above). (extra credit)"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Stats"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Largest number of items"/>
+					<expression tag="Math.Number" Value="13"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Fractions(s) with this number"/>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="529"/>
+							<expression tag="Math.Number" Value="914"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="641"/>
+							<expression tag="Math.Number" Value="796"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Largest denominator"/>
+					<expression tag="String.Text" Value="(A number of 2847 digits)"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Fraction(s) with this denominator"/>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="36"/>
+							<expression tag="Math.Number" Value="457"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="529"/>
+							<expression tag="Math.Number" Value="914"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Arbitrary precision arithmetic examples" Description="arbitrary precision arithmetic"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1679254320000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

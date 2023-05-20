@@ -1,1 +1,119 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Day of the week"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Day_of_the_week" Description="Day of the week"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A company decides that whenever Xmas falls on a Sunday they will give their workers all extra paid holidays so that, together with any public holidays, workers will not have to work the following week (between the 25th of December and the first of January)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Task. In what years between 2008 and 2121 will the 25th of December be a Sunday?"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Using any standard date handling libraries of your programming language; compare the dates calculated with the output of other languages to discover any anomalies in the handling of dates which may be due to, for example, overflow in types used to represent dates/times similar to"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Y2k#See_also" Description="y2k"/><expression tag="String.Text" Value="type problems."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="year"/></expression><expression tag="Relation.Equals"><expression tag="Time.Gregorian.GetWeekDay"><expression tag="Time.CreateTime"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Time.Gregorian.Month.December"/><expression tag="Math.Number" Value="25"/></expression></expression><expression tag="Time.Gregorian.WeekDay.Sunday"/></expression></expression><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Math.Number" Value="2008"/><expression tag="Math.Number" Value="2121"/></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="2011"/><expression tag="Math.Number" Value="2016"/><expression tag="Math.Number" Value="2022"/><expression tag="Math.Number" Value="2033"/><expression tag="Math.Number" Value="2039"/><expression tag="Math.Number" Value="2044"/><expression tag="Math.Number" Value="2050"/><expression tag="Math.Number" Value="2061"/><expression tag="Math.Number" Value="2067"/><expression tag="Math.Number" Value="2072"/><expression tag="Math.Number" Value="2078"/><expression tag="Math.Number" Value="2089"/><expression tag="Math.Number" Value="2095"/><expression tag="Math.Number" Value="2101"/><expression tag="Math.Number" Value="2107"/><expression tag="Math.Number" Value="2112"/><expression tag="Math.Number" Value="2118"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Time_examples" Description="time related"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620758431109"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.expression,org.formulae.relation,org.formulae.time,org.formulae.math.arithmetic">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Day of the week"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Day_of_the_week" Description="Day of the week"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A company decides that whenever Xmas falls on a Sunday they will give their workers all extra paid holidays so that, together with any public holidays, workers will not have to work the following week (between the 25th of December and the first of January)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Task. In what years between 2008 and 2121 will the 25th of December be a Sunday?"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Using any standard date handling libraries of your programming language; compare the dates calculated with the output of other languages to discover any anomalies in the handling of dates which may be due to, for example, overflow in types used to represent dates/times similar to"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Y2k#See_also" Description="y2k"/>
+				<expression tag="String.Text" Value="type problems."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="block" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.ForFromTo">
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Expression.Append">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="Symbolic.Symbol" Name="year"/>
+					</expression>
+					<expression tag="Relation.Equals">
+						<expression tag="Time.Gregorian.GetWeekDay">
+							<expression tag="Time.CreateTime">
+								<expression tag="Symbolic.Symbol" Name="year"/>
+								<expression tag="Time.Gregorian.Month.December"/>
+								<expression tag="Math.Number" Value="25"/>
+							</expression>
+						</expression>
+						<expression tag="Time.Gregorian.WeekDay.Sunday"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="year"/>
+				<expression tag="Math.Number" Value="2008"/>
+				<expression tag="Math.Number" Value="2121"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="list"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="2011"/>
+			<expression tag="Math.Number" Value="2016"/>
+			<expression tag="Math.Number" Value="2022"/>
+			<expression tag="Math.Number" Value="2033"/>
+			<expression tag="Math.Number" Value="2039"/>
+			<expression tag="Math.Number" Value="2044"/>
+			<expression tag="Math.Number" Value="2050"/>
+			<expression tag="Math.Number" Value="2061"/>
+			<expression tag="Math.Number" Value="2067"/>
+			<expression tag="Math.Number" Value="2072"/>
+			<expression tag="Math.Number" Value="2078"/>
+			<expression tag="Math.Number" Value="2089"/>
+			<expression tag="Math.Number" Value="2095"/>
+			<expression tag="Math.Number" Value="2101"/>
+			<expression tag="Math.Number" Value="2107"/>
+			<expression tag="Math.Number" Value="2112"/>
+			<expression tag="Math.Number" Value="2118"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Time_examples" Description="time related"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620758431109"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

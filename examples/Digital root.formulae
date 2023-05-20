@@ -1,1 +1,189 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Digital root"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Digital_root" Description="digital root"/><expression tag="String.Text" Value="(also repeated digital sum) of a natural number in a given radix is the (single digit) value obtained by an iterative process of summing digits, on each iteration using the result from the previous iteration to compute a digit sum. The process continues until a single-digit number is reached."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The digital root may be calculated in bases other than 10."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Digital_root#Additive_persistence" Description="additive persistence"/><expression tag="String.Text" Value="counts how many times we must sum its digits to arrive at its digital root."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, a program to calculate digital root and edditive persistence are presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Digital_root" Description="Digital root"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function reduces to an array of two elements, the persistence and the digital root of a given number:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Persistence&amp;DigitalRoot"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Symbol" Name="digits"/></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="persistence"/><expression tag="Symbolic.Symbol" Name="digital root"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Programming.Until"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="digits"/><expression tag="Math.Arithmetic.Digits"><expression tag="Symbolic.Symbol" Name="digital root"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="digital root"/><expression tag="Symbolic.Symbol" Name="persistence"/></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Summation"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Symbolic.Symbol" Name="digits"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="persistence"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Relation.Less"><expression tag="Symbolic.Symbol" Name="digital root"/><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="persistence"/><expression tag="Symbolic.Symbol" Name="digital root"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Use cases:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Persistence&amp;DigitalRoot"/><expression tag="List.List"><expression tag="Math.Number" Value="627615"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Persistence&amp;DigitalRoot"/><expression tag="List.List"><expression tag="Math.Number" Value="39390"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="6"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Persistence&amp;DigitalRoot"/><expression tag="List.List"><expression tag="Math.Number" Value="588225"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Persistence&amp;DigitalRoot"/><expression tag="List.List"><expression tag="Math.Number" Value="393900588225"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621573209328"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Digital root"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Digital_root" Description="digital root"/>
+				<expression tag="String.Text" Value="(also repeated digital sum) of a natural number in a given radix is the (single digit) value obtained by an iterative process of summing digits, on each iteration using the result from the previous iteration to compute a digit sum. The process continues until a single-digit number is reached."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The digital root may be calculated in bases other than 10."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Digital_root#Additive_persistence" Description="additive persistence"/>
+				<expression tag="String.Text" Value="counts how many times we must sum its digits to arrive at its digital root."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, a program to calculate digital root and edditive persistence are presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Digital_root" Description="Digital root"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function reduces to an array of two elements, the persistence and the digital root of a given number:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Persistence&amp;DigitalRoot"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Symbol" Name="digits"/>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="persistence"/>
+							<expression tag="Symbolic.Symbol" Name="digital root"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.Until">
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="digits"/>
+							<expression tag="Math.Arithmetic.Digits">
+								<expression tag="Symbolic.Symbol" Name="digital root"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="digital root"/>
+								<expression tag="Symbolic.Symbol" Name="persistence"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Summation">
+									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Symbolic.Symbol" Name="digits"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="persistence"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Relation.Less">
+						<expression tag="Symbolic.Symbol" Name="digital root"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="persistence"/>
+					<expression tag="Symbolic.Symbol" Name="digital root"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Use cases:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Persistence&amp;DigitalRoot"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="627615"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Persistence&amp;DigitalRoot"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="39390"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="6"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Persistence&amp;DigitalRoot"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="588225"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="3"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Persistence&amp;DigitalRoot"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="393900588225"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621573200000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

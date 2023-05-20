@@ -1,1 +1,131 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Quine"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Quine_(computing)" Description="quine"/><expression tag="String.Text" Value="is a computer program which takes no input and produces a copy of its own source code as its only output. The standard terms for these programs in the"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Computability_theory" Description="computability theory"/><expression tag="String.Text" Value="and"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Computer_science" Description="computer science"/><expression tag="String.Text" Value="literature are &quot;self-replicating programs&quot;, &quot;self-reproducing programs&quot;, and &quot;self-copying programs&quot;."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A quine is a"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Fixed_point_(mathematics)" Description="fixed point"/><expression tag="String.Text" Value="of an execution environment, when the execution environment is viewed as a function transforming programs into their outputs. Quines are possible in any Turing-complete programming language, as a direct consequence of Kleene's recursion theorem. For amusement, programmers sometimes attempt to develop the shortest possible quine in any given programming language."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The name &quot;quine&quot; was coined by"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Douglas_Hofstadter" Description="Douglas Hofstadter,"/><expression tag="String.Text" Value="in his popular science book"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach" Description="Gödel, Escher, Bach,"/><expression tag="String.Text" Value="in honor of philosopher Willard Van Orman Quine (1908–2000), who made an extensive study of indirect self-reference."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script is shwn how to create a Quine."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Quine" Description="Quine"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Preamble. Symbolic computation"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Symbolic computation works different than traditional one. In symbolic computation, the program becomes gradually in its output, by the application of"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Rewriting" Description="rewriting rules."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Example 1. The simplest program"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The simplest program is a"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=Null" Description="Null"/><expression tag="String.Text" Value="expression:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Null"/></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Null"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Please note that it is not an empty program (which is disallowed). It is just a one expression program: the Null expression, which has no rewriting rules."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Example 2. A program with non-reducible expressions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="According to symbolic computation, if a program contains only non-reducible expressions (expression with no rewriting rules), then it will no be transformed to anything else, and it will be its own output."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Number" Value="5"/></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="5"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="String.String" Value="some text here"/></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="some text here"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621365637906"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.logic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Quine"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Quine_(computing)" Description="quine"/>
+				<expression tag="String.Text" Value="is a computer program which takes no input and produces a copy of its own source code as its only output. The standard terms for these programs in the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Computability_theory" Description="computability theory"/>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Computer_science" Description="computer science"/>
+				<expression tag="String.Text" Value="literature are &quot;self-replicating programs&quot;, &quot;self-reproducing programs&quot;, and &quot;self-copying programs&quot;."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A quine is a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Fixed_point_(mathematics)" Description="fixed point"/>
+				<expression tag="String.Text" Value="of an execution environment, when the execution environment is viewed as a function transforming programs into their outputs. Quines are possible in any Turing-complete programming language, as a direct consequence of Kleene's recursion theorem. For amusement, programmers sometimes attempt to develop the shortest possible quine in any given programming language."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The name &quot;quine&quot; was coined by"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Douglas_Hofstadter" Description="Douglas Hofstadter,"/>
+				<expression tag="String.Text" Value="in his popular science book"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach" Description="Gödel, Escher, Bach,"/>
+				<expression tag="String.Text" Value="in honor of philosopher Willard Van Orman Quine (1908–2000), who made an extensive study of indirect self-reference."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script is shwn how to create a Quine."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Quine" Description="Quine"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Preamble. Symbolic computation"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Symbolic computation works different than traditional one. In symbolic computation, the program becomes gradually in its output, by the application of"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Rewriting" Description="rewriting rules."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Example 1. The simplest program"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The simplest program is a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
+				<expression tag="String.Text" Value="expression:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Null"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Null"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Please note that it is not an empty program (which is disallowed). It is just a one expression program: the Null expression, which has no rewriting rules."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Example 2. A program with non-reducible expressions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="According to symbolic computation, if a program contains only non-reducible expressions (expression with no rewriting rules), then it will no be transformed to anything else, and it will be its own output."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Number" Value="5"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="5"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="String.String" Value="some text here"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="some text here"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621365600000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

@@ -1,1 +1,243 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Days between dates"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Days_between_dates" Description="Days between dates"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Task. Calculate the number of days between two dates."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Note. For this script, the time zone is intentionally set to"/><expression tag="Localization.TimeZone.TimeZone" Value="America/Los_Angeles"/><expression tag="String.Text" Value="because it observes"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Daylight_saving_time" Description="daylight saving time."/><expression tag="String.Text" Value="It is necesary to solve this exercise."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Provided that the"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=Math.Arithmetic.ToNumber" Description="ToNumber"/><expression tag="String.Text" Value="expression applied to a time expression reduces to the number of milliseconds of sych that time from the"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Epoch_(computing)" Description="epoch:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Arithmetic.ToNumber"><expression tag="Time.Time" Value="1569819600000"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="1569819600000"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The solution seems easy, calculating the difference between two times (in milliseconds), and dividing by 86,4000,000 (number of milliseconds in a day):"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ToNumber"><expression tag="Time.Time" Value="1569826800000"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.ToNumber"><expression tag="Time.Time" Value="1569394800000"/></expression></expression></expression><expression tag="Math.Number" Value="86400000"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="5"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="However, it does not work if a time is in daylight saving time, and the other in standard time:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Numeric"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ToNumber"><expression tag="Time.Time" Value="1569826800000"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.ToNumber"><expression tag="Time.Time" Value="1546329600000"/></expression></expression></expression><expression tag="Math.Number" Value="86400000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="271.95833333333333333333333333333333333333333333333"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The expression"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=Time.Gregorian.GetDayLightSavingOffset" Description="GetDayLightSavingOffset"/><expression tag="String.Text" Value="reduces to the offset (in milliseconds) of the given time, if it is in daylight saving time:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Time.Gregorian.GetDayLightSavingOffset"><expression tag="Time.Time" Value="1546329600000"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="0"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Time.Gregorian.GetDayLightSavingOffset"><expression tag="Time.Time" Value="1569826800000"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="3600000"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="String.Text" Value="The solution consist in taking this differene in account."/><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="So, the function tht works correctly is:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="DaysBetween"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d₁"/><expression tag="Symbolic.Symbol" Name="d₂"/></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ToNumber"><expression tag="Symbolic.Symbol" Name="d₂"/></expression><expression tag="Time.Gregorian.GetDayLightSavingOffset"><expression tag="Symbolic.Symbol" Name="d₂"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ToNumber"><expression tag="Symbolic.Symbol" Name="d₁"/></expression><expression tag="Time.Gregorian.GetDayLightSavingOffset"><expression tag="Symbolic.Symbol" Name="d₁"/></expression></expression></expression></expression><expression tag="Math.Number" Value="86400000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Use cases:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="DaysBetween"/><expression tag="List.List"><expression tag="Time.Time" Value="1546329600000"/><expression tag="Time.Time" Value="1569826800000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="272"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="DaysBetween"/><expression tag="List.List"><expression tag="Time.Time" Value="1577779200000"/><expression tag="Time.Time" Value="1577088000000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="8"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Notice that it works even for fractions of days:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="DaysBetween"/><expression tag="List.List"><expression tag="Time.Time" Value="1569697200000"/><expression tag="Time.Time" Value="1569826800000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Time_examples" Description="time related"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620769307599"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.localization,org.formulae.math.arithmetic,org.formulae.time,org.formulae.symbolic,org.formulae.list">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Days between dates"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Days_between_dates" Description="Days between dates"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Task. Calculate the number of days between two dates."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Note. For this script, the time zone is intentionally set to"/>
+				<expression tag="Localization.TimeZone.TimeZone" Value="America/Los_Angeles"/>
+				<expression tag="String.Text" Value="because it observes"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Daylight_saving_time" Description="daylight saving time."/>
+				<expression tag="String.Text" Value="It is necesary to solve this exercise."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Provided that the"/>
+			<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.ToNumber" Description="ToNumber"/>
+			<expression tag="String.Text" Value="expression applied to a time expression reduces to the number of milliseconds of sych that time from the"/>
+			<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Epoch_(computing)" Description="epoch:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.ToNumber">
+			<expression tag="Time.Time" Value="1569819600000"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1569819600000"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The solution seems easy, calculating the difference between two times (in milliseconds), and dividing by 86,4000,000 (number of milliseconds in a day):"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Arithmetic.ToNumber">
+					<expression tag="Time.Time" Value="1569826800000"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.ToNumber">
+						<expression tag="Time.Time" Value="1569394800000"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Math.Number" Value="86400000"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="5"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="However, it does not work if a time is in daylight saving time, and the other in standard time:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.ToNumber">
+						<expression tag="Time.Time" Value="1569826800000"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.ToNumber">
+							<expression tag="Time.Time" Value="1546329600000"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="86400000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="271.95833333333333333333333333333333333333333333333"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The expression"/>
+			<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Time.Gregorian.GetDayLightSavingOffset" Description="GetDayLightSavingOffset"/>
+			<expression tag="String.Text" Value="reduces to the offset (in milliseconds) of the given time, if it is in daylight saving time:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Time.Gregorian.GetDayLightSavingOffset">
+			<expression tag="Time.Time" Value="1546329600000"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Time.Gregorian.GetDayLightSavingOffset">
+			<expression tag="Time.Time" Value="1569826800000"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="3600000"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="String.Text" Value="The solution consist in taking this differene in account."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="So, the function tht works correctly is:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="DaysBetween"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="d₁"/>
+					<expression tag="Symbolic.Symbol" Name="d₂"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.ToNumber">
+						<expression tag="Symbolic.Symbol" Name="d₂"/>
+					</expression>
+					<expression tag="Time.Gregorian.GetDayLightSavingOffset">
+						<expression tag="Symbolic.Symbol" Name="d₂"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Arithmetic.ToNumber">
+								<expression tag="Symbolic.Symbol" Name="d₁"/>
+							</expression>
+							<expression tag="Time.Gregorian.GetDayLightSavingOffset">
+								<expression tag="Symbolic.Symbol" Name="d₁"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="86400000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Use cases:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="DaysBetween"/>
+			<expression tag="List.List">
+				<expression tag="Time.Time" Value="1546329600000"/>
+				<expression tag="Time.Time" Value="1569826800000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="272"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="DaysBetween"/>
+			<expression tag="List.List">
+				<expression tag="Time.Time" Value="1577779200000"/>
+				<expression tag="Time.Time" Value="1577088000000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Number" Value="8"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Notice that it works even for fractions of days:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="DaysBetween"/>
+			<expression tag="List.List">
+				<expression tag="Time.Time" Value="1569697200000"/>
+				<expression tag="Time.Time" Value="1569826800000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Time_examples" Description="time related"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620769307599"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

@@ -1,1 +1,104 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Babbage problem"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Babbage_problem" Description="Babbage problem,"/><expression tag="String.Text" Value="described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Charles_Babbage" Description="Charles Babbage,"/><expression tag="String.Text" Value="looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.VerticalArray"><expression tag="String.Text" Value="What is the smallest positive integer whose square ends in the digits 269,696?"/><expression tag="Visualization.Italic" Value="True" Set="True"><expression tag="String.Text" Value="— Babbage, letter to Lord Bowden, 1837; see Hollingdale and Tootill, Electronic Computers, second edition, 1970, p. 125."/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="He thought the answer might be 99,736, whose square is 9,947,269,696; but he couldn't be certain."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The task is to find out if Babbage had the right answer — and to do so, as far as your language allows it, in code that Babbage himself would have been able to read and understand. As Babbage evidently solved the task with pencil and paper, a similar efficient solution is preferred."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For these purposes, Charles Babbage may be taken to be an intelligent person, familiar with mathematics and with the idea of a computer; he has written the first drafts of simple computer programmes in tabular form."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Programming.Until"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.Equals"><expression tag="Math.Arithmetic.ModE"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Number" Value="1000000"/></expression><expression tag="Math.Number" Value="269696"/></expression></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="25264"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620493937137"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.programming,org.formulae.symbolic,org.formulae.math.arithmetic,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Babbage problem"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Babbage_problem" Description="Babbage problem,"/>
+				<expression tag="String.Text" Value="described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Charles_Babbage" Description="Charles Babbage,"/>
+				<expression tag="String.Text" Value="looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.VerticalArray">
+					<expression tag="String.Text" Value="What is the smallest positive integer whose square ends in the digits 269,696?"/>
+					<expression tag="Visualization.Italic" Value="True" Set="True">
+						<expression tag="String.Text" Value="— Babbage, letter to Lord Bowden, 1837; see Hollingdale and Tootill, Electronic Computers, second edition, 1970, p. 125."/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="He thought the answer might be 99,736, whose square is 9,947,269,696; but he couldn't be certain."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The task is to find out if Babbage had the right answer — and to do so, as far as your language allows it, in code that Babbage himself would have been able to read and understand. As Babbage evidently solved the task with pencil and paper, a similar efficient solution is preferred."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For these purposes, Charles Babbage may be taken to be an intelligent person, familiar with mathematics and with the idea of a computer; he has written the first drafts of simple computer programmes in tabular form."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="block" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Until">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Relation.Equals">
+					<expression tag="Math.Arithmetic.Mod">
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Number" Value="1000000"/>
+					</expression>
+					<expression tag="Math.Number" Value="269696"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="25264"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620493937137"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

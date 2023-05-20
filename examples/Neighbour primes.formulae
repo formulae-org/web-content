@@ -1,1 +1,136 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Neighbour primes"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Neighbour_primes" Description="Neighbour primes"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Find and show primes p such that pq + 2 is prime, where q is next prime after p and p &lt; 500"/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Symbol" Name="p"/></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="q"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="List.List"/></expression></expression><expression tag="Programming.Until"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="p"/><expression tag="Symbolic.Symbol" Name="q"/></expression><expression tag="Programming.Until"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="q"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="q"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Math.Arithmetic.IsPrime"><expression tag="Symbolic.Symbol" Name="q"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Symbolic.Symbol" Name="p"/></expression><expression tag="Math.Arithmetic.IsPrime"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="p"/><expression tag="Symbolic.Symbol" Name="q"/></expression><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="q"/><expression tag="Math.Number" Value="500"/></expression></expression><expression tag="Symbolic.Symbol" Name="result"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="13"/><expression tag="Math.Number" Value="19"/><expression tag="Math.Number" Value="67"/><expression tag="Math.Number" Value="149"/><expression tag="Math.Number" Value="179"/><expression tag="Math.Number" Value="229"/><expression tag="Math.Number" Value="239"/><expression tag="Math.Number" Value="241"/><expression tag="Math.Number" Value="269"/><expression tag="Math.Number" Value="277"/><expression tag="Math.Number" Value="307"/><expression tag="Math.Number" Value="313"/><expression tag="Math.Number" Value="397"/><expression tag="Math.Number" Value="401"/><expression tag="Math.Number" Value="419"/><expression tag="Math.Number" Value="439"/><expression tag="Math.Number" Value="487"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621291143122"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.programming,org.formulae.symbolic,org.formulae.math.arithmetic,org.formulae.list,org.formulae.expression,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Neighbour primes"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Neighbour_primes" Description="Neighbour primes"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Find and show primes p such that pq + 2 is prime, where q is next prime after p and p &lt; 500"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Symbol" Name="p"/>
+			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="q"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="result"/>
+					<expression tag="List.List"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Until">
+				<expression tag="Programming.Block" Description="Description" Expanded="True">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+						<expression tag="Symbolic.Symbol" Name="q"/>
+					</expression>
+					<expression tag="Programming.Until">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="q"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="q"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.IsPrime">
+							<expression tag="Symbolic.Symbol" Name="q"/>
+						</expression>
+					</expression>
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="result"/>
+							<expression tag="Symbolic.Symbol" Name="p"/>
+						</expression>
+						<expression tag="Math.Arithmetic.IsPrime">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="p"/>
+									<expression tag="Symbolic.Symbol" Name="q"/>
+								</expression>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Relation.Greater">
+					<expression tag="Symbolic.Symbol" Name="q"/>
+					<expression tag="Math.Number" Value="500"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="result"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="7"/>
+			<expression tag="Math.Number" Value="13"/>
+			<expression tag="Math.Number" Value="19"/>
+			<expression tag="Math.Number" Value="67"/>
+			<expression tag="Math.Number" Value="149"/>
+			<expression tag="Math.Number" Value="179"/>
+			<expression tag="Math.Number" Value="229"/>
+			<expression tag="Math.Number" Value="239"/>
+			<expression tag="Math.Number" Value="241"/>
+			<expression tag="Math.Number" Value="269"/>
+			<expression tag="Math.Number" Value="277"/>
+			<expression tag="Math.Number" Value="307"/>
+			<expression tag="Math.Number" Value="313"/>
+			<expression tag="Math.Number" Value="397"/>
+			<expression tag="Math.Number" Value="401"/>
+			<expression tag="Math.Number" Value="419"/>
+			<expression tag="Math.Number" Value="439"/>
+			<expression tag="Math.Number" Value="487"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621291143122"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

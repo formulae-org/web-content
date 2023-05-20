@@ -1,1 +1,223 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Date manipulation"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Date_manipulation" Description="Date manipulation"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Given the date string &quot;March 7 2009 7:30pm EST&quot;, output the time 12 hours later in any human-readable format."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="As extra credit, display the resulting time in a time zone different from your own."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Step 1. Creating the initial time"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Fōrmulæ can create a time in any time zone, however, it always displays them in the current timezone. In order to cause no confusion, in this example the current time zone has been set as"/><expression tag="Localization.TimeZone.TimeZone" Value="America/New_York"/><expression tag="String.Text" Value="which is EST"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Time.CreateTime"><expression tag="Math.Number" Value="2009"/><expression tag="Time.Gregorian.Month.March"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="19"/><expression tag="Math.Number" Value="30"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Time.Time" Value="1236472200000"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Step 2. Adding 12 hours"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Time.OffsetTime"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Time.Time" Value="1236515400000"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is not a bug, the daylight saving time (in the America/New_York time zone), for 2009 started March 8 at 2:00 hrs, at which time clock is adjusted 1 hour later. It occurred between the 12 hour addition of our example. See"/><expression tag="Internet.UniformResourceLocator" Value="https://www.timeanddate.com/time/change/usa/new-york?year=2009" Description="this page."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Step 3. Showing results for other time zones"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="As it was said before, a time is always shown in current time zone, but a time can be formatted to different time zones:"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="There are three formatting expressions. If no time zone ius specified, current time zone is used:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Localization.Format.Time.Gregorian.FormatTimeShort"><expression tag="Symbolic.Symbol" Name="y"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="3/8/09 8:30 AM"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Localization.Format.Time.Gregorian.FormatTimeMedium"><expression tag="Symbolic.Symbol" Name="y"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="Mar 8, 2009 8:30:00 AM"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Localization.Format.Time.Gregorian.FormatTimeLong"><expression tag="Symbolic.Symbol" Name="y"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="March 8, 2009 8:30:00 AM EDT"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Let us use these expression for a different time zone:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Localization.Format.Time.Gregorian.FormatTimeShort"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="3/8/09 3:30 PM"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Localization.Format.Time.Gregorian.FormatTimeMedium"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="Mar 8, 2009 3:30:00 PM"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Localization.Format.Time.Gregorian.FormatTimeLong"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="March 8, 2009 3:30:00 PM MSK"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Beside the time zone, a diifferent locale can also be specified, in order to format the result in such that locale:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Localization.Format.Time.Gregorian.FormatTimeShort"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/><expression tag="Localization.Locale.Locale" Value="ru-RU"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="08.03.09 15:30"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Localization.Format.Time.Gregorian.FormatTimeMedium"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/><expression tag="Localization.Locale.Locale" Value="ru-RU"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="08.03.2009 15:30:00"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Localization.Format.Time.Gregorian.FormatTimeLong"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/><expression tag="Localization.Locale.Locale" Value="ru-RU"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="8 марта 2009 г. 15:30:00 MSK"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Time_examples" Description="time related"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620751944915"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.localization,org.formulae.symbolic,org.formulae.time,org.formulae.math.arithmetic">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Date manipulation"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Date_manipulation" Description="Date manipulation"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Given the date string &quot;March 7 2009 7:30pm EST&quot;, output the time 12 hours later in any human-readable format."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="As extra credit, display the resulting time in a time zone different from your own."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Step 1. Creating the initial time"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Fōrmulæ can create a time in any time zone, however, it always displays them in the current timezone. In order to cause no confusion, in this example the current time zone has been set as"/>
+				<expression tag="Localization.TimeZone.TimeZone" Value="America/New_York"/>
+				<expression tag="String.Text" Value="which is EST"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Time.CreateTime">
+				<expression tag="Math.Number" Value="2009"/>
+				<expression tag="Time.Gregorian.Month.March"/>
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Number" Value="19"/>
+				<expression tag="Math.Number" Value="30"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Time.Time" Value="1236472200000"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Step 2. Adding 12 hours"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="y"/>
+			<expression tag="Time.OffsetTime">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="12"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Time.Time" Value="1236515400000"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="This is not a bug, the daylight saving time (in the America/New_York time zone), for 2009 started March 8 at 2:00 hrs, at which time clock is adjusted 1 hour later. It occurred between the 12 hour addition of our example. See"/>
+			<expression tag="Internet.UniformResourceLocator" Value="https://www.timeanddate.com/time/change/usa/new-york?year=2009" Description="this page."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Step 3. Showing results for other time zones"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="As it was said before, a time is always shown in current time zone, but a time can be formatted to different time zones:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There are three formatting expressions. If no time zone ius specified, current time zone is used:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTimeShort">
+			<expression tag="Symbolic.Symbol" Name="y"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="3/8/09 8:30 AM"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTimeMedium">
+			<expression tag="Symbolic.Symbol" Name="y"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="Mar 8, 2009 8:30:00 AM"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTimeLong">
+			<expression tag="Symbolic.Symbol" Name="y"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="March 8, 2009 8:30:00 AM EDT"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Let us use these expression for a different time zone:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTimeShort">
+			<expression tag="Symbolic.Symbol" Name="y"/>
+			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="3/8/09 3:30 PM"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTimeMedium">
+			<expression tag="Symbolic.Symbol" Name="y"/>
+			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="Mar 8, 2009 3:30:00 PM"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTimeLong">
+			<expression tag="Symbolic.Symbol" Name="y"/>
+			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="March 8, 2009 3:30:00 PM MSK"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Beside the time zone, a diifferent locale can also be specified, in order to format the result in such that locale:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTimeShort">
+			<expression tag="Symbolic.Symbol" Name="y"/>
+			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
+			<expression tag="Localization.Locale.Locale" Value="ru-RU"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="08.03.09 15:30"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTimeMedium">
+			<expression tag="Symbolic.Symbol" Name="y"/>
+			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
+			<expression tag="Localization.Locale.Locale" Value="ru-RU"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="08.03.2009 15:30:00"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTimeLong">
+			<expression tag="Symbolic.Symbol" Name="y"/>
+			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
+			<expression tag="Localization.Locale.Locale" Value="ru-RU"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="8 марта 2009 г. 15:30:00 MSK"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Time_examples" Description="time related"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620751944915"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

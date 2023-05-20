@@ -1,1 +1,342 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Equilibrium index"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Equilibrium_index" Description="Equilibrium index"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="An equilibrium index of a sequence is an index into the sequence such that the sum of elements at lower indices is equal to the sum of elements at higher indices."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For example, in a sequence A:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="0"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="1"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Number" Value="1"/></expression><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Number" Value="5"/></expression><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Number" Value="2"/></expression><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="4"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="5"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Number" Value="3"/></expression><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="6"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="3 is an equilibrium index, because:"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="5"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="6"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="6 is also an equilibrium index, because:"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="A"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="(sum of zero elements is zero)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="7 is not an equilibrium index, because it is not a valid index of sequence A."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Task. Write a function that, given a sequence, returns its equilibrium indices (if any). Assume that the sequence may be very long."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="EquilibriumIndices"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="list"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="results"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="results"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Relation.Equals"><expression tag="Math.Arithmetic.Summation"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="j"/></expression><expression tag="Symbolic.Symbol" Name="j"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Math.Arithmetic.Summation"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="j"/></expression><expression tag="Symbolic.Symbol" Name="j"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Symbol" Name="results"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 1."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In Fōrmulæ, indexes are 1-based so the output of this program will be shifted up by one compared to solutions in languages with 0-based arrays."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="EquilibriumIndices"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="7"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="0"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 2."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="EquilibriumIndices"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620789266375"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Equilibrium index"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Equilibrium_index" Description="Equilibrium index"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="An equilibrium index of a sequence is an index into the sequence such that the sum of elements at lower indices is equal to the sum of elements at higher indices."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For example, in a sequence A:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="A"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="A"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="A"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="A"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="A"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="A"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="A"/>
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="3 is an equilibrium index, because:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="6"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="6 is also an equilibrium index, because:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="A"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="(sum of zero elements is zero)"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="7 is not an equilibrium index, because it is not a valid index of sequence A."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Task. Write a function that, given a sequence, returns its equilibrium indices (if any). Assume that the sequence may be very long."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="EquilibriumIndices"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="results"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="results"/>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+						</expression>
+						<expression tag="Relation.Equals">
+							<expression tag="Math.Arithmetic.Summation">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="list"/>
+									<expression tag="Symbolic.Symbol" Name="j"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="j"/>
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="i"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Summation">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="list"/>
+									<expression tag="Symbolic.Symbol" Name="j"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="j"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="i"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="results"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 1."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In Fōrmulæ, indexes are 1-based so the output of this program will be shifted up by one compared to solutions in languages with 0-based arrays."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="EquilibriumIndices"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Number" Value="7"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Case 2."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="EquilibriumIndices"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="6"/>
+			<expression tag="Math.Number" Value="7"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620789240000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

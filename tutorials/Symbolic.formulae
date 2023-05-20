@@ -1,1 +1,1809 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Symbolic tutorial"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this tutorial, you will learn about symbolic capabilities of the Fōrmulæ programming language."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Symbols"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In Fōrmulæ a"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=Symbolic.Symbol" Description="Symbol"/><expression tag="String.Text" Value="expression is a name that is associated with an another expression. It is like variables in other programming languages."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Visualization of symbols"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A symbol is visualized with its name in blue color. The following is a symbol which uses the name"/><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="x"/></expression><expression tag="String.Text" Value=":"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Creation of symbols"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="To create a symbol expression, select"/><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Symbolic → Symbol"/></expression><expression tag="String.Text" Value="from the editions panel at the left, or press the &lt;S&gt; key. A dialog box will be shown, and you will be able to define the name of the new symbol:"/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Updating the name of a symbol"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="To change the name of a given symbol expression, press the &lt;SPACE&gt; key, because it is the default action for a symbol expression. A dialog box will emerge where you will be able to update the name. The same action can be performed if you right-click with the mouse over the symbol expression, and selecting the option &quot;Change the name of the symbol...&quot; from the pop-up menu."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Assignment of an expression to a symbol"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=Symbolic.Assignment" Description="Assignment"/><expression tag="String.Text" Value="expression, visualized as"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Assignment"><expression tag="String.Text" Value="symbol"/><expression tag="String.Text" Value="expression"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="When executed, makes the association of a given expression (at the right of the arrow symbol), to the symbol (at the left)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Using the expression that a symbol refers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The presence of a symbol during the execution of an expression, automatically makes the symbol to be substituted by the expression if refers, excepting when the symbols appears at the left of an assignment expression (see above). The following is an example of an assignment of a symbol, followed by its usage:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="123"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="128"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Notes"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Most programming languages are"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Type_system#Static_type_checking" Description="statically type checked."/><expression tag="String.Text" Value="It means (among other things), that variables have a well defined type, and when performing an assignment, the expression to be associated must be of the same, or compatible type than  the variable. In Fōrmulæ it is not the case, symbols have no definition of type, so you can effectively assign anything you want to a symbol."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In Fōrmulæ, a symbol can have no expression associated with it. It is said that such that symbol is"/><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="pure"/></expression><expression tag="String.Text" Value="or"/><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="unbound."/></expression><expression tag="String.Text" Value="Every symbol that has never been assigned is a pure or unbound symbol."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the following example,"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="String.Text" Value="is a pure/unbound symbol."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="9"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="When an assignment expression is executed, the expression to be assigned is evaluated first, (which may involve the use of other symbols), and then the assignment is performed."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Number" Value="5"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Number" Value="8"/></expression></expression><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Math.Number" Value="13"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="The result of an assignment"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The resulting expression of an assignment, is the value being assigned:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="20"/><expression tag="Math.Number" Value="15"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="35"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="5"/></expression><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Assignment of several symbols/expressions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="More than one symbol can be assigned in the same expression. There are two forms:"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The fist form is as follows:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The second form is:"/></expression><expression tag="Typesetting.Centering"><expression tag="List.List"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="5"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="z"/><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the first form, an attempt to assign a different number of expressions that symbols, will produce an error:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Error" Description="Invalid cardinality"><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The two forms are not equivalent. The difference resides in the fact that in the first form, all the expression on the right list are evaluated and then their values assigned to the variables, while the second form is basically a list in where every element (which is also an assignment) is evaluated separately, from left to right."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the following example, we try to do a swap of the values of symbols. With the first form it is easly achieved:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="5"/></expression><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It does not work using the second form:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="5"/></expression><expression tag="List.List"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If we want to use the second form, it would require the usage of a third, temporary symbol:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="5"/></expression><expression tag="List.List"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="tmp"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="tmp"/></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following does not produce an &quot;invalid cardinality&quot; error in the second row, why?"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"><expression tag="String.String" Value="Hello"/><expression tag="String.String" Value="World"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Symbolic.Symbol" Name="list"/></expression><expression tag="String.Concatenation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="HelloWorld"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the second row, before the assignment, the expression to be assigned is evaluated, which replaces the symbol"/><expression tag="Symbolic.Symbol" Name="list"/><expression tag="String.Text" Value="by its associated expression, which is the list"/><expression tag="List.List"><expression tag="String.String" Value="Hello"/><expression tag="String.String" Value="World"/></expression><expression tag="String.Text" Value="effectively converting the second row to the expression"/><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="List.List"><expression tag="String.String" Value="Hello"/><expression tag="String.String" Value="World"/></expression></expression><expression tag="String.Text" Value="which is valid."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Recursive assignment"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Expressions like the following are very common in programming languages (incluing Fōrmulæ):"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In Fōrmulæ, however, special care must be taken if the symbol had not been previously assigned (it is a pure/unbound symbol). If you later use (i.e. inside another expression), the symbol"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="String.Text" Value="will be replaced, according with its definition, to"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="1"/></expression><expression tag="String.Text" Value="but, the symbol appears again, so the expression will be replaced to"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="String.Text" Value="and then to"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="String.Text" Value="and then to"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="String.Text" Value="etc. Because this scheme will repeat without control, the local or remote server will eventualy complain and stop, for an overflow of memory, or because the limit of recursion has been reached."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Of course, if the symbol has already a value, there is no problem, and it works as expected:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="11"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Global symbols"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Symbols, as we have created them up now, are called"/><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="global symbols"/></expression><expression tag="String.Text" Value="and they are created inside the"/><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="execution environment"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The execution environment is where execution takes place, and it is not always the same:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If you are using a remote server, the execution environment is created in the server, and it has a &quot;short&quot; duration, because every time you press &lt;ENTER&gt; to send an expression to the server, a new execution environment is created. Once the expression has been executed, the execution environment is destroyed, also destroying all the symbols that had been created, and their associated expressions."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If you are using a local server, the execution environment is created inside you own computer. It can last an arbitrary amount of time, because it starts once your local server is started, and it is destroyed when you shut down your server."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Global variables are visible and available to any expression in the same execution environment."/></expression><expression tag="String.Text" Value="According to this, if we do:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="5"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If we are using a local server, we can still use the symbol:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="10"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="But, if we are using a remote server, the symbol and its associated expression, created by the previous expression, have both already been destroyed:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Global symbols have advantages and disadvantages:"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Let us start with advantages:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="When using a local server, it lets you to create state that preserves between calls to the server. It is very handy if you want to manage large amounts of information or information that can be difficult to recalculate between calls to the server. For example, suppose you have calculated a result that took many time, and such that result will be used for further calculations. It is convenient to put the intermediate result in a global symbol in order to be availabe for future calls to the server. It is important to emphasize that it is an advantage only when using a local server."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Disadvantages:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="They are useless when using a remote server."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It requires a good work of coordination. Since all global symbols are visible, they are also available for re-assignment. An accidental re-assignment of a symbol can destroy the semantics of the state of the local server. Of course, a local sever is for your exclusive use (it cannot attend request other than from your own computer), but you can use it from several points, for example different browsers or different tabs of a browser. It could be easy to forget which symbols have been used and accidentally rewrite one or several of them."/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Local symbols"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Local symbols are an alternative to global symbols, for managing and controlling visibility and access to symbols."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In order to explain local variables, we need to do several definitions."/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Scope."/></expression><expression tag="String.Text" Value="Local symbols have scope, it is the set of expressions or subexpressions where such these symbols have visibility, and therefore they can be assigned, used or re-assigned."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Scope anchorage."/></expression><expression tag="String.Text" Value="Several expressions have scope anchorage, it is the capacity to hold local variables (and their associated expressions). Only selected types of expressions can have scope anchorage. The scope of the local symbols held by an expression having scope anchorage is the expressions and all its subexpressions (recursively)."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Example:"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=Programming.Block" Description="block"/><expression tag="String.Text" Value="expressions have scope anchorage, so it is able to hold local symbols. To create a local symbol you use the"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=Symbolic.Local" Description="Local"/><expression tag="String.Text" Value="expression. The following expression create a block where a local variable"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="String.Text" Value="is created, and a value is assigned to it."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="8"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the previous example, the scope of the"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="String.Text" Value="symbol is the block expression and all  its subexpressions, but NOT outside it."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="To show that the symbols is not visible outside the block, see the following example:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="10"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="10"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Notice that the symbol"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="String.Text" Value="is visible (it has scope) only inside the inner block, but not in the outer block. Outside the inner block, the variable"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="String.Text" Value="is a pure/unbound symbol."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="When a local assignment if performed, the local symbol is created in the innermost expression having scope anchorage containing the assignment. In the previous example, it is the inner block and not the outer one."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Shadowing"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It effectively creates two symbols with the same name, but different scope."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="String.String" Value="outer"/></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="String.String" Value="inner"/></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="String.String" Value="outer"/><expression tag="String.String" Value="inner"/><expression tag="String.String" Value="outer"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It is called &quot;shadowing&quot; because the innermost symbol has precedence over the outermost."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Declaring local symbols"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A local symbol can be declared with no assignment. It has the same effect of an assignment, this is, the symbol is created in the innermost expression with scope anchorage, but it is created with no value (it remains as unbound)."/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Local"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Several symbols can be locally declared."/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="You can even mix declaration and assignment of local symbols:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="33"/></expression><expression tag="Symbolic.Symbol" Name="z"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Lambda expressions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Lambda_expression" Description="lambda expression"/><expression tag="String.Text" Value="is a rule of transformation. It is defined over a set of zero (uncommon), one or more symbols (called the parameters of the lambda expression). It also define an expression (called the body of the lambda expression) that use these paremeters, creating a rule of transformation."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A lambda expression is visualized as:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression><expression tag="String.Text" Value="expression"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The left part of a lambda expression is the list of parameters. A list must be provided even if there are zero or one parameters. The expression is at the right part."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following are examples of lambda expressions:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A lambda expression to define the sum of three values, denoted as symbols, is "/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A lambda expression to define the double of a value is "/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A lambda expression to retrieve the half of the maximum of two values is "/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Relation.Max"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Notice that a lambda expression, by itself, does not perform the rule of transformation, only defines it."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="20"/></expression></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Lambda application"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A lambda application expression, makes the actual transformation of values for the parameters (called arguments)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A lambda application looks like as shown below. Notice that the lambda expression is at the left, and at the right are the list of arguments: As with lambda expressions, a list must be provided, even if the number of arguments is zero or one."/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.LambdaApplication"><expression tag="String.Text" Value="lambda"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="36"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="72"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Arguments may be more complicated expressions:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The application of a lambda expression:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value=". . ."/><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="String.Text" Value="n"/></expression></expression><expression tag="String.Text" Value="expression"/></expression><expression tag="List.List"><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value=". . ."/><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="String.Text" Value="n"/></expression></expression></expression></expression><expression tag="String.Text" Value="Is immediately transformed in:"/><expression tag="Typesetting.Centering"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value=". . ."/><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="String.Text" Value="n"/></expression></expression><expression tag="List.List"><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value=". . ."/><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="String.Text" Value="n"/></expression></expression></expression></expression><expression tag="String.Text" Value="expression"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="So, the lambda application of the previous example:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Is transformed into, and executed as:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It also means that the parameters become actual, local symbols, which are initialized with the arguments, and then they can be used as any other local symbol that can be reassigned, for example:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Centering"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="When this lambda application is invoked for execution, it will be rewritten as:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Centering"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Notice that a lambda expression is like a function (in terms of computation languages, not necessarily in mathematical sense): a lambda expression is like a function definition, and a lambda application is like a function call."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="However, there is a notable difference with common functions: lambda expressions have no name."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In fact, lambda expressions are also known as"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Anonymous_function" Description="anonymous functions"/><expression tag="String.Text" Value="."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Giving a name to a lambda expression"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Do you remember that a symbol is a way to provide a name to any expression? You sould also remember that such that expression may be ANY kind of expression, so nothing prevents that we can assign a lambda expression to a symbol."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="49"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Functions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="According to the elements we have studied up now, we can define a function just like a symbol (the name of the function) that refers a lambda expression."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Function definition"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following is a function definition:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="name"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="String.Text" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="String.Text" Value="2"/></expression><expression tag="String.Text" Value=". . ."/><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="String.Text" Value="n"/></expression></expression></expression><expression tag="String.Text" Value="body"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="And it is immediately rewritten as:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Assignment"><expression tag="String.Text" Value="name"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value=". . ."/><expression tag="Expression.Child"><expression tag="String.Text" Value="parameter"/><expression tag="String.Text" Value="n"/></expression></expression><expression tag="String.Text" Value="body"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For example, the followinf function definition:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="hypotenuse"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="s₁"/><expression tag="Symbolic.Symbol" Name="s₂"/></expression></expression><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="s₁"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="s₂"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="When executed, is transformed into:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="hypotenuse"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="s₁"/><expression tag="Symbolic.Symbol" Name="s₂"/></expression><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="s₁"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="s₂"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Function call"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Conversely, a function call is a lambda application, where the lambda expression is given by a symbol."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The folllowing is a function call:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="name"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="String.Text" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="String.Text" Value="2"/></expression><expression tag="String.Text" Value=". . ."/><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="String.Text" Value="n"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="And it is immediately rewritten as:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.LambdaApplication"><expression tag="String.Text" Value="name"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="String.Text" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="String.Text" Value="2"/></expression><expression tag="String.Text" Value=". . ."/><expression tag="Expression.Child"><expression tag="String.Text" Value="argument"/><expression tag="String.Text" Value="n"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Using the function definition from the last example, the function call:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="hypotenuse"/><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression></expression></expression><expression tag="String.Text" Value="When executed, is transformed into:"/><expression tag="Typesetting.Centering"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="hypotenuse"/><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Then, the symbol"/><expression tag="Symbolic.Symbol" Name="hypotenuse"/><expression tag="String.Text" Value="is replaced by its definition:"/></expression><expression tag="Typesetting.Centering"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="s₁"/><expression tag="Symbolic.Symbol" Name="s₂"/></expression><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="s₁"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="s₂"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Caveats when defining functions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In most programming languages, variables and functions are different creatures. You can define a variable and a functions with the same name in the same scope with no problem."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In Fōrmulæ, however, it is not the case. Remember that if you are defining a function, you provide a name for it trough a symbol. If such that symbol already had a value, it would be overwritten:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Symbolic.Symbol" Name="z"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="f"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Symbolic.Symbol" Name="z"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Recursive functions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Do you remember the unfortunate effect of defining a symbol in terms of itself? Not everything is lost, this effect can be, in fact, very beneficial."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="factorial"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Math.Number" Value="1"/></expression><expression tag="Relation.LessOrEquals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="factorial"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="factorial"/><expression tag="List.List"><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="120"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Sticky rows"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It is common that function definition be inside"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows"/></expression><expression tag="String.Text" Value="(see"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Execution" Description="Execution of expressions"/><expression tag="String.Text" Value=")."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Related examples"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Lambda expressions"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Internet.UniformResourceLocator" Value="/?example=Sort_a_list_of_object_identifiers" Description="Sort a list of object identifiers"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Sort_an_array_of_composite_structures" Description="Sort an array of composite structures"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Sort_numbers_lexicographically" Description="Sort numbers lexicographically"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Sort_using_a_custom_comparator" Description="Sort using a custom comparator"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Truth_table" Description="Truth table"/></expression></expression><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Recursive functions"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Internet.UniformResourceLocator" Value="/?example=Ackermann_function" Description="Ackermann function"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Anonymous_recursion" Description="Anonymous recursion"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Fibonacci_sequence" Description="Fibonacci sequence"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Fibonacci_word" Description="Fibonacci word"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Knight%27s_tour" Description="Knight's tour"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Mutual_recursion" Description="Mutual recursion"/><expression tag="Internet.UniformResourceLocator" Value="/?example=n_queens_problem" Description="n queens problem"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Peano_curve" Description="Peano curve"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Sierpi%C5%84ski_curve" Description="Sierpiński curve"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Tree_traversal" Description="Tree traversal"/><expression tag="Internet.UniformResourceLocator" Value="/?example=Towers_of_Hanoi" Description="Towers of Hanoi"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Rule"/><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Created: March 28, 2021. Last modified:"/><expression tag="Time.Time" Value="1626925260000"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.list,org.formulae.expression,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Symbolic tutorial"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this tutorial, you will learn about symbolic capabilities of the Fōrmulæ programming language."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Symbols"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In Fōrmulæ a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Symbolic.Symbol" Description="Symbol"/>
+				<expression tag="String.Text" Value="expression is a name that is associated with an another expression. It is like variables in other programming languages."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Visualization of symbols"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A symbol is visualized with its name in blue color. The following is a symbol which uses the name"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="x"/>
+				</expression>
+				<expression tag="String.Text" Value=":"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Creation of symbols"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="To create a symbol expression, select"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Symbolic → Symbol"/>
+				</expression>
+				<expression tag="String.Text" Value="from the editions panel at the left, or press the &lt;S&gt; key. A dialog box will be shown, and you will be able to define the name of the new symbol:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Updating the name of a symbol"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="To change the name of a given symbol expression, press the &lt;SPACE&gt; key, because it is the default action for a symbol expression. A dialog box will emerge where you will be able to update the name. The same action can be performed if you right-click with the mouse over the symbol expression, and selecting the option &quot;Change the name of the symbol...&quot; from the pop-up menu."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Assignment of an expression to a symbol"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Symbolic.Assignment" Description="Assignment"/>
+				<expression tag="String.Text" Value="expression, visualized as"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="String.Text" Value="symbol"/>
+					<expression tag="String.Text" Value="expression"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When executed, makes the association of a given expression (at the right of the arrow symbol), to the symbol (at the left)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Using the expression that a symbol refers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The presence of a symbol during the execution of an expression, automatically makes the symbol to be substituted by the expression if refers, excepting when the symbols appears at the left of an assignment expression (see above). The following is an example of an assignment of a symbol, followed by its usage:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="123"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="128"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Notes"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Most programming languages are"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Type_system#Static_type_checking" Description="statically type checked."/>
+				<expression tag="String.Text" Value="It means (among other things), that variables have a well defined type, and when performing an assignment, the expression to be associated must be of the same, or compatible type than  the variable. In Fōrmulæ it is not the case, symbols have no definition of type, so you can effectively assign anything you want to a symbol."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In Fōrmulæ, a symbol can have no expression associated with it. It is said that such that symbol is"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="pure"/>
+				</expression>
+				<expression tag="String.Text" Value="or"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="unbound."/>
+				</expression>
+				<expression tag="String.Text" Value="Every symbol that has never been assigned is a pure or unbound symbol."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the following example,"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+				<expression tag="String.Text" Value="is a pure/unbound symbol."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Math.Number" Value="9"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="y"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="When an assignment expression is executed, the expression to be assigned is evaluated first, (which may involve the use of other symbols), and then the assignment is performed."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.SquareRoot">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.SquareRoot">
+			<expression tag="Math.Number" Value="13"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="The result of an assignment"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The resulting expression of an assignment, is the value being assigned:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="20"/>
+				<expression tag="Math.Number" Value="15"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="35"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="8"/>
+			<expression tag="Math.Number" Value="5"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Assignment of several symbols/expressions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="More than one symbol can be assigned in the same expression. There are two forms:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The fist form is as follows:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The second form is:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="z"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="In the first form, an attempt to assign a different number of expressions that symbols, will produce an error:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+			</expression>
+			<expression tag="Error" Description="Invalid cardinality">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The two forms are not equivalent. The difference resides in the fact that in the first form, all the expression on the right list are evaluated and then their values assigned to the variables, while the second form is basically a list in where every element (which is also an assignment) is evaluated separately, from left to right."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the following example, we try to do a swap of the values of symbols. With the first form it is easly achieved:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="y"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="3"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="It does not work using the second form:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="y"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="5"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If we want to use the second form, it would require the usage of a third, temporary symbol:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="y"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="tmp"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="tmp"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="3"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following does not produce an &quot;invalid cardinality&quot; error in the second row, why?"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="list"/>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="Hello"/>
+					<expression tag="String.String" Value="World"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+			<expression tag="String.Concatenation">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="HelloWorld"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="In the second row, before the assignment, the expression to be assigned is evaluated, which replaces the symbol"/>
+			<expression tag="Symbolic.Symbol" Name="list"/>
+			<expression tag="String.Text" Value="by its associated expression, which is the list"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="Hello"/>
+				<expression tag="String.String" Value="World"/>
+			</expression>
+			<expression tag="String.Text" Value="effectively converting the second row to the expression"/>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="Hello"/>
+					<expression tag="String.String" Value="World"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="which is valid."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Recursive assignment"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Expressions like the following are very common in programming languages (incluing Fōrmulæ):"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In Fōrmulæ, however, special care must be taken if the symbol had not been previously assigned (it is a pure/unbound symbol). If you later use (i.e. inside another expression), the symbol"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value="will be replaced, according with its definition, to"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="String.Text" Value="but, the symbol appears again, so the expression will be replaced to"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="String.Text" Value="and then to"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="String.Text" Value="and then to"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="String.Text" Value="etc. Because this scheme will repeat without control, the local or remote server will eventualy complain and stop, for an overflow of memory, or because the limit of recursion has been reached."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Of course, if the symbol has already a value, there is no problem, and it works as expected:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="11"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Global symbols"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Symbols, as we have created them up now, are called"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="global symbols"/>
+				</expression>
+				<expression tag="String.Text" Value="and they are created inside the"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="execution environment"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The execution environment is where execution takes place, and it is not always the same:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If you are using a remote server, the execution environment is created in the server, and it has a &quot;short&quot; duration, because every time you press &lt;ENTER&gt; to send an expression to the server, a new execution environment is created. Once the expression has been executed, the execution environment is destroyed, also destroying all the symbols that had been created, and their associated expressions."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If you are using a local server, the execution environment is created inside you own computer. It can last an arbitrary amount of time, because it starts once your local server is started, and it is destroyed when you shut down your server."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Global variables are visible and available to any expression in the same execution environment."/>
+			</expression>
+			<expression tag="String.Text" Value="According to this, if we do:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Number" Value="5"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="5"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If we are using a local server, we can still use the symbol:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="10"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="But, if we are using a remote server, the symbol and its associated expression, created by the previous expression, have both already been destroyed:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Global symbols have advantages and disadvantages:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Let us start with advantages:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="When using a local server, it lets you to create state that preserves between calls to the server. It is very handy if you want to manage large amounts of information or information that can be difficult to recalculate between calls to the server. For example, suppose you have calculated a result that took many time, and such that result will be used for further calculations. It is convenient to put the intermediate result in a global symbol in order to be availabe for future calls to the server. It is important to emphasize that it is an advantage only when using a local server."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Disadvantages:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="They are useless when using a remote server."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="It requires a good work of coordination. Since all global symbols are visible, they are also available for re-assignment. An accidental re-assignment of a symbol can destroy the semantics of the state of the local server. Of course, a local sever is for your exclusive use (it cannot attend request other than from your own computer), but you can use it from several points, for example different browsers or different tabs of a browser. It could be easy to forget which symbols have been used and accidentally rewrite one or several of them."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Local symbols"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Local symbols are an alternative to global symbols, for managing and controlling visibility and access to symbols."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In order to explain local variables, we need to do several definitions."/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Scope."/>
+					</expression>
+					<expression tag="String.Text" Value="Local symbols have scope, it is the set of expressions or subexpressions where such these symbols have visibility, and therefore they can be assigned, used or re-assigned."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Scope anchorage."/>
+					</expression>
+					<expression tag="String.Text" Value="Several expressions have scope anchorage, it is the capacity to hold local variables (and their associated expressions). Only selected types of expressions can have scope anchorage. The scope of the local symbols held by an expression having scope anchorage is the expressions and all its subexpressions (recursively)."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Example:"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Programming.Block" Description="block"/>
+				<expression tag="String.Text" Value="expressions have scope anchorage, so it is able to hold local symbols. To create a local symbol you use the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Symbolic.Local" Description="Local"/>
+				<expression tag="String.Text" Value="expression. The following expression create a block where a local variable"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value="is created, and a value is assigned to it."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="8"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the previous example, the scope of the"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value="symbol is the block expression and all  its subexpressions, but NOT outside it."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="To show that the symbols is not visible outside the block, see the following example:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="10"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="10"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Notice that the symbol"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value="is visible (it has scope) only inside the inner block, but not in the outer block. Outside the inner block, the variable"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value="is a pure/unbound symbol."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When a local assignment if performed, the local symbol is created in the innermost expression having scope anchorage containing the assignment. In the previous example, it is the inner block and not the outer one."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Shadowing"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It effectively creates two symbols with the same name, but different scope."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="String.String" Value="outer"/>
+				</expression>
+			</expression>
+			<expression tag="Expression.Append">
+				<expression tag="Symbolic.Symbol" Name="list"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="String.String" Value="inner"/>
+					</expression>
+				</expression>
+				<expression tag="Expression.Append">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Expression.Append">
+				<expression tag="Symbolic.Symbol" Name="list"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="list"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="String.String" Value="outer"/>
+			<expression tag="String.String" Value="inner"/>
+			<expression tag="String.String" Value="outer"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="It is called &quot;shadowing&quot; because the innermost symbol has precedence over the outermost."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Declaring local symbols"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A local symbol can be declared with no assignment. It has the same effect of an assignment, this is, the symbol is created in the innermost expression with scope anchorage, but it is created with no value (it remains as unbound)."/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Several symbols can be locally declared."/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="You can even mix declaration and assignment of local symbols:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Math.Number" Value="33"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Lambda expressions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Lambda_expression" Description="lambda expression"/>
+				<expression tag="String.Text" Value="is a rule of transformation. It is defined over a set of zero (uncommon), one or more symbols (called the parameters of the lambda expression). It also define an expression (called the body of the lambda expression) that use these paremeters, creating a rule of transformation."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A lambda expression is visualized as:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+					<expression tag="String.Text" Value="expression"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The left part of a lambda expression is the list of parameters. A list must be provided even if there are zero or one parameters. The expression is at the right part."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following are examples of lambda expressions:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="A lambda expression to define the sum of three values, denoted as symbols, is "/>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="z"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="z"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="A lambda expression to define the double of a value is "/>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="A lambda expression to retrieve the half of the maximum of two values is "/>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Relation.Max">
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Symbolic.Symbol" Name="y"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Notice that a lambda expression, by itself, does not perform the rule of transformation, only defines it."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Number" Value="20"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Lambda">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Lambda application"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A lambda application expression, makes the actual transformation of values for the parameters (called arguments)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A lambda application looks like as shown below. Notice that the lambda expression is at the left, and at the right are the list of arguments: As with lambda expressions, a list must be provided, even if the number of arguments is zero or one."/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.LambdaApplication">
+					<expression tag="String.Text" Value="lambda"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.LambdaApplication">
+			<expression tag="Symbolic.Lambda">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="36"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="72"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Arguments may be more complicated expressions:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.LambdaApplication">
+			<expression tag="Symbolic.Lambda">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.LambdaApplication">
+			<expression tag="Symbolic.Lambda">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Symbolic.Symbol" Name="z"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Symbolic.Symbol" Name="z"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.SquareRoot">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.SquareRoot">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The application of a lambda expression:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.LambdaApplication">
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="parameter"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="parameter"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="String.Text" Value=". . ."/>
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="parameter"/>
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="expression"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="argument"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="argument"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="String.Text" Value=". . ."/>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="argument"/>
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="Is immediately transformed in:"/>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Programming.Block" Description="Description" Expanded="True">
+					<expression tag="Symbolic.Local">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="List.List">
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="parameter"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="parameter"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="String.Text" Value=". . ."/>
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="parameter"/>
+									<expression tag="String.Text" Value="n"/>
+								</expression>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="argument"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="argument"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="String.Text" Value=". . ."/>
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="argument"/>
+									<expression tag="String.Text" Value="n"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="expression"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="So, the lambda application of the previous example:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.LambdaApplication">
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="z"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="z"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.SquareRoot">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Is transformed into, and executed as:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.SquareRoot">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+				<expression tag="Symbolic.Symbol" Name="z"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.SquareRoot">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="It also means that the parameters become actual, local symbols, which are initialized with the arguments, and then they can be used as any other local symbol that can be reassigned, for example:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Centering">
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="When this lambda application is invoked for execution, it will be rewritten as:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Centering">
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.Block" Description="Description" Expanded="True">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Notice that a lambda expression is like a function (in terms of computation languages, not necessarily in mathematical sense): a lambda expression is like a function definition, and a lambda application is like a function call."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="However, there is a notable difference with common functions: lambda expressions have no name."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In fact, lambda expressions are also known as"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Anonymous_function" Description="anonymous functions"/>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Giving a name to a lambda expression"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Do you remember that a symbol is a way to provide a name to any expression? You sould also remember that such that expression may be ANY kind of expression, so nothing prevents that we can assign a lambda expression to a symbol."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="square"/>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="square"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="49"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Functions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="According to the elements we have studied up now, we can define a function just like a symbol (the name of the function) that refers a lambda expression."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Function definition"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following is a function definition:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="String.Text" Value="name"/>
+						<expression tag="List.List">
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="parameter"/>
+								<expression tag="String.Text" Value="1"/>
+							</expression>
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="parameter"/>
+								<expression tag="String.Text" Value="2"/>
+							</expression>
+							<expression tag="String.Text" Value=". . ."/>
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="parameter"/>
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="body"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="And it is immediately rewritten as:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="String.Text" Value="name"/>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="parameter"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="parameter"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="String.Text" Value=". . ."/>
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="parameter"/>
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="body"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For example, the followinf function definition:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="hypotenuse"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="s₁"/>
+							<expression tag="Symbolic.Symbol" Name="s₂"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.SquareRoot">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="s₁"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="s₂"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When executed, is transformed into:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="hypotenuse"/>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="s₁"/>
+							<expression tag="Symbolic.Symbol" Name="s₂"/>
+						</expression>
+						<expression tag="Math.Arithmetic.SquareRoot">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Symbolic.Symbol" Name="s₁"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Symbolic.Symbol" Name="s₂"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Function call"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Conversely, a function call is a lambda application, where the lambda expression is given by a symbol."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The folllowing is a function call:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Function">
+					<expression tag="String.Text" Value="name"/>
+					<expression tag="List.List">
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="argument"/>
+							<expression tag="String.Text" Value="1"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="argument"/>
+							<expression tag="String.Text" Value="2"/>
+						</expression>
+						<expression tag="String.Text" Value=". . ."/>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="argument"/>
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="And it is immediately rewritten as:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.LambdaApplication">
+					<expression tag="String.Text" Value="name"/>
+					<expression tag="List.List">
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="argument"/>
+							<expression tag="String.Text" Value="1"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="argument"/>
+							<expression tag="String.Text" Value="2"/>
+						</expression>
+						<expression tag="String.Text" Value=". . ."/>
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="argument"/>
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Using the function definition from the last example, the function call:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="hypotenuse"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="When executed, is transformed into:"/>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.LambdaApplication">
+					<expression tag="Symbolic.Symbol" Name="hypotenuse"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Then, the symbol"/>
+				<expression tag="Symbolic.Symbol" Name="hypotenuse"/>
+				<expression tag="String.Text" Value="is replaced by its definition:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Symbolic.LambdaApplication">
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="s₁"/>
+							<expression tag="Symbolic.Symbol" Name="s₂"/>
+						</expression>
+						<expression tag="Math.Arithmetic.SquareRoot">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Symbolic.Symbol" Name="s₁"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Symbolic.Symbol" Name="s₂"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Caveats when defining functions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In most programming languages, variables and functions are different creatures. You can define a variable and a functions with the same name in the same scope with no problem."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In Fōrmulæ, however, it is not the case. Remember that if you are defining a function, you provide a name for it trough a symbol. If such that symbol already had a value, it would be overwritten:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="z"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="f"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+				<expression tag="Symbolic.Symbol" Name="z"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="z"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Recursive functions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Do you remember the unfortunate effect of defining a symbol in terms of itself? Not everything is lost, this effect can be, in fact, very beneficial."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="factorial"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Return">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Relation.LessOrEquals">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="factorial"/>
+								<expression tag="List.List">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="factorial"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="120"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Sticky rows"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It is common that function definition be inside"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="(see"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Execution" Description="Execution of expressions"/>
+				<expression tag="String.Text" Value=")."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Related examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Lambda expressions"/>
+					</expression>
+					<expression tag="Typesetting.BulletedList">
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Sort_a_list_of_object_identifiers" Description="Sort a list of object identifiers"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Sort_an_array_of_composite_structures" Description="Sort an array of composite structures"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Sort_numbers_lexicographically" Description="Sort numbers lexicographically"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Sort_using_a_custom_comparator" Description="Sort using a custom comparator"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Truth_table" Description="Truth table"/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Recursive functions"/>
+					</expression>
+					<expression tag="Typesetting.BulletedList">
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Ackermann_function" Description="Ackermann function"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Anonymous_recursion" Description="Anonymous recursion"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Fibonacci_sequence" Description="Fibonacci sequence"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Fibonacci_word" Description="Fibonacci word"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Knight%27s_tour" Description="Knight's tour"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Mutual_recursion" Description="Mutual recursion"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/n_queens_problem" Description="n queens problem"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Peano_curve" Description="Peano curve"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Sierpi%C5%84ski_curve" Description="Sierpiński curve"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Tree_traversal" Description="Tree traversal"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=examples/Towers_of_Hanoi" Description="Towers of Hanoi"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Rule"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Created: March 28, 2021. Last modified:"/>
+				<expression tag="Time.Time" Value="1626925260000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

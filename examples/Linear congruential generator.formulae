@@ -1,1 +1,387 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Linear congruential generator"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Linear_congruential_generator" Description="linear congruential generator"/><expression tag="String.Text" Value="(LCG) is an algorithm that yields a sequence of pseudo-randomized numbers calculated with a discontinuous piecewise linear equation. The method represents one of the oldest and best-known"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Pseudorandom_number_generator" Description="pseudorandom number generator"/><expression tag="String.Text" Value="algorithms. The theory behind them is relatively easy to understand, and they are easily implemented and fast, especially on computer hardware which can provide modular arithmetic by storage-bit truncation."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this article, several linear congruencial generator are coded."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Linear_congruential_generator" Description="Linear congruential generator"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code"/><expression tag="String.Text" Value="in which it is required to replicate two historic random number generators:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="One is the rand() function from"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Category:BSD_libc" Description="BSD libc."/></expression><expression tag="Typesetting.BulletedList"><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="state"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.ModE"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="1103515245"/><expression tag="Expression.Child"><expression tag="String.Text" Value="state"/><expression tag="String.Text" Value="n"/></expression></expression><expression tag="Math.Number" Value="12345"/></expression><expression tag="Math.Number" Value="2147483648"/></expression></expression><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="String.Text" Value="rand"/><expression tag="String.Text" Value="n"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="state"/><expression tag="String.Text" Value="n"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Expression.Child"><expression tag="String.Text" Value="rand"/><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value="is in range 0 to 2,147,483,647"/></expression></expression></expression><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The other is the rand() function from the Microsoft C Runtime (MSCVRT.DLL). Each replica must yield the same sequence of integers as the original generator, when starting from the same seed."/></expression><expression tag="Typesetting.BulletedList"><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="state"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.ModE"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="214013"/><expression tag="Expression.Child"><expression tag="String.Text" Value="state"/><expression tag="String.Text" Value="n"/></expression></expression><expression tag="Math.Number" Value="2531011"/></expression><expression tag="Math.Number" Value="2147483648"/></expression></expression><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="String.Text" Value="rand"/><expression tag="String.Text" Value="n"/></expression><expression tag="Math.Arithmetic.DivE"><expression tag="Expression.Child"><expression tag="String.Text" Value="state"/><expression tag="String.Text" Value="n"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="16"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Expression.Child"><expression tag="String.Text" Value="rand"/><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value="is in range 0 to 32,767"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solutions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 1. BSD"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="BSD"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/></expression></expression><expression tag="Math.Arithmetic.ModE"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="1103515245"/><expression tag="Symbolic.Symbol" Name="r"/></expression><expression tag="Math.Number" Value="12345"/></expression><expression tag="Math.Number" Value="2147483648"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="List.CreateTable"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="BSD"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="BSD"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="12345"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1406932606"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="654583775"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="1449466924"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="229283573"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="1109335178"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="1051550459"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="1293799192"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="794471793"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="551188310"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 1. MS"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MS"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/></expression></expression><expression tag="Math.Arithmetic.ModE"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="214013"/><expression tag="Symbolic.Symbol" Name="r"/></expression><expression tag="Math.Number" Value="2531011"/></expression><expression tag="Math.Number" Value="2147483648"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="List.CreateTable"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MS"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Math.Number" Value="65536"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MS"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Math.Number" Value="65536"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="38"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="7719"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="21238"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="2437"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="8855"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="11797"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="8365"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="32285"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="10450"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="30612"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621211502418"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.relation,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Linear congruential generator"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Linear_congruential_generator" Description="linear congruential generator"/>
+				<expression tag="String.Text" Value="(LCG) is an algorithm that yields a sequence of pseudo-randomized numbers calculated with a discontinuous piecewise linear equation. The method represents one of the oldest and best-known"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Pseudorandom_number_generator" Description="pseudorandom number generator"/>
+				<expression tag="String.Text" Value="algorithms. The theory behind them is relatively easy to understand, and they are easily implemented and fast, especially on computer hardware which can provide modular arithmetic by storage-bit truncation."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this article, several linear congruencial generator are coded."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Linear_congruential_generator" Description="Linear congruential generator"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code"/>
+				<expression tag="String.Text" Value="in which it is required to replicate two historic random number generators:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="One is the rand() function from"/>
+						<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Category:BSD_libc" Description="BSD libc."/>
+					</expression>
+					<expression tag="Typesetting.BulletedList">
+						<expression tag="Visualization.HorizontalArray">
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="state"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="String.Text" Value="n"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="String.Text" Value="="/>
+							<expression tag="Math.Arithmetic.Mod">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="1103515245"/>
+										<expression tag="Expression.Child">
+											<expression tag="String.Text" Value="state"/>
+											<expression tag="String.Text" Value="n"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Number" Value="12345"/>
+								</expression>
+								<expression tag="Math.Number" Value="2147483648"/>
+							</expression>
+						</expression>
+						<expression tag="Relation.Equals">
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="rand"/>
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="state"/>
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="rand"/>
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+							<expression tag="String.Text" Value="is in range 0 to 2,147,483,647"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="The other is the rand() function from the Microsoft C Runtime (MSCVRT.DLL). Each replica must yield the same sequence of integers as the original generator, when starting from the same seed."/>
+					</expression>
+					<expression tag="Typesetting.BulletedList">
+						<expression tag="Visualization.HorizontalArray">
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="state"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="String.Text" Value="n"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="String.Text" Value="="/>
+							<expression tag="Math.Arithmetic.Mod">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="214013"/>
+										<expression tag="Expression.Child">
+											<expression tag="String.Text" Value="state"/>
+											<expression tag="String.Text" Value="n"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Number" Value="2531011"/>
+								</expression>
+								<expression tag="Math.Number" Value="2147483648"/>
+							</expression>
+						</expression>
+						<expression tag="Relation.Equals">
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="rand"/>
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Div">
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="state"/>
+									<expression tag="String.Text" Value="n"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Number" Value="2"/>
+									<expression tag="Math.Number" Value="16"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="rand"/>
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+							<expression tag="String.Text" Value="is in range 0 to 32,767"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solutions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 1. BSD"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="BSD"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="r"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Mod">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="1103515245"/>
+						<expression tag="Symbolic.Symbol" Name="r"/>
+					</expression>
+					<expression tag="Math.Number" Value="12345"/>
+				</expression>
+				<expression tag="Math.Number" Value="2147483648"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+			<expression tag="List.CreateTable">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="BSD"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="i"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="BSD"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="12345"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1406932606"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="654583775"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="1449466924"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="229283573"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="1109335178"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="1051550459"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="1293799192"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="794471793"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="551188310"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Case 2. MS"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="MS"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="r"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Mod">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="214013"/>
+						<expression tag="Symbolic.Symbol" Name="r"/>
+					</expression>
+					<expression tag="Math.Number" Value="2531011"/>
+				</expression>
+				<expression tag="Math.Number" Value="2147483648"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+			<expression tag="List.CreateTable">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Arithmetic.Div">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="MS"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Math.Number" Value="65536"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="i"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Arithmetic.Div">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="MS"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Math.Number" Value="65536"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="38"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="7719"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="21238"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="2437"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="8855"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="11797"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="8365"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="32285"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="10450"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="30612"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621211460000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

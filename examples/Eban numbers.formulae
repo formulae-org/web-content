@@ -1,1 +1,366 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Eban numbers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Eban_numbers" Description="Eban numbers"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Definition:"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="An"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="eban"/></expression><expression tag="String.Text" Value="number is a number that has no letter e in it when the number is spelled in English. Or more literally,   spelled numbers that contain the letter e are banned."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The American version of spelling numbers will be used here (as opposed to the British): 2,000,000,000 is two billion, not two milliard."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Task:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show all eban numbers ≤ 1,000 (in a horizontal format), and a count"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show all eban numbers between 1,000 and 4,000 (inclusive), and a count"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show a count of all eban numbers up and including 10,000"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show a count of all eban numbers up and including 100,000"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show a count of all eban numbers up and including 1,000,000"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show a count of all eban numbers up and including 10,000,000"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function determines if a given number is eban:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IsEban"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Logic.Negation"><expression tag="String.Contains"><expression tag="Localization.Format.NumberName"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Localization.Locale.Locale" Value="en-US"/></expression><expression tag="String.String" Value="e"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The next function creates a list of eban numbers in a range:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="EbanInRange"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IsEban"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Case 1. Show all eban numbers ≤ 1,000 (in a horizontal format), and a count"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="EbanInRange"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1000"/></expression></expression></expression></expression><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="List"/><expression tag="String.Text" Value="Cardinality"/></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="List"/><expression tag="String.Text" Value="Cardinality"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="30"/><expression tag="Math.Number" Value="32"/><expression tag="Math.Number" Value="34"/><expression tag="Math.Number" Value="36"/><expression tag="Math.Number" Value="40"/><expression tag="Math.Number" Value="42"/><expression tag="Math.Number" Value="44"/><expression tag="Math.Number" Value="46"/><expression tag="Math.Number" Value="50"/><expression tag="Math.Number" Value="52"/><expression tag="Math.Number" Value="54"/><expression tag="Math.Number" Value="56"/><expression tag="Math.Number" Value="60"/><expression tag="Math.Number" Value="62"/><expression tag="Math.Number" Value="64"/><expression tag="Math.Number" Value="66"/></expression><expression tag="Math.Number" Value="19"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Case 2. Show all eban numbers between 1,000 and 4,000 (inclusive), and a count"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="EbanInRange"/><expression tag="List.List"><expression tag="Math.Number" Value="1000"/><expression tag="Math.Number" Value="4000"/></expression></expression></expression></expression><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="List"/><expression tag="String.Text" Value="Cardinality"/></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="List"/><expression tag="String.Text" Value="Cardinality"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="2000"/><expression tag="Math.Number" Value="2002"/><expression tag="Math.Number" Value="2004"/><expression tag="Math.Number" Value="2006"/><expression tag="Math.Number" Value="2030"/><expression tag="Math.Number" Value="2032"/><expression tag="Math.Number" Value="2034"/><expression tag="Math.Number" Value="2036"/><expression tag="Math.Number" Value="2040"/><expression tag="Math.Number" Value="2042"/><expression tag="Math.Number" Value="2044"/><expression tag="Math.Number" Value="2046"/><expression tag="Math.Number" Value="2050"/><expression tag="Math.Number" Value="2052"/><expression tag="Math.Number" Value="2054"/><expression tag="Math.Number" Value="2056"/><expression tag="Math.Number" Value="2060"/><expression tag="Math.Number" Value="2062"/><expression tag="Math.Number" Value="2064"/><expression tag="Math.Number" Value="2066"/><expression tag="Math.Number" Value="4000"/></expression><expression tag="Math.Number" Value="21"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Case 3. Show a count of all eban numbers up and including 10,000"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="EbanInRange"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10000"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="79"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Case 4. Show a count of all eban numbers up and including 100,000"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="EbanInRange"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="100000"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="399"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Case 5. Show a count of all eban numbers up and including 1,000,000"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="EbanInRange"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1000000"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="399"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Case 6. Show a count of all eban numbers up and including 10,000,000"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="EbanInRange"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10000000"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="1599"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620775751959"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.logic,org.formulae.localization,org.formulae.programming,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Eban numbers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Eban_numbers" Description="Eban numbers"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Definition:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="An"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="eban"/>
+				</expression>
+				<expression tag="String.Text" Value="number is a number that has no letter e in it when the number is spelled in English. Or more literally,   spelled numbers that contain the letter e are banned."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The American version of spelling numbers will be used here (as opposed to the British): 2,000,000,000 is two billion, not two milliard."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Task:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show all eban numbers ≤ 1,000 (in a horizontal format), and a count"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show all eban numbers between 1,000 and 4,000 (inclusive), and a count"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show a count of all eban numbers up and including 10,000"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show a count of all eban numbers up and including 100,000"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show a count of all eban numbers up and including 1,000,000"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show a count of all eban numbers up and including 10,000,000"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function determines if a given number is eban:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="IsEban"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Logic.Negation">
+				<expression tag="String.Contains">
+					<expression tag="Localization.Format.NumberName">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Localization.Locale.Locale" Value="en-US"/>
+					</expression>
+					<expression tag="String.String" Value="e"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The next function creates a list of eban numbers in a range:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="EbanInRange"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IsEban"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Case 1. Show all eban numbers ≤ 1,000 (in a horizontal format), and a count"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="EbanInRange"/>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1000"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="List"/>
+						<expression tag="String.Text" Value="Cardinality"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="List"/>
+					<expression tag="String.Text" Value="Cardinality"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="4"/>
+						<expression tag="Math.Number" Value="6"/>
+						<expression tag="Math.Number" Value="30"/>
+						<expression tag="Math.Number" Value="32"/>
+						<expression tag="Math.Number" Value="34"/>
+						<expression tag="Math.Number" Value="36"/>
+						<expression tag="Math.Number" Value="40"/>
+						<expression tag="Math.Number" Value="42"/>
+						<expression tag="Math.Number" Value="44"/>
+						<expression tag="Math.Number" Value="46"/>
+						<expression tag="Math.Number" Value="50"/>
+						<expression tag="Math.Number" Value="52"/>
+						<expression tag="Math.Number" Value="54"/>
+						<expression tag="Math.Number" Value="56"/>
+						<expression tag="Math.Number" Value="60"/>
+						<expression tag="Math.Number" Value="62"/>
+						<expression tag="Math.Number" Value="64"/>
+						<expression tag="Math.Number" Value="66"/>
+					</expression>
+					<expression tag="Math.Number" Value="19"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Case 2. Show all eban numbers between 1,000 and 4,000 (inclusive), and a count"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="EbanInRange"/>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1000"/>
+							<expression tag="Math.Number" Value="4000"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="List"/>
+						<expression tag="String.Text" Value="Cardinality"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="List"/>
+					<expression tag="String.Text" Value="Cardinality"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="2000"/>
+						<expression tag="Math.Number" Value="2002"/>
+						<expression tag="Math.Number" Value="2004"/>
+						<expression tag="Math.Number" Value="2006"/>
+						<expression tag="Math.Number" Value="2030"/>
+						<expression tag="Math.Number" Value="2032"/>
+						<expression tag="Math.Number" Value="2034"/>
+						<expression tag="Math.Number" Value="2036"/>
+						<expression tag="Math.Number" Value="2040"/>
+						<expression tag="Math.Number" Value="2042"/>
+						<expression tag="Math.Number" Value="2044"/>
+						<expression tag="Math.Number" Value="2046"/>
+						<expression tag="Math.Number" Value="2050"/>
+						<expression tag="Math.Number" Value="2052"/>
+						<expression tag="Math.Number" Value="2054"/>
+						<expression tag="Math.Number" Value="2056"/>
+						<expression tag="Math.Number" Value="2060"/>
+						<expression tag="Math.Number" Value="2062"/>
+						<expression tag="Math.Number" Value="2064"/>
+						<expression tag="Math.Number" Value="2066"/>
+						<expression tag="Math.Number" Value="4000"/>
+					</expression>
+					<expression tag="Math.Number" Value="21"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Case 3. Show a count of all eban numbers up and including 10,000"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Expression.Cardinality">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="EbanInRange"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="10000"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="79"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Case 4. Show a count of all eban numbers up and including 100,000"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Expression.Cardinality">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="EbanInRange"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="100000"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="399"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Case 5. Show a count of all eban numbers up and including 1,000,000"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Expression.Cardinality">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="EbanInRange"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="1000000"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="399"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Case 6. Show a count of all eban numbers up and including 10,000,000"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Expression.Cardinality">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="EbanInRange"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="10000000"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1599"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620775751959"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

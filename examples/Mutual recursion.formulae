@@ -1,1 +1,332 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Mutual recursion"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Mutual_recursion" Description="Mutual recursion"/><expression tag="String.Text" Value="is a form of"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Recursion" Description="recursion"/><expression tag="String.Text" Value="where two mathematical or computational objects, such as functions or data types, are defined in terms of each other.[1] Mutual recursion is very common in"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Functional_programming" Description="functional programming"/><expression tag="String.Text" Value="and in some problem domains, such as recursive descent parsers, where the data types are naturally mutually recursive."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, several examples of mutual recursion are presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Mutual_recursion" Description="Mutual recursion"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 1 (from Rosetta code)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Write two mutually recursive functions that compute members of the"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Female_and_Male_sequences" Description="Hofstadter Female and Male sequences"/><expression tag="String.Text" Value="defined as:"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.VerticalArray"><expression tag="Visualization.HorizontalArray"><expression tag="Relation.Equals"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="F"/><expression tag="List.List"><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="String.Text" Value=", "/><expression tag="Relation.Equals"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="M"/><expression tag="List.List"><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Visualization.HorizontalArray"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="F"/><expression tag="List.List"><expression tag="String.Text" Value="n"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="M"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="F"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Relation.Greater"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Visualization.HorizontalArray"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="M"/><expression tag="List.List"><expression tag="String.Text" Value="n"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="F"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="M"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Relation.Greater"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="0"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="F"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.IfElse"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="M"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="F"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="M"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.IfElse"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="F"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="M"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Female"/><expression tag="List.CreateList"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="F"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="25"/></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Male"/><expression tag="List.CreateList"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="M"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="25"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Female"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="11"/><expression tag="Math.Number" Value="11"/><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="13"/><expression tag="Math.Number" Value="13"/><expression tag="Math.Number" Value="14"/><expression tag="Math.Number" Value="14"/><expression tag="Math.Number" Value="15"/><expression tag="Math.Number" Value="16"/></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Male"/><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="11"/><expression tag="Math.Number" Value="11"/><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="13"/><expression tag="Math.Number" Value="14"/><expression tag="Math.Number" Value="14"/><expression tag="Math.Number" Value="15"/><expression tag="Math.Number" Value="16"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621269462869"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.relation,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Mutual recursion"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Mutual_recursion" Description="Mutual recursion"/>
+				<expression tag="String.Text" Value="is a form of"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Recursion" Description="recursion"/>
+				<expression tag="String.Text" Value="where two mathematical or computational objects, such as functions or data types, are defined in terms of each other.[1] Mutual recursion is very common in"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Functional_programming" Description="functional programming"/>
+				<expression tag="String.Text" Value="and in some problem domains, such as recursive descent parsers, where the data types are naturally mutually recursive."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, several examples of mutual recursion are presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Mutual_recursion" Description="Mutual recursion"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 1 (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Write two mutually recursive functions that compute members of the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Female_and_Male_sequences" Description="Hofstadter Female and Male sequences"/>
+				<expression tag="String.Text" Value="defined as:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.VerticalArray">
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Relation.Equals">
+							<expression tag="Symbolic.Function">
+								<expression tag="String.Text" Value="F"/>
+								<expression tag="List.List">
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="String.Text" Value=", "/>
+						<expression tag="Relation.Equals">
+							<expression tag="Symbolic.Function">
+								<expression tag="String.Text" Value="M"/>
+								<expression tag="List.List">
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Symbolic.Function">
+							<expression tag="String.Text" Value="F"/>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="="/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Symbolic.Function">
+									<expression tag="String.Text" Value="M"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Function">
+											<expression tag="String.Text" Value="F"/>
+											<expression tag="List.List">
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="String.Text" Value="n"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Relation.Greater">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Symbolic.Function">
+							<expression tag="String.Text" Value="M"/>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="="/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Symbolic.Function">
+									<expression tag="String.Text" Value="F"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Function">
+											<expression tag="String.Text" Value="M"/>
+											<expression tag="List.List">
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="String.Text" Value="n"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Relation.Greater">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Programming.Block" Description="block" Expanded="True">
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="F"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.IfElse">
+					<expression tag="Relation.Equals">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="M"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="F"/>
+										<expression tag="List.List">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="n"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="M"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.IfElse">
+					<expression tag="Relation.Equals">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="F"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="M"/>
+										<expression tag="List.List">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="n"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Female"/>
+					<expression tag="List.CreateList">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="F"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="25"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Male"/>
+					<expression tag="List.CreateList">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="M"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="25"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Female"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="4"/>
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="6"/>
+						<expression tag="Math.Number" Value="6"/>
+						<expression tag="Math.Number" Value="7"/>
+						<expression tag="Math.Number" Value="8"/>
+						<expression tag="Math.Number" Value="8"/>
+						<expression tag="Math.Number" Value="9"/>
+						<expression tag="Math.Number" Value="9"/>
+						<expression tag="Math.Number" Value="10"/>
+						<expression tag="Math.Number" Value="11"/>
+						<expression tag="Math.Number" Value="11"/>
+						<expression tag="Math.Number" Value="12"/>
+						<expression tag="Math.Number" Value="13"/>
+						<expression tag="Math.Number" Value="13"/>
+						<expression tag="Math.Number" Value="14"/>
+						<expression tag="Math.Number" Value="14"/>
+						<expression tag="Math.Number" Value="15"/>
+						<expression tag="Math.Number" Value="16"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Male"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="4"/>
+						<expression tag="Math.Number" Value="4"/>
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="6"/>
+						<expression tag="Math.Number" Value="6"/>
+						<expression tag="Math.Number" Value="7"/>
+						<expression tag="Math.Number" Value="7"/>
+						<expression tag="Math.Number" Value="8"/>
+						<expression tag="Math.Number" Value="9"/>
+						<expression tag="Math.Number" Value="9"/>
+						<expression tag="Math.Number" Value="10"/>
+						<expression tag="Math.Number" Value="11"/>
+						<expression tag="Math.Number" Value="11"/>
+						<expression tag="Math.Number" Value="12"/>
+						<expression tag="Math.Number" Value="12"/>
+						<expression tag="Math.Number" Value="13"/>
+						<expression tag="Math.Number" Value="14"/>
+						<expression tag="Math.Number" Value="14"/>
+						<expression tag="Math.Number" Value="15"/>
+						<expression tag="Math.Number" Value="16"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621269420000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

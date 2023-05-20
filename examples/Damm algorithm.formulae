@@ -1,1 +1,284 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Damm algorithm"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Damm_algorithm" Description="Damm algorithm"/><expression tag="String.Text" Value="is a"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Check_digit" Description="check digit"/><expression tag="String.Text" Value="algorithm that detects all"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Transcription_error" Description="single-digit errors"/><expression tag="String.Text" Value="and all"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Transcription_error#Transposition_error" Description="adjacent transposition errors."/><expression tag="String.Text" Value="It was presented by H. Michael Damm in 2004."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, an implementation of the Damm algorithm is presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Damm_algorithm" Description="Damm algorithm"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The checksum is sitored as last digit of an input."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="damm table"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="2"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="3"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="9"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="6"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="8"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="1"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="7"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="5"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="0"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Damm"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="interim"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Programming.ForIn"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="interim"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="damm table"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="interim"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Arithmetic.Digits"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="interim"/><expression tag="Math.Number" Value="0"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Use cases"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Damm"/><expression tag="List.List"><expression tag="Math.Number" Value="5724"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Damm"/><expression tag="List.List"><expression tag="Math.Number" Value="5727"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.False"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Damm"/><expression tag="List.List"><expression tag="Math.Number" Value="112946"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Damm"/><expression tag="List.List"><expression tag="Math.Number" Value="112949"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.False"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621572576258"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.expression,org.formulae.relation,org.formulae.logic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Damm algorithm"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Damm_algorithm" Description="Damm algorithm"/>
+				<expression tag="String.Text" Value="is a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Check_digit" Description="check digit"/>
+				<expression tag="String.Text" Value="algorithm that detects all"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Transcription_error" Description="single-digit errors"/>
+				<expression tag="String.Text" Value="and all"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Transcription_error#Transposition_error" Description="adjacent transposition errors."/>
+				<expression tag="String.Text" Value="It was presented by H. Michael Damm in 2004."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, an implementation of the Damm algorithm is presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Damm_algorithm" Description="Damm algorithm"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The checksum is sitored as last digit of an input."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="damm table"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="9"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Damm"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="interim"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForIn">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="interim"/>
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="damm table"/>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="interim"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="d"/>
+					<expression tag="Math.Arithmetic.Digits">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="Relation.Equals">
+					<expression tag="Symbolic.Symbol" Name="interim"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Use cases"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Damm"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5724"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Damm"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5727"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.False"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Damm"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="112946"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Damm"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="112949"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.False"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621572540000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

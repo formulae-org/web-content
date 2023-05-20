@@ -1,1 +1,228 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Sort a list of object identifiers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Sort_a_list_of_object_identifiers" Description="Sort a list of object identifiers"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Object_identifier" Description="Object identifiers (OID)"/><expression tag="String.Text" Value="are strings used to identify objects in network data."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show how to sort a list of OIDs, in their natural sort order."/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="An OID consists of one or more non-negative integers in base 10, separated by dots. It starts and ends with a number."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Their natural sort order is lexicographical with regard to the dot-separated fields, using numeric comparison between fields."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case"/></expression></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.VerticalArray"><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.10"/><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.5.2.0.79"/><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.4"/><expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0.1"/><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.1"/><expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It requires the construction of a custom comparator:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="ois"/><expression tag="List.List"><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.10"/><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.5.2.0.79"/><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.4"/><expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0.1"/><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.1"/><expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="comparator"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tokens1"/><expression tag="Symbolic.Symbol" Name="tokens2"/></expression><expression tag="List.List"><expression tag="String.Split"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="String.String" Value="\."/></expression><expression tag="String.Split"><expression tag="Symbolic.Symbol" Name="b"/><expression tag="String.String" Value="\."/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="lena"/><expression tag="Symbolic.Symbol" Name="lenb"/></expression><expression tag="List.List"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="tokens1"/></expression><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="tokens2"/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="min"/><expression tag="Relation.Min"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="lena"/><expression tag="Symbolic.Symbol" Name="lenb"/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Symbol" Name="result"/></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Relation.Compare"><expression tag="Math.Arithmetic.ToNumber"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="tokens1"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Math.Arithmetic.ToNumber"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="tokens2"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Symbolic.Symbol" Name="result"/></expression><expression tag="Relation.Different"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Relation.Comparison.Equals"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="min"/></expression><expression tag="Relation.Compare"><expression tag="Symbolic.Symbol" Name="lena"/><expression tag="Symbolic.Symbol" Name="lenb"/></expression></expression></expression></expression><expression tag="Math.Matrix.Transpose"><expression tag="List.List"><expression tag="List.Sort"><expression tag="Symbolic.Symbol" Name="ois"/><expression tag="Symbolic.Symbol" Name="comparator"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.5.2.0.79"/></expression><expression tag="List.List"><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.1"/></expression><expression tag="List.List"><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.4"/></expression><expression tag="List.List"><expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.10"/></expression><expression tag="List.List"><expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0"/></expression><expression tag="List.List"><expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0.1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621440213598"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.expression,org.formulae.relation,org.formulae.math.arithmetic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Sort a list of object identifiers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Sort_a_list_of_object_identifiers" Description="Sort a list of object identifiers"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Object_identifier" Description="Object identifiers (OID)"/>
+				<expression tag="String.Text" Value="are strings used to identify objects in network data."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Show how to sort a list of OIDs, in their natural sort order."/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="An OID consists of one or more non-negative integers in base 10, separated by dots. It starts and ends with a number."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Their natural sort order is lexicographical with regard to the dot-separated fields, using numeric comparison between fields."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.VerticalArray">
+					<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.10"/>
+					<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.5.2.0.79"/>
+					<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.4"/>
+					<expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0.1"/>
+					<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.1"/>
+					<expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It requires the construction of a custom comparator:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="ois"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.10"/>
+						<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.5.2.0.79"/>
+						<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.4"/>
+						<expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0.1"/>
+						<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.1"/>
+						<expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="comparator"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+					</expression>
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Local">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="tokens1"/>
+									<expression tag="Symbolic.Symbol" Name="tokens2"/>
+								</expression>
+								<expression tag="List.List">
+									<expression tag="String.Split">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="String.String" Value="\."/>
+									</expression>
+									<expression tag="String.Split">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+										<expression tag="String.String" Value="\."/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Local">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="lena"/>
+									<expression tag="Symbolic.Symbol" Name="lenb"/>
+								</expression>
+								<expression tag="List.List">
+									<expression tag="Expression.Cardinality">
+										<expression tag="Symbolic.Symbol" Name="tokens1"/>
+									</expression>
+									<expression tag="Expression.Cardinality">
+										<expression tag="Symbolic.Symbol" Name="tokens2"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Local">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="min"/>
+								<expression tag="Relation.Min">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="lena"/>
+										<expression tag="Symbolic.Symbol" Name="lenb"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Local">
+							<expression tag="Symbolic.Symbol" Name="result"/>
+						</expression>
+						<expression tag="Programming.ForFromTo">
+							<expression tag="Programming.Block" Description="Description" Expanded="True">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="result"/>
+									<expression tag="Relation.Compare">
+										<expression tag="Math.Arithmetic.ToNumber">
+											<expression tag="Expression.Child">
+												<expression tag="Symbolic.Symbol" Name="tokens1"/>
+												<expression tag="Symbolic.Symbol" Name="i"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Arithmetic.ToNumber">
+											<expression tag="Expression.Child">
+												<expression tag="Symbolic.Symbol" Name="tokens2"/>
+												<expression tag="Symbolic.Symbol" Name="i"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Programming.InvertedIf">
+									<expression tag="Symbolic.Return">
+										<expression tag="Symbolic.Symbol" Name="result"/>
+									</expression>
+									<expression tag="Relation.Different">
+										<expression tag="Symbolic.Symbol" Name="result"/>
+										<expression tag="Relation.Comparison.Equals"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Symbol" Name="min"/>
+						</expression>
+						<expression tag="Relation.Compare">
+							<expression tag="Symbolic.Symbol" Name="lena"/>
+							<expression tag="Symbolic.Symbol" Name="lenb"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Math.Matrix.Transpose">
+				<expression tag="List.List">
+					<expression tag="List.Sort">
+						<expression tag="Symbolic.Symbol" Name="ois"/>
+						<expression tag="Symbolic.Symbol" Name="comparator"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.5.2.0.79"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.4"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="1.3.6.1.4.1.11.2.17.19.3.4.0.10"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="1.3.6.1.4.1.11150.3.4.0.1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621440213598"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

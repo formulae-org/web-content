@@ -1,1 +1,554 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Monty Hall problem"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Monty_Hall_problem" Description="Monty Hall problem"/><expression tag="String.Text" Value="is a brain teaser, in the form of a probability puzzle, loosely based on the American television game show"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Let%27s_Make_a_Deal" Description="Let's Make a Deal"/><expression tag="String.Text" Value="and named after its original host,"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Monty_Hall" Description="Monty Hall."/><expression tag="String.Text" Value="The problem was originally posed (and solved) in a letter by Steve Selvin to the American Statistician in 1975. It became famous as a question from reader Craig F. Whitaker's letter quoted in"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Marilyn_vos_Savant" Description="Marilyn vos Savant's"/><expression tag="String.Text" Value="&quot;Ask Marilyn&quot; column in"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Parade_(magazine)" Description="Parade"/><expression tag="String.Text" Value="magazine in 1990:"/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, &quot;Do you want to pick door No. 2?&quot; Is it to your advantage to switch your choice?"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Vos Savant's response was that the contestant should switch to the other door. Under the standard assumptions, contestants who switch have a"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value="chance of winning the car, while contestants who stick to their initial choice have only a"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value="chance."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Many readers of vos Savant's column refused to believe switching is beneficial despite her explanation. After the problem appeared in Parade, approximately 10,000 readers, including nearly 1,000 with PhDs, wrote to the magazine, most of them claiming vos Savant was wrong. Even when given explanations, simulations, and formal mathematical proofs, many people still do not accept that switching is the best strategy."/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Paul_Erd%C5%91s" Description="Paul Erdős,"/><expression tag="String.Text" Value="one of the most prolific mathematicians in history, remained unconvinced until he was shown a computer simulation demonstrating vos Savant's predicted result."/></expression><expression tag="String.Text" Value="In this article, a program for simulating the Monty Hall problem is presented."/><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Monty_Hall_problem" Description="Monty Hall problem"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following program makes a given number of simulations. On each, three options are evaluated:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If the player keeps his/her selection"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If the player randomly chooses between hs/her selection and the other (closed) door."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If the player switches his/her selection"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Finally, it shows the number of wins for each case."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MontyHall"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="winsKeep"/><expression tag="Symbolic.Symbol" Name="winsRandom"/><expression tag="Symbolic.Symbol" Name="winsSwitch"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="prize"/><expression tag="Symbolic.Symbol" Name="selection"/><expression tag="Symbolic.Symbol" Name="open"/><expression tag="Symbolic.Symbol" Name="newselection"/></expression></expression><expression tag="Programming.ForTimes"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.Block" Description="The prize is set randomly" Expanded="False"><expression tag="String.String" Value="The prize is set randomly"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="prize"/><expression tag="Math.Arithmetic.RandomInRange"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Programming.Block" Description="The player makes a random selection" Expanded="False"><expression tag="String.String" Value="The player makes a random selection"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="selection"/><expression tag="Math.Arithmetic.RandomInRange"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Programming.Block" Description="The host must open a door. He knows where prize is, he will no open it!!!" Expanded="False"><expression tag="String.String" Value="A door is open"/></expression><expression tag="Programming.IfElse"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="prize"/><expression tag="Symbolic.Symbol" Name="selection"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.Block" Description="The host opens any of the doors containing no prize, randomly" Expanded="False"><expression tag="String.String" Value="The host opens any door containing no prize, randomly"/></expression><expression tag="Programming.Until"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="open"/><expression tag="Math.Arithmetic.RandomInRange"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Relation.Different"><expression tag="Symbolic.Symbol" Name="open"/><expression tag="Symbolic.Symbol" Name="prize"/></expression></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.Block" Description="The host opens the door that is neither the prize nor selected" Expanded="False"><expression tag="String.String" Value="The host opens the door that is neither the prize nor selected"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="open"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="prize"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="selection"/></expression></expression></expression></expression></expression><expression tag="Programming.Block" Description="CASE 1: The player always keeps his/her selection" Expanded="False"><expression tag="String.String" Value="CASE 1: The player always keeps his/her selection"/></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="winsKeep"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="winsKeep"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="selection"/><expression tag="Symbolic.Symbol" Name="prize"/></expression></expression><expression tag="Programming.Block" Description="CASE 2: The player randomly chooses between his/her selection and the closed door" Expanded="False"><expression tag="String.String" Value="CASE 2: The player randomly chooses between his/her selection and the closed door"/></expression><expression tag="Programming.Until"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="newselection"/><expression tag="Math.Arithmetic.RandomInRange"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Relation.Different"><expression tag="Symbolic.Symbol" Name="newselection"/><expression tag="Symbolic.Symbol" Name="open"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="winsRandom"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="winsRandom"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="newselection"/><expression tag="Symbolic.Symbol" Name="prize"/></expression></expression><expression tag="Programming.Block" Description="CASE 3: The player always switches his/her selection" Expanded="False"><expression tag="String.String" Value="CASE 3: The player always switches his/her selection"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="newselection"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="selection"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="open"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="winsSwitch"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="winsSwitch"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="newselection"/><expression tag="Symbolic.Symbol" Name="prize"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Keep"/><expression tag="Symbolic.Symbol" Name="winsKeep"/></expression><expression tag="List.List"><expression tag="String.String" Value="Random"/><expression tag="Symbolic.Symbol" Name="winsRandom"/></expression><expression tag="List.List"><expression tag="String.String" Value="Switch"/><expression tag="Symbolic.Symbol" Name="winsSwitch"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MontyHall"/><expression tag="List.List"><expression tag="Math.Number" Value="10000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Keep"/><expression tag="Math.Number" Value="3386"/></expression><expression tag="List.List"><expression tag="String.String" Value="Random"/><expression tag="Math.Number" Value="4980"/></expression><expression tag="List.List"><expression tag="String.String" Value="Switch"/><expression tag="Math.Number" Value="6614"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It can be seen that:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If the player keeps his/her selection, he/she wins around"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value="of times."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If the player randomly chooses between hs/her selection and the other (closed) door, he/she wins around"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value="of times."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If the player switches his/her selection, he/seh wins around"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value="of times."/></expression></expression><expression tag="String.Text" Value="The following variation shows the evolution of the probabilities for each case:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Monty Hall G"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="winsKeep"/><expression tag="Symbolic.Symbol" Name="winsRandom"/><expression tag="Symbolic.Symbol" Name="winsSwitch"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="prize"/><expression tag="Symbolic.Symbol" Name="selection"/><expression tag="Symbolic.Symbol" Name="open"/><expression tag="Symbolic.Symbol" Name="newselection"/></expression></expression><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="listKeep"/><expression tag="List.List"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="listRandom"/><expression tag="List.List"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="listSwitch"/><expression tag="List.List"/></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="prize"/><expression tag="Math.Arithmetic.RandomInRange"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="selection"/><expression tag="Math.Arithmetic.RandomInRange"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Programming.IfElse"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="prize"/><expression tag="Symbolic.Symbol" Name="selection"/></expression><expression tag="Programming.Until"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="open"/><expression tag="Math.Arithmetic.RandomInRange"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Relation.Different"><expression tag="Symbolic.Symbol" Name="open"/><expression tag="Symbolic.Symbol" Name="prize"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="open"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="prize"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="selection"/></expression></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="winsKeep"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="winsKeep"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="selection"/><expression tag="Symbolic.Symbol" Name="prize"/></expression></expression><expression tag="Programming.Until"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="newselection"/><expression tag="Math.Arithmetic.RandomInRange"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Relation.Different"><expression tag="Symbolic.Symbol" Name="newselection"/><expression tag="Symbolic.Symbol" Name="open"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="winsRandom"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="winsRandom"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="newselection"/><expression tag="Symbolic.Symbol" Name="prize"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="newselection"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="selection"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="open"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="winsSwitch"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="winsSwitch"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="newselection"/><expression tag="Symbolic.Symbol" Name="prize"/></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="listKeep"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Numeric"><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="winsKeep"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="listRandom"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Numeric"><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="winsRandom"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="listSwitch"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Numeric"><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="winsSwitch"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Chart.XYChart"><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Keep"/><expression tag="Symbolic.Symbol" Name="listKeep"/></expression><expression tag="List.List"><expression tag="String.String" Value="Random"/><expression tag="Symbolic.Symbol" Name="listRandom"/></expression><expression tag="List.List"><expression tag="String.String" Value="Switch"/><expression tag="Symbolic.Symbol" Name="listSwitch"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Monty Hall G"/><expression tag="List.List"><expression tag="Math.Number" Value="10000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Graphics.RasterGraphics" Value="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"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Counterintuitive" Description="counterintuitive"/><expression tag="String.Text" Value="examples"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621711485679"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.relation,org.formulae.expression,org.formulae.chart,org.formulae.graphics.raster,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Monty Hall problem"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Monty_Hall_problem" Description="Monty Hall problem"/>
+				<expression tag="String.Text" Value="is a brain teaser, in the form of a probability puzzle, loosely based on the American television game show"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Let%27s_Make_a_Deal" Description="Let's Make a Deal"/>
+				<expression tag="String.Text" Value="and named after its original host,"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Monty_Hall" Description="Monty Hall."/>
+				<expression tag="String.Text" Value="The problem was originally posed (and solved) in a letter by Steve Selvin to the American Statistician in 1975. It became famous as a question from reader Craig F. Whitaker's letter quoted in"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Marilyn_vos_Savant" Description="Marilyn vos Savant's"/>
+				<expression tag="String.Text" Value="&quot;Ask Marilyn&quot; column in"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Parade_(magazine)" Description="Parade"/>
+				<expression tag="String.Text" Value="magazine in 1990:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, &quot;Do you want to pick door No. 2?&quot; Is it to your advantage to switch your choice?"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Vos Savant's response was that the contestant should switch to the other door. Under the standard assumptions, contestants who switch have a"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value="chance of winning the car, while contestants who stick to their initial choice have only a"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value="chance."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Many readers of vos Savant's column refused to believe switching is beneficial despite her explanation. After the problem appeared in Parade, approximately 10,000 readers, including nearly 1,000 with PhDs, wrote to the magazine, most of them claiming vos Savant was wrong. Even when given explanations, simulations, and formal mathematical proofs, many people still do not accept that switching is the best strategy."/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Paul_Erd%C5%91s" Description="Paul Erdős,"/>
+				<expression tag="String.Text" Value="one of the most prolific mathematicians in history, remained unconvinced until he was shown a computer simulation demonstrating vos Savant's predicted result."/>
+			</expression>
+			<expression tag="String.Text" Value="In this article, a program for simulating the Monty Hall problem is presented."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Monty_Hall_problem" Description="Monty Hall problem"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following program makes a given number of simulations. On each, three options are evaluated:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the player keeps his/her selection"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the player randomly chooses between hs/her selection and the other (closed) door."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the player switches his/her selection"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Finally, it shows the number of wins for each case."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="MontyHall"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="winsKeep"/>
+							<expression tag="Symbolic.Symbol" Name="winsRandom"/>
+							<expression tag="Symbolic.Symbol" Name="winsSwitch"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="prize"/>
+						<expression tag="Symbolic.Symbol" Name="selection"/>
+						<expression tag="Symbolic.Symbol" Name="open"/>
+						<expression tag="Symbolic.Symbol" Name="newselection"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForTimes">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Programming.Block" Description="The prize is set randomly" Expanded="False">
+							<expression tag="String.String" Value="The prize is set randomly"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="prize"/>
+							<expression tag="Math.Arithmetic.RandomInRange">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="The player makes a random selection" Expanded="False">
+							<expression tag="String.String" Value="The player makes a random selection"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="selection"/>
+							<expression tag="Math.Arithmetic.RandomInRange">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="The host must open a door. He knows where prize is, he will no open it!!!" Expanded="False">
+							<expression tag="String.String" Value="A door is open"/>
+						</expression>
+						<expression tag="Programming.IfElse">
+							<expression tag="Relation.Equals">
+								<expression tag="Symbolic.Symbol" Name="prize"/>
+								<expression tag="Symbolic.Symbol" Name="selection"/>
+							</expression>
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Programming.Block" Description="The host opens any of the doors containing no prize, randomly" Expanded="False">
+									<expression tag="String.String" Value="The host opens any door containing no prize, randomly"/>
+								</expression>
+								<expression tag="Programming.Until">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="open"/>
+										<expression tag="Math.Arithmetic.RandomInRange">
+											<expression tag="Math.Number" Value="1"/>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+									</expression>
+									<expression tag="Relation.Different">
+										<expression tag="Symbolic.Symbol" Name="open"/>
+										<expression tag="Symbolic.Symbol" Name="prize"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Programming.Block" Description="The host opens the door that is neither the prize nor selected" Expanded="False">
+									<expression tag="String.String" Value="The host opens the door that is neither the prize nor selected"/>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="open"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Number" Value="6"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Symbolic.Symbol" Name="prize"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Symbolic.Symbol" Name="selection"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="CASE 1: The player always keeps his/her selection" Expanded="False">
+							<expression tag="String.String" Value="CASE 1: The player always keeps his/her selection"/>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="winsKeep"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="winsKeep"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Relation.Equals">
+								<expression tag="Symbolic.Symbol" Name="selection"/>
+								<expression tag="Symbolic.Symbol" Name="prize"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="CASE 2: The player randomly chooses between his/her selection and the closed door" Expanded="False">
+							<expression tag="String.String" Value="CASE 2: The player randomly chooses between his/her selection and the closed door"/>
+						</expression>
+						<expression tag="Programming.Until">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="newselection"/>
+								<expression tag="Math.Arithmetic.RandomInRange">
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+							</expression>
+							<expression tag="Relation.Different">
+								<expression tag="Symbolic.Symbol" Name="newselection"/>
+								<expression tag="Symbolic.Symbol" Name="open"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="winsRandom"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="winsRandom"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Relation.Equals">
+								<expression tag="Symbolic.Symbol" Name="newselection"/>
+								<expression tag="Symbolic.Symbol" Name="prize"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="CASE 3: The player always switches his/her selection" Expanded="False">
+							<expression tag="String.String" Value="CASE 3: The player always switches his/her selection"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="newselection"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="6"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Symbolic.Symbol" Name="selection"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Symbolic.Symbol" Name="open"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="winsSwitch"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="winsSwitch"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Relation.Equals">
+								<expression tag="Symbolic.Symbol" Name="newselection"/>
+								<expression tag="Symbolic.Symbol" Name="prize"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Keep"/>
+						<expression tag="Symbolic.Symbol" Name="winsKeep"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Random"/>
+						<expression tag="Symbolic.Symbol" Name="winsRandom"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Switch"/>
+						<expression tag="Symbolic.Symbol" Name="winsSwitch"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="MontyHall"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="100"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="String.String" Value="Keep"/>
+				<expression tag="Math.Number" Value="34"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="Random"/>
+				<expression tag="Math.Number" Value="49"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="Switch"/>
+				<expression tag="Math.Number" Value="66"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It can be seen that:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the player keeps his/her selection, he/she wins around"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="String.Text" Value="of times."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the player randomly chooses between hs/her selection and the other (closed) door, he/she wins around"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="String.Text" Value="of times."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the player switches his/her selection, he/seh wins around"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="String.Text" Value="of times."/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="The following variation shows the evolution of the probabilities for each case:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Monty Hall G"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="winsKeep"/>
+							<expression tag="Symbolic.Symbol" Name="winsRandom"/>
+							<expression tag="Symbolic.Symbol" Name="winsSwitch"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="prize"/>
+						<expression tag="Symbolic.Symbol" Name="selection"/>
+						<expression tag="Symbolic.Symbol" Name="open"/>
+						<expression tag="Symbolic.Symbol" Name="newselection"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="data"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="prize"/>
+							<expression tag="Math.Arithmetic.RandomInRange">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="selection"/>
+							<expression tag="Math.Arithmetic.RandomInRange">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.IfElse">
+							<expression tag="Relation.Equals">
+								<expression tag="Symbolic.Symbol" Name="prize"/>
+								<expression tag="Symbolic.Symbol" Name="selection"/>
+							</expression>
+							<expression tag="Programming.Until">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="open"/>
+									<expression tag="Math.Arithmetic.RandomInRange">
+										<expression tag="Math.Number" Value="1"/>
+										<expression tag="Math.Number" Value="3"/>
+									</expression>
+								</expression>
+								<expression tag="Relation.Different">
+									<expression tag="Symbolic.Symbol" Name="open"/>
+									<expression tag="Symbolic.Symbol" Name="prize"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="open"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Number" Value="6"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Symbolic.Symbol" Name="prize"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Symbolic.Symbol" Name="selection"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="winsKeep"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="winsKeep"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Relation.Equals">
+								<expression tag="Symbolic.Symbol" Name="selection"/>
+								<expression tag="Symbolic.Symbol" Name="prize"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Until">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="newselection"/>
+								<expression tag="Math.Arithmetic.RandomInRange">
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+							</expression>
+							<expression tag="Relation.Different">
+								<expression tag="Symbolic.Symbol" Name="newselection"/>
+								<expression tag="Symbolic.Symbol" Name="open"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="winsRandom"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="winsRandom"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Relation.Equals">
+								<expression tag="Symbolic.Symbol" Name="newselection"/>
+								<expression tag="Symbolic.Symbol" Name="prize"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="newselection"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="6"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Symbolic.Symbol" Name="selection"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Symbolic.Symbol" Name="open"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="winsSwitch"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="winsSwitch"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Relation.Equals">
+								<expression tag="Symbolic.Symbol" Name="newselection"/>
+								<expression tag="Symbolic.Symbol" Name="prize"/>
+							</expression>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="data"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Numeric">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Symbolic.Symbol" Name="winsKeep"/>
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Symbolic.Symbol" Name="winsRandom"/>
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Symbolic.Symbol" Name="winsSwitch"/>
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="Chart.Line">
+					<expression tag="Symbolic.Symbol" Name="data"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Series names"/>
+						<expression tag="List.List">
+							<expression tag="String.String" Value="Keep"/>
+							<expression tag="String.String" Value="Random"/>
+							<expression tag="String.String" Value="Switch"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Monty Hall G"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="200"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Graphics.RasterGraphics" Value="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"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Counterintuitive" Description="counterintuitive"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621711440000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

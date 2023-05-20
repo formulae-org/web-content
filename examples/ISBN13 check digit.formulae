@@ -1,1 +1,212 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="ISBN13 check digit"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/ISBN13_check_digit" Description="ISBN13 check digit"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Validate the check digit of an ISBN-13 code:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Multiply every other digit by  3"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Add the digits together"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Take the remainder of division by 10"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="it is  0,   the ISBN-13 check digit is correct"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Use the following codes for testing:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="978-1734314502 (good)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="978-1734314509 (bad)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="978-1788399081 (good)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="978-1788399083 (bad)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ISBN13Checker"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="s"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="s"/><expression tag="String.ReplaceAll"><expression tag="Symbolic.Symbol" Name="s"/><expression tag="String.String" Value="[^0-9]"/><expression tag="String.String" Value=""/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Logic.False"/></expression><expression tag="Relation.Different"><expression tag="String.Length"><expression tag="Symbolic.Symbol" Name="s"/></expression><expression tag="Math.Number" Value="13"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="digits"/><expression tag="Math.Arithmetic.Digits"><expression tag="Math.Arithmetic.ToNumber"><expression tag="Symbolic.Symbol" Name="s"/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="sum"/><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Programming.Conditional"><expression tag="Math.Arithmetic.IsOdd"><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="digits"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="13"/></expression></expression></expression><expression tag="Relation.Equals"><expression tag="Math.Arithmetic.ModE"><expression tag="Symbolic.Symbol" Name="sum"/><expression tag="Math.Number" Value="10"/></expression><expression tag="Math.Number" Value="0"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test cases"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="s"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ISBN13Checker"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="s"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="s"/><expression tag="List.List"><expression tag="String.String" Value="978-1734314502"/><expression tag="String.String" Value="978-1734314509"/><expression tag="String.String" Value="978-1788399081"/><expression tag="String.String" Value="978-1788399083"/><expression tag="String.String" Value="9780820424521"/><expression tag="String.String" Value="0820424528"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="978-1734314502"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="String.String" Value="978-1734314509"/><expression tag="Logic.False"/></expression><expression tag="List.List"><expression tag="String.String" Value="978-1788399081"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="String.String" Value="978-1788399083"/><expression tag="Logic.False"/></expression><expression tag="List.List"><expression tag="String.String" Value="9780820424521"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="String.String" Value="0820424528"/><expression tag="Logic.False"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621130651444"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.logic,org.formulae.relation,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="ISBN13 check digit"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/ISBN13_check_digit" Description="ISBN13 check digit"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Validate the check digit of an ISBN-13 code:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Multiply every other digit by  3"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Add the digits together"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Take the remainder of division by 10"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="it is  0,   the ISBN-13 check digit is correct"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Use the following codes for testing:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="978-1734314502 (good)"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="978-1734314509 (bad)"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="978-1788399081 (good)"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="978-1788399083 (bad)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ISBN13Checker"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="s"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="s"/>
+					<expression tag="String.ReplaceAll">
+						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="String.String" Value="[^0-9]"/>
+						<expression tag="String.String" Value=""/>
+					</expression>
+				</expression>
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Symbolic.Return">
+						<expression tag="Logic.False"/>
+					</expression>
+					<expression tag="Relation.Different">
+						<expression tag="String.Length">
+							<expression tag="Symbolic.Symbol" Name="s"/>
+						</expression>
+						<expression tag="Math.Number" Value="13"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="digits"/>
+						<expression tag="Math.Arithmetic.Digits">
+							<expression tag="Math.Arithmetic.ToNumber">
+								<expression tag="Symbolic.Symbol" Name="s"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="sum"/>
+						<expression tag="Math.Arithmetic.Summation">
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Programming.Conditional">
+									<expression tag="Math.Arithmetic.IsOdd">
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="digits"/>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="13"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Relation.Equals">
+					<expression tag="Math.Arithmetic.Mod">
+						<expression tag="Symbolic.Symbol" Name="sum"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test cases"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="s"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ISBN13Checker"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="s"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="s"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="978-1734314502"/>
+				<expression tag="String.String" Value="978-1734314509"/>
+				<expression tag="String.String" Value="978-1788399081"/>
+				<expression tag="String.String" Value="978-1788399083"/>
+				<expression tag="String.String" Value="9780820424521"/>
+				<expression tag="String.String" Value="0820424528"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="String.String" Value="978-1734314502"/>
+				<expression tag="Logic.False"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="978-1734314509"/>
+				<expression tag="Logic.False"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="978-1788399081"/>
+				<expression tag="Logic.False"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="978-1788399083"/>
+				<expression tag="Logic.False"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="9780820424521"/>
+				<expression tag="Logic.True"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="0820424528"/>
+				<expression tag="Logic.False"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621130640000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

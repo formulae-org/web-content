@@ -1,1 +1,132 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Sort using a custom comparator"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Sort_three_variables" Description="Sort using a custom comparator"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Sort an array (or list) of strings in order of descending length, and in ascending lexicographic order for strings of equal length."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Use a sorting facility provided by the language/library, combined with your own callback comparison function."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Note: Lexicographic order is case-insensitive."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="comparator"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Relation.Compare"><expression tag="String.Length"><expression tag="Symbolic.Symbol" Name="b"/></expression><expression tag="String.Length"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Relation.Compare"><expression tag="String.Uppercase"><expression tag="Symbolic.Symbol" Name="a"/></expression><expression tag="String.Uppercase"><expression tag="Symbolic.Symbol" Name="b"/></expression></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Relation.Comparison.Equals"/></expression></expression><expression tag="Symbolic.Symbol" Name="result"/></expression></expression></expression><expression tag="List.Sort"><expression tag="List.List"><expression tag="String.String" Value="Here"/><expression tag="String.String" Value="are"/><expression tag="String.String" Value="some"/><expression tag="String.String" Value="sample"/><expression tag="String.String" Value="strings"/><expression tag="String.String" Value="to"/><expression tag="String.String" Value="be"/><expression tag="String.String" Value="sorted"/></expression><expression tag="Symbolic.Symbol" Name="comparator"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="String.String" Value="strings"/><expression tag="String.String" Value="sample"/><expression tag="String.String" Value="sorted"/><expression tag="String.String" Value="Here"/><expression tag="String.String" Value="some"/><expression tag="String.String" Value="are"/><expression tag="String.String" Value="be"/><expression tag="String.String" Value="to"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621444035815"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Sort using a custom comparator"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Sort_three_variables" Description="Sort using a custom comparator"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Sort an array (or list) of strings in order of descending length, and in ascending lexicographic order for strings of equal length."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Use a sorting facility provided by the language/library, combined with your own callback comparison function."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Note: Lexicographic order is case-insensitive."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="comparator"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+					</expression>
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Local">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="result"/>
+								<expression tag="Relation.Compare">
+									<expression tag="String.Length">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+									<expression tag="String.Length">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="result"/>
+								<expression tag="Relation.Compare">
+									<expression tag="String.Uppercase">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+									<expression tag="String.Uppercase">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Relation.Equals">
+								<expression tag="Symbolic.Symbol" Name="result"/>
+								<expression tag="Relation.Comparison.Equals"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="result"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.Sort">
+				<expression tag="List.List">
+					<expression tag="String.String" Value="Here"/>
+					<expression tag="String.String" Value="are"/>
+					<expression tag="String.String" Value="some"/>
+					<expression tag="String.String" Value="sample"/>
+					<expression tag="String.String" Value="strings"/>
+					<expression tag="String.String" Value="to"/>
+					<expression tag="String.String" Value="be"/>
+					<expression tag="String.String" Value="sorted"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="comparator"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="String.String" Value="strings"/>
+			<expression tag="String.String" Value="sample"/>
+			<expression tag="String.String" Value="sorted"/>
+			<expression tag="String.String" Value="Here"/>
+			<expression tag="String.String" Value="some"/>
+			<expression tag="String.String" Value="are"/>
+			<expression tag="String.String" Value="be"/>
+			<expression tag="String.String" Value="to"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621444035815"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

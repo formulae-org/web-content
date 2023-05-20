@@ -1,1 +1,166 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Iterated digits squaring"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Iterated_digits_squaring" Description="Iterated digits squaring"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:"/></expression><expression tag="Typesetting.Centering"><expression tag="String.Text" Value="15 → 26 → 40 → 16 → 37 → 58 → 89"/></expression><expression tag="Typesetting.Centering"><expression tag="String.Text" Value="7 → 49 → 97 → 130 → 10 → 1"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Count how many number chains for integers 1 &lt;= n &lt; 100,000,000 end with a value 89."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function returns the end value (either 1 or 89) of a given number:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Iterated digits squaring"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.Until"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Arithmetic.Digits"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Logic.Disjunction"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="89"/></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function calculates the number of 89 endings, from 1 to a given number:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Stats"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n89"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n89"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n89"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Iterated digits squaring"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Math.Number" Value="89"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Symbol" Name="n89"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Stats"/><expression tag="List.List"><expression tag="Math.Number" Value="100000000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="85744333"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621182951208"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.logic,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Iterated digits squaring"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Iterated_digits_squaring" Description="Iterated digits squaring"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="String.Text" Value="15 → 26 → 40 → 16 → 37 → 58 → 89"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="String.Text" Value="7 → 49 → 97 → 130 → 10 → 1"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Count how many number chains for integers 1 &lt;= n &lt; 100,000,000 end with a value 89."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function returns the end value (either 1 or 89) of a given number:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Iterated digits squaring"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Programming.Until">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Arithmetic.Summation">
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="d"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="d"/>
+							<expression tag="Math.Arithmetic.Digits">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Logic.Disjunction">
+						<expression tag="Relation.Equals">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="89"/>
+						</expression>
+						<expression tag="Relation.Equals">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following function calculates the number of 89 endings, from 1 to a given number:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Stats"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="n89"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="n89"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="n89"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Relation.Equals">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="Iterated digits squaring"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="89"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="n89"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test case"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Stats"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="100000000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="85744333"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621182900000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

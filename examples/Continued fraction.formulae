@@ -1,1 +1,2101 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Continued fraction"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Continued_fraction" Description="continued fraction"/><expression tag="String.Text" Value="is an expression obtained through an iterative process of representing a number as the sum of its integer part and the reciprocal of another number, then writing this other number as the sum of its integer part and another reciprocal, and so on. In a finite continued fraction (or terminated continued fraction), the iteration/recursion is terminated after finitely many steps by using an integer in lieu of another continued fraction. In contrast, an infinite continued fraction is an infinite expression. In either case, all integers in the sequence, other than the first, must be positive. The integers {\displaystyle a_{i}}a_{i} are called the coefficients or terms of the continued fraction."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A number may be represented as a"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Continued_fraction" Description="continued fraction"/><expression tag="String.Text" Value="as follows:"/></expression><expression tag="Typesetting.Centering"><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Expression.Child"><expression tag="String.Text" Value="b"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Expression.Child"><expression tag="String.Text" Value="b"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Expression.Child"><expression tag="String.Text" Value="b"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value="⋱"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, a program to create (finite) continued fractions is presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Continued_fraction" Description="Continued fraction"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Write a program which generates such a number and prints a real representation of it. The code should be tested by calculating and printing the square root of 2, Napier's Constant, and π, using the following coefficients:"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For the square root of 2, use"/><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="String.Text" Value=", then"/><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="String.Text" Value="n"/></expression><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value=",  "/><expression tag="Expression.Child"><expression tag="String.Text" Value="b"/><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value="is always 1."/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="2"/><expression tag="String.Text" Value="⋱"/></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For Napier's Constant, use"/><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value=", then"/><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value=", "/><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="String.Text" Value="b"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="String.Text" Value=", then"/><expression tag="Expression.Child"><expression tag="String.Text" Value="b"/><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value="= n - 1"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Math.Constant.Euler"/><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="4"/><expression tag="String.Text" Value="⋱"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For π, use"/><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Math.Number" Value="3"/></expression><expression tag="String.Text" Value=", then"/><expression tag="Relation.Equals"><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="String.Text" Value="n"/></expression><expression tag="Math.Number" Value="6"/></expression><expression tag="String.Text" Value=", "/><expression tag="Expression.Child"><expression tag="String.Text" Value="b"/><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="String.Text" Value="n"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="String.Text" Value="π"/><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="25"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="6"/><expression tag="String.Text" Value="⋱"/></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ContinuedFraction"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a₀"/><expression tag="Symbolic.Symbol" Name="λa"/><expression tag="Symbolic.Symbol" Name="λb"/><expression tag="Symbolic.Symbol" Name="depth"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="λb"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="depth"/></expression></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="λa"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="depth"/></expression></expression></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="λb"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="depth"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="λa"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="depth"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="result"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="depth"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="a₀"/><expression tag="Symbolic.Symbol" Name="result"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Explanation"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The function ContinuedFraction accepts as parameters:"/></expression><expression tag="Typesetting.Centering"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Parameter"/><expression tag="String.Text" Value="Description"/></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a₀"/><expression tag="Visualization.HorizontalArray"><expression tag="String.Text" Value="Value for"/><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="λa"/><expression tag="Visualization.HorizontalArray"><expression tag="String.Text" Value="Lambda expression to define"/><expression tag="Expression.Child"><expression tag="String.Text" Value="a"/><expression tag="String.Text" Value="i"/></expression></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="λb"/><expression tag="Visualization.HorizontalArray"><expression tag="String.Text" Value="Lambda expression to define"/><expression tag="Expression.Child"><expression tag="String.Text" Value="b"/><expression tag="String.Text" Value="i"/></expression></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="depth"/><expression tag="String.Text" Value="Depth to calculate the continued fraction"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Generating the continued fraction structure"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Since Fōrmulæ arithmetic simplifies numeric results as they are generated, the result is not a continued fraction."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If we want to create the structure, we can introduce the parameters as string or text expressions (or lambda expressions that produce them). Because string or text expressions are not reduced when they are operands of additions and divisions, the structure is preserved, such as follows:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ContinuedFraction"/><expression tag="List.List"><expression tag="String.Text" Value="x"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="String.Text" Value="y"/></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="String.Text" Value="z"/></expression><expression tag="Math.Number" Value="5"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="x"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="z"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="y"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="z"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="y"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="z"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="y"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="z"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="y"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="z"/><expression tag="String.Text" Value="y"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 1."/><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Let us show the results of the call for several levels of depth (1 to 10)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The columns are:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The depth"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The &quot;textual&quot; call, in order to generate the structure"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The normal (numeric) call. Since arithmetic operations are exact by default, it is usually a rational number."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The value of the normal (numeric) call, forced to be shown as a decimal number, by using the Math.Numeric expression (the N(x) expression)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The result is shown as a matrix."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="textual"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ContinuedFraction"/><expression tag="List.List"><expression tag="String.Text" Value="1"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="String.Text" Value="2"/></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="String.Text" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ContinuedFraction"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Number" Value="2"/></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Symbol" Name="textual"/><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Numeric"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Number" Value="1.5"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="5"/></expression><expression tag="Math.Number" Value="1.4"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Number" Value="1.416666667"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="41"/><expression tag="Math.Number" Value="29"/></expression><expression tag="Math.Number" Value="1.413793103"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="99"/><expression tag="Math.Number" Value="70"/></expression><expression tag="Math.Number" Value="1.414285714"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="239"/><expression tag="Math.Number" Value="169"/></expression><expression tag="Math.Number" Value="1.414201183"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="577"/><expression tag="Math.Number" Value="408"/></expression><expression tag="Math.Number" Value="1.414215686"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1393"/><expression tag="Math.Number" Value="985"/></expression><expression tag="Math.Number" Value="1.414213198"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3363"/><expression tag="Math.Number" Value="2378"/></expression><expression tag="Math.Number" Value="1.414213625"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="8119"/><expression tag="Math.Number" Value="5741"/></expression><expression tag="Math.Number" Value="1.414213552"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 2. e"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Note the use of the expression Text.String.ToString to convert a number expression to a Text.String expression."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="textual"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ContinuedFraction"/><expression tag="List.List"><expression tag="String.Text" Value="2"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="String.ToText"><expression tag="String.ToString"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="String.ToText"><expression tag="String.ToString"><expression tag="Programming.Conditional"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ContinuedFraction"/><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Programming.Conditional"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Symbol" Name="textual"/><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Numeric"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="1"/></expression></expression><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3."/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="2"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Number" Value="2.666666667"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="2"/><expression tag="String.Text" Value="3"/></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="30"/><expression tag="Math.Number" Value="11"/></expression><expression tag="Math.Number" Value="2.727272727"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="3"/><expression tag="String.Text" Value="4"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="144"/><expression tag="Math.Number" Value="53"/></expression><expression tag="Math.Number" Value="2.716981132"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="4"/><expression tag="String.Text" Value="5"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="280"/><expression tag="Math.Number" Value="103"/></expression><expression tag="Math.Number" Value="2.718446602"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="5"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="5"/><expression tag="String.Text" Value="6"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5760"/><expression tag="Math.Number" Value="2119"/></expression><expression tag="Math.Number" Value="2.718263332"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="5"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="5"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="6"/><expression tag="String.Text" Value="7"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="45360"/><expression tag="Math.Number" Value="16687"/></expression><expression tag="Math.Number" Value="2.718283694"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="5"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="5"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="7"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="7"/><expression tag="String.Text" Value="8"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="44800"/><expression tag="Math.Number" Value="16481"/></expression><expression tag="Math.Number" Value="2.718281658"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="5"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="5"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="7"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="7"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="8"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="8"/><expression tag="String.Text" Value="9"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3991680"/><expression tag="Math.Number" Value="1468457"/></expression><expression tag="Math.Number" Value="2.718281843"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="4"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="5"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="5"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="7"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="7"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="8"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="8"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="9"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="9"/><expression tag="String.Text" Value="10"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="43545600"/><expression tag="Math.Number" Value="16019531"/></expression><expression tag="Math.Number" Value="2.718281827"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 3. π"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="textual"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ContinuedFraction"/><expression tag="List.List"><expression tag="String.Text" Value="3"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="String.Text" Value="6"/></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="String.ToText"><expression tag="String.ToString"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ContinuedFraction"/><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Number" Value="6"/></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Symbol" Name="textual"/><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Numeric"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="String.Text" Value="6"/></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="19"/><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Number" Value="3.166666667"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="9"/><expression tag="String.Text" Value="6"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="47"/><expression tag="Math.Number" Value="15"/></expression><expression tag="Math.Number" Value="3.133333333"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="25"/><expression tag="String.Text" Value="6"/></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1321"/><expression tag="Math.Number" Value="420"/></expression><expression tag="Math.Number" Value="3.145238095"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="25"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="49"/><expression tag="String.Text" Value="6"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="989"/><expression tag="Math.Number" Value="315"/></expression><expression tag="Math.Number" Value="3.13968254"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="25"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="49"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="81"/><expression tag="String.Text" Value="6"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="21779"/><expression tag="Math.Number" Value="6930"/></expression><expression tag="Math.Number" Value="3.142712843"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="25"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="49"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="81"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="121"/><expression tag="String.Text" Value="6"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="141481"/><expression tag="Math.Number" Value="45045"/></expression><expression tag="Math.Number" Value="3.140881341"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="25"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="49"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="81"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="121"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="169"/><expression tag="String.Text" Value="6"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1132277"/><expression tag="Math.Number" Value="360360"/></expression><expression tag="Math.Number" Value="3.142071817"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="25"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="49"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="81"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="121"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="169"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="225"/><expression tag="String.Text" Value="6"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="801821"/><expression tag="Math.Number" Value="255255"/></expression><expression tag="Math.Number" Value="3.141254824"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="25"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="49"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="81"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="121"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="169"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="225"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="289"/><expression tag="String.Text" Value="6"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="91424611"/><expression tag="Math.Number" Value="29099070"/></expression><expression tag="Math.Number" Value="3.141839619"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="3"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="25"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="49"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="81"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="121"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="169"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="225"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="289"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="String.Text" Value="361"/><expression tag="String.Text" Value="6"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="45706007"/><expression tag="Math.Number" Value="14549535"/></expression><expression tag="Math.Number" Value="3.141406718"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621571818799"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.relation,org.formulae.visualization,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Continued fraction"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Continued_fraction" Description="continued fraction"/>
+				<expression tag="String.Text" Value="is an expression obtained through an iterative process of representing a number as the sum of its integer part and the reciprocal of another number, then writing this other number as the sum of its integer part and another reciprocal, and so on. In a finite continued fraction (or terminated continued fraction), the iteration/recursion is terminated after finitely many steps by using an integer in lieu of another continued fraction. In contrast, an infinite continued fraction is an infinite expression. In either case, all integers in the sequence, other than the first, must be positive. The integers {\displaystyle a_{i}}a_{i} are called the coefficients or terms of the continued fraction."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A number may be represented as a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Continued_fraction" Description="continued fraction"/>
+				<expression tag="String.Text" Value="as follows:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="a"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="b"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="a"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="b"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Expression.Child">
+										<expression tag="String.Text" Value="a"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Expression.Child">
+											<expression tag="String.Text" Value="b"/>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Expression.Child">
+												<expression tag="String.Text" Value="a"/>
+												<expression tag="Math.Number" Value="3"/>
+											</expression>
+											<expression tag="String.Text" Value="⋱"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, a program to create (finite) continued fractions is presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Continued_fraction" Description="Continued fraction"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Write a program which generates such a number and prints a real representation of it. The code should be tested by calculating and printing the square root of 2, Napier's Constant, and π, using the following coefficients:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For the square root of 2, use"/>
+				<expression tag="Relation.Equals">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="a"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="String.Text" Value=", then"/>
+				<expression tag="Relation.Equals">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="a"/>
+						<expression tag="String.Text" Value="n"/>
+					</expression>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="String.Text" Value=",  "/>
+				<expression tag="Expression.Child">
+					<expression tag="String.Text" Value="b"/>
+					<expression tag="String.Text" Value="n"/>
+				</expression>
+				<expression tag="String.Text" Value="is always 1."/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Math.Arithmetic.SquareRoot">
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Number" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Math.Number" Value="1"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Math.Number" Value="2"/>
+												<expression tag="String.Text" Value="⋱"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For Napier's Constant, use"/>
+				<expression tag="Relation.Equals">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="a"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="String.Text" Value=", then"/>
+				<expression tag="Relation.Equals">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="a"/>
+						<expression tag="String.Text" Value="n"/>
+					</expression>
+					<expression tag="String.Text" Value="n"/>
+				</expression>
+				<expression tag="String.Text" Value=", "/>
+				<expression tag="Relation.Equals">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="b"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="String.Text" Value=", then"/>
+				<expression tag="Expression.Child">
+					<expression tag="String.Text" Value="b"/>
+					<expression tag="String.Text" Value="n"/>
+				</expression>
+				<expression tag="String.Text" Value="= n - 1"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Math.Constant.Euler"/>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Number" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Math.Number" Value="2"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Math.Number" Value="3"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="Math.Number" Value="3"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="Math.Number" Value="4"/>
+														<expression tag="String.Text" Value="⋱"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For π, use"/>
+				<expression tag="Relation.Equals">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="a"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value=", then"/>
+				<expression tag="Relation.Equals">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="a"/>
+						<expression tag="String.Text" Value="n"/>
+					</expression>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="String.Text" Value=", "/>
+				<expression tag="Expression.Child">
+					<expression tag="String.Text" Value="b"/>
+					<expression tag="String.Text" Value="n"/>
+				</expression>
+				<expression tag="String.Text" Value="="/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="String.Text" Value="π"/>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="6"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Number" Value="9"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Number" Value="6"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Math.Number" Value="25"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Math.Number" Value="6"/>
+												<expression tag="String.Text" Value="⋱"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a₀"/>
+					<expression tag="Symbolic.Symbol" Name="λa"/>
+					<expression tag="Symbolic.Symbol" Name="λb"/>
+					<expression tag="Symbolic.Symbol" Name="depth"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="λb"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="depth"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="λa"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="depth"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="λb"/>
+								<expression tag="List.List">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="depth"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.LambdaApplication">
+									<expression tag="Symbolic.Symbol" Name="λa"/>
+									<expression tag="List.List">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="depth"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Symbolic.Symbol" Name="i"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="result"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="depth"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="a₀"/>
+					<expression tag="Symbolic.Symbol" Name="result"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Explanation"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The function ContinuedFraction accepts as parameters:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Parameter"/>
+							<expression tag="String.Text" Value="Description"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="a₀"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="String.Text" Value="Value for"/>
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="a"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="λa"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="String.Text" Value="Lambda expression to define"/>
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="a"/>
+									<expression tag="String.Text" Value="i"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="λb"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="String.Text" Value="Lambda expression to define"/>
+								<expression tag="Expression.Child">
+									<expression tag="String.Text" Value="b"/>
+									<expression tag="String.Text" Value="i"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="depth"/>
+							<expression tag="String.Text" Value="Depth to calculate the continued fraction"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Generating the continued fraction structure"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Since Fōrmulæ arithmetic simplifies numeric results as they are generated, the result is not a continued fraction."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If we want to create the structure, we can introduce the parameters as string or text expressions (or lambda expressions that produce them). Because string or text expressions are not reduced when they are operands of additions and divisions, the structure is preserved, such as follows:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+			<expression tag="List.List">
+				<expression tag="String.Text" Value="x"/>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="String.Text" Value="y"/>
+				</expression>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="String.Text" Value="z"/>
+				</expression>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="String.Text" Value="x"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="String.Text" Value="z"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="String.Text" Value="y"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="String.Text" Value="z"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="String.Text" Value="y"/>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="String.Text" Value="z"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="String.Text" Value="y"/>
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="String.Text" Value="z"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="String.Text" Value="y"/>
+											<expression tag="Math.Arithmetic.Division">
+												<expression tag="String.Text" Value="z"/>
+												<expression tag="String.Text" Value="y"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 1."/>
+					<expression tag="Math.Arithmetic.SquareRoot">
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Let us show the results of the call for several levels of depth (1 to 10)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The columns are:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The depth"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The &quot;textual&quot; call, in order to generate the structure"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The normal (numeric) call. Since arithmetic operations are exact by default, it is usually a rational number."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The value of the normal (numeric) call, forced to be shown as a decimal number, by using the Math.Numeric expression (the N(x) expression)"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Symbol" Name="value"/>
+			</expression>
+			<expression tag="List.CreateTable">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="i"/>
+						<expression tag="String.Text" Value="Literal"/>
+						<expression tag="String.Text" Value="Exact"/>
+						<expression tag="String.Text" Value="Numeric"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="1"/>
+								<expression tag="Symbolic.Lambda">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+									<expression tag="String.Text" Value="2"/>
+								</expression>
+								<expression tag="Symbolic.Lambda">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+									<expression tag="String.Text" Value="1"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="value"/>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+								<expression tag="List.List">
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Symbolic.Lambda">
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+										</expression>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Symbolic.Lambda">
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+										</expression>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Math.Numeric">
+							<expression tag="Symbolic.Symbol" Name="value"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="i"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="i"/>
+					<expression tag="String.Text" Value="Literal"/>
+					<expression tag="String.Text" Value="Exact"/>
+					<expression tag="String.Text" Value="Numeric"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="String.Text" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Number" Value="1.5"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="2"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="String.Text" Value="2"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="7"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+					<expression tag="Math.Number" Value="1.4"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="2"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="1"/>
+											<expression tag="String.Text" Value="2"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="17"/>
+						<expression tag="Math.Number" Value="12"/>
+					</expression>
+					<expression tag="Math.Number" Value="1.4166666666666666667"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="2"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="1"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="2"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="1"/>
+													<expression tag="String.Text" Value="2"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="41"/>
+						<expression tag="Math.Number" Value="29"/>
+					</expression>
+					<expression tag="Math.Number" Value="1.4137931034482758621"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="2"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="1"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="2"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="1"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="2"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="1"/>
+															<expression tag="String.Text" Value="2"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="99"/>
+						<expression tag="Math.Number" Value="70"/>
+					</expression>
+					<expression tag="Math.Number" Value="1.4142857142857142857"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="2"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="1"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="2"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="1"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="2"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="1"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="2"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="1"/>
+																	<expression tag="String.Text" Value="2"/>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="239"/>
+						<expression tag="Math.Number" Value="169"/>
+					</expression>
+					<expression tag="Math.Number" Value="1.4142011834319526627"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="2"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="1"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="2"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="1"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="2"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="1"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="2"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="1"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="2"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="1"/>
+																			<expression tag="String.Text" Value="2"/>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="577"/>
+						<expression tag="Math.Number" Value="408"/>
+					</expression>
+					<expression tag="Math.Number" Value="1.4142156862745098039"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="2"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="1"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="2"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="1"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="2"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="1"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="2"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="1"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="2"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="1"/>
+																			<expression tag="Math.Arithmetic.Addition">
+																				<expression tag="String.Text" Value="2"/>
+																				<expression tag="Math.Arithmetic.Division">
+																					<expression tag="String.Text" Value="1"/>
+																					<expression tag="String.Text" Value="2"/>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1393"/>
+						<expression tag="Math.Number" Value="985"/>
+					</expression>
+					<expression tag="Math.Number" Value="1.4142131979695431472"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="2"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="1"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="2"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="1"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="2"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="1"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="2"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="1"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="2"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="1"/>
+																			<expression tag="Math.Arithmetic.Addition">
+																				<expression tag="String.Text" Value="2"/>
+																				<expression tag="Math.Arithmetic.Division">
+																					<expression tag="String.Text" Value="1"/>
+																					<expression tag="Math.Arithmetic.Addition">
+																						<expression tag="String.Text" Value="2"/>
+																						<expression tag="Math.Arithmetic.Division">
+																							<expression tag="String.Text" Value="1"/>
+																							<expression tag="String.Text" Value="2"/>
+																						</expression>
+																					</expression>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="3363"/>
+						<expression tag="Math.Number" Value="2378"/>
+					</expression>
+					<expression tag="Math.Number" Value="1.4142136248948696384"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="2"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="1"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="2"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="1"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="2"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="1"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="2"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="1"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="2"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="1"/>
+																			<expression tag="Math.Arithmetic.Addition">
+																				<expression tag="String.Text" Value="2"/>
+																				<expression tag="Math.Arithmetic.Division">
+																					<expression tag="String.Text" Value="1"/>
+																					<expression tag="Math.Arithmetic.Addition">
+																						<expression tag="String.Text" Value="2"/>
+																						<expression tag="Math.Arithmetic.Division">
+																							<expression tag="String.Text" Value="1"/>
+																							<expression tag="Math.Arithmetic.Addition">
+																								<expression tag="String.Text" Value="2"/>
+																								<expression tag="Math.Arithmetic.Division">
+																									<expression tag="String.Text" Value="1"/>
+																									<expression tag="String.Text" Value="2"/>
+																								</expression>
+																							</expression>
+																						</expression>
+																					</expression>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="8119"/>
+						<expression tag="Math.Number" Value="5741"/>
+					</expression>
+					<expression tag="Math.Number" Value="1.4142135516460546943"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 2. e"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Note the use of the expression Text.String.ToString to convert a number expression to a Text.String expression."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Symbol" Name="value"/>
+			</expression>
+			<expression tag="List.CreateTable">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="i"/>
+						<expression tag="String.Text" Value="Literal"/>
+						<expression tag="String.Text" Value="Exact"/>
+						<expression tag="String.Text" Value="Numeric"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="2"/>
+								<expression tag="Symbolic.Lambda">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+									<expression tag="String.ToText">
+										<expression tag="String.ToString">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Lambda">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+									<expression tag="String.ToText">
+										<expression tag="String.ToString">
+											<expression tag="Programming.Conditional">
+												<expression tag="Relation.Equals">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+												<expression tag="Math.Number" Value="1"/>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="value"/>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+								<expression tag="List.List">
+									<expression tag="Math.Number" Value="2"/>
+									<expression tag="Symbolic.Lambda">
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+									<expression tag="Symbolic.Lambda">
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+										</expression>
+										<expression tag="Programming.Conditional">
+											<expression tag="Relation.Equals">
+												<expression tag="Symbolic.Symbol" Name="n"/>
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+											<expression tag="Math.Number" Value="1"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="n"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Math.Numeric">
+							<expression tag="Symbolic.Symbol" Name="value"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="i"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="i"/>
+					<expression tag="String.Text" Value="Literal"/>
+					<expression tag="String.Text" Value="Exact"/>
+					<expression tag="String.Text" Value="Numeric"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="String.Text" Value="1"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3."/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="1"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="String.Text" Value="2"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="8"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Math.Number" Value="2.6666666666666666667"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="1"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="2"/>
+											<expression tag="String.Text" Value="3"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="30"/>
+						<expression tag="Math.Number" Value="11"/>
+					</expression>
+					<expression tag="Math.Number" Value="2.7272727272727272727"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="1"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="2"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="3"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="3"/>
+													<expression tag="String.Text" Value="4"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="144"/>
+						<expression tag="Math.Number" Value="53"/>
+					</expression>
+					<expression tag="Math.Number" Value="2.7169811320754716981"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="1"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="2"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="3"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="3"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="4"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="4"/>
+															<expression tag="String.Text" Value="5"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="280"/>
+						<expression tag="Math.Number" Value="103"/>
+					</expression>
+					<expression tag="Math.Number" Value="2.7184466019417475728"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="1"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="2"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="3"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="3"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="4"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="4"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="5"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="5"/>
+																	<expression tag="String.Text" Value="6"/>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="5760"/>
+						<expression tag="Math.Number" Value="2119"/>
+					</expression>
+					<expression tag="Math.Number" Value="2.7182633317602642756"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="1"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="2"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="3"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="3"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="4"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="4"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="5"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="5"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="6"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="6"/>
+																			<expression tag="String.Text" Value="7"/>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="45360"/>
+						<expression tag="Math.Number" Value="16687"/>
+					</expression>
+					<expression tag="Math.Number" Value="2.718283693893449991"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="1"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="2"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="3"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="3"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="4"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="4"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="5"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="5"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="6"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="6"/>
+																			<expression tag="Math.Arithmetic.Addition">
+																				<expression tag="String.Text" Value="7"/>
+																				<expression tag="Math.Arithmetic.Division">
+																					<expression tag="String.Text" Value="7"/>
+																					<expression tag="String.Text" Value="8"/>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="44800"/>
+						<expression tag="Math.Number" Value="16481"/>
+					</expression>
+					<expression tag="Math.Number" Value="2.7182816576664037376"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="1"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="2"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="3"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="3"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="4"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="4"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="5"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="5"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="6"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="6"/>
+																			<expression tag="Math.Arithmetic.Addition">
+																				<expression tag="String.Text" Value="7"/>
+																				<expression tag="Math.Arithmetic.Division">
+																					<expression tag="String.Text" Value="7"/>
+																					<expression tag="Math.Arithmetic.Addition">
+																						<expression tag="String.Text" Value="8"/>
+																						<expression tag="Math.Arithmetic.Division">
+																							<expression tag="String.Text" Value="8"/>
+																							<expression tag="String.Text" Value="9"/>
+																						</expression>
+																					</expression>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="3991680"/>
+						<expression tag="Math.Number" Value="1468457"/>
+					</expression>
+					<expression tag="Math.Number" Value="2.7182818427778273385"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="1"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="1"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="2"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="2"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="3"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="3"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="4"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="4"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="5"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="5"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="6"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="6"/>
+																			<expression tag="Math.Arithmetic.Addition">
+																				<expression tag="String.Text" Value="7"/>
+																				<expression tag="Math.Arithmetic.Division">
+																					<expression tag="String.Text" Value="7"/>
+																					<expression tag="Math.Arithmetic.Addition">
+																						<expression tag="String.Text" Value="8"/>
+																						<expression tag="Math.Arithmetic.Division">
+																							<expression tag="String.Text" Value="8"/>
+																							<expression tag="Math.Arithmetic.Addition">
+																								<expression tag="String.Text" Value="9"/>
+																								<expression tag="Math.Arithmetic.Division">
+																									<expression tag="String.Text" Value="9"/>
+																									<expression tag="String.Text" Value="10"/>
+																								</expression>
+																							</expression>
+																						</expression>
+																					</expression>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="43545600"/>
+						<expression tag="Math.Number" Value="16019531"/>
+					</expression>
+					<expression tag="Math.Number" Value="2.7182818273518744088"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Case 3. π"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Symbol" Name="value"/>
+			</expression>
+			<expression tag="List.CreateTable">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="i"/>
+						<expression tag="String.Text" Value="Literal"/>
+						<expression tag="String.Text" Value="Exact"/>
+						<expression tag="String.Text" Value="Numeric"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="3"/>
+								<expression tag="Symbolic.Lambda">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+									<expression tag="String.Text" Value="6"/>
+								</expression>
+								<expression tag="Symbolic.Lambda">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+									<expression tag="String.ToText">
+										<expression tag="String.ToString">
+											<expression tag="Math.Arithmetic.Exponentiation">
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Math.Arithmetic.Multiplication">
+														<expression tag="Math.Number" Value="2"/>
+														<expression tag="Symbolic.Symbol" Name="n"/>
+													</expression>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+												<expression tag="Math.Number" Value="2"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="value"/>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+								<expression tag="List.List">
+									<expression tag="Math.Number" Value="3"/>
+									<expression tag="Symbolic.Lambda">
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+										</expression>
+										<expression tag="Math.Number" Value="6"/>
+									</expression>
+									<expression tag="Symbolic.Lambda">
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Math.Arithmetic.Multiplication">
+													<expression tag="Math.Number" Value="2"/>
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Math.Numeric">
+							<expression tag="Symbolic.Symbol" Name="value"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="i"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="i"/>
+					<expression tag="String.Text" Value="Literal"/>
+					<expression tag="String.Text" Value="Exact"/>
+					<expression tag="String.Text" Value="Numeric"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="String.Text" Value="6"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="19"/>
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+					<expression tag="Math.Number" Value="3.1666666666666666667"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="6"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="9"/>
+									<expression tag="String.Text" Value="6"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="47"/>
+						<expression tag="Math.Number" Value="15"/>
+					</expression>
+					<expression tag="Math.Number" Value="3.1333333333333333333"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="6"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="9"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="6"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="25"/>
+											<expression tag="String.Text" Value="6"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1321"/>
+						<expression tag="Math.Number" Value="420"/>
+					</expression>
+					<expression tag="Math.Number" Value="3.1452380952380952381"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="6"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="9"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="6"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="25"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="6"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="49"/>
+													<expression tag="String.Text" Value="6"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="989"/>
+						<expression tag="Math.Number" Value="315"/>
+					</expression>
+					<expression tag="Math.Number" Value="3.1396825396825396825"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="6"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="9"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="6"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="25"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="6"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="49"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="6"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="81"/>
+															<expression tag="String.Text" Value="6"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="21779"/>
+						<expression tag="Math.Number" Value="6930"/>
+					</expression>
+					<expression tag="Math.Number" Value="3.1427128427128427128"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="6"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="9"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="6"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="25"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="6"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="49"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="6"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="81"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="6"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="121"/>
+																	<expression tag="String.Text" Value="6"/>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="141481"/>
+						<expression tag="Math.Number" Value="45045"/>
+					</expression>
+					<expression tag="Math.Number" Value="3.1408813408813408813"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="6"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="9"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="6"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="25"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="6"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="49"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="6"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="81"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="6"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="121"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="6"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="169"/>
+																			<expression tag="String.Text" Value="6"/>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1132277"/>
+						<expression tag="Math.Number" Value="360360"/>
+					</expression>
+					<expression tag="Math.Number" Value="3.1420718170718170718"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="6"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="9"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="6"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="25"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="6"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="49"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="6"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="81"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="6"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="121"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="6"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="169"/>
+																			<expression tag="Math.Arithmetic.Addition">
+																				<expression tag="String.Text" Value="6"/>
+																				<expression tag="Math.Arithmetic.Division">
+																					<expression tag="String.Text" Value="225"/>
+																					<expression tag="String.Text" Value="6"/>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="801821"/>
+						<expression tag="Math.Number" Value="255255"/>
+					</expression>
+					<expression tag="Math.Number" Value="3.1412548236077647842"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="6"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="9"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="6"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="25"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="6"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="49"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="6"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="81"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="6"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="121"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="6"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="169"/>
+																			<expression tag="Math.Arithmetic.Addition">
+																				<expression tag="String.Text" Value="6"/>
+																				<expression tag="Math.Arithmetic.Division">
+																					<expression tag="String.Text" Value="225"/>
+																					<expression tag="Math.Arithmetic.Addition">
+																						<expression tag="String.Text" Value="6"/>
+																						<expression tag="Math.Arithmetic.Division">
+																							<expression tag="String.Text" Value="289"/>
+																							<expression tag="String.Text" Value="6"/>
+																						</expression>
+																					</expression>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="91424611"/>
+						<expression tag="Math.Number" Value="29099070"/>
+					</expression>
+					<expression tag="Math.Number" Value="3.1418396189294022111"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="String.Text" Value="3"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="String.Text" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="6"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="String.Text" Value="9"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="6"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="25"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="6"/>
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="String.Text" Value="49"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="String.Text" Value="6"/>
+														<expression tag="Math.Arithmetic.Division">
+															<expression tag="String.Text" Value="81"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="String.Text" Value="6"/>
+																<expression tag="Math.Arithmetic.Division">
+																	<expression tag="String.Text" Value="121"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="String.Text" Value="6"/>
+																		<expression tag="Math.Arithmetic.Division">
+																			<expression tag="String.Text" Value="169"/>
+																			<expression tag="Math.Arithmetic.Addition">
+																				<expression tag="String.Text" Value="6"/>
+																				<expression tag="Math.Arithmetic.Division">
+																					<expression tag="String.Text" Value="225"/>
+																					<expression tag="Math.Arithmetic.Addition">
+																						<expression tag="String.Text" Value="6"/>
+																						<expression tag="Math.Arithmetic.Division">
+																							<expression tag="String.Text" Value="289"/>
+																							<expression tag="Math.Arithmetic.Addition">
+																								<expression tag="String.Text" Value="6"/>
+																								<expression tag="Math.Arithmetic.Division">
+																									<expression tag="String.Text" Value="361"/>
+																									<expression tag="String.Text" Value="6"/>
+																								</expression>
+																							</expression>
+																						</expression>
+																					</expression>
+																				</expression>
+																			</expression>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="45706007"/>
+						<expression tag="Math.Number" Value="14549535"/>
+					</expression>
+					<expression tag="Math.Number" Value="3.1414067184965017782"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621571760000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

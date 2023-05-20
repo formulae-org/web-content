@@ -1,1 +1,1114 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Abelian sandpile model"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Abelian_sandpile_model" Description="Abelian sandpile model,"/><expression tag="String.Text" Value="also known as the Bak–Tang–Wiesenfeld model, was the first discovered example of a dynamical system displaying self-organized criticality. It was introduced by Per Bak, Chao Tang and Kurt Wiesenfeld in a 1987 paper."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The model takes place on a 2D grid of arbitrary size on which &quot;piles of sand&quot; can be placed. Any &quot;pile&quot; that has 4 or more sand particles on it collapses, resulting in"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="four particles being subtracted from the pile"/></expression><expression tag="String.Text" Value="and"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="distributed among its neighbors."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, several implementations of the Abelian sandpile model are presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Abelian_sandpile_model" Description="Abelian sandpile model"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="Important."/></expression><expression tag="String.Text" Value="This exercise will not run on a remote server, even for small parameters, because it requires a great amount of calculations. If you want to run it (for example, to test different parameters) do it on a local server."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Version 1. Recursive"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="SandPile v1"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.CreateList"><expression tag="List.CreateList"><expression tag="Math.Number" Value="0"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Symbolic.Symbol" Name="size"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Drop"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Programming.IfElse"><expression tag="Relation.GreaterOrEquals"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="drop"/><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="4"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="4"/><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Drop"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Drop"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression><expression tag="Relation.Less"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="size"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Drop"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Drop"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression><expression tag="Relation.Less"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="size"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Drop"/><expression tag="List.List"><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Graphics.CreateRasterGraphics"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Symbolic.Symbol" Name="size"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="palette"/><expression tag="List.List"><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="1" Green="0.5019607843137255" Blue="0.5019607843137255" Alpha="1"/><expression tag="Color.Color" Red="0.5019607843137255" Green="1" Blue="0.5019607843137255" Alpha="1"/><expression tag="Color.Color" Red="0.5019607843137255" Green="0.5019607843137255" Blue="1" Alpha="1"/></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.ForFromTo"><expression tag="Graphics.SetPixel"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="palette"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Symbolic.Symbol" Name="g"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="SandPile v1"/><expression tag="List.List"><expression tag="Math.Number" Value="100"/><expression tag="Math.Number" Value="10000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Graphics.RasterGraphics" Value="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"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Version 2."/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="SandPile v2"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.CreateList"><expression tag="List.CreateList"><expression tag="Math.Number" Value="0"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Symbolic.Symbol" Name="size"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="count"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression><expression tag="Programming.Until"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="count"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="c"/></expression></expression></expression><expression tag="Programming.If"><expression tag="Relation.GreaterOrEquals"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="drop"/><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="4"/><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression><expression tag="Relation.Less"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="size"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression><expression tag="Relation.Less"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="size"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="count"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="count"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="size"/></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="count"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Graphics.CreateRasterGraphics"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Symbolic.Symbol" Name="size"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="palette"/><expression tag="List.List"><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="1" Green="0.5019607843137255" Blue="0.5019607843137255" Alpha="1"/><expression tag="Color.Color" Red="0.5019607843137255" Green="1" Blue="0.5019607843137255" Alpha="1"/><expression tag="Color.Color" Red="0.5019607843137255" Green="0.5019607843137255" Blue="1" Alpha="1"/></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.ForFromTo"><expression tag="Graphics.SetPixel"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="palette"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Symbolic.Symbol" Name="g"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="SandPile v2"/><expression tag="List.List"><expression tag="Math.Number" Value="100"/><expression tag="Math.Number" Value="10000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Graphics.RasterGraphics" Value="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"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Version 3."/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="SandPile v3"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.CreateList"><expression tag="List.CreateList"><expression tag="Math.Number" Value="0"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Symbolic.Symbol" Name="size"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="drop"/><expression tag="Symbolic.Symbol" Name="l1"/><expression tag="Symbolic.Symbol" Name="l2"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="l2"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="stats"/><expression tag="List.List"/></expression></expression><expression tag="Programming.Until"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="l1"/><expression tag="Symbolic.Symbol" Name="l2"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="l2"/><expression tag="List.List"/></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="stats"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="l1"/></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="c"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="l1"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="c"/></expression></expression></expression><expression tag="Programming.If"><expression tag="Relation.GreaterOrEquals"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="drop"/><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="4"/><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression></expression></expression><expression tag="Programming.If"><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="l2"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Relation.GreaterOrEquals"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression><expression tag="Programming.If"><expression tag="Relation.Less"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="l2"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Relation.GreaterOrEquals"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression><expression tag="Programming.If"><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="l2"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Relation.GreaterOrEquals"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression><expression tag="Programming.If"><expression tag="Relation.Less"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="drop"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="l2"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Relation.GreaterOrEquals"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="l1"/></expression></expression></expression><expression tag="Relation.Equals"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="l2"/></expression><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Graphics.CreateRasterGraphics"><expression tag="Symbolic.Symbol" Name="size"/><expression tag="Symbolic.Symbol" Name="size"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="palette"/><expression tag="List.List"><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="1" Green="0.5019607843137255" Blue="0.5019607843137255" Alpha="1"/><expression tag="Color.Color" Red="0.5019607843137255" Green="1" Blue="0.5019607843137255" Alpha="1"/><expression tag="Color.Color" Red="0.5019607843137255" Green="0.5019607843137255" Blue="1" Alpha="1"/></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.ForFromTo"><expression tag="Graphics.SetPixel"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="palette"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="m"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="size"/></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Chart.XYChart"><expression tag="Symbolic.Symbol" Name="stats"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="SandPile v3"/><expression tag="List.List"><expression tag="Math.Number" Value="100"/><expression tag="Math.Number" Value="10000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Graphics.RasterGraphics" Value="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"/><expression tag="Graphics.RasterGraphics" Value="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"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="SandPile v3"/><expression tag="List.List"><expression tag="Math.Number" Value="300"/><expression tag="Math.Number" Value="100000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Graphics_examples" Description="graphics"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621559711727"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.relation,org.formulae.graphics.raster,org.formulae.color,org.formulae.chart,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Abelian sandpile model"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Abelian_sandpile_model" Description="Abelian sandpile model,"/>
+				<expression tag="String.Text" Value="also known as the Bak–Tang–Wiesenfeld model, was the first discovered example of a dynamical system displaying self-organized criticality. It was introduced by Per Bak, Chao Tang and Kurt Wiesenfeld in a 1987 paper."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The model takes place on a 2D grid of arbitrary size on which &quot;piles of sand&quot; can be placed. Any &quot;pile&quot; that has 4 or more sand particles on it collapses, resulting in"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="four particles being subtracted from the pile"/>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="distributed among its neighbors."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, several implementations of the Abelian sandpile model are presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Abelian_sandpile_model" Description="Abelian sandpile model"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="String.Text" Value="Important."/>
+				</expression>
+				<expression tag="String.Text" Value="This exercise will not run on a remote server, even for small parameters, because it requires a great amount of calculations. If you want to run it (for example, to test different parameters) do it on a local server."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Version 1. Recursive"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="SandPile v1"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="size"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="m"/>
+						<expression tag="List.CreateList">
+							<expression tag="List.CreateList">
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Symbolic.Symbol" Name="size"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="Drop"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="r"/>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="block" Expanded="True">
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="m"/>
+											<expression tag="List.List">
+												<expression tag="Symbolic.Symbol" Name="r"/>
+												<expression tag="Symbolic.Symbol" Name="c"/>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Programming.IfElse">
+								<expression tag="Relation.GreaterOrEquals">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+								<expression tag="Programming.Block" Description="block" Expanded="True">
+									<expression tag="Symbolic.Local">
+										<expression tag="Symbolic.Assignment">
+											<expression tag="Symbolic.Symbol" Name="drop"/>
+											<expression tag="Math.Arithmetic.DivE">
+												<expression tag="Symbolic.Symbol" Name="x"/>
+												<expression tag="Math.Number" Value="4"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Arithmetic.Multiplication">
+													<expression tag="Math.Number" Value="4"/>
+													<expression tag="Symbolic.Symbol" Name="drop"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="m"/>
+											<expression tag="List.List">
+												<expression tag="Symbolic.Symbol" Name="r"/>
+												<expression tag="Symbolic.Symbol" Name="c"/>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="x"/>
+									</expression>
+									<expression tag="Programming.InvertedIf">
+										<expression tag="Symbolic.Function">
+											<expression tag="Symbolic.Symbol" Name="Drop"/>
+											<expression tag="List.List">
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="r"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+												<expression tag="Symbolic.Symbol" Name="c"/>
+												<expression tag="Symbolic.Symbol" Name="drop"/>
+											</expression>
+										</expression>
+										<expression tag="Relation.Greater">
+											<expression tag="Symbolic.Symbol" Name="r"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Programming.InvertedIf">
+										<expression tag="Symbolic.Function">
+											<expression tag="Symbolic.Symbol" Name="Drop"/>
+											<expression tag="List.List">
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="r"/>
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+												<expression tag="Symbolic.Symbol" Name="c"/>
+												<expression tag="Symbolic.Symbol" Name="drop"/>
+											</expression>
+										</expression>
+										<expression tag="Relation.Less">
+											<expression tag="Symbolic.Symbol" Name="r"/>
+											<expression tag="Symbolic.Symbol" Name="size"/>
+										</expression>
+									</expression>
+									<expression tag="Programming.InvertedIf">
+										<expression tag="Symbolic.Function">
+											<expression tag="Symbolic.Symbol" Name="Drop"/>
+											<expression tag="List.List">
+												<expression tag="Symbolic.Symbol" Name="r"/>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="c"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+												<expression tag="Symbolic.Symbol" Name="drop"/>
+											</expression>
+										</expression>
+										<expression tag="Relation.Greater">
+											<expression tag="Symbolic.Symbol" Name="c"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Programming.InvertedIf">
+										<expression tag="Symbolic.Function">
+											<expression tag="Symbolic.Symbol" Name="Drop"/>
+											<expression tag="List.List">
+												<expression tag="Symbolic.Symbol" Name="r"/>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="c"/>
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+												<expression tag="Symbolic.Symbol" Name="drop"/>
+											</expression>
+										</expression>
+										<expression tag="Relation.Less">
+											<expression tag="Symbolic.Symbol" Name="c"/>
+											<expression tag="Symbolic.Symbol" Name="size"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="m"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="r"/>
+											<expression tag="Symbolic.Symbol" Name="c"/>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Drop"/>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.DivE">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.DivE">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="g"/>
+						<expression tag="Graphics.CreateRasterGraphics">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="palette"/>
+						<expression tag="List.List">
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+							<expression tag="Color.Color" Red="1" Green="0.5019607843137255" Blue="0.5019607843137255" Alpha="1"/>
+							<expression tag="Color.Color" Red="0.5019607843137255" Green="1" Blue="0.5019607843137255" Alpha="1"/>
+							<expression tag="Color.Color" Red="0.5019607843137255" Green="0.5019607843137255" Blue="1" Alpha="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.ForFromTo">
+						<expression tag="Graphics.SetPixel">
+							<expression tag="Symbolic.Symbol" Name="g"/>
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="palette"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="m"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="y"/>
+											<expression tag="Symbolic.Symbol" Name="x"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="size"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="g"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="SandPile v1"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="100"/>
+				<expression tag="Math.Number" Value="10000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Graphics.RasterGraphics" Value="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"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Version 2."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="SandPile v2"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="size"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="m"/>
+						<expression tag="List.CreateList">
+							<expression tag="List.CreateList">
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Symbolic.Symbol" Name="size"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="m"/>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.DivE">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Math.Arithmetic.DivE">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="count"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="drop"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.Until">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="count"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="Programming.ForFromTo">
+							<expression tag="Programming.ForFromTo">
+								<expression tag="Programming.Block" Description="block" Expanded="True">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="m"/>
+											<expression tag="List.List">
+												<expression tag="Symbolic.Symbol" Name="r"/>
+												<expression tag="Symbolic.Symbol" Name="c"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Programming.If">
+										<expression tag="Relation.GreaterOrEquals">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Math.Number" Value="4"/>
+										</expression>
+										<expression tag="Programming.Block" Description="block" Expanded="True">
+											<expression tag="Symbolic.Assignment">
+												<expression tag="Symbolic.Symbol" Name="drop"/>
+												<expression tag="Math.Arithmetic.DivE">
+													<expression tag="Symbolic.Symbol" Name="x"/>
+													<expression tag="Math.Number" Value="4"/>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Assignment">
+												<expression tag="Expression.Child">
+													<expression tag="Symbolic.Symbol" Name="m"/>
+													<expression tag="List.List">
+														<expression tag="Symbolic.Symbol" Name="r"/>
+														<expression tag="Symbolic.Symbol" Name="c"/>
+													</expression>
+												</expression>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="x"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Arithmetic.Multiplication">
+															<expression tag="Math.Number" Value="4"/>
+															<expression tag="Symbolic.Symbol" Name="drop"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+											<expression tag="Programming.InvertedIf">
+												<expression tag="Symbolic.Assignment">
+													<expression tag="Expression.Child">
+														<expression tag="Symbolic.Symbol" Name="m"/>
+														<expression tag="List.List">
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="r"/>
+																<expression tag="Math.Arithmetic.Negative">
+																	<expression tag="Math.Number" Value="1"/>
+																</expression>
+															</expression>
+															<expression tag="Symbolic.Symbol" Name="c"/>
+														</expression>
+													</expression>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="Expression.Child">
+															<expression tag="Symbolic.Symbol" Name="m"/>
+															<expression tag="List.List">
+																<expression tag="Math.Arithmetic.Addition">
+																	<expression tag="Symbolic.Symbol" Name="r"/>
+																	<expression tag="Math.Arithmetic.Negative">
+																		<expression tag="Math.Number" Value="1"/>
+																	</expression>
+																</expression>
+																<expression tag="Symbolic.Symbol" Name="c"/>
+															</expression>
+														</expression>
+														<expression tag="Symbolic.Symbol" Name="drop"/>
+													</expression>
+												</expression>
+												<expression tag="Relation.Greater">
+													<expression tag="Symbolic.Symbol" Name="r"/>
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+											<expression tag="Programming.InvertedIf">
+												<expression tag="Symbolic.Assignment">
+													<expression tag="Expression.Child">
+														<expression tag="Symbolic.Symbol" Name="m"/>
+														<expression tag="List.List">
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="r"/>
+																<expression tag="Math.Number" Value="1"/>
+															</expression>
+															<expression tag="Symbolic.Symbol" Name="c"/>
+														</expression>
+													</expression>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="Expression.Child">
+															<expression tag="Symbolic.Symbol" Name="m"/>
+															<expression tag="List.List">
+																<expression tag="Math.Arithmetic.Addition">
+																	<expression tag="Symbolic.Symbol" Name="r"/>
+																	<expression tag="Math.Number" Value="1"/>
+																</expression>
+																<expression tag="Symbolic.Symbol" Name="c"/>
+															</expression>
+														</expression>
+														<expression tag="Symbolic.Symbol" Name="drop"/>
+													</expression>
+												</expression>
+												<expression tag="Relation.Less">
+													<expression tag="Symbolic.Symbol" Name="r"/>
+													<expression tag="Symbolic.Symbol" Name="size"/>
+												</expression>
+											</expression>
+											<expression tag="Programming.InvertedIf">
+												<expression tag="Symbolic.Assignment">
+													<expression tag="Expression.Child">
+														<expression tag="Symbolic.Symbol" Name="m"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.Symbol" Name="r"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="c"/>
+																<expression tag="Math.Arithmetic.Negative">
+																	<expression tag="Math.Number" Value="1"/>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="Expression.Child">
+															<expression tag="Symbolic.Symbol" Name="m"/>
+															<expression tag="List.List">
+																<expression tag="Symbolic.Symbol" Name="r"/>
+																<expression tag="Math.Arithmetic.Addition">
+																	<expression tag="Symbolic.Symbol" Name="c"/>
+																	<expression tag="Math.Arithmetic.Negative">
+																		<expression tag="Math.Number" Value="1"/>
+																	</expression>
+																</expression>
+															</expression>
+														</expression>
+														<expression tag="Symbolic.Symbol" Name="drop"/>
+													</expression>
+												</expression>
+												<expression tag="Relation.Greater">
+													<expression tag="Symbolic.Symbol" Name="c"/>
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+											<expression tag="Programming.InvertedIf">
+												<expression tag="Symbolic.Assignment">
+													<expression tag="Expression.Child">
+														<expression tag="Symbolic.Symbol" Name="m"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.Symbol" Name="r"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="c"/>
+																<expression tag="Math.Number" Value="1"/>
+															</expression>
+														</expression>
+													</expression>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="Expression.Child">
+															<expression tag="Symbolic.Symbol" Name="m"/>
+															<expression tag="List.List">
+																<expression tag="Symbolic.Symbol" Name="r"/>
+																<expression tag="Math.Arithmetic.Addition">
+																	<expression tag="Symbolic.Symbol" Name="c"/>
+																	<expression tag="Math.Number" Value="1"/>
+																</expression>
+															</expression>
+														</expression>
+														<expression tag="Symbolic.Symbol" Name="drop"/>
+													</expression>
+												</expression>
+												<expression tag="Relation.Less">
+													<expression tag="Symbolic.Symbol" Name="c"/>
+													<expression tag="Symbolic.Symbol" Name="size"/>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Assignment">
+												<expression tag="Symbolic.Symbol" Name="count"/>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="count"/>
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Symbolic.Symbol" Name="size"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="r"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+					<expression tag="Relation.Equals">
+						<expression tag="Symbolic.Symbol" Name="count"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="g"/>
+						<expression tag="Graphics.CreateRasterGraphics">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="palette"/>
+						<expression tag="List.List">
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+							<expression tag="Color.Color" Red="1" Green="0.5019607843137255" Blue="0.5019607843137255" Alpha="1"/>
+							<expression tag="Color.Color" Red="0.5019607843137255" Green="1" Blue="0.5019607843137255" Alpha="1"/>
+							<expression tag="Color.Color" Red="0.5019607843137255" Green="0.5019607843137255" Blue="1" Alpha="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.ForFromTo">
+						<expression tag="Graphics.SetPixel">
+							<expression tag="Symbolic.Symbol" Name="g"/>
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="palette"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="m"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="y"/>
+											<expression tag="Symbolic.Symbol" Name="x"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="size"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="g"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="SandPile v2"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="100"/>
+				<expression tag="Math.Number" Value="10000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Graphics.RasterGraphics" Value="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"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Version 3."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="SandPile v3"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="size"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="m"/>
+						<expression tag="List.CreateList">
+							<expression tag="List.CreateList">
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Symbolic.Symbol" Name="size"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="m"/>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.DivE">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Math.Arithmetic.DivE">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="r"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="drop"/>
+						<expression tag="Symbolic.Symbol" Name="l1"/>
+						<expression tag="Symbolic.Symbol" Name="l2"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="l2"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.DivE">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Math.Arithmetic.DivE">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="stats"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.Until">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="l1"/>
+							<expression tag="Symbolic.Symbol" Name="l2"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="l2"/>
+							<expression tag="List.List"/>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="stats"/>
+							<expression tag="Expression.Cardinality">
+								<expression tag="Symbolic.Symbol" Name="l1"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.ForFromTo">
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="r"/>
+										<expression tag="Symbolic.Symbol" Name="c"/>
+									</expression>
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="l1"/>
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="m"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="r"/>
+											<expression tag="Symbolic.Symbol" Name="c"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Programming.If">
+									<expression tag="Relation.GreaterOrEquals">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Math.Number" Value="4"/>
+									</expression>
+									<expression tag="Programming.Block" Description="block" Expanded="True">
+										<expression tag="Symbolic.Assignment">
+											<expression tag="Symbolic.Symbol" Name="drop"/>
+											<expression tag="Math.Arithmetic.DivE">
+												<expression tag="Symbolic.Symbol" Name="x"/>
+												<expression tag="Math.Number" Value="4"/>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Assignment">
+											<expression tag="Expression.Child">
+												<expression tag="Symbolic.Symbol" Name="m"/>
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="r"/>
+													<expression tag="Symbolic.Symbol" Name="c"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="x"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Arithmetic.Multiplication">
+														<expression tag="Math.Number" Value="4"/>
+														<expression tag="Symbolic.Symbol" Name="drop"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Programming.If">
+											<expression tag="Relation.Greater">
+												<expression tag="Symbolic.Symbol" Name="r"/>
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+											<expression tag="Programming.Block" Description="block" Expanded="True">
+												<expression tag="Symbolic.Assignment">
+													<expression tag="Expression.Child">
+														<expression tag="Symbolic.Symbol" Name="m"/>
+														<expression tag="List.List">
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="r"/>
+																<expression tag="Math.Arithmetic.Negative">
+																	<expression tag="Math.Number" Value="1"/>
+																</expression>
+															</expression>
+															<expression tag="Symbolic.Symbol" Name="c"/>
+														</expression>
+													</expression>
+													<expression tag="Symbolic.Assignment">
+														<expression tag="Symbolic.Symbol" Name="x"/>
+														<expression tag="Math.Arithmetic.Addition">
+															<expression tag="Expression.Child">
+																<expression tag="Symbolic.Symbol" Name="m"/>
+																<expression tag="List.List">
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="Symbolic.Symbol" Name="r"/>
+																		<expression tag="Math.Arithmetic.Negative">
+																			<expression tag="Math.Number" Value="1"/>
+																		</expression>
+																	</expression>
+																	<expression tag="Symbolic.Symbol" Name="c"/>
+																</expression>
+															</expression>
+															<expression tag="Symbolic.Symbol" Name="drop"/>
+														</expression>
+													</expression>
+												</expression>
+												<expression tag="Programming.InvertedIf">
+													<expression tag="Expression.Append">
+														<expression tag="Symbolic.Symbol" Name="l2"/>
+														<expression tag="List.List">
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="r"/>
+																<expression tag="Math.Arithmetic.Negative">
+																	<expression tag="Math.Number" Value="1"/>
+																</expression>
+															</expression>
+															<expression tag="Symbolic.Symbol" Name="c"/>
+														</expression>
+													</expression>
+													<expression tag="Relation.GreaterOrEquals">
+														<expression tag="Symbolic.Symbol" Name="x"/>
+														<expression tag="Math.Number" Value="4"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Programming.If">
+											<expression tag="Relation.Less">
+												<expression tag="Symbolic.Symbol" Name="r"/>
+												<expression tag="Symbolic.Symbol" Name="size"/>
+											</expression>
+											<expression tag="Programming.Block" Description="block" Expanded="True">
+												<expression tag="Symbolic.Assignment">
+													<expression tag="Expression.Child">
+														<expression tag="Symbolic.Symbol" Name="m"/>
+														<expression tag="List.List">
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="r"/>
+																<expression tag="Math.Number" Value="1"/>
+															</expression>
+															<expression tag="Symbolic.Symbol" Name="c"/>
+														</expression>
+													</expression>
+													<expression tag="Symbolic.Assignment">
+														<expression tag="Symbolic.Symbol" Name="x"/>
+														<expression tag="Math.Arithmetic.Addition">
+															<expression tag="Expression.Child">
+																<expression tag="Symbolic.Symbol" Name="m"/>
+																<expression tag="List.List">
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="Symbolic.Symbol" Name="r"/>
+																		<expression tag="Math.Number" Value="1"/>
+																	</expression>
+																	<expression tag="Symbolic.Symbol" Name="c"/>
+																</expression>
+															</expression>
+															<expression tag="Symbolic.Symbol" Name="drop"/>
+														</expression>
+													</expression>
+												</expression>
+												<expression tag="Programming.InvertedIf">
+													<expression tag="Expression.Append">
+														<expression tag="Symbolic.Symbol" Name="l2"/>
+														<expression tag="List.List">
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="r"/>
+																<expression tag="Math.Number" Value="1"/>
+															</expression>
+															<expression tag="Symbolic.Symbol" Name="c"/>
+														</expression>
+													</expression>
+													<expression tag="Relation.GreaterOrEquals">
+														<expression tag="Symbolic.Symbol" Name="x"/>
+														<expression tag="Math.Number" Value="4"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Programming.If">
+											<expression tag="Relation.Greater">
+												<expression tag="Symbolic.Symbol" Name="c"/>
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+											<expression tag="Programming.Block" Description="block" Expanded="True">
+												<expression tag="Symbolic.Assignment">
+													<expression tag="Expression.Child">
+														<expression tag="Symbolic.Symbol" Name="m"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.Symbol" Name="r"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="c"/>
+																<expression tag="Math.Arithmetic.Negative">
+																	<expression tag="Math.Number" Value="1"/>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+													<expression tag="Symbolic.Assignment">
+														<expression tag="Symbolic.Symbol" Name="x"/>
+														<expression tag="Math.Arithmetic.Addition">
+															<expression tag="Expression.Child">
+																<expression tag="Symbolic.Symbol" Name="m"/>
+																<expression tag="List.List">
+																	<expression tag="Symbolic.Symbol" Name="r"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="Symbolic.Symbol" Name="c"/>
+																		<expression tag="Math.Arithmetic.Negative">
+																			<expression tag="Math.Number" Value="1"/>
+																		</expression>
+																	</expression>
+																</expression>
+															</expression>
+															<expression tag="Symbolic.Symbol" Name="drop"/>
+														</expression>
+													</expression>
+												</expression>
+												<expression tag="Programming.InvertedIf">
+													<expression tag="Expression.Append">
+														<expression tag="Symbolic.Symbol" Name="l2"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.Symbol" Name="r"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="c"/>
+																<expression tag="Math.Arithmetic.Negative">
+																	<expression tag="Math.Number" Value="1"/>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+													<expression tag="Relation.GreaterOrEquals">
+														<expression tag="Symbolic.Symbol" Name="x"/>
+														<expression tag="Math.Number" Value="4"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Programming.If">
+											<expression tag="Relation.Less">
+												<expression tag="Symbolic.Symbol" Name="c"/>
+												<expression tag="Symbolic.Symbol" Name="size"/>
+											</expression>
+											<expression tag="Programming.Block" Description="block" Expanded="True">
+												<expression tag="Symbolic.Assignment">
+													<expression tag="Expression.Child">
+														<expression tag="Symbolic.Symbol" Name="m"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.Symbol" Name="r"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="c"/>
+																<expression tag="Math.Number" Value="1"/>
+															</expression>
+														</expression>
+													</expression>
+													<expression tag="Symbolic.Assignment">
+														<expression tag="Symbolic.Symbol" Name="x"/>
+														<expression tag="Math.Arithmetic.Addition">
+															<expression tag="Expression.Child">
+																<expression tag="Symbolic.Symbol" Name="m"/>
+																<expression tag="List.List">
+																	<expression tag="Symbolic.Symbol" Name="r"/>
+																	<expression tag="Math.Arithmetic.Addition">
+																		<expression tag="Symbolic.Symbol" Name="c"/>
+																		<expression tag="Math.Number" Value="1"/>
+																	</expression>
+																</expression>
+															</expression>
+															<expression tag="Symbolic.Symbol" Name="drop"/>
+														</expression>
+													</expression>
+												</expression>
+												<expression tag="Programming.InvertedIf">
+													<expression tag="Expression.Append">
+														<expression tag="Symbolic.Symbol" Name="l2"/>
+														<expression tag="List.List">
+															<expression tag="Symbolic.Symbol" Name="r"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="c"/>
+																<expression tag="Math.Number" Value="1"/>
+															</expression>
+														</expression>
+													</expression>
+													<expression tag="Relation.GreaterOrEquals">
+														<expression tag="Symbolic.Symbol" Name="x"/>
+														<expression tag="Math.Number" Value="4"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Expression.Cardinality">
+								<expression tag="Symbolic.Symbol" Name="l1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Relation.Equals">
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="l2"/>
+						</expression>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.Block" Description="block" Expanded="True">
+					<expression tag="Symbolic.Local">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="g"/>
+							<expression tag="Graphics.CreateRasterGraphics">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Symbolic.Symbol" Name="size"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Local">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="palette"/>
+							<expression tag="List.List">
+								<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+								<expression tag="Color.Color" Red="1" Green="0.5019607843137255" Blue="0.5019607843137255" Alpha="1"/>
+								<expression tag="Color.Color" Red="0.5019607843137255" Green="1" Blue="0.5019607843137255" Alpha="1"/>
+								<expression tag="Color.Color" Red="0.5019607843137255" Green="0.5019607843137255" Blue="1" Alpha="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Programming.ForFromTo">
+						<expression tag="Programming.ForFromTo">
+							<expression tag="Graphics.SetPixel">
+								<expression tag="Symbolic.Symbol" Name="g"/>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="y"/>
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="palette"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="m"/>
+											<expression tag="List.List">
+												<expression tag="Symbolic.Symbol" Name="y"/>
+												<expression tag="Symbolic.Symbol" Name="x"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="g"/>
+						<expression tag="Chart.XYChart">
+							<expression tag="Symbolic.Symbol" Name="stats"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="SandPile v3"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="100"/>
+				<expression tag="Math.Number" Value="10000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Graphics.RasterGraphics" Value="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"/>
+			<expression tag="Graphics.RasterGraphics" Value="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"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="SandPile v3"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="300"/>
+				<expression tag="Math.Number" Value="100000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Graphics_examples" Description="graphics"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621559711727"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

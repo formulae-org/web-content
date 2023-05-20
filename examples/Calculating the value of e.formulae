@@ -1,1 +1,321 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Calculating the value of e"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Calculating_the_value_of_e" Description="Calculating the value of e"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Calculate the value of   e. (e is also known as Euler's number and Napier's constant.)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="See details:"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/E_(mathematical_constant)" Description="Calculating the value of e"/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Option 1. Direct"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In Fōrmulæ, the Euler's number can be directly calculated within an arbitrary given precision."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Numeric"><expression tag="Math.Constant.Euler"/><expression tag="Math.Number" Value="100"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Option 2. Using series"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It can also be calculated as a finite sum of the infinite series e ="/><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Factorial"><expression tag="String.Text" Value="n"/></expression></expression><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Infinity"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="String.Text" Value="..."/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following expression calculates the series taking its first 50 terms. It also shows the numeric result, with 50 digits of precision:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="e"/><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Factorial"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="50"/></expression></expression></expression><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Analytic"/><expression tag="Symbolic.Symbol" Name="e"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Numeric"/><expression tag="Math.Numeric"><expression tag="Symbolic.Symbol" Name="e"/><expression tag="Math.Number" Value="50"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Analytic"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2666905705783137373306341322880702364612402788688346977445977371"/><expression tag="Math.Number" Value="981099780700431549793955102131121575625085211901952000000000000"/></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Numeric"/><expression tag="Math.Number" Value="2.7182818284590452353602874713526624977572470937"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Option 3. Using a program"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function takes as many terms as necessary to provide a result which is exact wothin a given value."/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ECalculation"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="ε"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="fact"/><expression tag="Symbolic.Symbol" Name="e"/><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="e0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Programming.While"><expression tag="Relation.GreaterOrEquals"><expression tag="Math.Arithmetic.AbsoluteValue"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="e"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="e0"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="ε"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="e0"/><expression tag="Symbolic.Symbol" Name="e"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="fact"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="fact"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="e"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="e"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="fact"/></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="e"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Let us calculate the value e "/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="e"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ECalculation"/><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="100"/></expression></expression></expression></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Analytic"/><expression tag="Symbolic.Symbol" Name="e"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Numeric"/><expression tag="Math.Numeric"><expression tag="Symbolic.Symbol" Name="e"/><expression tag="Math.Number" Value="100"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Analytic"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="32561133701373476427912330475884581607687531065877567210421813247164172713574202714721554378508046501"/><expression tag="Math.Number" Value="11978571669969891796072783721689098736458938142546425857555362864628009582789845319680000000000000000"/></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Numeric"/><expression tag="Math.Number" Value="2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620667984519"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Calculating the value of e"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Calculating_the_value_of_e" Description="Calculating the value of e"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Calculate the value of   e. (e is also known as Euler's number and Napier's constant.)"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="See details:"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/E_(mathematical_constant)" Description="Calculating the value of e"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Option 1. Direct"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="In Fōrmulæ, the Euler's number can be directly calculated within an arbitrary given precision."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Constant.Euler"/>
+			<expression tag="Math.Number" Value="100"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Option 2. Using series"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It can also be calculated as a finite sum of the infinite series e ="/>
+				<expression tag="Math.Arithmetic.Summation">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Arithmetic.Factorial">
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="n"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Infinity"/>
+				</expression>
+				<expression tag="String.Text" Value="="/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="..."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following expression calculates the series taking its first 50 terms. It also shows the numeric result, with 50 digits of precision:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="e"/>
+					<expression tag="Math.Arithmetic.Summation">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Factorial">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="50"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Analytic"/>
+						<expression tag="Symbolic.Symbol" Name="e"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Numeric"/>
+						<expression tag="Math.Numeric">
+							<expression tag="Symbolic.Symbol" Name="e"/>
+							<expression tag="Math.Number" Value="50"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Analytic"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="2666905705783137373306341322880702364612402788688346977445977371"/>
+						<expression tag="Math.Number" Value="981099780700431549793955102131121575625085211901952000000000000"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Numeric"/>
+					<expression tag="Math.Number" Value="2.7182818284590452353602874713526624977572470937"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Option 3. Using a program"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following function takes as many terms as necessary to provide a result which is exact wothin a given value."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ECalculation"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="ε"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="fact"/>
+							<expression tag="Symbolic.Symbol" Name="e"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Symbolic.Symbol" Name="e0"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.While">
+					<expression tag="Relation.GreaterOrEquals">
+						<expression tag="Math.Arithmetic.AbsoluteValue">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="e"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Symbolic.Symbol" Name="e0"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="ε"/>
+					</expression>
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="e0"/>
+							<expression tag="Symbolic.Symbol" Name="e"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="fact"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Symbolic.Symbol" Name="fact"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="e"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="e"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Symbolic.Symbol" Name="fact"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="e"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Let us calculate the value e "/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="e"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="ECalculation"/>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Number" Value="10"/>
+									<expression tag="Math.Number" Value="100"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Analytic"/>
+					<expression tag="Symbolic.Symbol" Name="e"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Numeric"/>
+					<expression tag="Math.Numeric">
+						<expression tag="Symbolic.Symbol" Name="e"/>
+						<expression tag="Math.Number" Value="100"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="String.Text" Value="Analytic"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="32561133701373476427912330475884581607687531065877567210421813247164172713574202714721554378508046501"/>
+					<expression tag="Math.Number" Value="11978571669969891796072783721689098736458938142546425857555362864628009582789845319680000000000000000"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.Text" Value="Numeric"/>
+				<expression tag="Math.Number" Value="2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620667980000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

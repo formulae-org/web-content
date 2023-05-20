@@ -1,1 +1,1393 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Faulhaber's formula"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Faulhaber%27s_formula" Description="Faulhaber's formula,"/><expression tag="String.Text" Value="named after"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Johann_Faulhaber" Description="Johann Faulhaber,"/><expression tag="String.Text" Value="expresses the sum of the p-th powers of the first n positive integers as a (p + 1)th-degree polynomial function of n, the coefficients involving"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Bernoulli_number" Description="Bernoulli numbers."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If we take the coefficients of such those polynomials that represent sums of integer powers, which are extracted from Faulhaber's formula, we get the so named"/><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Faulhaber's triangle."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The first 5 rows of Faulhaber's triangle, are:"/></expression><expression tag="Typesetting.Centering"><expression tag="Math.Number" Value="1"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/></expression></expression></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="30"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="5"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Using the third row of the triangle, we have:"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="String.Text" Value="k"/><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value="k"/><expression tag="Math.Number" Value="1"/><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression><expression tag="String.Text" Value="n"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, programs to calculate values of the Faulhaber's formula, their polinomials and Faulhaber's traingle are presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Faulhaber%27s_formula" Description="Faulhaber's formula"/><expression tag="String.Text" Value="and"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Faulhaber%27s_triangle" Description="Faulhaber's triangle"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program to calculate Faulhaber's coefficients"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function creates the Faulhaber's coefficients up to a given number of rows, according to the"/><expression tag="Internet.UniformResourceLocator" Value="http://www.ww.ingeniousmathstat.org/sites/default/files/Torabi-Dashti-CMJ-2011.pdf" Description="paper"/><expression tag="String.Text" Value="of Mohammad Torabi Dashti:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Faulhaber’s coefficients"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="rows"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="triangle"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Symbol" Name="row"/></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="row"/><expression tag="List.List"/></expression><expression tag="Programming.ForFromTo"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="row"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="triangle"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="r"/></expression><expression tag="Expression.Prepend"><expression tag="Symbolic.Symbol" Name="row"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Summation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="row"/></expression></expression></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="triangle"/><expression tag="Symbolic.Symbol" Name="row"/></expression></expression><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="rows"/></expression><expression tag="Symbolic.Symbol" Name="triangle"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 1 (from Rosetta code). Show the first 10 rows of Faulhaber's triangle"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="To show the first 11 rows (the first is the 0 row) of Faulhaber's triangle:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Faulhaber’s coefficients"/><expression tag="List.List"><expression tag="Math.Number" Value="11"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="30"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="12"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="42"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="24"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="8"/></expression></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="30"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="9"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="15"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="20"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="66"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="11"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In order to show the previous result as a triangle:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="row"/></expression><expression tag="Symbolic.Symbol" Name="row"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Faulhaber’s coefficients"/><expression tag="List.List"><expression tag="Math.Number" Value="11"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="30"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="5"/></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="12"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="42"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="7"/></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="24"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="8"/></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="30"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="9"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="15"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="20"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="66"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="11"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 2 (from Rosetta code). Generate the first 10 closed-form expressions, starting with p = 0"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function creates the sum of the p-th powers of the first n positive integers as a (p + 1)th-degree polynomial function of n:"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Notes. The -1 index means the last element (-2 is the penultimate element, and so on). So it retrieves the last row of the triangle. |x| is the cardinality (number of elements) of x."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="SumPowers"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="power"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Expression.Child"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Faulhaber’s coefficients"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="power"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="c"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="To generate the first 10 closed-form expressions, starting with p = 0:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="p"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="SumPowers"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="p"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="p"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="30"/></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="5"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="6"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="42"/></expression><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="6"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="7"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="24"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="4"/></expression></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="6"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="8"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="8"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="30"/></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="9"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="15"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="5"/></expression></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="8"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="20"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="10"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="6"/></expression></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="8"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 3 (from Rosetta code). Extra credit"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Using the 18th row of Faulhaber's triangle, compute the sum:"/><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="String.Text" Value="k"/><expression tag="Math.Number" Value="17"/></expression><expression tag="String.Text" Value="k"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1000"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="SumPowers"/><expression tag="List.List"><expression tag="Math.Number" Value="1000"/><expression tag="Math.Number" Value="17"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="56056972216555580111030077961944183400198333273050000"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Comprobation"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="17"/></expression><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1000"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="56056972216555580111030077961944183400198333273050000"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621643137681"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.visualization,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Faulhaber's formula"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Faulhaber%27s_formula" Description="Faulhaber's formula,"/>
+				<expression tag="String.Text" Value="named after"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Johann_Faulhaber" Description="Johann Faulhaber,"/>
+				<expression tag="String.Text" Value="expresses the sum of the p-th powers of the first n positive integers as a (p + 1)th-degree polynomial function of n, the coefficients involving"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Bernoulli_number" Description="Bernoulli numbers."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If we take the coefficients of such those polynomials that represent sums of integer powers, which are extracted from Faulhaber's formula, we get the so named"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Faulhaber's triangle."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The first 5 rows of Faulhaber's triangle, are:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="30"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Using the third row of the triangle, we have:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Math.Arithmetic.Summation">
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="String.Text" Value="k"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="String.Text" Value="k"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="String.Text" Value="n"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="6"/>
+							</expression>
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="String.Text" Value="n"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="String.Text" Value="n"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, programs to calculate values of the Faulhaber's formula, their polinomials and Faulhaber's traingle are presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Faulhaber%27s_formula" Description="Faulhaber's formula"/>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Faulhaber%27s_triangle" Description="Faulhaber's triangle"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program to calculate Faulhaber's coefficients"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function creates the Faulhaber's coefficients up to a given number of rows, according to the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="http://www.ww.ingeniousmathstat.org/sites/default/files/Torabi-Dashti-CMJ-2011.pdf" Description="paper"/>
+				<expression tag="String.Text" Value="of Mohammad Torabi Dashti:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Faulhaber’s coefficients"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="rows"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="triangle"/>
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Symbol" Name="row"/>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="row"/>
+							<expression tag="List.List"/>
+						</expression>
+						<expression tag="Programming.ForFromTo">
+							<expression tag="Expression.Append">
+								<expression tag="Symbolic.Symbol" Name="row"/>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="triangle"/>
+										<expression tag="List.List">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="r"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="c"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="r"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="c"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="c"/>
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Symbolic.Symbol" Name="r"/>
+						</expression>
+						<expression tag="Expression.Prepend">
+							<expression tag="Symbolic.Symbol" Name="row"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Arithmetic.Summation">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="row"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="triangle"/>
+							<expression tag="Symbolic.Symbol" Name="row"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="r"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Symbolic.Symbol" Name="rows"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="triangle"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 1 (from Rosetta code). Show the first 10 rows of Faulhaber's triangle"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="To show the first 11 rows (the first is the 0 row) of Faulhaber's triangle:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Faulhaber’s coefficients"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="11"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="30"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="12"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="12"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="42"/>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="12"/>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="7"/>
+						<expression tag="Math.Number" Value="24"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="12"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="30"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="9"/>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="7"/>
+						<expression tag="Math.Number" Value="15"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="9"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="20"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="7"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="66"/>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="11"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="In order to show the previous result as a triangle:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="row"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="row"/>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Faulhaber’s coefficients"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="11"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="30"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="12"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="12"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="42"/>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="6"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="12"/>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="Math.Number" Value="24"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="7"/>
+						<expression tag="Math.Number" Value="12"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="30"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="9"/>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="Math.Number" Value="15"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="9"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="20"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="Math.Number" Value="10"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="66"/>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="11"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 2 (from Rosetta code). Generate the first 10 closed-form expressions, starting with p = 0"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function creates the sum of the p-th powers of the first n positive integers as a (p + 1)th-degree polynomial function of n:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Notes. The -1 index means the last element (-2 is the penultimate element, and so on). So it retrieves the last row of the triangle. |x| is the cardinality (number of elements) of x."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="SumPowers"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="power"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="c"/>
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="Faulhaber’s coefficients"/>
+								<expression tag="List.List">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="power"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Summation">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="c"/>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Expression.Cardinality">
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="To generate the first 10 closed-form expressions, starting with p = 0:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="p"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="SumPowers"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Symbolic.Symbol" Name="p"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="p"/>
+			<expression tag="Math.Number" Value="0"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="6"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="30"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="12"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="Math.Number" Value="12"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="6"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="6"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="42"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="6"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="6"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="12"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="7"/>
+								<expression tag="Math.Number" Value="24"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="4"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="Math.Number" Value="12"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="6"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="8"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="8"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="30"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="9"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="7"/>
+								<expression tag="Math.Number" Value="15"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="8"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="9"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="9"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="3"/>
+								<expression tag="Math.Number" Value="20"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="7"/>
+								<expression tag="Math.Number" Value="10"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="6"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="8"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="9"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="10"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="10"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 3 (from Rosetta code). Extra credit"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Using the 18th row of Faulhaber's triangle, compute the sum:"/>
+				<expression tag="Math.Arithmetic.Summation">
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="String.Text" Value="k"/>
+						<expression tag="Math.Number" Value="17"/>
+					</expression>
+					<expression tag="String.Text" Value="k"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="1000"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="SumPowers"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1000"/>
+				<expression tag="Math.Number" Value="17"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="56056972216555580111030077961944183400198333273050000"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Comprobation"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Summation">
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="k"/>
+				<expression tag="Math.Number" Value="17"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="k"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="1000"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="56056972216555580111030077961944183400198333273050000"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621643137681"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

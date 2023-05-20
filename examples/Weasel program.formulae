@@ -1,1 +1,809 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Weasel program"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Weasel_program" Description="weasel program"/><expression tag="String.Text" Value="or Dawkins' weasel is a"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Thought_experiment" Description="thought experiment"/><expression tag="String.Text" Value="and a variety of"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Computer_simulation" Description="computer simulations"/><expression tag="String.Text" Value="illustrating it. Their aim is to demonstrate that the process that drives"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Evolution" Description="evolutionary"/><expression tag="String.Text" Value="systems—random variation combined with non-random cumulative selection—is different from pure chance."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The thought experiment was formulated by"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Richard_Dawkins" Description="Richard Dawkins,"/><expression tag="String.Text" Value="and the first simulation written by him."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Algorithm:"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Starting with:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="target"/></expression><expression tag="String.Text" Value="string:"/><expression tag="String.String" Value="METHINKS IT IS LIKE A WEASEL"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="An array of random characters chosen from the set of upper-case letters together with the space, and of the same length as the target string. (Call it the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="parent"/></expression><expression tag="String.Text" Value=")."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="fitness"/></expression><expression tag="String.Text" Value="function that computes the ‘closeness’ of its argument to the target string."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="mutate"/></expression><expression tag="String.Text" Value="function that given a string and a mutation rate returns a copy of the string, with some characters probably mutated."/></expression><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="While the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="parent"/></expression><expression tag="String.Text" Value="is not yet the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="target"/></expression><expression tag="String.Text" Value=":"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Copy the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="parent"/></expression><expression tag="String.Text" Value="C times, each time allowing some random probability that another character might be substituted using"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="mutate"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Assess the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="fitness"/></expression><expression tag="String.Text" Value="of the parent and all the copies to the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="target"/></expression><expression tag="String.Text" Value="and make the most fit string the new"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="parent,"/></expression><expression tag="String.Text" Value="discarding the others."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Repeat until the parent converges, (hopefully), to the target."/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, an implementation of the weasel program is presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Evolutionary_algorithm" Description="Evolutionary algorithm"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Evolve"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="string"/><expression tag="Symbolic.Symbol" Name="c"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="target"/><expression tag="String.Split"><expression tag="Symbolic.Symbol" Name="string"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="len"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="target"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="RandomLetter"/><expression tag="List.List"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="random"/><expression tag="Math.Arithmetic.RandomInRange"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="26"/></expression></expression></expression><expression tag="Programming.Conditional"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="random"/><expression tag="Math.Number" Value="0"/></expression><expression tag="String.String" Value=" "/><expression tag="String.Encode"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="64"/><expression tag="Symbolic.Symbol" Name="random"/></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="parent"/><expression tag="List.CreateList"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="RandomLetter"/><expression tag="List.List"/></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="len"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Fitness"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="p"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="count"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="count"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="count"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.Different"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="target"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="p"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="len"/></expression><expression tag="Symbolic.Symbol" Name="count"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Mutate"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="p"/></expression></expression><expression tag="List.CreateList"><expression tag="Programming.Conditional"><expression tag="Relation.LessOrEquals"><expression tag="Math.Arithmetic.Random"/><expression tag="Math.Number" Value="0.05"/></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="RandomLetter"/><expression tag="List.List"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="p"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="len"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="testParent"/><expression tag="Symbolic.Symbol" Name="newParent"/><expression tag="Symbolic.Symbol" Name="testFitness"/><expression tag="Symbolic.Symbol" Name="newFitness"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="results"/><expression tag="List.List"/></expression></expression></expression><expression tag="Programming.Until"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="newFitness"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="len"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.ForTimes"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="testParent"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Mutate"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="parent"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="testFitness"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Fitness"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="testParent"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="newFitness"/><expression tag="Symbolic.Symbol" Name="newParent"/></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="testFitness"/><expression tag="Symbolic.Symbol" Name="testParent"/></expression></expression><expression tag="Relation.Less"><expression tag="Symbolic.Symbol" Name="testFitness"/><expression tag="Symbolic.Symbol" Name="newFitness"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="c"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="parent"/><expression tag="Symbolic.Symbol" Name="newParent"/></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="results"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="newFitness"/><expression tag="String.ToString"><expression tag="Symbolic.Symbol" Name="parent"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="newFitness"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Symbolic.Symbol" Name="results"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Evolve"/><expression tag="List.List"><expression tag="String.String" Value="METHINKS IT IS LIKE A WEASEL"/><expression tag="Math.Number" Value="100"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="26"/><expression tag="String.String" Value=" EBRAH WBD FUDHDQNIIWPZWZALL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="25"/><expression tag="String.String" Value=" EBRAH WBD FIDHDQNIIWPZWZALL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="24"/><expression tag="String.String" Value=" EBRAH WBD FIDHDQNIIAPZWZALL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="23"/><expression tag="String.String" Value=" EBRAH WBDNFIDHDQNIIA ZWZALL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="21"/><expression tag="String.String" Value=" ELRHH WBWN IDHDQKIIA ZWZALL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="20"/><expression tag="String.String" Value=" ETRHX WBWN IDHDQKIIA ZWZALL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="20"/><expression tag="String.String" Value=" ETRHX WBWN IDHDQKIIA ZWZALL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="19"/><expression tag="String.String" Value=" ETHHX WBWN IDHDQKIIA ZWZACL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="19"/><expression tag="String.String" Value=" ETHHX WBWN IDHDQKIIA ZWZACL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="18"/><expression tag="String.String" Value="METHHX WBWN IDVDQKIIA DWZACL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="11"/><expression tag="Math.Number" Value="17"/><expression tag="String.String" Value="METHHN WBWN IDVDQKIIA DWZACL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="16"/><expression tag="String.String" Value="METHHN WBWN IEVDQKIIA WWZACL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="13"/><expression tag="Math.Number" Value="16"/><expression tag="String.String" Value="METHHN WBWN IEVDQKIIA WLZACL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="14"/><expression tag="Math.Number" Value="15"/><expression tag="String.String" Value="METHHNKWBWN IEVDQKIIA WLZACL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="15"/><expression tag="Math.Number" Value="14"/><expression tag="String.String" Value="METHHNKWBIN IEVDQKIIA WLZACL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="16"/><expression tag="Math.Number" Value="13"/><expression tag="String.String" Value="METHHNKWBIN IEV QKIIA WLZAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="13"/><expression tag="String.String" Value="METHHNKWBIN IEV QKIIA WLZAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="18"/><expression tag="Math.Number" Value="12"/><expression tag="String.String" Value="METHINKWBIN IEV QKIIA WLZAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="19"/><expression tag="Math.Number" Value="12"/><expression tag="String.String" Value="METHINKWBIN IEV QKIIA WLZAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="20"/><expression tag="Math.Number" Value="11"/><expression tag="String.String" Value="METHINKWBIN IEV QKEIA W ZAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="21"/><expression tag="Math.Number" Value="10"/><expression tag="String.String" Value="METHINKWBIT IET QKEIA W ZAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="22"/><expression tag="Math.Number" Value="9"/><expression tag="String.String" Value="METHINKW IT IET QKEIA W ZAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="23"/><expression tag="Math.Number" Value="8"/><expression tag="String.String" Value="METHINKW IT IET QKEIA W AAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="24"/><expression tag="Math.Number" Value="8"/><expression tag="String.String" Value="METHINKW IT IET QKEIA W AAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="25"/><expression tag="Math.Number" Value="8"/><expression tag="String.String" Value="METHINKW IT IET QKEIA W AAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="26"/><expression tag="Math.Number" Value="8"/><expression tag="String.String" Value="METHINKW IT IET QKEIA W AAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="27"/><expression tag="Math.Number" Value="7"/><expression tag="String.String" Value="METHINKW IT IEW QKEIA WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="28"/><expression tag="Math.Number" Value="7"/><expression tag="String.String" Value="METHINKW IT IEW QKEIA WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="29"/><expression tag="Math.Number" Value="7"/><expression tag="String.String" Value="METHINKW IT IEW QKEIA WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="30"/><expression tag="Math.Number" Value="7"/><expression tag="String.String" Value="METHINKW IT IEW QKEIA WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="31"/><expression tag="Math.Number" Value="6"/><expression tag="String.String" Value="METHINKW IT IEW QKE A WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="32"/><expression tag="Math.Number" Value="6"/><expression tag="String.String" Value="METHINKW IT IEW QKE A WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="33"/><expression tag="Math.Number" Value="6"/><expression tag="String.String" Value="METHINKW IT IEW QKE A WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="34"/><expression tag="Math.Number" Value="6"/><expression tag="String.String" Value="METHINKW IT IEW QKE A WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="35"/><expression tag="Math.Number" Value="6"/><expression tag="String.String" Value="METHINKW IT IEW QKE A WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="36"/><expression tag="Math.Number" Value="6"/><expression tag="String.String" Value="METHINKW IT IEW QKE A WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="37"/><expression tag="Math.Number" Value="5"/><expression tag="String.String" Value="METHINKW IT ISW QKE A WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="38"/><expression tag="Math.Number" Value="5"/><expression tag="String.String" Value="METHINKW IT ISN QKE A WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="39"/><expression tag="Math.Number" Value="4"/><expression tag="String.String" Value="METHINKW IT IS  QKE A WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="40"/><expression tag="Math.Number" Value="3"/><expression tag="String.String" Value="METHINKW IT IS  IKE A WEAAEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="41"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT IS  IKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="42"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT IS  IKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="43"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="44"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="45"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="46"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="47"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="48"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="49"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="50"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="51"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="52"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="53"/><expression tag="Math.Number" Value="2"/><expression tag="String.String" Value="METHINKW IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="54"/><expression tag="Math.Number" Value="1"/><expression tag="String.String" Value="METHINKS IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="55"/><expression tag="Math.Number" Value="1"/><expression tag="String.String" Value="METHINKS IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="56"/><expression tag="Math.Number" Value="1"/><expression tag="String.String" Value="METHINKS IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="57"/><expression tag="Math.Number" Value="1"/><expression tag="String.String" Value="METHINKS IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="58"/><expression tag="Math.Number" Value="1"/><expression tag="String.String" Value="METHINKS IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="59"/><expression tag="Math.Number" Value="1"/><expression tag="String.String" Value="METHINKS IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="60"/><expression tag="Math.Number" Value="1"/><expression tag="String.String" Value="METHINKS IT ISSLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="61"/><expression tag="Math.Number" Value="1"/><expression tag="String.String" Value="METHINKS IT ISFLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="62"/><expression tag="Math.Number" Value="1"/><expression tag="String.String" Value="METHINKS IT ISFLIKE A WEASEL"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="63"/><expression tag="Math.Number" Value="0"/><expression tag="String.String" Value="METHINKS IT IS LIKE A WEASEL"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="A graph of the fitness function:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Chart.XYChart"><expression tag="List.CreateList"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Evolve"/><expression tag="List.List"><expression tag="String.String" Value="METHINKS IT IS LIKE A WEASEL"/><expression tag="Math.Number" Value="100"/></expression></expression></expression><expression tag="List.List"><expression tag="String.String" Value="Title"/><expression tag="String.String" Value="Fitness"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Graphics.RasterGraphics" Value="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"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Wikipedia entry"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Weasel_program#Weasel_algorithm" Description="Weasel algorithm."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Wikipedia entry"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Evolutionary_algorithm" Description="Evolutionary algorithm."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621611793191"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.relation,org.formulae.chart,org.formulae.graphics.raster,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Weasel program"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Weasel_program" Description="weasel program"/>
+				<expression tag="String.Text" Value="or Dawkins' weasel is a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Thought_experiment" Description="thought experiment"/>
+				<expression tag="String.Text" Value="and a variety of"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Computer_simulation" Description="computer simulations"/>
+				<expression tag="String.Text" Value="illustrating it. Their aim is to demonstrate that the process that drives"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Evolution" Description="evolutionary"/>
+				<expression tag="String.Text" Value="systems—random variation combined with non-random cumulative selection—is different from pure chance."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The thought experiment was formulated by"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Richard_Dawkins" Description="Richard Dawkins,"/>
+				<expression tag="String.Text" Value="and the first simulation written by him."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Algorithm:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Starting with:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="target"/>
+					</expression>
+					<expression tag="String.Text" Value="string:"/>
+					<expression tag="String.String" Value="METHINKS IT IS LIKE A WEASEL"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="An array of random characters chosen from the set of upper-case letters together with the space, and of the same length as the target string. (Call it the"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="parent"/>
+					</expression>
+					<expression tag="String.Text" Value=")."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="A"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="fitness"/>
+					</expression>
+					<expression tag="String.Text" Value="function that computes the ‘closeness’ of its argument to the target string."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="A"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="mutate"/>
+					</expression>
+					<expression tag="String.Text" Value="function that given a string and a mutation rate returns a copy of the string, with some characters probably mutated."/>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="While the"/>
+						<expression tag="Typesetting.ItalicChunk">
+							<expression tag="String.Text" Value="parent"/>
+						</expression>
+						<expression tag="String.Text" Value="is not yet the"/>
+						<expression tag="Typesetting.ItalicChunk">
+							<expression tag="String.Text" Value="target"/>
+						</expression>
+						<expression tag="String.Text" Value=":"/>
+					</expression>
+					<expression tag="Typesetting.BulletedList">
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="Copy the"/>
+							<expression tag="Typesetting.ItalicChunk">
+								<expression tag="String.Text" Value="parent"/>
+							</expression>
+							<expression tag="String.Text" Value="C times, each time allowing some random probability that another character might be substituted using"/>
+							<expression tag="Typesetting.ItalicChunk">
+								<expression tag="String.Text" Value="mutate"/>
+							</expression>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="Assess the"/>
+							<expression tag="Typesetting.ItalicChunk">
+								<expression tag="String.Text" Value="fitness"/>
+							</expression>
+							<expression tag="String.Text" Value="of the parent and all the copies to the"/>
+							<expression tag="Typesetting.ItalicChunk">
+								<expression tag="String.Text" Value="target"/>
+							</expression>
+							<expression tag="String.Text" Value="and make the most fit string the new"/>
+							<expression tag="Typesetting.ItalicChunk">
+								<expression tag="String.Text" Value="parent,"/>
+							</expression>
+							<expression tag="String.Text" Value="discarding the others."/>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="Repeat until the parent converges, (hopefully), to the target."/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, an implementation of the weasel program is presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Evolutionary_algorithm" Description="Evolutionary algorithm"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Evolve"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="string"/>
+					<expression tag="Symbolic.Symbol" Name="c"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="target"/>
+						<expression tag="String.Split">
+							<expression tag="Symbolic.Symbol" Name="string"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="len"/>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="target"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="RandomLetter"/>
+							<expression tag="List.List"/>
+						</expression>
+						<expression tag="Programming.Block" Description="block" Expanded="True">
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="random"/>
+									<expression tag="Math.Arithmetic.RandomInRange">
+										<expression tag="Math.Number" Value="0"/>
+										<expression tag="Math.Number" Value="26"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Programming.Conditional">
+								<expression tag="Relation.Equals">
+									<expression tag="Symbolic.Symbol" Name="random"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+								<expression tag="String.String" Value=" "/>
+								<expression tag="String.Encode">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Number" Value="64"/>
+										<expression tag="Symbolic.Symbol" Name="random"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="parent"/>
+						<expression tag="List.CreateList">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="RandomLetter"/>
+								<expression tag="List.List"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Symbol" Name="len"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="Fitness"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="p"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="block" Expanded="True">
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="count"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
+							<expression tag="Programming.ForFromTo">
+								<expression tag="Programming.InvertedIf">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="count"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="count"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Relation.Different">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="target"/>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="p"/>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Symbolic.Symbol" Name="len"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="count"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="Mutate"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="p"/>
+							</expression>
+						</expression>
+						<expression tag="List.CreateList">
+							<expression tag="Programming.Conditional">
+								<expression tag="Relation.LessOrEquals">
+									<expression tag="Math.Arithmetic.Random"/>
+									<expression tag="Math.Number" Value="0.05"/>
+								</expression>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="RandomLetter"/>
+									<expression tag="List.List"/>
+								</expression>
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="p"/>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Symbol" Name="len"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="testParent"/>
+						<expression tag="Symbolic.Symbol" Name="newParent"/>
+						<expression tag="Symbolic.Symbol" Name="testFitness"/>
+						<expression tag="Symbolic.Symbol" Name="newFitness"/>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="results"/>
+							<expression tag="List.List"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.Until">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="newFitness"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="len"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.ForTimes">
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="testParent"/>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="Mutate"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="parent"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="testFitness"/>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="Fitness"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="testParent"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Programming.InvertedIf">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="newFitness"/>
+											<expression tag="Symbolic.Symbol" Name="newParent"/>
+										</expression>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="testFitness"/>
+											<expression tag="Symbolic.Symbol" Name="testParent"/>
+										</expression>
+									</expression>
+									<expression tag="Relation.Less">
+										<expression tag="Symbolic.Symbol" Name="testFitness"/>
+										<expression tag="Symbolic.Symbol" Name="newFitness"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="c"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="parent"/>
+							<expression tag="Symbolic.Symbol" Name="newParent"/>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="results"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Symbolic.Symbol" Name="newFitness"/>
+								<expression tag="String.ToString">
+									<expression tag="Symbolic.Symbol" Name="parent"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Relation.Equals">
+						<expression tag="Symbolic.Symbol" Name="newFitness"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="results"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test case"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Evolve"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="METHINKS IT IS LIKE A WEASEL"/>
+				<expression tag="Math.Number" Value="100"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="27"/>
+				<expression tag="String.String" Value="TGYZDQRREPEH X THUTVKSRKWMHX"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="26"/>
+				<expression tag="String.String" Value="XGYZDQRREPEH X THUT KSRKWMHX"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="25"/>
+				<expression tag="String.String" Value="XGYZDQRREPEH X THUE KSRKWMHX"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Math.Number" Value="24"/>
+				<expression tag="String.String" Value="XGYZDQRREP H X THUE KSRKWSHX"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="23"/>
+				<expression tag="String.String" Value="XGYZDQRSEP H X THUE KSRKWSHX"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Number" Value="22"/>
+				<expression tag="String.String" Value="XGYZIQRSEP H X THUE KSRKWSHX"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Number" Value="21"/>
+				<expression tag="String.String" Value="XGYZIQRSEPNH X THUE K RKWSHX"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="Math.Number" Value="20"/>
+				<expression tag="String.String" Value="XGYZIQRSEPTH X THUE K RKWSHT"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="Math.Number" Value="19"/>
+				<expression tag="String.String" Value="TGYZIQRSEPTH S THUE K RKWSHT"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="10"/>
+				<expression tag="Math.Number" Value="18"/>
+				<expression tag="String.String" Value="TEYAIQRSEPTH S THUE K RKWSHT"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="11"/>
+				<expression tag="Math.Number" Value="17"/>
+				<expression tag="String.String" Value="MEYAIQRSEPTH S THUE K RKWSST"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="12"/>
+				<expression tag="Math.Number" Value="16"/>
+				<expression tag="String.String" Value="MEYAIQRSEPTHIS THUN K RKASLT"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="13"/>
+				<expression tag="Math.Number" Value="15"/>
+				<expression tag="String.String" Value="MEYAIIRSEPTHIS THUN K WKASLT"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="14"/>
+				<expression tag="Math.Number" Value="14"/>
+				<expression tag="String.String" Value="MEYAIIRSEPTHIS THUN K WKASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="15"/>
+				<expression tag="Math.Number" Value="14"/>
+				<expression tag="String.String" Value="MEYAIDRSEPTHIS WHUN K WKASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="16"/>
+				<expression tag="Math.Number" Value="13"/>
+				<expression tag="String.String" Value="METAIDRSEPTHIS WHUN K WKASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="17"/>
+				<expression tag="Math.Number" Value="12"/>
+				<expression tag="String.String" Value="METAIDRSEPTHIS UIUN K WKASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="18"/>
+				<expression tag="Math.Number" Value="12"/>
+				<expression tag="String.String" Value="METAIDRSEPTHIS UIUN K WZASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="19"/>
+				<expression tag="Math.Number" Value="11"/>
+				<expression tag="String.String" Value="METAIDRSEPTHIS UIBE K WZASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="20"/>
+				<expression tag="Math.Number" Value="10"/>
+				<expression tag="String.String" Value="METHIDRSEPTHIS UIBE K WZASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="21"/>
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="String.String" Value="METHIDRSXITHIS UIBE K WZASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="22"/>
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="String.String" Value="METHIDRSXITHIS UIBE K WKASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="23"/>
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="String.String" Value="METHIDRSXITHIS UIBE K WKASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="24"/>
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="String.String" Value="METHIDRSXITHIS UIBE K WEASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="25"/>
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="String.String" Value="METHIDCSXITHIS UIBE K WEASLL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="26"/>
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="String.String" Value="METHIDCSXITHIS UIBE A WEASJL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="27"/>
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="String.String" Value="METHIDKSXITHIS UIBE A WEASJL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="28"/>
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="String.String" Value="METHIDKSXITHIS UIBE A WEASJL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="29"/>
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="String.String" Value="METHINKSFITHIS UIBE A WEASJL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="30"/>
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="String.String" Value="METHINKSFITHIS UIBE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="31"/>
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="String.String" Value="METHINKSFITHIS LIBE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="32"/>
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="String.String" Value="METHINKSFITHIS LIIE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="33"/>
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="String.String" Value="METHINKSFITHIS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="34"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="35"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="36"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="37"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="38"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="39"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="40"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="41"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="42"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="43"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="44"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="45"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="46"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSFIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="47"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSXIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="48"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSXIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="49"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSXIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="50"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSXIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="51"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSXIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="52"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSXIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="53"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSXIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="54"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSWIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="55"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSWIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="56"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSWIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="57"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSWIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="58"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSWIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="59"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSWIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="60"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSWIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="61"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSWIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="62"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSWIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="63"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSWIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="64"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSYIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="65"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSYIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="66"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="String.String" Value="METHINKSYIT IS LIKE A WEASML"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="67"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="String.String" Value="METHINKSYIT IS LIKE A WEASEL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="68"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="String.String" Value="METHINKSYIT IS LIKE A WEASEL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="69"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="String.String" Value="METHINKSYIT IS LIKE A WEASEL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="70"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="String.String" Value="METHINKSYIT IS LIKE A WEASEL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="71"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="String.String" Value="METHINKSYIT IS LIKE A WEASEL"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="72"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="String.String" Value="METHINKS IT IS LIKE A WEASEL"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="A graph of the fitness function:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Chart.Line">
+			<expression tag="List.CreateList">
+				<expression tag="List.List">
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Evolve"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="METHINKS IT IS LIKE A WEASEL"/>
+						<expression tag="Math.Number" Value="100"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="Title"/>
+				<expression tag="String.String" Value="Fitness"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Graphics.RasterGraphics" Value="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"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Wikipedia entry"/>
+					<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Weasel_program#Weasel_algorithm" Description="Weasel algorithm."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Wikipedia entry"/>
+					<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Evolutionary_algorithm" Description="Evolutionary algorithm."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621611780000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

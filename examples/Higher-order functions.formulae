@@ -1,1 +1,309 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Higher-order functions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Higher-order_function" Description="higher-order function"/><expression tag="String.Text" Value="is a function that does at least one of the following:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Takes one or more functions as arguments (i.e."/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Procedural_parameter" Description="procedural parameters"/><expression tag="String.Text" Value="), and"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Returns a function as its result."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this article is shown how higher-order functions are created and used in Fōrmulæ."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Higher-order_functions" Description="Higher-order functions"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In Fōrmulæ, any function is a lambda expression. Because you can set any kind of expression as argument to a function, or return any expression from a function, it is valid to do this with a lambda expression."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 1 (from Rosetta code). Pass a function as an argument to another function."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function takes a function as its first parameter, and other two parameters, x and y. When this function &quot;Do&quot; is called, it will perform the given function taking as arguments the values x and y."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Do"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="WhatToDo"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="WhatToDo"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Addition"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Do"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="Addition"/><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For the next example, the function to be passed, when invoked, will perform several operation to the same two arguments. It will add them, substract them, multiply them, divide them and exponentiate them. Finally it will return a list with the results."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Operations"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="y"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/></expression></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Do"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="Operations"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="6"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Number" Value="8"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Up now, however, it is the half of the story. Let us build an example where a function takes a function as parameter, and returns another function."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 2 (from Wikipedia). Passiing a function as an argument to another function, and returning a function."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function is a higher-order function. It takes as its unique parameter the function f. When the function is invoked, it will apply twice the function f and will return it. In other words, it will return a new function, which is the composition of the function f with iself."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Apply twice"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="f"/></expression></expression><expression tag="Symbolic.LambdaBuilder"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The next function is an ordinary one. It returns the values given as argument added with 3."/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Plus three"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the next example, g is a dynamically created function."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Apply twice"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="Plus three"/></expression></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="List.List"><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="13"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It can also take a pure symbol, in order to retrrieve a symbolic result:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Apply twice"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="Plus three"/></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="6"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621099577087"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Higher-order functions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Higher-order_function" Description="higher-order function"/>
+				<expression tag="String.Text" Value="is a function that does at least one of the following:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Takes one or more functions as arguments (i.e."/>
+					<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Procedural_parameter" Description="procedural parameters"/>
+					<expression tag="String.Text" Value="), and"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Returns a function as its result."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this article is shown how higher-order functions are created and used in Fōrmulæ."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Higher-order_functions" Description="Higher-order functions"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In Fōrmulæ, any function is a lambda expression. Because you can set any kind of expression as argument to a function, or return any expression from a function, it is valid to do this with a lambda expression."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 1 (from Rosetta code). Pass a function as an argument to another function."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function takes a function as its first parameter, and other two parameters, x and y. When this function &quot;Do&quot; is called, it will perform the given function taking as arguments the values x and y."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Do"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="WhatToDo"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="WhatToDo"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Addition"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Do"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="Addition"/>
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="a"/>
+			<expression tag="Symbolic.Symbol" Name="b"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="For the next example, the function to be passed, when invoked, will perform several operation to the same two arguments. It will add them, substract them, multiply them, divide them and exponentiate them. Finally it will return a list with the results."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Operations"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Symbolic.Symbol" Name="y"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Do"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="Operations"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Math.Number" Value="6"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Number" Value="8"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Up now, however, it is the half of the story. Let us build an example where a function takes a function as parameter, and returns another function."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 2 (from Wikipedia). Passiing a function as an argument to another function, and returning a function."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function is a higher-order function. It takes as its unique parameter the function f. When the function is invoked, it will apply twice the function f and will return it. In other words, it will return a new function, which is the composition of the function f with iself."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Apply twice"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="f"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.LambdaBuilder">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="f"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="f"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The next function is an ordinary one. It returns the values given as argument added with 3."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Plus three"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="In the next example, g is a dynamically created function."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="g"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Apply twice"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="Plus three"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="g"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="13"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="It can also take a pure symbol, in order to retrrieve a symbolic result:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Apply twice"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="Plus three"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Number" Value="6"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621099577087"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

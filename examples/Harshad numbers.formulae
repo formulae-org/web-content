@@ -1,1 +1,183 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Harshad numbers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Harshad_number" Description="harshad number (or Niven number)"/><expression tag="String.Text" Value="in a given number base is an integer that is divisible by the sum of its digits when written in that base."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Harshad_or_Niven_series" Description="Harshad or Niven series"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Is Harshad"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Math.Arithmetic.Divides"><expression tag="Math.Arithmetic.Summation"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Arithmetic.Digits"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Rosetta code test case 1. List the first 20 members of the sequence"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.Until"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Is Harshad"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Relation.Equals"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="list"/></expression><expression tag="Math.Number" Value="20"/></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="18"/><expression tag="Math.Number" Value="20"/><expression tag="Math.Number" Value="21"/><expression tag="Math.Number" Value="24"/><expression tag="Math.Number" Value="27"/><expression tag="Math.Number" Value="30"/><expression tag="Math.Number" Value="36"/><expression tag="Math.Number" Value="40"/><expression tag="Math.Number" Value="42"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Rosetta code test case 2. List the first Harshad number greater than 1,000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1000"/></expression></expression><expression tag="Programming.Until"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Is Harshad"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="1002"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621056391310"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.expression,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Harshad numbers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Harshad_number" Description="harshad number (or Niven number)"/>
+				<expression tag="String.Text" Value="in a given number base is an integer that is divisible by the sum of its digits when written in that base."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Harshad_or_Niven_series" Description="Harshad or Niven series"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Is Harshad"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Divides">
+				<expression tag="Math.Arithmetic.Summation">
+					<expression tag="Symbolic.Symbol" Name="d"/>
+					<expression tag="Symbolic.Symbol" Name="d"/>
+					<expression tag="Math.Arithmetic.Digits">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Rosetta code test case 1. List the first 20 members of the sequence"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Until">
+				<expression tag="Programming.Block" Description="Description" Expanded="True">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="Is Harshad"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Relation.Equals">
+					<expression tag="Expression.Cardinality">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+					</expression>
+					<expression tag="Math.Number" Value="20"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="list"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="6"/>
+			<expression tag="Math.Number" Value="7"/>
+			<expression tag="Math.Number" Value="8"/>
+			<expression tag="Math.Number" Value="9"/>
+			<expression tag="Math.Number" Value="10"/>
+			<expression tag="Math.Number" Value="12"/>
+			<expression tag="Math.Number" Value="18"/>
+			<expression tag="Math.Number" Value="20"/>
+			<expression tag="Math.Number" Value="21"/>
+			<expression tag="Math.Number" Value="24"/>
+			<expression tag="Math.Number" Value="27"/>
+			<expression tag="Math.Number" Value="30"/>
+			<expression tag="Math.Number" Value="36"/>
+			<expression tag="Math.Number" Value="40"/>
+			<expression tag="Math.Number" Value="42"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Rosetta code test case 2. List the first Harshad number greater than 1,000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Number" Value="1000"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Until">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Is Harshad"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1002"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621056360000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

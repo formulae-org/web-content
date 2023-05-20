@@ -1,1 +1,1563 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Stirling numbers of the first kind"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Stirling_numbers_of_the_first_kind" Description="Stirling numbers of the first kind"/><expression tag="String.Text" Value="arise in the study of permutations. In particular, the Stirling numbers of the first kind count permutations according to their number of cycles (counting fixed points as cycles of length one)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Depending on the application, Stirling numbers of the first kind may be &quot;signed&quot; or &quot;unsigned&quot;. Signed Stirling numbers of the first kind arise when the polynomial expansion is expressed in terms of falling factorials; unsigned when expressed in terms of rising factorials. The only substantial difference is that, for signed Stirling numbers of the first kind, values of S1(n, k) are negative when n + k is odd."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Unsigned Stirling numbers of the first kind are defined as:"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="S₁"/><expression tag="List.List"><expression tag="String.Text" Value="n"/><expression tag="String.Text" Value="k"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Piecewise"><expression tag="Math.Number" Value="1"/><expression tag="Visualization.HorizontalArray"><expression tag="Relation.Equals"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="String.Text" Value="and"/><expression tag="Relation.Equals"><expression tag="String.Text" Value="k"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Relation.Greater"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Relation.Greater"><expression tag="String.Text" Value="k"/><expression tag="String.Text" Value="n"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="S₁"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="k"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Function"><expression tag="String.Text" Value="S₁"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="String.Text" Value="k"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Signed Stirling numbers of the first kind are defined as:"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="S₁"/><expression tag="List.List"><expression tag="String.Text" Value="n"/><expression tag="String.Text" Value="k"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Piecewise"><expression tag="Math.Number" Value="1"/><expression tag="Visualization.HorizontalArray"><expression tag="Relation.Equals"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="String.Text" Value="and"/><expression tag="Relation.Equals"><expression tag="String.Text" Value="k"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Math.Number" Value="0"/><expression tag="Relation.Greater"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Math.Number" Value="0"/><expression tag="Relation.Greater"><expression tag="String.Text" Value="k"/><expression tag="String.Text" Value="n"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="S₁"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="k"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Function"><expression tag="String.Text" Value="S₁"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="String.Text" Value="k"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, several implementations of unsgined and signed Stirling numbers of the first kind, and related programs are presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind" Description="Stirling numbers of the first kind"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A single solution for signed and unsigned versions is presented. Unsigned version uses 1 as factor, signed version used -1."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Version 1. Recursive"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="S₁"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Symbolic.Symbol" Name="factor"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Math.Number" Value="1"/></expression><expression tag="Logic.Conjunction"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Math.Number" Value="0"/></expression><expression tag="Logic.Conjunction"><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Math.Number" Value="0"/></expression><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="S1"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="factor"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="factor"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="S1"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Symbolic.Symbol" Name="factor"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 1 (from Rosetta code)"/></expression></expression><expression tag="String.Text" Value="Show the unsigned Stirling numbers of the first kind, S₁(n, k), up to S₁(12, 12)"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.CreateList"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="S₁"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="12"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="11"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="24"/><expression tag="Math.Number" Value="50"/><expression tag="Math.Number" Value="35"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="120"/><expression tag="Math.Number" Value="274"/><expression tag="Math.Number" Value="225"/><expression tag="Math.Number" Value="85"/><expression tag="Math.Number" Value="15"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="720"/><expression tag="Math.Number" Value="1764"/><expression tag="Math.Number" Value="1624"/><expression tag="Math.Number" Value="735"/><expression tag="Math.Number" Value="175"/><expression tag="Math.Number" Value="21"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="5040"/><expression tag="Math.Number" Value="13068"/><expression tag="Math.Number" Value="13132"/><expression tag="Math.Number" Value="6769"/><expression tag="Math.Number" Value="1960"/><expression tag="Math.Number" Value="322"/><expression tag="Math.Number" Value="28"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="40320"/><expression tag="Math.Number" Value="109584"/><expression tag="Math.Number" Value="118124"/><expression tag="Math.Number" Value="67284"/><expression tag="Math.Number" Value="22449"/><expression tag="Math.Number" Value="4536"/><expression tag="Math.Number" Value="546"/><expression tag="Math.Number" Value="36"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="362880"/><expression tag="Math.Number" Value="1026576"/><expression tag="Math.Number" Value="1172700"/><expression tag="Math.Number" Value="723680"/><expression tag="Math.Number" Value="269325"/><expression tag="Math.Number" Value="63273"/><expression tag="Math.Number" Value="9450"/><expression tag="Math.Number" Value="870"/><expression tag="Math.Number" Value="45"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="3628800"/><expression tag="Math.Number" Value="10628640"/><expression tag="Math.Number" Value="12753576"/><expression tag="Math.Number" Value="8409500"/><expression tag="Math.Number" Value="3416930"/><expression tag="Math.Number" Value="902055"/><expression tag="Math.Number" Value="157773"/><expression tag="Math.Number" Value="18150"/><expression tag="Math.Number" Value="1320"/><expression tag="Math.Number" Value="55"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="39916800"/><expression tag="Math.Number" Value="120543840"/><expression tag="Math.Number" Value="150917976"/><expression tag="Math.Number" Value="105258076"/><expression tag="Math.Number" Value="45995730"/><expression tag="Math.Number" Value="13339535"/><expression tag="Math.Number" Value="2637558"/><expression tag="Math.Number" Value="357423"/><expression tag="Math.Number" Value="32670"/><expression tag="Math.Number" Value="1925"/><expression tag="Math.Number" Value="66"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 2 (from Rosetta code)"/></expression></expression><expression tag="String.Text" Value="Show the signed Stirling numbers of the first kind, S₁(n, k), up to S₁(12, 12)"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.CreateList"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="S₁"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="12"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Number" Value="11"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="24"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="50"/></expression><expression tag="Math.Number" Value="35"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="10"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="120"/></expression><expression tag="Math.Number" Value="274"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="225"/></expression><expression tag="Math.Number" Value="85"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="15"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="720"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1764"/></expression><expression tag="Math.Number" Value="1624"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="735"/></expression><expression tag="Math.Number" Value="175"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="21"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="5040"/></expression><expression tag="Math.Number" Value="13068"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="13132"/></expression><expression tag="Math.Number" Value="6769"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1960"/></expression><expression tag="Math.Number" Value="322"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="28"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="40320"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="109584"/></expression><expression tag="Math.Number" Value="118124"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="67284"/></expression><expression tag="Math.Number" Value="22449"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="4536"/></expression><expression tag="Math.Number" Value="546"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="36"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="362880"/></expression><expression tag="Math.Number" Value="1026576"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1172700"/></expression><expression tag="Math.Number" Value="723680"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="269325"/></expression><expression tag="Math.Number" Value="63273"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="9450"/></expression><expression tag="Math.Number" Value="870"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="45"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="3628800"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="10628640"/></expression><expression tag="Math.Number" Value="12753576"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="8409500"/></expression><expression tag="Math.Number" Value="3416930"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="902055"/></expression><expression tag="Math.Number" Value="157773"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="18150"/></expression><expression tag="Math.Number" Value="1320"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="55"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="39916800"/></expression><expression tag="Math.Number" Value="120543840"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="150917976"/></expression><expression tag="Math.Number" Value="105258076"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="45995730"/></expression><expression tag="Math.Number" Value="13339535"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="2637558"/></expression><expression tag="Math.Number" Value="357423"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="32670"/></expression><expression tag="Math.Number" Value="1925"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="66"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Version 2. Non recursive"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A faster, non recursive version is presented:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="S₁ table"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="N"/><expression tag="Symbolic.Symbol" Name="K"/><expression tag="Symbolic.Symbol" Name="factor"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="table"/><expression tag="List.CreateList"><expression tag="List.CreateList"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="K"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="N"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="S1"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="k"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Math.Number" Value="1"/></expression><expression tag="Logic.Conjunction"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Math.Number" Value="0"/></expression><expression tag="Logic.Conjunction"><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Math.Number" Value="0"/></expression><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="table"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="k"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="factor"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="table"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.ForFromTo"><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="table"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="S1"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="k"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="0"/><expression tag="Symbolic.Symbol" Name="K"/></expression><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/><expression tag="Symbolic.Symbol" Name="N"/></expression><expression tag="Symbolic.Symbol" Name="table"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="S₁ table"/><expression tag="List.List"><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="11"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="24"/><expression tag="Math.Number" Value="50"/><expression tag="Math.Number" Value="35"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="120"/><expression tag="Math.Number" Value="274"/><expression tag="Math.Number" Value="225"/><expression tag="Math.Number" Value="85"/><expression tag="Math.Number" Value="15"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="720"/><expression tag="Math.Number" Value="1764"/><expression tag="Math.Number" Value="1624"/><expression tag="Math.Number" Value="735"/><expression tag="Math.Number" Value="175"/><expression tag="Math.Number" Value="21"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="5040"/><expression tag="Math.Number" Value="13068"/><expression tag="Math.Number" Value="13132"/><expression tag="Math.Number" Value="6769"/><expression tag="Math.Number" Value="1960"/><expression tag="Math.Number" Value="322"/><expression tag="Math.Number" Value="28"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="40320"/><expression tag="Math.Number" Value="109584"/><expression tag="Math.Number" Value="118124"/><expression tag="Math.Number" Value="67284"/><expression tag="Math.Number" Value="22449"/><expression tag="Math.Number" Value="4536"/><expression tag="Math.Number" Value="546"/><expression tag="Math.Number" Value="36"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="362880"/><expression tag="Math.Number" Value="1026576"/><expression tag="Math.Number" Value="1172700"/><expression tag="Math.Number" Value="723680"/><expression tag="Math.Number" Value="269325"/><expression tag="Math.Number" Value="63273"/><expression tag="Math.Number" Value="9450"/><expression tag="Math.Number" Value="870"/><expression tag="Math.Number" Value="45"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="3628800"/><expression tag="Math.Number" Value="10628640"/><expression tag="Math.Number" Value="12753576"/><expression tag="Math.Number" Value="8409500"/><expression tag="Math.Number" Value="3416930"/><expression tag="Math.Number" Value="902055"/><expression tag="Math.Number" Value="157773"/><expression tag="Math.Number" Value="18150"/><expression tag="Math.Number" Value="1320"/><expression tag="Math.Number" Value="55"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="39916800"/><expression tag="Math.Number" Value="120543840"/><expression tag="Math.Number" Value="150917976"/><expression tag="Math.Number" Value="105258076"/><expression tag="Math.Number" Value="45995730"/><expression tag="Math.Number" Value="13339535"/><expression tag="Math.Number" Value="2637558"/><expression tag="Math.Number" Value="357423"/><expression tag="Math.Number" Value="32670"/><expression tag="Math.Number" Value="1925"/><expression tag="Math.Number" Value="66"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="S₁ table"/><expression tag="List.List"><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="12"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Number" Value="11"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="6"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="24"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="50"/></expression><expression tag="Math.Number" Value="35"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="10"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="120"/></expression><expression tag="Math.Number" Value="274"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="225"/></expression><expression tag="Math.Number" Value="85"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="15"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="720"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1764"/></expression><expression tag="Math.Number" Value="1624"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="735"/></expression><expression tag="Math.Number" Value="175"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="21"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="5040"/></expression><expression tag="Math.Number" Value="13068"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="13132"/></expression><expression tag="Math.Number" Value="6769"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1960"/></expression><expression tag="Math.Number" Value="322"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="28"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="40320"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="109584"/></expression><expression tag="Math.Number" Value="118124"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="67284"/></expression><expression tag="Math.Number" Value="22449"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="4536"/></expression><expression tag="Math.Number" Value="546"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="36"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="362880"/></expression><expression tag="Math.Number" Value="1026576"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1172700"/></expression><expression tag="Math.Number" Value="723680"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="269325"/></expression><expression tag="Math.Number" Value="63273"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="9450"/></expression><expression tag="Math.Number" Value="870"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="45"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="3628800"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="10628640"/></expression><expression tag="Math.Number" Value="12753576"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="8409500"/></expression><expression tag="Math.Number" Value="3416930"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="902055"/></expression><expression tag="Math.Number" Value="157773"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="18150"/></expression><expression tag="Math.Number" Value="1320"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="55"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="39916800"/></expression><expression tag="Math.Number" Value="120543840"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="150917976"/></expression><expression tag="Math.Number" Value="105258076"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="45995730"/></expression><expression tag="Math.Number" Value="13339535"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="2637558"/></expression><expression tag="Math.Number" Value="357423"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="32670"/></expression><expression tag="Math.Number" Value="1925"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="66"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 3 (from Rosetta code)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Find the maximum value of unsigned S₁(n, k) where n ≤ 100"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Relation.Max"><expression tag="Expression.Child"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="S₁ table"/><expression tag="List.List"><expression tag="Math.Number" Value="100"/><expression tag="Math.Number" Value="100"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="19710908747055261109287881673376044669240511161402863823515728791076863288440277983854056472903481625299174865860036734731122707870406148096000000000000000000"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 4 (from Rosetta code)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Find the maximum value of signed S₁(n, k) where n ≤ 100"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Relation.Max"><expression tag="Expression.Child"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="S₁ table"/><expression tag="List.List"><expression tag="Math.Number" Value="100"/><expression tag="Math.Number" Value="100"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="18010655459578393079369967763972010318680768421952758742296141639812483544345238577144159634248193082681705102088701597696055429922721795932160000000000000000"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621448996179"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.relation,org.formulae.programming,org.formulae.logic,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Stirling numbers of the first kind"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Stirling_numbers_of_the_first_kind" Description="Stirling numbers of the first kind"/>
+				<expression tag="String.Text" Value="arise in the study of permutations. In particular, the Stirling numbers of the first kind count permutations according to their number of cycles (counting fixed points as cycles of length one)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Depending on the application, Stirling numbers of the first kind may be &quot;signed&quot; or &quot;unsigned&quot;. Signed Stirling numbers of the first kind arise when the polynomial expansion is expressed in terms of falling factorials; unsigned when expressed in terms of rising factorials. The only substantial difference is that, for signed Stirling numbers of the first kind, values of S1(n, k) are negative when n + k is odd."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Unsigned Stirling numbers of the first kind are defined as:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Symbolic.Function">
+						<expression tag="String.Text" Value="S₁"/>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="String.Text" Value="k"/>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Piecewise">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Visualization.HorizontalArray">
+							<expression tag="Relation.Equals">
+								<expression tag="String.Text" Value="n"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+							<expression tag="String.Text" Value="and"/>
+							<expression tag="Relation.Equals">
+								<expression tag="String.Text" Value="k"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Relation.Greater">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Relation.Greater">
+							<expression tag="String.Text" Value="k"/>
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Function">
+								<expression tag="String.Text" Value="S₁"/>
+								<expression tag="List.List">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="n"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="k"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="String.Text" Value="n"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Function">
+									<expression tag="String.Text" Value="S₁"/>
+									<expression tag="List.List">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="String.Text" Value="n"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+										<expression tag="String.Text" Value="k"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Signed Stirling numbers of the first kind are defined as:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Symbolic.Function">
+						<expression tag="String.Text" Value="S₁"/>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="String.Text" Value="k"/>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Piecewise">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Visualization.HorizontalArray">
+							<expression tag="Relation.Equals">
+								<expression tag="String.Text" Value="n"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+							<expression tag="String.Text" Value="and"/>
+							<expression tag="Relation.Equals">
+								<expression tag="String.Text" Value="k"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Relation.Greater">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Relation.Greater">
+							<expression tag="String.Text" Value="k"/>
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Function">
+								<expression tag="String.Text" Value="S₁"/>
+								<expression tag="List.List">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="n"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="k"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="String.Text" Value="n"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Function">
+										<expression tag="String.Text" Value="S₁"/>
+										<expression tag="List.List">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="String.Text" Value="n"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+											<expression tag="String.Text" Value="k"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, several implementations of unsgined and signed Stirling numbers of the first kind, and related programs are presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind" Description="Stirling numbers of the first kind"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A single solution for signed and unsigned versions is presented. Unsigned version uses 1 as factor, signed version used -1."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Version 1. Recursive"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="S₁"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="k"/>
+					<expression tag="Symbolic.Symbol" Name="factor"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Symbolic.Return">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Logic.Conjunction">
+						<expression tag="Relation.Equals">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="Relation.Equals">
+							<expression tag="Symbolic.Symbol" Name="k"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Symbolic.Return">
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="Logic.Conjunction">
+						<expression tag="Relation.Greater">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="Relation.Equals">
+							<expression tag="Symbolic.Symbol" Name="k"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Symbolic.Return">
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="Relation.Greater">
+						<expression tag="Symbolic.Symbol" Name="k"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="S₁"/>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="k"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="factor"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Symbolic.Symbol" Name="factor"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="S₁"/>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="k"/>
+								<expression tag="Symbolic.Symbol" Name="factor"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 1 (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="Show the unsigned Stirling numbers of the first kind, S₁(n, k), up to S₁(12, 12)"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.CreateList">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="S₁"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Symbolic.Symbol" Name="k"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="k"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="12"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="Math.Number" Value="0"/>
+			<expression tag="Math.Number" Value="12"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Number" Value="11"/>
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="24"/>
+				<expression tag="Math.Number" Value="50"/>
+				<expression tag="Math.Number" Value="35"/>
+				<expression tag="Math.Number" Value="10"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="120"/>
+				<expression tag="Math.Number" Value="274"/>
+				<expression tag="Math.Number" Value="225"/>
+				<expression tag="Math.Number" Value="85"/>
+				<expression tag="Math.Number" Value="15"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="720"/>
+				<expression tag="Math.Number" Value="1764"/>
+				<expression tag="Math.Number" Value="1624"/>
+				<expression tag="Math.Number" Value="735"/>
+				<expression tag="Math.Number" Value="175"/>
+				<expression tag="Math.Number" Value="21"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="5040"/>
+				<expression tag="Math.Number" Value="13068"/>
+				<expression tag="Math.Number" Value="13132"/>
+				<expression tag="Math.Number" Value="6769"/>
+				<expression tag="Math.Number" Value="1960"/>
+				<expression tag="Math.Number" Value="322"/>
+				<expression tag="Math.Number" Value="28"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="40320"/>
+				<expression tag="Math.Number" Value="109584"/>
+				<expression tag="Math.Number" Value="118124"/>
+				<expression tag="Math.Number" Value="67284"/>
+				<expression tag="Math.Number" Value="22449"/>
+				<expression tag="Math.Number" Value="4536"/>
+				<expression tag="Math.Number" Value="546"/>
+				<expression tag="Math.Number" Value="36"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="362880"/>
+				<expression tag="Math.Number" Value="1026576"/>
+				<expression tag="Math.Number" Value="1172700"/>
+				<expression tag="Math.Number" Value="723680"/>
+				<expression tag="Math.Number" Value="269325"/>
+				<expression tag="Math.Number" Value="63273"/>
+				<expression tag="Math.Number" Value="9450"/>
+				<expression tag="Math.Number" Value="870"/>
+				<expression tag="Math.Number" Value="45"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="3628800"/>
+				<expression tag="Math.Number" Value="10628640"/>
+				<expression tag="Math.Number" Value="12753576"/>
+				<expression tag="Math.Number" Value="8409500"/>
+				<expression tag="Math.Number" Value="3416930"/>
+				<expression tag="Math.Number" Value="902055"/>
+				<expression tag="Math.Number" Value="157773"/>
+				<expression tag="Math.Number" Value="18150"/>
+				<expression tag="Math.Number" Value="1320"/>
+				<expression tag="Math.Number" Value="55"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="39916800"/>
+				<expression tag="Math.Number" Value="120543840"/>
+				<expression tag="Math.Number" Value="150917976"/>
+				<expression tag="Math.Number" Value="105258076"/>
+				<expression tag="Math.Number" Value="45995730"/>
+				<expression tag="Math.Number" Value="13339535"/>
+				<expression tag="Math.Number" Value="2637558"/>
+				<expression tag="Math.Number" Value="357423"/>
+				<expression tag="Math.Number" Value="32670"/>
+				<expression tag="Math.Number" Value="1925"/>
+				<expression tag="Math.Number" Value="66"/>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 2 (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="Show the signed Stirling numbers of the first kind, S₁(n, k), up to S₁(12, 12)"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.CreateList">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="S₁"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Symbolic.Symbol" Name="k"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="k"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="12"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="Math.Number" Value="0"/>
+			<expression tag="Math.Number" Value="12"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="Math.Number" Value="11"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="24"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="50"/>
+				</expression>
+				<expression tag="Math.Number" Value="35"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="120"/>
+				</expression>
+				<expression tag="Math.Number" Value="274"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="225"/>
+				</expression>
+				<expression tag="Math.Number" Value="85"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="15"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="720"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1764"/>
+				</expression>
+				<expression tag="Math.Number" Value="1624"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="735"/>
+				</expression>
+				<expression tag="Math.Number" Value="175"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="21"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="5040"/>
+				</expression>
+				<expression tag="Math.Number" Value="13068"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="13132"/>
+				</expression>
+				<expression tag="Math.Number" Value="6769"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1960"/>
+				</expression>
+				<expression tag="Math.Number" Value="322"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="28"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="40320"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="109584"/>
+				</expression>
+				<expression tag="Math.Number" Value="118124"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="67284"/>
+				</expression>
+				<expression tag="Math.Number" Value="22449"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="4536"/>
+				</expression>
+				<expression tag="Math.Number" Value="546"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="36"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="362880"/>
+				</expression>
+				<expression tag="Math.Number" Value="1026576"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1172700"/>
+				</expression>
+				<expression tag="Math.Number" Value="723680"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="269325"/>
+				</expression>
+				<expression tag="Math.Number" Value="63273"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="9450"/>
+				</expression>
+				<expression tag="Math.Number" Value="870"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="45"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="3628800"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="10628640"/>
+				</expression>
+				<expression tag="Math.Number" Value="12753576"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="8409500"/>
+				</expression>
+				<expression tag="Math.Number" Value="3416930"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="902055"/>
+				</expression>
+				<expression tag="Math.Number" Value="157773"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="18150"/>
+				</expression>
+				<expression tag="Math.Number" Value="1320"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="55"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="39916800"/>
+				</expression>
+				<expression tag="Math.Number" Value="120543840"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="150917976"/>
+				</expression>
+				<expression tag="Math.Number" Value="105258076"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="45995730"/>
+				</expression>
+				<expression tag="Math.Number" Value="13339535"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="2637558"/>
+				</expression>
+				<expression tag="Math.Number" Value="357423"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="32670"/>
+				</expression>
+				<expression tag="Math.Number" Value="1925"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="66"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Version 2. Non recursive"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A faster, non recursive version is presented:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="S₁ table"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="N"/>
+					<expression tag="Symbolic.Symbol" Name="K"/>
+					<expression tag="Symbolic.Symbol" Name="factor"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="table"/>
+						<expression tag="List.CreateList">
+							<expression tag="List.CreateList">
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="K"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="N"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="S1"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Symbolic.Symbol" Name="k"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="block" Expanded="True">
+							<expression tag="Programming.InvertedIf">
+								<expression tag="Symbolic.Return">
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Logic.Conjunction">
+									<expression tag="Relation.Equals">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Number" Value="0"/>
+									</expression>
+									<expression tag="Relation.Equals">
+										<expression tag="Symbolic.Symbol" Name="k"/>
+										<expression tag="Math.Number" Value="0"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Programming.InvertedIf">
+								<expression tag="Symbolic.Return">
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+								<expression tag="Logic.Conjunction">
+									<expression tag="Relation.Greater">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Number" Value="0"/>
+									</expression>
+									<expression tag="Relation.Equals">
+										<expression tag="Symbolic.Symbol" Name="k"/>
+										<expression tag="Math.Number" Value="0"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Programming.InvertedIf">
+								<expression tag="Symbolic.Return">
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+								<expression tag="Relation.Greater">
+									<expression tag="Symbolic.Symbol" Name="k"/>
+									<expression tag="Symbolic.Symbol" Name="n"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="table"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Symbolic.Symbol" Name="k"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="factor"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="table"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="k"/>
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.ForFromTo">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="table"/>
+								<expression tag="List.List">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="k"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="S1"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Symbolic.Symbol" Name="k"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="k"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Symbolic.Symbol" Name="K"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Symbolic.Symbol" Name="N"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="table"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="S₁ table"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="12"/>
+				<expression tag="Math.Number" Value="12"/>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Number" Value="11"/>
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="24"/>
+				<expression tag="Math.Number" Value="50"/>
+				<expression tag="Math.Number" Value="35"/>
+				<expression tag="Math.Number" Value="10"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="120"/>
+				<expression tag="Math.Number" Value="274"/>
+				<expression tag="Math.Number" Value="225"/>
+				<expression tag="Math.Number" Value="85"/>
+				<expression tag="Math.Number" Value="15"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="720"/>
+				<expression tag="Math.Number" Value="1764"/>
+				<expression tag="Math.Number" Value="1624"/>
+				<expression tag="Math.Number" Value="735"/>
+				<expression tag="Math.Number" Value="175"/>
+				<expression tag="Math.Number" Value="21"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="5040"/>
+				<expression tag="Math.Number" Value="13068"/>
+				<expression tag="Math.Number" Value="13132"/>
+				<expression tag="Math.Number" Value="6769"/>
+				<expression tag="Math.Number" Value="1960"/>
+				<expression tag="Math.Number" Value="322"/>
+				<expression tag="Math.Number" Value="28"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="40320"/>
+				<expression tag="Math.Number" Value="109584"/>
+				<expression tag="Math.Number" Value="118124"/>
+				<expression tag="Math.Number" Value="67284"/>
+				<expression tag="Math.Number" Value="22449"/>
+				<expression tag="Math.Number" Value="4536"/>
+				<expression tag="Math.Number" Value="546"/>
+				<expression tag="Math.Number" Value="36"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="362880"/>
+				<expression tag="Math.Number" Value="1026576"/>
+				<expression tag="Math.Number" Value="1172700"/>
+				<expression tag="Math.Number" Value="723680"/>
+				<expression tag="Math.Number" Value="269325"/>
+				<expression tag="Math.Number" Value="63273"/>
+				<expression tag="Math.Number" Value="9450"/>
+				<expression tag="Math.Number" Value="870"/>
+				<expression tag="Math.Number" Value="45"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="3628800"/>
+				<expression tag="Math.Number" Value="10628640"/>
+				<expression tag="Math.Number" Value="12753576"/>
+				<expression tag="Math.Number" Value="8409500"/>
+				<expression tag="Math.Number" Value="3416930"/>
+				<expression tag="Math.Number" Value="902055"/>
+				<expression tag="Math.Number" Value="157773"/>
+				<expression tag="Math.Number" Value="18150"/>
+				<expression tag="Math.Number" Value="1320"/>
+				<expression tag="Math.Number" Value="55"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="39916800"/>
+				<expression tag="Math.Number" Value="120543840"/>
+				<expression tag="Math.Number" Value="150917976"/>
+				<expression tag="Math.Number" Value="105258076"/>
+				<expression tag="Math.Number" Value="45995730"/>
+				<expression tag="Math.Number" Value="13339535"/>
+				<expression tag="Math.Number" Value="2637558"/>
+				<expression tag="Math.Number" Value="357423"/>
+				<expression tag="Math.Number" Value="32670"/>
+				<expression tag="Math.Number" Value="1925"/>
+				<expression tag="Math.Number" Value="66"/>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="S₁ table"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="12"/>
+				<expression tag="Math.Number" Value="12"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="Math.Number" Value="11"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="24"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="50"/>
+				</expression>
+				<expression tag="Math.Number" Value="35"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="120"/>
+				</expression>
+				<expression tag="Math.Number" Value="274"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="225"/>
+				</expression>
+				<expression tag="Math.Number" Value="85"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="15"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="720"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1764"/>
+				</expression>
+				<expression tag="Math.Number" Value="1624"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="735"/>
+				</expression>
+				<expression tag="Math.Number" Value="175"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="21"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="5040"/>
+				</expression>
+				<expression tag="Math.Number" Value="13068"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="13132"/>
+				</expression>
+				<expression tag="Math.Number" Value="6769"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1960"/>
+				</expression>
+				<expression tag="Math.Number" Value="322"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="28"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="40320"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="109584"/>
+				</expression>
+				<expression tag="Math.Number" Value="118124"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="67284"/>
+				</expression>
+				<expression tag="Math.Number" Value="22449"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="4536"/>
+				</expression>
+				<expression tag="Math.Number" Value="546"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="36"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="362880"/>
+				</expression>
+				<expression tag="Math.Number" Value="1026576"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1172700"/>
+				</expression>
+				<expression tag="Math.Number" Value="723680"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="269325"/>
+				</expression>
+				<expression tag="Math.Number" Value="63273"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="9450"/>
+				</expression>
+				<expression tag="Math.Number" Value="870"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="45"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="3628800"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="10628640"/>
+				</expression>
+				<expression tag="Math.Number" Value="12753576"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="8409500"/>
+				</expression>
+				<expression tag="Math.Number" Value="3416930"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="902055"/>
+				</expression>
+				<expression tag="Math.Number" Value="157773"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="18150"/>
+				</expression>
+				<expression tag="Math.Number" Value="1320"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="55"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="0"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="39916800"/>
+				</expression>
+				<expression tag="Math.Number" Value="120543840"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="150917976"/>
+				</expression>
+				<expression tag="Math.Number" Value="105258076"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="45995730"/>
+				</expression>
+				<expression tag="Math.Number" Value="13339535"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="2637558"/>
+				</expression>
+				<expression tag="Math.Number" Value="357423"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="32670"/>
+				</expression>
+				<expression tag="Math.Number" Value="1925"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="66"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 3 (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Find the maximum value of unsigned S₁(n, k) where n ≤ 100"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Relation.Max">
+			<expression tag="Expression.Child">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="S₁ table"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="100"/>
+						<expression tag="Math.Number" Value="100"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="19710908747055261109287881673376044669240511161402863823515728791076863288440277983854056472903481625299174865860036734731122707870406148096000000000000000000"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 4 (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Find the maximum value of signed S₁(n, k) where n ≤ 100"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Relation.Max">
+			<expression tag="Expression.Child">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="S₁ table"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="100"/>
+						<expression tag="Math.Number" Value="100"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="18010655459578393079369967763972010318680768421952758742296141639812483544345238577144159634248193082681705102088701597696055429922721795932160000000000000000"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621448940000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

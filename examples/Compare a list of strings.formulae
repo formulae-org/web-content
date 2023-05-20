@@ -1,1 +1,653 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Compare a list of strings"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Compare_a_list_of_strings" Description="Compare a list of strings"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Given a"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/List_(abstract_data_type)" Description="list"/><expression tag="String.Text" Value="of arbitrarily many strings, show how to:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Test if they are all lexically equal"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Test if every string is lexically less than the one after it (i.e. whether the list is in strict ascending order)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Each of those two tests should result in a single true or false value, which could be used as the condition of an   if   statement or similar.&#10;&#10;If the input list has less than two elements, the tests should always return true."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="There is no need to provide a complete program and output."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Assume that the strings are already stored in an array/list/sequence/tuple variable (whatever is most idiomatic) with the name"/><expression tag="String.String" Value="strings"/><expression tag="String.Text" Value=", and just show the expressions for performing those two tests on it (plus of course any includes and custom functions etc. that it needs),   with as little distractions as possible."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Try to write your solution in a way that does not modify the original list,   but if it does then please add a note to make that clear to readers."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function checks for equality:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListEquals"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="strings"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.ForFromTo"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Logic.False"/></expression><expression tag="Relation.Different"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="strings"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="strings"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="strings"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Logic.True"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListEquals"/><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="a"/><expression tag="String.String" Value="a"/><expression tag="String.String" Value="a"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function checks for ascending order:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListAscending"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="strings"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.ForFromTo"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Logic.False"/></expression><expression tag="Relation.GreaterOrEquals"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="strings"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="strings"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="strings"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Logic.True"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListAscending"/><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="a"/><expression tag="String.String" Value="b"/><expression tag="String.String" Value="d"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In fact, a single function can be used, if the criteria is provided as a lambda expression:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListCompare"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="λ"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.ForFromTo"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Logic.False"/></expression><expression tag="Logic.Negation"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="λ"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="list"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Logic.True"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListCompare"/><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="a"/><expression tag="String.String" Value="a"/><expression tag="String.String" Value="a"/></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListCompare"/><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="a"/><expression tag="String.String" Value="z"/><expression tag="String.String" Value="c"/></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression><expression tag="Relation.LessOrEquals"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.False"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Other cases:"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For brevity, let us creae a symbol for each lambda expression:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="Equals"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="Ascending"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression><expression tag="Relation.LessOrEquals"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following creates lists of all the possible combinations of three strings, from the strings &quot;Rosetta&quot; and &quot;Code&quot;, and reporting if each combination is equals and ascending:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tuple"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListCompare"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tuple"/><expression tag="Symbolic.Symbol" Name="Equals"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListCompare"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tuple"/><expression tag="Symbolic.Symbol" Name="Ascending"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="tuple"/><expression tag="List.CartesianExponentiation"><expression tag="List.List"><expression tag="String.String" Value="Rosetta"/><expression tag="String.String" Value="Code"/></expression><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Rosetta"/><expression tag="String.String" Value="Rosetta"/><expression tag="String.String" Value="Rosetta"/></expression><expression tag="Logic.True"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Rosetta"/><expression tag="String.String" Value="Rosetta"/><expression tag="String.String" Value="Code"/></expression><expression tag="Logic.False"/><expression tag="Logic.False"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Rosetta"/><expression tag="String.String" Value="Code"/><expression tag="String.String" Value="Rosetta"/></expression><expression tag="Logic.False"/><expression tag="Logic.False"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Rosetta"/><expression tag="String.String" Value="Code"/><expression tag="String.String" Value="Code"/></expression><expression tag="Logic.False"/><expression tag="Logic.False"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Code"/><expression tag="String.String" Value="Rosetta"/><expression tag="String.String" Value="Rosetta"/></expression><expression tag="Logic.False"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Code"/><expression tag="String.String" Value="Rosetta"/><expression tag="String.String" Value="Code"/></expression><expression tag="Logic.False"/><expression tag="Logic.False"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Code"/><expression tag="String.String" Value="Code"/><expression tag="String.String" Value="Rosetta"/></expression><expression tag="Logic.False"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="Code"/><expression tag="String.String" Value="Code"/><expression tag="String.String" Value="Code"/></expression><expression tag="Logic.True"/><expression tag="Logic.True"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The functions also works for othr data types, such as numbers."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following is like the previous example, but using numbers instead. Notice than 0.5 and ½ are considered equal."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tuple"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListCompare"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tuple"/><expression tag="Symbolic.Symbol" Name="Equals"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ListCompare"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tuple"/><expression tag="Symbolic.Symbol" Name="Ascending"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="tuple"/><expression tag="List.CartesianExponentiation"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Number" Value="0.5"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Logic.True"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Number" Value="0.5"/></expression><expression tag="Logic.True"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Logic.False"/><expression tag="Logic.False"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="0.5"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Logic.True"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="0.5"/><expression tag="Math.Number" Value="0.5"/></expression><expression tag="Logic.True"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="0.5"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Logic.False"/><expression tag="Logic.False"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Logic.False"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Number" Value="0.5"/></expression><expression tag="Logic.False"/><expression tag="Logic.True"/></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Logic.True"/><expression tag="Logic.True"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620700127578"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.logic,org.formulae.relation,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Compare a list of strings"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Compare_a_list_of_strings" Description="Compare a list of strings"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Given a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/List_(abstract_data_type)" Description="list"/>
+				<expression tag="String.Text" Value="of arbitrarily many strings, show how to:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Test if they are all lexically equal"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Test if every string is lexically less than the one after it (i.e. whether the list is in strict ascending order)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Each of those two tests should result in a single true or false value, which could be used as the condition of an   if   statement or similar.&#10;&#10;If the input list has less than two elements, the tests should always return true."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There is no need to provide a complete program and output."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Assume that the strings are already stored in an array/list/sequence/tuple variable (whatever is most idiomatic) with the name"/>
+				<expression tag="String.String" Value="strings"/>
+				<expression tag="String.Text" Value=", and just show the expressions for performing those two tests on it (plus of course any includes and custom functions etc. that it needs),   with as little distractions as possible."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Try to write your solution in a way that does not modify the original list,   but if it does then please add a note to make that clear to readers."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function checks for equality:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ListEquals"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="strings"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Symbolic.Return">
+							<expression tag="Logic.False"/>
+						</expression>
+						<expression tag="Relation.Different">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="strings"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="strings"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="i"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="strings"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Logic.True"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ListEquals"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.String" Value="a"/>
+					<expression tag="String.String" Value="a"/>
+					<expression tag="String.String" Value="a"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following function checks for ascending order:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ListAscending"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="strings"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Symbolic.Return">
+							<expression tag="Logic.False"/>
+						</expression>
+						<expression tag="Relation.GreaterOrEquals">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="strings"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="strings"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="i"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="strings"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Logic.True"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ListAscending"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.String" Value="a"/>
+					<expression tag="String.String" Value="b"/>
+					<expression tag="String.String" Value="d"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="In fact, a single function can be used, if the criteria is provided as a lambda expression:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="Symbolic.Symbol" Name="λ"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Symbolic.Return">
+							<expression tag="Logic.False"/>
+						</expression>
+						<expression tag="Logic.Negation">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="λ"/>
+								<expression tag="List.List">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="list"/>
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="list"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="i"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Logic.True"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.String" Value="a"/>
+					<expression tag="String.String" Value="a"/>
+					<expression tag="String.String" Value="a"/>
+				</expression>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+					<expression tag="Relation.Equals">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.String" Value="a"/>
+					<expression tag="String.String" Value="z"/>
+					<expression tag="String.String" Value="c"/>
+				</expression>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+					<expression tag="Relation.LessOrEquals">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.False"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Other cases:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For brevity, let us creae a symbol for each lambda expression:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="Equals"/>
+			<expression tag="Symbolic.Lambda">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+				<expression tag="Relation.Equals">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="Ascending"/>
+			<expression tag="Symbolic.Lambda">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+				<expression tag="Relation.LessOrEquals">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following creates lists of all the possible combinations of three strings, from the strings &quot;Rosetta&quot; and &quot;Code&quot;, and reporting if each combination is equals and ascending:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="tuple"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="tuple"/>
+						<expression tag="Symbolic.Symbol" Name="Equals"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="tuple"/>
+						<expression tag="Symbolic.Symbol" Name="Ascending"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="tuple"/>
+			<expression tag="List.CartesianExponentiation">
+				<expression tag="List.List">
+					<expression tag="String.String" Value="Rosetta"/>
+					<expression tag="String.String" Value="Code"/>
+				</expression>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="tuple"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="tuple"/>
+							<expression tag="Symbolic.Symbol" Name="Equals"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="tuple"/>
+							<expression tag="Symbolic.Symbol" Name="Ascending"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Rosetta"/>
+						<expression tag="String.String" Value="Rosetta"/>
+						<expression tag="String.String" Value="Rosetta"/>
+					</expression>
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Rosetta"/>
+						<expression tag="String.String" Value="Rosetta"/>
+						<expression tag="String.String" Value="Code"/>
+					</expression>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Rosetta"/>
+						<expression tag="String.String" Value="Code"/>
+						<expression tag="String.String" Value="Rosetta"/>
+					</expression>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Rosetta"/>
+						<expression tag="String.String" Value="Code"/>
+						<expression tag="String.String" Value="Code"/>
+					</expression>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Code"/>
+						<expression tag="String.String" Value="Rosetta"/>
+						<expression tag="String.String" Value="Rosetta"/>
+					</expression>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Code"/>
+						<expression tag="String.String" Value="Rosetta"/>
+						<expression tag="String.String" Value="Code"/>
+					</expression>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Code"/>
+						<expression tag="String.String" Value="Code"/>
+						<expression tag="String.String" Value="Rosetta"/>
+					</expression>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.String" Value="Code"/>
+						<expression tag="String.String" Value="Code"/>
+						<expression tag="String.String" Value="Code"/>
+					</expression>
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.True"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The functions also works for othr data types, such as numbers."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following is like the previous example, but using numbers instead. Notice than 0.5 and ½ are considered equal."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="tuple"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="tuple"/>
+						<expression tag="Symbolic.Symbol" Name="Equals"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="tuple"/>
+						<expression tag="Symbolic.Symbol" Name="Ascending"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="tuple"/>
+			<expression tag="List.CartesianExponentiation">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Number" Value="0.5"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="tuple"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="tuple"/>
+							<expression tag="Symbolic.Symbol" Name="Equals"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="ListCompare"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="tuple"/>
+							<expression tag="Symbolic.Symbol" Name="Ascending"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Number" Value="0.5"/>
+					</expression>
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0.5"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0.5"/>
+						<expression tag="Math.Number" Value="0.5"/>
+					</expression>
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0.5"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Math.Number" Value="0.5"/>
+					</expression>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.True"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620700080000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

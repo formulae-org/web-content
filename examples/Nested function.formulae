@@ -1,1 +1,174 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Nested function"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Nested_function" Description="nested function"/><expression tag="String.Text" Value="(or"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="nested procedure"/></expression><expression tag="String.Text" Value="or"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="nested subroutine)"/></expression><expression tag="String.Text" Value="is a"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Subroutine" Description="function"/><expression tag="String.Text" Value="which is defined within another function, the enclosing function. Due to simple recursive"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Scope_(programming)" Description="scope"/><expression tag="String.Text" Value="rules, a nested function is itself invisible outside of its immediately enclosing function, but can see (access) all local objects (data, functions, types, etc.) of its immediately enclosing function as well as of any function(s) which, in turn, encloses that function. The nesting is theoretically possible to unlimited depth, although only a few levels are normally used in practical programs."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This script shows how to use nested functions."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Nested_function" Description="Nested function"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Example 1 (from Rosetta code)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Write a program consisting of two nested functions that prints the following text."/></expression><expression tag="Typesetting.BulletedList"><expression tag="String.String" Value="1. first"/><expression tag="String.String" Value="2. second"/><expression tag="String.String" Value="3. third"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The outer function (called MakeList or equivalent) is responsible for creating the list as a whole and is given the separator &quot;. &quot; as argument. It also defines a counter variable to keep track of the item number. This demonstrates how the inner function can influence the variables in the outer function."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The inner function (called MakeItem or equivalent) is responsible for creating a list item. It accesses the separator from the outer function and modifies the counter."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MakeList"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="separator"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="counter"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MakeItem"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="item"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="counter"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="counter"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"><expression tag="String.Concatenation"><expression tag="String.ToString"><expression tag="Symbolic.Symbol" Name="counter"/></expression><expression tag="Symbolic.Symbol" Name="separator"/><expression tag="Symbolic.Symbol" Name="item"/></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MakeItem"/><expression tag="List.List"><expression tag="String.String" Value="first"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MakeItem"/><expression tag="List.List"><expression tag="String.String" Value="second"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MakeItem"/><expression tag="List.List"><expression tag="String.String" Value="third"/></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="MakeList"/><expression tag="List.List"><expression tag="String.String" Value=". "/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="String.String" Value="1. first"/></expression><expression tag="List.List"><expression tag="String.String" Value="2. second"/></expression><expression tag="List.List"><expression tag="String.String" Value="3. third"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621291789974"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Nested function"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Nested_function" Description="nested function"/>
+				<expression tag="String.Text" Value="(or"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="nested procedure"/>
+				</expression>
+				<expression tag="String.Text" Value="or"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="nested subroutine)"/>
+				</expression>
+				<expression tag="String.Text" Value="is a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Subroutine" Description="function"/>
+				<expression tag="String.Text" Value="which is defined within another function, the enclosing function. Due to simple recursive"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Scope_(programming)" Description="scope"/>
+				<expression tag="String.Text" Value="rules, a nested function is itself invisible outside of its immediately enclosing function, but can see (access) all local objects (data, functions, types, etc.) of its immediately enclosing function as well as of any function(s) which, in turn, encloses that function. The nesting is theoretically possible to unlimited depth, although only a few levels are normally used in practical programs."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This script shows how to use nested functions."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Nested_function" Description="Nested function"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Example 1 (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Write a program consisting of two nested functions that prints the following text."/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="String.String" Value="1. first"/>
+				<expression tag="String.String" Value="2. second"/>
+				<expression tag="String.String" Value="3. third"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The outer function (called MakeList or equivalent) is responsible for creating the list as a whole and is given the separator &quot;. &quot; as argument. It also defines a counter variable to keep track of the item number. This demonstrates how the inner function can influence the variables in the outer function."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The inner function (called MakeItem or equivalent) is responsible for creating a list item. It accesses the separator from the outer function and modifies the counter."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="MakeList"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="separator"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="counter"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="MakeItem"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="item"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="block" Expanded="True">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="counter"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="counter"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Expression.Append">
+								<expression tag="Symbolic.Symbol" Name="list"/>
+								<expression tag="List.List">
+									<expression tag="String.Concatenation">
+										<expression tag="String.ToString">
+											<expression tag="Symbolic.Symbol" Name="counter"/>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="separator"/>
+										<expression tag="Symbolic.Symbol" Name="item"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="MakeItem"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="first"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="MakeItem"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="second"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="MakeItem"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="third"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="MakeList"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value=". "/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="String.String" Value="1. first"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="2. second"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="3. third"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621291740000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

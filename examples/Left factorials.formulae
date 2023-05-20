@@ -1,1 +1,429 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Left factorials"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Left_factorials" Description="Left factorials"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This Rosetta code task will be using this formula (factorial sums) for left factorial:"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.HorizontalArray"><expression tag="String.Text" Value="!n"/><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Factorial"><expression tag="String.Text" Value="k"/></expression><expression tag="String.Text" Value="k"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="String.Text" Value="where !0 = 0"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Display the left factorials for:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Zero through ten (inclusive)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="20 through 110 (inclusive) by tens"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Display the length (in decimal digits) of the left factorials for: 1,000 through 10,000   (inclusive), by thousands."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function calculates the left factorial directly by its definition:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Left factorial"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Factorial"><expression tag="Symbolic.Symbol" Name="k"/></expression><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="However, the following is much faster:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Left factorial"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Symbolic.Symbol" Name="factorial"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="factorial"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="factorial"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="result"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 1"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Showing left factorials from zero to ten:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateTable"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Left factorial"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Left factorial"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="1"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="2"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="10"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="34"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="154"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="874"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="5914"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="46234"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="409114"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 2"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Showing left factorials from 20 to 110, by tens:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateTable"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Left factorial"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="20"/><expression tag="Math.Number" Value="110"/><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Left factorial"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="20"/><expression tag="Math.Number" Value="128425485935180314"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="30"/><expression tag="Math.Number" Value="9157958657951075573395300940314"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="40"/><expression tag="Math.Number" Value="20935051082417771847631371547939998232420940314"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="50"/><expression tag="Math.Number" Value="620960027832821612639424806694551108812720525606160920420940314"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="60"/><expression tag="Math.Number" Value="141074930726669571000530822087000522211656242116439949000980378746128920420940314"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="70"/><expression tag="Math.Number" Value="173639511802987526699717162409282876065556519849603157850853034644815111221599509216528920420940314"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="80"/><expression tag="Math.Number" Value="906089587987695346534516804650290637694024830011956365184327674619752094289696314882008531991840922336528920420940314"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="90"/><expression tag="Math.Number" Value="16695570072624210767034167688394623360733515163575864136345910335924039962404869510225723072235842668787507993136908442336528920420940314"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="100"/><expression tag="Math.Number" Value="942786239765826579160595268206839381354754349601050974345395410407078230249590414458830117442618180732911203520208889371641659121356556442336528920420940314"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="110"/><expression tag="Math.Number" Value="145722981061585297004706728001906071948635199234860720988658042536179281328615541936083296163475394237524337422204397431927131629058103519228197429698252556442336528920420940314"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 3"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Showing length of left factorials, from 1,000 to 10,000 by thousands:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateTable"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="String.Length"><expression tag="String.ToString"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Left factorial"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1000"/><expression tag="Math.Number" Value="10000"/><expression tag="Math.Number" Value="1000"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="String.Length"><expression tag="String.ToString"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Left factorial"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1000"/><expression tag="Math.Number" Value="2565"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2000"/><expression tag="Math.Number" Value="5733"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3000"/><expression tag="Math.Number" Value="9128"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4000"/><expression tag="Math.Number" Value="12670"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5000"/><expression tag="Math.Number" Value="16322"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6000"/><expression tag="Math.Number" Value="20062"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7000"/><expression tag="Math.Number" Value="23875"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8000"/><expression tag="Math.Number" Value="27749"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9000"/><expression tag="Math.Number" Value="31678"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="10000"/><expression tag="Math.Number" Value="35656"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621209891428"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Left factorials"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Left_factorials" Description="Left factorials"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This Rosetta code task will be using this formula (factorial sums) for left factorial:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="String.Text" Value="!n"/>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Summation">
+						<expression tag="Math.Arithmetic.Factorial">
+							<expression tag="String.Text" Value="k"/>
+						</expression>
+						<expression tag="String.Text" Value="k"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="where !0 = 0"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Display the left factorials for:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Zero through ten (inclusive)"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="20 through 110 (inclusive) by tens"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Display the length (in decimal digits) of the left factorials for: 1,000 through 10,000   (inclusive), by thousands."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function calculates the left factorial directly by its definition:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Left factorial"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Summation">
+				<expression tag="Math.Arithmetic.Factorial">
+					<expression tag="Symbolic.Symbol" Name="k"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="k"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="However, the following is much faster:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Left factorial"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="result"/>
+							<expression tag="Symbolic.Symbol" Name="factorial"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="result"/>
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="factorial"/>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Symbolic.Symbol" Name="factorial"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="result"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 1"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Showing left factorials from zero to ten:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Left factorial"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="Math.Number" Value="0"/>
+			<expression tag="Math.Number" Value="10"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Left factorial"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="34"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="154"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="874"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="5914"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="46234"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="409114"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 2"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Showing left factorials from 20 to 110, by tens:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Left factorial"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="Math.Number" Value="20"/>
+			<expression tag="Math.Number" Value="110"/>
+			<expression tag="Math.Number" Value="10"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Left factorial"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="20"/>
+					<expression tag="Math.Number" Value="128425485935180314"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="30"/>
+					<expression tag="Math.Number" Value="9157958657951075573395300940314"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="40"/>
+					<expression tag="Math.Number" Value="20935051082417771847631371547939998232420940314"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="50"/>
+					<expression tag="Math.Number" Value="620960027832821612639424806694551108812720525606160920420940314"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="60"/>
+					<expression tag="Math.Number" Value="141074930726669571000530822087000522211656242116439949000980378746128920420940314"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="70"/>
+					<expression tag="Math.Number" Value="173639511802987526699717162409282876065556519849603157850853034644815111221599509216528920420940314"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="80"/>
+					<expression tag="Math.Number" Value="906089587987695346534516804650290637694024830011956365184327674619752094289696314882008531991840922336528920420940314"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="90"/>
+					<expression tag="Math.Number" Value="16695570072624210767034167688394623360733515163575864136345910335924039962404869510225723072235842668787507993136908442336528920420940314"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="100"/>
+					<expression tag="Math.Number" Value="942786239765826579160595268206839381354754349601050974345395410407078230249590414458830117442618180732911203520208889371641659121356556442336528920420940314"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="110"/>
+					<expression tag="Math.Number" Value="145722981061585297004706728001906071948635199234860720988658042536179281328615541936083296163475394237524337422204397431927131629058103519228197429698252556442336528920420940314"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 3"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Showing length of left factorials, from 1,000 to 10,000 by thousands:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="String.Length">
+					<expression tag="String.ToString">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="Left factorial"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="Math.Number" Value="1000"/>
+			<expression tag="Math.Number" Value="10000"/>
+			<expression tag="Math.Number" Value="1000"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="String.Length">
+						<expression tag="String.ToString">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="Left factorial"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1000"/>
+					<expression tag="Math.Number" Value="2565"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2000"/>
+					<expression tag="Math.Number" Value="5733"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3000"/>
+					<expression tag="Math.Number" Value="9128"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4000"/>
+					<expression tag="Math.Number" Value="12670"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5000"/>
+					<expression tag="Math.Number" Value="16322"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6000"/>
+					<expression tag="Math.Number" Value="20062"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7000"/>
+					<expression tag="Math.Number" Value="23875"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8000"/>
+					<expression tag="Math.Number" Value="27749"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9000"/>
+					<expression tag="Math.Number" Value="31678"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10000"/>
+					<expression tag="Math.Number" Value="35656"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621209840000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

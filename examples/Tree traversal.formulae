@@ -1,1 +1,695 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Tree traversal"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Tree_traversal" Description="Tree traversal"/><expression tag="String.Text" Value="(also known as tree search and walking the tree) is a form of graph traversal and refers to the process of visiting (checking and/or updating) each node in a"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Tree_(data_structure)" Description="tree data structure,"/><expression tag="String.Text" Value="exactly once. Such traversals are classified by the order in which the nodes are visited."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, programs to perform the following tree traversal are presented:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Pre-order"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In-order"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Post-order"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Breadth-first search"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Tree_traversal" Description="Tree traversal"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Programs"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Pre-order"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Pre-order"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tree"/><expression tag="Symbolic.Symbol" Name="λ"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="t"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="λ"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="t"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="t"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="2"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="t"/></expression></expression></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tree"/></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="In-order"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This algorithm is defined for binary trees only. In the following implementation, if there is a node with more than two subnodes, these extra subnodes are ignored."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="In-order"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tree"/><expression tag="Symbolic.Symbol" Name="λ"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="t"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="t"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Relation.GreaterOrEquals"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="t"/></expression><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="λ"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="t"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="t"/><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Relation.GreaterOrEquals"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="t"/></expression><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tree"/></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Pos-order"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Post-order"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tree"/><expression tag="Symbolic.Symbol" Name="λ"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="t"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Programming.ForFromTo"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="t"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="2"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="t"/></expression></expression><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="λ"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="t"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tree"/></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Breadth-first search"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Breadth-first search"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tree"/><expression tag="Symbolic.Symbol" Name="λ"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="tmp_list"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="tree"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="t"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.While"><expression tag="Relation.LessOrEquals"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="tmp_list"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="t"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="tmp_list"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="t"/></expression></expression><expression tag="Programming.If"><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Programming.ForFromTo"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="tmp_list"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="t"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Assignment"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="tmp_list"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Expression.Child"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="tmp_list"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Programming.ForIn"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="λ"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="elem"/></expression></expression><expression tag="Symbolic.Symbol" Name="elem"/><expression tag="Symbolic.Symbol" Name="tmp_list"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test cases"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="All algorithms are tested with the following tree:"/></expression><expression tag="Typesetting.Centering"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Pre-order"/><expression tag="List.List"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="node"/></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="node"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="In-order"/><expression tag="List.List"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="node"/></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="node"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Post-order"/><expression tag="List.List"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="node"/></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="node"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Breadth-first search"/><expression tag="List.List"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="node"/></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="node"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621477258686"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.relation,org.formulae.diagramming,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Tree traversal"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Tree_traversal" Description="Tree traversal"/>
+				<expression tag="String.Text" Value="(also known as tree search and walking the tree) is a form of graph traversal and refers to the process of visiting (checking and/or updating) each node in a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Tree_(data_structure)" Description="tree data structure,"/>
+				<expression tag="String.Text" Value="exactly once. Such traversals are classified by the order in which the nodes are visited."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, programs to perform the following tree traversal are presented:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Pre-order"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="In-order"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Post-order"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Breadth-first search"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Tree_traversal" Description="Tree traversal"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Programs"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Pre-order"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Pre-order"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="tree"/>
+					<expression tag="Symbolic.Symbol" Name="λ"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="process"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="t"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="Description" Expanded="True">
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="λ"/>
+								<expression tag="List.List">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="t"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Programming.ForFromTo">
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="process"/>
+									<expression tag="List.List">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="t"/>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Expression.Cardinality">
+									<expression tag="Symbolic.Symbol" Name="t"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="process"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="tree"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="In-order"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This algorithm is defined for binary trees only. In the following implementation, if there is a node with more than two subnodes, these extra subnodes are ignored."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="In-order"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="tree"/>
+					<expression tag="Symbolic.Symbol" Name="λ"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="process"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="t"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="Description" Expanded="True">
+							<expression tag="Programming.InvertedIf">
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="process"/>
+									<expression tag="List.List">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="t"/>
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Relation.GreaterOrEquals">
+									<expression tag="Expression.Cardinality">
+										<expression tag="Symbolic.Symbol" Name="t"/>
+									</expression>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="λ"/>
+								<expression tag="List.List">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="t"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Programming.InvertedIf">
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="process"/>
+									<expression tag="List.List">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="t"/>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Relation.GreaterOrEquals">
+									<expression tag="Expression.Cardinality">
+										<expression tag="Symbolic.Symbol" Name="t"/>
+									</expression>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="process"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="tree"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Pos-order"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Post-order"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="tree"/>
+					<expression tag="Symbolic.Symbol" Name="λ"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="process"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="t"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="Description" Expanded="True">
+							<expression tag="Programming.ForFromTo">
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="process"/>
+									<expression tag="List.List">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="t"/>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Expression.Cardinality">
+									<expression tag="Symbolic.Symbol" Name="t"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="λ"/>
+								<expression tag="List.List">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="t"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="process"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="tree"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Breadth-first search"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Breadth-first search"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="tree"/>
+					<expression tag="Symbolic.Symbol" Name="λ"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="tmp_list"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="tree"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="t"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.While">
+					<expression tag="Relation.LessOrEquals">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="tmp_list"/>
+						</expression>
+					</expression>
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="t"/>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="tmp_list"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Expression.Cardinality">
+								<expression tag="Symbolic.Symbol" Name="t"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.If">
+							<expression tag="Relation.Greater">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+							<expression tag="Programming.Block" Description="Description" Expanded="True">
+								<expression tag="Programming.ForFromTo">
+									<expression tag="Expression.Append">
+										<expression tag="Symbolic.Symbol" Name="tmp_list"/>
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="t"/>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+									<expression tag="Math.Number" Value="2"/>
+									<expression tag="Symbolic.Symbol" Name="n"/>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="tmp_list"/>
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+									<expression tag="Expression.Child">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="tmp_list"/>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForIn">
+					<expression tag="Symbolic.LambdaApplication">
+						<expression tag="Symbolic.Symbol" Name="λ"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="elem"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="elem"/>
+					<expression tag="Symbolic.Symbol" Name="tmp_list"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test cases"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="All algorithms are tested with the following tree:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="7"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="6"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="8"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="9"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Pre-order"/>
+				<expression tag="List.List">
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="4"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="7"/>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="6"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="8"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="9"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="node"/>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="node"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="list"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Number" Value="7"/>
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="6"/>
+			<expression tag="Math.Number" Value="8"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="In-order"/>
+				<expression tag="List.List">
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="4"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="7"/>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="6"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="8"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="9"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="node"/>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="node"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="list"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="7"/>
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="8"/>
+			<expression tag="Math.Number" Value="6"/>
+			<expression tag="Math.Number" Value="9"/>
+			<expression tag="Math.Number" Value="3"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Post-order"/>
+				<expression tag="List.List">
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="4"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="7"/>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="6"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="8"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="9"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="node"/>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="node"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="list"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="7"/>
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="8"/>
+			<expression tag="Math.Number" Value="9"/>
+			<expression tag="Math.Number" Value="6"/>
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="1"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Breadth-first search"/>
+				<expression tag="List.List">
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="4"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="7"/>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="6"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="8"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="9"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="node"/>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="node"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="list"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="6"/>
+			<expression tag="Math.Number" Value="7"/>
+			<expression tag="Math.Number" Value="8"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621477200000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

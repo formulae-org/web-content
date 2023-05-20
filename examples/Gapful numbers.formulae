@@ -1,1 +1,334 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Gapful numbers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Gapful_numbers" Description="Gapful numbers"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Numbers   (positive integers expressed in base ten)   that are (evenly) divisible by the number formed by the first and last digit are known as   gapful numbers."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Evenly divisible   means divisible with no remainder."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="All   one─   and two─digit   numbers have this property and are trivially excluded.   Only numbers   ≥ 100   will be considered for this task."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Example. 187 is a gapful number because it is evenly divisible by the number   17   which is formed by the first and last decimal digits of 187."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="About 7.46% of positive integers are gapful."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Task"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Generate and show all sets of numbers (below) on one line (horizontally) with a title."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show the first 30 gapful numbers"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show the first 15 gapful numbers ≥ 1,000,000"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show the first 10 gapful numbers ≥ 1,000,000,000"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function return whether a given number is gapful or not"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The expression"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=Math.Arithmetic.Digits" Description="Digits"/><expression tag="String.Text" Value="creates a list of the digits of the given number, in any base (by default 10). For example, for the input 123, it reduces to {1, 2, 3}"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The first subexpression (in the case of a list, an element of it) has the index 1. The last subexpression can be retrieved with the index -1 (-2 is the penultimate element and so on)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The expression"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=Math.Arithmetic.Divides" Description="Divides,"/><expression tag="String.Text" Value="shown here as a | b, reduces to"/><expression tag="Logic.True"/><expression tag="String.Text" Value="if a divides b, and"/><expression tag="Logic.False"/><expression tag="String.Text" Value="elsewere."/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Gapful"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="digits"/><expression tag="Math.Arithmetic.Digits"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Math.Arithmetic.Divides"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="10"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="digits"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="digits"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function shows gapful numbers from a given value:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="First"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="lowest"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="List.List"><expression tag="List.List"/><expression tag="Symbolic.Symbol" Name="lowest"/></expression></expression></expression><expression tag="Programming.Until"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Gapful"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Relation.Equals"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="list"/></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 1"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show the first 30 gapful numbers"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="First"/><expression tag="List.List"><expression tag="Math.Number" Value="100"/><expression tag="Math.Number" Value="30"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="100"/><expression tag="Math.Number" Value="105"/><expression tag="Math.Number" Value="108"/><expression tag="Math.Number" Value="110"/><expression tag="Math.Number" Value="120"/><expression tag="Math.Number" Value="121"/><expression tag="Math.Number" Value="130"/><expression tag="Math.Number" Value="132"/><expression tag="Math.Number" Value="135"/><expression tag="Math.Number" Value="140"/><expression tag="Math.Number" Value="143"/><expression tag="Math.Number" Value="150"/><expression tag="Math.Number" Value="154"/><expression tag="Math.Number" Value="160"/><expression tag="Math.Number" Value="165"/><expression tag="Math.Number" Value="170"/><expression tag="Math.Number" Value="176"/><expression tag="Math.Number" Value="180"/><expression tag="Math.Number" Value="187"/><expression tag="Math.Number" Value="190"/><expression tag="Math.Number" Value="192"/><expression tag="Math.Number" Value="195"/><expression tag="Math.Number" Value="198"/><expression tag="Math.Number" Value="200"/><expression tag="Math.Number" Value="220"/><expression tag="Math.Number" Value="225"/><expression tag="Math.Number" Value="231"/><expression tag="Math.Number" Value="240"/><expression tag="Math.Number" Value="242"/><expression tag="Math.Number" Value="253"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 2"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show the first 15 gapful numbers ≥ 1,000,000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="First"/><expression tag="List.List"><expression tag="Math.Number" Value="1000000"/><expression tag="Math.Number" Value="15"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="1000000"/><expression tag="Math.Number" Value="1000005"/><expression tag="Math.Number" Value="1000008"/><expression tag="Math.Number" Value="1000010"/><expression tag="Math.Number" Value="1000016"/><expression tag="Math.Number" Value="1000020"/><expression tag="Math.Number" Value="1000021"/><expression tag="Math.Number" Value="1000030"/><expression tag="Math.Number" Value="1000032"/><expression tag="Math.Number" Value="1000034"/><expression tag="Math.Number" Value="1000035"/><expression tag="Math.Number" Value="1000040"/><expression tag="Math.Number" Value="1000050"/><expression tag="Math.Number" Value="1000060"/><expression tag="Math.Number" Value="1000065"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 3"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show the first 10 gapful numbers ≥ 1,000,000,000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="First"/><expression tag="List.List"><expression tag="Math.Number" Value="1000000000"/><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="1000000000"/><expression tag="Math.Number" Value="1000000001"/><expression tag="Math.Number" Value="1000000005"/><expression tag="Math.Number" Value="1000000008"/><expression tag="Math.Number" Value="1000000010"/><expression tag="Math.Number" Value="1000000016"/><expression tag="Math.Number" Value="1000000020"/><expression tag="Math.Number" Value="1000000027"/><expression tag="Math.Number" Value="1000000030"/><expression tag="Math.Number" Value="1000000032"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621036666112"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.logic,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Gapful numbers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Gapful_numbers" Description="Gapful numbers"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Numbers   (positive integers expressed in base ten)   that are (evenly) divisible by the number formed by the first and last digit are known as   gapful numbers."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Evenly divisible   means divisible with no remainder."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="All   one─   and two─digit   numbers have this property and are trivially excluded.   Only numbers   ≥ 100   will be considered for this task."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Example. 187 is a gapful number because it is evenly divisible by the number   17   which is formed by the first and last decimal digits of 187."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="About 7.46% of positive integers are gapful."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Task"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Generate and show all sets of numbers (below) on one line (horizontally) with a title."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show the first 30 gapful numbers"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show the first 15 gapful numbers ≥ 1,000,000"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show the first 10 gapful numbers ≥ 1,000,000,000"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function return whether a given number is gapful or not"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The expression"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Digits" Description="Digits"/>
+					<expression tag="String.Text" Value="creates a list of the digits of the given number, in any base (by default 10). For example, for the input 123, it reduces to {1, 2, 3}"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The first subexpression (in the case of a list, an element of it) has the index 1. The last subexpression can be retrieved with the index -1 (-2 is the penultimate element and so on)."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The expression"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Divides" Description="Divides,"/>
+					<expression tag="String.Text" Value="shown here as a | b, reduces to"/>
+					<expression tag="Logic.True"/>
+					<expression tag="String.Text" Value="if a divides b, and"/>
+					<expression tag="Logic.False"/>
+					<expression tag="String.Text" Value="elsewere."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Gapful"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="digits"/>
+						<expression tag="Math.Arithmetic.Digits">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Divides">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Number" Value="10"/>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="digits"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="digits"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following function shows gapful numbers from a given value:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="First"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="lowest"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="List.List"/>
+							<expression tag="Symbolic.Symbol" Name="lowest"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.Until">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Expression.Append">
+								<expression tag="Symbolic.Symbol" Name="list"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="Gapful"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Relation.Equals">
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 1"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Show the first 30 gapful numbers"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="First"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="100"/>
+				<expression tag="Math.Number" Value="30"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="100"/>
+			<expression tag="Math.Number" Value="105"/>
+			<expression tag="Math.Number" Value="108"/>
+			<expression tag="Math.Number" Value="110"/>
+			<expression tag="Math.Number" Value="120"/>
+			<expression tag="Math.Number" Value="121"/>
+			<expression tag="Math.Number" Value="130"/>
+			<expression tag="Math.Number" Value="132"/>
+			<expression tag="Math.Number" Value="135"/>
+			<expression tag="Math.Number" Value="140"/>
+			<expression tag="Math.Number" Value="143"/>
+			<expression tag="Math.Number" Value="150"/>
+			<expression tag="Math.Number" Value="154"/>
+			<expression tag="Math.Number" Value="160"/>
+			<expression tag="Math.Number" Value="165"/>
+			<expression tag="Math.Number" Value="170"/>
+			<expression tag="Math.Number" Value="176"/>
+			<expression tag="Math.Number" Value="180"/>
+			<expression tag="Math.Number" Value="187"/>
+			<expression tag="Math.Number" Value="190"/>
+			<expression tag="Math.Number" Value="192"/>
+			<expression tag="Math.Number" Value="195"/>
+			<expression tag="Math.Number" Value="198"/>
+			<expression tag="Math.Number" Value="200"/>
+			<expression tag="Math.Number" Value="220"/>
+			<expression tag="Math.Number" Value="225"/>
+			<expression tag="Math.Number" Value="231"/>
+			<expression tag="Math.Number" Value="240"/>
+			<expression tag="Math.Number" Value="242"/>
+			<expression tag="Math.Number" Value="253"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 2"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Show the first 15 gapful numbers ≥ 1,000,000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="First"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1000000"/>
+				<expression tag="Math.Number" Value="15"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1000000"/>
+			<expression tag="Math.Number" Value="1000005"/>
+			<expression tag="Math.Number" Value="1000008"/>
+			<expression tag="Math.Number" Value="1000010"/>
+			<expression tag="Math.Number" Value="1000016"/>
+			<expression tag="Math.Number" Value="1000020"/>
+			<expression tag="Math.Number" Value="1000021"/>
+			<expression tag="Math.Number" Value="1000030"/>
+			<expression tag="Math.Number" Value="1000032"/>
+			<expression tag="Math.Number" Value="1000034"/>
+			<expression tag="Math.Number" Value="1000035"/>
+			<expression tag="Math.Number" Value="1000040"/>
+			<expression tag="Math.Number" Value="1000050"/>
+			<expression tag="Math.Number" Value="1000060"/>
+			<expression tag="Math.Number" Value="1000065"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 3"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Show the first 10 gapful numbers ≥ 1,000,000,000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="First"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1000000000"/>
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1000000000"/>
+			<expression tag="Math.Number" Value="1000000001"/>
+			<expression tag="Math.Number" Value="1000000005"/>
+			<expression tag="Math.Number" Value="1000000008"/>
+			<expression tag="Math.Number" Value="1000000010"/>
+			<expression tag="Math.Number" Value="1000000016"/>
+			<expression tag="Math.Number" Value="1000000020"/>
+			<expression tag="Math.Number" Value="1000000027"/>
+			<expression tag="Math.Number" Value="1000000030"/>
+			<expression tag="Math.Number" Value="1000000032"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621036620000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

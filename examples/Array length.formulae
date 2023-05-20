@@ -1,1 +1,129 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Array length"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Array_length" Description="Array length"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Determine the amount of elements in an array."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="As an example use an array holding the strings 'apple' and 'orange'."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="Expression.Cardinality" Description="cardinality"/><expression tag="String.Text" Value="expression:"/></expression><expression tag="Typesetting.Centering"><expression tag="Expression.Cardinality"><expression tag="String.Text" Value="expression"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Reduces to the number of subexpression the given expression has, including if the expressions is a ist:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Expression.Cardinality"><expression tag="List.List"><expression tag="String.String" Value="apple"/><expression tag="String.String" Value="orange"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="2"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Expression.Cardinality"><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="2"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Expression.Cardinality"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="w"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="y"/><expression tag="Symbolic.Symbol" Name="z"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="4"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Expression.Cardinality"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="0"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="(Before the cardinality, the addition is performed, reducing it to the number 6, which has no subexpressions)."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Expression.Cardinality"><expression tag="Logic.True"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="0"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620492086639"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.expression,org.formulae.list,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.logic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Array length"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Array_length" Description="Array length"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Determine the amount of elements in an array."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="As an example use an array holding the strings 'apple' and 'orange'."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="Expression.Cardinality" Description="cardinality"/>
+				<expression tag="String.Text" Value="expression:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Expression.Cardinality">
+					<expression tag="String.Text" Value="expression"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Reduces to the number of subexpression the given expression has, including if the expressions is a ist:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Expression.Cardinality">
+			<expression tag="List.List">
+				<expression tag="String.String" Value="apple"/>
+				<expression tag="String.String" Value="orange"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Expression.Cardinality">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Expression.Cardinality">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="w"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="y"/>
+				<expression tag="Symbolic.Symbol" Name="z"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="4"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Expression.Cardinality">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="(Before the cardinality, the addition is performed, reducing it to the number 6, which has no subexpressions)."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Expression.Cardinality">
+			<expression tag="Logic.True"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620492060000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

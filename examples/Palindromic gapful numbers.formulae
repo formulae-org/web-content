@@ -1,1 +1,1557 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Palindromic gapful numbers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Palindromic_gapful_numbers" Description="Palindromic gapful numbers"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Numbers   (positive integers expressed in base ten)   that are (evenly) divisible by the number formed by the first and last digit are known as   gapful numbers."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Evenly divisible   means divisible with no remainder."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="All   one─   and two─digit   numbers have this property and are trivially excluded.   Only numbers   ≥ 100   will be considered for this task."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Example. 187 is a gapful number because it is evenly divisible by the number   17   which is formed by the first and last decimal digits of 187."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A palindromic number is (for this task, a positive integer expressed in base ten), when the number is reversed, is the same as the original number."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function creates a list of the first palindromic gapful numbers (&gt; 100) starting/ending with a given digit."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="String.String" Value="This excersice works in local server only!!!"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="PalindromicGapfulList"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="digit"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="List.List"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="dividend"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="10"/><expression tag="Symbolic.Symbol" Name="digit"/></expression><expression tag="Symbolic.Symbol" Name="digit"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="finish"/><expression tag="Logic.False"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="start"/><expression tag="Symbolic.Symbol" Name="end"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="CreatePalindromes"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="offset"/></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Math.Arithmetic.Digits"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Programming.ForFromTo"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="10"/><expression tag="Symbolic.Symbol" Name="value"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="d"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="g"/></expression><expression tag="Programming.ForFromTo"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="10"/><expression tag="Symbolic.Symbol" Name="value"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="d"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Symbolic.Symbol" Name="offset"/></expression><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Symbolic.Symbol" Name="value"/></expression><expression tag="Math.Arithmetic.Divides"><expression tag="Symbolic.Symbol" Name="dividend"/><expression tag="Symbolic.Symbol" Name="value"/></expression></expression><expression tag="Programming.If"><expression tag="Relation.Equals"><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="result"/></expression><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="finish"/><expression tag="Logic.True"/></expression><expression tag="Symbolic.Return"><expression tag="Math.Number" Value="0"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="start"/><expression tag="Symbolic.Symbol" Name="end"/></expression></expression></expression><expression tag="Programming.While"><expression tag="Logic.Negation"><expression tag="Symbolic.Symbol" Name="finish"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="start"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="digit"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="10"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="end"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="start"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="10"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="CreatePalindromes"/><expression tag="List.List"><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="CreatePalindromes"/><expression tag="List.List"><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Logic.Negation"><expression tag="Symbolic.Symbol" Name="finish"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="result"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Explanation"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The algorithm generates palindromic numbers, and filter them for gapful ones."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In order to generate palindromic numbers, we mirror existing numbers (generators). There are two forms of mirroring, the first one (let us call it incomplete) mirrors every digit but the last one. The complete form mirrors all the digits. See the following examples:"/></expression><expression tag="Typesetting.Centering"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Generator"/><expression tag="String.Text" Value="Incomplete"/><expression tag="String.Text" Value="Complete"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="25"/><expression tag="Math.Number" Value="252"/><expression tag="Math.Number" Value="2552"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="407"/><expression tag="Math.Number" Value="40704"/><expression tag="Math.Number" Value="407704"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1357"/><expression tag="Math.Number" Value="1357531"/><expression tag="Math.Number" Value="13577531"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Let us call the number of digits of the generator its order."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The form of generate palindromic numbers in numeric order is to generate mirroring versions of the generator numbers, by order:"/></expression><expression tag="Typesetting.Centering"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Number of digits of the palindromic numbers"/><expression tag="String.Text" Value="Order of the generators"/><expression tag="String.Text" Value="Mirroring"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/><expression tag="String.Text" Value="Incomplete"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="2"/><expression tag="String.Text" Value="Complete"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="3"/><expression tag="String.Text" Value="Incomplete"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="3"/><expression tag="String.Text" Value="Complete"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="4"/><expression tag="String.Text" Value="Incomplete"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="4"/><expression tag="String.Text" Value="Complete"/></expression><expression tag="List.List"><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="So we have to create the generator in ascending order, we start with order 2, first in incomplete form and then in complete form. Once we had finished, we start with the next order, and so on."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For order 2, we have to generate numbers from 100 to 999. For order 3 from 1000 to 1999 and so on. However, we calculate palindrome numbers starting with a given digit, for example, the generator order 3 and starting digit 5 are the numbers 500 to 599. See the following table:"/></expression><expression tag="Typesetting.Centering"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Order"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="9"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="String.Text" Value="10 to 19"/><expression tag="String.Text" Value="20 to 29"/><expression tag="String.Text" Value="30 to 39"/><expression tag="String.Text" Value="40 to 49"/><expression tag="String.Text" Value="50 to 59"/><expression tag="String.Text" Value="60 to 69"/><expression tag="String.Text" Value="70 to 79"/><expression tag="String.Text" Value="80 to 89"/><expression tag="String.Text" Value="90 to 99"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="String.Text" Value="100 to 199"/><expression tag="String.Text" Value="200 to 299"/><expression tag="String.Text" Value="300 to 399"/><expression tag="String.Text" Value="400 to 499"/><expression tag="String.Text" Value="500 to 599"/><expression tag="String.Text" Value="600 to 699"/><expression tag="String.Text" Value="700 to 799"/><expression tag="String.Text" Value="800 to 899"/><expression tag="String.Text" Value="900 to 999"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="String.Text" Value="1,000 to 1,999"/><expression tag="String.Text" Value="2,000 to 2,999"/><expression tag="String.Text" Value="3,000 to 3,999"/><expression tag="String.Text" Value="4,000 to 4,999"/><expression tag="String.Text" Value="5,000 to 5,999"/><expression tag="String.Text" Value="6,000 to 6,999"/><expression tag="String.Text" Value="7,000 to 7,999"/><expression tag="String.Text" Value="8,000 to 8,999"/><expression tag="String.Text" Value="9,000 to 9,999"/></expression><expression tag="List.List"><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/><expression tag="String.Text" Value="⋮"/></expression></expression></expression><expression tag="Null"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The formula is:"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.VerticalArray"><expression tag="Visualization.HorizontalArray"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="start"/><expression tag="List.List"><expression tag="String.Text" Value="order"/><expression tag="String.Text" Value="digit"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Multiplication"><expression tag="String.Text" Value="digit"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="10"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="order"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression><expression tag="Visualization.HorizontalArray"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="end"/><expression tag="List.List"><expression tag="String.Text" Value="order"/><expression tag="String.Text" Value="digit"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Function"><expression tag="String.Text" Value="start"/><expression tag="List.List"><expression tag="String.Text" Value="order"/><expression tag="String.Text" Value="digit"/></expression></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="10"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="order"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Once we have palindromic numbers in numeric order, we test every one to be gapful. In order to be gapful, they have to be divisible by the number"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="10"/><expression tag="String.Text" Value="digit"/></expression><expression tag="String.Text" Value="digit"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the program the order is defined in the g symbol."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The incomplete and complete mirroring are defined in the local function CreatePalindromes being called with -1 and 0 values, respectively."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="As an example, the first 10 palindromic gapful numbers starting/ending with 1:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="PalindromicGapfulList"/><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="121"/><expression tag="Math.Number" Value="1001"/><expression tag="Math.Number" Value="1111"/><expression tag="Math.Number" Value="1221"/><expression tag="Math.Number" Value="1331"/><expression tag="Math.Number" Value="1441"/><expression tag="Math.Number" Value="1551"/><expression tag="Math.Number" Value="1661"/><expression tag="Math.Number" Value="1771"/><expression tag="Math.Number" Value="1881"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 1. 1st to 20th palindromic gapful numbers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In order to solve the next cases, it is useful to create a matrix, containing the first palindromic gapful numbers, up to a higher number. The first row is for numbers starting/ending with 1, second row for numbers starting/ending with 2, and so on."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="With this method, achieving the cases is a matter of extracting numbers from the matrix."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Unfortunately, creating a matrix with the first 10,000,000 numbers was too much for the computer (it would require a 9 x 10,000,000 matrix of numbers). However it was able to create for 1,000,000 numbers. (Even so, it is a 9 x 1,000,000 matrix, or 9,000,000 numbers):"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="matrix"/><expression tag="List.CreateList"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="PalindromicGapfulList"/><expression tag="List.List"><expression tag="Math.Number" Value="1000000"/><expression tag="Symbolic.Symbol" Name="d"/></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Then, solving the cases (excepting the last one) are now trivial and immediate:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="List.CreateList"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="matrix"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Symbolic.Symbol" Name="pos"/></expression></expression><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="20"/></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="List.List"><expression tag="Math.Number" Value="121"/><expression tag="Math.Number" Value="1001"/><expression tag="Math.Number" Value="1111"/><expression tag="Math.Number" Value="1221"/><expression tag="Math.Number" Value="1331"/><expression tag="Math.Number" Value="1441"/><expression tag="Math.Number" Value="1551"/><expression tag="Math.Number" Value="1661"/><expression tag="Math.Number" Value="1771"/><expression tag="Math.Number" Value="1881"/><expression tag="Math.Number" Value="1991"/><expression tag="Math.Number" Value="10901"/><expression tag="Math.Number" Value="11011"/><expression tag="Math.Number" Value="12221"/><expression tag="Math.Number" Value="13431"/><expression tag="Math.Number" Value="14641"/><expression tag="Math.Number" Value="15851"/><expression tag="Math.Number" Value="17171"/><expression tag="Math.Number" Value="18381"/><expression tag="Math.Number" Value="19591"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="List.List"><expression tag="Math.Number" Value="242"/><expression tag="Math.Number" Value="2002"/><expression tag="Math.Number" Value="2112"/><expression tag="Math.Number" Value="2222"/><expression tag="Math.Number" Value="2332"/><expression tag="Math.Number" Value="2442"/><expression tag="Math.Number" Value="2552"/><expression tag="Math.Number" Value="2662"/><expression tag="Math.Number" Value="2772"/><expression tag="Math.Number" Value="2882"/><expression tag="Math.Number" Value="2992"/><expression tag="Math.Number" Value="20702"/><expression tag="Math.Number" Value="21912"/><expression tag="Math.Number" Value="22022"/><expression tag="Math.Number" Value="23232"/><expression tag="Math.Number" Value="24442"/><expression tag="Math.Number" Value="25652"/><expression tag="Math.Number" Value="26862"/><expression tag="Math.Number" Value="28182"/><expression tag="Math.Number" Value="29392"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="List.List"><expression tag="Math.Number" Value="363"/><expression tag="Math.Number" Value="3003"/><expression tag="Math.Number" Value="3333"/><expression tag="Math.Number" Value="3663"/><expression tag="Math.Number" Value="3993"/><expression tag="Math.Number" Value="31713"/><expression tag="Math.Number" Value="33033"/><expression tag="Math.Number" Value="36663"/><expression tag="Math.Number" Value="300003"/><expression tag="Math.Number" Value="303303"/><expression tag="Math.Number" Value="306603"/><expression tag="Math.Number" Value="309903"/><expression tag="Math.Number" Value="312213"/><expression tag="Math.Number" Value="315513"/><expression tag="Math.Number" Value="318813"/><expression tag="Math.Number" Value="321123"/><expression tag="Math.Number" Value="324423"/><expression tag="Math.Number" Value="327723"/><expression tag="Math.Number" Value="330033"/><expression tag="Math.Number" Value="333333"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="List.List"><expression tag="Math.Number" Value="484"/><expression tag="Math.Number" Value="4004"/><expression tag="Math.Number" Value="4224"/><expression tag="Math.Number" Value="4444"/><expression tag="Math.Number" Value="4664"/><expression tag="Math.Number" Value="4884"/><expression tag="Math.Number" Value="40304"/><expression tag="Math.Number" Value="42724"/><expression tag="Math.Number" Value="44044"/><expression tag="Math.Number" Value="46464"/><expression tag="Math.Number" Value="48884"/><expression tag="Math.Number" Value="400004"/><expression tag="Math.Number" Value="401104"/><expression tag="Math.Number" Value="402204"/><expression tag="Math.Number" Value="403304"/><expression tag="Math.Number" Value="404404"/><expression tag="Math.Number" Value="405504"/><expression tag="Math.Number" Value="406604"/><expression tag="Math.Number" Value="407704"/><expression tag="Math.Number" Value="408804"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="List.List"><expression tag="Math.Number" Value="5005"/><expression tag="Math.Number" Value="5115"/><expression tag="Math.Number" Value="5225"/><expression tag="Math.Number" Value="5335"/><expression tag="Math.Number" Value="5445"/><expression tag="Math.Number" Value="5555"/><expression tag="Math.Number" Value="5665"/><expression tag="Math.Number" Value="5775"/><expression tag="Math.Number" Value="5885"/><expression tag="Math.Number" Value="5995"/><expression tag="Math.Number" Value="50105"/><expression tag="Math.Number" Value="51315"/><expression tag="Math.Number" Value="52525"/><expression tag="Math.Number" Value="53735"/><expression tag="Math.Number" Value="54945"/><expression tag="Math.Number" Value="55055"/><expression tag="Math.Number" Value="56265"/><expression tag="Math.Number" Value="57475"/><expression tag="Math.Number" Value="58685"/><expression tag="Math.Number" Value="59895"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="List.List"><expression tag="Math.Number" Value="6006"/><expression tag="Math.Number" Value="6336"/><expression tag="Math.Number" Value="6666"/><expression tag="Math.Number" Value="6996"/><expression tag="Math.Number" Value="61116"/><expression tag="Math.Number" Value="64746"/><expression tag="Math.Number" Value="66066"/><expression tag="Math.Number" Value="69696"/><expression tag="Math.Number" Value="600006"/><expression tag="Math.Number" Value="603306"/><expression tag="Math.Number" Value="606606"/><expression tag="Math.Number" Value="609906"/><expression tag="Math.Number" Value="612216"/><expression tag="Math.Number" Value="615516"/><expression tag="Math.Number" Value="618816"/><expression tag="Math.Number" Value="621126"/><expression tag="Math.Number" Value="624426"/><expression tag="Math.Number" Value="627726"/><expression tag="Math.Number" Value="630036"/><expression tag="Math.Number" Value="633336"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="List.List"><expression tag="Math.Number" Value="7007"/><expression tag="Math.Number" Value="7777"/><expression tag="Math.Number" Value="77077"/><expression tag="Math.Number" Value="700007"/><expression tag="Math.Number" Value="707707"/><expression tag="Math.Number" Value="710017"/><expression tag="Math.Number" Value="717717"/><expression tag="Math.Number" Value="720027"/><expression tag="Math.Number" Value="727727"/><expression tag="Math.Number" Value="730037"/><expression tag="Math.Number" Value="737737"/><expression tag="Math.Number" Value="740047"/><expression tag="Math.Number" Value="747747"/><expression tag="Math.Number" Value="750057"/><expression tag="Math.Number" Value="757757"/><expression tag="Math.Number" Value="760067"/><expression tag="Math.Number" Value="767767"/><expression tag="Math.Number" Value="770077"/><expression tag="Math.Number" Value="777777"/><expression tag="Math.Number" Value="780087"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="List.List"><expression tag="Math.Number" Value="8008"/><expression tag="Math.Number" Value="8448"/><expression tag="Math.Number" Value="8888"/><expression tag="Math.Number" Value="80608"/><expression tag="Math.Number" Value="86768"/><expression tag="Math.Number" Value="88088"/><expression tag="Math.Number" Value="800008"/><expression tag="Math.Number" Value="802208"/><expression tag="Math.Number" Value="804408"/><expression tag="Math.Number" Value="806608"/><expression tag="Math.Number" Value="808808"/><expression tag="Math.Number" Value="821128"/><expression tag="Math.Number" Value="823328"/><expression tag="Math.Number" Value="825528"/><expression tag="Math.Number" Value="827728"/><expression tag="Math.Number" Value="829928"/><expression tag="Math.Number" Value="840048"/><expression tag="Math.Number" Value="842248"/><expression tag="Math.Number" Value="844448"/><expression tag="Math.Number" Value="846648"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="List.List"><expression tag="Math.Number" Value="9009"/><expression tag="Math.Number" Value="9999"/><expression tag="Math.Number" Value="94149"/><expression tag="Math.Number" Value="99099"/><expression tag="Math.Number" Value="900009"/><expression tag="Math.Number" Value="909909"/><expression tag="Math.Number" Value="918819"/><expression tag="Math.Number" Value="927729"/><expression tag="Math.Number" Value="936639"/><expression tag="Math.Number" Value="945549"/><expression tag="Math.Number" Value="954459"/><expression tag="Math.Number" Value="963369"/><expression tag="Math.Number" Value="972279"/><expression tag="Math.Number" Value="981189"/><expression tag="Math.Number" Value="990099"/><expression tag="Math.Number" Value="999999"/><expression tag="Math.Number" Value="9459549"/><expression tag="Math.Number" Value="9508059"/><expression tag="Math.Number" Value="9557559"/><expression tag="Math.Number" Value="9606069"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 2. 86th to 100th palindromic gapful numbers"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="List.CreateList"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="matrix"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Symbolic.Symbol" Name="pos"/></expression></expression><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Number" Value="86"/><expression tag="Math.Number" Value="100"/></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="List.List"><expression tag="Math.Number" Value="165561"/><expression tag="Math.Number" Value="166661"/><expression tag="Math.Number" Value="167761"/><expression tag="Math.Number" Value="168861"/><expression tag="Math.Number" Value="169961"/><expression tag="Math.Number" Value="170071"/><expression tag="Math.Number" Value="171171"/><expression tag="Math.Number" Value="172271"/><expression tag="Math.Number" Value="173371"/><expression tag="Math.Number" Value="174471"/><expression tag="Math.Number" Value="175571"/><expression tag="Math.Number" Value="176671"/><expression tag="Math.Number" Value="177771"/><expression tag="Math.Number" Value="178871"/><expression tag="Math.Number" Value="179971"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="List.List"><expression tag="Math.Number" Value="265562"/><expression tag="Math.Number" Value="266662"/><expression tag="Math.Number" Value="267762"/><expression tag="Math.Number" Value="268862"/><expression tag="Math.Number" Value="269962"/><expression tag="Math.Number" Value="270072"/><expression tag="Math.Number" Value="271172"/><expression tag="Math.Number" Value="272272"/><expression tag="Math.Number" Value="273372"/><expression tag="Math.Number" Value="274472"/><expression tag="Math.Number" Value="275572"/><expression tag="Math.Number" Value="276672"/><expression tag="Math.Number" Value="277772"/><expression tag="Math.Number" Value="278872"/><expression tag="Math.Number" Value="279972"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="List.List"><expression tag="Math.Number" Value="30366303"/><expression tag="Math.Number" Value="30399303"/><expression tag="Math.Number" Value="30422403"/><expression tag="Math.Number" Value="30455403"/><expression tag="Math.Number" Value="30488403"/><expression tag="Math.Number" Value="30511503"/><expression tag="Math.Number" Value="30544503"/><expression tag="Math.Number" Value="30577503"/><expression tag="Math.Number" Value="30600603"/><expression tag="Math.Number" Value="30633603"/><expression tag="Math.Number" Value="30666603"/><expression tag="Math.Number" Value="30699603"/><expression tag="Math.Number" Value="30722703"/><expression tag="Math.Number" Value="30755703"/><expression tag="Math.Number" Value="30788703"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="List.List"><expression tag="Math.Number" Value="4473744"/><expression tag="Math.Number" Value="4485844"/><expression tag="Math.Number" Value="4497944"/><expression tag="Math.Number" Value="4607064"/><expression tag="Math.Number" Value="4619164"/><expression tag="Math.Number" Value="4620264"/><expression tag="Math.Number" Value="4632364"/><expression tag="Math.Number" Value="4644464"/><expression tag="Math.Number" Value="4656564"/><expression tag="Math.Number" Value="4668664"/><expression tag="Math.Number" Value="4681864"/><expression tag="Math.Number" Value="4693964"/><expression tag="Math.Number" Value="4803084"/><expression tag="Math.Number" Value="4815184"/><expression tag="Math.Number" Value="4827284"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="List.List"><expression tag="Math.Number" Value="565565"/><expression tag="Math.Number" Value="566665"/><expression tag="Math.Number" Value="567765"/><expression tag="Math.Number" Value="568865"/><expression tag="Math.Number" Value="569965"/><expression tag="Math.Number" Value="570075"/><expression tag="Math.Number" Value="571175"/><expression tag="Math.Number" Value="572275"/><expression tag="Math.Number" Value="573375"/><expression tag="Math.Number" Value="574475"/><expression tag="Math.Number" Value="575575"/><expression tag="Math.Number" Value="576675"/><expression tag="Math.Number" Value="577775"/><expression tag="Math.Number" Value="578875"/><expression tag="Math.Number" Value="579975"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="List.List"><expression tag="Math.Number" Value="60399306"/><expression tag="Math.Number" Value="60422406"/><expression tag="Math.Number" Value="60455406"/><expression tag="Math.Number" Value="60488406"/><expression tag="Math.Number" Value="60511506"/><expression tag="Math.Number" Value="60544506"/><expression tag="Math.Number" Value="60577506"/><expression tag="Math.Number" Value="60600606"/><expression tag="Math.Number" Value="60633606"/><expression tag="Math.Number" Value="60666606"/><expression tag="Math.Number" Value="60699606"/><expression tag="Math.Number" Value="60722706"/><expression tag="Math.Number" Value="60755706"/><expression tag="Math.Number" Value="60788706"/><expression tag="Math.Number" Value="60811806"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="List.List"><expression tag="Math.Number" Value="72299227"/><expression tag="Math.Number" Value="72322327"/><expression tag="Math.Number" Value="72399327"/><expression tag="Math.Number" Value="72422427"/><expression tag="Math.Number" Value="72499427"/><expression tag="Math.Number" Value="72522527"/><expression tag="Math.Number" Value="72599527"/><expression tag="Math.Number" Value="72622627"/><expression tag="Math.Number" Value="72699627"/><expression tag="Math.Number" Value="72722727"/><expression tag="Math.Number" Value="72799727"/><expression tag="Math.Number" Value="72822827"/><expression tag="Math.Number" Value="72899827"/><expression tag="Math.Number" Value="72922927"/><expression tag="Math.Number" Value="72999927"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="List.List"><expression tag="Math.Number" Value="80611608"/><expression tag="Math.Number" Value="80622608"/><expression tag="Math.Number" Value="80633608"/><expression tag="Math.Number" Value="80644608"/><expression tag="Math.Number" Value="80655608"/><expression tag="Math.Number" Value="80666608"/><expression tag="Math.Number" Value="80677608"/><expression tag="Math.Number" Value="80688608"/><expression tag="Math.Number" Value="80699608"/><expression tag="Math.Number" Value="80800808"/><expression tag="Math.Number" Value="80811808"/><expression tag="Math.Number" Value="80822808"/><expression tag="Math.Number" Value="80833808"/><expression tag="Math.Number" Value="80844808"/><expression tag="Math.Number" Value="80855808"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="List.List"><expression tag="Math.Number" Value="95311359"/><expression tag="Math.Number" Value="95400459"/><expression tag="Math.Number" Value="95499459"/><expression tag="Math.Number" Value="95588559"/><expression tag="Math.Number" Value="95677659"/><expression tag="Math.Number" Value="95766759"/><expression tag="Math.Number" Value="95855859"/><expression tag="Math.Number" Value="95944959"/><expression tag="Math.Number" Value="96033069"/><expression tag="Math.Number" Value="96122169"/><expression tag="Math.Number" Value="96211269"/><expression tag="Math.Number" Value="96300369"/><expression tag="Math.Number" Value="96399369"/><expression tag="Math.Number" Value="96488469"/><expression tag="Math.Number" Value="96577569"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 3. 991st to 1,000th palindromic gapful numbers"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="List.CreateList"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="matrix"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Symbolic.Symbol" Name="pos"/></expression></expression><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Number" Value="991"/><expression tag="Math.Number" Value="1000"/></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="List.List"><expression tag="Math.Number" Value="17799771"/><expression tag="Math.Number" Value="17800871"/><expression tag="Math.Number" Value="17811871"/><expression tag="Math.Number" Value="17822871"/><expression tag="Math.Number" Value="17833871"/><expression tag="Math.Number" Value="17844871"/><expression tag="Math.Number" Value="17855871"/><expression tag="Math.Number" Value="17866871"/><expression tag="Math.Number" Value="17877871"/><expression tag="Math.Number" Value="17888871"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="List.List"><expression tag="Math.Number" Value="27799772"/><expression tag="Math.Number" Value="27800872"/><expression tag="Math.Number" Value="27811872"/><expression tag="Math.Number" Value="27822872"/><expression tag="Math.Number" Value="27833872"/><expression tag="Math.Number" Value="27844872"/><expression tag="Math.Number" Value="27855872"/><expression tag="Math.Number" Value="27866872"/><expression tag="Math.Number" Value="27877872"/><expression tag="Math.Number" Value="27888872"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="List.List"><expression tag="Math.Number" Value="3084004803"/><expression tag="Math.Number" Value="3084334803"/><expression tag="Math.Number" Value="3084664803"/><expression tag="Math.Number" Value="3084994803"/><expression tag="Math.Number" Value="3085225803"/><expression tag="Math.Number" Value="3085555803"/><expression tag="Math.Number" Value="3085885803"/><expression tag="Math.Number" Value="3086116803"/><expression tag="Math.Number" Value="3086446803"/><expression tag="Math.Number" Value="3086776803"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="List.List"><expression tag="Math.Number" Value="482282284"/><expression tag="Math.Number" Value="482414284"/><expression tag="Math.Number" Value="482535284"/><expression tag="Math.Number" Value="482656284"/><expression tag="Math.Number" Value="482777284"/><expression tag="Math.Number" Value="482898284"/><expression tag="Math.Number" Value="482909284"/><expression tag="Math.Number" Value="483020384"/><expression tag="Math.Number" Value="483141384"/><expression tag="Math.Number" Value="483262384"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="List.List"><expression tag="Math.Number" Value="57800875"/><expression tag="Math.Number" Value="57811875"/><expression tag="Math.Number" Value="57822875"/><expression tag="Math.Number" Value="57833875"/><expression tag="Math.Number" Value="57844875"/><expression tag="Math.Number" Value="57855875"/><expression tag="Math.Number" Value="57866875"/><expression tag="Math.Number" Value="57877875"/><expression tag="Math.Number" Value="57888875"/><expression tag="Math.Number" Value="57899875"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="List.List"><expression tag="Math.Number" Value="6084004806"/><expression tag="Math.Number" Value="6084334806"/><expression tag="Math.Number" Value="6084664806"/><expression tag="Math.Number" Value="6084994806"/><expression tag="Math.Number" Value="6085225806"/><expression tag="Math.Number" Value="6085555806"/><expression tag="Math.Number" Value="6085885806"/><expression tag="Math.Number" Value="6086116806"/><expression tag="Math.Number" Value="6086446806"/><expression tag="Math.Number" Value="6086776806"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="List.List"><expression tag="Math.Number" Value="7452992547"/><expression tag="Math.Number" Value="7453223547"/><expression tag="Math.Number" Value="7453993547"/><expression tag="Math.Number" Value="7454224547"/><expression tag="Math.Number" Value="7454994547"/><expression tag="Math.Number" Value="7455225547"/><expression tag="Math.Number" Value="7455995547"/><expression tag="Math.Number" Value="7456226547"/><expression tag="Math.Number" Value="7456996547"/><expression tag="Math.Number" Value="7457227547"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="List.List"><expression tag="Math.Number" Value="8085995808"/><expression tag="Math.Number" Value="8086006808"/><expression tag="Math.Number" Value="8086116808"/><expression tag="Math.Number" Value="8086226808"/><expression tag="Math.Number" Value="8086336808"/><expression tag="Math.Number" Value="8086446808"/><expression tag="Math.Number" Value="8086556808"/><expression tag="Math.Number" Value="8086666808"/><expression tag="Math.Number" Value="8086776808"/><expression tag="Math.Number" Value="8086886808"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="List.List"><expression tag="Math.Number" Value="9675005769"/><expression tag="Math.Number" Value="9675995769"/><expression tag="Math.Number" Value="9676886769"/><expression tag="Math.Number" Value="9677777769"/><expression tag="Math.Number" Value="9678668769"/><expression tag="Math.Number" Value="9679559769"/><expression tag="Math.Number" Value="9680440869"/><expression tag="Math.Number" Value="9681331869"/><expression tag="Math.Number" Value="9682222869"/><expression tag="Math.Number" Value="9683113869"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 4. 9,995th to 10,000th palindromic gapful numbers"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="List.CreateList"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="matrix"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Symbolic.Symbol" Name="pos"/></expression></expression><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Number" Value="9995"/><expression tag="Math.Number" Value="10000"/></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="List.List"><expression tag="Math.Number" Value="1787447871"/><expression tag="Math.Number" Value="1787557871"/><expression tag="Math.Number" Value="1787667871"/><expression tag="Math.Number" Value="1787777871"/><expression tag="Math.Number" Value="1787887871"/><expression tag="Math.Number" Value="1787997871"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="List.List"><expression tag="Math.Number" Value="2787447872"/><expression tag="Math.Number" Value="2787557872"/><expression tag="Math.Number" Value="2787667872"/><expression tag="Math.Number" Value="2787777872"/><expression tag="Math.Number" Value="2787887872"/><expression tag="Math.Number" Value="2787997872"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="List.List"><expression tag="Math.Number" Value="308757757803"/><expression tag="Math.Number" Value="308760067803"/><expression tag="Math.Number" Value="308763367803"/><expression tag="Math.Number" Value="308766667803"/><expression tag="Math.Number" Value="308769967803"/><expression tag="Math.Number" Value="308772277803"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="List.List"><expression tag="Math.Number" Value="48326662384"/><expression tag="Math.Number" Value="48327872384"/><expression tag="Math.Number" Value="48329192384"/><expression tag="Math.Number" Value="48330303384"/><expression tag="Math.Number" Value="48331513384"/><expression tag="Math.Number" Value="48332723384"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="List.List"><expression tag="Math.Number" Value="5787447875"/><expression tag="Math.Number" Value="5787557875"/><expression tag="Math.Number" Value="5787667875"/><expression tag="Math.Number" Value="5787777875"/><expression tag="Math.Number" Value="5787887875"/><expression tag="Math.Number" Value="5787997875"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="List.List"><expression tag="Math.Number" Value="608760067806"/><expression tag="Math.Number" Value="608763367806"/><expression tag="Math.Number" Value="608766667806"/><expression tag="Math.Number" Value="608769967806"/><expression tag="Math.Number" Value="608772277806"/><expression tag="Math.Number" Value="608775577806"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="List.List"><expression tag="Math.Number" Value="746951159647"/><expression tag="Math.Number" Value="746958859647"/><expression tag="Math.Number" Value="746961169647"/><expression tag="Math.Number" Value="746968869647"/><expression tag="Math.Number" Value="746971179647"/><expression tag="Math.Number" Value="746978879647"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="List.List"><expression tag="Math.Number" Value="808690096808"/><expression tag="Math.Number" Value="808691196808"/><expression tag="Math.Number" Value="808692296808"/><expression tag="Math.Number" Value="808693396808"/><expression tag="Math.Number" Value="808694496808"/><expression tag="Math.Number" Value="808695596808"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="List.List"><expression tag="Math.Number" Value="968688886869"/><expression tag="Math.Number" Value="968697796869"/><expression tag="Math.Number" Value="968706607869"/><expression tag="Math.Number" Value="968715517869"/><expression tag="Math.Number" Value="968724427869"/><expression tag="Math.Number" Value="968733337869"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 5. 100,000th palindromic gapful number"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="matrix"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="100000"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="178788887871"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="278788887872"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="30878611687803"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="4833326233384"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="578789987875"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="60878611687806"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="74826144162847"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="80869688696808"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="96878077087869"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 6. 1,000,000th palindromic gapful number"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="matrix"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1000000"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="17878799787871"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="27878799787872"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3087876666787803"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="483333272333384"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="57878799787875"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="6087876996787806"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="7487226666227847"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="8086969559696808"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="9687870990787869"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 7. 10,000,000th palindromic gapful number"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="As it was stated before, We cannot use the matrix method."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following method requires less memory, because once a row is created (the first 10,000,000 numbers of a given digit), the last one is extracted, and the memory is freed:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Expression.Child"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="PalindromicGapfulList"/><expression tag="List.List"><expression tag="Math.Number" Value="10000000"/><expression tag="Symbolic.Symbol" Name="d"/></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="d"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1787878888787871"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="2787878888787872"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="308787855558787803"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="48333332623333384"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="5787878998787875"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="608787855558787806"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="748867523325768847"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="808696968869696808"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="968787783387787869"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621307572530"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.logic,org.formulae.expression,org.formulae.relation,org.formulae.visualization,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Palindromic gapful numbers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Palindromic_gapful_numbers" Description="Palindromic gapful numbers"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Numbers   (positive integers expressed in base ten)   that are (evenly) divisible by the number formed by the first and last digit are known as   gapful numbers."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Evenly divisible   means divisible with no remainder."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="All   one─   and two─digit   numbers have this property and are trivially excluded.   Only numbers   ≥ 100   will be considered for this task."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Example. 187 is a gapful number because it is evenly divisible by the number   17   which is formed by the first and last decimal digits of 187."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A palindromic number is (for this task, a positive integer expressed in base ten), when the number is reversed, is the same as the original number."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function creates a list of the first palindromic gapful numbers (&gt; 100) starting/ending with a given digit."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="PalindromicGapfulList"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="digit"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="Symbolic.Symbol" Name="value"/>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="result"/>
+							<expression tag="List.List"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="dividend"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Math.Number" Value="10"/>
+									<expression tag="Symbolic.Symbol" Name="digit"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="digit"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="finish"/>
+							<expression tag="Logic.False"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="g"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="start"/>
+						<expression tag="Symbolic.Symbol" Name="end"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="CreatePalindromes"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="offset"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.ForFromTo">
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="list"/>
+									<expression tag="Math.Arithmetic.Digits">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="value"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+								<expression tag="Programming.ForFromTo">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="value"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="10"/>
+												<expression tag="Symbolic.Symbol" Name="value"/>
+											</expression>
+											<expression tag="Expression.Child">
+												<expression tag="Symbolic.Symbol" Name="list"/>
+												<expression tag="Symbolic.Symbol" Name="d"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Symbolic.Symbol" Name="g"/>
+								</expression>
+								<expression tag="Programming.ForFromTo">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="value"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="10"/>
+												<expression tag="Symbolic.Symbol" Name="value"/>
+											</expression>
+											<expression tag="Expression.Child">
+												<expression tag="Symbolic.Symbol" Name="list"/>
+												<expression tag="Symbolic.Symbol" Name="d"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="g"/>
+										<expression tag="Symbolic.Symbol" Name="offset"/>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+								<expression tag="Programming.InvertedIf">
+									<expression tag="Expression.Append">
+										<expression tag="Symbolic.Symbol" Name="result"/>
+										<expression tag="Symbolic.Symbol" Name="value"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Divides">
+										<expression tag="Symbolic.Symbol" Name="dividend"/>
+										<expression tag="Symbolic.Symbol" Name="value"/>
+									</expression>
+								</expression>
+								<expression tag="Programming.If">
+									<expression tag="Relation.Equals">
+										<expression tag="Expression.Cardinality">
+											<expression tag="Symbolic.Symbol" Name="result"/>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+									<expression tag="Programming.Block" Description="block" Expanded="True">
+										<expression tag="Symbolic.Assignment">
+											<expression tag="Symbolic.Symbol" Name="finish"/>
+											<expression tag="Logic.True"/>
+										</expression>
+										<expression tag="Symbolic.Return">
+											<expression tag="Math.Number" Value="0"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="start"/>
+							<expression tag="Symbolic.Symbol" Name="end"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.While">
+					<expression tag="Logic.Negation">
+						<expression tag="Symbolic.Symbol" Name="finish"/>
+					</expression>
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="start"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="digit"/>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Number" Value="10"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="g"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="end"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="start"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Number" Value="10"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="g"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="CreatePalindromes"/>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="CreatePalindromes"/>
+								<expression tag="List.List">
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
+							<expression tag="Logic.Negation">
+								<expression tag="Symbolic.Symbol" Name="finish"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="g"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="g"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="result"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Explanation"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The algorithm generates palindromic numbers, and filter them for gapful ones."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In order to generate palindromic numbers, we mirror existing numbers (generators). There are two forms of mirroring, the first one (let us call it incomplete) mirrors every digit but the last one. The complete form mirrors all the digits. See the following examples:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Generator"/>
+							<expression tag="String.Text" Value="Incomplete"/>
+							<expression tag="String.Text" Value="Complete"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="25"/>
+							<expression tag="Math.Number" Value="252"/>
+							<expression tag="Math.Number" Value="2552"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="407"/>
+							<expression tag="Math.Number" Value="40704"/>
+							<expression tag="Math.Number" Value="407704"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1357"/>
+							<expression tag="Math.Number" Value="1357531"/>
+							<expression tag="Math.Number" Value="13577531"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Let us call the number of digits of the generator its order."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The form of generate palindromic numbers in numeric order is to generate mirroring versions of the generator numbers, by order:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Number of digits of the palindromic numbers"/>
+							<expression tag="String.Text" Value="Order of the generators"/>
+							<expression tag="String.Text" Value="Mirroring"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="String.Text" Value="Incomplete"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="String.Text" Value="Complete"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="String.Text" Value="Incomplete"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="6"/>
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="String.Text" Value="Complete"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="String.Text" Value="Incomplete"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="8"/>
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="String.Text" Value="Complete"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="So we have to create the generator in ascending order, we start with order 2, first in incomplete form and then in complete form. Once we had finished, we start with the next order, and so on."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For order 2, we have to generate numbers from 100 to 999. For order 3 from 1000 to 1999 and so on. However, we calculate palindrome numbers starting with a given digit, for example, the generator order 3 and starting digit 5 are the numbers 500 to 599. See the following table:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Order"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="Math.Number" Value="6"/>
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="Math.Number" Value="8"/>
+							<expression tag="Math.Number" Value="9"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="String.Text" Value="10 to 19"/>
+							<expression tag="String.Text" Value="20 to 29"/>
+							<expression tag="String.Text" Value="30 to 39"/>
+							<expression tag="String.Text" Value="40 to 49"/>
+							<expression tag="String.Text" Value="50 to 59"/>
+							<expression tag="String.Text" Value="60 to 69"/>
+							<expression tag="String.Text" Value="70 to 79"/>
+							<expression tag="String.Text" Value="80 to 89"/>
+							<expression tag="String.Text" Value="90 to 99"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="String.Text" Value="100 to 199"/>
+							<expression tag="String.Text" Value="200 to 299"/>
+							<expression tag="String.Text" Value="300 to 399"/>
+							<expression tag="String.Text" Value="400 to 499"/>
+							<expression tag="String.Text" Value="500 to 599"/>
+							<expression tag="String.Text" Value="600 to 699"/>
+							<expression tag="String.Text" Value="700 to 799"/>
+							<expression tag="String.Text" Value="800 to 899"/>
+							<expression tag="String.Text" Value="900 to 999"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="String.Text" Value="1,000 to 1,999"/>
+							<expression tag="String.Text" Value="2,000 to 2,999"/>
+							<expression tag="String.Text" Value="3,000 to 3,999"/>
+							<expression tag="String.Text" Value="4,000 to 4,999"/>
+							<expression tag="String.Text" Value="5,000 to 5,999"/>
+							<expression tag="String.Text" Value="6,000 to 6,999"/>
+							<expression tag="String.Text" Value="7,000 to 7,999"/>
+							<expression tag="String.Text" Value="8,000 to 8,999"/>
+							<expression tag="String.Text" Value="9,000 to 9,999"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+							<expression tag="String.Text" Value="⋮"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Null"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The formula is:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.VerticalArray">
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Symbolic.Function">
+							<expression tag="String.Text" Value="start"/>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="order"/>
+								<expression tag="String.Text" Value="digit"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="="/>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="String.Text" Value="digit"/>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Math.Number" Value="10"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="String.Text" Value="order"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Symbolic.Function">
+							<expression tag="String.Text" Value="end"/>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="order"/>
+								<expression tag="String.Text" Value="digit"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="="/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Function">
+								<expression tag="String.Text" Value="start"/>
+								<expression tag="List.List">
+									<expression tag="String.Text" Value="order"/>
+									<expression tag="String.Text" Value="digit"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Math.Number" Value="10"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="String.Text" Value="order"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Once we have palindromic numbers in numeric order, we test every one to be gapful. In order to be gapful, they have to be divisible by the number"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="10"/>
+						<expression tag="String.Text" Value="digit"/>
+					</expression>
+					<expression tag="String.Text" Value="digit"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the program the order is defined in the g symbol."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The incomplete and complete mirroring are defined in the local function CreatePalindromes being called with -1 and 0 values, respectively."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="As an example, the first 10 palindromic gapful numbers starting/ending with 1:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="PalindromicGapfulList"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="10"/>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="121"/>
+			<expression tag="Math.Number" Value="1001"/>
+			<expression tag="Math.Number" Value="1111"/>
+			<expression tag="Math.Number" Value="1221"/>
+			<expression tag="Math.Number" Value="1331"/>
+			<expression tag="Math.Number" Value="1441"/>
+			<expression tag="Math.Number" Value="1551"/>
+			<expression tag="Math.Number" Value="1661"/>
+			<expression tag="Math.Number" Value="1771"/>
+			<expression tag="Math.Number" Value="1881"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 1. 1st to 20th palindromic gapful numbers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In order to solve the next cases, it is useful to create a matrix, containing the first palindromic gapful numbers, up to a higher number. The first row is for numbers starting/ending with 1, second row for numbers starting/ending with 2, and so on."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="With this method, achieving the cases is a matter of extracting numbers from the matrix."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Unfortunately, creating a matrix with the first 10,000,000 numbers was too much for the computer (it would require a 9 x 10,000,000 matrix of numbers). However it was able to create for 1,000,000 numbers. (Even so, it is a 9 x 1,000,000 matrix, or 9,000,000 numbers):"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="matrix"/>
+			<expression tag="List.CreateList">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="PalindromicGapfulList"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1000000"/>
+						<expression tag="Symbolic.Symbol" Name="d"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="d"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="9"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Then, solving the cases (excepting the last one) are now trivial and immediate:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="d"/>
+				<expression tag="List.CreateList">
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="matrix"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="d"/>
+							<expression tag="Symbolic.Symbol" Name="pos"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="pos"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="20"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="d"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="121"/>
+					<expression tag="Math.Number" Value="1001"/>
+					<expression tag="Math.Number" Value="1111"/>
+					<expression tag="Math.Number" Value="1221"/>
+					<expression tag="Math.Number" Value="1331"/>
+					<expression tag="Math.Number" Value="1441"/>
+					<expression tag="Math.Number" Value="1551"/>
+					<expression tag="Math.Number" Value="1661"/>
+					<expression tag="Math.Number" Value="1771"/>
+					<expression tag="Math.Number" Value="1881"/>
+					<expression tag="Math.Number" Value="1991"/>
+					<expression tag="Math.Number" Value="10901"/>
+					<expression tag="Math.Number" Value="11011"/>
+					<expression tag="Math.Number" Value="12221"/>
+					<expression tag="Math.Number" Value="13431"/>
+					<expression tag="Math.Number" Value="14641"/>
+					<expression tag="Math.Number" Value="15851"/>
+					<expression tag="Math.Number" Value="17171"/>
+					<expression tag="Math.Number" Value="18381"/>
+					<expression tag="Math.Number" Value="19591"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="242"/>
+					<expression tag="Math.Number" Value="2002"/>
+					<expression tag="Math.Number" Value="2112"/>
+					<expression tag="Math.Number" Value="2222"/>
+					<expression tag="Math.Number" Value="2332"/>
+					<expression tag="Math.Number" Value="2442"/>
+					<expression tag="Math.Number" Value="2552"/>
+					<expression tag="Math.Number" Value="2662"/>
+					<expression tag="Math.Number" Value="2772"/>
+					<expression tag="Math.Number" Value="2882"/>
+					<expression tag="Math.Number" Value="2992"/>
+					<expression tag="Math.Number" Value="20702"/>
+					<expression tag="Math.Number" Value="21912"/>
+					<expression tag="Math.Number" Value="22022"/>
+					<expression tag="Math.Number" Value="23232"/>
+					<expression tag="Math.Number" Value="24442"/>
+					<expression tag="Math.Number" Value="25652"/>
+					<expression tag="Math.Number" Value="26862"/>
+					<expression tag="Math.Number" Value="28182"/>
+					<expression tag="Math.Number" Value="29392"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="363"/>
+					<expression tag="Math.Number" Value="3003"/>
+					<expression tag="Math.Number" Value="3333"/>
+					<expression tag="Math.Number" Value="3663"/>
+					<expression tag="Math.Number" Value="3993"/>
+					<expression tag="Math.Number" Value="31713"/>
+					<expression tag="Math.Number" Value="33033"/>
+					<expression tag="Math.Number" Value="36663"/>
+					<expression tag="Math.Number" Value="300003"/>
+					<expression tag="Math.Number" Value="303303"/>
+					<expression tag="Math.Number" Value="306603"/>
+					<expression tag="Math.Number" Value="309903"/>
+					<expression tag="Math.Number" Value="312213"/>
+					<expression tag="Math.Number" Value="315513"/>
+					<expression tag="Math.Number" Value="318813"/>
+					<expression tag="Math.Number" Value="321123"/>
+					<expression tag="Math.Number" Value="324423"/>
+					<expression tag="Math.Number" Value="327723"/>
+					<expression tag="Math.Number" Value="330033"/>
+					<expression tag="Math.Number" Value="333333"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="484"/>
+					<expression tag="Math.Number" Value="4004"/>
+					<expression tag="Math.Number" Value="4224"/>
+					<expression tag="Math.Number" Value="4444"/>
+					<expression tag="Math.Number" Value="4664"/>
+					<expression tag="Math.Number" Value="4884"/>
+					<expression tag="Math.Number" Value="40304"/>
+					<expression tag="Math.Number" Value="42724"/>
+					<expression tag="Math.Number" Value="44044"/>
+					<expression tag="Math.Number" Value="46464"/>
+					<expression tag="Math.Number" Value="48884"/>
+					<expression tag="Math.Number" Value="400004"/>
+					<expression tag="Math.Number" Value="401104"/>
+					<expression tag="Math.Number" Value="402204"/>
+					<expression tag="Math.Number" Value="403304"/>
+					<expression tag="Math.Number" Value="404404"/>
+					<expression tag="Math.Number" Value="405504"/>
+					<expression tag="Math.Number" Value="406604"/>
+					<expression tag="Math.Number" Value="407704"/>
+					<expression tag="Math.Number" Value="408804"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5005"/>
+					<expression tag="Math.Number" Value="5115"/>
+					<expression tag="Math.Number" Value="5225"/>
+					<expression tag="Math.Number" Value="5335"/>
+					<expression tag="Math.Number" Value="5445"/>
+					<expression tag="Math.Number" Value="5555"/>
+					<expression tag="Math.Number" Value="5665"/>
+					<expression tag="Math.Number" Value="5775"/>
+					<expression tag="Math.Number" Value="5885"/>
+					<expression tag="Math.Number" Value="5995"/>
+					<expression tag="Math.Number" Value="50105"/>
+					<expression tag="Math.Number" Value="51315"/>
+					<expression tag="Math.Number" Value="52525"/>
+					<expression tag="Math.Number" Value="53735"/>
+					<expression tag="Math.Number" Value="54945"/>
+					<expression tag="Math.Number" Value="55055"/>
+					<expression tag="Math.Number" Value="56265"/>
+					<expression tag="Math.Number" Value="57475"/>
+					<expression tag="Math.Number" Value="58685"/>
+					<expression tag="Math.Number" Value="59895"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6006"/>
+					<expression tag="Math.Number" Value="6336"/>
+					<expression tag="Math.Number" Value="6666"/>
+					<expression tag="Math.Number" Value="6996"/>
+					<expression tag="Math.Number" Value="61116"/>
+					<expression tag="Math.Number" Value="64746"/>
+					<expression tag="Math.Number" Value="66066"/>
+					<expression tag="Math.Number" Value="69696"/>
+					<expression tag="Math.Number" Value="600006"/>
+					<expression tag="Math.Number" Value="603306"/>
+					<expression tag="Math.Number" Value="606606"/>
+					<expression tag="Math.Number" Value="609906"/>
+					<expression tag="Math.Number" Value="612216"/>
+					<expression tag="Math.Number" Value="615516"/>
+					<expression tag="Math.Number" Value="618816"/>
+					<expression tag="Math.Number" Value="621126"/>
+					<expression tag="Math.Number" Value="624426"/>
+					<expression tag="Math.Number" Value="627726"/>
+					<expression tag="Math.Number" Value="630036"/>
+					<expression tag="Math.Number" Value="633336"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7007"/>
+					<expression tag="Math.Number" Value="7777"/>
+					<expression tag="Math.Number" Value="77077"/>
+					<expression tag="Math.Number" Value="700007"/>
+					<expression tag="Math.Number" Value="707707"/>
+					<expression tag="Math.Number" Value="710017"/>
+					<expression tag="Math.Number" Value="717717"/>
+					<expression tag="Math.Number" Value="720027"/>
+					<expression tag="Math.Number" Value="727727"/>
+					<expression tag="Math.Number" Value="730037"/>
+					<expression tag="Math.Number" Value="737737"/>
+					<expression tag="Math.Number" Value="740047"/>
+					<expression tag="Math.Number" Value="747747"/>
+					<expression tag="Math.Number" Value="750057"/>
+					<expression tag="Math.Number" Value="757757"/>
+					<expression tag="Math.Number" Value="760067"/>
+					<expression tag="Math.Number" Value="767767"/>
+					<expression tag="Math.Number" Value="770077"/>
+					<expression tag="Math.Number" Value="777777"/>
+					<expression tag="Math.Number" Value="780087"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8008"/>
+					<expression tag="Math.Number" Value="8448"/>
+					<expression tag="Math.Number" Value="8888"/>
+					<expression tag="Math.Number" Value="80608"/>
+					<expression tag="Math.Number" Value="86768"/>
+					<expression tag="Math.Number" Value="88088"/>
+					<expression tag="Math.Number" Value="800008"/>
+					<expression tag="Math.Number" Value="802208"/>
+					<expression tag="Math.Number" Value="804408"/>
+					<expression tag="Math.Number" Value="806608"/>
+					<expression tag="Math.Number" Value="808808"/>
+					<expression tag="Math.Number" Value="821128"/>
+					<expression tag="Math.Number" Value="823328"/>
+					<expression tag="Math.Number" Value="825528"/>
+					<expression tag="Math.Number" Value="827728"/>
+					<expression tag="Math.Number" Value="829928"/>
+					<expression tag="Math.Number" Value="840048"/>
+					<expression tag="Math.Number" Value="842248"/>
+					<expression tag="Math.Number" Value="844448"/>
+					<expression tag="Math.Number" Value="846648"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9009"/>
+					<expression tag="Math.Number" Value="9999"/>
+					<expression tag="Math.Number" Value="94149"/>
+					<expression tag="Math.Number" Value="99099"/>
+					<expression tag="Math.Number" Value="900009"/>
+					<expression tag="Math.Number" Value="909909"/>
+					<expression tag="Math.Number" Value="918819"/>
+					<expression tag="Math.Number" Value="927729"/>
+					<expression tag="Math.Number" Value="936639"/>
+					<expression tag="Math.Number" Value="945549"/>
+					<expression tag="Math.Number" Value="954459"/>
+					<expression tag="Math.Number" Value="963369"/>
+					<expression tag="Math.Number" Value="972279"/>
+					<expression tag="Math.Number" Value="981189"/>
+					<expression tag="Math.Number" Value="990099"/>
+					<expression tag="Math.Number" Value="999999"/>
+					<expression tag="Math.Number" Value="9459549"/>
+					<expression tag="Math.Number" Value="9508059"/>
+					<expression tag="Math.Number" Value="9557559"/>
+					<expression tag="Math.Number" Value="9606069"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Case 2. 86th to 100th palindromic gapful numbers"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="d"/>
+				<expression tag="List.CreateList">
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="matrix"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="d"/>
+							<expression tag="Symbolic.Symbol" Name="pos"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="pos"/>
+					<expression tag="Math.Number" Value="86"/>
+					<expression tag="Math.Number" Value="100"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="d"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="165561"/>
+					<expression tag="Math.Number" Value="166661"/>
+					<expression tag="Math.Number" Value="167761"/>
+					<expression tag="Math.Number" Value="168861"/>
+					<expression tag="Math.Number" Value="169961"/>
+					<expression tag="Math.Number" Value="170071"/>
+					<expression tag="Math.Number" Value="171171"/>
+					<expression tag="Math.Number" Value="172271"/>
+					<expression tag="Math.Number" Value="173371"/>
+					<expression tag="Math.Number" Value="174471"/>
+					<expression tag="Math.Number" Value="175571"/>
+					<expression tag="Math.Number" Value="176671"/>
+					<expression tag="Math.Number" Value="177771"/>
+					<expression tag="Math.Number" Value="178871"/>
+					<expression tag="Math.Number" Value="179971"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="265562"/>
+					<expression tag="Math.Number" Value="266662"/>
+					<expression tag="Math.Number" Value="267762"/>
+					<expression tag="Math.Number" Value="268862"/>
+					<expression tag="Math.Number" Value="269962"/>
+					<expression tag="Math.Number" Value="270072"/>
+					<expression tag="Math.Number" Value="271172"/>
+					<expression tag="Math.Number" Value="272272"/>
+					<expression tag="Math.Number" Value="273372"/>
+					<expression tag="Math.Number" Value="274472"/>
+					<expression tag="Math.Number" Value="275572"/>
+					<expression tag="Math.Number" Value="276672"/>
+					<expression tag="Math.Number" Value="277772"/>
+					<expression tag="Math.Number" Value="278872"/>
+					<expression tag="Math.Number" Value="279972"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="30366303"/>
+					<expression tag="Math.Number" Value="30399303"/>
+					<expression tag="Math.Number" Value="30422403"/>
+					<expression tag="Math.Number" Value="30455403"/>
+					<expression tag="Math.Number" Value="30488403"/>
+					<expression tag="Math.Number" Value="30511503"/>
+					<expression tag="Math.Number" Value="30544503"/>
+					<expression tag="Math.Number" Value="30577503"/>
+					<expression tag="Math.Number" Value="30600603"/>
+					<expression tag="Math.Number" Value="30633603"/>
+					<expression tag="Math.Number" Value="30666603"/>
+					<expression tag="Math.Number" Value="30699603"/>
+					<expression tag="Math.Number" Value="30722703"/>
+					<expression tag="Math.Number" Value="30755703"/>
+					<expression tag="Math.Number" Value="30788703"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4473744"/>
+					<expression tag="Math.Number" Value="4485844"/>
+					<expression tag="Math.Number" Value="4497944"/>
+					<expression tag="Math.Number" Value="4607064"/>
+					<expression tag="Math.Number" Value="4619164"/>
+					<expression tag="Math.Number" Value="4620264"/>
+					<expression tag="Math.Number" Value="4632364"/>
+					<expression tag="Math.Number" Value="4644464"/>
+					<expression tag="Math.Number" Value="4656564"/>
+					<expression tag="Math.Number" Value="4668664"/>
+					<expression tag="Math.Number" Value="4681864"/>
+					<expression tag="Math.Number" Value="4693964"/>
+					<expression tag="Math.Number" Value="4803084"/>
+					<expression tag="Math.Number" Value="4815184"/>
+					<expression tag="Math.Number" Value="4827284"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="565565"/>
+					<expression tag="Math.Number" Value="566665"/>
+					<expression tag="Math.Number" Value="567765"/>
+					<expression tag="Math.Number" Value="568865"/>
+					<expression tag="Math.Number" Value="569965"/>
+					<expression tag="Math.Number" Value="570075"/>
+					<expression tag="Math.Number" Value="571175"/>
+					<expression tag="Math.Number" Value="572275"/>
+					<expression tag="Math.Number" Value="573375"/>
+					<expression tag="Math.Number" Value="574475"/>
+					<expression tag="Math.Number" Value="575575"/>
+					<expression tag="Math.Number" Value="576675"/>
+					<expression tag="Math.Number" Value="577775"/>
+					<expression tag="Math.Number" Value="578875"/>
+					<expression tag="Math.Number" Value="579975"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="60399306"/>
+					<expression tag="Math.Number" Value="60422406"/>
+					<expression tag="Math.Number" Value="60455406"/>
+					<expression tag="Math.Number" Value="60488406"/>
+					<expression tag="Math.Number" Value="60511506"/>
+					<expression tag="Math.Number" Value="60544506"/>
+					<expression tag="Math.Number" Value="60577506"/>
+					<expression tag="Math.Number" Value="60600606"/>
+					<expression tag="Math.Number" Value="60633606"/>
+					<expression tag="Math.Number" Value="60666606"/>
+					<expression tag="Math.Number" Value="60699606"/>
+					<expression tag="Math.Number" Value="60722706"/>
+					<expression tag="Math.Number" Value="60755706"/>
+					<expression tag="Math.Number" Value="60788706"/>
+					<expression tag="Math.Number" Value="60811806"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="72299227"/>
+					<expression tag="Math.Number" Value="72322327"/>
+					<expression tag="Math.Number" Value="72399327"/>
+					<expression tag="Math.Number" Value="72422427"/>
+					<expression tag="Math.Number" Value="72499427"/>
+					<expression tag="Math.Number" Value="72522527"/>
+					<expression tag="Math.Number" Value="72599527"/>
+					<expression tag="Math.Number" Value="72622627"/>
+					<expression tag="Math.Number" Value="72699627"/>
+					<expression tag="Math.Number" Value="72722727"/>
+					<expression tag="Math.Number" Value="72799727"/>
+					<expression tag="Math.Number" Value="72822827"/>
+					<expression tag="Math.Number" Value="72899827"/>
+					<expression tag="Math.Number" Value="72922927"/>
+					<expression tag="Math.Number" Value="72999927"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="80611608"/>
+					<expression tag="Math.Number" Value="80622608"/>
+					<expression tag="Math.Number" Value="80633608"/>
+					<expression tag="Math.Number" Value="80644608"/>
+					<expression tag="Math.Number" Value="80655608"/>
+					<expression tag="Math.Number" Value="80666608"/>
+					<expression tag="Math.Number" Value="80677608"/>
+					<expression tag="Math.Number" Value="80688608"/>
+					<expression tag="Math.Number" Value="80699608"/>
+					<expression tag="Math.Number" Value="80800808"/>
+					<expression tag="Math.Number" Value="80811808"/>
+					<expression tag="Math.Number" Value="80822808"/>
+					<expression tag="Math.Number" Value="80833808"/>
+					<expression tag="Math.Number" Value="80844808"/>
+					<expression tag="Math.Number" Value="80855808"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="95311359"/>
+					<expression tag="Math.Number" Value="95400459"/>
+					<expression tag="Math.Number" Value="95499459"/>
+					<expression tag="Math.Number" Value="95588559"/>
+					<expression tag="Math.Number" Value="95677659"/>
+					<expression tag="Math.Number" Value="95766759"/>
+					<expression tag="Math.Number" Value="95855859"/>
+					<expression tag="Math.Number" Value="95944959"/>
+					<expression tag="Math.Number" Value="96033069"/>
+					<expression tag="Math.Number" Value="96122169"/>
+					<expression tag="Math.Number" Value="96211269"/>
+					<expression tag="Math.Number" Value="96300369"/>
+					<expression tag="Math.Number" Value="96399369"/>
+					<expression tag="Math.Number" Value="96488469"/>
+					<expression tag="Math.Number" Value="96577569"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Case 3. 991st to 1,000th palindromic gapful numbers"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="d"/>
+				<expression tag="List.CreateList">
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="matrix"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="d"/>
+							<expression tag="Symbolic.Symbol" Name="pos"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="pos"/>
+					<expression tag="Math.Number" Value="991"/>
+					<expression tag="Math.Number" Value="1000"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="d"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="17799771"/>
+					<expression tag="Math.Number" Value="17800871"/>
+					<expression tag="Math.Number" Value="17811871"/>
+					<expression tag="Math.Number" Value="17822871"/>
+					<expression tag="Math.Number" Value="17833871"/>
+					<expression tag="Math.Number" Value="17844871"/>
+					<expression tag="Math.Number" Value="17855871"/>
+					<expression tag="Math.Number" Value="17866871"/>
+					<expression tag="Math.Number" Value="17877871"/>
+					<expression tag="Math.Number" Value="17888871"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="27799772"/>
+					<expression tag="Math.Number" Value="27800872"/>
+					<expression tag="Math.Number" Value="27811872"/>
+					<expression tag="Math.Number" Value="27822872"/>
+					<expression tag="Math.Number" Value="27833872"/>
+					<expression tag="Math.Number" Value="27844872"/>
+					<expression tag="Math.Number" Value="27855872"/>
+					<expression tag="Math.Number" Value="27866872"/>
+					<expression tag="Math.Number" Value="27877872"/>
+					<expression tag="Math.Number" Value="27888872"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3084004803"/>
+					<expression tag="Math.Number" Value="3084334803"/>
+					<expression tag="Math.Number" Value="3084664803"/>
+					<expression tag="Math.Number" Value="3084994803"/>
+					<expression tag="Math.Number" Value="3085225803"/>
+					<expression tag="Math.Number" Value="3085555803"/>
+					<expression tag="Math.Number" Value="3085885803"/>
+					<expression tag="Math.Number" Value="3086116803"/>
+					<expression tag="Math.Number" Value="3086446803"/>
+					<expression tag="Math.Number" Value="3086776803"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="482282284"/>
+					<expression tag="Math.Number" Value="482414284"/>
+					<expression tag="Math.Number" Value="482535284"/>
+					<expression tag="Math.Number" Value="482656284"/>
+					<expression tag="Math.Number" Value="482777284"/>
+					<expression tag="Math.Number" Value="482898284"/>
+					<expression tag="Math.Number" Value="482909284"/>
+					<expression tag="Math.Number" Value="483020384"/>
+					<expression tag="Math.Number" Value="483141384"/>
+					<expression tag="Math.Number" Value="483262384"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="57800875"/>
+					<expression tag="Math.Number" Value="57811875"/>
+					<expression tag="Math.Number" Value="57822875"/>
+					<expression tag="Math.Number" Value="57833875"/>
+					<expression tag="Math.Number" Value="57844875"/>
+					<expression tag="Math.Number" Value="57855875"/>
+					<expression tag="Math.Number" Value="57866875"/>
+					<expression tag="Math.Number" Value="57877875"/>
+					<expression tag="Math.Number" Value="57888875"/>
+					<expression tag="Math.Number" Value="57899875"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6084004806"/>
+					<expression tag="Math.Number" Value="6084334806"/>
+					<expression tag="Math.Number" Value="6084664806"/>
+					<expression tag="Math.Number" Value="6084994806"/>
+					<expression tag="Math.Number" Value="6085225806"/>
+					<expression tag="Math.Number" Value="6085555806"/>
+					<expression tag="Math.Number" Value="6085885806"/>
+					<expression tag="Math.Number" Value="6086116806"/>
+					<expression tag="Math.Number" Value="6086446806"/>
+					<expression tag="Math.Number" Value="6086776806"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7452992547"/>
+					<expression tag="Math.Number" Value="7453223547"/>
+					<expression tag="Math.Number" Value="7453993547"/>
+					<expression tag="Math.Number" Value="7454224547"/>
+					<expression tag="Math.Number" Value="7454994547"/>
+					<expression tag="Math.Number" Value="7455225547"/>
+					<expression tag="Math.Number" Value="7455995547"/>
+					<expression tag="Math.Number" Value="7456226547"/>
+					<expression tag="Math.Number" Value="7456996547"/>
+					<expression tag="Math.Number" Value="7457227547"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8085995808"/>
+					<expression tag="Math.Number" Value="8086006808"/>
+					<expression tag="Math.Number" Value="8086116808"/>
+					<expression tag="Math.Number" Value="8086226808"/>
+					<expression tag="Math.Number" Value="8086336808"/>
+					<expression tag="Math.Number" Value="8086446808"/>
+					<expression tag="Math.Number" Value="8086556808"/>
+					<expression tag="Math.Number" Value="8086666808"/>
+					<expression tag="Math.Number" Value="8086776808"/>
+					<expression tag="Math.Number" Value="8086886808"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9675005769"/>
+					<expression tag="Math.Number" Value="9675995769"/>
+					<expression tag="Math.Number" Value="9676886769"/>
+					<expression tag="Math.Number" Value="9677777769"/>
+					<expression tag="Math.Number" Value="9678668769"/>
+					<expression tag="Math.Number" Value="9679559769"/>
+					<expression tag="Math.Number" Value="9680440869"/>
+					<expression tag="Math.Number" Value="9681331869"/>
+					<expression tag="Math.Number" Value="9682222869"/>
+					<expression tag="Math.Number" Value="9683113869"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Case 4. 9,995th to 10,000th palindromic gapful numbers"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="d"/>
+				<expression tag="List.CreateList">
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="matrix"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="d"/>
+							<expression tag="Symbolic.Symbol" Name="pos"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="pos"/>
+					<expression tag="Math.Number" Value="9995"/>
+					<expression tag="Math.Number" Value="10000"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="d"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1787447871"/>
+					<expression tag="Math.Number" Value="1787557871"/>
+					<expression tag="Math.Number" Value="1787667871"/>
+					<expression tag="Math.Number" Value="1787777871"/>
+					<expression tag="Math.Number" Value="1787887871"/>
+					<expression tag="Math.Number" Value="1787997871"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2787447872"/>
+					<expression tag="Math.Number" Value="2787557872"/>
+					<expression tag="Math.Number" Value="2787667872"/>
+					<expression tag="Math.Number" Value="2787777872"/>
+					<expression tag="Math.Number" Value="2787887872"/>
+					<expression tag="Math.Number" Value="2787997872"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="308757757803"/>
+					<expression tag="Math.Number" Value="308760067803"/>
+					<expression tag="Math.Number" Value="308763367803"/>
+					<expression tag="Math.Number" Value="308766667803"/>
+					<expression tag="Math.Number" Value="308769967803"/>
+					<expression tag="Math.Number" Value="308772277803"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="48326662384"/>
+					<expression tag="Math.Number" Value="48327872384"/>
+					<expression tag="Math.Number" Value="48329192384"/>
+					<expression tag="Math.Number" Value="48330303384"/>
+					<expression tag="Math.Number" Value="48331513384"/>
+					<expression tag="Math.Number" Value="48332723384"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5787447875"/>
+					<expression tag="Math.Number" Value="5787557875"/>
+					<expression tag="Math.Number" Value="5787667875"/>
+					<expression tag="Math.Number" Value="5787777875"/>
+					<expression tag="Math.Number" Value="5787887875"/>
+					<expression tag="Math.Number" Value="5787997875"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="608760067806"/>
+					<expression tag="Math.Number" Value="608763367806"/>
+					<expression tag="Math.Number" Value="608766667806"/>
+					<expression tag="Math.Number" Value="608769967806"/>
+					<expression tag="Math.Number" Value="608772277806"/>
+					<expression tag="Math.Number" Value="608775577806"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="746951159647"/>
+					<expression tag="Math.Number" Value="746958859647"/>
+					<expression tag="Math.Number" Value="746961169647"/>
+					<expression tag="Math.Number" Value="746968869647"/>
+					<expression tag="Math.Number" Value="746971179647"/>
+					<expression tag="Math.Number" Value="746978879647"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="808690096808"/>
+					<expression tag="Math.Number" Value="808691196808"/>
+					<expression tag="Math.Number" Value="808692296808"/>
+					<expression tag="Math.Number" Value="808693396808"/>
+					<expression tag="Math.Number" Value="808694496808"/>
+					<expression tag="Math.Number" Value="808695596808"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="968688886869"/>
+					<expression tag="Math.Number" Value="968697796869"/>
+					<expression tag="Math.Number" Value="968706607869"/>
+					<expression tag="Math.Number" Value="968715517869"/>
+					<expression tag="Math.Number" Value="968724427869"/>
+					<expression tag="Math.Number" Value="968733337869"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Case 5. 100,000th palindromic gapful number"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="d"/>
+				<expression tag="Expression.Child">
+					<expression tag="Symbolic.Symbol" Name="matrix"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="d"/>
+						<expression tag="Math.Number" Value="100000"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="d"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="178788887871"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="278788887872"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="30878611687803"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Math.Number" Value="4833326233384"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="578789987875"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Number" Value="60878611687806"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Number" Value="74826144162847"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="Math.Number" Value="80869688696808"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="Math.Number" Value="96878077087869"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Case 6. 1,000,000th palindromic gapful number"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="d"/>
+				<expression tag="Expression.Child">
+					<expression tag="Symbolic.Symbol" Name="matrix"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="d"/>
+						<expression tag="Math.Number" Value="1000000"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="d"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="17878799787871"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="27878799787872"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="3087876666787803"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Math.Number" Value="483333272333384"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="57878799787875"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Number" Value="6087876996787806"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Number" Value="7487226666227847"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="Math.Number" Value="8086969559696808"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="Math.Number" Value="9687870990787869"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 7. 10,000,000th palindromic gapful number"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="As it was stated before, We cannot use the matrix method."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following method requires less memory, because once a row is created (the first 10,000,000 numbers of a given digit), the last one is extracted, and the memory is freed:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="d"/>
+				<expression tag="Expression.Child">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="PalindromicGapfulList"/>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="10000000"/>
+							<expression tag="Symbolic.Symbol" Name="d"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="d"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="1787878888787871"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="2787878888787872"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="308787855558787803"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Math.Number" Value="48333332623333384"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="5787878998787875"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Number" Value="608787855558787806"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Number" Value="748867523325768847"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="Math.Number" Value="808696968869696808"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="Math.Number" Value="968787783387787869"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1679636460000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

@@ -1,1 +1,2085 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Tree from nesting levels"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Tree_from_nesting_levels" Description="Tree from nesting levels"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Given a flat list of integers greater than zero, representing object nesting levels, e.g. [1, 2, 4], generate a tree formed from nested lists of those nesting level integers where:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Every int appears, in order, at its depth of nesting."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If the next level int is greater than the previous then it appears in a sub-list of the list containing the previous item"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The generated tree data structure should ideally be in a languages nested list format that can be used for further calculations rather than something just calculated for printing."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="An input of [1, 2, 4] should produce the equivalent of: [1, [2, [[4]]]] where 1 is at depth1, 2 is two deep and 4 is nested 4 deep."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="[1, 2, 4, 2, 2, 1] should produce [1, [2, [[4]], 2, 2], 1]."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="All the nesting integers are in the same order but at the correct nesting levels."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Similarly [3, 1, 3, 1] should generate [[[3]], 1, [[3]], 1]"/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="list"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="level"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="sublist"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Programming.While"><expression tag="Logic.Conjunction"><expression tag="Relation.LessOrEquals"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Relation.GreaterOrEquals"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Symbol" Name="level"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Programming.IfElse"><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Symbol" Name="level"/></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="sublist"/><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="sublist"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="level"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="sublist"/></expression></expression></expression><expression tag="Diagramming.ToTree"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="process"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Generate and show here the results for the following inputs:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="String.Text" Value="[]"/><expression tag="String.Text" Value="[1, 2, 4]"/><expression tag="String.Text" Value="[3, 1, 3, 1]"/><expression tag="String.Text" Value="[1, 2, 3, 1]"/><expression tag="String.Text" Value="[3, 2, 1, 3]"/><expression tag="String.Text" Value="[3, 3, 3, 1, 1, 3, 3, 3]"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="List.List"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Other test cases"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following creates list of (10) random elements in the range 1 .. 10, and generate their trees:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateList"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="List.CreateList"><expression tag="Math.Arithmetic.RandomInRange"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="10"/></expression><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression><expression tag="Math.Number" Value="10"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="8"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="6"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="7"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="10"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="8"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="1"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="10"/></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="5"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression></expression></expression><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="9"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="6"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="2"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="8"/></expression></expression></expression></expression></expression></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="3"/></expression><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="String.String" Value="List.List"/><expression tag="Diagramming.Tree" Expanded="True"><expression tag="Math.Number" Value="9"/></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621474380365"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.logic,org.formulae.relation,org.formulae.diagramming,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Tree from nesting levels"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Tree_from_nesting_levels" Description="Tree from nesting levels"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Given a flat list of integers greater than zero, representing object nesting levels, e.g. [1, 2, 4], generate a tree formed from nested lists of those nesting level integers where:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Every int appears, in order, at its depth of nesting."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the next level int is greater than the previous then it appears in a sub-list of the list containing the previous item"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The generated tree data structure should ideally be in a languages nested list format that can be used for further calculations rather than something just calculated for printing."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="An input of [1, 2, 4] should produce the equivalent of: [1, [2, [[4]]]] where 1 is at depth1, 2 is two deep and 4 is nested 4 deep."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="[1, 2, 4, 2, 2, 1] should produce [1, [2, [[4]], 2, 2], 1]."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="All the nesting integers are in the same order but at the correct nesting levels."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Similarly [3, 1, 3, 1] should generate [[[3]], 1, [[3]], 1]"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="process"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="level"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="Description" Expanded="True">
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="sublist"/>
+									<expression tag="List.List"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+							<expression tag="Programming.While">
+								<expression tag="Logic.Conjunction">
+									<expression tag="Relation.LessOrEquals">
+										<expression tag="Symbolic.Symbol" Name="i"/>
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+									<expression tag="Relation.GreaterOrEquals">
+										<expression tag="Symbolic.Assignment">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Expression.Child">
+												<expression tag="Symbolic.Symbol" Name="list"/>
+												<expression tag="Symbolic.Symbol" Name="i"/>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="level"/>
+									</expression>
+								</expression>
+								<expression tag="Programming.Block" Description="Description" Expanded="True">
+									<expression tag="Programming.IfElse">
+										<expression tag="Relation.Equals">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Symbolic.Symbol" Name="level"/>
+										</expression>
+										<expression tag="Programming.Block" Description="Description" Expanded="True">
+											<expression tag="Expression.Append">
+												<expression tag="Symbolic.Symbol" Name="sublist"/>
+												<expression tag="Symbolic.Symbol" Name="x"/>
+											</expression>
+											<expression tag="Symbolic.Assignment">
+												<expression tag="Symbolic.Symbol" Name="i"/>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="i"/>
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Expression.Append">
+											<expression tag="Symbolic.Symbol" Name="sublist"/>
+											<expression tag="Symbolic.Function">
+												<expression tag="Symbolic.Symbol" Name="process"/>
+												<expression tag="List.List">
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="Symbolic.Symbol" Name="level"/>
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="sublist"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Diagramming.ToTree">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="process"/>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Generate and show here the results for the following inputs:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="String.Text" Value="[]"/>
+				<expression tag="String.Text" Value="[1, 2, 4]"/>
+				<expression tag="String.Text" Value="[3, 1, 3, 1]"/>
+				<expression tag="String.Text" Value="[1, 2, 3, 1]"/>
+				<expression tag="String.Text" Value="[3, 2, 1, 3]"/>
+				<expression tag="String.Text" Value="[3, 3, 3, 1, 1, 3, 3, 3]"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="List.List"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Other test cases"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="10"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="9"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="8"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Number" Value="7"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="6"/>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Diagramming.Tree" Expanded="True">
+			<expression tag="String.String" Value="List.List"/>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="String.String" Value="List.List"/>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Diagramming.Tree" Expanded="True">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following creates list of (10) random elements in the range 1 .. 10, and generate their trees:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="List.CreateList">
+						<expression tag="Math.Arithmetic.RandomInRange">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="10"/>
+						</expression>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Tree from nesting levels"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Math.Number" Value="10"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="String.String" Value="List.List"/>
+														<expression tag="Diagramming.Tree" Expanded="True">
+															<expression tag="Math.Number" Value="10"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="String.String" Value="List.List"/>
+														<expression tag="Diagramming.Tree" Expanded="True">
+															<expression tag="Math.Number" Value="10"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="6"/>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="Math.Number" Value="9"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="Math.Number" Value="9"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="6"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="6"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="7"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="Math.Number" Value="9"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="6"/>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="7"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="Math.Number" Value="9"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="Math.Number" Value="9"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="String.String" Value="List.List"/>
+														<expression tag="Diagramming.Tree" Expanded="True">
+															<expression tag="Math.Number" Value="10"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="7"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="Math.Number" Value="9"/>
+													</expression>
+												</expression>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="String.String" Value="List.List"/>
+														<expression tag="Diagramming.Tree" Expanded="True">
+															<expression tag="Math.Number" Value="10"/>
+														</expression>
+														<expression tag="Diagramming.Tree" Expanded="True">
+															<expression tag="Math.Number" Value="10"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="String.String" Value="List.List"/>
+														<expression tag="Diagramming.Tree" Expanded="True">
+															<expression tag="Math.Number" Value="10"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="String.String" Value="List.List"/>
+														<expression tag="Diagramming.Tree" Expanded="True">
+															<expression tag="Math.Number" Value="10"/>
+														</expression>
+														<expression tag="Diagramming.Tree" Expanded="True">
+															<expression tag="Math.Number" Value="10"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="7"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="7"/>
+											</expression>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="7"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="String.String" Value="List.List"/>
+														<expression tag="Diagramming.Tree" Expanded="True">
+															<expression tag="Math.Number" Value="10"/>
+														</expression>
+													</expression>
+												</expression>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="6"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="String.String" Value="List.List"/>
+														<expression tag="Diagramming.Tree" Expanded="True">
+															<expression tag="Math.Number" Value="10"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="7"/>
+											</expression>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="Math.Number" Value="9"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="7"/>
+											</expression>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="6"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="7"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="9"/>
+				</expression>
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.String" Value="List.List"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.String" Value="List.List"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="7"/>
+											</expression>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="6"/>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="Math.Number" Value="9"/>
+													</expression>
+												</expression>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.String" Value="List.List"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="Math.Number" Value="8"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.String" Value="List.List"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.String" Value="List.List"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.String" Value="List.List"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="String.String" Value="List.List"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="String.String" Value="List.List"/>
+												<expression tag="Diagramming.Tree" Expanded="True">
+													<expression tag="String.String" Value="List.List"/>
+													<expression tag="Diagramming.Tree" Expanded="True">
+														<expression tag="Math.Number" Value="9"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621474380000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

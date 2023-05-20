@@ -1,1 +1,621 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Chinese zodiac"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Chinese_zodiac" Description="chinese zodiac"/><expression tag="String.Text" Value="is a classification scheme based on the lunar calendar that assigns an animal and its reputed attributes to each year in a repeating 12-year cycle. Originating from China[citation needed], the zodiac and its variations remain popular in many East Asian and Southeast Asian countries, such as Japan, South Korea, Vietnam, the Philippines, Cambodia, and Thailand."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Traditionally, the Chinese have counted years using two simultaneous cycles, one of length 10 (the &quot;celestial stems&quot;) and one of length 12 (the &quot;terrestrial branches&quot;); the combination results in a repeating 60-year pattern. Mapping the branches to twelve traditional animal deities results in the well-known &quot;Chinese zodiac&quot;, assigning each year to a given animal. For example, Saturday, January 28, 2017 CE (in the common Gregorian calendar) begins the lunisolar year of the Rooster."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The celestial stems have no one-to-one mapping like that of the branches to animals; however, the five pairs of consecutive stems each belong to one of the five traditional Chinese elements (Wood, Fire, Earth, Metal, and Water). Further, one of the two years within each element's governance is associated with yin, the other with yang."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Thus, 2017 is also the yin year of Fire. Note that since 12 is an even number, the association between animals and yin/yang doesn't change. Consecutive Years of the Rooster will cycle through the five elements, but will always be yin, despite the apparent conceptual mismatch between the male animals and the female aspect."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script a program to calculate te information of a Chinese zodiac of a given year is presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Chinese_zodiac" Description="Chinese zodiac"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Requirements (from Rosetta code)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Create a subroutine or program that will return or output the animal, yin/yang association, and element for the lunisolar year that begins in a given CE year. You may optionally provide more information in the form of the year's numerical position within the 60-year cycle and/or its actual Chinese stem-branch name (in Han characters or Pinyin transliteration)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="Important."/></expression></expression><expression tag="String.Text" Value="Author of this script does not believe in any pseudoscience. This exercise is solved here because it is interesting from the programming perspective."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChineseZodiac"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="year"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="4"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="animals"/><expression tag="List.List"><expression tag="String.Text" Value="Rat - 鼠,  shǔ, 🐭"/><expression tag="String.Text" Value="Ox - 牛, niú, 🐮"/><expression tag="String.Text" Value="Tiger - 虎, hǔ, 🐯"/><expression tag="String.Text" Value="Rabbit - 兔, tù, 🐰"/><expression tag="String.Text" Value="Dragon - 龍, lóng, 🐲"/><expression tag="String.Text" Value="Snake - 蛇, shé, 🐍"/><expression tag="String.Text" Value="Horse - 馬, mǎ, 🐴"/><expression tag="String.Text" Value="Goat - 羊, yáng, 🐏"/><expression tag="String.Text" Value="Monkey - 猴, hóu, 🐵"/><expression tag="String.Text" Value="Rooster - 鸡, jī, 🐔"/><expression tag="String.Text" Value="Dog - 狗, gǒu, 🐶"/><expression tag="String.Text" Value="Pig - 豬, zhū, 🐷"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="elements"/><expression tag="List.List"><expression tag="String.Text" Value="Wood - 木, mù"/><expression tag="String.Text" Value="Fire - 火, huǒ"/><expression tag="String.Text" Value="Earth - 土, tǔ"/><expression tag="String.Text" Value="Metal - 金, jīn"/><expression tag="String.Text" Value="Water - 水, shuǐ"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="forces"/><expression tag="List.List"><expression tag="String.Text" Value="yáng - 阳"/><expression tag="String.Text" Value="yīn - 阴"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="stems"/><expression tag="List.List"><expression tag="String.Text" Value="jiă - 甲"/><expression tag="String.Text" Value="yĭ - 乙"/><expression tag="String.Text" Value="bĭng - 丙"/><expression tag="String.Text" Value="dīng - 丁"/><expression tag="String.Text" Value="wù - 戊"/><expression tag="String.Text" Value="jĭ - 己"/><expression tag="String.Text" Value="gēng - 庚"/><expression tag="String.Text" Value="xīn - 辛"/><expression tag="String.Text" Value="rén - 壬"/><expression tag="String.Text" Value="gŭi - 癸"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="branches"/><expression tag="List.List"><expression tag="String.Text" Value="zĭ - 子"/><expression tag="String.Text" Value="chŏu - 丑"/><expression tag="String.Text" Value="yín - 寅"/><expression tag="String.Text" Value="măo - 卯"/><expression tag="String.Text" Value="chén - 辰"/><expression tag="String.Text" Value="sì - 巳"/><expression tag="String.Text" Value="wŭ - 午"/><expression tag="String.Text" Value="wèi - 未"/><expression tag="String.Text" Value="shēn - 申"/><expression tag="String.Text" Value="yŏu - 酉"/><expression tag="String.Text" Value="xū - 戌"/><expression tag="String.Text" Value="hài - 亥"/></expression></expression></expression><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="animals"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ModE"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="elements"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.DivE"><expression tag="Math.Arithmetic.ModE"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Math.Number" Value="10"/></expression><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="forces"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ModE"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="stems"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ModE"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Math.Number" Value="10"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="branches"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ModE"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Math.Number" Value="12"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ModE"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Math.Number" Value="60"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test cases"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChineseZodiac"/><expression tag="List.List"><expression tag="Math.Number" Value="1935"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="String.Text" Value="Pig - 豬, zhū, 🐷"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="String.Text" Value="Wood - 木, mù"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="String.Text" Value="yīn - 阴"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="String.Text" Value="yĭ - 乙"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="String.Text" Value="hài - 亥"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Number" Value="12"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateTable"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChineseZodiac"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="year"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="year"/><expression tag="List.List"><expression tag="Math.Number" Value="1935"/><expression tag="Math.Number" Value="1938"/><expression tag="Math.Number" Value="1968"/><expression tag="Math.Number" Value="1970"/><expression tag="Math.Number" Value="1972"/><expression tag="Math.Number" Value="1976"/><expression tag="Math.Number" Value="1982"/><expression tag="Math.Number" Value="1984"/><expression tag="Math.Number" Value="2017"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="year"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="ChineseZodiac"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="year"/></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1935"/><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="String.Text" Value="Pig - 豬, zhū, 🐷"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="String.Text" Value="Wood - 木, mù"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="String.Text" Value="yīn - 阴"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="String.Text" Value="yĭ - 乙"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="String.Text" Value="hài - 亥"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Number" Value="12"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1938"/><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="String.Text" Value="Tiger - 虎, hǔ, 🐯"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="String.Text" Value="Earth - 土, tǔ"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="String.Text" Value="yáng - 阳"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="String.Text" Value="wù - 戊"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="String.Text" Value="yín - 寅"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Number" Value="15"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1968"/><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="String.Text" Value="Monkey - 猴, hóu, 🐵"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="String.Text" Value="Earth - 土, tǔ"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="String.Text" Value="yáng - 阳"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="String.Text" Value="wù - 戊"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="String.Text" Value="shēn - 申"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Number" Value="45"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1970"/><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="String.Text" Value="Dog - 狗, gǒu, 🐶"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="String.Text" Value="Metal - 金, jīn"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="String.Text" Value="yáng - 阳"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="String.Text" Value="gēng - 庚"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="String.Text" Value="xū - 戌"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Number" Value="47"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1972"/><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="String.Text" Value="Rat - 鼠,  shǔ, 🐭"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="String.Text" Value="Water - 水, shuǐ"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="String.Text" Value="yáng - 阳"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="String.Text" Value="rén - 壬"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="String.Text" Value="zĭ - 子"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Number" Value="49"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1976"/><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="String.Text" Value="Dragon - 龍, lóng, 🐲"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="String.Text" Value="Fire - 火, huǒ"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="String.Text" Value="yáng - 阳"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="String.Text" Value="bĭng - 丙"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="String.Text" Value="chén - 辰"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Number" Value="53"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1982"/><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="String.Text" Value="Dog - 狗, gǒu, 🐶"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="String.Text" Value="Water - 水, shuǐ"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="String.Text" Value="yáng - 阳"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="String.Text" Value="rén - 壬"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="String.Text" Value="xū - 戌"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Number" Value="59"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1984"/><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="String.Text" Value="Rat - 鼠,  shǔ, 🐭"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="String.Text" Value="Wood - 木, mù"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="String.Text" Value="yáng - 阳"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="String.Text" Value="jiă - 甲"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="String.Text" Value="zĭ - 子"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="2017"/><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Animal"/><expression tag="String.Text" Value="Rooster - 鸡, jī, 🐔"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Element"/><expression tag="String.Text" Value="Fire - 火, huǒ"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Yin/yang force"/><expression tag="String.Text" Value="yīn - 阴"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Heavenly stem"/><expression tag="String.Text" Value="dīng - 丁"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Earthly branch"/><expression tag="String.Text" Value="yŏu - 酉"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Cycle"/><expression tag="Math.Number" Value="34"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621569942024"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Chinese zodiac"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Chinese_zodiac" Description="chinese zodiac"/>
+				<expression tag="String.Text" Value="is a classification scheme based on the lunar calendar that assigns an animal and its reputed attributes to each year in a repeating 12-year cycle. Originating from China[citation needed], the zodiac and its variations remain popular in many East Asian and Southeast Asian countries, such as Japan, South Korea, Vietnam, the Philippines, Cambodia, and Thailand."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Traditionally, the Chinese have counted years using two simultaneous cycles, one of length 10 (the &quot;celestial stems&quot;) and one of length 12 (the &quot;terrestrial branches&quot;); the combination results in a repeating 60-year pattern. Mapping the branches to twelve traditional animal deities results in the well-known &quot;Chinese zodiac&quot;, assigning each year to a given animal. For example, Saturday, January 28, 2017 CE (in the common Gregorian calendar) begins the lunisolar year of the Rooster."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The celestial stems have no one-to-one mapping like that of the branches to animals; however, the five pairs of consecutive stems each belong to one of the five traditional Chinese elements (Wood, Fire, Earth, Metal, and Water). Further, one of the two years within each element's governance is associated with yin, the other with yang."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Thus, 2017 is also the yin year of Fire. Note that since 12 is an even number, the association between animals and yin/yang doesn't change. Consecutive Years of the Rooster will cycle through the five elements, but will always be yin, despite the apparent conceptual mismatch between the male animals and the female aspect."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script a program to calculate te information of a Chinese zodiac of a given year is presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Chinese_zodiac" Description="Chinese zodiac"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Requirements (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Create a subroutine or program that will return or output the animal, yin/yang association, and element for the lunisolar year that begins in a given CE year. You may optionally provide more information in the form of the year's numerical position within the 60-year cycle and/or its actual Chinese stem-branch name (in Han characters or Pinyin transliteration)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Important."/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="Author of this script does not believe in any pseudoscience. This exercise is solved here because it is interesting from the programming perspective."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="ChineseZodiac"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="year"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="year"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="year"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="animals"/>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Rat - 鼠,  shǔ, 🐭"/>
+							<expression tag="String.Text" Value="Ox - 牛, niú, 🐮"/>
+							<expression tag="String.Text" Value="Tiger - 虎, hǔ, 🐯"/>
+							<expression tag="String.Text" Value="Rabbit - 兔, tù, 🐰"/>
+							<expression tag="String.Text" Value="Dragon - 龍, lóng, 🐲"/>
+							<expression tag="String.Text" Value="Snake - 蛇, shé, 🐍"/>
+							<expression tag="String.Text" Value="Horse - 馬, mǎ, 🐴"/>
+							<expression tag="String.Text" Value="Goat - 羊, yáng, 🐏"/>
+							<expression tag="String.Text" Value="Monkey - 猴, hóu, 🐵"/>
+							<expression tag="String.Text" Value="Rooster - 鸡, jī, 🐔"/>
+							<expression tag="String.Text" Value="Dog - 狗, gǒu, 🐶"/>
+							<expression tag="String.Text" Value="Pig - 豬, zhū, 🐷"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="elements"/>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Wood - 木, mù"/>
+							<expression tag="String.Text" Value="Fire - 火, huǒ"/>
+							<expression tag="String.Text" Value="Earth - 土, tǔ"/>
+							<expression tag="String.Text" Value="Metal - 金, jīn"/>
+							<expression tag="String.Text" Value="Water - 水, shuǐ"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="forces"/>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="yáng - 阳"/>
+							<expression tag="String.Text" Value="yīn - 阴"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="stems"/>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="jiă - 甲"/>
+							<expression tag="String.Text" Value="yĭ - 乙"/>
+							<expression tag="String.Text" Value="bĭng - 丙"/>
+							<expression tag="String.Text" Value="dīng - 丁"/>
+							<expression tag="String.Text" Value="wù - 戊"/>
+							<expression tag="String.Text" Value="jĭ - 己"/>
+							<expression tag="String.Text" Value="gēng - 庚"/>
+							<expression tag="String.Text" Value="xīn - 辛"/>
+							<expression tag="String.Text" Value="rén - 壬"/>
+							<expression tag="String.Text" Value="gŭi - 癸"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="branches"/>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="zĭ - 子"/>
+							<expression tag="String.Text" Value="chŏu - 丑"/>
+							<expression tag="String.Text" Value="yín - 寅"/>
+							<expression tag="String.Text" Value="măo - 卯"/>
+							<expression tag="String.Text" Value="chén - 辰"/>
+							<expression tag="String.Text" Value="sì - 巳"/>
+							<expression tag="String.Text" Value="wŭ - 午"/>
+							<expression tag="String.Text" Value="wèi - 未"/>
+							<expression tag="String.Text" Value="shēn - 申"/>
+							<expression tag="String.Text" Value="yŏu - 酉"/>
+							<expression tag="String.Text" Value="xū - 戌"/>
+							<expression tag="String.Text" Value="hài - 亥"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Animal"/>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="animals"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Mod">
+										<expression tag="Symbolic.Symbol" Name="year"/>
+										<expression tag="Math.Number" Value="12"/>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Element"/>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="elements"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Div">
+										<expression tag="Math.Arithmetic.Mod">
+											<expression tag="Symbolic.Symbol" Name="year"/>
+											<expression tag="Math.Number" Value="10"/>
+										</expression>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Yin/yang force"/>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="forces"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Mod">
+										<expression tag="Symbolic.Symbol" Name="year"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Heavenly stem"/>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="stems"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Mod">
+										<expression tag="Symbolic.Symbol" Name="year"/>
+										<expression tag="Math.Number" Value="10"/>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Earthly branch"/>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="branches"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Mod">
+										<expression tag="Symbolic.Symbol" Name="year"/>
+										<expression tag="Math.Number" Value="12"/>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Cycle"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Mod">
+									<expression tag="Symbolic.Symbol" Name="year"/>
+									<expression tag="Math.Number" Value="60"/>
+								</expression>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test cases"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="ChineseZodiac"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1935"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Animal"/>
+					<expression tag="String.Text" Value="Pig - 豬, zhū, 🐷"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Element"/>
+					<expression tag="String.Text" Value="Wood - 木, mù"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Yin/yang force"/>
+					<expression tag="String.Text" Value="yīn - 阴"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Heavenly stem"/>
+					<expression tag="String.Text" Value="yĭ - 乙"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Earthly branch"/>
+					<expression tag="String.Text" Value="hài - 亥"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Cycle"/>
+					<expression tag="Math.Number" Value="12"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="year"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="ChineseZodiac"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="year"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="year"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1935"/>
+				<expression tag="Math.Number" Value="1938"/>
+				<expression tag="Math.Number" Value="1968"/>
+				<expression tag="Math.Number" Value="1970"/>
+				<expression tag="Math.Number" Value="1972"/>
+				<expression tag="Math.Number" Value="1976"/>
+				<expression tag="Math.Number" Value="1982"/>
+				<expression tag="Math.Number" Value="1984"/>
+				<expression tag="Math.Number" Value="2017"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="year"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="ChineseZodiac"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="year"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1935"/>
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Animal"/>
+								<expression tag="String.Text" Value="Pig - 豬, zhū, 🐷"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Element"/>
+								<expression tag="String.Text" Value="Wood - 木, mù"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Yin/yang force"/>
+								<expression tag="String.Text" Value="yīn - 阴"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Heavenly stem"/>
+								<expression tag="String.Text" Value="yĭ - 乙"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Earthly branch"/>
+								<expression tag="String.Text" Value="hài - 亥"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Cycle"/>
+								<expression tag="Math.Number" Value="12"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1938"/>
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Animal"/>
+								<expression tag="String.Text" Value="Tiger - 虎, hǔ, 🐯"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Element"/>
+								<expression tag="String.Text" Value="Earth - 土, tǔ"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Yin/yang force"/>
+								<expression tag="String.Text" Value="yáng - 阳"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Heavenly stem"/>
+								<expression tag="String.Text" Value="wù - 戊"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Earthly branch"/>
+								<expression tag="String.Text" Value="yín - 寅"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Cycle"/>
+								<expression tag="Math.Number" Value="15"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1968"/>
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Animal"/>
+								<expression tag="String.Text" Value="Monkey - 猴, hóu, 🐵"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Element"/>
+								<expression tag="String.Text" Value="Earth - 土, tǔ"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Yin/yang force"/>
+								<expression tag="String.Text" Value="yáng - 阳"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Heavenly stem"/>
+								<expression tag="String.Text" Value="wù - 戊"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Earthly branch"/>
+								<expression tag="String.Text" Value="shēn - 申"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Cycle"/>
+								<expression tag="Math.Number" Value="45"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1970"/>
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Animal"/>
+								<expression tag="String.Text" Value="Dog - 狗, gǒu, 🐶"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Element"/>
+								<expression tag="String.Text" Value="Metal - 金, jīn"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Yin/yang force"/>
+								<expression tag="String.Text" Value="yáng - 阳"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Heavenly stem"/>
+								<expression tag="String.Text" Value="gēng - 庚"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Earthly branch"/>
+								<expression tag="String.Text" Value="xū - 戌"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Cycle"/>
+								<expression tag="Math.Number" Value="47"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1972"/>
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Animal"/>
+								<expression tag="String.Text" Value="Rat - 鼠,  shǔ, 🐭"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Element"/>
+								<expression tag="String.Text" Value="Water - 水, shuǐ"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Yin/yang force"/>
+								<expression tag="String.Text" Value="yáng - 阳"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Heavenly stem"/>
+								<expression tag="String.Text" Value="rén - 壬"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Earthly branch"/>
+								<expression tag="String.Text" Value="zĭ - 子"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Cycle"/>
+								<expression tag="Math.Number" Value="49"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1976"/>
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Animal"/>
+								<expression tag="String.Text" Value="Dragon - 龍, lóng, 🐲"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Element"/>
+								<expression tag="String.Text" Value="Fire - 火, huǒ"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Yin/yang force"/>
+								<expression tag="String.Text" Value="yáng - 阳"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Heavenly stem"/>
+								<expression tag="String.Text" Value="bĭng - 丙"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Earthly branch"/>
+								<expression tag="String.Text" Value="chén - 辰"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Cycle"/>
+								<expression tag="Math.Number" Value="53"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1982"/>
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Animal"/>
+								<expression tag="String.Text" Value="Dog - 狗, gǒu, 🐶"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Element"/>
+								<expression tag="String.Text" Value="Water - 水, shuǐ"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Yin/yang force"/>
+								<expression tag="String.Text" Value="yáng - 阳"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Heavenly stem"/>
+								<expression tag="String.Text" Value="rén - 壬"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Earthly branch"/>
+								<expression tag="String.Text" Value="xū - 戌"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Cycle"/>
+								<expression tag="Math.Number" Value="59"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1984"/>
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Animal"/>
+								<expression tag="String.Text" Value="Rat - 鼠,  shǔ, 🐭"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Element"/>
+								<expression tag="String.Text" Value="Wood - 木, mù"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Yin/yang force"/>
+								<expression tag="String.Text" Value="yáng - 阳"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Heavenly stem"/>
+								<expression tag="String.Text" Value="jiă - 甲"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Earthly branch"/>
+								<expression tag="String.Text" Value="zĭ - 子"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Cycle"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2017"/>
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Animal"/>
+								<expression tag="String.Text" Value="Rooster - 鸡, jī, 🐔"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Element"/>
+								<expression tag="String.Text" Value="Fire - 火, huǒ"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Yin/yang force"/>
+								<expression tag="String.Text" Value="yīn - 阴"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Heavenly stem"/>
+								<expression tag="String.Text" Value="dīng - 丁"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Earthly branch"/>
+								<expression tag="String.Text" Value="yŏu - 酉"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Cycle"/>
+								<expression tag="Math.Number" Value="34"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621569900000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

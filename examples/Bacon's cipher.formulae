@@ -1,1 +1,432 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Bacon's cipher"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Bacon%27s_cipher" Description="Bacon's cipher"/><expression tag="String.Text" Value="or the Baconian cipher is a method of"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Steganography" Description="steganographic"/><expression tag="String.Text" Value="message encoding devised by"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Francis_Bacon" Description="Francis Bacon."/><expression tag="String.Text" Value="in 1605. A message is concealed in the presentation of text, rather than its content."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It is a form of encryption and decryption of plaintext using the simple alphabet of the Baconian cipher or some other kind of representation of this alphabet (make anything signify anything)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The Baconian alphabet:"/></expression><expression tag="Typesetting.Centering"><expression tag="Visualization.FontSizeIncrement" Increment="-4"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="a"/><expression tag="String.Text" Value="b"/><expression tag="String.Text" Value="c"/><expression tag="String.Text" Value="d"/><expression tag="String.Text" Value="e"/><expression tag="String.Text" Value="f"/><expression tag="String.Text" Value="g"/><expression tag="String.Text" Value="h"/><expression tag="String.Text" Value="i, j"/><expression tag="String.Text" Value="k"/><expression tag="String.Text" Value="l"/><expression tag="String.Text" Value="m"/><expression tag="String.Text" Value="n"/><expression tag="String.Text" Value="o"/><expression tag="String.Text" Value="p"/><expression tag="String.Text" Value="q"/><expression tag="String.Text" Value="r"/><expression tag="String.Text" Value="s"/><expression tag="String.Text" Value="t"/><expression tag="String.Text" Value="u, v"/><expression tag="String.Text" Value="w"/><expression tag="String.Text" Value="x"/><expression tag="String.Text" Value="y"/><expression tag="String.Text" Value="z"/></expression><expression tag="List.List"><expression tag="String.Text" Value="AAAAA"/><expression tag="String.Text" Value="AAAAB"/><expression tag="String.Text" Value="AAABA"/><expression tag="String.Text" Value="AAABB"/><expression tag="String.Text" Value="AABAA"/><expression tag="String.Text" Value="AABAB"/><expression tag="String.Text" Value="AABBA"/><expression tag="String.Text" Value="AABBB"/><expression tag="String.Text" Value="ABAAA"/><expression tag="String.Text" Value="ABAAB"/><expression tag="String.Text" Value="ABABA"/><expression tag="String.Text" Value="ABABB"/><expression tag="String.Text" Value="ABBAA"/><expression tag="String.Text" Value="ABBAB"/><expression tag="String.Text" Value="ABBBA"/><expression tag="String.Text" Value="ABBBB"/><expression tag="String.Text" Value="BAAAA"/><expression tag="String.Text" Value="BAAAB"/><expression tag="String.Text" Value="BAABA"/><expression tag="String.Text" Value="BAABB"/><expression tag="String.Text" Value="BABAA"/><expression tag="String.Text" Value="BABAB"/><expression tag="String.Text" Value="BABBA"/><expression tag="String.Text" Value="BABBB"/></expression></expression></expression></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The Baconian alphabet may optionally be extended to encode all lower case characters individually and/or adding a few punctuation characters such as the space."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It is impractical to use the original change in font for the steganography. For this task you must provide an example that uses a change in the case of successive alphabetical characters instead. Other examples for the language are encouraged to explore alternative steganographic means."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script an implementation of the Bacon's cipher is presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Bacon_cipher" Description="Bacon cipher"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="BaconEncoder"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="plain"/><expression tag="Symbolic.Symbol" Name="message"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Symbolic.Symbol" Name="char"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="j"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="plain"/><expression tag="String.Lowercase"><expression tag="Symbolic.Symbol" Name="plain"/></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="String.Decode"><expression tag="String.SubstringToN"><expression tag="Symbolic.Symbol" Name="plain"/><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="97"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Number" Value="26"/></expression><expression tag="Logic.Disjunction"><expression tag="Relation.Less"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Relation.Greater"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Math.Number" Value="25"/></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="char"/><expression tag="String.SubstringToN"><expression tag="Symbolic.Symbol" Name="message"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="j"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="j"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.While"><expression tag="Logic.Negation"><expression tag="String.Matches"><expression tag="Symbolic.Symbol" Name="char"/><expression tag="String.String" Value="[a-zA-Z]"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="char"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="char"/><expression tag="String.SubstringToN"><expression tag="Symbolic.Symbol" Name="message"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="j"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="j"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Programming.Conditional"><expression tag="Bitwise.TestBit"><expression tag="Symbolic.Symbol" Name="value"/><expression tag="Symbolic.Symbol" Name="pos"/></expression><expression tag="String.Uppercase"><expression tag="Symbolic.Symbol" Name="char"/></expression><expression tag="String.Lowercase"><expression tag="Symbolic.Symbol" Name="char"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="String.Length"><expression tag="Symbolic.Symbol" Name="plain"/></expression></expression><expression tag="String.ToString"><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Show an example plaintext message encoded and then decoded"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="BaconEncoder"/><expression tag="List.List"><expression tag="String.String" Value="the quick brown fox jumps over the lazy dog"/><expression tag="String.String" Value="bacon's cipher is a method of steganography created by francis bacon. this task is to implement a program for encryption and decryption of plaintext using the simple alphabet of the baconian cipher or some other kind of representation of this alphabet (make anything signify anything). the baconian alphabet may optionally be extended to encode all lower case characters individually and/or adding a few punctuation characters such as the space."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="BacON's cIPHer Is a MEtHoD of stEgAnogRaphy crEatEd By FRaNcis baCOn. thIs TASk Is TO imPLeMENt A proGrAm FOR eNcRYPTIoN anD deCRyPtioN Of plAINTExt UsINg The SIMpLe AlPhaBet Of thE BAcOnIan CIphER Or sOme OThEr kInD Of reprESenTATion OF tHis alPHaBET (makE An"/></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="BaconDecoder"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="message"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Symbol" Name="result"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="4"/><expression tag="List.List"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Symbol" Name="char"/></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="char"/><expression tag="String.SubstringToN"><expression tag="Symbolic.Symbol" Name="message"/><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.If"><expression tag="String.Matches"><expression tag="Symbolic.Symbol" Name="char"/><expression tag="String.String" Value="[a-zA-Z]"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression><expression tag="String.Matches"><expression tag="Symbolic.Symbol" Name="char"/><expression tag="String.String" Value="[A-Z]"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Programming.If"><expression tag="Relation.Less"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="65"/></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Math.Number" Value="26"/></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="String.Encode"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="97"/><expression tag="Symbolic.Symbol" Name="number"/></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Number" Value="1"/><expression tag="String.Length"><expression tag="Symbolic.Symbol" Name="message"/></expression></expression><expression tag="String.ToString"><expression tag="Symbolic.Symbol" Name="result"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="BaconDecoder"/><expression tag="List.List"><expression tag="String.String" Value="BacON's cIPHer Is a MEtHoD of stEgAnogRaphy crEatEd By FRaNcis baCOn. thIs TASk Is TO imPLeMENt A proGrAm FOR eNcRYPTIoN anD deCRyPtioN Of plAINTExt UsINg The SIMpLe AlPhaBet Of thE BAcOnIan CIphER Or sOme OThEr kInD Of reprESenTATion OF tHis alPHaBET (makE An"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.String" Value="the quick brown fox jumps over the lazy dog"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621560773528"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.list,org.formulae.symbolic,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.logic,org.formulae.relation,org.formulae.bitwise,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Bacon's cipher"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Bacon%27s_cipher" Description="Bacon's cipher"/>
+				<expression tag="String.Text" Value="or the Baconian cipher is a method of"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Steganography" Description="steganographic"/>
+				<expression tag="String.Text" Value="message encoding devised by"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Francis_Bacon" Description="Francis Bacon."/>
+				<expression tag="String.Text" Value="in 1605. A message is concealed in the presentation of text, rather than its content."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It is a form of encryption and decryption of plaintext using the simple alphabet of the Baconian cipher or some other kind of representation of this alphabet (make anything signify anything)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The Baconian alphabet:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.FontSizeIncrement" Increment="-4">
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="a"/>
+								<expression tag="String.Text" Value="b"/>
+								<expression tag="String.Text" Value="c"/>
+								<expression tag="String.Text" Value="d"/>
+								<expression tag="String.Text" Value="e"/>
+								<expression tag="String.Text" Value="f"/>
+								<expression tag="String.Text" Value="g"/>
+								<expression tag="String.Text" Value="h"/>
+								<expression tag="String.Text" Value="i, j"/>
+								<expression tag="String.Text" Value="k"/>
+								<expression tag="String.Text" Value="l"/>
+								<expression tag="String.Text" Value="m"/>
+								<expression tag="String.Text" Value="n"/>
+								<expression tag="String.Text" Value="o"/>
+								<expression tag="String.Text" Value="p"/>
+								<expression tag="String.Text" Value="q"/>
+								<expression tag="String.Text" Value="r"/>
+								<expression tag="String.Text" Value="s"/>
+								<expression tag="String.Text" Value="t"/>
+								<expression tag="String.Text" Value="u, v"/>
+								<expression tag="String.Text" Value="w"/>
+								<expression tag="String.Text" Value="x"/>
+								<expression tag="String.Text" Value="y"/>
+								<expression tag="String.Text" Value="z"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="AAAAA"/>
+								<expression tag="String.Text" Value="AAAAB"/>
+								<expression tag="String.Text" Value="AAABA"/>
+								<expression tag="String.Text" Value="AAABB"/>
+								<expression tag="String.Text" Value="AABAA"/>
+								<expression tag="String.Text" Value="AABAB"/>
+								<expression tag="String.Text" Value="AABBA"/>
+								<expression tag="String.Text" Value="AABBB"/>
+								<expression tag="String.Text" Value="ABAAA"/>
+								<expression tag="String.Text" Value="ABAAB"/>
+								<expression tag="String.Text" Value="ABABA"/>
+								<expression tag="String.Text" Value="ABABB"/>
+								<expression tag="String.Text" Value="ABBAA"/>
+								<expression tag="String.Text" Value="ABBAB"/>
+								<expression tag="String.Text" Value="ABBBA"/>
+								<expression tag="String.Text" Value="ABBBB"/>
+								<expression tag="String.Text" Value="BAAAA"/>
+								<expression tag="String.Text" Value="BAAAB"/>
+								<expression tag="String.Text" Value="BAABA"/>
+								<expression tag="String.Text" Value="BAABB"/>
+								<expression tag="String.Text" Value="BABAA"/>
+								<expression tag="String.Text" Value="BABAB"/>
+								<expression tag="String.Text" Value="BABBA"/>
+								<expression tag="String.Text" Value="BABBB"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The Baconian alphabet may optionally be extended to encode all lower case characters individually and/or adding a few punctuation characters such as the space."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="It is impractical to use the original change in font for the steganography. For this task you must provide an example that uses a change in the case of successive alphabetical characters instead. Other examples for the language are encouraged to explore alternative steganographic means."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script an implementation of the Bacon's cipher is presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Bacon_cipher" Description="Bacon cipher"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="BaconEncoder"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="plain"/>
+					<expression tag="Symbolic.Symbol" Name="message"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="List.List"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="value"/>
+						<expression tag="Symbolic.Symbol" Name="char"/>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="j"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="plain"/>
+					<expression tag="String.Lowercase">
+						<expression tag="Symbolic.Symbol" Name="plain"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="value"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Expression.Child">
+									<expression tag="String.Decode">
+										<expression tag="String.SubstringToN">
+											<expression tag="Symbolic.Symbol" Name="plain"/>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="97"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="value"/>
+								<expression tag="Math.Number" Value="26"/>
+							</expression>
+							<expression tag="Logic.Disjunction">
+								<expression tag="Relation.Less">
+									<expression tag="Symbolic.Symbol" Name="value"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+								<expression tag="Relation.Greater">
+									<expression tag="Symbolic.Symbol" Name="value"/>
+									<expression tag="Math.Number" Value="25"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.ForFromTo">
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="char"/>
+									<expression tag="String.SubstringToN">
+										<expression tag="Symbolic.Symbol" Name="message"/>
+										<expression tag="Symbolic.Assignment">
+											<expression tag="Symbolic.Symbol" Name="j"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="j"/>
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+								<expression tag="Programming.While">
+									<expression tag="Logic.Negation">
+										<expression tag="String.Matches">
+											<expression tag="Symbolic.Symbol" Name="char"/>
+											<expression tag="String.RegularExpression" Value="[a-zA-Z]"/>
+										</expression>
+									</expression>
+									<expression tag="Programming.Block" Description="block" Expanded="True">
+										<expression tag="Expression.Append">
+											<expression tag="Symbolic.Symbol" Name="list"/>
+											<expression tag="Symbolic.Symbol" Name="char"/>
+										</expression>
+										<expression tag="Symbolic.Assignment">
+											<expression tag="Symbolic.Symbol" Name="char"/>
+											<expression tag="String.SubstringToN">
+												<expression tag="Symbolic.Symbol" Name="message"/>
+												<expression tag="Symbolic.Assignment">
+													<expression tag="Symbolic.Symbol" Name="j"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="Symbolic.Symbol" Name="j"/>
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Expression.Append">
+									<expression tag="Symbolic.Symbol" Name="list"/>
+									<expression tag="Programming.Conditional">
+										<expression tag="Bitwise.TestBit">
+											<expression tag="Symbolic.Symbol" Name="value"/>
+											<expression tag="Symbolic.Symbol" Name="pos"/>
+										</expression>
+										<expression tag="String.Uppercase">
+											<expression tag="Symbolic.Symbol" Name="char"/>
+										</expression>
+										<expression tag="String.Lowercase">
+											<expression tag="Symbolic.Symbol" Name="char"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="pos"/>
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="String.Length">
+						<expression tag="Symbolic.Symbol" Name="plain"/>
+					</expression>
+				</expression>
+				<expression tag="String.ToString">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Show an example plaintext message encoded and then decoded"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="BaconEncoder"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="the quick brown fox jumps over the lazy dog"/>
+				<expression tag="String.String" Value="bacon's cipher is a method of steganography created by francis bacon. this task is to implement a program for encryption and decryption of plaintext using the simple alphabet of the baconian cipher or some other kind of representation of this alphabet (make anything signify anything). the baconian alphabet may optionally be extended to encode all lower case characters individually and/or adding a few punctuation characters such as the space."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="BacON's cIPHer Is a MEtHoD of stEgAnogRaphy crEatEd By FRaNcis baCOn. thIs TASk Is TO imPLeMENt A proGrAm FOR eNcRYPTIoN anD deCRyPtioN Of plAINTExt UsINg The SIMpLe AlPhaBet Of thE BAcOnIan CIphER Or sOme OThEr kInD Of reprESenTATion OF tHis alPHaBET (makE An"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="BaconDecoder"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="message"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="number"/>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Symbolic.Symbol" Name="result"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="List.List"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Symbol" Name="char"/>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="char"/>
+							<expression tag="String.SubstringToN">
+								<expression tag="Symbolic.Symbol" Name="message"/>
+								<expression tag="Symbolic.Symbol" Name="pos"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.If">
+							<expression tag="String.Matches">
+								<expression tag="Symbolic.Symbol" Name="char"/>
+								<expression tag="String.RegularExpression" Value="[a-zA-Z]"/>
+							</expression>
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Programming.InvertedIf">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="number"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="number"/>
+											<expression tag="Math.Arithmetic.Exponentiation">
+												<expression tag="Math.Number" Value="2"/>
+												<expression tag="Symbolic.Symbol" Name="i"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="String.Matches">
+										<expression tag="Symbolic.Symbol" Name="char"/>
+										<expression tag="String.RegularExpression" Value="[A-Z]"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="i"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="i"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Programming.If">
+									<expression tag="Relation.Less">
+										<expression tag="Symbolic.Symbol" Name="i"/>
+										<expression tag="Math.Number" Value="0"/>
+									</expression>
+									<expression tag="Programming.Block" Description="block" Expanded="True">
+										<expression tag="Programming.InvertedIf">
+											<expression tag="Symbolic.Assignment">
+												<expression tag="Symbolic.Symbol" Name="number"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="65"/>
+												</expression>
+											</expression>
+											<expression tag="Relation.Equals">
+												<expression tag="Symbolic.Symbol" Name="number"/>
+												<expression tag="Math.Number" Value="26"/>
+											</expression>
+										</expression>
+										<expression tag="Expression.Append">
+											<expression tag="Symbolic.Symbol" Name="result"/>
+											<expression tag="String.Encode">
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Math.Number" Value="97"/>
+													<expression tag="Symbolic.Symbol" Name="number"/>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Assignment">
+											<expression tag="List.List">
+												<expression tag="Symbolic.Symbol" Name="number"/>
+												<expression tag="Symbolic.Symbol" Name="i"/>
+											</expression>
+											<expression tag="List.List">
+												<expression tag="Math.Number" Value="0"/>
+												<expression tag="Math.Number" Value="4"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="pos"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="String.Length">
+						<expression tag="Symbolic.Symbol" Name="message"/>
+					</expression>
+				</expression>
+				<expression tag="String.ToString">
+					<expression tag="Symbolic.Symbol" Name="result"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="BaconDecoder"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="BacON's cIPHer Is a MEtHoD of stEgAnogRaphy crEatEd By FRaNcis baCOn. thIs TASk Is TO imPLeMENt A proGrAm FOR eNcRYPTIoN anD deCRyPtioN Of plAINTExt UsINg The SIMpLe AlPhaBet Of thE BAcOnIan CIphER Or sOme OThEr kInD Of reprESenTATion OF tHis alPHaBET (makE An"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.String" Value="the quick brown fox jumps over the lazy dog"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621560720000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

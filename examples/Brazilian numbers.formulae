@@ -1,1 +1,376 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Brazilian numbers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Brazilian_numbers" Description="Brazilian numbers"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Brazilian numbers are so called as they were first formally presented at the 1994 math Olympiad"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="Olimpiada Iberoamericana de Matemáticas"/></expression><expression tag="String.Text" Value="in Fortaleza, Brazil."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Brazilian numbers are defined as the set of positive integer numbers where each number N has at least one natural number B where 1 &lt; B &lt; N-1 where the representation of N in base B has all equal digits."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="E.G."/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="1, 2 &amp; 3 can not be Brazilian; there is no base B that satisfies the condition 1 &lt; B &lt; N-1."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="4 is not Brazilian; 4 in base 2 is 100. The digits are not all the same."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="5 is not Brazilian; 5 in base 2 is 101, in base 3 is 12. There is no representation where the digits are the same."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="6 is not Brazilian; 6 in base 2 is 110, in base 3 is 20, in base 4 is 12. There is no representation where the digits are the same."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="7 is Brazilian; 7 in base 2 is 111. There is at least one representation where the digits are all the same."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="8 is Brazilian; 8 in base 3 is 22. There is at least one representation where the digits are all the same."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="All even integers 2P &gt;= 8 are Brazilian because 2P = 2(P-1) + 2, which is 22 in base P-1 when P-1 &gt; 2. That becomes true when P &gt;= 4."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="More common: for all all integers R and S, where R &gt; 1 and also S - 1 &gt; R, then RS is Brazilian because RS = R(S - 1) + R, which is RR in base S-1"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The only problematic numbers are squares of primes, where R = S. Only 11^2 is brazilian to base 3."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="All prime integers, that are brazilian, can only have the digit 1. Otherwise one could factor out the digit, therefore it cannot be a prime number. Mostly in form of 111 to base Integer(sqrt(prime number)). Must be an odd count of 1 to stay odd like primes &gt; 2"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Task. Write a routine (function, whatever) to determine if a number is Brazilian and use the routine to show:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The first 20 Brazilian numbers"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The first 20 odd Brazilian numbers"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The first 20 prime Brazilian numbers"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Function to determine if the given number is Brazilian:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IsBrazilian"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.ForFromTo"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Return"><expression tag="Logic.True"/></expression><expression tag="Relation.Equals"><expression tag="Expression.Cardinality"><expression tag="Expression.Group"><expression tag="Math.Arithmetic.Digits"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="base"/></expression></expression></expression><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="base"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Logic.False"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IsBrazilian"/><expression tag="List.List"><expression tag="Math.Number" Value="7"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The next function calculates the first Brazilian numbers that agree the given condition. Notice that the conditionis provided as a lambda expression:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="List first Brazilian"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="condition"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Symbol" Name="c"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Programming.Until"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Programming.If"><expression tag="Logic.Conjunction"><expression tag="Symbolic.LambdaApplication"><expression tag="Symbolic.Symbol" Name="condition"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IsBrazilian"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Relation.Equals"><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="First 20 Brazilian numbers:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="List first Brazilian"/><expression tag="List.List"><expression tag="Math.Number" Value="20"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Logic.True"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="13"/><expression tag="Math.Number" Value="14"/><expression tag="Math.Number" Value="15"/><expression tag="Math.Number" Value="16"/><expression tag="Math.Number" Value="18"/><expression tag="Math.Number" Value="20"/><expression tag="Math.Number" Value="21"/><expression tag="Math.Number" Value="22"/><expression tag="Math.Number" Value="24"/><expression tag="Math.Number" Value="26"/><expression tag="Math.Number" Value="27"/><expression tag="Math.Number" Value="28"/><expression tag="Math.Number" Value="30"/><expression tag="Math.Number" Value="31"/><expression tag="Math.Number" Value="32"/><expression tag="Math.Number" Value="33"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="First 20 odd Brazilian numbers:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="List first Brazilian"/><expression tag="List.List"><expression tag="Math.Number" Value="20"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.IsOdd"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="13"/><expression tag="Math.Number" Value="15"/><expression tag="Math.Number" Value="21"/><expression tag="Math.Number" Value="27"/><expression tag="Math.Number" Value="31"/><expression tag="Math.Number" Value="33"/><expression tag="Math.Number" Value="35"/><expression tag="Math.Number" Value="39"/><expression tag="Math.Number" Value="43"/><expression tag="Math.Number" Value="45"/><expression tag="Math.Number" Value="51"/><expression tag="Math.Number" Value="55"/><expression tag="Math.Number" Value="57"/><expression tag="Math.Number" Value="63"/><expression tag="Math.Number" Value="65"/><expression tag="Math.Number" Value="69"/><expression tag="Math.Number" Value="73"/><expression tag="Math.Number" Value="75"/><expression tag="Math.Number" Value="77"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="First 20 prime Brazilian numbers:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="List first Brazilian"/><expression tag="List.List"><expression tag="Math.Number" Value="20"/><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.IsPrime"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="13"/><expression tag="Math.Number" Value="31"/><expression tag="Math.Number" Value="43"/><expression tag="Math.Number" Value="73"/><expression tag="Math.Number" Value="127"/><expression tag="Math.Number" Value="157"/><expression tag="Math.Number" Value="211"/><expression tag="Math.Number" Value="241"/><expression tag="Math.Number" Value="307"/><expression tag="Math.Number" Value="421"/><expression tag="Math.Number" Value="463"/><expression tag="Math.Number" Value="601"/><expression tag="Math.Number" Value="757"/><expression tag="Math.Number" Value="1093"/><expression tag="Math.Number" Value="1123"/><expression tag="Math.Number" Value="1483"/><expression tag="Math.Number" Value="1723"/><expression tag="Math.Number" Value="2551"/><expression tag="Math.Number" Value="2801"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620627382580"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.logic,org.formulae.relation,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Brazilian numbers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Brazilian_numbers" Description="Brazilian numbers"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Brazilian numbers are so called as they were first formally presented at the 1994 math Olympiad"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Olimpiada Iberoamericana de Matemáticas"/>
+				</expression>
+				<expression tag="String.Text" Value="in Fortaleza, Brazil."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Brazilian numbers are defined as the set of positive integer numbers where each number N has at least one natural number B where 1 &lt; B &lt; N-1 where the representation of N in base B has all equal digits."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="E.G."/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="1, 2 &amp; 3 can not be Brazilian; there is no base B that satisfies the condition 1 &lt; B &lt; N-1."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="4 is not Brazilian; 4 in base 2 is 100. The digits are not all the same."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="5 is not Brazilian; 5 in base 2 is 101, in base 3 is 12. There is no representation where the digits are the same."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="6 is not Brazilian; 6 in base 2 is 110, in base 3 is 20, in base 4 is 12. There is no representation where the digits are the same."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="7 is Brazilian; 7 in base 2 is 111. There is at least one representation where the digits are all the same."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="8 is Brazilian; 8 in base 3 is 22. There is at least one representation where the digits are all the same."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="All even integers 2P &gt;= 8 are Brazilian because 2P = 2(P-1) + 2, which is 22 in base P-1 when P-1 &gt; 2. That becomes true when P &gt;= 4."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="More common: for all all integers R and S, where R &gt; 1 and also S - 1 &gt; R, then RS is Brazilian because RS = R(S - 1) + R, which is RR in base S-1"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The only problematic numbers are squares of primes, where R = S. Only 11^2 is brazilian to base 3."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="All prime integers, that are brazilian, can only have the digit 1. Otherwise one could factor out the digit, therefore it cannot be a prime number. Mostly in form of 111 to base Integer(sqrt(prime number)). Must be an odd count of 1 to stay odd like primes &gt; 2"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Task. Write a routine (function, whatever) to determine if a number is Brazilian and use the routine to show:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The first 20 Brazilian numbers"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The first 20 odd Brazilian numbers"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The first 20 prime Brazilian numbers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Function to determine if the given number is Brazilian:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="IsBrazilian"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Symbolic.Return">
+							<expression tag="Logic.True"/>
+						</expression>
+						<expression tag="Relation.Equals">
+							<expression tag="Expression.Cardinality">
+								<expression tag="Expression.Group">
+									<expression tag="Math.Arithmetic.Digits">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Symbolic.Symbol" Name="base"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="base"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Logic.False"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="IsBrazilian"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The next function calculates the first Brazilian numbers that agree the given condition. Notice that the conditionis provided as a lambda expression:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="List first Brazilian"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="condition"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Symbolic.Symbol" Name="c"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.Until">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Programming.If">
+							<expression tag="Logic.Conjunction">
+								<expression tag="Symbolic.LambdaApplication">
+									<expression tag="Symbolic.Symbol" Name="condition"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="IsBrazilian"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Expression.Append">
+									<expression tag="Symbolic.Symbol" Name="list"/>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="c"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="c"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Relation.Equals">
+						<expression tag="Symbolic.Symbol" Name="c"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="First 20 Brazilian numbers:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="List first Brazilian"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="20"/>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+					<expression tag="Logic.True"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="7"/>
+			<expression tag="Math.Number" Value="8"/>
+			<expression tag="Math.Number" Value="10"/>
+			<expression tag="Math.Number" Value="12"/>
+			<expression tag="Math.Number" Value="13"/>
+			<expression tag="Math.Number" Value="14"/>
+			<expression tag="Math.Number" Value="15"/>
+			<expression tag="Math.Number" Value="16"/>
+			<expression tag="Math.Number" Value="18"/>
+			<expression tag="Math.Number" Value="20"/>
+			<expression tag="Math.Number" Value="21"/>
+			<expression tag="Math.Number" Value="22"/>
+			<expression tag="Math.Number" Value="24"/>
+			<expression tag="Math.Number" Value="26"/>
+			<expression tag="Math.Number" Value="27"/>
+			<expression tag="Math.Number" Value="28"/>
+			<expression tag="Math.Number" Value="30"/>
+			<expression tag="Math.Number" Value="31"/>
+			<expression tag="Math.Number" Value="32"/>
+			<expression tag="Math.Number" Value="33"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="First 20 odd Brazilian numbers:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="List first Brazilian"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="20"/>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+					<expression tag="Math.Arithmetic.IsOdd">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="7"/>
+			<expression tag="Math.Number" Value="13"/>
+			<expression tag="Math.Number" Value="15"/>
+			<expression tag="Math.Number" Value="21"/>
+			<expression tag="Math.Number" Value="27"/>
+			<expression tag="Math.Number" Value="31"/>
+			<expression tag="Math.Number" Value="33"/>
+			<expression tag="Math.Number" Value="35"/>
+			<expression tag="Math.Number" Value="39"/>
+			<expression tag="Math.Number" Value="43"/>
+			<expression tag="Math.Number" Value="45"/>
+			<expression tag="Math.Number" Value="51"/>
+			<expression tag="Math.Number" Value="55"/>
+			<expression tag="Math.Number" Value="57"/>
+			<expression tag="Math.Number" Value="63"/>
+			<expression tag="Math.Number" Value="65"/>
+			<expression tag="Math.Number" Value="69"/>
+			<expression tag="Math.Number" Value="73"/>
+			<expression tag="Math.Number" Value="75"/>
+			<expression tag="Math.Number" Value="77"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="First 20 prime Brazilian numbers:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="List first Brazilian"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="20"/>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+					<expression tag="Math.Arithmetic.IsPrime">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="7"/>
+			<expression tag="Math.Number" Value="13"/>
+			<expression tag="Math.Number" Value="31"/>
+			<expression tag="Math.Number" Value="43"/>
+			<expression tag="Math.Number" Value="73"/>
+			<expression tag="Math.Number" Value="127"/>
+			<expression tag="Math.Number" Value="157"/>
+			<expression tag="Math.Number" Value="211"/>
+			<expression tag="Math.Number" Value="241"/>
+			<expression tag="Math.Number" Value="307"/>
+			<expression tag="Math.Number" Value="421"/>
+			<expression tag="Math.Number" Value="463"/>
+			<expression tag="Math.Number" Value="601"/>
+			<expression tag="Math.Number" Value="757"/>
+			<expression tag="Math.Number" Value="1093"/>
+			<expression tag="Math.Number" Value="1123"/>
+			<expression tag="Math.Number" Value="1483"/>
+			<expression tag="Math.Number" Value="1723"/>
+			<expression tag="Math.Number" Value="2551"/>
+			<expression tag="Math.Number" Value="2801"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620627382580"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

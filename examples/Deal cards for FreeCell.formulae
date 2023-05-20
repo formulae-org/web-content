@@ -1,1 +1,1467 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Deal cards for FreeCell"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Deal_cards_for_FreeCell" Description="Deal cards for FreeCell"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="Free Cell"/></expression><expression tag="String.Text" Value="is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/FreeCell" Description="FreeCell"/><expression tag="String.Text" Value="and reimplemented the game for DOS, then Windows."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This version introduced 32000 numbered deals. (The"/><expression tag="Internet.UniformResourceLocator" Value="http://www.solitairelaboratory.com/fcfaq.html" Description="FreeCell FAQ"/><expression tag="String.Text" Value="tells this history.)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The algorithm uses this"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Linear_congruential_generator" Description="linear congruential generator"/><expression tag="String.Text" Value="from Microsoft C:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="state"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Text" Value="n"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="214013"/><expression tag="Expression.Child"><expression tag="String.Text" Value="state"/><expression tag="String.Text" Value="n"/></expression></expression><expression tag="Math.Number" Value="2531011"/></expression><expression tag="String.Text" Value="mod"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="31"/></expression></expression><expression tag="Visualization.HorizontalArray"><expression tag="Expression.Child"><expression tag="String.Text" Value="rand"/><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value="="/><expression tag="Math.Arithmetic.Division"><expression tag="Expression.Child"><expression tag="String.Text" Value="state"/><expression tag="String.Text" Value="n"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="16"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Expression.Child"><expression tag="String.Text" Value="rand"/><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value="is in range 0 to 32767."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The algorithm follows:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Seed the RNG with the number of the deal."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51."/></expression><expression tag="Typesetting.MultiParagraph"><expression tag="String.Text" Value="Until the array is empty:"/><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Choose a random card at index ≡ next random number (mod array length)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Swap this random card with the last card of the array."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Remove this random card from the array. (Array length goes down by 1)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Deal this random card."/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Deals can also be checked against"/><expression tag="Internet.UniformResourceLocator" Value="http://freecellgamesolutions.com/" Description="FreeCell solutions to 1000000 games."/><expression tag="String.Text" Value="(Summon a video solution, and it displays the initial deal.)"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Write a program to take a deal number and deal cards in the same order as this algorithm. The program may display the cards with ASCII, with Unicode, by drawing graphics, or any other way."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="FreeCell"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="seed"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="random"/><expression tag="List.List"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="seed"/><expression tag="Math.Arithmetic.ModE"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="214013"/><expression tag="Symbolic.Symbol" Name="seed"/></expression><expression tag="Math.Number" Value="2531011"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="31"/></expression></expression></expression><expression tag="Math.Arithmetic.Floor"><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="seed"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="16"/></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="List.CreateList"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="52"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Symbol" Name="pos"/></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ModE"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="random"/><expression tag="List.List"/></expression><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="Symbolic.Symbol" Name="pos"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="Symbolic.Symbol" Name="pos"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="52"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Card"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Symbolic.Symbol" Name="suit"/></expression><expression tag="Math.Arithmetic.DivModE"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Number" Value="4"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.GreaterOrEquals"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Math.Number" Value="11"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="char"/><expression tag="String.Encode"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="127185"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="16"/><expression tag="Symbolic.Symbol" Name="suit"/></expression></expression><expression tag="Symbolic.Symbol" Name="number"/></expression></expression></expression></expression><expression tag="Visualization.SetColor"><expression tag="Visualization.SetFontSize"><expression tag="String.ToText"><expression tag="Symbolic.Symbol" Name="char"/></expression><expression tag="Math.Number" Value="40"/></expression><expression tag="Programming.Conditional"><expression tag="Relation.In"><expression tag="Symbolic.Symbol" Name="suit"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/></expression></expression></expression></expression></expression><expression tag="List.CreateList"><expression tag="List.CreateList"><expression tag="Programming.Conditional"><expression tag="Relation.Greater"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="52"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="8"/><expression tag="Symbolic.Symbol" Name="r"/></expression><expression tag="Symbolic.Symbol" Name="c"/></expression></expression></expression></expression><expression tag="Math.Number" Value="0"/></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Card"/><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="Symbolic.Symbol" Name="pos"/></expression></expression></expression><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/></expression><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="7"/></expression><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="6"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Explanation"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="There is no need to remove from a deal to be added to another one, it can be performed on a single array. It is and iteration from 52 to 1 indicating the end of the first array, and therefore the start of a second one after each swap. The only inconvenience is that second array contains the information in reversed order, but when it is shown it is also read in reversed order."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The number 127,185 is the decimal number of the 🃑 Unicode character."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the Unicode playing cards characters, there is the Knight, between the Jack and Queen suits, which is not used, so it is skipped in the order."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Use cases:"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="FreeCell"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃋"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃂"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂹"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃛"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃅"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂷"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃗"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂵"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃎"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃞"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂩"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂥"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃁"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃝"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂾"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂳"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂢"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂮"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃉"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃍"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂫"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂡"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂱"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃓"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃔"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃕"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂪"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂽"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂴"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃑"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃄"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂧"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂣"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃊"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂤"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂺"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂸"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃒"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂻"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃇"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃆"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂨"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃈"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂭"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃖"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃃"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃘"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃚"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂦"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃙"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂲"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂶"/></expression></expression><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="FreeCell"/><expression tag="List.List"><expression tag="Math.Number" Value="617"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃇"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃁"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃕"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂣"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂥"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃘"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃂"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂱"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃊"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂧"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃍"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃑"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃆"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂸"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂡"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂾"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂺"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃝"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂳"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃉"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂦"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃈"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃃"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃚"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃎"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂵"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂩"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃓"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂨"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂷"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃄"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂫"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃔"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂭"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃙"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂹"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃗"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂶"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃒"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂢"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂤"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂪"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂲"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃅"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃛"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃖"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂻"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂽"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃋"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂮"/></expression></expression><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🃞"/></expression></expression><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="Visualization.FontSize" Size="40"><expression tag="String.Text" Value="🂴"/></expression></expression><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A shorter version:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="FreeCell2"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="seed"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="List.CreateList"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="52"/></expression></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="Symbolic.Symbol" Name="pos"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="List.List"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ModE"><expression tag="Bitwise.RightShift"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="seed"/><expression tag="Bitwise.And"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="214013"/><expression tag="Symbolic.Symbol" Name="seed"/></expression><expression tag="Math.Number" Value="2531011"/></expression><expression tag="Math.Number" Value="2147483647"/></expression></expression><expression tag="Math.Number" Value="16"/></expression><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="52"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="List.CreateList"><expression tag="List.CreateList"><expression tag="Programming.Conditional"><expression tag="Relation.Greater"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="52"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="8"/><expression tag="Symbolic.Symbol" Name="r"/></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="c"/></expression></expression></expression><expression tag="Math.Number" Value="0"/></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Symbolic.Symbol" Name="suit"/></expression><expression tag="Math.Arithmetic.DivModE"><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="deck"/><expression tag="Symbolic.Symbol" Name="pos"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Math.Number" Value="4"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Relation.GreaterOrEquals"><expression tag="Symbolic.Symbol" Name="number"/><expression tag="Math.Number" Value="11"/></expression></expression><expression tag="Visualization.SetFontSize"><expression tag="Visualization.SetColor"><expression tag="String.ToText"><expression tag="String.Encode"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="127185"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="16"/><expression tag="Symbolic.Symbol" Name="suit"/></expression></expression><expression tag="Symbolic.Symbol" Name="number"/></expression></expression></expression><expression tag="Programming.Conditional"><expression tag="Relation.In"><expression tag="Symbolic.Symbol" Name="suit"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/></expression></expression><expression tag="Math.Number" Value="40"/></expression></expression><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/></expression><expression tag="Symbolic.Symbol" Name="c"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="7"/></expression><expression tag="Symbolic.Symbol" Name="r"/><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="6"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="FreeCell2"/><expression tag="List.List"><expression tag="Math.Number" Value="999999"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂱"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂩"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃃"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃖"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃈"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂸"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂭"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂪"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃎"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃓"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃂"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃆"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂵"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃍"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂢"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃄"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃉"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂣"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂶"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂹"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃝"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂻"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂡"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂫"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂳"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂷"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂲"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂧"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃛"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃅"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃊"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂺"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂦"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂤"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃙"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃕"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃘"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂨"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃔"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃚"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃗"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃑"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂾"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃒"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂥"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂮"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃁"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂴"/></expression></expression></expression><expression tag="List.List"><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🂽"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃞"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃋"/></expression></expression><expression tag="Visualization.FontSize" Size="40"><expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1"><expression tag="String.Text" Value="🃇"/></expression></expression><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Unicode_examples" Description="Unicode"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620764349381"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.relation,org.formulae.color,org.formulae.bitwise,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Deal cards for FreeCell"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Deal_cards_for_FreeCell" Description="Deal cards for FreeCell"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Free Cell"/>
+				</expression>
+				<expression tag="String.Text" Value="is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/FreeCell" Description="FreeCell"/>
+				<expression tag="String.Text" Value="and reimplemented the game for DOS, then Windows."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This version introduced 32000 numbered deals. (The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="http://www.solitairelaboratory.com/fcfaq.html" Description="FreeCell FAQ"/>
+				<expression tag="String.Text" Value="tells this history.)"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The algorithm uses this"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Linear_congruential_generator" Description="linear congruential generator"/>
+				<expression tag="String.Text" Value="from Microsoft C:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="state"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Number" Value="214013"/>
+							<expression tag="Expression.Child">
+								<expression tag="String.Text" Value="state"/>
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Number" Value="2531011"/>
+					</expression>
+					<expression tag="String.Text" Value="mod"/>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="31"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.HorizontalArray">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="rand"/>
+						<expression tag="String.Text" Value="n"/>
+					</expression>
+					<expression tag="String.Text" Value="="/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Expression.Child">
+							<expression tag="String.Text" Value="state"/>
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="16"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="rand"/>
+						<expression tag="String.Text" Value="n"/>
+					</expression>
+					<expression tag="String.Text" Value="is in range 0 to 32767."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The algorithm follows:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Seed the RNG with the number of the deal."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Create an array of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51."/>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="String.Text" Value="Until the array is empty:"/>
+					<expression tag="Typesetting.BulletedList">
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="Choose a random card at index ≡ next random number (mod array length)."/>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="Swap this random card with the last card of the array."/>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="Remove this random card from the array. (Array length goes down by 1)"/>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="Deal this random card."/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Deals can also be checked against"/>
+				<expression tag="Internet.UniformResourceLocator" Value="http://freecellgamesolutions.com/" Description="FreeCell solutions to 1000000 games."/>
+				<expression tag="String.Text" Value="(Summon a video solution, and it displays the initial deal.)"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Write a program to take a deal number and deal cards in the same order as this algorithm. The program may display the cards with ASCII, with Unicode, by drawing graphics, or any other way."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="FreeCell"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="seed"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="random"/>
+							<expression tag="List.List"/>
+						</expression>
+						<expression tag="Programming.Block" Description="block" Expanded="True">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="seed"/>
+								<expression tag="Math.Arithmetic.Mod">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Arithmetic.Multiplication">
+											<expression tag="Math.Number" Value="214013"/>
+											<expression tag="Symbolic.Symbol" Name="seed"/>
+										</expression>
+										<expression tag="Math.Number" Value="2531011"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Number" Value="2"/>
+										<expression tag="Math.Number" Value="31"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Floor">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Symbolic.Symbol" Name="seed"/>
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Number" Value="2"/>
+										<expression tag="Math.Number" Value="16"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="deck"/>
+						<expression tag="List.CreateList">
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="52"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Symbol" Name="pos"/>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="pos"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Mod">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="random"/>
+										<expression tag="List.List"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="List.List">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="deck"/>
+									<expression tag="Symbolic.Symbol" Name="pos"/>
+								</expression>
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="deck"/>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="deck"/>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="deck"/>
+									<expression tag="Symbolic.Symbol" Name="pos"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="52"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="Card"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.Block" Description="block" Expanded="True">
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="number"/>
+										<expression tag="Symbolic.Symbol" Name="suit"/>
+									</expression>
+									<expression tag="Math.Arithmetic.DivMod">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="4"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Programming.InvertedIf">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="number"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="number"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+								<expression tag="Relation.GreaterOrEquals">
+									<expression tag="Symbolic.Symbol" Name="number"/>
+									<expression tag="Math.Number" Value="11"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="char"/>
+									<expression tag="String.Encode">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Math.Number" Value="127185"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Arithmetic.Multiplication">
+													<expression tag="Math.Number" Value="16"/>
+													<expression tag="Symbolic.Symbol" Name="suit"/>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Symbol" Name="number"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.SetColor">
+								<expression tag="Visualization.SetFontSize">
+									<expression tag="String.ToText">
+										<expression tag="Symbolic.Symbol" Name="char"/>
+									</expression>
+									<expression tag="Math.Number" Value="40"/>
+								</expression>
+								<expression tag="Programming.Conditional">
+									<expression tag="Relation.In">
+										<expression tag="Symbolic.Symbol" Name="suit"/>
+										<expression tag="List.List">
+											<expression tag="Math.Number" Value="1"/>
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+									</expression>
+									<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+									<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.CreateList">
+					<expression tag="List.CreateList">
+						<expression tag="Programming.Conditional">
+							<expression tag="Relation.Greater">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="pos"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Number" Value="52"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Math.Arithmetic.Multiplication">
+													<expression tag="Math.Number" Value="8"/>
+													<expression tag="Symbolic.Symbol" Name="r"/>
+												</expression>
+												<expression tag="Symbolic.Symbol" Name="c"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="Card"/>
+								<expression tag="List.List">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="deck"/>
+										<expression tag="Symbolic.Symbol" Name="pos"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="r"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Explanation"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There is no need to remove from a deal to be added to another one, it can be performed on a single array. It is and iteration from 52 to 1 indicating the end of the first array, and therefore the start of a second one after each swap. The only inconvenience is that second array contains the information in reversed order, but when it is shown it is also read in reversed order."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The number 127,185 is the decimal number of the 🃑 Unicode character."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the Unicode playing cards characters, there is the Knight, between the Jack and Queen suits, which is not used, so it is skipped in the order."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Use cases:"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="FreeCell"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃋"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃂"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂹"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃛"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃅"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂷"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃗"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂵"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃎"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃞"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂩"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂥"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃁"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃝"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂾"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂳"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂢"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂮"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃉"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃍"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂫"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂡"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂱"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃓"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃔"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃕"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂪"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂽"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂴"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃑"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃄"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂧"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂣"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃊"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂤"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂺"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂸"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃒"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂻"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃇"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃆"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂨"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃈"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂭"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃖"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃃"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃘"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃚"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂦"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃙"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂲"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂶"/>
+					</expression>
+				</expression>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="FreeCell"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="617"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃇"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃁"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃕"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂣"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂥"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃘"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃂"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂱"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃊"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂧"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃍"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃑"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃆"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂸"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂡"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂾"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂺"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃝"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂳"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃉"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂦"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃈"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃃"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃚"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃎"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂵"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂩"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃓"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂨"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂷"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃄"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂫"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃔"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂭"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃙"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂹"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃗"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂶"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃒"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂢"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂤"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂪"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂲"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃅"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃛"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃖"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂻"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂽"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃋"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂮"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🃞"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+					<expression tag="Visualization.FontSize" Size="40">
+						<expression tag="String.Text" Value="🂴"/>
+					</expression>
+				</expression>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="A shorter version:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="FreeCell2"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="seed"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="pos"/>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="deck"/>
+							<expression tag="List.CreateList">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="52"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="deck"/>
+								<expression tag="Symbolic.Symbol" Name="pos"/>
+							</expression>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="deck"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="deck"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="deck"/>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="pos"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Arithmetic.Mod">
+											<expression tag="Bitwise.RightShift">
+												<expression tag="Symbolic.Assignment">
+													<expression tag="Symbolic.Symbol" Name="seed"/>
+													<expression tag="Bitwise.And">
+														<expression tag="Math.Arithmetic.Addition">
+															<expression tag="Math.Arithmetic.Multiplication">
+																<expression tag="Math.Number" Value="214013"/>
+																<expression tag="Symbolic.Symbol" Name="seed"/>
+															</expression>
+															<expression tag="Math.Number" Value="2531011"/>
+														</expression>
+														<expression tag="Math.Number" Value="2147483647"/>
+													</expression>
+												</expression>
+												<expression tag="Math.Number" Value="16"/>
+											</expression>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="52"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="List.CreateList">
+					<expression tag="List.CreateList">
+						<expression tag="Programming.Conditional">
+							<expression tag="Relation.Greater">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="pos"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Number" Value="52"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="8"/>
+												<expression tag="Symbolic.Symbol" Name="r"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Symbolic.Symbol" Name="c"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Symbolic.Local">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="number"/>
+											<expression tag="Symbolic.Symbol" Name="suit"/>
+										</expression>
+										<expression tag="Math.Arithmetic.DivMod">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Expression.Child">
+													<expression tag="Symbolic.Symbol" Name="deck"/>
+													<expression tag="Symbolic.Symbol" Name="pos"/>
+												</expression>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Number" Value="4"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Programming.InvertedIf">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="number"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="number"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Relation.GreaterOrEquals">
+										<expression tag="Symbolic.Symbol" Name="number"/>
+										<expression tag="Math.Number" Value="11"/>
+									</expression>
+								</expression>
+								<expression tag="Visualization.SetFontSize">
+									<expression tag="Visualization.SetColor">
+										<expression tag="String.ToText">
+											<expression tag="String.Encode">
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Math.Number" Value="127185"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Arithmetic.Multiplication">
+															<expression tag="Math.Number" Value="16"/>
+															<expression tag="Symbolic.Symbol" Name="suit"/>
+														</expression>
+													</expression>
+													<expression tag="Symbolic.Symbol" Name="number"/>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Programming.Conditional">
+											<expression tag="Relation.In">
+												<expression tag="Symbolic.Symbol" Name="suit"/>
+												<expression tag="List.List">
+													<expression tag="Math.Number" Value="1"/>
+													<expression tag="Math.Number" Value="2"/>
+												</expression>
+											</expression>
+											<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+											<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Number" Value="40"/>
+								</expression>
+							</expression>
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="r"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="FreeCell2"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="999999"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂱"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂩"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃃"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃖"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃈"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂸"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂭"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂪"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃎"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃓"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃂"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃆"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂵"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃍"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂢"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃄"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃉"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂣"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂶"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂹"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃝"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂻"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂡"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂫"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂳"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂷"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂲"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂧"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃛"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃅"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃊"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂺"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂦"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂤"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃙"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃕"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃘"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂨"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃔"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃚"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃗"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃑"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂾"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃒"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂥"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂮"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃁"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂴"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🂽"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="0" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃞"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃋"/>
+					</expression>
+				</expression>
+				<expression tag="Visualization.FontSize" Size="40">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="🃇"/>
+					</expression>
+				</expression>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Unicode_examples" Description="Unicode"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620764340000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

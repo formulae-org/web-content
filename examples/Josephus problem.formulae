@@ -1,1 +1,778 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Josephus problem"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Josephus_problem" Description="Josephus problem"/><expression tag="String.Text" Value="(or"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="Josephus permutation)"/></expression><expression tag="String.Text" Value="is a theoretical problem related to a certain counting-out game."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="People are standing in a circle waiting to be executed. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. After a specified number of people are skipped, the next person is executed. The procedure is repeated with the remaining people, starting with the next person, going in the same direction and skipping the same number of people, until only one person remains, and is freed."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The problem —given the number of people, starting point, direction, and number to be skipped— is to choose the position in the initial circle to avoid execution."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This article shows programs for computing the Josephus problem and related tasks."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This also shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Josephus_problem" Description="Josephus problem"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="We start with two lists. The first one contains initially the prisoners (their number), and the second one contains the kills, and it is initially empty."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="On every kill, the number of the killed prisoner is deleted from the first list, and it is (striked out) appended to the second one, in order to show the order of kills."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In order to leave more than one survivor, the cycle is repeated n-s times, where n is the number of prisoners and s is the number of survivors."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="At the end, the two lists are retrieved."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Even when Fōrmulæ is 1-based, the list is filled starting with the 0 prisoner, in order to the results can be compared with other languages (mostly 0-based)."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Josephus"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Symbolic.Symbol" Name="s"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="prisoners"/><expression tag="List.CreateList"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="kills"/><expression tag="List.List"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.ForTimes"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ModE"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="prisoners"/></expression></expression><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="kills"/><expression tag="Visualization.CrossedOut"><expression tag="Expression.Delete"><expression tag="Symbolic.Symbol" Name="prisoners"/><expression tag="Symbolic.Symbol" Name="pos"/></expression></expression></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Arithmetic.Negative"><expression tag="Symbolic.Symbol" Name="s"/></expression></expression></expression><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="prisoners"/><expression tag="Symbolic.Symbol" Name="kills"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 1 (from Rosetta code). Given example"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="5 prisoners, killing every 2:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Josephus"/><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="2"/></expression><expression tag="List.List"><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="1"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="3"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="0"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="4"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 2 (from Rosetta code)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="41 prisoners, killing every 3:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Josephus"/><expression tag="List.List"><expression tag="Math.Number" Value="41"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="30"/></expression><expression tag="List.List"><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="2"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="5"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="8"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="11"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="14"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="17"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="20"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="23"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="26"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="29"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="32"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="35"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="38"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="0"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="4"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="9"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="13"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="18"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="22"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="27"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="31"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="36"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="40"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="6"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="12"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="19"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="25"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="33"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="39"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="7"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="16"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="28"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="37"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="10"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="24"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="1"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="21"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="3"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="34"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="15"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 3 (from Rosetta code). Extra"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The captors may be especially kind and let m survivors free,&#10;and Josephus might just have m - 1 friends to save."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Josephus"/><expression tag="List.List"><expression tag="Math.Number" Value="41"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="15"/><expression tag="Math.Number" Value="30"/><expression tag="Math.Number" Value="34"/></expression><expression tag="List.List"><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="2"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="5"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="8"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="11"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="14"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="17"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="20"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="23"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="26"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="29"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="32"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="35"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="38"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="0"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="4"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="9"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="13"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="18"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="22"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="27"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="31"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="36"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="40"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="6"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="12"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="19"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="25"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="33"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="39"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="7"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="16"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="28"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="37"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="10"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="24"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="1"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="21"/></expression><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="3"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Case 4. Larger example"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="23,482 prisoners, killing every 3,343, leaving 3 survivors. Only the survivors are shown (the first element of the resulting list is extracted):"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Expression.Child"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Josephus"/><expression tag="List.List"><expression tag="Math.Number" Value="23482"/><expression tag="Math.Number" Value="3343"/><expression tag="Math.Number" Value="3"/></expression></expression><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="Math.Number" Value="1087"/><expression tag="Math.Number" Value="1335"/><expression tag="Math.Number" Value="13317"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Drawing history"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function creates a raster graphics of size n squares width, and n + 1 squares height, where n is the number of prisoners. The size of the square is defines as pixels."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The horizontal axis (right to left) is the number of the prisoner. The vertical axis (top to bottom) is the number of cycle."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="An alive prisoner is drawn as green, a dead one is drawn as black."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="JosephusG"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Symbolic.Symbol" Name="width"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="prisoners"/><expression tag="List.CreateList"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Graphics.CreateRasterGraphics"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="width"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="width"/></expression><expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="draw"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="row"/></expression></expression><expression tag="Programming.ForIn"><expression tag="Graphics.FillRectanglePosSize"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="width"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Symbolic.Symbol" Name="width"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="row"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="width"/><expression tag="Symbolic.Symbol" Name="width"/></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Symbolic.Symbol" Name="prisoners"/></expression></expression></expression><expression tag="Graphics.SetColor"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="draw"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.ModE"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="pos"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression><expression tag="Symbolic.Symbol" Name="k"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Expression.Cardinality"><expression tag="Symbolic.Symbol" Name="prisoners"/></expression></expression><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Expression.Delete"><expression tag="Symbolic.Symbol" Name="prisoners"/><expression tag="Symbolic.Symbol" Name="pos"/></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="draw"/><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Symbol" Name="g"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Graph for the case 5 prisoners, killing every 2 (cell size 20x20 pixels):"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="JosephusG"/><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="20"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAGQAAAB4CAYAAAAE9le0AAACiUlEQVR4Xu2cQW7DMAwE5f8/OkVzay6EsANii0yvMilqRrQc2OhzXud1/Ksh8CikxsW7EIV0+VBImQ+FKKSNQFk9niEKKSNQVo4dopAyAmXl2CEKKSNQVo4dopAyAmXl2CEKKSNQVo4dopAyAmXl2CEKKSNQVg7fIQ+8wi97468QeP+k6RSSEoTjFQIDTdMpJCUIxysEBpqmU0hKEI5XCAw0TaeQlCAcrxAYaJpOISlBOF4hMNA0nUJSgnC8QmCgaTqFpATheIXAQNN0CkkJwvEKgYGm6RSSEoTjFQIDTdN9n5Dyd/4KSbc0/BGGQhRySQDegcdb1qWAz8sVEgIs34F2SOgX/19F5RvGQ71swyhEIZcEPNQvgX1eXn6P9lAP/XqopwDtkIigh3qE7xy6gxWikEsCPmVdAvMpKwT2N9xbVooT7mCFKOSSALwD+38Y4g9ul8CnyxUyEVoeV8gy8Gk6hUyElscVsgx8mk4hE6HlcYUsA5+mU8hEaHlcIcvAp+kUMhFaHlfIMvBpOoVMhJbHFbIMfJpOIROh5XGFLAOfplPIRGh5XCHLwKfpFDIRWh5XyDLwaTqFTISWxxWyDHyarl3IVP/l+O+n0fSSL0sYLqeroz8GZ1f7/iiGXjJbIl2dQkI/CgkB0uEKoYmG+RQSAqTDFUITDfMpJARIhyuEJhrmU0gIkA5XCE00zKeQECAdrhCaaJhPISFAOlwhNNEwn0JCgHS4QmiiYT6FhADpcIXQRMN8CgkBGh4R6H+FGy3v/wUrpMyZQhRSRqCsHDtEIWUEysqxQxRSRqCsHDtEIWUEysqxQxRSRqCsHDtEIWUEysqxQxRSRqCsHDtEIWUEysqxQ8qE/AAbNSvAnoD4MAAAAABJRU5ErkJggg=="/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Drawing for the case 41 prisoners, killing every 3 (cell size is 5x5 pixels):"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="JosephusG"/><expression tag="List.List"><expression tag="Math.Number" Value="41"/><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="5"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAM0AAADSCAYAAADpPEQnAAAKKUlEQVR4Xu2d21bcSgxEh///aM4ChhNIPEOJkltqeec1fVFXa1sXG3i5vd5eb/xDARSQFXgBGlkrBqLAuwJAgyOgQFABoAkKxnAUABp8AAWCCujQvBysTAshKDfDJygANBNukTMsVQBolsrNZhMUAJoJt8gZlioANEvlZrMJCqyBhibCBF/hDHcFgAZXQIGgAkATFIzhKAA0+AAKBBUAmqBgDEeB/tDQRMBLmykANM0uBHP6KwA0/e8IC5spADTNLgRz+isANP3vCAubKTAbGpoIzdxthjlAM+MeOcVCBYBmodhsNUMBoJlxj5xioQJAs1BstpqhANA8ukeaCDM8/IRTAA3QnOBWs5cEGqCZ7eEnnA5ogOYEt5q9JNAAzWwPP+F0QHMGNDQRTnDVPksCDdD08cZNLAEaoNnEVfuYCTRA08cbN7EEaIBmE1ftYybQdIOGJkIfOh5YAjRA095JuxkINEDTzSfb2wM0QNPeSbsZCDRA080n29sDNJOgoYmwBDigAZoljjZpE6ABmkn+vOQsQAM0Sxxt0iZAAzST/HnJWYAGaD4UoIkgAwc0QAM0Mi6fUr3eXqU5zpOIuTdRZe+JX6Wz5EBzBhFpiDREmiDPQAM0QAM0XxSoSlfYV09Hgw7bYTiRhkjjRxrnIdGBgqANQAM0QAM0pGfffEDrjdZ17YIO22E4kYZIQ6QJkgg0QFMLzYb1ENAADdAQaahptqppiDQPkHWEYa7+zuNqWgUjRNZw0jPSM9KzIE1AAzT7QuNE1iAoX4cDDdAATRAgoAEaoAEaumeX6Z6RntF5e1fAcQTm6p3GYHShplEEwwF1B7yYVtQ01DTXrGkM0IEGaIDm0wfEL8KBBmiABmjontE9E4pWKz07KveOwpSxCR2hG0X1oIj+hsK/iAANrd83Jxdz/Ks9FIFm0BPwas5bdV6gARoaAeFGAOnZMTbUcKRnTz5Sya1pjpztaHPyZWDd9LOh/PQMaGgiDG8iAA01DTVNeU1DpCHSEGnuGKqFMdAADdA0hEZtLKigH63HXLpno7pnQEPnrbDztmcjAGiABmiefJXq1EikWKRYJ3RHiTQniFr1TRT7rvnIFGgehXk1BaSJcLluIdAADS83L/FyU40Cak3j1E1EGiLNuw84P4S2wgGBhu4Z3bPi7tkK0Pmqewzo1DSraprs6EhaWJYWAg3Q0AigEfDlEdypEUCkIT0LNQxUh1FTDnU9oOGLgBNeXpOekZ6RnpGeXSQ9o+NHI+Bh09lxjsnpmaOLmgbTJj90S9KzXdMzoCHSEGnuCnSKjkQaIg0dv+CXF0ADNEAThCa7tT+klqKmoaZ53HIGGiINkYZI878Cau14IBmRhkhDpOHlJi83vz0cnWKe9Iz0jPSsOD0b8m6J9Iz0bF16BjSBH4tWw7zaklTXU4u9FZeJzcdv8FVdVN9w0lFxLpGGSEOkoRFAI6BtI2BFRBejhfOLFYk0RJpZkUZN99TUnfc01GEP+2dOFFAd0NlDrWmA5uYVj5Mvc0cH3NFmIg2RhkhzV0B9oAIN0AAN0PzxAX6V7jEPTjcpuz7YMT07sJnuGd0zumfP3tMADekZ6VkwPQMaoAEaoKGmeUjB/T+oadL/dExdTeMUmc5ctWGg7lH10m1IUX3IfHPQgYZGAI2AbRoB6pPceaKqL7CcPYg0+i/tG6IzkYZIQ6Qh0nx59BNpvD+14WQDg2vH60Wan7pNz/6/eYG6Y1G9o81AE4EIaNLbt0ATqQ+c0J89VwUHaIDm/tMq/7qCmo+q4xyndDou6lzHPrpndM/efUCFQR3nOKXq+Nm2qNEMaIAGaJ4Qnp2eVT1MAN0CnUaA6riPIrDjgOreThTNBl21RR23YUQHGtVxgeZDKRUGdRzQBH4RhirW5JpGBXawA9JypuX84QMq6EBzrEDzlJL0THXcSemZA7Ua9dRxasbh1I6qLeI4oAGaiALUNLzcjPnLYRHsPAHV7cUnoFwfEGloOYe6OqqjrkgbVFuA5lgpFX5VP3Ec6ZnquNQ0tJzvvgI0QBNRYE1No0Z5Ik3gxVm2qKrbZLdCnX2zHSbbFjHVUbeVX6o6viHaTKSRb+0B1DQCrKJall90aKsZIu4BNPKtAU2o4SI6oCy/s546VxwHNPKtAQ3QfDgL0ABNRIHZjQBRCaARhXr4lKWmmVPTiL4ANKJQQHMXSsz7rW6X0wHLnnuwHtAATUQB0jNqmpi/8O1Z4F2aGpHUK3DWc+a2jzSqgAtCsNzvp6ahpiltKwLNsQLOk9KZ6zycqvZ1bBb9r1dNIxotRwH1UxN1Xz6joaZpV9OozrvgaSKDSXpGekZ69oRcIg2RhkgTDG3Zebq6vbOvM9eJ6FX7OjaL90FNIwoVisCRNZWxjgM6cx0HrNrXsVm5CyKNqNLnsGxHULd39nXmOg5Yta9js3gfRBpRKCLNXSgVBnWcqr+znjP3wD6gUS/tbVyy+PLWzr7OXOepXbWvY7N4IUAjCkWkiQh1wgPGgdCZS6QJXvzfw5PFl61x9nXmygYeDMze11nPmQs0jhec8PRUzXEu3Zmr2rcgJbJS42QNSM8ijpEsvry1s68zVzaQSKMXvFUXsuLJVrVH9r5Vd5S9r7OeM5f0zHl0kp6F1Et2VCs9Cxn+82DSs581+jMi2xHUvZ19nbmqfdnRccV6xtmAJiLejg64o81AE/FKY+wK51ixR7bD7GhztgaGWx1NJdJEBN3RAXe0GWgiXtl87I4OuKPNQNMchIh5OzrgjjYDTcQrm4/d0QF3tBlomoMQMW9HB9zRZqCJeGXzsTs64I42A01zECLmTXHAyJl/OzZbq+z1fnuuUT/ubIggT626uKp9ZWEOBmbbnL2ecbY572kMEeSpVRdXta8sDNDs+ZWzc8Hq3CrnrdpX1WVFDdJIAyJNxDGqLq5q34g2f4/Ntjl7PeNsx9CoCzY6iGqyNa7qvFX7OmJl25y9nnE2oImIV3VxVftGtCHSiGrteJni0Q6HVZ23at9OWjXSgEgTcYyqi6vaN6INkUZUa8fLFI9GpHGEOuFHwxv5GpEm4huNLi5idsnYbK2y1zNEAZqIeI0uLmJ2ydhsrbLXM0QBmoh4jS4uYnbJ2GytstczRAGaiHiNLi5idsnYbK2y1zNEAZqIeI0uLmJ2ydhsrbLXM0TxoDE23nJqo4trr1+2VtnrGQICTUS8RhcXMbtkbLZW2esZogBNRLxGFxcxu2RstlbZ6xmiAE1EvEYXFzG7ZGy2VtnrGaIATUS8RhcXMbtkbLZW2esZogBNRLxGFxcxu2TsYK2AJuJRgx0hIoM0drBWQCN5wH3QYEeIyCCNHawV0EgeADQRmd7HAk1YspkTBjtC+oUN1opIk+4tLEikwQdQ4DcKEGl+oxpzLq0A0Fz6+jn8bxQAmt+oxpxLKwA0l75+Do8C3xSge4ZDoEBQAaAJCsZwFAAafAAFggoATVAwhqPAf2HSUgaoGdHLAAAAAElFTkSuQmCC"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Drawing for the case 500 prisoners, killing every 6 (cell size is 1x1 pixel):"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="JosephusG"/><expression tag="List.List"><expression tag="Math.Number" Value="500"/><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Graphics.RasterGraphics" Value="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"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="These drawings have several interesting properties:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If we divided the drawing in horizontal lines, the first one has n green squares and 0 black squares, the second one has n - 1 green squares and 1 black square, ..., the last one has 0 green squares and n black squares, but these squares are not necessarily contiguous."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Conversely, if we divided the drawing in vertical lines we see a similar pattern, but the lines are not ordered. However, their colors are always contiguous (a first green part, and then a black one)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The drawing always contains the same number of green and black squares, ½ n(n+1) of each color."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The drawing is highly ordered at top, gradually changing to be highly disordered at bottom. It resembles a Escher drawing that slightly changes from one scene to another."/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Graphics_examples" Description="graphics"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621184854533"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.visualization,org.formulae.graphics.raster,org.formulae.color,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Josephus problem"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Josephus_problem" Description="Josephus problem"/>
+				<expression tag="String.Text" Value="(or"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Josephus permutation)"/>
+				</expression>
+				<expression tag="String.Text" Value="is a theoretical problem related to a certain counting-out game."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="People are standing in a circle waiting to be executed. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. After a specified number of people are skipped, the next person is executed. The procedure is repeated with the remaining people, starting with the next person, going in the same direction and skipping the same number of people, until only one person remains, and is freed."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The problem —given the number of people, starting point, direction, and number to be skipped— is to choose the position in the initial circle to avoid execution."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This article shows programs for computing the Josephus problem and related tasks."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This also shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Josephus_problem" Description="Josephus problem"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="We start with two lists. The first one contains initially the prisoners (their number), and the second one contains the kills, and it is initially empty."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="On every kill, the number of the killed prisoner is deleted from the first list, and it is (striked out) appended to the second one, in order to show the order of kills."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In order to leave more than one survivor, the cycle is repeated n-s times, where n is the number of prisoners and s is the number of survivors."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="At the end, the two lists are retrieved."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Even when Fōrmulæ is 1-based, the list is filled starting with the 0 prisoner, in order to the results can be compared with other languages (mostly 0-based)."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Josephus"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="k"/>
+					<expression tag="Symbolic.Symbol" Name="s"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="prisoners"/>
+						<expression tag="List.CreateList">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="kills"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="pos"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForTimes">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="pos"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Mod">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="pos"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="k"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Expression.Cardinality">
+										<expression tag="Symbolic.Symbol" Name="prisoners"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="kills"/>
+							<expression tag="Visualization.CrossedOut">
+								<expression tag="Expression.Delete">
+									<expression tag="Symbolic.Symbol" Name="prisoners"/>
+									<expression tag="Symbolic.Symbol" Name="pos"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Symbol" Name="s"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="prisoners"/>
+					<expression tag="Symbolic.Symbol" Name="kills"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 1 (from Rosetta code). Given example"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="5 prisoners, killing every 2:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Josephus"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 2 (from Rosetta code)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="41 prisoners, killing every 3:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Josephus"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="41"/>
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="30"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="11"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="14"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="17"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="20"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="23"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="26"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="29"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="32"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="35"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="38"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="9"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="13"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="18"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="22"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="27"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="31"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="36"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="40"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="12"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="19"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="25"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="33"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="39"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="16"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="28"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="37"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="24"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="21"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="34"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="15"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 3 (from Rosetta code). Extra"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The captors may be especially kind and let m survivors free,&#10;and Josephus might just have m - 1 friends to save."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Josephus"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="41"/>
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="15"/>
+				<expression tag="Math.Number" Value="30"/>
+				<expression tag="Math.Number" Value="34"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="11"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="14"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="17"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="20"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="23"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="26"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="29"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="32"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="35"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="38"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="9"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="13"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="18"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="22"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="27"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="31"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="36"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="40"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="12"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="19"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="25"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="33"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="39"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="16"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="28"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="37"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="24"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="21"/>
+				</expression>
+				<expression tag="Visualization.CrossedOut">
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Case 4. Larger example"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="23,482 prisoners, killing every 3,343, leaving 3 survivors. Only the survivors are shown (the first element of the resulting list is extracted):"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Expression.Child">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Josephus"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="23482"/>
+					<expression tag="Math.Number" Value="3343"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Number" Value="1"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1087"/>
+			<expression tag="Math.Number" Value="1335"/>
+			<expression tag="Math.Number" Value="13317"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Drawing history"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function creates a raster graphics of size n squares width, and n + 1 squares height, where n is the number of prisoners. The size of the square is defines as pixels."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The horizontal axis (right to left) is the number of the prisoner. The vertical axis (top to bottom) is the number of cycle."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="An alive prisoner is drawn as green, a dead one is drawn as black."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="JosephusG"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="k"/>
+					<expression tag="Symbolic.Symbol" Name="width"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="prisoners"/>
+						<expression tag="List.CreateList">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="pos"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="g"/>
+						<expression tag="Graphics.CreateRasterGraphics">
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Symbolic.Symbol" Name="width"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="width"/>
+							</expression>
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="draw"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="row"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.ForIn">
+							<expression tag="Graphics.FillRectanglePosSize">
+								<expression tag="Symbolic.Symbol" Name="g"/>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="width"/>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="width"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="row"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="width"/>
+								<expression tag="Symbolic.Symbol" Name="width"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Symbolic.Symbol" Name="prisoners"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Graphics.SetColor">
+					<expression tag="Symbolic.Symbol" Name="g"/>
+					<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="draw"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="pos"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Mod">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="pos"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="k"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Expression.Cardinality">
+										<expression tag="Symbolic.Symbol" Name="prisoners"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Expression.Delete">
+							<expression tag="Symbolic.Symbol" Name="prisoners"/>
+							<expression tag="Symbolic.Symbol" Name="pos"/>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="draw"/>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="i"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="g"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Graph for the case 5 prisoners, killing every 2 (cell size 20x20 pixels):"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="JosephusG"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="20"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAGQAAAB4CAYAAAAE9le0AAAAAXNSR0IArs4c6QAAAolJREFUeF7tnEFuwzAMBOX/PzpFc2suhLADYotMrzIpaka0HNjoc17ndfyrIfAopMbFuxCFdPlQSJkPhSikjUBZPZ4hCikjUFaOHaKQMgJl5dghCikjUFaOHaKQMgJl5dghCikjUFaOHaKQMgJl5dghCikjUFYO3yEPvMIve+OvEHj/pOkUkhKE4xUCA03TKSQlCMcrBAaaplNIShCOVwgMNE2nkJQgHK8QGGiaTiEpQTheITDQNJ1CUoJwvEJgoGk6haQE4XiFwEDTdApJCcLxCoGBpukUkhKE4xUCA03TfZ+Q8nf+Ckm3NPwRhkIUckkA3oHHW9algM/LFRICLN+BdkjoF/9fReUbxkO9bMMoRCGXBDzUL4F9Xl5+j/ZQD/16qKcA7ZCIoId6hO8cuoMVopBLAj5lXQLzKSsE9jfcW1aKE+5ghSjkkgC8A/t/GOIPbpfAp8sVMhFaHlfIMvBpOoVMhJbHFbIMfJpOIROh5XGFLAOfplPIRGh5XCHLwKfpFDIRWh5XyDLwaTqFTISWxxWyDHyaTiEToeVxhSwDn6ZTyERoeVwhy8Cn6RQyEVoeV8gy8Gk6hUyElscVsgx8mq5dyFT/5fjvp9H0ki9LGC6nq6M/BmdX+/4ohl4yWyJdnUJCPwoJAdLhCqGJhvkUEgKkwxVCEw3zKSQESIcrhCYa5lNICJAOVwhNNMynkBAgHa4QmmiYTyEhQDpcITTRMJ9CQoB0uEJoomE+hYQA6XCF0ETDfAoJARoeEeh/hRst7/8FK6TMmUIUUkagrBw7RCFlBMrKsUMUUkagrBw7RCFlBMrKsUMUUkagrBw7RCFlBMrKsUMUUkagrBw7RCFlBMrKsUPKhPwAGzUrwJ6A+DAAAAAASUVORK5CYII="/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Drawing for the case 41 prisoners, killing every 3 (cell size is 5x5 pixels):"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="JosephusG"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="41"/>
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Graphics.RasterGraphics" Value="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"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Drawing for the case 500 prisoners, killing every 6 (cell size is 1x1 pixel):"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="JosephusG"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="500"/>
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Graphics.RasterGraphics" Value="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"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="These drawings have several interesting properties:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If we divided the drawing in horizontal lines, the first one has n green squares and 0 black squares, the second one has n - 1 green squares and 1 black square, ..., the last one has 0 green squares and n black squares, but these squares are not necessarily contiguous."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Conversely, if we divided the drawing in vertical lines we see a similar pattern, but the lines are not ordered. However, their colors are always contiguous (a first green part, and then a black one)."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The drawing always contains the same number of green and black squares, ½ n(n+1) of each color."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The drawing is highly ordered at top, gradually changing to be highly disordered at bottom. It resembles a Escher drawing that slightly changes from one scene to another."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Graphics_examples" Description="graphics"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621184820000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

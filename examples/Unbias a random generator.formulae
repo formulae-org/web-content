@@ -1,1 +1,312 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Unbias a random generator"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Unbias_a_random_generator" Description="Unbias a random generator"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Given a weighted one bit generator of random numbers where the probability of a one occuring is"/><expression tag="Expression.Child"><expression tag="String.Text" Value="P"/><expression tag="Math.Number" Value="1"/></expression><expression tag="String.Text" Value=", is not the same as"/><expression tag="Expression.Child"><expression tag="String.Text" Value="P"/><expression tag="Math.Number" Value="0"/></expression><expression tag="String.Text" Value=", the probability of a zero occuring, the probability of the occurrence of a one followed by a zero is"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Expression.Child"><expression tag="String.Text" Value="P"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="P"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="String.Text" Value=". This is the same as the probability of a zero followed by a one:"/><expression tag="Math.Arithmetic.Multiplication"><expression tag="Expression.Child"><expression tag="String.Text" Value="P"/><expression tag="Math.Number" Value="0"/></expression><expression tag="Expression.Child"><expression tag="String.Text" Value="P"/><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Task details"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Use your language's random number generator to create a function/method/subroutine/... randN that returns a one or a zero, but with one occurring, on average, 1 out of N times, where N is an integer from the range 3 to 6 inclusive."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Create a function unbiased that uses only randN as its source of randomness to become an unbiased generator of random ones and zeroes."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For N over its range, generate and show counts of the outputs of randN and unbiased(randN)."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The actual unbiasing should be done by generating two numbers at a time from randN and only returning a 1 or 0 if they are different. As long as you always return the first number or always return the second number, the probabilities discussed above should take over the biased probability of randN."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is an implementation of"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Randomness_extractor#Von_Neumann_extractor" Description="Von Neumann debiasing,"/><expression tag="String.Text" Value="first described in a 1951 paper."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="biased"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Relation.Less"><expression tag="Math.Arithmetic.Random"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="unbiased"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Programming.Until"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="biased"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="biased"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression></expression><expression tag="Relation.Different"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Symbolic.Symbol" Name="a"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="test"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="count"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="b"/><expression tag="Symbolic.Symbol" Name="u"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Programming.ForTimes"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="b"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="b"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="biased"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="u"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="u"/><expression tag="Math.Number" Value="1"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="unbiased"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="count"/></expression><expression tag="Math.Numeric"><expression tag="List.List"><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="b"/><expression tag="Symbolic.Symbol" Name="count"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="u"/><expression tag="Symbolic.Symbol" Name="count"/></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test cases"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateTable"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="test"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="50000"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="6"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="test"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="50000"/></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="List.List"><expression tag="Math.Number" Value="0.3321"/><expression tag="Math.Number" Value="0.50012"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="List.List"><expression tag="Math.Number" Value="0.24982"/><expression tag="Math.Number" Value="0.49626"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="List.List"><expression tag="Math.Number" Value="0.20314"/><expression tag="Math.Number" Value="0.49914"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="List.List"><expression tag="Math.Number" Value="0.166"/><expression tag="Math.Number" Value="0.49822"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621483458958"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.relation,org.formulae.programming,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Unbias a random generator"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Unbias_a_random_generator" Description="Unbias a random generator"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Given a weighted one bit generator of random numbers where the probability of a one occuring is"/>
+				<expression tag="Expression.Child">
+					<expression tag="String.Text" Value="P"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="String.Text" Value=", is not the same as"/>
+				<expression tag="Expression.Child">
+					<expression tag="String.Text" Value="P"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="String.Text" Value=", the probability of a zero occuring, the probability of the occurrence of a one followed by a zero is"/>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="P"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="P"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=". This is the same as the probability of a zero followed by a one:"/>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="P"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="Expression.Child">
+						<expression tag="String.Text" Value="P"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Task details"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Use your language's random number generator to create a function/method/subroutine/... randN that returns a one or a zero, but with one occurring, on average, 1 out of N times, where N is an integer from the range 3 to 6 inclusive."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Create a function unbiased that uses only randN as its source of randomness to become an unbiased generator of random ones and zeroes."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="For N over its range, generate and show counts of the outputs of randN and unbiased(randN)."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The actual unbiasing should be done by generating two numbers at a time from randN and only returning a 1 or 0 if they are different. As long as you always return the first number or always return the second number, the probabilities discussed above should take over the biased probability of randN."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is an implementation of"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Randomness_extractor#Von_Neumann_extractor" Description="Von Neumann debiasing,"/>
+				<expression tag="String.Text" Value="first described in a 1951 paper."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="biased"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Relation.Less">
+				<expression tag="Math.Arithmetic.Random"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="unbiased"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.Until">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="biased"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="biased"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Relation.Different">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="a"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="test"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="count"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="b"/>
+							<expression tag="Symbolic.Symbol" Name="u"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForTimes">
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="biased"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="u"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="u"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="unbiased"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="count"/>
+				</expression>
+				<expression tag="Math.Numeric">
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.Symbol" Name="b"/>
+							<expression tag="Symbolic.Symbol" Name="count"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.Symbol" Name="u"/>
+							<expression tag="Symbolic.Symbol" Name="count"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test cases"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="test"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="50000"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="6"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="test"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="50000"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0.3321"/>
+						<expression tag="Math.Number" Value="0.50012"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0.24982"/>
+						<expression tag="Math.Number" Value="0.49626"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0.20314"/>
+						<expression tag="Math.Number" Value="0.49914"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0.166"/>
+						<expression tag="Math.Number" Value="0.49822"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621483440000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

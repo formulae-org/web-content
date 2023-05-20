@@ -1,1 +1,465 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Ancient Egyptian multiplication"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication" Description="Ancient Egyptian multiplication"/><expression tag="String.Text" Value="also known as Egyptian multiplication, Ethiopian multiplication, Russian multiplication, or peasant multiplication), one of two multiplication methods used by scribes, is a systematic method for multiplying two numbers that does not require the multiplication table, only the ability to multiply and divide by 2, and to add. It decomposes one of the multiplicands (preferably the smaller) into a sum of powers of two and creates a table of doublings of the second multiplicand. This method may be called mediation and duplation, where mediation means halving one number and duplation means doubling the other number. It is still used in some areas."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Method:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Take two numbers to be multiplied and write them down at the top of two columns."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the left-hand column repeatedly halve the last number, discarding any remainders, and write the result below the last in the same column, until you write a value of 1."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the right-hand column repeatedly double the last number and write the result below. stop when you add a result in the same row as where the left hand column shows 1."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Examine the table produced and discard any row where the value in the left column is even."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For example: 17 × 34"/></expression><expression tag="Typesetting.Centering"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="34"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Halving the first column:"/></expression><expression tag="Typesetting.Centering"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="34"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="String.Text" Value="-"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="String.Text" Value="-"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="String.Text" Value="-"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="String.Text" Value="-"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Doubling the second column:"/></expression><expression tag="Typesetting.Centering"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="34"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="68"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="136"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="272"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="544"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Strike-out rows whose first cell is even:"/></expression><expression tag="Typesetting.Centering"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="34"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="68"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="136"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Visualization.CrossedOut"><expression tag="Math.Number" Value="272"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="544"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Sum the remaining numbers in the right-hand column:"/></expression><expression tag="Typesetting.Centering"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="34"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="String.Text" Value="-"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="String.Text" Value="-"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="String.Text" Value="-"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="544"/></expression><expression tag="List.List"><expression tag="Visualization.Bold" Value="True" Set="True"><expression tag="String.Text" Value="Σ"/></expression><expression tag="Visualization.Bold" Value="True" Set="True"><expression tag="Math.Number" Value="578"/></expression></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="So 17 multiplied by 34, by the Ethiopian method is 578."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script. a program to multiply by the ancient Egyptian multiplication is presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Ethiopian_multiplication" Description="Ethiopian multiplication"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Requirements from Rosetta code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Task&#10;The task is to define three named functions/methods/procedures/subroutines:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="One to halve an integer"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="One to double an integer, and"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="One to state if an integer is even."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Use these functions to create a function that does Ethiopian multiplication."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Ethiopian multiplication Rosetta code"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="halve"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="double"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="is even"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Arithmetic.IsEven"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Logic.Negation"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="is even"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression></expression></expression><expression tag="Programming.While"><expression tag="Relation.Different"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression><expression tag="List.List"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="halve"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="double"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="b"/></expression></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Logic.Negation"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="is even"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="result"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Test case:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Ethiopian multiplication Rosetta code"/><expression tag="List.List"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="34"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="578"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Because the required functions are either simple or intrinsic, the solution can be much simpler:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Ancient Egyptian multiplication"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Number" Value="0"/></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Math.Arithmetic.IsOdd"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression><expression tag="Programming.While"><expression tag="Relation.Different"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="b"/></expression><expression tag="List.List"><expression tag="Math.Arithmetic.DivE"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="result"/><expression tag="Symbolic.Symbol" Name="b"/></expression></expression><expression tag="Math.Arithmetic.IsOdd"><expression tag="Symbolic.Symbol" Name="a"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="result"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Ancient Egyptian multiplication"/><expression tag="List.List"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="34"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="578"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621610495209"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.math.arithmetic,org.formulae.visualization,org.formulae.symbolic,org.formulae.programming,org.formulae.logic,org.formulae.relation,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ancient Egyptian multiplication"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication" Description="Ancient Egyptian multiplication"/>
+				<expression tag="String.Text" Value="also known as Egyptian multiplication, Ethiopian multiplication, Russian multiplication, or peasant multiplication), one of two multiplication methods used by scribes, is a systematic method for multiplying two numbers that does not require the multiplication table, only the ability to multiply and divide by 2, and to add. It decomposes one of the multiplicands (preferably the smaller) into a sum of powers of two and creates a table of doublings of the second multiplicand. This method may be called mediation and duplation, where mediation means halving one number and duplation means doubling the other number. It is still used in some areas."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Method:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Take two numbers to be multiplied and write them down at the top of two columns."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="In the left-hand column repeatedly halve the last number, discarding any remainders, and write the result below the last in the same column, until you write a value of 1."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="In the right-hand column repeatedly double the last number and write the result below. stop when you add a result in the same row as where the left hand column shows 1."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Examine the table produced and discard any row where the value in the left column is even."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For example: 17 × 34"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="17"/>
+							<expression tag="Math.Number" Value="34"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Halving the first column:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="17"/>
+							<expression tag="Math.Number" Value="34"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="8"/>
+							<expression tag="String.Text" Value="-"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="String.Text" Value="-"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="String.Text" Value="-"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="String.Text" Value="-"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Doubling the second column:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="17"/>
+							<expression tag="Math.Number" Value="34"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="8"/>
+							<expression tag="Math.Number" Value="68"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="Math.Number" Value="136"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="272"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="544"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Strike-out rows whose first cell is even:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="17"/>
+							<expression tag="Math.Number" Value="34"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="8"/>
+							<expression tag="Visualization.CrossedOut">
+								<expression tag="Math.Number" Value="68"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="Visualization.CrossedOut">
+								<expression tag="Math.Number" Value="136"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Visualization.CrossedOut">
+								<expression tag="Math.Number" Value="272"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="544"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Sum the remaining numbers in the right-hand column:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="17"/>
+							<expression tag="Math.Number" Value="34"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="8"/>
+							<expression tag="String.Text" Value="-"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="String.Text" Value="-"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="String.Text" Value="-"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="544"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Σ"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="Math.Number" Value="578"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="So 17 multiplied by 34, by the Ethiopian method is 578."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script. a program to multiply by the ancient Egyptian multiplication is presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Ethiopian_multiplication" Description="Ethiopian multiplication"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Requirements from Rosetta code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The task is to define three named functions/methods/procedures/subroutines:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="One to halve an integer"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="One to double an integer, and"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="One to state if an integer is even."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Use these functions to create a function that does Ethiopian multiplication."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Ethiopian multiplication Rosetta code"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="halve"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Div">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="double"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="is even"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.IsEven">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="result"/>
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+					</expression>
+					<expression tag="Logic.Negation">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="is even"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.While">
+					<expression tag="Relation.Different">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="halve"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="double"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="result"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="result"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+							<expression tag="Logic.Negation">
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="is even"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="result"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Test case:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Ethiopian multiplication Rosetta code"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="17"/>
+				<expression tag="Math.Number" Value="34"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="578"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Because the required functions are either simple or intrinsic, the solution can be much simpler:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Ancient Egyptian multiplication"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="result"/>
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.IsOdd">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.While">
+					<expression tag="Relation.Different">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Div">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Math.Number" Value="2"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="result"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="result"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.IsOdd">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="result"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Ancient Egyptian multiplication"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="17"/>
+				<expression tag="Math.Number" Value="34"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="578"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621610495209"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

@@ -1,1 +1,148 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Arbitrary-precision integers (included)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Arbitrary-precision_integers_(included)" Description="Arbitrary-precision integers (included)"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Using the in-built capabilities of your language, calculate the integer value of:"/></expression><expression tag="Typesetting.Centering"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="5"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="4"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Confirm that the first and last twenty digits of the answer are:"/></expression><expression tag="Typesetting.Centering"><expression tag="String.Text" Value="62060698786608744707...92256259918212890625"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Find and show the number of decimal digits in the answer."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In the following script, the result is converted to a string, in order to calculate its size, and its first/last digits."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="s"/><expression tag="String.ToString"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="5"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="4"/><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression></expression></expression><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Length"/><expression tag="String.Length"><expression tag="Symbolic.Symbol" Name="s"/></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="First 20 digits"/><expression tag="String.SubstringToN"><expression tag="Symbolic.Symbol" Name="s"/><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="20"/></expression></expression><expression tag="List.List"><expression tag="String.Text" Value="Last 20 digits"/><expression tag="String.Substring"><expression tag="Symbolic.Symbol" Name="s"/><expression tag="Math.Arithmetic.Addition"><expression tag="String.Length"><expression tag="Symbolic.Symbol" Name="s"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="19"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="Length"/><expression tag="Math.Number" Value="183231"/></expression><expression tag="List.List"><expression tag="String.Text" Value="First 20 digits"/><expression tag="String.String" Value="62060698786608744707"/></expression><expression tag="List.List"><expression tag="String.Text" Value="Last 20 digits"/><expression tag="String.String" Value="92256259918212890625"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620491768214"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Arbitrary-precision integers (included)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Arbitrary-precision_integers_(included)" Description="Arbitrary-precision integers (included)"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Using the in-built capabilities of your language, calculate the integer value of:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Math.Number" Value="4"/>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Confirm that the first and last twenty digits of the answer are:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="String.Text" Value="62060698786608744707...92256259918212890625"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Find and show the number of decimal digits in the answer."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the following script, the result is converted to a string, in order to calculate its size, and its first/last digits."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="s"/>
+					<expression tag="String.ToString">
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Math.Number" Value="4"/>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Number" Value="3"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Length"/>
+						<expression tag="String.Length">
+							<expression tag="Symbolic.Symbol" Name="s"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="First 20 digits"/>
+						<expression tag="String.SubstringToN">
+							<expression tag="Symbolic.Symbol" Name="s"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="20"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Last 20 digits"/>
+						<expression tag="String.Substring">
+							<expression tag="Symbolic.Symbol" Name="s"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="20"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Length"/>
+					<expression tag="Math.Number" Value="183231"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="First 20 digits"/>
+					<expression tag="String.String" Value="62060698786608744707"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Last 20 digits"/>
+					<expression tag="String.String" Value="92256259918212890625"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Arbitrary precision arithmetic examples" Description="arbitrary precision arithmetic"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620491760000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

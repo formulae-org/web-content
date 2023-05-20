@@ -1,1 +1,254 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Factorions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Factorion" Description="factorion"/><expression tag="String.Text" Value="in a given number base b is a natural number that equals the sum of the factorials of its digits. The name factorion was coined by the author"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Clifford_A._Pickover" Description="Clifford A. Pickover."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Example"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="145 is a factorion in base 10 because 1! + 4! + 5! = 1 + 24 + 120 = 145"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="No factorion in base 10 can exceed 1,499,999"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script a program to calculate whether a number is a factorion is presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Factorions" Description="Factorions"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function tests whether a number is a factorion"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IsFactorion"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="base"/></expression></expression><expression tag="Relation.Equals"><expression tag="Math.Arithmetic.Summation"><expression tag="Math.Arithmetic.Factorial"><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Digits"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="base"/></expression></expression><expression tag="Symbolic.Symbol" Name="n"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 1"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IsFactorion"/><expression tag="List.List"><expression tag="Math.Number" Value="145"/><expression tag="Math.Number" Value="10"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case 2 (from Rosetta code) Calculating a list of factorions in different bases"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Write a program in your language to demonstrate, by calculating and printing out the factorions, that:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="There are 3 factorions in base 9"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="There are 4 factorions in base 10"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="There are 5 factorions in base 11"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="There are 2 factorions in base 12 (up to the same upper bound as for base 10)"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following function returns a list o factorions in a given base, up to a limit:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="FactorionList"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="limit"/><expression tag="Symbolic.Symbol" Name="base"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"/></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="Symbolic.Symbol" Name="n"/></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="IsFactorion"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="base"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/><expression tag="Symbolic.Symbol" Name="limit"/></expression><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following calculates factorion lists from bases 9 to 12, with a limit of 1,499,999"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="List.CreateTable"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="base"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="FactorionList"/><expression tag="List.List"><expression tag="Math.Number" Value="1499999"/><expression tag="Symbolic.Symbol" Name="base"/></expression></expression></expression><expression tag="Symbolic.Symbol" Name="base"/><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="12"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="base"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="FactorionList"/><expression tag="List.List"><expression tag="Math.Number" Value="1499999"/><expression tag="Symbolic.Symbol" Name="base"/></expression></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="41282"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="145"/><expression tag="Math.Number" Value="40585"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="11"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="26"/><expression tag="Math.Number" Value="48"/><expression tag="Math.Number" Value="40472"/></expression></expression><expression tag="List.List"><expression tag="Math.Number" Value="12"/><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://oeis.org/A014080" Description="OEIS:A014080 - Factorions in base 10"/></expression><expression tag="Typesetting.Paragraph"><expression tag="Internet.UniformResourceLocator" Value="https://oeis.org/A193163" Description="OEIS:A193163 - Factorions in base n"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621637715948"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.relation,org.formulae.math.arithmetic,org.formulae.logic,org.formulae.programming,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Factorions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Factorion" Description="factorion"/>
+				<expression tag="String.Text" Value="in a given number base b is a natural number that equals the sum of the factorials of its digits. The name factorion was coined by the author"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Clifford_A._Pickover" Description="Clifford A. Pickover."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Example"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="145 is a factorion in base 10 because 1! + 4! + 5! = 1 + 24 + 120 = 145"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="No factorion in base 10 can exceed 1,499,999"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script a program to calculate whether a number is a factorion is presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Factorions" Description="Factorions"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function tests whether a number is a factorion"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="IsFactorion"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="base"/>
+				</expression>
+			</expression>
+			<expression tag="Relation.Equals">
+				<expression tag="Math.Arithmetic.Summation">
+					<expression tag="Math.Arithmetic.Factorial">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Arithmetic.Digits">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Symbolic.Symbol" Name="base"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test case 1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="IsFactorion"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="145"/>
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Test case 2 (from Rosetta code) Calculating a list of factorions in different bases"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Write a program in your language to demonstrate, by calculating and printing out the factorions, that:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="There are 3 factorions in base 9"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="There are 4 factorions in base 10"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="There are 5 factorions in base 11"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="There are 2 factorions in base 12 (up to the same upper bound as for base 10)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function returns a list o factorions in a given base, up to a limit:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="FactorionList"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="limit"/>
+					<expression tag="Symbolic.Symbol" Name="base"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="IsFactorion"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Symbolic.Symbol" Name="base"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="limit"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following calculates factorion lists from bases 9 to 12, with a limit of 1,499,999"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="base"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="FactorionList"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1499999"/>
+						<expression tag="Symbolic.Symbol" Name="base"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="base"/>
+			<expression tag="Math.Number" Value="9"/>
+			<expression tag="Math.Number" Value="12"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="base"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="FactorionList"/>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1499999"/>
+							<expression tag="Symbolic.Symbol" Name="base"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="41282"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="145"/>
+						<expression tag="Math.Number" Value="40585"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="11"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="26"/>
+						<expression tag="Math.Number" Value="48"/>
+						<expression tag="Math.Number" Value="40472"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="12"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.UniformResourceLocator" Value="https://oeis.org/A014080" Description="OEIS:A014080 - Factorions in base 10"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.UniformResourceLocator" Value="https://oeis.org/A193163" Description="OEIS:A193163 - Factorions in base n"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621637700000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

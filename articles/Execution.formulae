@@ -1,1 +1,738 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Execution of expressions"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, you will learn how to execute the expressions you create or edit."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Rows and types of rows"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Expressions in a Fōrmulæ script are organized in rows. A row contains exactly one expression."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="There are three types of rows:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Normal rows."/></expression><expression tag="String.Text" Value="These are rows containing informative expression (such as the information you are reading right now), or expressions intended to be computed. These rows are show in white background."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Result rows."/></expression><expression tag="String.Text" Value="These are rows that contain the result of the computation of expressions in normal rows. These rows are shown in grey background. The expression in a result row is not editable, but you can perform a copy operation on it, or subexpressions of it."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Sticky rows."/></expression><expression tag="String.Text" Value="These rows contains expressions that will be used as definition of symbols and functions. They will be explained below. They are shown in wheat color ("/><expression tag="Color.Color" Red="0.9607843137254902" Green="0.8705882352941177" Blue="0.7019607843137254" Alpha="1"/><expression tag="String.Text" Value=") background."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="See the following examples:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="String.Text" Value="Normal row"/></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="String.Text" Value="Result row"/></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="String.Text" Value="Sticky row"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Performing execution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="When you press the &lt;ENTER&gt; key, the whole expression that contains the selected expression is sent to the server to be executed, and a new"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="result row"/></expression><expression tag="String.Text" Value="is created after the current row. This"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="result row"/></expression><expression tag="String.Text" Value="will contain the result of the executon, as in the following example:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="2"/></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="3"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Arithmetic.Division"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="6"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Before the server returned the resulting expression, the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="result row"/></expression><expression tag="String.Text" Value="contaisn the following expression, used to indicate that the system is waiting:"/></expression><expression tag="Typesetting.Centering"><expression tag="Formulae.WaitingExpression"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This &quot;waiting&quot; expression will be overwritten by the resulting expression, when it arrives."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If the current row is the last of the script, after the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="result row"/></expression><expression tag="String.Text" Value="is created a new"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="normal row"/></expression><expression tag="String.Text" Value="containing a null expression, in order to the user can continue creating new expressions."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Re-execution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Once an expression has been executed, it can be executed again, or you can edit the expression in order to be executed again."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Any expression in a non"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="result row"/></expression><expression tag="String.Text" Value="can be re-executed in any time."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="On a re-execution, generally the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="result row"/></expression><expression tag="String.Text" Value="alreay exists, so the new resulting expression overwrites the previous one. If it were not so (you can delete an"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="result row"/></expression><expression tag="String.Text" Value="), a new"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="result row"/></expression><expression tag="String.Text" Value="is crated."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Supressing the result of an execution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If you press &lt;ALT&gt;&lt;ENTER&gt; instead of &lt;ENTER&gt;, the expression will be sent to the server and executed, but the result will be silently ignored."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="If the next row after the row containing the expression being executed is a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="result row,"/></expression><expression tag="String.Text" Value="it is deleted."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Global symbols"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In Fōrmulæ, the following is a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="global assignment"/></expression><expression tag="String.Text" Value="expression:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="5"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This means that the symbol"/><expression tag="Symbolic.Symbol" Name="x"/><expression tag="String.Text" Value="will be globally available, and it will have attached a value of "/><expression tag="Math.Number" Value="5"/><expression tag="String.Text" Value=", so it can be used any later, for example:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="7"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The same happens for function definitions, for example:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Symbolic.Lambda"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="(In this case, the global symbol is"/><expression tag="Symbolic.Symbol" Name="square"/><expression tag="String.Text" Value=")."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Math.Number" Value="7"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="49"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Global symbols work different in a local server than in a remote server:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In a local server, global symbols work as explained. Global symbols are stored in the server itself, and therefore they remain available while the server is running. It means that if you open a new tab in your browser and load the Fōrmulæ website, these symbols will be avalable (and their values). It also happens if you close you browser and relaunch it any later."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="A remote server, however, stores no global symbols at all."/></expression><expression tag="String.Text" Value="Remember that a remote server is intened to be used for casual users or simple programs and therefore it has several limitations. This is another of such these limitations."/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Sticky rows"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="Sticky rows"/></expression><expression tag="String.Text" Value="are a way to unify the semantics of using definition of symbols and functions in both local servers and remote servers."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Using the tool with the symbol"/><expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAbUlEQVQ4T6WTUQoAIQhE9f6H3hDasFFxpL4i7Y2NpvK4lLz/iUiaOwGYVsifAgKEAfjybX9BOkD29gviAX/A+5oJ+DzFhNLtTQ3xSoE+rzxApfEcoNsjALbNqqQBbdtw9LGNrCeH0w1S+9eeAQsJxRgRjGuv+wAAAABJRU5ErkJggg=="/><expression tag="String.Text" Value="commutes between a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="normal row"/></expression><expression tag="String.Text" Value="and a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky row,"/></expression><expression tag="String.Text" Value="this is, it converts a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="normal row"/></expression><expression tag="String.Text" Value="to a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky row"/></expression><expression tag="String.Text" Value="and vice versa."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="result row"/></expression><expression tag="String.Text" Value="cannot be converted to a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky row."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="Sticky rows"/></expression><expression tag="String.Text" Value="work different in local server than in remote servers."/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Sticky rows when using a local server"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="When using a local server,"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="normal rows"/></expression><expression tag="String.Text" Value="and"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows"/></expression><expression tag="String.Text" Value="works exactly the same, both of them can be executed, re-executed or executed with supression of results."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="However,"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows"/></expression><expression tag="String.Text" Value="are needed when using the"/><expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAhElEQVQ4T7WS0QqAIAxFj/RQRP//pUUQQSFoLHUzo3wRdLue3avDXgfgrBLzEvACfql1loBvnoDZEokC8SVJ2wNbOFBJJIE2r+mDFBiAVcw7AkuriR2wi6bmFGJDuqtJWh5UI5T5PjUwq6t9pBQ9o3orcNFrAqWPVTLS/UagxfaJBzfqEy7wGxGU0PQKAAAAAElFTkSuQmCC"/><expression tag="String.Text" Value="tool."/><expression tag="String.Text" Value="This tool, in one single step, sends all the expressions contained in"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows"/></expression><expression tag="String.Text" Value="to the server, in order to be executed."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Then,"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows"/></expression><expression tag="String.Text" Value="are intended to be used for definition of symbols and functions. It is common (but not mandatory) that they are executed with supression of results."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="See the examples that we have previously used, and how they are presented now with using"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows."/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="7"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The second example looks as follows:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Math.Number" Value="7"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="49"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAhElEQVQ4T7WS0QqAIAxFj/RQRP//pUUQQSFoLHUzo3wRdLue3avDXgfgrBLzEvACfql1loBvnoDZEokC8SVJ2wNbOFBJJIE2r+mDFBiAVcw7AkuriR2wi6bmFGJDuqtJWh5UI5T5PjUwq6t9pBQ9o3orcNFrAqWPVTLS/UagxfaJBzfqEy7wGxGU0PQKAAAAAElFTkSuQmCC"/><expression tag="String.Text" Value="tool is very useful when you want to resume working on a script, and the local server has lost the definitions made in the script (i.e. the script was written any day before and the local sever was shutdown and restarted)."/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Sticky rows when using a remote server"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="When using a remote server, expressions in"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows"/></expression><expression tag="String.Text" Value="cannot be executed."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Instead, if you perform the execution of an expression (contained in a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="normal row),"/></expression><expression tag="String.Text" Value="the expression is sent to the server, but it is also sent the expressions contained in all the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows"/></expression><expression tag="String.Text" Value="in the script."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In fact, they are sent to the server as a one single expression, using a block expression, and definition of local (no global) symbols."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="To illustrate this, suppose we have the following two"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows:"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Now, if we execute the expression"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression><expression tag="String.Text" Value=", the result is as expected:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="7"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="But in the background, what was sent to the server is:"/></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Conversely,  if we execute of the expression"/><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Math.Number" Value="7"/></expression></expression><expression tag="String.Text" Value=", the result is:"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Math.Number" Value="7"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="49"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="But in the background, what was sent to the server is:"/></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="5"/></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="x"/></expression></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="square"/><expression tag="List.List"><expression tag="Math.Number" Value="7"/></expression></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Recommendations for the use of"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows"/></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="Sticky rows"/></expression><expression tag="String.Text" Value="are intended to hold definitions of symbols and functions that you will use later. It has no sense to be used to other purposes."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Further, such these definitions should not be resouce demanding (compuation power, time, memory, etc.), because they are executed several times, on local servers each time you use the"/><expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAhElEQVQ4T7WS0QqAIAxFj/RQRP//pUUQQSFoLHUzo3wRdLue3avDXgfgrBLzEvACfql1loBvnoDZEokC8SVJ2wNbOFBJJIE2r+mDFBiAVcw7AkuriR2wi6bmFGJDuqtJWh5UI5T5PjUwq6t9pBQ9o3orcNFrAqWPVTLS/UagxfaJBzfqEy7wGxGU0PQKAAAAAElFTkSuQmCC"/><expression tag="String.Text" Value="tool; and in remote servers every time you execute any expression."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="So, the expression for the next example (the gravity of earth) is suitable to be used in a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky row:"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="g"/><expression tag="Math.Number" Value="9.80665"/></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="But the following example is not recommended (for a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky row),"/></expression><expression tag="String.Text" Value="because it is a"/><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="call"/></expression><expression tag="String.Text" Value="of a (expensive) function, and therefore it makes the function body to be performed every time the"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky row"/></expression><expression tag="String.Text" Value="is invoked."/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="x"/><expression tag="Symbolic.Function"><expression tag="Visualization.Italic" Value="True" Set="True"><expression tag="String.Text" Value="function that does a lot of calculations"/></expression><expression tag="List.List"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="However, the definition of a function ―no matters if it is a large or complex one― is suitable to be used in a"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky row,"/></expression><expression tag="String.Text" Value="because it is just the"/><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="definition"/></expression><expression tag="String.Text" Value="of the function, and not a"/><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="call"/></expression><expression tag="String.Text" Value="of it (like the previous example)."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="So the following examples of"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="sticky rows"/></expression><expression tag="String.Text" Value="are OK (and very common):"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"/></expression><expression tag="Visualization.Italic" Value="True" Set="True"><expression tag="String.Text" Value="large expression"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="or:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="f"/><expression tag="List.List"/></expression><expression tag="Visualization.Italic" Value="True" Set="True"><expression tag="String.Text" Value="expression that does a lot of calculations"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Rule"/><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1626742440000"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.color,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.graphics.raster,org.formulae.programming,org.formulae.visualization,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Execution of expressions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, you will learn how to execute the expressions you create or edit."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Rows and types of rows"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Expressions in a Fōrmulæ script are organized in rows. A row contains exactly one expression."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There are three types of rows:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Normal rows."/>
+					</expression>
+					<expression tag="String.Text" Value="These are rows containing informative expression (such as the information you are reading right now), or expressions intended to be computed. These rows are show in white background."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Result rows."/>
+					</expression>
+					<expression tag="String.Text" Value="These are rows that contain the result of the computation of expressions in normal rows. These rows are shown in grey background. The expression in a result row is not editable, but you can perform a copy operation on it, or subexpressions of it."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Sticky rows."/>
+					</expression>
+					<expression tag="String.Text" Value="These rows contains expressions that will be used as definition of symbols and functions. They will be explained below. They are shown in wheat color ("/>
+					<expression tag="Color.Color" Red="0.9607843137254902" Green="0.8705882352941177" Blue="0.7019607843137254" Alpha="1"/>
+					<expression tag="String.Text" Value=") background."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="See the following examples:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="String.Text" Value="Normal row"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.Text" Value="Result row"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="String.Text" Value="Sticky row"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Performing execution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When you press the &lt;ENTER&gt; key, the whole expression that contains the selected expression is sent to the server to be executed, and a new"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="result row"/>
+				</expression>
+				<expression tag="String.Text" Value="is created after the current row. This"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="result row"/>
+				</expression>
+				<expression tag="String.Text" Value="will contain the result of the executon, as in the following example:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="17"/>
+			<expression tag="Math.Number" Value="6"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Before the server returned the resulting expression, the"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="result row"/>
+				</expression>
+				<expression tag="String.Text" Value="contaisn the following expression, used to indicate that the system is waiting:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Formulae.WaitingExpression"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This &quot;waiting&quot; expression will be overwritten by the resulting expression, when it arrives."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If the current row is the last of the script, after the"/>
+			<expression tag="Typesetting.ItalicChunk">
+				<expression tag="String.Text" Value="result row"/>
+			</expression>
+			<expression tag="String.Text" Value="is created a new"/>
+			<expression tag="Typesetting.ItalicChunk">
+				<expression tag="String.Text" Value="normal row"/>
+			</expression>
+			<expression tag="String.Text" Value="containing a null expression, in order to the user can continue creating new expressions."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Re-execution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Once an expression has been executed, it can be executed again, or you can edit the expression in order to be executed again."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Any expression in a non"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="result row"/>
+				</expression>
+				<expression tag="String.Text" Value="can be re-executed in any time."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="On a re-execution, generally the"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="result row"/>
+				</expression>
+				<expression tag="String.Text" Value="alreay exists, so the new resulting expression overwrites the previous one. If it were not so (you can delete an"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="result row"/>
+				</expression>
+				<expression tag="String.Text" Value="), a new"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="result row"/>
+				</expression>
+				<expression tag="String.Text" Value="is crated."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Supressing the result of an execution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If you press &lt;ALT&gt;&lt;ENTER&gt; instead of &lt;ENTER&gt;, the expression will be sent to the server and executed, but the result will be silently ignored."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If the next row after the row containing the expression being executed is a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="result row,"/>
+				</expression>
+				<expression tag="String.Text" Value="it is deleted."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Global symbols"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In Fōrmulæ, the following is a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="global assignment"/>
+				</expression>
+				<expression tag="String.Text" Value="expression:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Number" Value="5"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="5"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="This means that the symbol"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="String.Text" Value="will be globally available, and it will have attached a value of "/>
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="String.Text" Value=", so it can be used any later, for example:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="7"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The same happens for function definitions, for example:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="square"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="(In this case, the global symbol is"/>
+			<expression tag="Symbolic.Symbol" Name="square"/>
+			<expression tag="String.Text" Value=")."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="square"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="49"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Global symbols work different in a local server than in a remote server:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="In a local server, global symbols work as explained. Global symbols are stored in the server itself, and therefore they remain available while the server is running. It means that if you open a new tab in your browser and load the Fōrmulæ website, these symbols will be avalable (and their values). It also happens if you close you browser and relaunch it any later."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="A remote server, however, stores no global symbols at all."/>
+					</expression>
+					<expression tag="String.Text" Value="Remember that a remote server is intened to be used for casual users or simple programs and therefore it has several limitations. This is another of such these limitations."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Sticky rows"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="are a way to unify the semantics of using definition of symbols and functions in both local servers and remote servers."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Using the tool with the symbol"/>
+				<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAG1JREFUOE+lk1EKACEIRPX+h94Q2rBRcaS+Iu2NjabyuJS8/4lImjsBmFbInwIChAH48m1/QTpA9vYL4gF/wPuaCfg8xYTS7U0N8UqBPq88QKXxHKDbIwC2zaqkAW3bcPSxjawnh9MNUvvXngELCcUYEYxrr/sAAAAASUVORK5CYII="/>
+				<expression tag="String.Text" Value="commutes between a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="normal row"/>
+				</expression>
+				<expression tag="String.Text" Value="and a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky row,"/>
+				</expression>
+				<expression tag="String.Text" Value="this is, it converts a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="normal row"/>
+				</expression>
+				<expression tag="String.Text" Value="to a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky row"/>
+				</expression>
+				<expression tag="String.Text" Value="and vice versa."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="result row"/>
+				</expression>
+				<expression tag="String.Text" Value="cannot be converted to a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky row."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="work different in local server than in remote servers."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Sticky rows when using a local server"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When using a local server,"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="normal rows"/>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="works exactly the same, both of them can be executed, re-executed or executed with supression of results."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="However,"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="are needed when using the"/>
+				<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAIRJREFUOE+1ktEKgCAMRY/0UET//6VFEEEhaCx1M6N8EXS7nt2rw14H4KwS8xLwAn6pdZaAb56A2RKJAvElSdsDWzhQSSSBNq/pgxQYgFXMOwJLq4kdsIum5hRiQ7qrSVoeVCOU+T41MKurfaQUPaN6K3DRawKlj1Uy0v1GoMX2iQc36hMu8BsRlND0CgAAAABJRU5ErkJggg=="/>
+				<expression tag="String.Text" Value="tool."/>
+				<expression tag="String.Text" Value="This tool, in one single step, sends all the expressions contained in"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="to the server, in order to be executed."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Then,"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="are intended to be used for definition of symbols and functions. It is common (but not mandatory) that they are executed with supression of results."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="See the examples that we have previously used, and how they are presented now with using"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky rows."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Number" Value="5"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="7"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The second example looks as follows:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="square"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="square"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="49"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The"/>
+			<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAIRJREFUOE+1ktEKgCAMRY/0UET//6VFEEEhaCx1M6N8EXS7nt2rw14H4KwS8xLwAn6pdZaAb56A2RKJAvElSdsDWzhQSSSBNq/pgxQYgFXMOwJLq4kdsIum5hRiQ7qrSVoeVCOU+T41MKurfaQUPaN6K3DRawKlj1Uy0v1GoMX2iQc36hMu8BsRlND0CgAAAABJRU5ErkJggg=="/>
+			<expression tag="String.Text" Value="tool is very useful when you want to resume working on a script, and the local server has lost the definitions made in the script (i.e. the script was written any day before and the local sever was shutdown and restarted)."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Sticky rows when using a remote server"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When using a remote server, expressions in"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="cannot be executed."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Instead, if you perform the execution of an expression (contained in a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="normal row),"/>
+				</expression>
+				<expression tag="String.Text" Value="the expression is sent to the server, but it is also sent the expressions contained in all the"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="in the script."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In fact, they are sent to the server as a one single expression, using a block expression, and definition of local (no global) symbols."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="To illustrate this, suppose we have the following two"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky rows:"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Number" Value="5"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="square"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Now, if we execute the expression"/>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="String.Text" Value=", the result is as expected:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="7"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="But in the background, what was sent to the server is:"/>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="square"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Conversely,  if we execute of the expression"/>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="square"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value=", the result is:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="square"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="49"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="But in the background, what was sent to the server is:"/>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="square"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="square"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Recommendations for the use of"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="sticky rows"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="are intended to hold definitions of symbols and functions that you will use later. It has no sense to be used to other purposes."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Further, such these definitions should not be resouce demanding (compuation power, time, memory, etc.), because they are executed several times, on local servers each time you use the"/>
+				<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAIRJREFUOE+1ktEKgCAMRY/0UET//6VFEEEhaCx1M6N8EXS7nt2rw14H4KwS8xLwAn6pdZaAb56A2RKJAvElSdsDWzhQSSSBNq/pgxQYgFXMOwJLq4kdsIum5hRiQ7qrSVoeVCOU+T41MKurfaQUPaN6K3DRawKlj1Uy0v1GoMX2iQc36hMu8BsRlND0CgAAAABJRU5ErkJggg=="/>
+				<expression tag="String.Text" Value="tool; and in remote servers every time you execute any expression."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="So, the expression for the next example (the gravity of earth) is suitable to be used in a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky row:"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="g"/>
+			<expression tag="Math.Number" Value="9.80665"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="But the following example is not recommended (for a"/>
+			<expression tag="Typesetting.ItalicChunk">
+				<expression tag="String.Text" Value="sticky row),"/>
+			</expression>
+			<expression tag="String.Text" Value="because it is a"/>
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="call"/>
+			</expression>
+			<expression tag="String.Text" Value="of a (expensive) function, and therefore it makes the function body to be performed every time the"/>
+			<expression tag="Typesetting.ItalicChunk">
+				<expression tag="String.Text" Value="sticky row"/>
+			</expression>
+			<expression tag="String.Text" Value="is invoked."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Symbolic.Function">
+				<expression tag="Visualization.Italic" Value="True" Set="True">
+					<expression tag="String.Text" Value="function that does a lot of calculations"/>
+				</expression>
+				<expression tag="List.List"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="However, the definition of a function ―no matters if it is a large or complex one― is suitable to be used in a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky row,"/>
+				</expression>
+				<expression tag="String.Text" Value="because it is just the"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="definition"/>
+				</expression>
+				<expression tag="String.Text" Value="of the function, and not a"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="call"/>
+				</expression>
+				<expression tag="String.Text" Value="of it (like the previous example)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="So the following examples of"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="sticky rows"/>
+				</expression>
+				<expression tag="String.Text" Value="are OK (and very common):"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List"/>
+			</expression>
+			<expression tag="Visualization.Italic" Value="True" Set="True">
+				<expression tag="String.Text" Value="large expression"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="or:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List"/>
+			</expression>
+			<expression tag="Visualization.Italic" Value="True" Set="True">
+				<expression tag="String.Text" Value="expression that does a lot of calculations"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Rule"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1626742440000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

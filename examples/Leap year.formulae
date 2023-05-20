@@ -1,1 +1,144 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Leap year"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="A"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Leap_year" Description="leap year"/><expression tag="String.Text" Value="(also known as an"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="intercalary year"/></expression><expression tag="String.Text" Value="or"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="bissextile year)"/></expression><expression tag="String.Text" Value="is a calendar year that contains an additional day (or, in the case of a lunisolar calendar, a month) added to keep the calendar year synchronized with the astronomical year or seasonal year."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="For example, in the"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Gregorian_calendar" Description="Gregorian calendar,"/><expression tag="String.Text" Value="each leap year has 366 days instead of 365, by extending February to 29 days rather than the common 28. These extra days occur in each year which is an integer multiple of 4 (except for years evenly divisible by 100, which are not leap years unless evenly divisible by 400). The leap year of 366 days has 52 weeks and two days, hence the year following a leap year will start later by two days of the week."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Tjis script shows how to calculate if a given year is a leap year."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This also shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Leap_year" Description="Leap year"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The following functions determines whether the given year is a leap year in the Gregorian calendar:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Is leap year"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="year"/></expression></expression><expression tag="Programming.IfElse"><expression tag="Math.Arithmetic.Divides"><expression tag="Math.Number" Value="100"/><expression tag="Symbolic.Symbol" Name="year"/></expression><expression tag="Math.Arithmetic.Divides"><expression tag="Math.Number" Value="400"/><expression tag="Symbolic.Symbol" Name="year"/></expression><expression tag="Math.Arithmetic.Divides"><expression tag="Math.Number" Value="4"/><expression tag="Symbolic.Symbol" Name="year"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Is leap year"/><expression tag="List.List"><expression tag="Math.Number" Value="2000"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In a more concise way:"/></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Is leap year v2"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="year"/></expression></expression><expression tag="Programming.Conditional"><expression tag="Math.Arithmetic.Divides"><expression tag="Math.Number" Value="100"/><expression tag="Symbolic.Symbol" Name="year"/></expression><expression tag="Math.Arithmetic.Divides"><expression tag="Math.Number" Value="400"/><expression tag="Symbolic.Symbol" Name="year"/></expression><expression tag="Math.Arithmetic.Divides"><expression tag="Math.Number" Value="4"/><expression tag="Symbolic.Symbol" Name="year"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Is leap year v2"/><expression tag="List.List"><expression tag="Math.Number" Value="2020"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Logic.True"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621206866861"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.logic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Leap year"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Leap_year" Description="leap year"/>
+				<expression tag="String.Text" Value="(also known as an"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="intercalary year"/>
+				</expression>
+				<expression tag="String.Text" Value="or"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="bissextile year)"/>
+				</expression>
+				<expression tag="String.Text" Value="is a calendar year that contains an additional day (or, in the case of a lunisolar calendar, a month) added to keep the calendar year synchronized with the astronomical year or seasonal year."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For example, in the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Gregorian_calendar" Description="Gregorian calendar,"/>
+				<expression tag="String.Text" Value="each leap year has 366 days instead of 365, by extending February to 29 days rather than the common 28. These extra days occur in each year which is an integer multiple of 4 (except for years evenly divisible by 100, which are not leap years unless evenly divisible by 400). The leap year of 366 days has 52 weeks and two days, hence the year following a leap year will start later by two days of the week."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Tjis script shows how to calculate if a given year is a leap year."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This also shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Leap_year" Description="Leap year"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following functions determines whether the given year is a leap year in the Gregorian calendar:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Is leap year"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="year"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.IfElse">
+				<expression tag="Math.Arithmetic.Divides">
+					<expression tag="Math.Number" Value="100"/>
+					<expression tag="Symbolic.Symbol" Name="year"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Divides">
+					<expression tag="Math.Number" Value="400"/>
+					<expression tag="Symbolic.Symbol" Name="year"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Divides">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Symbolic.Symbol" Name="year"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Is leap year"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="In a more concise way:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Is leap year v2"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="year"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Conditional">
+				<expression tag="Math.Arithmetic.Divides">
+					<expression tag="Math.Number" Value="100"/>
+					<expression tag="Symbolic.Symbol" Name="year"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Divides">
+					<expression tag="Math.Number" Value="400"/>
+					<expression tag="Symbolic.Symbol" Name="year"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Divides">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Symbolic.Symbol" Name="year"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Is leap year v2"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2020"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621206840000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

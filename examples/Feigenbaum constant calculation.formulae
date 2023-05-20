@@ -1,1 +1,411 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Feigenbaum constant calculation"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Feigenbaum_constants" Description="Feigenbaum constants"/><expression tag="String.Text" Value="are two mathematical constants which both express ratios in a"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Bifurcation_diagram" Description="bifurcation diagram"/><expression tag="String.Text" Value="for a non-linear map. They are named after the physicist"/><expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Mitchell_J._Feigenbaum" Description="Mitchell J. Feigenbaum."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In this script, a program to calculate the Feigenbaum constant is presented."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This is also a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Feigenbaum_constant_calculation" Description="Feigenbaum constant calculation"/><expression tag="String.Text" Value="exercise, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Program"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This solution is based on the paper"/><expression tag="Internet.UniformResourceLocator" Value="http://keithbriggs.info/documents/how-to-calc.pdf" Description="How to calculate the Feigenbaum constants on your PC. Aust. Math. Soc. Gazette 16, 89."/><expression tag="String.Text" Value="from"/><expression tag="Internet.UniformResourceLocator" Value="http://keithbriggs.info/" Description="Keith Briggs"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Feigenbaum"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="N"/><expression tag="Symbolic.Symbol" Name="M"/></expression></expression><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="List.List"><expression tag="Math.Number" Value="0."/><expression tag="Math.Number" Value="1."/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="δ"/><expression tag="List.List"><expression tag="Null"/><expression tag="Math.Number" Value="3.2"/></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="b"/><expression tag="Symbolic.Symbol" Name="b'"/><expression tag="Symbolic.Symbol" Name="tmp"/></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="tmp"/><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Math.Arithmetic.Division"><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="δ"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression><expression tag="Programming.ForTimes"><expression tag="Programming.Block" Description="block" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="b"/><expression tag="Symbolic.Symbol" Name="b'"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0."/><expression tag="Math.Number" Value="0."/></expression></expression><expression tag="Programming.ForTimes"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="b"/><expression tag="Symbolic.Symbol" Name="b'"/></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="tmp"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Symbolic.Symbol" Name="b"/><expression tag="Math.Number" Value="2"/></expression></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Math.Number" Value="1"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Multiplication"><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="b"/><expression tag="Symbolic.Symbol" Name="b'"/></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Exponentiation"><expression tag="Math.Number" Value="2"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="tmp"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="tmp"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Arithmetic.Division"><expression tag="Symbolic.Symbol" Name="b"/><expression tag="Symbolic.Symbol" Name="b'"/></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="M"/></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="tmp"/></expression><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="δ"/><expression tag="Math.Arithmetic.Division"><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="2"/></expression></expression></expression></expression></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Math.Arithmetic.Negative"><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Arithmetic.Negative"><expression tag="Math.Number" Value="1"/></expression></expression></expression></expression></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="3"/><expression tag="Symbolic.Symbol" Name="N"/></expression><expression tag="List.CreateList"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="a"/><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Expression.Child"><expression tag="Symbolic.Symbol" Name="δ"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="2"/><expression tag="Symbolic.Symbol" Name="N"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Test case"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="Feigenbaum"/><expression tag="List.List"><expression tag="Math.Number" Value="20"/><expression tag="Math.Number" Value="23"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.List"><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1."/><expression tag="Math.Number" Value="3.2"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="3"/><expression tag="Math.Number" Value="1.310702641336832883563570797412181"/><expression tag="Math.Number" Value="3.218511422038087912270504530742811"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="1.381547484432061469540693562313419"/><expression tag="Math.Number" Value="4.385677598568339085744948568775551"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="5"/><expression tag="Math.Number" Value="1.396945359704560641672477987325078"/><expression tag="Math.Number" Value="4.600949276538075357811694698623592"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="1.400253081214782797325012282808777"/><expression tag="Math.Number" Value="4.655130495391980136486254995859498"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="7"/><expression tag="Math.Number" Value="1.400961962944841040296116315869805"/><expression tag="Math.Number" Value="4.666111947828571388331213696712237"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="8"/><expression tag="Math.Number" Value="1.401113804939776123900879657948724"/><expression tag="Math.Number" Value="4.668548581446840948044543680187389"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="9"/><expression tag="Math.Number" Value="1.401146325826946178647288238712603"/><expression tag="Math.Number" Value="4.669060660648268239132599822642619"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="10"/><expression tag="Math.Number" Value="1.401153290849923881474672290534697"/><expression tag="Math.Number" Value="4.669171555379511388886004606084452"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="11"/><expression tag="Math.Number" Value="1.401154782546617841218612537721849"/><expression tag="Math.Number" Value="4.669195156030017174021108861160464"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="1.401155102022463975894064914008688"/><expression tag="Math.Number" Value="4.669200229086856497938353095463267"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="13"/><expression tag="Math.Number" Value="1.40115517044441126376535787853629"/><expression tag="Math.Number" Value="4.669201313294204171164757444977452"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="14"/><expression tag="Math.Number" Value="1.401155185098297290530984478875471"/><expression tag="Math.Number" Value="4.669201545780906707506073352007618"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="15"/><expression tag="Math.Number" Value="1.401155188236710941543786459840578"/><expression tag="Math.Number" Value="4.669201595537493910292344305586858"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="16"/><expression tag="Math.Number" Value="1.401155188908863038563264267460924"/><expression tag="Math.Number" Value="4.669201606198152157723564833149108"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="17"/><expression tag="Math.Number" Value="1.401155189052817434492244658856726"/><expression tag="Math.Number" Value="4.669201608480804423289334485537765"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="18"/><expression tag="Math.Number" Value="1.401155189083648057794617717971329"/><expression tag="Math.Number" Value="4.669201608969744700546399742035264"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="19"/><expression tag="Math.Number" Value="1.401155189090251033181770560583193"/><expression tag="Math.Number" Value="4.669201609074452566235572003979148"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="20"/><expression tag="Math.Number" Value="1.401155189091665188307196810081738"/><expression tag="Math.Number" Value="4.669201609096878793534725056369738"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621643766099"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Feigenbaum constant calculation"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Feigenbaum_constants" Description="Feigenbaum constants"/>
+				<expression tag="String.Text" Value="are two mathematical constants which both express ratios in a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Bifurcation_diagram" Description="bifurcation diagram"/>
+				<expression tag="String.Text" Value="for a non-linear map. They are named after the physicist"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Mitchell_J._Feigenbaum" Description="Mitchell J. Feigenbaum."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script, a program to calculate the Feigenbaum constant is presented."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Feigenbaum_constant_calculation" Description="Feigenbaum constant calculation"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Program"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This solution is based on the paper"/>
+				<expression tag="Internet.UniformResourceLocator" Value="http://keithbriggs.info/documents/how-to-calc.pdf" Description="How to calculate the Feigenbaum constants on your PC. Aust. Math. Soc. Gazette 16, 89."/>
+				<expression tag="String.Text" Value="from"/>
+				<expression tag="Internet.UniformResourceLocator" Value="http://keithbriggs.info/" Description="Keith Briggs"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Feigenbaum"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="N"/>
+					<expression tag="Symbolic.Symbol" Name="M"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0."/>
+							<expression tag="Math.Number" Value="1."/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="δ"/>
+						<expression tag="List.List">
+							<expression tag="Null"/>
+							<expression tag="Math.Number" Value="3.2"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="b'"/>
+						<expression tag="Symbolic.Symbol" Name="tmp"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="tmp"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="i"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="i"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Expression.Child">
+												<expression tag="Symbolic.Symbol" Name="a"/>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="i"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="2"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="δ"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="i"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.ForTimes">
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+										<expression tag="Symbolic.Symbol" Name="b'"/>
+									</expression>
+									<expression tag="List.List">
+										<expression tag="Math.Number" Value="0."/>
+										<expression tag="Math.Number" Value="0."/>
+									</expression>
+								</expression>
+								<expression tag="Programming.ForTimes">
+									<expression tag="Symbolic.Assignment">
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+											<expression tag="Symbolic.Symbol" Name="b'"/>
+										</expression>
+										<expression tag="List.List">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="tmp"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Arithmetic.Exponentiation">
+														<expression tag="Symbolic.Symbol" Name="b"/>
+														<expression tag="Math.Number" Value="2"/>
+													</expression>
+												</expression>
+											</expression>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Math.Number" Value="1"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Arithmetic.Multiplication">
+														<expression tag="Math.Number" Value="2"/>
+														<expression tag="Symbolic.Symbol" Name="b"/>
+														<expression tag="Symbolic.Symbol" Name="b'"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Number" Value="2"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="i"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="tmp"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="tmp"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Arithmetic.Division">
+												<expression tag="Symbolic.Symbol" Name="b"/>
+												<expression tag="Symbolic.Symbol" Name="b'"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="M"/>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+							<expression tag="Symbolic.Symbol" Name="tmp"/>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="δ"/>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="i"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="i"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="2"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Expression.Child">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="i"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Symbolic.Symbol" Name="N"/>
+				</expression>
+				<expression tag="List.CreateTable">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+						</expression>
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="δ"/>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Symbolic.Symbol" Name="N"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test case"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Feigenbaum"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="20"/>
+				<expression tag="Math.Number" Value="23"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="i"/>
+					</expression>
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="δ"/>
+						<expression tag="Symbolic.Symbol" Name="i"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="1."/>
+					<expression tag="Math.Number" Value="3.2"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="1.310702641336832883563570797412181"/>
+					<expression tag="Math.Number" Value="3.218511422038087912270504530742811"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="1.381547484432061469540693562313419"/>
+					<expression tag="Math.Number" Value="4.385677598568339085744948568775551"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="1.396945359704560641672477987325078"/>
+					<expression tag="Math.Number" Value="4.600949276538075357811694698623592"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="1.400253081214782797325012282808777"/>
+					<expression tag="Math.Number" Value="4.655130495391980136486254995859498"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="1.400961962944841040296116315869805"/>
+					<expression tag="Math.Number" Value="4.666111947828571388331213696712237"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="1.401113804939776123900879657948724"/>
+					<expression tag="Math.Number" Value="4.668548581446840948044543680187389"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="1.401146325826946178647288238712603"/>
+					<expression tag="Math.Number" Value="4.669060660648268239132599822642619"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="1.401153290849923881474672290534697"/>
+					<expression tag="Math.Number" Value="4.669171555379511388886004606084452"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="11"/>
+					<expression tag="Math.Number" Value="1.401154782546617841218612537721849"/>
+					<expression tag="Math.Number" Value="4.669195156030017174021108861160464"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="12"/>
+					<expression tag="Math.Number" Value="1.401155102022463975894064914008688"/>
+					<expression tag="Math.Number" Value="4.669200229086856497938353095463267"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="13"/>
+					<expression tag="Math.Number" Value="1.40115517044441126376535787853629"/>
+					<expression tag="Math.Number" Value="4.669201313294204171164757444977452"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="14"/>
+					<expression tag="Math.Number" Value="1.401155185098297290530984478875471"/>
+					<expression tag="Math.Number" Value="4.669201545780906707506073352007618"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="15"/>
+					<expression tag="Math.Number" Value="1.401155188236710941543786459840578"/>
+					<expression tag="Math.Number" Value="4.669201595537493910292344305586858"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="16"/>
+					<expression tag="Math.Number" Value="1.401155188908863038563264267460924"/>
+					<expression tag="Math.Number" Value="4.669201606198152157723564833149108"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="17"/>
+					<expression tag="Math.Number" Value="1.401155189052817434492244658856726"/>
+					<expression tag="Math.Number" Value="4.669201608480804423289334485537765"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="18"/>
+					<expression tag="Math.Number" Value="1.401155189083648057794617717971329"/>
+					<expression tag="Math.Number" Value="4.669201608969744700546399742035264"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="19"/>
+					<expression tag="Math.Number" Value="1.401155189090251033181770560583193"/>
+					<expression tag="Math.Number" Value="4.669201609074452566235572003979148"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="20"/>
+					<expression tag="Math.Number" Value="1.401155189091665188307196810081738"/>
+					<expression tag="Math.Number" Value="4.669201609096878793534725056369738"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621643760000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

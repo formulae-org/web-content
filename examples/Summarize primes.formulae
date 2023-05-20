@@ -1,1 +1,215 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summarize primes"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Summarize_primes" Description="Summarize primes"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="String.Text" Value="Summarize first n primes (p) and check if it is a prime, where p &lt; 1000"/><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="n"/><expression tag="String.Text" Value="sum of n primes, a prime"/></expression></expression></expression></expression><expression tag="Symbolic.Local"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="sum"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="0"/><expression tag="Math.Number" Value="0"/></expression></expression></expression><expression tag="Programming.ForFromTo"><expression tag="Programming.If"><expression tag="Math.Arithmetic.IsPrime"><expression tag="Symbolic.Symbol" Name="i"/></expression><expression tag="Programming.Block" Description="Description" Expanded="True"><expression tag="Symbolic.Assignment"><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="sum"/></expression><expression tag="List.List"><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Math.Number" Value="1"/></expression><expression tag="Math.Arithmetic.Addition"><expression tag="Symbolic.Symbol" Name="sum"/><expression tag="Symbolic.Symbol" Name="i"/></expression></expression></expression><expression tag="Programming.InvertedIf"><expression tag="Expression.Append"><expression tag="Symbolic.Symbol" Name="list"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="n"/><expression tag="Symbolic.Symbol" Name="sum"/></expression></expression><expression tag="Math.Arithmetic.IsPrime"><expression tag="Symbolic.Symbol" Name="sum"/></expression></expression></expression></expression><expression tag="Symbolic.Symbol" Name="i"/><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="1000"/></expression><expression tag="List.Table"><expression tag="Symbolic.Symbol" Name="list"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="String.Text" Value="n"/><expression tag="String.Text" Value="sum of n primes, a prime"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="1"/><expression tag="Math.Number" Value="2"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="2"/><expression tag="Math.Number" Value="5"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="4"/><expression tag="Math.Number" Value="17"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="6"/><expression tag="Math.Number" Value="41"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="12"/><expression tag="Math.Number" Value="197"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="14"/><expression tag="Math.Number" Value="281"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="60"/><expression tag="Math.Number" Value="7699"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="64"/><expression tag="Math.Number" Value="8893"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="96"/><expression tag="Math.Number" Value="22039"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="100"/><expression tag="Math.Number" Value="24133"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="102"/><expression tag="Math.Number" Value="25237"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="108"/><expression tag="Math.Number" Value="28697"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="114"/><expression tag="Math.Number" Value="32353"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="122"/><expression tag="Math.Number" Value="37561"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="124"/><expression tag="Math.Number" Value="38921"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="130"/><expression tag="Math.Number" Value="43201"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="132"/><expression tag="Math.Number" Value="44683"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="146"/><expression tag="Math.Number" Value="55837"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="152"/><expression tag="Math.Number" Value="61027"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="158"/><expression tag="Math.Number" Value="66463"/></expression><expression tag="List.List"><expression tag="Math.Number" Value="162"/><expression tag="Math.Number" Value="70241"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1621466274358"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summarize primes"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Summarize_primes" Description="Summarize primes"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="Summarize first n primes (p) and check if it is a prime, where p &lt; 1000"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="n"/>
+							<expression tag="String.Text" Value="sum of n primes, a prime"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Symbolic.Symbol" Name="sum"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Programming.ForFromTo">
+				<expression tag="Programming.If">
+					<expression tag="Math.Arithmetic.IsPrime">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+					</expression>
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Symbolic.Symbol" Name="sum"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="sum"/>
+									<expression tag="Symbolic.Symbol" Name="i"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Expression.Append">
+								<expression tag="Symbolic.Symbol" Name="list"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Symbolic.Symbol" Name="sum"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.IsPrime">
+								<expression tag="Symbolic.Symbol" Name="sum"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="i"/>
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="1000"/>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="n"/>
+					<expression tag="String.Text" Value="sum of n primes, a prime"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="17"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="41"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="12"/>
+					<expression tag="Math.Number" Value="197"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="14"/>
+					<expression tag="Math.Number" Value="281"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="60"/>
+					<expression tag="Math.Number" Value="7699"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="64"/>
+					<expression tag="Math.Number" Value="8893"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="96"/>
+					<expression tag="Math.Number" Value="22039"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="100"/>
+					<expression tag="Math.Number" Value="24133"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="102"/>
+					<expression tag="Math.Number" Value="25237"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="108"/>
+					<expression tag="Math.Number" Value="28697"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="114"/>
+					<expression tag="Math.Number" Value="32353"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="122"/>
+					<expression tag="Math.Number" Value="37561"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="124"/>
+					<expression tag="Math.Number" Value="38921"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="130"/>
+					<expression tag="Math.Number" Value="43201"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="132"/>
+					<expression tag="Math.Number" Value="44683"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="146"/>
+					<expression tag="Math.Number" Value="55837"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="152"/>
+					<expression tag="Math.Number" Value="61027"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="158"/>
+					<expression tag="Math.Number" Value="66463"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="162"/>
+					<expression tag="Math.Number" Value="70241"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1621466274358"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

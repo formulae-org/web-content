@@ -1,1 +1,129 @@
-<expression tag="Formulae.Script"><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Count occurrences of a substring"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="This exercise shows a solution for the"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Count_occurrences_of_a_substring" Description="Count occurrences of a substring"/><expression tag="String.Text" Value="problem, described in the website"/><expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Summary of the description from Rosetta Code"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Create a function,   or show a built-in function,   to count the number of non-overlapping occurrences of a substring inside a string."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The function should take two arguments:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The first argument being the string to search, and"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The second a substring to be searched for"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="It should return an integer count."/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="countSubstring(&quot;the three truths&quot;,&quot;th&quot;) must return 3."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="countSubstring(&quot;ababababab&quot;,&quot;abab&quot;) must return 2. do not count substrings that overlap with previously-counted substrings"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The matching should yield the highest number of non-overlapping matches."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="In general, this essentially means matching from left-to-right or right-to-left."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Solution"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="The expression"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=String.Indexes" Description="Indexes"/><expression tag="String.Text" Value="returns a list of positions of the occurrences of the substring. The next step is counting such that list through the"/><expression tag="Internet.UniformResourceLocator" Value="/?reference=Expression.Cardinality" Description="Cardinality"/><expression tag="String.Text" Value="expression:"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="2"><expression tag="Symbolic.Assignment"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="CountSubString"/><expression tag="List.List"><expression tag="Symbolic.Symbol" Name="string"/><expression tag="Symbolic.Symbol" Name="substring"/></expression></expression><expression tag="Expression.Cardinality"><expression tag="String.Indexes"><expression tag="Symbolic.Symbol" Name="string"/><expression tag="Symbolic.Symbol" Name="substring"/></expression></expression></expression></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="CountSubString"/><expression tag="List.List"><expression tag="String.String" Value="the three truths"/><expression tag="String.String" Value="th"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="3"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Symbolic.Function"><expression tag="Symbolic.Symbol" Name="CountSubString"/><expression tag="List.List"><expression tag="String.String" Value="ababababab"/><expression tag="String.String" Value="abab"/></expression></expression></expression><expression tag="Formulae.Script.Row" type="1"><expression tag="Math.Number" Value="2"/></expression><expression tag="Formulae.Script.Row" type="0"><expression tag="Typesetting.MultiParagraph"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="See also:"/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Other"/><expression tag="Internet.UniformResourceLocator" Value="/?article=Rosetta_Code_examples" Description="Rosetta code"/><expression tag="String.Text" Value="examples"/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Author: Laurence R. Ugalde"/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Last modified:"/><expression tag="Time.Time" Value="1620748414277"/></expression></expression></expression></expression>
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Count occurrences of a substring"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Count_occurrences_of_a_substring" Description="Count occurrences of a substring"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Create a function,   or show a built-in function,   to count the number of non-overlapping occurrences of a substring inside a string."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The function should take two arguments:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The first argument being the string to search, and"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The second a substring to be searched for"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It should return an integer count."/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="countSubstring(&quot;the three truths&quot;,&quot;th&quot;) must return 3."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="countSubstring(&quot;ababababab&quot;,&quot;abab&quot;) must return 2. do not count substrings that overlap with previously-counted substrings"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The matching should yield the highest number of non-overlapping matches."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In general, this essentially means matching from left-to-right or right-to-left."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The expression"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/String.Indexes" Description="Indexes"/>
+				<expression tag="String.Text" Value="returns a list of positions of the occurrences of the substring. The next step is counting such that list through the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Expression.Cardinality" Description="Cardinality"/>
+				<expression tag="String.Text" Value="expression:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="CountSubString"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="string"/>
+					<expression tag="Symbolic.Symbol" Name="substring"/>
+				</expression>
+			</expression>
+			<expression tag="Expression.Cardinality">
+				<expression tag="String.Indexes">
+					<expression tag="Symbolic.Symbol" Name="string"/>
+					<expression tag="Symbolic.Symbol" Name="substring"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="CountSubString"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="the three truths"/>
+				<expression tag="String.String" Value="th"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="3"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="CountSubString"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="ababababab"/>
+				<expression tag="String.String" Value="abab"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1620748414277"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
