@@ -1,0 +1,195 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.logic,org.formulae.programming,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Attractive numbers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A number is an   attractive number   if the number of its prime factors (whether distinct or not) is also prime."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This script is also a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Attractive_numbers" Description="Attractive numbers"/>
+				<expression tag="String.Text" Value="exercise, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following function determines if a given number is an attractive number:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Is attractive number"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.IsPrime">
+				<expression tag="Expression.Cardinality">
+					<expression tag="Math.Arithmetic.Factors">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="String.Text" Value="Example:"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Is attractive number"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="28"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Logic.True"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Rosetta code task 1."/>
+			</expression>
+			<expression tag="String.Text" Value="Show sequence items up to 120."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.ForFromTo">
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Expression.Append">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Is attractive number"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="120"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="list"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Number" Value="6"/>
+			<expression tag="Math.Number" Value="8"/>
+			<expression tag="Math.Number" Value="9"/>
+			<expression tag="Math.Number" Value="10"/>
+			<expression tag="Math.Number" Value="12"/>
+			<expression tag="Math.Number" Value="14"/>
+			<expression tag="Math.Number" Value="15"/>
+			<expression tag="Math.Number" Value="18"/>
+			<expression tag="Math.Number" Value="20"/>
+			<expression tag="Math.Number" Value="21"/>
+			<expression tag="Math.Number" Value="22"/>
+			<expression tag="Math.Number" Value="25"/>
+			<expression tag="Math.Number" Value="26"/>
+			<expression tag="Math.Number" Value="27"/>
+			<expression tag="Math.Number" Value="28"/>
+			<expression tag="Math.Number" Value="30"/>
+			<expression tag="Math.Number" Value="32"/>
+			<expression tag="Math.Number" Value="33"/>
+			<expression tag="Math.Number" Value="34"/>
+			<expression tag="Math.Number" Value="35"/>
+			<expression tag="Math.Number" Value="38"/>
+			<expression tag="Math.Number" Value="39"/>
+			<expression tag="Math.Number" Value="42"/>
+			<expression tag="Math.Number" Value="44"/>
+			<expression tag="Math.Number" Value="45"/>
+			<expression tag="Math.Number" Value="46"/>
+			<expression tag="Math.Number" Value="48"/>
+			<expression tag="Math.Number" Value="49"/>
+			<expression tag="Math.Number" Value="50"/>
+			<expression tag="Math.Number" Value="51"/>
+			<expression tag="Math.Number" Value="52"/>
+			<expression tag="Math.Number" Value="55"/>
+			<expression tag="Math.Number" Value="57"/>
+			<expression tag="Math.Number" Value="58"/>
+			<expression tag="Math.Number" Value="62"/>
+			<expression tag="Math.Number" Value="63"/>
+			<expression tag="Math.Number" Value="65"/>
+			<expression tag="Math.Number" Value="66"/>
+			<expression tag="Math.Number" Value="68"/>
+			<expression tag="Math.Number" Value="69"/>
+			<expression tag="Math.Number" Value="70"/>
+			<expression tag="Math.Number" Value="72"/>
+			<expression tag="Math.Number" Value="74"/>
+			<expression tag="Math.Number" Value="75"/>
+			<expression tag="Math.Number" Value="76"/>
+			<expression tag="Math.Number" Value="77"/>
+			<expression tag="Math.Number" Value="78"/>
+			<expression tag="Math.Number" Value="80"/>
+			<expression tag="Math.Number" Value="82"/>
+			<expression tag="Math.Number" Value="85"/>
+			<expression tag="Math.Number" Value="86"/>
+			<expression tag="Math.Number" Value="87"/>
+			<expression tag="Math.Number" Value="91"/>
+			<expression tag="Math.Number" Value="92"/>
+			<expression tag="Math.Number" Value="93"/>
+			<expression tag="Math.Number" Value="94"/>
+			<expression tag="Math.Number" Value="95"/>
+			<expression tag="Math.Number" Value="98"/>
+			<expression tag="Math.Number" Value="99"/>
+			<expression tag="Math.Number" Value="102"/>
+			<expression tag="Math.Number" Value="105"/>
+			<expression tag="Math.Number" Value="106"/>
+			<expression tag="Math.Number" Value="108"/>
+			<expression tag="Math.Number" Value="110"/>
+			<expression tag="Math.Number" Value="111"/>
+			<expression tag="Math.Number" Value="112"/>
+			<expression tag="Math.Number" Value="114"/>
+			<expression tag="Math.Number" Value="115"/>
+			<expression tag="Math.Number" Value="116"/>
+			<expression tag="Math.Number" Value="117"/>
+			<expression tag="Math.Number" Value="118"/>
+			<expression tag="Math.Number" Value="119"/>
+			<expression tag="Math.Number" Value="120"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The OEIS entry"/>
+					<expression tag="Internet.UniformResourceLocator" Value="https://oeis.org/A063989" Description="A063989: Numbers with a prime number of prime divisors."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1686723120000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
