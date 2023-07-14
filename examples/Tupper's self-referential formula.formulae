@@ -1,0 +1,2275 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.relation,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.visualization,org.formulae.programming,org.formulae.color,org.formulae.graphics.raster,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Tupper's self-referential formula"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Jeff Tupper, in his 2001 paper"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="&quot;Reliable Two-Dimensional Graphing Methods&#10;for Mathematical Formulae with Two Free Variables&quot;,"/>
+				</expression>
+				<expression tag="String.Text" Value="shows a set of methods to graph equations and inequalities with two variables in the cartesian plane."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="One of the examples of the paper, refers to the inequality:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Less">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Floor">
+						<expression tag="Symbolic.Function">
+							<expression tag="String.Text" Value="mod"/>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Math.Arithmetic.Floor">
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="String.Text" Value="y"/>
+											<expression tag="Math.Number" Value="17"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Number" Value="2"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="17"/>
+												</expression>
+												<expression tag="Math.Arithmetic.Floor">
+													<expression tag="String.Text" Value="x"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Symbolic.Function">
+													<expression tag="String.Text" Value="mod"/>
+													<expression tag="List.List">
+														<expression tag="Math.Arithmetic.Floor">
+															<expression tag="String.Text" Value="y"/>
+														</expression>
+														<expression tag="Math.Number" Value="17"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="That inequality, once plotted in the range 0 ≤ x ≤ 106 and k ≤ y ≤ k + 17 for k = 960, 939, 379, 918, 958, 884, 971, 672, 962, 127, 852, 754, 715, 004, 339, 660, 129, 306, 651, 505, 519, 271, 702, 802, 395, 266, 424, 689, 642, 842, 174, 350, 718, 121, 267, 153, 782, 770, 623, 355, 993, 237, 280, 874, 144, 307, 891, 325, 963, 941, 337, 723, 487, 857, 735, 749, 823, 926, 629, 715, 517, 173, 716, 995, 165, 232, 890, 538, 221, 612, 403, 238, 855, 866, 184, 013, 235, 585, 136, 048, 828, 693, 337, 902, 491, 454, 229, 288, 667, 081, 096, 184, 496, 091, 705, 183, 454, 067, 827, 731, 551, 705, 405, 381, 627, 380, 967, 602, 565, 625, 016, 981, 482, 083, 418, 783, 163, 849, 115, 590, 225, 610, 003, 652, 351, 370, 343, 874, 461, 848, 378, 737, 238, 198, 224, 849, 863, 465, 033, 159, 410, 054, 974, 700, 593, 138, 339, 226, 497, 249, 461, 751, 545, 728, 366, 702, 369, 745, 461, 014, 655, 997, 933, 798, 537, 483, 143, 786, 841, 806, 593, 422, 227, 898, 388, 722, 980, 000, 748, 404, 719 produces a drawing that visually mimics the inequality itself, hence it is called self-referential."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In this script several forms of drawing the Tupper's formula are show."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Preliminaries"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="First, let us make useful definitions:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="k"/>
+			<expression tag="Math.Number" Value="960939379918958884971672962127852754715004339660129306651505519271702802395266424689642842174350718121267153782770623355993237280874144307891325963941337723487857735749823926629715517173716995165232890538221612403238855866184013235585136048828693337902491454229288667081096184496091705183454067827731551705405381627380967602565625016981482083418783163849115590225610003652351370343874461848378737238198224849863465033159410054974700593138339226497249461751545728366702369745461014655997933798537483143786841806593422227898388722980000748404719"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Notice that Tupper uses the notation"/>
+			<expression tag="Visualization.Bold" Value="True" Set="True">
+				<expression tag="Symbolic.Function">
+					<expression tag="String.Text" Value="mod"/>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="a"/>
+						<expression tag="String.Text" Value="b"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="for the modulo operation, while Fōrmulæ uses the notation"/>
+			<expression tag="Visualization.Bold" Value="True" Set="True">
+				<expression tag="Math.Arithmetic.Mod">
+					<expression tag="String.Text" Value="a"/>
+					<expression tag="String.Text" Value="b"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value=", however the next trick can be used:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="mod"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Mod">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Now we can use a formula that looks exactly as Tupper's:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Tupper"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+			</expression>
+			<expression tag="Relation.Less">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Floor">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="mod"/>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Arithmetic.Floor">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Symbolic.Symbol" Name="y"/>
+										<expression tag="Math.Number" Value="17"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Number" Value="2"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Arithmetic.Multiplication">
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Number" Value="17"/>
+											</expression>
+											<expression tag="Math.Arithmetic.Floor">
+												<expression tag="Symbolic.Symbol" Name="x"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Symbolic.Function">
+												<expression tag="Symbolic.Symbol" Name="mod"/>
+												<expression tag="List.List">
+													<expression tag="Math.Arithmetic.Floor">
+														<expression tag="Symbolic.Symbol" Name="y"/>
+													</expression>
+													<expression tag="Math.Number" Value="17"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="String.Text" Value="Although the inequality is intended to be drawn on the continuum of the cartesian plane, the drawing can be performed iterating over the integer values of both the horizontal and vertical ranges."/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Visualization as a matrix"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following creates a matrix. Values for which inequality is true are shown as an opaque black color, otherwise they are shown as an transparent color."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateList">
+			<expression tag="List.CreateList">
+				<expression tag="Programming.Conditional">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Tupper"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+					</expression>
+					<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+					<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="105"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="y"/>
+			<expression tag="Symbolic.Symbol" Name="k"/>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="k"/>
+				<expression tag="Math.Number" Value="16"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="1" Green="1" Blue="1" Alpha="0"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Visualization as an image"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the following script, a function to draw the Tupper's formula is used to generate the image with different sizes, because the standard 1x1 pixel per unit results to be too small in order to be appreciated:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="TupperImage"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Local">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="g"/>
+								<expression tag="Graphics.CreateRasterGraphics">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="106"/>
+										<expression tag="Symbolic.Symbol" Name="size"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="17"/>
+										<expression tag="Symbolic.Symbol" Name="size"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.ForFromTo">
+							<expression tag="Programming.ForFromTo">
+								<expression tag="Programming.InvertedIf">
+									<expression tag="Graphics.FillRectanglePosSize">
+										<expression tag="Symbolic.Symbol" Name="g"/>
+										<expression tag="Math.Arithmetic.Multiplication">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Math.Number" Value="105"/>
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Symbolic.Symbol" Name="c"/>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Symbol" Name="size"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Multiplication">
+											<expression tag="Symbolic.Symbol" Name="r"/>
+											<expression tag="Symbolic.Symbol" Name="size"/>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="size"/>
+										<expression tag="Symbolic.Symbol" Name="size"/>
+									</expression>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="Tupper"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="c"/>
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="r"/>
+												<expression tag="Symbolic.Symbol" Name="k"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="105"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="r"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="17"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="g"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.CreateTable">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="size"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="TupperImage"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="size"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="size"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="TupperImage"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAGoAAAARCAYAAAA1xDmVAAAAAXNSR0IArs4c6QAAAchJREFUWEftV1GuwzAI6+5/6E2dREU9DE7D1Ozp9WealAA2GMhjq7/ntm2P+ph8osOe2dh/92+Pj9nt9Lf78r4jXiJ/I/F6H0bqU0lAB1CfxQpoFChWgY+pstcR/6y/kfs0Ub4qI1l0AD0qw6kzs8uqMlIPJir77+97rFawxkV0DlVb+Y2KE5OgcnAoSr0g9zdyMKqsqJ1UxRGpqLKdqboiPfPH7ipdROX9TybqCnE4Q0YUpaiEteelEqUGmSnCiMsUzUBX6hzpEsqsYTiUsYJj6ODO+q4Z8csFI3gEWLYlZYCq1qaAjubiaOyZH6UwVMUwVZ4SVYHGthCtwlgJ5tgXAAZ9FQQj22JgbasjSVh4iC/Di/5HEv2eURHATFnZDFCGLla69+9J9puY8ozoSsSddlgx03dU1ou7E3WlvdxJ5rd8RwoLZxRWLUsIUw0O/CtKRUVFavsWUXfbzTrLSVFKz5wBQ2UdPIKz+TUTw4p3lVm9xDsqa7MrEtsdkyKQY5nIhnVndSuzD1fVbmJWsqeo6c1H9o7C7awD4H+idBZPXClrb6ei8B3C/Hf71OlZ4+THPFcT5R9ys1D81oh2cVOc9fWr9z84egEgmBQQabAhwgAAAABJRU5ErkJggg=="/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAANQAAAAiCAYAAAAnFfccAAAAAXNSR0IArs4c6QAAA7RJREFUeF7tm+uS2zAIhbPv/9DtNKmnjcb4O4BwFJv+a4W4HDiAvNufR/7Pr78qfvKqSjSs4t/ox/b3LegNP6+/XvkSkB+Ph+WHFbdaL2p8VfhueJEfz3M1qKMkkKGqBKp6V/GvKuGrxmcVotdfVb4K3ybUwLRsh1QBJYJ/uoOTf9nzT8dXZV/N/20nlNrxxgKL3qOEZAmf9StLpFXiW4ZQ1i6vAr1KQlUCRP1V73nfRkSo6Ln1NrPyOq7/YxyqPnoLRuOh54lKKGoAVPeHdv442YQiCF/nTagXDiNhRvRuT6gqxmplWieV7VjUSb2eq/qyflt+kf3qc/UjBfkRjU/dYCivOKGaUPsTKJrYbMKbUPuT0Lvy0UZB52oe3/jzv5OzDRDTq8+zhbkKocgPNW9ePWe9oaihz4qvJ1SScU2odwCbUMd4qOV2+ZWPCsXbmaJE3OzQakKJUzsydXayU32u4kjxqnq88ah2rbzu1t0VVr4m1Pubw1tYVfIqEdTCtj7rRxuYatdNKNqVqcOTY1UJU78akf9qp1eJm8XDe98rX50Pwtvrr0pMNS6yr9ozJ1QT6pUKL9Aq8GqiVWJTwXrtVcurjcjyYzbO3jyrjfup1zMu1cBGgtIP+kaH6S1CDSAKGBVWlV6LIOO/qz9QpTjOPrcIFY2P8kDxee+76r4JRfD/O6dE0LlqSW0YVkGqds6Sux2h1ARa5KOR7j1XR6xXjuStAqMJO4tIZxV429EQoLyG31AhxTu/82UVpmuk7qypRFh6c1gNZVw9VT+1dLXU6giE6r5y5VMJpBZqVs6aUGpivcRV9bbcWggQkQ43nSaUnswmlI7VN0umCWV9lbNAocLyno+MH1cta2WzHuUEiOofrXzqqvjNxXVH39W8ym8omlpqQaorXxPqjmW7bsxpQtGjnUKniUD3Z5+TP9QQDndk58/uZsfW+uYjQPXi2tT2ppHXgFd+PiTvGsmfJlR1Br5LP9VLmFCzFK8CZ/aroEq8VeJtP2IIeOv+sK6u8NvmagfxrnJNqFiBftut6YTyKsy+uc4CPDqh1HtnxdF2ahCI1j1OqKhiq+PXhO/XqhJDnURZnPwR9I1KBKL5lAk1Ok+fz5tQlelu3asi0IQaMkMTSZ1sqya8/apFAAmVNR8dnVm76n0iUFSPeq/lroEA1fnzXF3rjiAhQ5+Gswn16Qxcwz7V+XRCRd9g1XBbhCJ/t3skV+1/618DAamOZk6oVQtPAuLg/1mtGtcaZXYfL6Q6+g2s6ygfroPY0QAAAABJRU5ErkJggg=="/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Graphics.RasterGraphics" Value="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"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Graphics.RasterGraphics" Value="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"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAhIAAABVCAYAAAAc/w1CAAAAAXNSR0IArs4c6QAADftJREFUeF7tndt22LgRBL3//9HZI+06ybEou8huAiBYeU3PrWYAjCnZ+9eP9f/3n4MU/1o/7W0ztB/91lKmR7qjbI7OB43Rrm5W3HYdK/lLmFJbqmtzGRGXxnjieTvqB62X9vKLvyc8yG0IFJa6YwL2oz8ZlOkTLzZaW5/qvh4TptSW6tqUR8SlMZ543lwkvplI2vT2QOvPRWLUDNAZf+LFRmsbxXqHOAlTakt1bZ4j4tIYTzxvLhIuEu0zeYs/eghvCb6pU8r0iRcbrW3T1t5SVsKU2lJdu8ARcWmMJ543FwkXifaZvMUfPYS3BN/UKWX6xIuN1rZpa28pK2FKbamuXeCIuDTGE8+bi4SLRPtM3uIvOYSzfieH5nwLMOA0yY/aUh1I95RkVtxTST5MnDCltlTXRjcibhKD2lJdm5+LhIvEiJmKY9ADQnVxQsDBSrm0DzqtjeoAzlOSWXFPJfkwccKU2lJdG92IuEkMakt1bX7t+wX5m/UnxDPwVmrImbx31dJ+UN0ITivlgg7mjx8/6NmktVFdux+z4rbrWMlfwpTaUl2by4i4SQxqS3Vtfu37Bfmjl9WIYr+LsVJDZnJYJTbtB9WNqGulXNDBdJEYMRaPjZHMM7WlujbEEXGTGNSW6tr82vcL8uciMaKNe8WgB4TqRtBZKRd0MF0kRozFY2Mk80xtqa4NcUTcJAa1pbo2v/b9gvx9LBJHBR8Zz1o6VmrIiKavFCNhn9i2GYzIJTlHSX7U9ok6eg9R9nSu6F2XxKX/+miSM+05eiy+WW5pjLaOcklqW8k2qff2Olwk2u3Zyx89/O1BbVNM6qC50EeFPiDJY5bEoKxG6Fwk6PQd/04N7VFyfmmMto6T+aqkuSRc2rZJve1cvvBzkWi3Zy9/sw5cm2JSB83FRSJ7zNr8aN/oskIvYxqXLnttf7ssqJQL7VubSztuUm87FxeJdjc295c8wIltG+uIXNoPYftiowxW0tFHnrKnc5WwT2IkddDFJKktidGeK8r59kf0ht9nSmqjtrQfiJ9fJCj2d+qqw3biwLVpJ3XQXOgjkFzG6FAv9rNsyr7Nj/aNLiuUPY1L56Dtz0Xi+PcC21zovNC4dA6ojp5LVMd3RSRBaCFUt1IuNOdddAn7EbY0BtXN6hvNj+rQ4T+x2M2KS/tB81M3798nabOns5GcBZozzaXtj8ZNGCBbF4mkFfvbJoM/wpbGoLpZHaX5UR06/C4Sn5jol4Gddcm80Jls65KzOisXGjepjdomuXyxdZGg2N+pqw7bDQ8XzY/qZnWZ5kd1ycOwki3tB+Wizi8SHzPVnoP2nFJ/iY4yQPeBi0TSiv1tq8PmIvHtwFDOVIcO/w39aMelJ4xyUeci4SLxz6miZwGdaRcJelW9U1cdthseLpof1c3qMs2P6tDhv6Ef7bi0H5SLOheJM48onZf2nFJ/iS6pzR9tJORfaFsdthseLpof1c1qMc2P6pIHncZo6xL27VwSf7QO+jsXbX/0bwlQBsmstW0pK1ob1bXjUn+JLqnNRSIh/0Lb6rC5SHw7QZQz1SUXNI3R1iXHq51L4o/W4SJxTIqyp5xHnAWay4jaRuTiIkEpq/skkAz+CFsag+pmtZ3mR3UjLk+aC9Ul7GmMETpah4uEi8QHAfqFiM4V1dGzgO4Sf0eCYn+nrjpsJw4NjdvWzeryiDraMdr+EvbtXBJ/tA4XCRcJFwl6Wgo6eqgLoXTxC4GE/QhbGoPqZg0AzY/q0J8iFvs3FBL2lMsIHa3DRcJFwkWCnpaCjh7+QqgtXVB+VEchreQvyeXI9ojBrE+Us/qxelya38669tzT5Sc5CyNyntXzpDb6h4PkbqL5fdH5o41ZIzUu7uXhOPGjCDrkT7xgXCSyWaXzl0XRun0Gad+ojnYo8ZfY0vwSXTu/9t1E83ORSKbgobaXh8NF4rPj7cM6a4zoHLTzmxW3XccT/SXsqS3VUX6Jv8SW5pfo2vm17yaan4tEMgUPtb08HC4SLhKFmafzVwili18IJOypLdXR5iT+EluaX6Jr5+cicaIbbfgnQm8hpfyojkJZyV+SS/uwUn5tXcIgyWVW3CTnXWwT9tSW6ijTxF9iS/NLdO382ncTze/wiwRN5gjgiJ950+KSBu9sS/lRHWWV+Etsj/Kj/qguiUH5tXVJbUkus+ImOe9sS/tBdW1WSdzEdqU62vcL5XJZ97EIuEi0R2gtf5eHY+KPNmjOlDT1R3Xtg07rSHRJbU+Mm+S8sy2dA6prs0riJrYr1dG+XyiXyzoXifb4rOfv8nC4SHw2k351o5xnTcis/GbFncV59bi0H1TXrjeJm9iuVIeLxIlu0KZT3YnQr5JSflRH4SX+EtvkECZxE1vKNNHNym9W3ITVzra0H1TXZpXETWxXqiO5wxJbyu+Lzi8S7fFZz9/l4Tjxp/FkeNu2iT/KKokxa0KS2pKcZ8VNct7ZlvaD6tqskriJ7Up1tO8XyuWyjn62TSHTBBOARzGO/M3619loLpQ1rZfGTXqU9I3Wm+h2ro1yGTEvNJdR9w7N5006ehZWnxdax6zezsoviUttD79IjABNE0weJDr4LhLHP/dPepT0bfX5W702yo+ej2TxpLm4SFBSfR0956vPC62jT5B5nJVfEpfaukiE/6EiNkL8b8IkF+qIg97OL/FH2Y94+OmBS3Ju246YF5rzrDmg+e2so7O7+rzQOmb1clZ+SVxq6yLhIvF5rmZ9lZn1gNADQi+dtj8aN9Gt/jAktWnLCdDZXX1eaB2cTFc5K78kLrV1kZj4iNJPxnScRxz05OGnQ0nrTXTtXNr+ktqo7Yh5obkkc0VjqDsmQGd39Xmhdcyag1n5JXGp7eEiMWJgkovjcnHh0tCOm3xyp7nMitGOmxz+9teWhH1Sh7YSkIAEfkegfTdRfy4S3/xLnsnjQ+G3H1u6nNH8qI4ebeovWWTpVx6aS9IjykWdBCQggQaB5F5L7joXCReJz/lJFid6AOiQu0hQouokIAEJ/I8AvWMpM+rPRcJFwkXi31PV/qJDD6s6CUhAAg0C9OGnsag/FwkXCRcJFwl6r6iTgAQWJkAffloC9Xe4SNAgiY4mWP25TfgJn+ZMdSNqmxUjiZvMFbWlPaI6GledBCQggQaBEXcTjeEi4ReJ5b5INA7Zn3xcPiDhf2/kT3n5/0tAAhIgBOgdRnx9p6ExXCRcJFwk/j1FI37hNDnU2kpAAhL4SYA+8gkxGsNFwkXCRcJFIrlrtJWABCYQoI98khqN4SLhIuEi4SKR3DXaSkACEwjQRz5JjcaI/tYG/etytJDLST/0lyiPuCRMk39/YcRn/RH9pUyTXOg801wSf9pKQALvJJDc9/RuunxPfjwoNMHk0Tsq5HLSLhKfOGnf2kNEj/GI/rZrS5jSXCg/dRKQgAR+EhhxN12+s10k/mlT+0/otOnJckZj0AeODhE92tRfomvXljCluVB+6iQgAQm4SPxhBpIHJHn423Hp15b2Q5M8egk/erTbnGm9SW00BmWQLIo0hjoJSGB/AiPupst3tl8k/CLxu403eQgvD+WJL0R0OUtySa6ohF8SV1sJSGAvAssvEhQ3vYypP6qbFZfmt4uuzZn6ozr65Sf5IrFLL61DAhJ4BoHk/mtXSHP5ojvzJyYaZFZx7bhv89fuL/VHdS4Sb5tI65XA/gSS+69Nh+biItEmv5E/OkS0ZOqP6lwkKHl1EpDAUwgk91+7RpqLi0Sb/Eb+6BDRkqk/qnORoOTVSUACTyGQ3H/tGmkuLhJt8hv5o0NES6b+qM5FgpJXJwEJPIVAcv+1a6S54EWCOmwXkjwWI3J5W4xkDqgt1SWzkcR4W8+tVwISGEdg1t2UxHWRGDcfW0SqDtuJv9ZJfwmY5kd1WzTNIiQggccQmHU3JXFdJB4zXmskWh02F4k1mmoWEpDAMgSSOzYpIonrIpGQf6FtddhcJF44QZYsAQn8jkByxyZkk7guEgn5F9pWh81F4oUTZMkSkMArFonksRgxIqvnN4LBrBgJe2rb1h2xojFmcTauBCSwP4GV7qEkl8MvEonDEa1fPb8RDGbFSNhT27bORWLWtBhXAhJY8etD+050kXDOTxGgj3wyqDQG1SW5nIKjWAISkMAJAskddiIMkia5uEggxIp+EqgOW/g7EiNysfMSkIAE7iKQ3GHtnJJcXCTa3djcX3XYXCQ2nxbLk4AE/NHGhRmg/3DQBdf/NUkesySutj9+JOypbVvnjzacXAlIQAK/J0DvXXSffiwCRw5pE1wkKKln6qrD5heJZw6BWUtAAtsRqN7tLhLbzUe1oOqwuUhUe6MzCUhAAlcJVO92F4mrbXiHXXXYXCTeMTRWKQEJLE+gere7SCzf76kJVofNRWJqLw0uAQlI4CeB6t0+4ncc0tYlBaextf9KgPaD6kYwXimXEfUaQwISkEBjaTiiePjXP1fH7SOwVodoP6huRHUr5TKiXmNIQAIScJH4vxnwEVjrQNB+UN2I6lbKZUS9xpCABCTgIuEisewpoI8y1Y0odKVcRtRrDAlIQAIuEi4Sy54C+ihT3YhCV8plRL3GkIAEJOAi8YdFgo7IE36ZlNayio4+yiP+obMRMVbhbh4SkIAErhC4/c5+wkPrY3FldO6zuX0ov/lrokcVORv39VnPEpDAHgRuv7NdJPYYlJFV3D6ULhIj22ksCUhgcwK339kuEptP0A3l3T6ULhI3dE2XEpDAWwncfme7SLx1tK7XfftQukhcb46WEpCABH4hcPud/TcmK2RM/5basgAAAABJRU5ErkJggg=="/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Epilogue"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The value of k is an encoding of the bitmap of the image, therefore  any 17-width bitmap can be produced, using its associated encoded value as k."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Arbitrary precision arithmetic examples" Description="arbitrary precision arithmetic"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Graphics_examples" Description="graphics"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="References"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Wikipedia"/>
+					<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Tupper%27s_self-referential_formula" Description="Tupper's self-referential formula"/>
+				</expression>
+				<expression tag="Internet.UniformResourceLocator" Value="http://www.dgp.toronto.edu/~mooncake/papers/SIGGRAPH2001_Tupper.pdf" Description="Tupper, Jeff. &quot;Reliable Two-Dimensional Graphing Methods for Mathematical Formulae with Two Free Variables&quot;"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Rule"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1688447040000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
