@@ -1,0 +1,423 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.relation,org.formulae.programming,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Decorate-sort-undecorate idiom"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Introduction"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Suppose you have to sort a list of strings based on a property of each, called &quot;the key&quot;, i.e. their lenghts. The most popular solution would require the usage of a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Sort_using_a_custom_comparator" Description="sort algorithm with a custom comparator."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Now suppose that key computation is an expensive operation, for example, it might involve intensive reading of files, databases, or exchanging information over a network. In such a case, using a sorting algorithm with a custom comparator is not optimal, because the key is computed multiple times for each element in the array, once each time the element needs to be compared to another (and also requires the calculation of the key for that other)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="The decorate-sort-undecorate idiom"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="One solution of the problem is called the &quot;decorate-sort-undecorate&quot; idiom, pattern or technique. It was originated and named by the Lisp community."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Suppose we want to sort the following list of words according to their lengths (the length was chosen for illustrative purposes, it is not precisely an &quot;expensive&quot; operation)."/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="Rosetta"/>
+				<expression tag="String.String" Value="Code"/>
+				<expression tag="String.String" Value="is"/>
+				<expression tag="String.String" Value="a"/>
+				<expression tag="String.String" Value="programming"/>
+				<expression tag="String.String" Value="chrestomathy"/>
+				<expression tag="String.String" Value="site"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="According to the decorate-sort-decorate idiom, we have to &quot;decorate&quot; each element with its key, so each element of the original list becomes a pair. Notice that the key is calculated once (and only once) for each element in the list:"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.String" Value="Rosetta"/>
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="Code"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="is"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="a"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="programming"/>
+					<expression tag="Math.Number" Value="11"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="chrestomathy"/>
+					<expression tag="Math.Number" Value="12"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="site"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The list is then sorted according to the second element of each pair (the key), perhaps using a custom comparator:"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.String" Value="a"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="is"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="site"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="Code"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="Rosetta"/>
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="programming"/>
+					<expression tag="Math.Number" Value="11"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="chrestomathy"/>
+					<expression tag="Math.Number" Value="12"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="And finally, the list must be undecorated, we have to remove the second element of each pair (the key):"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="a"/>
+				<expression tag="String.String" Value="is"/>
+				<expression tag="String.String" Value="site"/>
+				<expression tag="String.String" Value="Code"/>
+				<expression tag="String.String" Value="Rosetta"/>
+				<expression tag="String.String" Value="programming"/>
+				<expression tag="String.String" Value="chrestomathy"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="So, the decoration acts as a form of"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Memoization" Description="memoization."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="The Schwartzian transform"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Randal L. Schwartz wrote an implementation of the decorate-order-undecorate language in Perl in 1994, which gained much popularity in the Perl community. It was named &quot;The Schwartzian transform&quot;. Today the terms decorate-order-undecorate and the Schwartzian transform are used interchangeably, even outside the Perl community."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The Wikipedia page states that a solution can be called a &quot;Schwartzian transform&quot; only if it does not use named temporary lists or arrays. The Lisp solution and even the solution shown by Schwartz actually use intermediate lists, but these lists do not have explicit names, instead they use a functional composition of map-sort-map operations."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following is a typical sort using a custom comparator:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="words"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="Rosetta"/>
+				<expression tag="String.String" Value="Code"/>
+				<expression tag="String.String" Value="is"/>
+				<expression tag="String.String" Value="a"/>
+				<expression tag="String.String" Value="programming"/>
+				<expression tag="String.String" Value="chrestomathy"/>
+				<expression tag="String.String" Value="site"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.Sort">
+			<expression tag="Symbolic.Symbol" Name="words"/>
+			<expression tag="Symbolic.Lambda">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+				<expression tag="Relation.Compare">
+					<expression tag="String.Length">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+					</expression>
+					<expression tag="String.Length">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="String.String" Value="a"/>
+			<expression tag="String.String" Value="is"/>
+			<expression tag="String.String" Value="site"/>
+			<expression tag="String.String" Value="Code"/>
+			<expression tag="String.String" Value="Rosetta"/>
+			<expression tag="String.String" Value="programming"/>
+			<expression tag="String.String" Value="chrestomathy"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following is a solution using a decorate-sort-undecorate idiom:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Decorate-sort-undecorate sorting"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="array"/>
+					<expression tag="Symbolic.Symbol" Name="key"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="decorated list"/>
+						<expression tag="List.CreateList">
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="e"/>
+								<expression tag="Symbolic.LambdaApplication">
+									<expression tag="Symbolic.Symbol" Name="key"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="e"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="e"/>
+							<expression tag="Symbolic.Symbol" Name="array"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="sorted"/>
+						<expression tag="List.Sort">
+							<expression tag="Symbolic.Symbol" Name="decorated list"/>
+							<expression tag="Symbolic.Lambda">
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Relation.Compare">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="undecorated list"/>
+						<expression tag="List.CreateList">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="pair"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="pair"/>
+							<expression tag="Symbolic.Symbol" Name="sorted"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="undecorated list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Decorate-sort-undecorate sorting"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="words"/>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+					<expression tag="String.Length">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="String.String" Value="a"/>
+			<expression tag="String.String" Value="is"/>
+			<expression tag="String.String" Value="site"/>
+			<expression tag="String.String" Value="Code"/>
+			<expression tag="String.String" Value="Rosetta"/>
+			<expression tag="String.String" Value="programming"/>
+			<expression tag="String.String" Value="chrestomathy"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following is a solution using a &quot;Schwartzian transform&quot; idiom:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Schwartzian sorting"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="array"/>
+					<expression tag="Symbolic.Symbol" Name="key"/>
+				</expression>
+			</expression>
+			<expression tag="List.CreateList">
+				<expression tag="Expression.Child">
+					<expression tag="Symbolic.Symbol" Name="pair"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="pair"/>
+				<expression tag="List.Sort">
+					<expression tag="List.CreateList">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="e"/>
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="key"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="e"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="e"/>
+						<expression tag="Symbolic.Symbol" Name="array"/>
+					</expression>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+						<expression tag="Relation.Compare">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Schwartzian sorting"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="words"/>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+					<expression tag="String.Length">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="String.String" Value="a"/>
+			<expression tag="String.String" Value="is"/>
+			<expression tag="String.String" Value="site"/>
+			<expression tag="String.String" Value="Code"/>
+			<expression tag="String.String" Value="Rosetta"/>
+			<expression tag="String.String" Value="programming"/>
+			<expression tag="String.String" Value="chrestomathy"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Schwartzian sorting"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="words"/>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="String.Length">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="String.String" Value="chrestomathy"/>
+			<expression tag="String.String" Value="programming"/>
+			<expression tag="String.String" Value="Rosetta"/>
+			<expression tag="String.String" Value="site"/>
+			<expression tag="String.String" Value="Code"/>
+			<expression tag="String.String" Value="is"/>
+			<expression tag="String.String" Value="a"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The Wikipedia article"/>
+					<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Schwartzian_transform" Description="Schwartzian transform"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1690422840000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

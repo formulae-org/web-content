@@ -169,78 +169,6 @@
 			<expression tag="String.Text" Value="The following function takes as many terms as necessary to provide a result which is exact wothin a given value."/>
 		</expression>
 	</expression>
-	<expression tag="Formulae.Script.Row" type="2">
-		<expression tag="Symbolic.Assignment">
-			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="ECalculation"/>
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="ε"/>
-				</expression>
-			</expression>
-			<expression tag="Programming.Block" Description="block" Expanded="True">
-				<expression tag="Symbolic.Local">
-					<expression tag="Symbolic.Assignment">
-						<expression tag="List.List">
-							<expression tag="Symbolic.Symbol" Name="fact"/>
-							<expression tag="Symbolic.Symbol" Name="e"/>
-							<expression tag="Symbolic.Symbol" Name="n"/>
-							<expression tag="Symbolic.Symbol" Name="e0"/>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="Math.Number" Value="1"/>
-							<expression tag="Math.Number" Value="2"/>
-							<expression tag="Math.Number" Value="2"/>
-							<expression tag="Math.Number" Value="0"/>
-						</expression>
-					</expression>
-				</expression>
-				<expression tag="Programming.While">
-					<expression tag="Relation.GreaterOrEquals">
-						<expression tag="Math.Arithmetic.AbsoluteValue">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="e"/>
-								<expression tag="Math.Arithmetic.Negative">
-									<expression tag="Symbolic.Symbol" Name="e0"/>
-								</expression>
-							</expression>
-						</expression>
-						<expression tag="Symbolic.Symbol" Name="ε"/>
-					</expression>
-					<expression tag="Programming.Block" Description="block" Expanded="True">
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="e0"/>
-							<expression tag="Symbolic.Symbol" Name="e"/>
-						</expression>
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="fact"/>
-							<expression tag="Math.Arithmetic.Multiplication">
-								<expression tag="Symbolic.Symbol" Name="n"/>
-								<expression tag="Symbolic.Symbol" Name="fact"/>
-							</expression>
-						</expression>
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="n"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="n"/>
-								<expression tag="Math.Number" Value="1"/>
-							</expression>
-						</expression>
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="e"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="e"/>
-								<expression tag="Math.Arithmetic.Division">
-									<expression tag="Math.Number" Value="1"/>
-									<expression tag="Symbolic.Symbol" Name="fact"/>
-								</expression>
-							</expression>
-						</expression>
-					</expression>
-				</expression>
-				<expression tag="Symbolic.Symbol" Name="e"/>
-			</expression>
-		</expression>
-	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
 			<expression tag="String.Text" Value="Let us calculate the value e "/>
@@ -248,6 +176,78 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="ECalculation"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="ε"/>
+						</expression>
+					</expression>
+					<expression tag="Programming.Block" Description="block" Expanded="True">
+						<expression tag="Symbolic.Local">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="fact"/>
+									<expression tag="Symbolic.Symbol" Name="e"/>
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Symbolic.Symbol" Name="e0"/>
+								</expression>
+								<expression tag="List.List">
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Math.Number" Value="2"/>
+									<expression tag="Math.Number" Value="2"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.While">
+							<expression tag="Relation.GreaterOrEquals">
+								<expression tag="Math.Arithmetic.AbsoluteValue">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="e"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Symbolic.Symbol" Name="e0"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="ε"/>
+							</expression>
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="e0"/>
+									<expression tag="Symbolic.Symbol" Name="e"/>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="fact"/>
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Symbolic.Symbol" Name="fact"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="e"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="e"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Math.Number" Value="1"/>
+											<expression tag="Symbolic.Symbol" Name="fact"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="e"/>
+					</expression>
+				</expression>
+			</expression>
 			<expression tag="Symbolic.Local">
 				<expression tag="Symbolic.Assignment">
 					<expression tag="Symbolic.Symbol" Name="e"/>
@@ -265,33 +265,37 @@
 					</expression>
 				</expression>
 			</expression>
-			<expression tag="List.List">
+			<expression tag="List.Table">
 				<expression tag="List.List">
-					<expression tag="String.Text" Value="Analytic"/>
-					<expression tag="Symbolic.Symbol" Name="e"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="String.Text" Value="Numeric"/>
-					<expression tag="Math.Numeric">
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Analytic"/>
 						<expression tag="Symbolic.Symbol" Name="e"/>
-						<expression tag="Math.Number" Value="100"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Numeric"/>
+						<expression tag="Math.Numeric">
+							<expression tag="Symbolic.Symbol" Name="e"/>
+							<expression tag="Math.Number" Value="100"/>
+						</expression>
 					</expression>
 				</expression>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
+		<expression tag="List.Table">
 			<expression tag="List.List">
-				<expression tag="String.Text" Value="Analytic"/>
-				<expression tag="Math.Arithmetic.Division">
-					<expression tag="Math.Number" Value="32561133701373476427912330475884581607687531065877567210421813247164172713574202714721554378508046501"/>
-					<expression tag="Math.Number" Value="11978571669969891796072783721689098736458938142546425857555362864628009582789845319680000000000000000"/>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Analytic"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="32561133701373476427912330475884581607687531065877567210421813247164172713574202714721554378508046501"/>
+						<expression tag="Math.Number" Value="11978571669969891796072783721689098736458938142546425857555362864628009582789845319680000000000000000"/>
+					</expression>
 				</expression>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="String.Text" Value="Numeric"/>
-				<expression tag="Math.Number" Value="2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427"/>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Numeric"/>
+					<expression tag="Math.Number" Value="2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
