@@ -165,17 +165,24 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Task. Write a function that, given a sequence, returns its equilibrium indices (if any). Assume that the sequence may be very long."/>
 			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Solution"/>
 				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In Fōrmulæ, indices are 1-based so the output of this program will be shifted up by one compared to solutions in languages with 0-based arrays."/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="2">
 		<expression tag="Symbolic.Assignment">
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="EquilibriumIndices"/>
+				<expression tag="Symbolic.Symbol" Name="Equilibrium indices"/>
 				<expression tag="List.List">
 					<expression tag="Symbolic.Symbol" Name="list"/>
 				</expression>
@@ -195,38 +202,58 @@
 						</expression>
 					</expression>
 				</expression>
-				<expression tag="Programming.ForFromTo">
-					<expression tag="Programming.InvertedIf">
-						<expression tag="Expression.Append">
-							<expression tag="Symbolic.Symbol" Name="results"/>
-							<expression tag="Symbolic.Symbol" Name="i"/>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="left"/>
+							<expression tag="Symbolic.Symbol" Name="right"/>
 						</expression>
-						<expression tag="Relation.Equals">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
 							<expression tag="Math.Arithmetic.Summation">
 								<expression tag="Expression.Child">
 									<expression tag="Symbolic.Symbol" Name="list"/>
-									<expression tag="Symbolic.Symbol" Name="j"/>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="j"/>
-								<expression tag="Math.Number" Value="1"/>
-								<expression tag="Math.Arithmetic.Addition">
 									<expression tag="Symbolic.Symbol" Name="i"/>
-									<expression tag="Math.Arithmetic.Negative">
-										<expression tag="Math.Number" Value="1"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="right"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="right"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="list"/>
+										<expression tag="Symbolic.Symbol" Name="i"/>
 									</expression>
 								</expression>
 							</expression>
-							<expression tag="Math.Arithmetic.Summation">
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Expression.Append">
+								<expression tag="Symbolic.Symbol" Name="results"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+							<expression tag="Relation.Equals">
+								<expression tag="Symbolic.Symbol" Name="left"/>
+								<expression tag="Symbolic.Symbol" Name="right"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="left"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="left"/>
 								<expression tag="Expression.Child">
 									<expression tag="Symbolic.Symbol" Name="list"/>
-									<expression tag="Symbolic.Symbol" Name="j"/>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="j"/>
-								<expression tag="Math.Arithmetic.Addition">
 									<expression tag="Symbolic.Symbol" Name="i"/>
-									<expression tag="Math.Number" Value="1"/>
 								</expression>
-								<expression tag="Symbolic.Symbol" Name="n"/>
 							</expression>
 						</expression>
 					</expression>
@@ -239,20 +266,15 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Case 1."/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="In Fōrmulæ, indexes are 1-based so the output of this program will be shifted up by one compared to solutions in languages with 0-based arrays."/>
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test case 1"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.Function">
-			<expression tag="Symbolic.Symbol" Name="EquilibriumIndices"/>
+			<expression tag="Symbolic.Symbol" Name="Equilibrium indices"/>
 			<expression tag="List.List">
 				<expression tag="List.List">
 					<expression tag="Math.Arithmetic.Negative">
@@ -279,13 +301,13 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
 			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Case 2."/>
+				<expression tag="String.Text" Value="Test case 2"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.Function">
-			<expression tag="Symbolic.Symbol" Name="EquilibriumIndices"/>
+			<expression tag="Symbolic.Symbol" Name="Equilibrium indices"/>
 			<expression tag="List.List">
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="1"/>
@@ -317,6 +339,56 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test case 3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Equilibrium indices"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="9"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test case 4"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Equilibrium indices"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
@@ -335,7 +407,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1620789240000"/>
+				<expression tag="Time.Time" Value="1691376360000"/>
 			</expression>
 		</expression>
 	</expression>

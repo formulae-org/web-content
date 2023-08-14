@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.programming,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -84,69 +84,69 @@
 	<expression tag="Formulae.Script.Row" type="2">
 		<expression tag="Symbolic.Assignment">
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="Mean"/>
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="list"/>
-				</expression>
-			</expression>
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Arithmetic.Summation">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-					<expression tag="Symbolic.Symbol" Name="x"/>
-					<expression tag="Symbolic.Symbol" Name="list"/>
-				</expression>
-				<expression tag="Expression.Cardinality">
-					<expression tag="Symbolic.Symbol" Name="list"/>
-				</expression>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="2">
-		<expression tag="Symbolic.Assignment">
-			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="AverageSquareDiff"/>
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="a"/>
-					<expression tag="Symbolic.Symbol" Name="predictions"/>
-				</expression>
-			</expression>
-			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="Mean"/>
-				<expression tag="List.List">
-					<expression tag="List.CreateList">
-						<expression tag="Math.Arithmetic.Exponentiation">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="x"/>
-								<expression tag="Math.Arithmetic.Negative">
-									<expression tag="Symbolic.Symbol" Name="a"/>
-								</expression>
-							</expression>
-							<expression tag="Math.Number" Value="2"/>
-						</expression>
-						<expression tag="Symbolic.Symbol" Name="x"/>
-						<expression tag="Symbolic.Symbol" Name="predictions"/>
-					</expression>
-				</expression>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="2">
-		<expression tag="Symbolic.Assignment">
-			<expression tag="Symbolic.Function">
 				<expression tag="Symbolic.Symbol" Name="DiversityTheorem"/>
 				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="truth"/>
-					<expression tag="Symbolic.Symbol" Name="predictions"/>
+					<expression tag="Symbolic.Symbol" Name="true value"/>
+					<expression tag="Symbolic.Symbol" Name="estimates"/>
 				</expression>
 			</expression>
 			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="Mean"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="list"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Arithmetic.Summation">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="list"/>
+							</expression>
+							<expression tag="Expression.Cardinality">
+								<expression tag="Symbolic.Symbol" Name="list"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="AverageSquareDiff"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="list"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="Mean"/>
+							<expression tag="List.List">
+								<expression tag="List.CreateList">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Symbolic.Symbol" Name="a"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Symbolic.Symbol" Name="list"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
 				<expression tag="Symbolic.Local">
 					<expression tag="Symbolic.Assignment">
 						<expression tag="Symbolic.Symbol" Name="average"/>
 						<expression tag="Symbolic.Function">
 							<expression tag="Symbolic.Symbol" Name="Mean"/>
 							<expression tag="List.List">
-								<expression tag="Symbolic.Symbol" Name="predictions"/>
+								<expression tag="Symbolic.Symbol" Name="estimates"/>
 							</expression>
 						</expression>
 					</expression>
@@ -154,12 +154,20 @@
 				<expression tag="List.Table">
 					<expression tag="List.List">
 						<expression tag="List.List">
+							<expression tag="String.Text" Value="True value"/>
+							<expression tag="Symbolic.Symbol" Name="true value"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Estimates"/>
+							<expression tag="Symbolic.Symbol" Name="estimates"/>
+						</expression>
+						<expression tag="List.List">
 							<expression tag="String.Text" Value="Average error"/>
 							<expression tag="Symbolic.Function">
 								<expression tag="Symbolic.Symbol" Name="AverageSquareDiff"/>
 								<expression tag="List.List">
-									<expression tag="Symbolic.Symbol" Name="truth"/>
-									<expression tag="Symbolic.Symbol" Name="predictions"/>
+									<expression tag="Symbolic.Symbol" Name="true value"/>
+									<expression tag="Symbolic.Symbol" Name="estimates"/>
 								</expression>
 							</expression>
 						</expression>
@@ -167,7 +175,7 @@
 							<expression tag="String.Text" Value="Crowd error"/>
 							<expression tag="Math.Arithmetic.Exponentiation">
 								<expression tag="Math.Arithmetic.Addition">
-									<expression tag="Symbolic.Symbol" Name="truth"/>
+									<expression tag="Symbolic.Symbol" Name="true value"/>
 									<expression tag="Math.Arithmetic.Negative">
 										<expression tag="Symbolic.Symbol" Name="average"/>
 									</expression>
@@ -181,7 +189,7 @@
 								<expression tag="Symbolic.Symbol" Name="AverageSquareDiff"/>
 								<expression tag="List.List">
 									<expression tag="Symbolic.Symbol" Name="average"/>
-									<expression tag="Symbolic.Symbol" Name="predictions"/>
+									<expression tag="Symbolic.Symbol" Name="estimates"/>
 								</expression>
 							</expression>
 						</expression>
@@ -221,6 +229,18 @@
 		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
+					<expression tag="String.Text" Value="True value"/>
+					<expression tag="Math.Number" Value="49."/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Estimates"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="48."/>
+						<expression tag="Math.Number" Value="47."/>
+						<expression tag="Math.Number" Value="51."/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
 					<expression tag="String.Text" Value="Average error"/>
 					<expression tag="Math.Number" Value="3."/>
 				</expression>
@@ -230,7 +250,7 @@
 				</expression>
 				<expression tag="List.List">
 					<expression tag="String.Text" Value="Diversity"/>
-					<expression tag="Math.Number" Value="2.8888888888888888889"/>
+					<expression tag="Math.Number" Value="2.8888888888888888888"/>
 				</expression>
 			</expression>
 		</expression>
@@ -267,6 +287,19 @@
 		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
+					<expression tag="String.Text" Value="True value"/>
+					<expression tag="Math.Number" Value="49."/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Estimates"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="48."/>
+						<expression tag="Math.Number" Value="47."/>
+						<expression tag="Math.Number" Value="51."/>
+						<expression tag="Math.Number" Value="42."/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
 					<expression tag="String.Text" Value="Average error"/>
 					<expression tag="Math.Number" Value="14.5"/>
 				</expression>
@@ -300,7 +333,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1621573980000"/>
+				<expression tag="Time.Time" Value="1691282880000"/>
 			</expression>
 		</expression>
 	</expression>

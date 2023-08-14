@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -25,7 +25,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="In Fōrmulæ, a lambda application can specify less parameters of its definition. It such a case, a currying is applied, which returns a lambda expression defined with the remaining parameters."/>
+				<expression tag="String.Text" Value="In Fōrmulæ, a function is just a named lambda expression, and a function call is just a lambda application."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The following is a simple definition of a lambda expression:"/>
@@ -52,31 +52,34 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="when a lambda application is called with the same number of arguments, the result is the habitual:"/>
+			<expression tag="String.Text" Value="When a lambda application is called with the same number of arguments, the result is the habitual:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.LambdaApplication">
 			<expression tag="Symbolic.Symbol" Name="f"/>
 			<expression tag="List.List">
-				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Symbolic.Symbol" Name="a"/>
 				<expression tag="Math.Number" Value="3"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="11"/>
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="a"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="However, if a less number of parameters is applied, currying is performed. Nothe that the result is another lambda expression."/>
+			<expression tag="String.Text" Value="However, if a less number of parameters is applied, currying is performed. Notice that the result is another lambda expression."/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.LambdaApplication">
 			<expression tag="Symbolic.Symbol" Name="f"/>
 			<expression tag="List.List">
-				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Symbolic.Symbol" Name="a"/>
 			</expression>
 		</expression>
 	</expression>
@@ -86,10 +89,107 @@
 				<expression tag="Symbolic.Symbol" Name="y"/>
 			</expression>
 			<expression tag="Math.Arithmetic.Addition">
-				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Symbolic.Symbol" Name="a"/>
 				<expression tag="Math.Arithmetic.Exponentiation">
 					<expression tag="Symbolic.Symbol" Name="y"/>
 					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Because the result is a lambda expression, it can be used in a lambda application, so we must get the same result:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.LambdaApplication">
+			<expression tag="Symbolic.LambdaApplication">
+				<expression tag="Symbolic.Symbol" Name="f"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="a"/>
+			<expression tag="Math.Number" Value="9"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="String.Text" Value="Using functions"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Normal"/>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="f"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="With currying"/>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+								</expression>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Normal"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Math.Number" Value="9"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="With currying"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Math.Number" Value="9"/>
+					</expression>
 				</expression>
 			</expression>
 		</expression>
@@ -113,7 +213,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1621572060000"/>
+				<expression tag="Time.Time" Value="1691260200000"/>
 			</expression>
 		</expression>
 	</expression>

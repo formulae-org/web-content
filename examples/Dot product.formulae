@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.math.arithmetic,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.expression,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -112,11 +112,75 @@
 		<expression tag="Math.Number" Value="0"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The previous result is a consecuence of"/>
-			<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Empty_sum" Description="empty sum"/>
-			<expression tag="String.Text" Value="rules."/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The previous result is a consecuence of"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Empty_sum" Description="empty sum"/>
+				<expression tag="String.Text" Value="rules."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Programming"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A program can be created to calculate the dot product of two vectors:"/>
+			</expression>
 		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Dot product"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Summation">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="i"/>
+					</expression>
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="i"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="i"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Expression.Cardinality">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Dot product"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="3"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
@@ -137,7 +201,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1621574460000"/>
+				<expression tag="Time.Time" Value="1691286000000"/>
 			</expression>
 		</expression>
 	</expression>
