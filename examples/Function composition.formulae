@@ -59,7 +59,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The compose function returns a lambda expression, containing the actual composition of its arguments."/>
+			<expression tag="String.Text" Value="The compose function returns a lambda expression, containing the actual composition of its arguments, and hence it can be called applied with its argument(s):"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -118,7 +118,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Arguments of the fucntions can be the same symbol, they are not &quot;scrambled&quot;:"/>
+			<expression tag="String.Text" Value="Arguments of the functions to compose can be the same symbol, they are not &quot;scrambled&quot;:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -301,6 +301,129 @@
 				</expression>
 			</expression>
 			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Since the composition function returns a lambda expression, it is not required to be applied:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="square"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="half"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="compose"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="square"/>
+					<expression tag="Symbolic.Symbol" Name="half"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="compose"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="w"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Trigonometric.Sine">
+								<expression tag="Symbolic.Symbol" Name="w"/>
+							</expression>
+							<expression tag="Math.Trigonometric.Cosine">
+								<expression tag="Symbolic.Symbol" Name="w"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Symbolic.Symbol" Name="z"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="z"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Lambda">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Trigonometric.Sine">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Trigonometric.Cosine">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
