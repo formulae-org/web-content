@@ -92,7 +92,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The following function returns whether the fiven number si happy or not:"/>
+				<expression tag="String.Text" Value="The following function returns whether a given number is happy or not:"/>
 			</expression>
 		</expression>
 	</expression>
@@ -106,15 +106,15 @@
 			</expression>
 			<expression tag="Programming.Block" Description="block" Expanded="True">
 				<expression tag="Symbolic.Local">
-					<expression tag="List.List">
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="sequence"/>
-							<expression tag="List.List"/>
-						</expression>
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="x"/>
-							<expression tag="Symbolic.Symbol" Name="n"/>
-						</expression>
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="sequence"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
 					</expression>
 				</expression>
 				<expression tag="Programming.While">
@@ -123,17 +123,13 @@
 						<expression tag="Symbolic.Assignment">
 							<expression tag="Symbolic.Symbol" Name="x"/>
 							<expression tag="Math.Arithmetic.Summation">
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="List.CreateList">
-									<expression tag="Math.Arithmetic.Exponentiation">
-										<expression tag="Symbolic.Symbol" Name="a"/>
-										<expression tag="Math.Number" Value="2"/>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="a"/>
-									<expression tag="Math.Arithmetic.Digits">
-										<expression tag="Symbolic.Symbol" Name="x"/>
-									</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="d"/>
+								<expression tag="Math.Arithmetic.Digits">
+									<expression tag="Symbolic.Symbol" Name="x"/>
 								</expression>
 							</expression>
 						</expression>
@@ -166,74 +162,53 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The following function gives a list of the first n happy numbers:"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="2">
-		<expression tag="Symbolic.Assignment">
-			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="Happy list"/>
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="n"/>
-				</expression>
-			</expression>
-			<expression tag="Programming.Block" Description="block" Expanded="True">
-				<expression tag="Symbolic.Local">
-					<expression tag="List.List">
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="list"/>
-							<expression tag="List.List"/>
-						</expression>
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="x"/>
-							<expression tag="Math.Number" Value="1"/>
-						</expression>
-					</expression>
-				</expression>
-				<expression tag="Programming.Until">
-					<expression tag="Programming.Block" Description="block" Expanded="True">
-						<expression tag="Programming.InvertedIf">
-							<expression tag="Expression.Append">
-								<expression tag="Symbolic.Symbol" Name="list"/>
-								<expression tag="Symbolic.Symbol" Name="x"/>
-							</expression>
-							<expression tag="Symbolic.Function">
-								<expression tag="Symbolic.Symbol" Name="Is happy"/>
-								<expression tag="List.List">
-									<expression tag="Symbolic.Symbol" Name="x"/>
-								</expression>
-							</expression>
-						</expression>
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="x"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="x"/>
-								<expression tag="Math.Number" Value="1"/>
-							</expression>
-						</expression>
-					</expression>
-					<expression tag="Relation.Equals">
-						<expression tag="Expression.Cardinality">
-							<expression tag="Symbolic.Symbol" Name="list"/>
-						</expression>
-						<expression tag="Symbolic.Symbol" Name="n"/>
-					</expression>
-				</expression>
-				<expression tag="Symbolic.Symbol" Name="list"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
 			<expression tag="String.Text" Value="Rosetta code request the list of the first 8 happy numbers:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Symbolic.Function">
-			<expression tag="Symbolic.Symbol" Name="Happy list"/>
-			<expression tag="List.List">
-				<expression tag="Math.Number" Value="8"/>
+		<expression tag="Programming.Block" Description="block" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
+				</expression>
 			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Until">
+				<expression tag="Programming.Block" Description="block" Expanded="True">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+						</expression>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="Is happy"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Relation.Equals">
+					<expression tag="Expression.Cardinality">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+					</expression>
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="list"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
@@ -283,17 +258,13 @@
 						<expression tag="Symbolic.Assignment">
 							<expression tag="Symbolic.Symbol" Name="x"/>
 							<expression tag="Math.Arithmetic.Summation">
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="List.CreateList">
-									<expression tag="Math.Arithmetic.Exponentiation">
-										<expression tag="Symbolic.Symbol" Name="a"/>
-										<expression tag="Math.Number" Value="2"/>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="a"/>
-									<expression tag="Math.Arithmetic.Digits">
-										<expression tag="Symbolic.Symbol" Name="x"/>
-									</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="d"/>
+								<expression tag="Math.Arithmetic.Digits">
+									<expression tag="Symbolic.Symbol" Name="x"/>
 								</expression>
 							</expression>
 						</expression>

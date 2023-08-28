@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.relation,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.symbolic,org.formulae.relation,org.formulae.math.arithmetic,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -42,6 +42,83 @@
 					<expression tag="String.Text" Value="Solution"/>
 				</expression>
 			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Fōrmulæ has an intrinsic expression for"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Three-way_comparison" Description="three-way comparison"/>
+				<expression tag="String.Text" Value="that works for integers and other types (decimal and rational numbers, strings, time expressions, etc). It returns expressions that flag one of the three possible results."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+				<expression tag="Relation.Compare">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+			</expression>
+			<expression tag="List.CartesianExponentiation">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+					<expression tag="Relation.Compare">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="Relation.Comparison.Equals"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Relation.Comparison.Less"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="Relation.Comparison.Greater"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Relation.Comparison.Equals"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="However, a simple function can be written for the requirement:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="2">
@@ -74,16 +151,77 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Symbolic.Function">
-			<expression tag="Symbolic.Symbol" Name="Compare"/>
+		<expression tag="List.CreateTable">
 			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Compare"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+			</expression>
+			<expression tag="List.CartesianExponentiation">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
 				<expression tag="Math.Number" Value="2"/>
-				<expression tag="Math.Number" Value="5"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="Less"/>
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Compare"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="String.String" Value="Equals"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="String.String" Value="Less"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="String.String" Value="Greater"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="String.String" Value="Equals"/>
+				</expression>
+			</expression>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
@@ -101,7 +239,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1621125900000"/>
+				<expression tag="Time.Time" Value="1692998520000"/>
 			</expression>
 		</expression>
 	</expression>

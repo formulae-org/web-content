@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.math.arithmetic,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.programming,org.formulae.expression,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -45,7 +45,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Use case 1 (from Wikipedia)"/>
+					<expression tag="String.Text" Value="Test case 1"/>
 				</expression>
 			</expression>
 		</expression>
@@ -105,7 +105,7 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
 			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Use case 2 (from Rosetta code)"/>
+				<expression tag="String.Text" Value="Test case 2"/>
 			</expression>
 		</expression>
 	</expression>
@@ -277,6 +277,193 @@
 				<expression tag="Math.Number" Value="0"/>
 				<expression tag="Math.Number" Value="0"/>
 				<expression tag="Math.Number" Value="0"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="A function to calculate the Kronecker product can also be written:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Kronecker product"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="A"/>
+					<expression tag="Symbolic.Symbol" Name="B"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="rowsA"/>
+							<expression tag="Symbolic.Symbol" Name="colsA"/>
+							<expression tag="Symbolic.Symbol" Name="rowsB"/>
+							<expression tag="Symbolic.Symbol" Name="colsB"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Expression.Cardinality">
+								<expression tag="Symbolic.Symbol" Name="A"/>
+							</expression>
+							<expression tag="Expression.Cardinality">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="A"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Expression.Cardinality">
+								<expression tag="Symbolic.Symbol" Name="B"/>
+							</expression>
+							<expression tag="Expression.Cardinality">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="B"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="rA"/>
+						<expression tag="Symbolic.Symbol" Name="rB"/>
+						<expression tag="Symbolic.Symbol" Name="cA"/>
+						<expression tag="Symbolic.Symbol" Name="cB"/>
+					</expression>
+				</expression>
+				<expression tag="List.CreateList">
+					<expression tag="List.CreateList">
+						<expression tag="Programming.Block" Description="Description" Expanded="True">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="rA"/>
+									<expression tag="Symbolic.Symbol" Name="rB"/>
+								</expression>
+								<expression tag="Math.Arithmetic.DivMod">
+									<expression tag="Symbolic.Symbol" Name="r"/>
+									<expression tag="Symbolic.Symbol" Name="rowsB"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Assignment">
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="cA"/>
+									<expression tag="Symbolic.Symbol" Name="cB"/>
+								</expression>
+								<expression tag="Math.Arithmetic.DivMod">
+									<expression tag="Symbolic.Symbol" Name="c"/>
+									<expression tag="Symbolic.Symbol" Name="colsB"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="A"/>
+									<expression tag="List.List">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="rA"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="cA"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="B"/>
+									<expression tag="List.List">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="rB"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="cB"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="colsA"/>
+								<expression tag="Symbolic.Symbol" Name="colsB"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="r"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Symbolic.Symbol" Name="rowsA"/>
+							<expression tag="Symbolic.Symbol" Name="rowsB"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Kronecker product"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="6"/>
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="6"/>
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Number" Value="12"/>
+				<expression tag="Math.Number" Value="14"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="15"/>
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Number" Value="20"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="18"/>
+				<expression tag="Math.Number" Value="21"/>
+				<expression tag="Math.Number" Value="24"/>
+				<expression tag="Math.Number" Value="28"/>
 			</expression>
 		</expression>
 	</expression>

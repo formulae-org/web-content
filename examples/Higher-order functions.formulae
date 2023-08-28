@@ -106,6 +106,33 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="An anonymous function (a lambda expression) can be passed directly:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Do"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Lambda">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="10"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1000"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
 			<expression tag="String.Text" Value="For the next example, the function to be passed, when invoked, will perform several operation to the same two arguments. It will add them, substract them, multiply them, divide them and exponentiate them. Finally it will return a list with the results."/>
 		</expression>
 	</expression>
@@ -177,11 +204,11 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Test case 2 (from Wikipedia). Passiing a function as an argument to another function, and returning a function."/>
+					<expression tag="String.Text" Value="Test case 2 (from Wikipedia). Passing a function as an argument to another function, and returning a function."/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The following function is a higher-order function. It takes as its unique parameter the function f. When the function is invoked, it will apply twice the function f and will return it. In other words, it will return a new function, which is the composition of the function f with iself."/>
+				<expression tag="String.Text" Value="The following function is a higher-order function. It takes as its unique parameter the function f. When the function is invoked, it will apply twice the function f and will return it. In other words, it will return a new function, which is the composition of the function f with itself."/>
 			</expression>
 		</expression>
 	</expression>
@@ -253,6 +280,31 @@
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="7"/>
 				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="13"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Since the"/>
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Apply twice"/>
+			</expression>
+			<expression tag="String.Text" Value="returns a function, it can be immediately invoked:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Apply twice"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="Plus three"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="7"/>
 			</expression>
 		</expression>
 	</expression>
