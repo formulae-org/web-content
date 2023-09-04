@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -38,11 +38,42 @@
 			</expression>
 		</expression>
 	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Strip chars"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="string"/>
+					<expression tag="Symbolic.Symbol" Name="chars"/>
+				</expression>
+			</expression>
+			<expression tag="String.ReplaceAll">
+				<expression tag="Symbolic.Symbol" Name="string"/>
+				<expression tag="String.ToRegularExpression">
+					<expression tag="String.Concatenation">
+						<expression tag="String.String" Value="["/>
+						<expression tag="Symbolic.Symbol" Name="chars"/>
+						<expression tag="String.String" Value="]"/>
+					</expression>
+				</expression>
+				<expression tag="String.String" Value=""/>
+			</expression>
+		</expression>
+	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="String.ReplaceAll">
-			<expression tag="String.String" Value="She was a soul stripper. She took my heart!"/>
-			<expression tag="String.RegularExpression" Value="[aei]"/>
-			<expression tag="String.String" Value=""/>
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test case"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Strip chars"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="She was a soul stripper. She took my heart!"/>
+				<expression tag="String.String" Value="aei"/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
@@ -67,7 +98,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1621462980000"/>
+				<expression tag="Time.Time" Value="1693778640000"/>
 			</expression>
 		</expression>
 	</expression>

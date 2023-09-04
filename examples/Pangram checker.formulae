@@ -55,22 +55,26 @@
 				<expression tag="Symbolic.Local">
 					<expression tag="Symbolic.Assignment">
 						<expression tag="Symbolic.Symbol" Name="alphabet"/>
-						<expression tag="String.String" Value="abcdefghijklmnopqrstuvwxyz"/>
+						<expression tag="String.String" Value="etaonrishdlfcmugypwbvkjxzq"/>
 					</expression>
 				</expression>
 				<expression tag="Symbolic.Local">
 					<expression tag="Symbolic.Assignment">
-						<expression tag="List.List">
-							<expression tag="Symbolic.Symbol" Name="n"/>
-							<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="String.Length">
+							<expression tag="Symbolic.Symbol" Name="alphabet"/>
 						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Length">
-								<expression tag="Symbolic.Symbol" Name="alphabet"/>
-							</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="String.ReplaceAll">
 							<expression tag="String.Lowercase">
 								<expression tag="Symbolic.Symbol" Name="string"/>
 							</expression>
+							<expression tag="String.RegularExpression" Value="[^a-z]"/>
+							<expression tag="String.String" Value=""/>
 						</expression>
 					</expression>
 				</expression>

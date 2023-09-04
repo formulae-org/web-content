@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.symbolic,org.formulae.math.arithmetic,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -32,73 +32,34 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="List.Table">
 			<expression tag="List.CreateList">
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="r"/>
-					<expression tag="String.ToText">
-						<expression tag="String.Encode">
+				<expression tag="List.CreateList">
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Arithmetic.Addition">
 							<expression tag="Symbolic.Symbol" Name="r"/>
-						</expression>
-					</expression>
-					<expression tag="Math.Arithmetic.Addition">
-						<expression tag="Symbolic.Symbol" Name="r"/>
-						<expression tag="Math.Number" Value="16"/>
-					</expression>
-					<expression tag="String.ToText">
-						<expression tag="String.Encode">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="r"/>
+							<expression tag="Math.Arithmetic.Multiplication">
 								<expression tag="Math.Number" Value="16"/>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.ToText">
+									<expression tag="String.Encode">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="r"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="16"/>
+												<expression tag="Symbolic.Symbol" Name="c"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
 							</expression>
 						</expression>
 					</expression>
-					<expression tag="Math.Arithmetic.Addition">
-						<expression tag="Symbolic.Symbol" Name="r"/>
-						<expression tag="Math.Number" Value="32"/>
-					</expression>
-					<expression tag="String.ToText">
-						<expression tag="String.Encode">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="r"/>
-								<expression tag="Math.Number" Value="32"/>
-							</expression>
-						</expression>
-					</expression>
-					<expression tag="Math.Arithmetic.Addition">
-						<expression tag="Symbolic.Symbol" Name="r"/>
-						<expression tag="Math.Number" Value="48"/>
-					</expression>
-					<expression tag="String.ToText">
-						<expression tag="String.Encode">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="r"/>
-								<expression tag="Math.Number" Value="48"/>
-							</expression>
-						</expression>
-					</expression>
-					<expression tag="Math.Arithmetic.Addition">
-						<expression tag="Symbolic.Symbol" Name="r"/>
-						<expression tag="Math.Number" Value="64"/>
-					</expression>
-					<expression tag="String.ToText">
-						<expression tag="String.Encode">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="r"/>
-								<expression tag="Math.Number" Value="64"/>
-							</expression>
-						</expression>
-					</expression>
-					<expression tag="Math.Arithmetic.Addition">
-						<expression tag="Symbolic.Symbol" Name="r"/>
-						<expression tag="Math.Number" Value="80"/>
-					</expression>
-					<expression tag="String.ToText">
-						<expression tag="String.Encode">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="r"/>
-								<expression tag="Math.Number" Value="80"/>
-							</expression>
-						</expression>
-					</expression>
+					<expression tag="Symbolic.Symbol" Name="c"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="5"/>
 				</expression>
 				<expression tag="Symbolic.Symbol" Name="r"/>
 				<expression tag="Math.Number" Value="32"/>
@@ -110,228 +71,804 @@
 		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="32"/>
-					<expression tag="String.Text" Value=" "/>
-					<expression tag="Math.Number" Value="48"/>
-					<expression tag="String.Text" Value="0"/>
-					<expression tag="Math.Number" Value="64"/>
-					<expression tag="String.Text" Value="@"/>
-					<expression tag="Math.Number" Value="80"/>
-					<expression tag="String.Text" Value="P"/>
-					<expression tag="Math.Number" Value="96"/>
-					<expression tag="String.Text" Value="`"/>
-					<expression tag="Math.Number" Value="112"/>
-					<expression tag="String.Text" Value="p"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="32"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value=" "/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="48"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="0"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="64"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="@"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="80"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="P"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="96"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="`"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="112"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="p"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="33"/>
-					<expression tag="String.Text" Value="!"/>
-					<expression tag="Math.Number" Value="49"/>
-					<expression tag="String.Text" Value="1"/>
-					<expression tag="Math.Number" Value="65"/>
-					<expression tag="String.Text" Value="A"/>
-					<expression tag="Math.Number" Value="81"/>
-					<expression tag="String.Text" Value="Q"/>
-					<expression tag="Math.Number" Value="97"/>
-					<expression tag="String.Text" Value="a"/>
-					<expression tag="Math.Number" Value="113"/>
-					<expression tag="String.Text" Value="q"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="33"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="!"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="49"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="65"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="A"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="81"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Q"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="97"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="a"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="113"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="q"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="34"/>
-					<expression tag="String.Text" Value="&quot;"/>
-					<expression tag="Math.Number" Value="50"/>
-					<expression tag="String.Text" Value="2"/>
-					<expression tag="Math.Number" Value="66"/>
-					<expression tag="String.Text" Value="B"/>
-					<expression tag="Math.Number" Value="82"/>
-					<expression tag="String.Text" Value="R"/>
-					<expression tag="Math.Number" Value="98"/>
-					<expression tag="String.Text" Value="b"/>
-					<expression tag="Math.Number" Value="114"/>
-					<expression tag="String.Text" Value="r"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="34"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="&quot;"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="50"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="66"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="B"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="82"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="R"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="98"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="b"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="114"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="r"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="35"/>
-					<expression tag="String.Text" Value="#"/>
-					<expression tag="Math.Number" Value="51"/>
-					<expression tag="String.Text" Value="3"/>
-					<expression tag="Math.Number" Value="67"/>
-					<expression tag="String.Text" Value="C"/>
-					<expression tag="Math.Number" Value="83"/>
-					<expression tag="String.Text" Value="S"/>
-					<expression tag="Math.Number" Value="99"/>
-					<expression tag="String.Text" Value="c"/>
-					<expression tag="Math.Number" Value="115"/>
-					<expression tag="String.Text" Value="s"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="35"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="#"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="51"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="3"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="67"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="C"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="83"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="S"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="99"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="c"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="115"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="s"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="36"/>
-					<expression tag="String.Text" Value="$"/>
-					<expression tag="Math.Number" Value="52"/>
-					<expression tag="String.Text" Value="4"/>
-					<expression tag="Math.Number" Value="68"/>
-					<expression tag="String.Text" Value="D"/>
-					<expression tag="Math.Number" Value="84"/>
-					<expression tag="String.Text" Value="T"/>
-					<expression tag="Math.Number" Value="100"/>
-					<expression tag="String.Text" Value="d"/>
-					<expression tag="Math.Number" Value="116"/>
-					<expression tag="String.Text" Value="t"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="36"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="$"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="52"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="4"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="68"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="D"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="84"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="T"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="100"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="d"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="116"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="t"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="37"/>
-					<expression tag="String.Text" Value="%"/>
-					<expression tag="Math.Number" Value="53"/>
-					<expression tag="String.Text" Value="5"/>
-					<expression tag="Math.Number" Value="69"/>
-					<expression tag="String.Text" Value="E"/>
-					<expression tag="Math.Number" Value="85"/>
-					<expression tag="String.Text" Value="U"/>
-					<expression tag="Math.Number" Value="101"/>
-					<expression tag="String.Text" Value="e"/>
-					<expression tag="Math.Number" Value="117"/>
-					<expression tag="String.Text" Value="u"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="37"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="%"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="53"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="5"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="69"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="E"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="85"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="U"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="101"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="e"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="117"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="u"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="38"/>
-					<expression tag="String.Text" Value="&amp;"/>
-					<expression tag="Math.Number" Value="54"/>
-					<expression tag="String.Text" Value="6"/>
-					<expression tag="Math.Number" Value="70"/>
-					<expression tag="String.Text" Value="F"/>
-					<expression tag="Math.Number" Value="86"/>
-					<expression tag="String.Text" Value="V"/>
-					<expression tag="Math.Number" Value="102"/>
-					<expression tag="String.Text" Value="f"/>
-					<expression tag="Math.Number" Value="118"/>
-					<expression tag="String.Text" Value="v"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="38"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="&amp;"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="54"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="6"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="70"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="F"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="86"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="V"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="102"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="f"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="118"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="v"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="39"/>
-					<expression tag="String.Text" Value="'"/>
-					<expression tag="Math.Number" Value="55"/>
-					<expression tag="String.Text" Value="7"/>
-					<expression tag="Math.Number" Value="71"/>
-					<expression tag="String.Text" Value="G"/>
-					<expression tag="Math.Number" Value="87"/>
-					<expression tag="String.Text" Value="W"/>
-					<expression tag="Math.Number" Value="103"/>
-					<expression tag="String.Text" Value="g"/>
-					<expression tag="Math.Number" Value="119"/>
-					<expression tag="String.Text" Value="w"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="39"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="'"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="55"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="7"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="71"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="G"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="87"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="W"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="103"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="g"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="119"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="w"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="40"/>
-					<expression tag="String.Text" Value="("/>
-					<expression tag="Math.Number" Value="56"/>
-					<expression tag="String.Text" Value="8"/>
-					<expression tag="Math.Number" Value="72"/>
-					<expression tag="String.Text" Value="H"/>
-					<expression tag="Math.Number" Value="88"/>
-					<expression tag="String.Text" Value="X"/>
-					<expression tag="Math.Number" Value="104"/>
-					<expression tag="String.Text" Value="h"/>
-					<expression tag="Math.Number" Value="120"/>
-					<expression tag="String.Text" Value="x"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="40"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="("/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="56"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="8"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="72"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="H"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="88"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="X"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="104"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="h"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="120"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="x"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="41"/>
-					<expression tag="String.Text" Value=")"/>
-					<expression tag="Math.Number" Value="57"/>
-					<expression tag="String.Text" Value="9"/>
-					<expression tag="Math.Number" Value="73"/>
-					<expression tag="String.Text" Value="I"/>
-					<expression tag="Math.Number" Value="89"/>
-					<expression tag="String.Text" Value="Y"/>
-					<expression tag="Math.Number" Value="105"/>
-					<expression tag="String.Text" Value="i"/>
-					<expression tag="Math.Number" Value="121"/>
-					<expression tag="String.Text" Value="y"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="41"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value=")"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="57"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="9"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="73"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="I"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="89"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Y"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="105"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="i"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="121"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="y"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="42"/>
-					<expression tag="String.Text" Value="*"/>
-					<expression tag="Math.Number" Value="58"/>
-					<expression tag="String.Text" Value=":"/>
-					<expression tag="Math.Number" Value="74"/>
-					<expression tag="String.Text" Value="J"/>
-					<expression tag="Math.Number" Value="90"/>
-					<expression tag="String.Text" Value="Z"/>
-					<expression tag="Math.Number" Value="106"/>
-					<expression tag="String.Text" Value="j"/>
-					<expression tag="Math.Number" Value="122"/>
-					<expression tag="String.Text" Value="z"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="42"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="*"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="58"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value=":"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="74"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="J"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="90"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Z"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="106"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="j"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="122"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="z"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="43"/>
-					<expression tag="String.Text" Value="+"/>
-					<expression tag="Math.Number" Value="59"/>
-					<expression tag="String.Text" Value=";"/>
-					<expression tag="Math.Number" Value="75"/>
-					<expression tag="String.Text" Value="K"/>
-					<expression tag="Math.Number" Value="91"/>
-					<expression tag="String.Text" Value="["/>
-					<expression tag="Math.Number" Value="107"/>
-					<expression tag="String.Text" Value="k"/>
-					<expression tag="Math.Number" Value="123"/>
-					<expression tag="String.Text" Value="{"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="43"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="+"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="59"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value=";"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="75"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="K"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="91"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="["/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="107"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="k"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="123"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="{"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="44"/>
-					<expression tag="String.Text" Value=","/>
-					<expression tag="Math.Number" Value="60"/>
-					<expression tag="String.Text" Value="&lt;"/>
-					<expression tag="Math.Number" Value="76"/>
-					<expression tag="String.Text" Value="L"/>
-					<expression tag="Math.Number" Value="92"/>
-					<expression tag="String.Text" Value="\"/>
-					<expression tag="Math.Number" Value="108"/>
-					<expression tag="String.Text" Value="l"/>
-					<expression tag="Math.Number" Value="124"/>
-					<expression tag="String.Text" Value="|"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="44"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value=","/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="60"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="&lt;"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="76"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="L"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="92"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="\"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="108"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="l"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="124"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="|"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="45"/>
-					<expression tag="String.Text" Value="-"/>
-					<expression tag="Math.Number" Value="61"/>
-					<expression tag="String.Text" Value="="/>
-					<expression tag="Math.Number" Value="77"/>
-					<expression tag="String.Text" Value="M"/>
-					<expression tag="Math.Number" Value="93"/>
-					<expression tag="String.Text" Value="]"/>
-					<expression tag="Math.Number" Value="109"/>
-					<expression tag="String.Text" Value="m"/>
-					<expression tag="Math.Number" Value="125"/>
-					<expression tag="String.Text" Value="}"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="45"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="-"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="61"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="="/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="77"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="M"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="93"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="]"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="109"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="m"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="125"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="}"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="46"/>
-					<expression tag="String.Text" Value="."/>
-					<expression tag="Math.Number" Value="62"/>
-					<expression tag="String.Text" Value="&gt;"/>
-					<expression tag="Math.Number" Value="78"/>
-					<expression tag="String.Text" Value="N"/>
-					<expression tag="Math.Number" Value="94"/>
-					<expression tag="String.Text" Value="^"/>
-					<expression tag="Math.Number" Value="110"/>
-					<expression tag="String.Text" Value="n"/>
-					<expression tag="Math.Number" Value="126"/>
-					<expression tag="String.Text" Value="~"/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="46"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="."/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="62"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="&gt;"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="78"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="N"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="94"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="^"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="110"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="126"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="~"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="47"/>
-					<expression tag="String.Text" Value="/"/>
-					<expression tag="Math.Number" Value="63"/>
-					<expression tag="String.Text" Value="?"/>
-					<expression tag="Math.Number" Value="79"/>
-					<expression tag="String.Text" Value="O"/>
-					<expression tag="Math.Number" Value="95"/>
-					<expression tag="String.Text" Value="_"/>
-					<expression tag="Math.Number" Value="111"/>
-					<expression tag="String.Text" Value="o"/>
-					<expression tag="Math.Number" Value="127"/>
-					<expression tag="String.Text" Value=""/>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="47"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="/"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="63"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="?"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="79"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="O"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="95"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="_"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="111"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="o"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Math.Number" Value="127"/>
+						<expression tag="Visualization.Color" Red="0" Green="0" Blue="1" Alpha="1">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value=""/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 			</expression>
 		</expression>

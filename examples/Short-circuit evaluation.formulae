@@ -37,7 +37,7 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Programming.Block" Description="block" Expanded="True">
 			<expression tag="Symbolic.Local">
-				<expression tag="Symbolic.Symbol" Name="list"/>
+				<expression tag="Symbolic.Symbol" Name="trace"/>
 			</expression>
 			<expression tag="Symbolic.Local">
 				<expression tag="Symbolic.Assignment">
@@ -49,7 +49,7 @@
 					</expression>
 					<expression tag="Programming.Block" Description="block" Expanded="True">
 						<expression tag="Expression.Append">
-							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="trace"/>
 							<expression tag="String.String" Value="A was called"/>
 						</expression>
 						<expression tag="Symbolic.Symbol" Name="v"/>
@@ -66,87 +66,152 @@
 					</expression>
 					<expression tag="Programming.Block" Description="block" Expanded="True">
 						<expression tag="Expression.Append">
-							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="trace"/>
 							<expression tag="String.String" Value="B was called"/>
 						</expression>
 						<expression tag="Symbolic.Symbol" Name="v"/>
 					</expression>
 				</expression>
 			</expression>
-			<expression tag="List.CreateList">
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-					<expression tag="Symbolic.Symbol" Name="y"/>
-					<expression tag="List.List">
-						<expression tag="String.String" Value="Conjunction"/>
-						<expression tag="Programming.Block" Description="block" Expanded="True">
-							<expression tag="Symbolic.Assignment">
-								<expression tag="Symbolic.Symbol" Name="list"/>
-								<expression tag="List.List"/>
-							</expression>
-							<expression tag="Logic.Conjunction">
-								<expression tag="Symbolic.Function">
-									<expression tag="Symbolic.Symbol" Name="a"/>
-									<expression tag="List.List">
-										<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="data"/>
+					<expression tag="List.CreateList">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Symbolic.Symbol" Name="j"/>
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="trace"/>
+									<expression tag="List.List"/>
+								</expression>
+								<expression tag="Logic.Conjunction">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="j"/>
+										</expression>
 									</expression>
 								</expression>
-								<expression tag="Symbolic.Function">
-									<expression tag="Symbolic.Symbol" Name="b"/>
-									<expression tag="List.List">
-										<expression tag="Symbolic.Symbol" Name="y"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="trace"/>
+							<expression tag="Programming.Block" Description="block" Expanded="True">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="trace"/>
+									<expression tag="List.List"/>
+								</expression>
+								<expression tag="Logic.Disjunction">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="j"/>
+										</expression>
 									</expression>
 								</expression>
 							</expression>
+							<expression tag="Symbolic.Symbol" Name="trace"/>
 						</expression>
-						<expression tag="Symbolic.Symbol" Name="list"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="String.String" Value="Disjunction"/>
-						<expression tag="Programming.Block" Description="block" Expanded="True">
-							<expression tag="Symbolic.Assignment">
-								<expression tag="Symbolic.Symbol" Name="list"/>
-								<expression tag="List.List"/>
-							</expression>
-							<expression tag="Logic.Disjunction">
-								<expression tag="Symbolic.Function">
-									<expression tag="Symbolic.Symbol" Name="a"/>
-									<expression tag="List.List">
-										<expression tag="Symbolic.Symbol" Name="x"/>
-									</expression>
-								</expression>
-								<expression tag="Symbolic.Function">
-									<expression tag="Symbolic.Symbol" Name="b"/>
-									<expression tag="List.List">
-										<expression tag="Symbolic.Symbol" Name="y"/>
-									</expression>
-								</expression>
-							</expression>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Symbolic.Symbol" Name="j"/>
 						</expression>
-						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="List.CartesianExponentiation">
+							<expression tag="List.List">
+								<expression tag="Logic.True"/>
+								<expression tag="Logic.False"/>
+							</expression>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
 					</expression>
 				</expression>
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-					<expression tag="Symbolic.Symbol" Name="y"/>
-				</expression>
-				<expression tag="List.CartesianExponentiation">
+			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="headers"/>
 					<expression tag="List.List">
-						<expression tag="Logic.True"/>
-						<expression tag="Logic.False"/>
+						<expression tag="String.Text" Value="i"/>
+						<expression tag="String.Text" Value="j"/>
+						<expression tag="Logic.Conjunction">
+							<expression tag="String.Text" Value="i"/>
+							<expression tag="String.Text" Value="j"/>
+						</expression>
+						<expression tag="String.Text" Value="trace"/>
+						<expression tag="Logic.Disjunction">
+							<expression tag="String.Text" Value="i"/>
+							<expression tag="String.Text" Value="j"/>
+						</expression>
+						<expression tag="String.Text" Value="trace"/>
 					</expression>
-					<expression tag="Math.Number" Value="2"/>
 				</expression>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="Symbolic.Symbol" Name="data"/>
+				<expression tag="Symbolic.Symbol" Name="headers"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
+		<expression tag="List.Table">
 			<expression tag="List.List">
-				<expression tag="Logic.True"/>
-				<expression tag="Logic.True"/>
 				<expression tag="List.List">
-					<expression tag="String.String" Value="Conjunction"/>
+					<expression tag="String.Text" Value="i"/>
+					<expression tag="String.Text" Value="j"/>
+					<expression tag="Logic.Conjunction">
+						<expression tag="String.Text" Value="i"/>
+						<expression tag="String.Text" Value="j"/>
+					</expression>
+					<expression tag="String.Text" Value="trace"/>
+					<expression tag="Logic.Disjunction">
+						<expression tag="String.Text" Value="i"/>
+						<expression tag="String.Text" Value="j"/>
+					</expression>
+					<expression tag="String.Text" Value="trace"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="A was called"/>
+						<expression tag="String.String" Value="B was called"/>
+					</expression>
+					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="A was called"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="A was called"/>
+						<expression tag="String.String" Value="B was called"/>
+					</expression>
+					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="A was called"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value="A was called"/>
+					</expression>
 					<expression tag="Logic.True"/>
 					<expression tag="List.List">
 						<expression tag="String.String" Value="A was called"/>
@@ -154,63 +219,12 @@
 					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="String.String" Value="Disjunction"/>
-					<expression tag="Logic.True"/>
-					<expression tag="List.List">
-						<expression tag="String.String" Value="A was called"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="Logic.True"/>
-				<expression tag="Logic.False"/>
-				<expression tag="List.List">
-					<expression tag="String.String" Value="Conjunction"/>
 					<expression tag="Logic.False"/>
-					<expression tag="List.List">
-						<expression tag="String.String" Value="A was called"/>
-						<expression tag="String.String" Value="B was called"/>
-					</expression>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="String.String" Value="Disjunction"/>
-					<expression tag="Logic.True"/>
-					<expression tag="List.List">
-						<expression tag="String.String" Value="A was called"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="Logic.False"/>
-				<expression tag="Logic.True"/>
-				<expression tag="List.List">
-					<expression tag="String.String" Value="Conjunction"/>
+					<expression tag="Logic.False"/>
 					<expression tag="Logic.False"/>
 					<expression tag="List.List">
 						<expression tag="String.String" Value="A was called"/>
 					</expression>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="String.String" Value="Disjunction"/>
-					<expression tag="Logic.True"/>
-					<expression tag="List.List">
-						<expression tag="String.String" Value="A was called"/>
-						<expression tag="String.String" Value="B was called"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="Logic.False"/>
-				<expression tag="Logic.False"/>
-				<expression tag="List.List">
-					<expression tag="String.String" Value="Conjunction"/>
-					<expression tag="Logic.False"/>
-					<expression tag="List.List">
-						<expression tag="String.String" Value="A was called"/>
-					</expression>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="String.String" Value="Disjunction"/>
 					<expression tag="Logic.False"/>
 					<expression tag="List.List">
 						<expression tag="String.String" Value="A was called"/>
