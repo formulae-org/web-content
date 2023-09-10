@@ -59,16 +59,34 @@
 						</expression>
 					</expression>
 				</expression>
-				<expression tag="List.CreateList">
-					<expression tag="List.List">
-						<expression tag="Symbolic.Symbol" Name="v"/>
-						<expression tag="Symbolic.LambdaApplication">
-							<expression tag="Symbolic.Symbol" Name="λ"/>
-							<expression tag="Symbolic.Symbol" Name="v"/>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="headers"/>
+						<expression tag="List.List">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="λ"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="λ"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
 						</expression>
 					</expression>
-					<expression tag="Symbolic.Symbol" Name="v"/>
-					<expression tag="Symbolic.Symbol" Name="values"/>
+				</expression>
+				<expression tag="List.Table">
+					<expression tag="List.CreateList">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="v"/>
+							<expression tag="Symbolic.LambdaApplication">
+								<expression tag="Symbolic.Symbol" Name="λ"/>
+								<expression tag="Symbolic.Symbol" Name="v"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="v"/>
+						<expression tag="Symbolic.Symbol" Name="values"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="headers"/>
 				</expression>
 			</expression>
 		</expression>
@@ -96,34 +114,46 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
+		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+						<expression tag="Symbolic.Symbol" Name="q"/>
+					</expression>
+					<expression tag="Logic.Conjunction">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+						<expression tag="Symbolic.Symbol" Name="q"/>
+					</expression>
 				</expression>
-				<expression tag="Logic.True"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
-				</expression>
-				<expression tag="Logic.False"/>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="List.List">
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+					</expression>
 					<expression tag="Logic.True"/>
 				</expression>
-				<expression tag="Logic.False"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+					</expression>
 					<expression tag="Logic.False"/>
 				</expression>
-				<expression tag="Logic.False"/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+					</expression>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.False"/>
+					</expression>
+					<expression tag="Logic.False"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -442,18 +472,28 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
+		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+					</expression>
+					<expression tag="Logic.Negation">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+					</expression>
 				</expression>
-				<expression tag="Logic.False"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+					</expression>
 					<expression tag="Logic.False"/>
 				</expression>
-				<expression tag="Logic.True"/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+					</expression>
+					<expression tag="Logic.True"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -489,34 +529,46 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
+		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+						<expression tag="Symbolic.Symbol" Name="q"/>
+					</expression>
+					<expression tag="Logic.Conjunction">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+						<expression tag="Symbolic.Symbol" Name="q"/>
+					</expression>
 				</expression>
-				<expression tag="Logic.True"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
-				</expression>
-				<expression tag="Logic.False"/>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="List.List">
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+					</expression>
 					<expression tag="Logic.True"/>
 				</expression>
-				<expression tag="Logic.False"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+					</expression>
 					<expression tag="Logic.False"/>
 				</expression>
-				<expression tag="Logic.False"/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+					</expression>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.False"/>
+					</expression>
+					<expression tag="Logic.False"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -572,57 +624,87 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
+		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+						<expression tag="Symbolic.Symbol" Name="q"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Logic.Conjunction">
+							<expression tag="Symbolic.Symbol" Name="p"/>
+							<expression tag="Symbolic.Symbol" Name="q"/>
+						</expression>
+						<expression tag="Logic.Disjunction">
+							<expression tag="Symbolic.Symbol" Name="p"/>
+							<expression tag="Symbolic.Symbol" Name="q"/>
+						</expression>
+						<expression tag="Logic.Implication">
+							<expression tag="Symbolic.Symbol" Name="p"/>
+							<expression tag="Symbolic.Symbol" Name="q"/>
+						</expression>
+						<expression tag="Logic.Equivalence">
+							<expression tag="Symbolic.Symbol" Name="p"/>
+							<expression tag="Symbolic.Symbol" Name="q"/>
+						</expression>
+						<expression tag="Logic.ExclusiveDisjunction">
+							<expression tag="Symbolic.Symbol" Name="p"/>
+							<expression tag="Symbolic.Symbol" Name="q"/>
+						</expression>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
-				</expression>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.True"/>
-				</expression>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="List.List">
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+					</expression>
 				</expression>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+					</expression>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.False"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+					</expression>
 				</expression>
 			</expression>
 		</expression>
@@ -679,70 +761,95 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
+		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="Human"/>
+						<expression tag="Symbolic.Symbol" Name="Mortal"/>
+						<expression tag="Symbolic.Symbol" Name="Socrates"/>
+					</expression>
+					<expression tag="Logic.Implication">
+						<expression tag="Logic.Conjunction">
+							<expression tag="Logic.Implication">
+								<expression tag="Symbolic.Symbol" Name="Human"/>
+								<expression tag="Symbolic.Symbol" Name="Mortal"/>
+							</expression>
+							<expression tag="Logic.Implication">
+								<expression tag="Symbolic.Symbol" Name="Socrates"/>
+								<expression tag="Symbolic.Symbol" Name="Human"/>
+							</expression>
+						</expression>
+						<expression tag="Logic.Implication">
+							<expression tag="Symbolic.Symbol" Name="Socrates"/>
+							<expression tag="Symbolic.Symbol" Name="Mortal"/>
+						</expression>
+					</expression>
 				</expression>
-				<expression tag="Logic.True"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+					</expression>
 					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
 				</expression>
-				<expression tag="Logic.True"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+					</expression>
 					<expression tag="Logic.True"/>
 				</expression>
-				<expression tag="Logic.True"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+					</expression>
 					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.False"/>
 				</expression>
-				<expression tag="Logic.True"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.False"/>
+					</expression>
 					<expression tag="Logic.True"/>
 				</expression>
-				<expression tag="Logic.True"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
-				</expression>
-				<expression tag="Logic.True"/>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="List.List">
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+					</expression>
 					<expression tag="Logic.True"/>
 				</expression>
-				<expression tag="Logic.True"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.False"/>
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+					</expression>
+					<expression tag="Logic.True"/>
 				</expression>
-				<expression tag="Logic.True"/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+					</expression>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.False"/>
+					</expression>
+					<expression tag="Logic.True"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -766,25 +873,37 @@
 					<expression tag="Symbolic.Symbol" Name="λ"/>
 				</expression>
 			</expression>
-			<expression tag="List.CreateList">
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="v"/>
-					<expression tag="Symbolic.LambdaApplication">
-						<expression tag="Symbolic.Symbol" Name="λ"/>
+			<expression tag="List.Table">
+				<expression tag="List.CreateList">
+					<expression tag="List.List">
 						<expression tag="Symbolic.Symbol" Name="v"/>
+						<expression tag="Symbolic.LambdaApplication">
+							<expression tag="Symbolic.Symbol" Name="λ"/>
+							<expression tag="Symbolic.Symbol" Name="v"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="v"/>
+					<expression tag="List.CartesianExponentiation">
+						<expression tag="List.List">
+							<expression tag="Logic.True"/>
+							<expression tag="Logic.False"/>
+						</expression>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="λ"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
 					</expression>
 				</expression>
-				<expression tag="Symbolic.Symbol" Name="v"/>
-				<expression tag="List.CartesianExponentiation">
-					<expression tag="List.List">
-						<expression tag="Logic.True"/>
-						<expression tag="Logic.False"/>
+				<expression tag="List.List">
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="λ"/>
+						<expression tag="Math.Number" Value="1"/>
 					</expression>
-					<expression tag="Expression.Cardinality">
-						<expression tag="Expression.Child">
-							<expression tag="Symbolic.Symbol" Name="λ"/>
-							<expression tag="Math.Number" Value="1"/>
-						</expression>
+					<expression tag="Expression.Child">
+						<expression tag="Symbolic.Symbol" Name="λ"/>
+						<expression tag="Math.Number" Value="2"/>
 					</expression>
 				</expression>
 			</expression>
@@ -808,34 +927,46 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
+		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.True"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+						<expression tag="Symbolic.Symbol" Name="q"/>
+					</expression>
+					<expression tag="Logic.Conjunction">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+						<expression tag="Symbolic.Symbol" Name="q"/>
+					</expression>
 				</expression>
-				<expression tag="Logic.True"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.True"/>
-					<expression tag="Logic.False"/>
-				</expression>
-				<expression tag="Logic.False"/>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="List.List">
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.True"/>
+					</expression>
 					<expression tag="Logic.True"/>
 				</expression>
-				<expression tag="Logic.False"/>
-			</expression>
-			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Logic.False"/>
+					<expression tag="List.List">
+						<expression tag="Logic.True"/>
+						<expression tag="Logic.False"/>
+					</expression>
 					<expression tag="Logic.False"/>
 				</expression>
-				<expression tag="Logic.False"/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.True"/>
+					</expression>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Logic.False"/>
+						<expression tag="Logic.False"/>
+					</expression>
+					<expression tag="Logic.False"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -863,7 +994,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1621876200000"/>
+				<expression tag="Time.Time" Value="1693980120000"/>
 			</expression>
 		</expression>
 	</expression>

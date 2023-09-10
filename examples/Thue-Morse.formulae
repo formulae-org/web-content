@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.programming,org.formulae.expression,org.formulae.relation,org.formulae.bitwise,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.relation,org.formulae.bitwise,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -31,21 +31,39 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="List.CreateList">
-			<expression tag="Math.Arithmetic.Mod">
-				<expression tag="Math.Arithmetic.Summation">
-					<expression tag="Symbolic.Symbol" Name="d"/>
-					<expression tag="Symbolic.Symbol" Name="d"/>
-					<expression tag="Math.Arithmetic.Digits">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+					<expression tag="List.CreateList">
+						<expression tag="Math.Arithmetic.Mod">
+							<expression tag="Math.Arithmetic.Summation">
+								<expression tag="Symbolic.Symbol" Name="d"/>
+								<expression tag="Symbolic.Symbol" Name="d"/>
+								<expression tag="Math.Arithmetic.Digits">
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
 						<expression tag="Symbolic.Symbol" Name="n"/>
-						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
 					</expression>
 				</expression>
-				<expression tag="Math.Number" Value="2"/>
 			</expression>
-			<expression tag="Symbolic.Symbol" Name="n"/>
-			<expression tag="Math.Number" Value="0"/>
-			<expression tag="Math.Number" Value="63"/>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="64"/>
+				</expression>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
@@ -114,6 +132,7 @@
 			<expression tag="Math.Number" Value="1"/>
 			<expression tag="Math.Number" Value="1"/>
 			<expression tag="Math.Number" Value="0"/>
+			<expression tag="Math.Number" Value="1"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -127,9 +146,9 @@
 		<expression tag="Programming.Block" Description="Description" Expanded="True">
 			<expression tag="Symbolic.Assignment">
 				<expression tag="Symbolic.Function">
-					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
 					<expression tag="List.List">
-						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
 					</expression>
 				</expression>
 				<expression tag="Programming.Block" Description="block" Expanded="True">
@@ -178,13 +197,13 @@
 						</expression>
 						<expression tag="Symbolic.Symbol" Name="i"/>
 						<expression tag="Math.Number" Value="2"/>
-						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
 					</expression>
 					<expression tag="Symbolic.Symbol" Name="list"/>
 				</expression>
 			</expression>
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="64"/>
 				</expression>
@@ -270,9 +289,9 @@
 		<expression tag="Programming.Block" Description="Description" Expanded="True">
 			<expression tag="Symbolic.Assignment">
 				<expression tag="Symbolic.Function">
-					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
 					<expression tag="List.List">
-						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
 					</expression>
 				</expression>
 				<expression tag="Programming.Block" Description="block" Expanded="True">
@@ -337,14 +356,19 @@
 						</expression>
 						<expression tag="Symbolic.Symbol" Name="n"/>
 						<expression tag="Math.Number" Value="0"/>
-						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
 					</expression>
 				</expression>
 			</expression>
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="63"/>
+					<expression tag="Math.Number" Value="64"/>
 				</expression>
 			</expression>
 		</expression>
@@ -433,9 +457,9 @@
 		<expression tag="Programming.Block" Description="Description" Expanded="True">
 			<expression tag="Symbolic.Assignment">
 				<expression tag="Symbolic.Function">
-					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
 					<expression tag="List.List">
-						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Symbolic.Symbol" Name="pow"/>
 					</expression>
 				</expression>
 				<expression tag="Programming.Block" Description="block" Expanded="True">
@@ -468,13 +492,13 @@
 								</expression>
 							</expression>
 						</expression>
-						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Symbolic.Symbol" Name="pow"/>
 					</expression>
 					<expression tag="Symbolic.Symbol" Name="a"/>
 				</expression>
 			</expression>
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="6"/>
 				</expression>
@@ -500,9 +524,9 @@
 		<expression tag="Programming.Block" Description="Description" Expanded="True">
 			<expression tag="Symbolic.Assignment">
 				<expression tag="Symbolic.Function">
-					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
 					<expression tag="List.List">
-						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Symbolic.Symbol" Name="pow"/>
 					</expression>
 				</expression>
 				<expression tag="Programming.Block" Description="block" Expanded="True">
@@ -532,13 +556,13 @@
 								</expression>
 							</expression>
 						</expression>
-						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Symbolic.Symbol" Name="pow"/>
 					</expression>
 					<expression tag="Symbolic.Symbol" Name="a"/>
 				</expression>
 			</expression>
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="6"/>
 				</expression>
@@ -564,9 +588,9 @@
 		<expression tag="Programming.Block" Description="Description" Expanded="True">
 			<expression tag="Symbolic.Assignment">
 				<expression tag="Symbolic.Function">
-					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
 					<expression tag="List.List">
-						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Symbolic.Symbol" Name="pow"/>
 					</expression>
 				</expression>
 				<expression tag="Programming.Block" Description="block" Expanded="True">
@@ -610,13 +634,13 @@
 								<expression tag="Symbolic.Symbol" Name="tmp"/>
 							</expression>
 						</expression>
-						<expression tag="Symbolic.Symbol" Name="s"/>
+						<expression tag="Symbolic.Symbol" Name="pow"/>
 					</expression>
 					<expression tag="Symbolic.Symbol" Name="a"/>
 				</expression>
 			</expression>
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Symbolic.Symbol" Name="Thue–Morse"/>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="6"/>
 				</expression>
@@ -645,7 +669,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1621469580000"/>
+				<expression tag="Time.Time" Value="1693967940000"/>
 			</expression>
 		</expression>
 	</expression>
