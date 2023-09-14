@@ -507,67 +507,93 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Programming.Block" Description="Description" Expanded="True">
 			<expression tag="Symbolic.Local">
-				<expression tag="Symbolic.Symbol" Name="value"/>
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="data"/>
+					<expression tag="List.CreateList">
+						<expression tag="Programming.Block" Description="Description" Expanded="True">
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="literal"/>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+										<expression tag="List.List">
+											<expression tag="String.Text" Value="1"/>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="String.Text" Value="2"/>
+											</expression>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="String.Text" Value="1"/>
+											</expression>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="exact"/>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+										<expression tag="List.List">
+											<expression tag="Math.Number" Value="1"/>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="Math.Number" Value="2"/>
+											</expression>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="numeric"/>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="exact"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Symbolic.Symbol" Name="literal"/>
+								<expression tag="Symbolic.Symbol" Name="exact"/>
+								<expression tag="Symbolic.Symbol" Name="numeric"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+				</expression>
 			</expression>
-			<expression tag="List.CreateTable">
-				<expression tag="List.List">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="titles"/>
 					<expression tag="List.List">
 						<expression tag="String.Text" Value="i"/>
 						<expression tag="String.Text" Value="Literal"/>
 						<expression tag="String.Text" Value="Exact"/>
 						<expression tag="String.Text" Value="Numeric"/>
 					</expression>
-					<expression tag="List.List">
-						<expression tag="Symbolic.Symbol" Name="i"/>
-						<expression tag="Symbolic.Function">
-							<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
-							<expression tag="List.List">
-								<expression tag="String.Text" Value="1"/>
-								<expression tag="Symbolic.Lambda">
-									<expression tag="List.List">
-										<expression tag="Symbolic.Symbol" Name="n"/>
-									</expression>
-									<expression tag="String.Text" Value="2"/>
-								</expression>
-								<expression tag="Symbolic.Lambda">
-									<expression tag="List.List">
-										<expression tag="Symbolic.Symbol" Name="n"/>
-									</expression>
-									<expression tag="String.Text" Value="1"/>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="i"/>
-							</expression>
-						</expression>
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="value"/>
-							<expression tag="Symbolic.Function">
-								<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
-								<expression tag="List.List">
-									<expression tag="Math.Number" Value="1"/>
-									<expression tag="Symbolic.Lambda">
-										<expression tag="List.List">
-											<expression tag="Symbolic.Symbol" Name="n"/>
-										</expression>
-										<expression tag="Math.Number" Value="2"/>
-									</expression>
-									<expression tag="Symbolic.Lambda">
-										<expression tag="List.List">
-											<expression tag="Symbolic.Symbol" Name="n"/>
-										</expression>
-										<expression tag="Math.Number" Value="1"/>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="i"/>
-								</expression>
-							</expression>
-						</expression>
-						<expression tag="Math.Numeric">
-							<expression tag="Symbolic.Symbol" Name="value"/>
-						</expression>
-					</expression>
 				</expression>
-				<expression tag="Symbolic.Symbol" Name="i"/>
-				<expression tag="Math.Number" Value="1"/>
-				<expression tag="Math.Number" Value="10"/>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="Symbolic.Symbol" Name="data"/>
+				<expression tag="Symbolic.Symbol" Name="titles"/>
 			</expression>
 		</expression>
 	</expression>
@@ -641,7 +667,7 @@
 						<expression tag="Math.Number" Value="17"/>
 						<expression tag="Math.Number" Value="12"/>
 					</expression>
-					<expression tag="Math.Number" Value="1.4166666666666666667"/>
+					<expression tag="Math.Number" Value="1.4166666666666666666"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="4"/>
@@ -674,7 +700,7 @@
 						<expression tag="Math.Number" Value="41"/>
 						<expression tag="Math.Number" Value="29"/>
 					</expression>
-					<expression tag="Math.Number" Value="1.4137931034482758621"/>
+					<expression tag="Math.Number" Value="1.413793103448275862"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="5"/>
@@ -929,7 +955,7 @@
 						<expression tag="Math.Number" Value="3363"/>
 						<expression tag="Math.Number" Value="2378"/>
 					</expression>
-					<expression tag="Math.Number" Value="1.4142136248948696384"/>
+					<expression tag="Math.Number" Value="1.4142136248948696383"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="10"/>
@@ -1018,99 +1044,125 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Programming.Block" Description="Description" Expanded="True">
 			<expression tag="Symbolic.Local">
-				<expression tag="Symbolic.Symbol" Name="value"/>
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="data"/>
+					<expression tag="List.CreateList">
+						<expression tag="Programming.Block" Description="Description" Expanded="True">
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="literal"/>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+										<expression tag="List.List">
+											<expression tag="String.Text" Value="2"/>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="String.ToText">
+													<expression tag="String.ToString">
+														<expression tag="Symbolic.Symbol" Name="n"/>
+													</expression>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="String.ToText">
+													<expression tag="String.ToString">
+														<expression tag="Programming.Conditional">
+															<expression tag="Relation.Equals">
+																<expression tag="Symbolic.Symbol" Name="n"/>
+																<expression tag="Math.Number" Value="1"/>
+															</expression>
+															<expression tag="Math.Number" Value="1"/>
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Symbolic.Symbol" Name="n"/>
+																<expression tag="Math.Arithmetic.Negative">
+																	<expression tag="Math.Number" Value="1"/>
+																</expression>
+															</expression>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="exact"/>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+										<expression tag="List.List">
+											<expression tag="Math.Number" Value="2"/>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="Symbolic.Symbol" Name="n"/>
+											</expression>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="Programming.Conditional">
+													<expression tag="Relation.Equals">
+														<expression tag="Symbolic.Symbol" Name="n"/>
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+													<expression tag="Math.Number" Value="1"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="Symbolic.Symbol" Name="n"/>
+														<expression tag="Math.Arithmetic.Negative">
+															<expression tag="Math.Number" Value="1"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="numeric"/>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="exact"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Symbolic.Symbol" Name="literal"/>
+								<expression tag="Symbolic.Symbol" Name="exact"/>
+								<expression tag="Symbolic.Symbol" Name="numeric"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+				</expression>
 			</expression>
-			<expression tag="List.CreateTable">
-				<expression tag="List.List">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="titles"/>
 					<expression tag="List.List">
 						<expression tag="String.Text" Value="i"/>
 						<expression tag="String.Text" Value="Literal"/>
 						<expression tag="String.Text" Value="Exact"/>
 						<expression tag="String.Text" Value="Numeric"/>
 					</expression>
-					<expression tag="List.List">
-						<expression tag="Symbolic.Symbol" Name="i"/>
-						<expression tag="Symbolic.Function">
-							<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
-							<expression tag="List.List">
-								<expression tag="String.Text" Value="2"/>
-								<expression tag="Symbolic.Lambda">
-									<expression tag="List.List">
-										<expression tag="Symbolic.Symbol" Name="n"/>
-									</expression>
-									<expression tag="String.ToText">
-										<expression tag="String.ToString">
-											<expression tag="Symbolic.Symbol" Name="n"/>
-										</expression>
-									</expression>
-								</expression>
-								<expression tag="Symbolic.Lambda">
-									<expression tag="List.List">
-										<expression tag="Symbolic.Symbol" Name="n"/>
-									</expression>
-									<expression tag="String.ToText">
-										<expression tag="String.ToString">
-											<expression tag="Programming.Conditional">
-												<expression tag="Relation.Equals">
-													<expression tag="Symbolic.Symbol" Name="n"/>
-													<expression tag="Math.Number" Value="1"/>
-												</expression>
-												<expression tag="Math.Number" Value="1"/>
-												<expression tag="Math.Arithmetic.Addition">
-													<expression tag="Symbolic.Symbol" Name="n"/>
-													<expression tag="Math.Arithmetic.Negative">
-														<expression tag="Math.Number" Value="1"/>
-													</expression>
-												</expression>
-											</expression>
-										</expression>
-									</expression>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="i"/>
-							</expression>
-						</expression>
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="value"/>
-							<expression tag="Symbolic.Function">
-								<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
-								<expression tag="List.List">
-									<expression tag="Math.Number" Value="2"/>
-									<expression tag="Symbolic.Lambda">
-										<expression tag="List.List">
-											<expression tag="Symbolic.Symbol" Name="n"/>
-										</expression>
-										<expression tag="Symbolic.Symbol" Name="n"/>
-									</expression>
-									<expression tag="Symbolic.Lambda">
-										<expression tag="List.List">
-											<expression tag="Symbolic.Symbol" Name="n"/>
-										</expression>
-										<expression tag="Programming.Conditional">
-											<expression tag="Relation.Equals">
-												<expression tag="Symbolic.Symbol" Name="n"/>
-												<expression tag="Math.Number" Value="1"/>
-											</expression>
-											<expression tag="Math.Number" Value="1"/>
-											<expression tag="Math.Arithmetic.Addition">
-												<expression tag="Symbolic.Symbol" Name="n"/>
-												<expression tag="Math.Arithmetic.Negative">
-													<expression tag="Math.Number" Value="1"/>
-												</expression>
-											</expression>
-										</expression>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="i"/>
-								</expression>
-							</expression>
-						</expression>
-						<expression tag="Math.Numeric">
-							<expression tag="Symbolic.Symbol" Name="value"/>
-						</expression>
-					</expression>
 				</expression>
-				<expression tag="Symbolic.Symbol" Name="i"/>
-				<expression tag="Math.Number" Value="1"/>
-				<expression tag="Math.Number" Value="10"/>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="Symbolic.Symbol" Name="data"/>
+				<expression tag="Symbolic.Symbol" Name="titles"/>
 			</expression>
 		</expression>
 	</expression>
@@ -1154,7 +1206,7 @@
 						<expression tag="Math.Number" Value="8"/>
 						<expression tag="Math.Number" Value="3"/>
 					</expression>
-					<expression tag="Math.Number" Value="2.6666666666666666667"/>
+					<expression tag="Math.Number" Value="2.6666666666666666666"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="3"/>
@@ -1469,7 +1521,7 @@
 						<expression tag="Math.Number" Value="3991680"/>
 						<expression tag="Math.Number" Value="1468457"/>
 					</expression>
-					<expression tag="Math.Number" Value="2.7182818427778273385"/>
+					<expression tag="Math.Number" Value="2.7182818427778273384"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="10"/>
@@ -1553,93 +1605,119 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Programming.Block" Description="Description" Expanded="True">
 			<expression tag="Symbolic.Local">
-				<expression tag="Symbolic.Symbol" Name="value"/>
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="data"/>
+					<expression tag="List.CreateList">
+						<expression tag="Programming.Block" Description="Description" Expanded="True">
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="literal"/>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+										<expression tag="List.List">
+											<expression tag="String.Text" Value="3"/>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="String.Text" Value="6"/>
+											</expression>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="String.ToText">
+													<expression tag="String.ToString">
+														<expression tag="Math.Arithmetic.Exponentiation">
+															<expression tag="Math.Arithmetic.Addition">
+																<expression tag="Math.Arithmetic.Multiplication">
+																	<expression tag="Math.Number" Value="2"/>
+																	<expression tag="Symbolic.Symbol" Name="n"/>
+																</expression>
+																<expression tag="Math.Arithmetic.Negative">
+																	<expression tag="Math.Number" Value="1"/>
+																</expression>
+															</expression>
+															<expression tag="Math.Number" Value="2"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="exact"/>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
+										<expression tag="List.List">
+											<expression tag="Math.Number" Value="3"/>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="Math.Number" Value="6"/>
+											</expression>
+											<expression tag="Symbolic.Lambda">
+												<expression tag="List.List">
+													<expression tag="Symbolic.Symbol" Name="n"/>
+												</expression>
+												<expression tag="Math.Arithmetic.Exponentiation">
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="Math.Arithmetic.Multiplication">
+															<expression tag="Math.Number" Value="2"/>
+															<expression tag="Symbolic.Symbol" Name="n"/>
+														</expression>
+														<expression tag="Math.Arithmetic.Negative">
+															<expression tag="Math.Number" Value="1"/>
+														</expression>
+													</expression>
+													<expression tag="Math.Number" Value="2"/>
+												</expression>
+											</expression>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="numeric"/>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="exact"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Symbolic.Symbol" Name="literal"/>
+								<expression tag="Symbolic.Symbol" Name="exact"/>
+								<expression tag="Symbolic.Symbol" Name="numeric"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+				</expression>
 			</expression>
-			<expression tag="List.CreateTable">
-				<expression tag="List.List">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="titles"/>
 					<expression tag="List.List">
 						<expression tag="String.Text" Value="i"/>
 						<expression tag="String.Text" Value="Literal"/>
 						<expression tag="String.Text" Value="Exact"/>
 						<expression tag="String.Text" Value="Numeric"/>
 					</expression>
-					<expression tag="List.List">
-						<expression tag="Symbolic.Symbol" Name="i"/>
-						<expression tag="Symbolic.Function">
-							<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
-							<expression tag="List.List">
-								<expression tag="String.Text" Value="3"/>
-								<expression tag="Symbolic.Lambda">
-									<expression tag="List.List">
-										<expression tag="Symbolic.Symbol" Name="n"/>
-									</expression>
-									<expression tag="String.Text" Value="6"/>
-								</expression>
-								<expression tag="Symbolic.Lambda">
-									<expression tag="List.List">
-										<expression tag="Symbolic.Symbol" Name="n"/>
-									</expression>
-									<expression tag="String.ToText">
-										<expression tag="String.ToString">
-											<expression tag="Math.Arithmetic.Exponentiation">
-												<expression tag="Math.Arithmetic.Addition">
-													<expression tag="Math.Arithmetic.Multiplication">
-														<expression tag="Math.Number" Value="2"/>
-														<expression tag="Symbolic.Symbol" Name="n"/>
-													</expression>
-													<expression tag="Math.Arithmetic.Negative">
-														<expression tag="Math.Number" Value="1"/>
-													</expression>
-												</expression>
-												<expression tag="Math.Number" Value="2"/>
-											</expression>
-										</expression>
-									</expression>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="i"/>
-							</expression>
-						</expression>
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="value"/>
-							<expression tag="Symbolic.Function">
-								<expression tag="Symbolic.Symbol" Name="ContinuedFraction"/>
-								<expression tag="List.List">
-									<expression tag="Math.Number" Value="3"/>
-									<expression tag="Symbolic.Lambda">
-										<expression tag="List.List">
-											<expression tag="Symbolic.Symbol" Name="n"/>
-										</expression>
-										<expression tag="Math.Number" Value="6"/>
-									</expression>
-									<expression tag="Symbolic.Lambda">
-										<expression tag="List.List">
-											<expression tag="Symbolic.Symbol" Name="n"/>
-										</expression>
-										<expression tag="Math.Arithmetic.Exponentiation">
-											<expression tag="Math.Arithmetic.Addition">
-												<expression tag="Math.Arithmetic.Multiplication">
-													<expression tag="Math.Number" Value="2"/>
-													<expression tag="Symbolic.Symbol" Name="n"/>
-												</expression>
-												<expression tag="Math.Arithmetic.Negative">
-													<expression tag="Math.Number" Value="1"/>
-												</expression>
-											</expression>
-											<expression tag="Math.Number" Value="2"/>
-										</expression>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="i"/>
-								</expression>
-							</expression>
-						</expression>
-						<expression tag="Math.Numeric">
-							<expression tag="Symbolic.Symbol" Name="value"/>
-						</expression>
-					</expression>
 				</expression>
-				<expression tag="Symbolic.Symbol" Name="i"/>
-				<expression tag="Math.Number" Value="1"/>
-				<expression tag="Math.Number" Value="10"/>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="Symbolic.Symbol" Name="data"/>
+				<expression tag="Symbolic.Symbol" Name="titles"/>
 			</expression>
 		</expression>
 	</expression>
@@ -1665,7 +1743,7 @@
 						<expression tag="Math.Number" Value="19"/>
 						<expression tag="Math.Number" Value="6"/>
 					</expression>
-					<expression tag="Math.Number" Value="3.1666666666666666667"/>
+					<expression tag="Math.Number" Value="3.1666666666666666666"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="2"/>
@@ -1713,7 +1791,7 @@
 						<expression tag="Math.Number" Value="1321"/>
 						<expression tag="Math.Number" Value="420"/>
 					</expression>
-					<expression tag="Math.Number" Value="3.1452380952380952381"/>
+					<expression tag="Math.Number" Value="3.145238095238095238"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="4"/>
