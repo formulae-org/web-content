@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.localization,org.formulae.symbolic,org.formulae.time,org.formulae.math.arithmetic">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.time,org.formulae.math.arithmetic,org.formulae.list,org.formulae.programming,org.formulae.visualization,org.formulae.logic">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -34,13 +34,11 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Fōrmulæ can create a time in any time zone, however, it always displays them in the current timezone. In order to cause no confusion, in this example the current time zone has been set as"/>
-				<expression tag="Localization.TimeZone.TimeZone" Value="America/New_York"/>
-				<expression tag="String.Text" Value="which is EST"/>
+				<expression tag="String.Text" Value="Fōrmulæ can create a time in any time zone, however, it always displays them in the current timezone. In order to cause no confusion, in this example the current time zone has been set as America/New_York, which is EST."/>
 			</expression>
 		</expression>
 	</expression>
-	<expression tag="Formulae.Script.Row" type="2">
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.Assignment">
 			<expression tag="Symbolic.Symbol" Name="x"/>
 			<expression tag="Time.CreateTime">
@@ -62,18 +60,17 @@
 			</expression>
 		</expression>
 	</expression>
-	<expression tag="Formulae.Script.Row" type="2">
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.Assignment">
 			<expression tag="Symbolic.Symbol" Name="y"/>
-			<expression tag="Time.OffsetTime">
+			<expression tag="Math.Arithmetic.Addition">
 				<expression tag="Symbolic.Symbol" Name="x"/>
-				<expression tag="Math.Number" Value="0"/>
-				<expression tag="Math.Number" Value="0"/>
-				<expression tag="Math.Number" Value="0"/>
-				<expression tag="Math.Number" Value="12"/>
-				<expression tag="Math.Number" Value="0"/>
-				<expression tag="Math.Number" Value="0"/>
-				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="12"/>
+					<expression tag="Math.Number" Value="60"/>
+					<expression tag="Math.Number" Value="60"/>
+					<expression tag="Math.Number" Value="1000"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -97,65 +94,54 @@
 				<expression tag="String.Text" Value="As it was said before, a time is always shown in current time zone, but a time can be formatted to different time zones:"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="There are three formatting expressions. If no time zone ius specified, current time zone is used:"/>
+				<expression tag="String.Text" Value="If no time zone is specified, current time zone is used:"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Localization.Format.Time.Gregorian.FormatTimeShort">
-			<expression tag="Symbolic.Symbol" Name="y"/>
+		<expression tag="Localization.Format.Time.Gregorian.FormatTime">
+			<expression tag="Symbolic.Symbol" Name="x"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="3/8/09 8:30 AM"/>
+		<expression tag="String.String" Value="Saturday, March 7, 2009 at 7:30:00 PM Eastern Standard Time"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Localization.Format.Time.Gregorian.FormatTimeMedium">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTime">
 			<expression tag="Symbolic.Symbol" Name="y"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="Mar 8, 2009 8:30:00 AM"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Localization.Format.Time.Gregorian.FormatTimeLong">
-			<expression tag="Symbolic.Symbol" Name="y"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="March 8, 2009 8:30:00 AM EDT"/>
+		<expression tag="String.String" Value="Sunday, March 8, 2009 at 8:30:00 AM Eastern Daylight Time"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Let us use these expression for a different time zone:"/>
+			<expression tag="String.Text" Value="Let us use a different time zone:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Localization.Format.Time.Gregorian.FormatTimeShort">
-			<expression tag="Symbolic.Symbol" Name="y"/>
-			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
+		<expression tag="Localization.Format.Time.Gregorian.FormatTime">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="TimeZone"/>
+				<expression tag="String.String" Value="Europe/Moscow"/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="3/8/09 3:30 PM"/>
+		<expression tag="String.String" Value="Sunday, March 8, 2009 at 3:30:00 AM Moscow Standard Time"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Localization.Format.Time.Gregorian.FormatTimeMedium">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTime">
 			<expression tag="Symbolic.Symbol" Name="y"/>
-			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
+			<expression tag="List.List">
+				<expression tag="String.String" Value="TimeZone"/>
+				<expression tag="String.String" Value="Europe/Moscow"/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="Mar 8, 2009 3:30:00 PM"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Localization.Format.Time.Gregorian.FormatTimeLong">
-			<expression tag="Symbolic.Symbol" Name="y"/>
-			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="March 8, 2009 3:30:00 PM MSK"/>
+		<expression tag="String.String" Value="Sunday, March 8, 2009 at 3:30:00 PM Moscow Standard Time"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
@@ -163,34 +149,349 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Localization.Format.Time.Gregorian.FormatTimeShort">
+		<expression tag="Localization.Format.Time.Gregorian.FormatTime">
 			<expression tag="Symbolic.Symbol" Name="y"/>
-			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
-			<expression tag="Localization.Locale.Locale" Value="ru-RU"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="String.String" Value="TimeZone"/>
+					<expression tag="String.String" Value="Europe/Moscow"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="Locale"/>
+					<expression tag="String.String" Value="ru-RU"/>
+				</expression>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="08.03.09 15:30"/>
+		<expression tag="String.String" Value="воскресенье, 8 марта 2009 г. в 15:30:00 Москва, стандартное время"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Localization.Format.Time.Gregorian.FormatTimeMedium">
-			<expression tag="Symbolic.Symbol" Name="y"/>
-			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
-			<expression tag="Localization.Locale.Locale" Value="ru-RU"/>
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The components of a tiem expression can be obtained individually, even for a specific time zone:"/>
 		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="08.03.2009 15:30:00"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Localization.Format.Time.Gregorian.FormatTimeLong">
-			<expression tag="Symbolic.Symbol" Name="y"/>
-			<expression tag="Localization.TimeZone.TimeZone" Value="Europe/Moscow"/>
-			<expression tag="Localization.Locale.Locale" Value="ru-RU"/>
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="moscow"/>
+					<expression tag="String.String" Value="Europe/Moscow"/>
+				</expression>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Part"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="NY before"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="NY after"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Moscow before"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Moscow after"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Year"/>
+						<expression tag="Time.Gregorian.GetYear">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetYear">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetYear">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetYear">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Month"/>
+						<expression tag="Time.Gregorian.GetMonth">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMonth">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMonth">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMonth">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Month number"/>
+						<expression tag="Time.Gregorian.GetMonthNumber">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMonthNumber">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMonthNumber">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMonthNumber">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Day"/>
+						<expression tag="Time.Gregorian.GetDay">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetDay">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetDay">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetDay">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Week day"/>
+						<expression tag="Time.Gregorian.GetWeekDay">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetWeekDay">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetWeekDay">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetWeekDay">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Hour"/>
+						<expression tag="Time.Gregorian.GetHour">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetHour">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetHour">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetHour">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Minute"/>
+						<expression tag="Time.Gregorian.GetMinute">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMinute">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMinute">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMinute">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Second"/>
+						<expression tag="Time.Gregorian.GetSecond">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetSecond">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetSecond">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetSecond">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Millisecond"/>
+						<expression tag="Time.Gregorian.GetMillisecond">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMillisecond">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMillisecond">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetMillisecond">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Time zone offset (minutes)"/>
+						<expression tag="Time.Gregorian.GetTimeZoneOffset">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetTimeZoneOffset">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetTimeZoneOffset">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.GetTimeZoneOffset">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="In daylight saving time?"/>
+						<expression tag="Time.Gregorian.InDaylightSavingTime">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Time.Gregorian.InDaylightSavingTime">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+						<expression tag="Time.Gregorian.InDaylightSavingTime">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+						<expression tag="Time.Gregorian.InDaylightSavingTime">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Symbolic.Symbol" Name="moscow"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="8 марта 2009 г. 15:30:00 MSK"/>
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="Part"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="NY before"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="NY after"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="Moscow before"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="Moscow after"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Year"/>
+					<expression tag="Math.Number" Value="2009"/>
+					<expression tag="Math.Number" Value="2009"/>
+					<expression tag="Math.Number" Value="2009"/>
+					<expression tag="Math.Number" Value="2009"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Month"/>
+					<expression tag="Time.Gregorian.Month.March"/>
+					<expression tag="Time.Gregorian.Month.March"/>
+					<expression tag="Time.Gregorian.Month.March"/>
+					<expression tag="Time.Gregorian.Month.March"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Month number"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Day"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Week day"/>
+					<expression tag="Time.Gregorian.WeekDay.Saturday"/>
+					<expression tag="Time.Gregorian.WeekDay.Sunday"/>
+					<expression tag="Time.Gregorian.WeekDay.Sunday"/>
+					<expression tag="Time.Gregorian.WeekDay.Sunday"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Hour"/>
+					<expression tag="Math.Number" Value="19"/>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="15"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Minute"/>
+					<expression tag="Math.Number" Value="30"/>
+					<expression tag="Math.Number" Value="30"/>
+					<expression tag="Math.Number" Value="30"/>
+					<expression tag="Math.Number" Value="30"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Second"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Millisecond"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="Time zone offset (minutes)"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="300"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="240"/>
+					</expression>
+					<expression tag="Math.Number" Value="180"/>
+					<expression tag="Math.Number" Value="180"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.Text" Value="In daylight saving time?"/>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.True"/>
+					<expression tag="Logic.False"/>
+					<expression tag="Logic.False"/>
+				</expression>
+			</expression>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
@@ -216,7 +517,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1620751944915"/>
+				<expression tag="Time.Time" Value="1696477620000"/>
 			</expression>
 		</expression>
 	</expression>

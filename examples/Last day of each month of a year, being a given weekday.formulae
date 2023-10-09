@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.time,org.formulae.math.arithmetic,org.formulae.relation,org.formulae.expression">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.time,org.formulae.math.arithmetic,org.formulae.relation,org.formulae.expression,org.formulae.visualization">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -42,84 +42,82 @@
 			<expression tag="Programming.Block" Description="Description" Expanded="True">
 				<expression tag="Symbolic.Local">
 					<expression tag="Symbolic.Assignment">
-						<expression tag="Symbolic.Symbol" Name="start"/>
-						<expression tag="Time.CreateTime">
-							<expression tag="Symbolic.Symbol" Name="year"/>
-							<expression tag="Time.Gregorian.Month.January"/>
-							<expression tag="Math.Number" Value="1"/>
-						</expression>
-					</expression>
-				</expression>
-				<expression tag="Symbolic.Local">
-					<expression tag="Symbolic.Assignment">
 						<expression tag="Symbolic.Symbol" Name="result"/>
-						<expression tag="List.List">
-							<expression tag="List.List">
-								<expression tag="String.Text" Value="Month"/>
-								<expression tag="String.Text" Value="Day"/>
-							</expression>
-						</expression>
+						<expression tag="List.List"/>
 					</expression>
 				</expression>
 				<expression tag="Symbolic.Local">
-					<expression tag="Symbolic.Symbol" Name="tmp"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="time"/>
+						<expression tag="Symbolic.Symbol" Name="day"/>
+					</expression>
 				</expression>
 				<expression tag="Programming.ForFromTo">
 					<expression tag="Programming.Block" Description="Description" Expanded="True">
 						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="tmp"/>
-							<expression tag="Time.OffsetTime">
-								<expression tag="Symbolic.Symbol" Name="start"/>
-								<expression tag="Math.Number" Value="0"/>
-								<expression tag="Symbolic.Symbol" Name="months"/>
-								<expression tag="Math.Number" Value="0"/>
-								<expression tag="Math.Number" Value="0"/>
-								<expression tag="Math.Number" Value="0"/>
-								<expression tag="Math.Number" Value="0"/>
-								<expression tag="Math.Number" Value="0"/>
+							<expression tag="Symbolic.Symbol" Name="day"/>
+							<expression tag="Time.Gregorian.GetDay">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="time"/>
+									<expression tag="Time.CreateTime">
+										<expression tag="Symbolic.Symbol" Name="year"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="month"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+										<expression tag="Math.Number" Value="0"/>
+									</expression>
+								</expression>
 							</expression>
 						</expression>
-						<expression tag="Programming.Until">
-							<expression tag="Symbolic.Assignment">
-								<expression tag="Symbolic.Symbol" Name="tmp"/>
-								<expression tag="Time.OffsetTime">
-									<expression tag="Symbolic.Symbol" Name="tmp"/>
-									<expression tag="Math.Number" Value="0"/>
-									<expression tag="Math.Number" Value="0"/>
-									<expression tag="Math.Arithmetic.Negative">
-										<expression tag="Math.Number" Value="1"/>
-									</expression>
-									<expression tag="Math.Number" Value="0"/>
-									<expression tag="Math.Number" Value="0"/>
-									<expression tag="Math.Number" Value="0"/>
-									<expression tag="Math.Number" Value="0"/>
-								</expression>
-							</expression>
-							<expression tag="Relation.Equals">
+						<expression tag="Programming.While">
+							<expression tag="Relation.Different">
 								<expression tag="Time.Gregorian.GetWeekDay">
-									<expression tag="Symbolic.Symbol" Name="tmp"/>
+									<expression tag="Symbolic.Symbol" Name="time"/>
 								</expression>
 								<expression tag="Symbolic.Symbol" Name="weekday"/>
+							</expression>
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="time"/>
+								<expression tag="Time.CreateTime">
+									<expression tag="Symbolic.Symbol" Name="year"/>
+									<expression tag="Symbolic.Symbol" Name="month"/>
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="day"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="day"/>
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
 							</expression>
 						</expression>
 						<expression tag="Expression.Append">
 							<expression tag="Symbolic.Symbol" Name="result"/>
 							<expression tag="List.List">
 								<expression tag="Time.Gregorian.GetMonth">
-									<expression tag="Symbolic.Symbol" Name="tmp"/>
+									<expression tag="Symbolic.Symbol" Name="time"/>
 								</expression>
-								<expression tag="Time.Gregorian.GetDayOfMonth">
-									<expression tag="Symbolic.Symbol" Name="tmp"/>
-								</expression>
+								<expression tag="Symbolic.Symbol" Name="day"/>
 							</expression>
 						</expression>
 					</expression>
-					<expression tag="Symbolic.Symbol" Name="months"/>
+					<expression tag="Symbolic.Symbol" Name="month"/>
 					<expression tag="Math.Number" Value="1"/>
 					<expression tag="Math.Number" Value="12"/>
 				</expression>
 				<expression tag="List.Table">
 					<expression tag="Symbolic.Symbol" Name="result"/>
+					<expression tag="List.List">
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Month"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Day"/>
+						</expression>
+					</expression>
 				</expression>
 			</expression>
 		</expression>
@@ -137,8 +135,12 @@
 		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="String.Text" Value="Month"/>
-					<expression tag="String.Text" Value="Day"/>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="Month"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="Day"/>
+					</expression>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Time.Gregorian.Month.January"/>
@@ -204,8 +206,12 @@
 		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="String.Text" Value="Month"/>
-					<expression tag="String.Text" Value="Day"/>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="Month"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="Day"/>
+					</expression>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Time.Gregorian.Month.January"/>
@@ -282,7 +288,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1620922415862"/>
+				<expression tag="Time.Time" Value="1696655400000"/>
 			</expression>
 		</expression>
 	</expression>

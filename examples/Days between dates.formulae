@@ -44,11 +44,11 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Math.Arithmetic.ToNumber">
-			<expression tag="Time.Time" Value="1569819600000"/>
+			<expression tag="Time.Time" Value="1569826800000"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="1569819600000"/>
+		<expression tag="Math.Number" Value="1569826800000"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
@@ -96,7 +96,7 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="271.95833333333333333333333333333333333333333333333"/>
+		<expression tag="Math.Number" Value="271.95833333333333333"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
@@ -106,20 +106,24 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Time.Gregorian.GetDayLightSavingOffset">
+		<expression tag="Time.Gregorian.GetOffset">
 			<expression tag="Time.Time" Value="1546329600000"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="0"/>
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Number" Value="480"/>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Time.Gregorian.GetDayLightSavingOffset">
+		<expression tag="Time.Gregorian.GetOffset">
 			<expression tag="Time.Time" Value="1569826800000"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="3600000"/>
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Number" Value="420"/>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
@@ -143,16 +147,22 @@
 					<expression tag="Math.Arithmetic.ToNumber">
 						<expression tag="Symbolic.Symbol" Name="d₂"/>
 					</expression>
-					<expression tag="Time.Gregorian.GetDayLightSavingOffset">
-						<expression tag="Symbolic.Symbol" Name="d₂"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Time.Gregorian.GetOffset">
+							<expression tag="Symbolic.Symbol" Name="d₂"/>
+						</expression>
+						<expression tag="Math.Number" Value="60000"/>
 					</expression>
 					<expression tag="Math.Arithmetic.Negative">
 						<expression tag="Math.Arithmetic.Addition">
 							<expression tag="Math.Arithmetic.ToNumber">
 								<expression tag="Symbolic.Symbol" Name="d₁"/>
 							</expression>
-							<expression tag="Time.Gregorian.GetDayLightSavingOffset">
-								<expression tag="Symbolic.Symbol" Name="d₁"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Time.Gregorian.GetOffset">
+									<expression tag="Symbolic.Symbol" Name="d₁"/>
+								</expression>
+								<expression tag="Math.Number" Value="60000"/>
 							</expression>
 						</expression>
 					</expression>

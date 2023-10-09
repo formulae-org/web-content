@@ -91,49 +91,31 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Van der Corput sequences for numbers 0 .. 25, in bases 2 to 10."/>
+				<expression tag="String.Text" Value="Van der Corput sequences for numbers 0 .. 10, in bases 2 to 10."/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Programming.Block" Description="Description" Expanded="True">
-			<expression tag="Symbolic.Local">
-				<expression tag="Symbolic.Assignment">
-					<expression tag="Symbolic.Symbol" Name="bases"/>
-					<expression tag="List.CreateList">
-						<expression tag="Symbolic.Symbol" Name="b"/>
-						<expression tag="Symbolic.Symbol" Name="b"/>
-						<expression tag="Math.Number" Value="2"/>
-						<expression tag="Math.Number" Value="10"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="Symbolic.Local">
-				<expression tag="Symbolic.Assignment">
-					<expression tag="Symbolic.Symbol" Name="numbers"/>
-					<expression tag="List.CreateList">
-						<expression tag="Symbolic.Symbol" Name="n"/>
-						<expression tag="Symbolic.Symbol" Name="n"/>
-						<expression tag="Math.Number" Value="0"/>
-						<expression tag="Math.Number" Value="10"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="List.CreateCrossedTable">
-				<expression tag="Symbolic.Function">
-					<expression tag="Symbolic.Symbol" Name="Van der Corput"/>
-					<expression tag="List.List">
-						<expression tag="Symbolic.Symbol" Name="n"/>
-						<expression tag="Symbolic.Symbol" Name="base"/>
-					</expression>
-				</expression>
+		<expression tag="List.CreateCrossedTable">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Van der Corput"/>
 				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="base"/>
 					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="base"/>
 				</expression>
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="bases"/>
-					<expression tag="Symbolic.Symbol" Name="numbers"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="base"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.FromRange">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+				<expression tag="List.FromRange">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="10"/>
 				</expression>
 			</expression>
 		</expression>
@@ -563,47 +545,29 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Programming.Block" Description="Description" Expanded="True">
-			<expression tag="Symbolic.Local">
-				<expression tag="Symbolic.Assignment">
-					<expression tag="Symbolic.Symbol" Name="bases"/>
-					<expression tag="List.CreateList">
-						<expression tag="Symbolic.Symbol" Name="b"/>
-						<expression tag="Symbolic.Symbol" Name="b"/>
-						<expression tag="Math.Number" Value="2"/>
-						<expression tag="Math.Number" Value="10"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="Symbolic.Local">
-				<expression tag="Symbolic.Assignment">
-					<expression tag="Symbolic.Symbol" Name="numbers"/>
-					<expression tag="List.CreateList">
+		<expression tag="List.CreateCrossedTable">
+			<expression tag="Math.Numeric">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Van der Corput"/>
+					<expression tag="List.List">
 						<expression tag="Symbolic.Symbol" Name="n"/>
-						<expression tag="Symbolic.Symbol" Name="n"/>
-						<expression tag="Math.Number" Value="0"/>
-						<expression tag="Math.Number" Value="10"/>
+						<expression tag="Symbolic.Symbol" Name="base"/>
 					</expression>
 				</expression>
+				<expression tag="Math.Number" Value="5"/>
 			</expression>
-			<expression tag="List.CreateCrossedTable">
-				<expression tag="Math.Numeric">
-					<expression tag="Symbolic.Function">
-						<expression tag="Symbolic.Symbol" Name="Van der Corput"/>
-						<expression tag="List.List">
-							<expression tag="Symbolic.Symbol" Name="n"/>
-							<expression tag="Symbolic.Symbol" Name="base"/>
-						</expression>
-					</expression>
-					<expression tag="Math.Number" Value="5"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="base"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.FromRange">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="10"/>
 				</expression>
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="base"/>
-					<expression tag="Symbolic.Symbol" Name="n"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="bases"/>
-					<expression tag="Symbolic.Symbol" Name="numbers"/>
+				<expression tag="List.FromRange">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="10"/>
 				</expression>
 			</expression>
 		</expression>

@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.list,org.formulae.programming,org.formulae.symbolic,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.visualization,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -70,98 +70,154 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="List.CreateList">
-			<expression tag="Programming.Block" Description="block" Expanded="True">
-				<expression tag="Symbolic.Local">
-					<expression tag="Symbolic.Assignment">
-						<expression tag="Symbolic.Symbol" Name="ramanujan"/>
-						<expression tag="Math.Numeric">
-							<expression tag="Math.Arithmetic.Exponentiation">
-								<expression tag="Math.Constant.Euler"/>
-								<expression tag="Math.Arithmetic.Multiplication">
-									<expression tag="Math.Constant.Pi"/>
-									<expression tag="Math.Arithmetic.SquareRoot">
-										<expression tag="Symbolic.Symbol" Name="h"/>
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="data"/>
+					<expression tag="List.CreateList">
+						<expression tag="Programming.Block" Description="block" Expanded="True">
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="ramanujan"/>
+									<expression tag="Math.Numeric">
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Math.Constant.Euler"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Constant.Pi"/>
+												<expression tag="Math.Arithmetic.SquareRoot">
+													<expression tag="Symbolic.Symbol" Name="h"/>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="50"/>
 									</expression>
 								</expression>
 							</expression>
-							<expression tag="Math.Number" Value="50"/>
-						</expression>
-					</expression>
-				</expression>
-				<expression tag="Symbolic.Local">
-					<expression tag="Symbolic.Assignment">
-						<expression tag="Symbolic.Symbol" Name="integer"/>
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Arithmetic.Exponentiation">
-								<expression tag="Symbolic.Symbol" Name="x"/>
-								<expression tag="Math.Number" Value="3"/>
+							<expression tag="Symbolic.Local">
+								<expression tag="Symbolic.Assignment">
+									<expression tag="Symbolic.Symbol" Name="integer"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+										<expression tag="Math.Number" Value="744"/>
+									</expression>
+								</expression>
 							</expression>
-							<expression tag="Math.Number" Value="744"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="h"/>
+								<expression tag="Symbolic.Symbol" Name="ramanujan"/>
+								<expression tag="Symbolic.Symbol" Name="integer"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="integer"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Symbolic.Symbol" Name="ramanujan"/>
+									</expression>
+								</expression>
+							</expression>
 						</expression>
-					</expression>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="h"/>
-					<expression tag="Symbolic.Symbol" Name="ramanujan"/>
-					<expression tag="Symbolic.Symbol" Name="integer"/>
-					<expression tag="Math.Arithmetic.Addition">
-						<expression tag="Symbolic.Symbol" Name="integer"/>
-						<expression tag="Math.Arithmetic.Negative">
-							<expression tag="Symbolic.Symbol" Name="ramanujan"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="h"/>
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="19"/>
+								<expression tag="Math.Number" Value="96"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="43"/>
+								<expression tag="Math.Number" Value="960"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="67"/>
+								<expression tag="Math.Number" Value="5280"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="163"/>
+								<expression tag="Math.Number" Value="640320"/>
+							</expression>
 						</expression>
 					</expression>
 				</expression>
 			</expression>
-			<expression tag="List.List">
-				<expression tag="Symbolic.Symbol" Name="h"/>
-				<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="titles"/>
+					<expression tag="List.List">
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="heegner"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="ramanujan"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="integer"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="String.Text" Value="integer"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="String.Text" Value="ramanujan"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
-			<expression tag="List.List">
-				<expression tag="List.List">
-					<expression tag="Math.Number" Value="19"/>
-					<expression tag="Math.Number" Value="96"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Math.Number" Value="43"/>
-					<expression tag="Math.Number" Value="960"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Math.Number" Value="67"/>
-					<expression tag="Math.Number" Value="5280"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Math.Number" Value="163"/>
-					<expression tag="Math.Number" Value="640320"/>
-				</expression>
+			<expression tag="List.Table">
+				<expression tag="Symbolic.Symbol" Name="data"/>
+				<expression tag="Symbolic.Symbol" Name="titles"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
+		<expression tag="List.Table">
 			<expression tag="List.List">
-				<expression tag="Math.Number" Value="19"/>
-				<expression tag="Math.Number" Value="885479.77768015431949753789348171962682071428650146"/>
-				<expression tag="Math.Number" Value="885480"/>
-				<expression tag="Math.Number" Value="0.22231984568050246211"/>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="Math.Number" Value="43"/>
-				<expression tag="Math.Number" Value="884736743.99977746603490666193746207858537684739941"/>
-				<expression tag="Math.Number" Value="884736744"/>
-				<expression tag="Math.Number" Value="0.00022253396509333806254"/>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="Math.Number" Value="67"/>
-				<expression tag="Math.Number" Value="147197952743.99999866245422450682926131257862850816"/>
-				<expression tag="Math.Number" Value="147197952744"/>
-				<expression tag="Math.Number" Value="0.0000013375457754931707387"/>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="Math.Number" Value="163"/>
-				<expression tag="Math.Number" Value="262537412640768743.99999999999925007259719818568881"/>
-				<expression tag="Math.Number" Value="262537412640768744"/>
-				<expression tag="Math.Number" Value="0.00000000000074992740280181431119"/>
+				<expression tag="List.List">
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="heegner"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="ramanujan"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="integer"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="String.Text" Value="integer"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="String.Text" Value="ramanujan"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="19"/>
+					<expression tag="Math.Number" Value="885479.77768015431949753789348171962682071428650101"/>
+					<expression tag="Math.Number" Value="885480"/>
+					<expression tag="Math.Number" Value="0.2223198456805024621"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="43"/>
+					<expression tag="Math.Number" Value="884736743.99977746603490666193746207858537684739785"/>
+					<expression tag="Math.Number" Value="884736744"/>
+					<expression tag="Math.Number" Value="0.00022253396509333806253"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="67"/>
+					<expression tag="Math.Number" Value="147197952743.99999866245422450682926131257862850801"/>
+					<expression tag="Math.Number" Value="147197952744"/>
+					<expression tag="Math.Number" Value="0.0000013375457754931707386"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="163"/>
+					<expression tag="Math.Number" Value="262537412640768743.99999999999925007259719818568815"/>
+					<expression tag="Math.Number" Value="262537412640768744"/>
+					<expression tag="Math.Number" Value="0.00000000000074992740280181431185"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
