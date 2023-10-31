@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.list,org.formulae.diagramming,org.formulae.symbolic,org.formulae.visualization,org.formulae.logic,org.formulae.relation,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.diagramming,org.formulae.symbolic,org.formulae.logic,org.formulae.relation,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -27,6 +27,48 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="How could we distinguish a given integer number from the decimal number with the same value? this is, to differentiate the (integer) number 50 from the decimal number 50? The answer is easy, a decimal number always shows the decimal separator, even if it contains an integer number."/>
 			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Example"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Type"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="235"/>
+							<expression tag="String.Text" Value="Integer"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="12.5"/>
+							<expression tag="String.Text" Value="Decimal"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="String.Text" Value="Integer 5"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="5."/>
+							<expression tag="String.Text" Value="Decimal 5"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="String.Text" Value="Integer zero"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0."/>
+							<expression tag="String.Text" Value="Decimal zero"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Arithmetic operations"/>
@@ -422,10 +464,10 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.GetMaxPrecision"/>
+		<expression tag="Math.Arithmetic.GetPrecision"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="50"/>
+		<expression tag="Math.Number" Value="20"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
@@ -533,7 +575,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Programming.Block" Description="Description" Expanded="True">
-			<expression tag="Math.Arithmetic.SetMaxPrecision">
+			<expression tag="Math.Arithmetic.SetPrecision">
 				<expression tag="Math.Number" Value="5"/>
 			</expression>
 			<expression tag="Math.Arithmetic.Division">
@@ -743,7 +785,7 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Precision">
+		<expression tag="Math.Arithmetic.SignificantDigits">
 			<expression tag="Math.Number" Value="123"/>
 		</expression>
 	</expression>
@@ -751,7 +793,7 @@
 		<expression tag="Math.Number" Value="3"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Precision">
+		<expression tag="Math.Arithmetic.SignificantDigits">
 			<expression tag="Math.Number" Value="87000"/>
 		</expression>
 	</expression>
@@ -759,7 +801,7 @@
 		<expression tag="Math.Number" Value="2"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Precision">
+		<expression tag="Math.Arithmetic.SignificantDigits">
 			<expression tag="Math.Number" Value="12001"/>
 		</expression>
 	</expression>
@@ -768,13 +810,13 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="List.List">
-			<expression tag="Math.Arithmetic.Precision">
+			<expression tag="Math.Arithmetic.SignificantDigits">
 				<expression tag="Math.Number" Value="123.456"/>
 			</expression>
-			<expression tag="Math.Arithmetic.Precision">
+			<expression tag="Math.Arithmetic.SignificantDigits">
 				<expression tag="Math.Number" Value="123456000000"/>
 			</expression>
-			<expression tag="Math.Arithmetic.Precision">
+			<expression tag="Math.Arithmetic.SignificantDigits">
 				<expression tag="Math.Number" Value="0.000000000000123456"/>
 			</expression>
 		</expression>
@@ -792,7 +834,7 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Precision">
+		<expression tag="Math.Arithmetic.SignificantDigits">
 			<expression tag="Math.Number" Value="1200000000000000000000000000000000000000000"/>
 		</expression>
 	</expression>
@@ -800,7 +842,7 @@
 		<expression tag="Math.Number" Value="2"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Precision">
+		<expression tag="Math.Arithmetic.SignificantDigits">
 			<expression tag="Math.Number" Value="0.0000000000000000000000000000000000000000000000008"/>
 		</expression>
 	</expression>
