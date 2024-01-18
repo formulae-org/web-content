@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.diagramming,org.formulae.symbolic,org.formulae.logic,org.formulae.relation,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.symbolic,org.formulae.logic,org.formulae.programming,org.formulae.relation,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -19,7 +19,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="There are two kind of numbers in Fōrmulæ: Integer and decimal numbers. Of course, the first category is to manage integer numbers exclusively, but the second one can hold both integer and decimal numbers."/>
+				<expression tag="String.Text" Value="There are three kinds of numbers in Fōrmulæ: Integer, decimal and rational numbers. Of course, the first category is to manage integer numbers exclusively, but the second one can hold both integer and decimal numbers."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Normally, integer numbers are easily distinguishable from decimal ones, because the latter contain a decimal separator and fractional part (for example 12.34), while the former ones do not (for example 50)."/>
@@ -61,6 +61,13 @@
 						<expression tag="List.List">
 							<expression tag="Math.Number" Value="0."/>
 							<expression tag="String.Text" Value="Decimal zero"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="String.Text" Value="Rational"/>
 						</expression>
 					</expression>
 				</expression>
@@ -114,7 +121,7 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Unfortunately, several mathematical operations such as the division, the exponentiation (in several specific cases), trigonometric or hyperbolic functions (such as sine, cosine, etc.), or trascendental functions (such as logarithms) can produce numbers that cannot be represented in an exact form, because it would require an infinite numbers of digits."/>
+				<expression tag="String.Text" Value="Unfortunately, several mathematical operations such as the division, the exponentiation (in several specific cases), trigonometric or hyperbolic functions (such as sine, cosine, etc.), or transcendental functions (such as logarithms) can produce numbers that cannot be represented in an exact form, because it would require an infinite numbers of digits."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The following are well known examples of values that would require an infinite number of digits, if they were represented numerically:"/>
@@ -403,6 +410,391 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Significant digits"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There are two fields where the term &quot;significant digits&quot; is used:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="In measurement theory. It is also known as &quot;significant figures&quot;."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="In computer science. It is related with the minimum information required to store a number. It is the meaning to be used here."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Informally, they are the digits of the number after removing both leading and trailing zeros. Formally, they are the digits of the"/>
+				<expression tag="String.Text" Value="mantissa,"/>
+				<expression tag="String.Text" Value="when the number is represented in"/>
+				<expression tag="String.Text" Value="normalized scientific notation. Zero has no significant digits."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="We are not particularly interested in which digits they are, but how many they are."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="SignificantDigits(number)"/>
+				</expression>
+				<expression tag="String.Text" Value="expression returns the"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="number"/>
+				</expression>
+				<expression tag="String.Text" Value="of significant digits of the number provided as argument."/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Number"/>
+							<expression tag="String.Text" Value="Significant digits"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="34.567"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="12.00013"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="25"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="250"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2500000"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0.0002048"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Precision"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="As it was said before, there are exact expression, such as"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value="would require an infinite number of digits when represented as a decimal number (0.333...) so it is necessary to use a finite number of them. This is when the concept of"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="precision"/>
+				</expression>
+				<expression tag="String.Text" Value="arises. It is said that a operation is performed with a"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="precision"/>
+				</expression>
+				<expression tag="String.Text" Value="of"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="n"/>
+				</expression>
+				<expression tag="String.Text" Value="digits if all the calculation involved are performed using"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="at most"/>
+				</expression>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="n"/>
+				</expression>
+				<expression tag="String.Text" Value="significant digits. So, the operation of converting the exact expression"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value="to a decimal number, using 5-digit precision produces the number 0.33333."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The definition says &quot;at most&quot; because sometimes an operation produces a result with less significant digits that the precision specifies, for example the addition of 1.234 (4 significant digits) and 3.766 (4 significant digits) is equal to 5 (1 significan digit)."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.GetPrecision"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="20"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Rounding"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Rounding refers to subtitute a number for another, which is an approximation of the former."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the previous example, the conversion of"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value="to a decimal number with 5-digit precision  is 0.33333.  However, what is the result of the conversion from"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value="(also with 5-digit precision)? 0.66666  or 0.66667 ? The decision depends of the"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="rounding mode"/>
+				</expression>
+				<expression tag="String.Text" Value="being used."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="As you can see, the decision is between two numbers. The rounding mode determines which of these two numbers is selected, acording to the following criteria:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Math.Arithmetic.RoundingMode.TowardsZero"/>
+					<expression tag="String.Text" Value=": The selected value is the closest to zero. This is also commonly known as the"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="Truncation"/>
+					</expression>
+					<expression tag="String.Text" Value="operation."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Math.Arithmetic.RoundingMode.AwayFromZero"/>
+					<expression tag="String.Text" Value=": The selected value is the fardest to zero."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Math.Arithmetic.RoundingMode.TowardsMinusInfinity"/>
+					<expression tag="String.Text" Value=": The selected value is the closest to negative infinite. This is also commonly known as the"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="Floor"/>
+					</expression>
+					<expression tag="String.Text" Value="operation."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Math.Arithmetic.RoundingMode.TowardsInfinity"/>
+					<expression tag="String.Text" Value=": The selected value is the closest to positive infinite. This is also commonly known as the "/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="Ceiling"/>
+					</expression>
+					<expression tag="String.Text" Value="operation."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Rounding to nearest."/>
+					<expression tag="String.Text" Value=": The selected value is the closest to the original number."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following table shows the rounding of several exact number, to a rounded value, with 5-digit precision, using each rounding mode:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Exact number"/>
+							<expression tag="Math.Arithmetic.RoundingMode.TowardsZero"/>
+							<expression tag="Math.Arithmetic.RoundingMode.AwayFromZero"/>
+							<expression tag="Math.Arithmetic.RoundingMode.TowardsMinusInfinity"/>
+							<expression tag="Math.Arithmetic.RoundingMode.TowardsInfinity"/>
+							<expression tag="String.Text" Value="Rounding to nearest"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Math.Number" Value="0.33333"/>
+							<expression tag="Math.Number" Value="0.33334"/>
+							<expression tag="Math.Number" Value="0.33333"/>
+							<expression tag="Math.Number" Value="0.33334"/>
+							<expression tag="Math.Number" Value="0.33333"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.33333"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.33334"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.33334"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.33333"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.33333"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Math.Number" Value="0.66666"/>
+							<expression tag="Math.Number" Value="0.66667"/>
+							<expression tag="Math.Number" Value="0.66666"/>
+							<expression tag="Math.Number" Value="0.66667"/>
+							<expression tag="Math.Number" Value="0.66667"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Number" Value="2"/>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.66666"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.66667"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.66667"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.66666"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.66667"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When the"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="rounding to nearest"/>
+				</expression>
+				<expression tag="String.Text" Value="mode is used, there are cases where the two values are equidistant to the original value, e.g. when the original valus is 0.1235 and we want to use a 4-digit precision. There are two options: the values 0.123 and 0.124. The"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="rounding to nearest"/>
+				</expression>
+				<expression tag="String.Text" Value="mode is actually 5 modes, according to the following criteria:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsZero"/>
+					<expression tag="String.Text" Value=": The selected value is the closest to zero."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfAwayFromZero"/>
+					<expression tag="String.Text" Value=": The selected value is the fardest to zero."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsMinusInfinity"/>
+					<expression tag="String.Text" Value=": The selected value is the closest to negative infinite."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsInfinity"/>
+					<expression tag="String.Text" Value=": The selected value is the closest to positive infinite."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfEven"/>
+					<expression tag="String.Text" Value=": The selected value is the one which its last digit is even."/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="The following table shows the rounding of several exact number, to a rounded value, with 4-digit precision, using each rounding mode:"/>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Number"/>
+							<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsZero"/>
+							<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfAwayFromZero"/>
+							<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsMinusInfinity"/>
+							<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsInfinity"/>
+							<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfEven"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="12.345"/>
+							<expression tag="Math.Number" Value="12.34"/>
+							<expression tag="Math.Number" Value="12.35"/>
+							<expression tag="Math.Number" Value="12.34"/>
+							<expression tag="Math.Number" Value="12.35"/>
+							<expression tag="Math.Number" Value="12.34"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="12.345"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="12.34"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="12.35"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="12.35"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="12.34"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="12.34"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0.0013575"/>
+							<expression tag="Math.Number" Value="0.001357"/>
+							<expression tag="Math.Number" Value="0.001358"/>
+							<expression tag="Math.Number" Value="0.001357"/>
+							<expression tag="Math.Number" Value="0.001358"/>
+							<expression tag="Math.Number" Value="0.001358"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.0013575"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.001357"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.001358"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.001358"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.001357"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="0.001358"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.GetRoundingMode"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.RoundingMode.TowardsZero"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Overriding accuracy"/>
 				</expression>
 			</expression>
@@ -481,7 +873,7 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="0.33333333333333333333333333333333333333333333333333"/>
+		<expression tag="Math.Number" Value="0.33333333333333333333"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Math.Arithmetic.SquareRoot">
@@ -489,7 +881,7 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="1.4142135623730950488016887242096980785696718753769"/>
+		<expression tag="Math.Number" Value="1.4142135623730950488"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
@@ -533,55 +925,17 @@
 		<expression tag="Math.Number" Value="8."/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Introduction to blocks"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The following expression is a"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="block of expressions."/>
-				</expression>
-				<expression tag="String.Text" Value="You might further learn about block in the"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=tutorials/Programming" Description="Programming"/>
-				<expression tag="String.Text" Value="tutorial."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Every expression in the block is sequencially evaluated (from top to bottom), and the result of the entire block is the last expression of it:"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Programming.Block" Description="Description" Expanded="True">
-			<expression tag="Math.Arithmetic.Addition">
-				<expression tag="Math.Number" Value="2"/>
-				<expression tag="Math.Number" Value="4"/>
-			</expression>
-			<expression tag="Math.Arithmetic.Multiplication">
-				<expression tag="Math.Number" Value="5"/>
-				<expression tag="Math.Number" Value="2"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="10"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
 			<expression tag="String.Text" Value="You can set the value of the maximum precison."/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Programming.Block" Description="Description" Expanded="True">
-			<expression tag="Math.Arithmetic.SetPrecision">
-				<expression tag="Math.Number" Value="5"/>
-			</expression>
+		<expression tag="Math.Arithmetic.WithPrecision">
 			<expression tag="Math.Arithmetic.Division">
 				<expression tag="Math.Number" Value="1."/>
 				<expression tag="Math.Number" Value="3"/>
 			</expression>
+			<expression tag="Math.Number" Value="5"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
@@ -1604,7 +1958,7 @@
 						</expression>
 						<expression tag="List.List">
 							<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.IsRealNumber" Description="IsRealNumber"/>
-							<expression tag="String.Text" Value="Number is integer or decimal, but not real"/>
+							<expression tag="String.Text" Value="Number is integer or decimal, but not rational"/>
 						</expression>
 						<expression tag="List.List">
 							<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.IsRationalNumber" Description="IsRationalNumber"/>
@@ -2019,79 +2373,114 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="List.CreateTable">
-			<expression tag="List.List">
-				<expression tag="Symbolic.Symbol" Name="x"/>
-				<expression tag="Math.Arithmetic.RoundUp">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-				</expression>
-				<expression tag="Math.Arithmetic.RoundDown">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-				</expression>
-				<expression tag="Math.Arithmetic.RoundEven">
-					<expression tag="Symbolic.Symbol" Name="x"/>
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="values"/>
+					<expression tag="List.CreateList">
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Symbolic.Symbol" Name="i"/>
+						<expression tag="Math.Number" Value="10."/>
+						<expression tag="Math.Number" Value="12"/>
+						<expression tag="Math.Number" Value="0.5"/>
+					</expression>
 				</expression>
 			</expression>
-			<expression tag="Symbolic.Symbol" Name="x"/>
-			<expression tag="Math.Number" Value="10.25"/>
-			<expression tag="Math.Number" Value="12.75"/>
-			<expression tag="Math.Number" Value="0.25"/>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="modes"/>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.RoundingMode.TowardsZero"/>
+						<expression tag="Math.Arithmetic.RoundingMode.AwayFromZero"/>
+						<expression tag="Math.Arithmetic.RoundingMode.TowardsMinusInfinity"/>
+						<expression tag="Math.Arithmetic.RoundingMode.TowardsInfinity"/>
+						<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsZero"/>
+						<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfAwayFromZero"/>
+						<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsMinusInfinity"/>
+						<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsInfinity"/>
+						<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfEven"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.CreateCrossedTable">
+				<expression tag="Math.Arithmetic.RoundToInteger">
+					<expression tag="Symbolic.Symbol" Name="value"/>
+					<expression tag="Symbolic.Symbol" Name="mode"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="value"/>
+					<expression tag="Symbolic.Symbol" Name="mode"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="values"/>
+					<expression tag="Symbolic.Symbol" Name="modes"/>
+				</expression>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="List.Table">
 			<expression tag="List.List">
 				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-					<expression tag="Math.Arithmetic.RoundUp">
-						<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="value"/>
+						<expression tag="Symbolic.Symbol" Name="mode"/>
 					</expression>
-					<expression tag="Math.Arithmetic.RoundDown">
-						<expression tag="Symbolic.Symbol" Name="x"/>
-					</expression>
-					<expression tag="Math.Arithmetic.RoundEven">
-						<expression tag="Symbolic.Symbol" Name="x"/>
-					</expression>
+					<expression tag="Math.Arithmetic.RoundingMode.TowardsZero"/>
+					<expression tag="Math.Arithmetic.RoundingMode.AwayFromZero"/>
+					<expression tag="Math.Arithmetic.RoundingMode.TowardsMinusInfinity"/>
+					<expression tag="Math.Arithmetic.RoundingMode.TowardsInfinity"/>
+					<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsZero"/>
+					<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfAwayFromZero"/>
+					<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsMinusInfinity"/>
+					<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsInfinity"/>
+					<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfEven"/>
 				</expression>
 				<expression tag="List.List">
-					<expression tag="Math.Number" Value="10.25"/>
+					<expression tag="Math.Number" Value="10."/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="10"/>
 					<expression tag="Math.Number" Value="10"/>
 					<expression tag="Math.Number" Value="10"/>
 					<expression tag="Math.Number" Value="10"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="10.5"/>
+					<expression tag="Math.Number" Value="10"/>
 					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="10"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Math.Number" Value="10.75"/>
 					<expression tag="Math.Number" Value="11"/>
+					<expression tag="Math.Number" Value="10"/>
 					<expression tag="Math.Number" Value="11"/>
-					<expression tag="Math.Number" Value="11"/>
+					<expression tag="Math.Number" Value="10"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="11."/>
 					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="11"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Math.Number" Value="11.25"/>
+					<expression tag="Math.Number" Value="11"/>
+					<expression tag="Math.Number" Value="11"/>
+					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="11"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="11.5"/>
+					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="12"/>
 					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="12"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Math.Number" Value="11.75"/>
+					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="12"/>
+					<expression tag="Math.Number" Value="11"/>
 					<expression tag="Math.Number" Value="12"/>
 					<expression tag="Math.Number" Value="12"/>
 				</expression>
@@ -2100,24 +2489,12 @@
 					<expression tag="Math.Number" Value="12"/>
 					<expression tag="Math.Number" Value="12"/>
 					<expression tag="Math.Number" Value="12"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Math.Number" Value="12.25"/>
 					<expression tag="Math.Number" Value="12"/>
 					<expression tag="Math.Number" Value="12"/>
 					<expression tag="Math.Number" Value="12"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Math.Number" Value="12.5"/>
-					<expression tag="Math.Number" Value="13"/>
 					<expression tag="Math.Number" Value="12"/>
 					<expression tag="Math.Number" Value="12"/>
-				</expression>
-				<expression tag="List.List">
-					<expression tag="Math.Number" Value="12.75"/>
-					<expression tag="Math.Number" Value="13"/>
-					<expression tag="Math.Number" Value="13"/>
-					<expression tag="Math.Number" Value="13"/>
+					<expression tag="Math.Number" Value="12"/>
 				</expression>
 			</expression>
 		</expression>
@@ -2611,7 +2988,7 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.ModE">
+		<expression tag="Math.Arithmetic.Mod">
 			<expression tag="Math.Number" Value="15"/>
 			<expression tag="Math.Number" Value="12"/>
 		</expression>
@@ -2620,7 +2997,7 @@
 		<expression tag="Math.Number" Value="3"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.ModE">
+		<expression tag="Math.Arithmetic.Mod">
 			<expression tag="Math.Arithmetic.Addition">
 				<expression tag="Math.Number" Value="20"/>
 				<expression tag="Math.Number" Value="10"/>
@@ -2639,7 +3016,7 @@
 				<expression tag="String.Text" Value="expression) could be extremely large, or even impossible to perform, (for example, it could require more memory than available), such as the following:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
-				<expression tag="Math.Arithmetic.ModE">
+				<expression tag="Math.Arithmetic.Mod">
 					<expression tag="Math.Arithmetic.Exponentiation">
 						<expression tag="Math.Number" Value="732446324"/>
 						<expression tag="Math.Number" Value="948474857"/>
@@ -2668,7 +3045,7 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="An arithmetic operation that cannot be tranparently performed in modular arithmetic is division. However, the division"/>
-				<expression tag="Math.Arithmetic.ModE">
+				<expression tag="Math.Arithmetic.Mod">
 					<expression tag="Math.Arithmetic.Division">
 						<expression tag="Symbolic.Symbol" Name="a"/>
 						<expression tag="Symbolic.Symbol" Name="b"/>
@@ -2685,7 +3062,7 @@
 				<expression tag="Symbolic.Symbol" Name="x'"/>
 				<expression tag="String.Text" Value="that makes"/>
 				<expression tag="Relation.Equals">
-					<expression tag="Math.Arithmetic.ModE">
+					<expression tag="Math.Arithmetic.Mod">
 						<expression tag="Math.Arithmetic.Multiplication">
 							<expression tag="Symbolic.Symbol" Name="x"/>
 							<expression tag="Symbolic.Symbol" Name="x'"/>
@@ -2712,7 +3089,7 @@
 		<expression tag="Math.Number" Value="647547319"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.ModE">
+		<expression tag="Math.Arithmetic.Mod">
 			<expression tag="Math.Arithmetic.Multiplication">
 				<expression tag="Math.Number" Value="3432832423"/>
 				<expression tag="Math.Number" Value="647547319"/>
