@@ -42,25 +42,25 @@
 	<expression tag="Formulae.Script.Row" type="2">
 		<expression tag="Symbolic.Assignment">
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="TuringMachine"/>
+				<expression tag="Symbolic.Symbol" Name="Turing machine"/>
 				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="InitialState"/>
-					<expression tag="Symbolic.Symbol" Name="TerminatingStates"/>
-					<expression tag="Symbolic.Symbol" Name="BlankSymbol"/>
-					<expression tag="Symbolic.Symbol" Name="Rules"/>
-					<expression tag="Symbolic.Symbol" Name="Tape"/>
+					<expression tag="Symbolic.Symbol" Name="initial state"/>
+					<expression tag="Symbolic.Symbol" Name="terminating states"/>
+					<expression tag="Symbolic.Symbol" Name="blank symbol"/>
+					<expression tag="Symbolic.Symbol" Name="rules"/>
+					<expression tag="Symbolic.Symbol" Name="tape"/>
 				</expression>
 			</expression>
 			<expression tag="Programming.Block" Description="block" Expanded="True">
 				<expression tag="Symbolic.Local">
 					<expression tag="Symbolic.Assignment">
 						<expression tag="List.List">
-							<expression tag="Symbolic.Symbol" Name="State"/>
-							<expression tag="Symbolic.Symbol" Name="Pos"/>
-							<expression tag="Symbolic.Symbol" Name="Offset"/>
+							<expression tag="Symbolic.Symbol" Name="state"/>
+							<expression tag="Symbolic.Symbol" Name="pos"/>
+							<expression tag="Symbolic.Symbol" Name="offset"/>
 						</expression>
 						<expression tag="List.List">
-							<expression tag="Symbolic.Symbol" Name="InitialState"/>
+							<expression tag="Symbolic.Symbol" Name="initial state"/>
 							<expression tag="Math.Number" Value="1"/>
 							<expression tag="Math.Number" Value="0"/>
 						</expression>
@@ -72,22 +72,22 @@
 						<expression tag="Programming.If">
 							<expression tag="Logic.Conjunction">
 								<expression tag="Relation.Equals">
-									<expression tag="Symbolic.Symbol" Name="State"/>
+									<expression tag="Symbolic.Symbol" Name="state"/>
 									<expression tag="Expression.Child">
-										<expression tag="Symbolic.Symbol" Name="Rule"/>
+										<expression tag="Symbolic.Symbol" Name="rule"/>
 										<expression tag="Math.Number" Value="1"/>
 									</expression>
 								</expression>
 								<expression tag="Relation.Equals">
 									<expression tag="Expression.Child">
-										<expression tag="Symbolic.Symbol" Name="Tape"/>
+										<expression tag="Symbolic.Symbol" Name="tape"/>
 										<expression tag="Math.Arithmetic.Addition">
-											<expression tag="Symbolic.Symbol" Name="Offset"/>
-											<expression tag="Symbolic.Symbol" Name="Pos"/>
+											<expression tag="Symbolic.Symbol" Name="offset"/>
+											<expression tag="Symbolic.Symbol" Name="pos"/>
 										</expression>
 									</expression>
 									<expression tag="Expression.Child">
-										<expression tag="Symbolic.Symbol" Name="Rule"/>
+										<expression tag="Symbolic.Symbol" Name="rule"/>
 										<expression tag="Math.Number" Value="2"/>
 									</expression>
 								</expression>
@@ -95,43 +95,43 @@
 							<expression tag="Programming.Block" Description="block" Expanded="True">
 								<expression tag="Symbolic.Assignment">
 									<expression tag="Expression.Child">
-										<expression tag="Symbolic.Symbol" Name="Tape"/>
+										<expression tag="Symbolic.Symbol" Name="tape"/>
 										<expression tag="Math.Arithmetic.Addition">
-											<expression tag="Symbolic.Symbol" Name="Offset"/>
-											<expression tag="Symbolic.Symbol" Name="Pos"/>
+											<expression tag="Symbolic.Symbol" Name="offset"/>
+											<expression tag="Symbolic.Symbol" Name="pos"/>
 										</expression>
 									</expression>
 									<expression tag="Expression.Child">
-										<expression tag="Symbolic.Symbol" Name="Rule"/>
+										<expression tag="Symbolic.Symbol" Name="rule"/>
 										<expression tag="Math.Number" Value="3"/>
 									</expression>
 								</expression>
 								<expression tag="Programming.ComparativeSwitch">
 									<expression tag="Expression.Child">
-										<expression tag="Symbolic.Symbol" Name="Rule"/>
+										<expression tag="Symbolic.Symbol" Name="rule"/>
 										<expression tag="Math.Number" Value="4"/>
 									</expression>
 									<expression tag="String.String" Value="Right"/>
 									<expression tag="Programming.Block" Description="block" Expanded="True">
 										<expression tag="Symbolic.Assignment">
-											<expression tag="Symbolic.Symbol" Name="Pos"/>
+											<expression tag="Symbolic.Symbol" Name="pos"/>
 											<expression tag="Math.Arithmetic.Addition">
-												<expression tag="Symbolic.Symbol" Name="Pos"/>
+												<expression tag="Symbolic.Symbol" Name="pos"/>
 												<expression tag="Math.Number" Value="1"/>
 											</expression>
 										</expression>
 										<expression tag="Programming.InvertedIf">
 											<expression tag="Expression.Append">
-												<expression tag="Symbolic.Symbol" Name="Tape"/>
-												<expression tag="Symbolic.Symbol" Name="BlankSymbol"/>
+												<expression tag="Symbolic.Symbol" Name="tape"/>
+												<expression tag="Symbolic.Symbol" Name="blank symbol"/>
 											</expression>
 											<expression tag="Relation.Greater">
 												<expression tag="Math.Arithmetic.Addition">
-													<expression tag="Symbolic.Symbol" Name="Offset"/>
-													<expression tag="Symbolic.Symbol" Name="Pos"/>
+													<expression tag="Symbolic.Symbol" Name="offset"/>
+													<expression tag="Symbolic.Symbol" Name="pos"/>
 												</expression>
 												<expression tag="Expression.Cardinality">
-													<expression tag="Symbolic.Symbol" Name="Tape"/>
+													<expression tag="Symbolic.Symbol" Name="tape"/>
 												</expression>
 											</expression>
 										</expression>
@@ -139,9 +139,9 @@
 									<expression tag="String.String" Value="Left"/>
 									<expression tag="Programming.Block" Description="block" Expanded="True">
 										<expression tag="Symbolic.Assignment">
-											<expression tag="Symbolic.Symbol" Name="Pos"/>
+											<expression tag="Symbolic.Symbol" Name="pos"/>
 											<expression tag="Math.Arithmetic.Addition">
-												<expression tag="Symbolic.Symbol" Name="Pos"/>
+												<expression tag="Symbolic.Symbol" Name="pos"/>
 												<expression tag="Math.Arithmetic.Negative">
 													<expression tag="Math.Number" Value="1"/>
 												</expression>
@@ -150,47 +150,47 @@
 										<expression tag="Programming.If">
 											<expression tag="Relation.LessOrEquals">
 												<expression tag="Math.Arithmetic.Addition">
-													<expression tag="Symbolic.Symbol" Name="Offset"/>
-													<expression tag="Symbolic.Symbol" Name="Pos"/>
+													<expression tag="Symbolic.Symbol" Name="offset"/>
+													<expression tag="Symbolic.Symbol" Name="pos"/>
 												</expression>
 												<expression tag="Math.Number" Value="0"/>
 											</expression>
 											<expression tag="Programming.Block" Description="block" Expanded="True">
 												<expression tag="Symbolic.Assignment">
-													<expression tag="Symbolic.Symbol" Name="Offset"/>
+													<expression tag="Symbolic.Symbol" Name="offset"/>
 													<expression tag="Math.Arithmetic.Addition">
-														<expression tag="Symbolic.Symbol" Name="Offset"/>
+														<expression tag="Symbolic.Symbol" Name="offset"/>
 														<expression tag="Math.Number" Value="1"/>
 													</expression>
 												</expression>
 												<expression tag="Expression.Prepend">
-													<expression tag="Symbolic.Symbol" Name="Tape"/>
-													<expression tag="Symbolic.Symbol" Name="BlankSymbol"/>
+													<expression tag="Symbolic.Symbol" Name="tape"/>
+													<expression tag="Symbolic.Symbol" Name="blank symbol"/>
 												</expression>
 											</expression>
 										</expression>
 									</expression>
 								</expression>
 								<expression tag="Symbolic.Assignment">
-									<expression tag="Symbolic.Symbol" Name="State"/>
+									<expression tag="Symbolic.Symbol" Name="state"/>
 									<expression tag="Expression.Child">
-										<expression tag="Symbolic.Symbol" Name="Rule"/>
+										<expression tag="Symbolic.Symbol" Name="rule"/>
 										<expression tag="Math.Number" Value="5"/>
 									</expression>
 								</expression>
 								<expression tag="Programming.InvertedIf">
 									<expression tag="Symbolic.Return">
-										<expression tag="Symbolic.Symbol" Name="Tape"/>
+										<expression tag="Symbolic.Symbol" Name="tape"/>
 									</expression>
 									<expression tag="Relation.In">
-										<expression tag="Symbolic.Symbol" Name="State"/>
-										<expression tag="Symbolic.Symbol" Name="TerminatingStates"/>
+										<expression tag="Symbolic.Symbol" Name="state"/>
+										<expression tag="Symbolic.Symbol" Name="terminating states"/>
 									</expression>
 								</expression>
 							</expression>
 						</expression>
-						<expression tag="Symbolic.Symbol" Name="Rule"/>
-						<expression tag="Symbolic.Symbol" Name="Rules"/>
+						<expression tag="Symbolic.Symbol" Name="rule"/>
+						<expression tag="Symbolic.Symbol" Name="rules"/>
 					</expression>
 				</expression>
 			</expression>
@@ -205,7 +205,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.Function">
-			<expression tag="Symbolic.Symbol" Name="TuringMachine"/>
+			<expression tag="Symbolic.Symbol" Name="Turing machine"/>
 			<expression tag="List.List">
 				<expression tag="String.String" Value="q0"/>
 				<expression tag="List.List">
@@ -254,7 +254,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.Function">
-			<expression tag="Symbolic.Symbol" Name="TuringMachine"/>
+			<expression tag="Symbolic.Symbol" Name="Turing machine"/>
 			<expression tag="List.List">
 				<expression tag="String.String" Value="a"/>
 				<expression tag="List.List">
@@ -290,7 +290,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.Function">
-			<expression tag="Symbolic.Symbol" Name="TuringMachine"/>
+			<expression tag="Symbolic.Symbol" Name="Turing machine"/>
 			<expression tag="List.List">
 				<expression tag="String.String" Value="a"/>
 				<expression tag="List.List">
@@ -350,7 +350,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.Function">
-			<expression tag="Symbolic.Symbol" Name="TuringMachine"/>
+			<expression tag="Symbolic.Symbol" Name="Turing machine"/>
 			<expression tag="List.List">
 				<expression tag="String.String" Value="a"/>
 				<expression tag="List.List">
@@ -426,7 +426,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.Function">
-			<expression tag="Symbolic.Symbol" Name="TuringMachine"/>
+			<expression tag="Symbolic.Symbol" Name="Turing machine"/>
 			<expression tag="List.List">
 				<expression tag="String.String" Value="a"/>
 				<expression tag="List.List">
@@ -533,7 +533,7 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Expression.Cardinality">
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="TuringMachine"/>
+				<expression tag="Symbolic.Symbol" Name="Turing machine"/>
 				<expression tag="List.List">
 					<expression tag="String.String" Value="a"/>
 					<expression tag="List.List">
