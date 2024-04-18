@@ -1312,7 +1312,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="We will need the following function to generate drawing by the using of"/>
-				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/L-system" Description="L-systems."/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/L-system" Description="an L-system."/>
 				<expression tag="String.Text" Value="Notice that the &quot;program&quot; to execute is given as input:"/>
 			</expression>
 		</expression>
@@ -1320,18 +1320,18 @@
 	<expression tag="Formulae.Script.Row" type="2">
 		<expression tag="Symbolic.Assignment">
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="Execute L-system"/>
+				<expression tag="Symbolic.Symbol" Name="Interpret L-system"/>
 				<expression tag="List.List">
-					<expression tag="Symbolic.Symbol" Name="program"/>
-					<expression tag="Symbolic.Symbol" Name="rules"/>
+					<expression tag="Symbolic.Symbol" Name="result"/>
+					<expression tag="Symbolic.Symbol" Name="operations"/>
 				</expression>
 			</expression>
-			<expression tag="Programming.Block" Description="Expand to uncover the code" Expanded="False">
+			<expression tag="Programming.Block" Description="block" Expanded="False">
 				<expression tag="Symbolic.Local">
 					<expression tag="Symbolic.Assignment">
 						<expression tag="Symbolic.Symbol" Name="n"/>
 						<expression tag="Expression.Cardinality">
-							<expression tag="Symbolic.Symbol" Name="rules"/>
+							<expression tag="Symbolic.Symbol" Name="operations"/>
 						</expression>
 					</expression>
 				</expression>
@@ -1341,73 +1341,52 @@
 							<expression tag="Symbolic.Symbol" Name="Do"/>
 							<expression tag="List.List">
 								<expression tag="Symbolic.Symbol" Name="char"/>
-								<expression tag="Symbolic.Symbol" Name="step"/>
 							</expression>
 						</expression>
-						<expression tag="Programming.Block" Description="block" Expanded="True">
-							<expression tag="Programming.ForFromTo">
-								<expression tag="Programming.If">
-									<expression tag="String.Contains">
+						<expression tag="Programming.ForFromTo">
+							<expression tag="Programming.If">
+								<expression tag="String.Contains">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="operations"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="r"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="char"/>
+								</expression>
+								<expression tag="Programming.Block" Description="block" Expanded="True">
+									<expression tag="Symbolic.LambdaApplication">
 										<expression tag="Expression.Child">
-											<expression tag="Symbolic.Symbol" Name="rules"/>
+											<expression tag="Symbolic.Symbol" Name="operations"/>
 											<expression tag="List.List">
 												<expression tag="Symbolic.Symbol" Name="r"/>
-												<expression tag="Math.Number" Value="1"/>
+												<expression tag="Math.Number" Value="2"/>
 											</expression>
 										</expression>
-										<expression tag="Symbolic.Symbol" Name="char"/>
+										<expression tag="List.List"/>
 									</expression>
-									<expression tag="Programming.Block" Description="block" Expanded="True">
-										<expression tag="Symbolic.LambdaApplication">
-											<expression tag="Expression.Child">
-												<expression tag="Symbolic.Symbol" Name="rules"/>
-												<expression tag="List.List">
-													<expression tag="Symbolic.Symbol" Name="r"/>
-													<expression tag="Math.Number" Value="2"/>
-												</expression>
-											</expression>
-											<expression tag="List.List">
-												<expression tag="Symbolic.Symbol" Name="step"/>
-											</expression>
-										</expression>
-										<expression tag="Symbolic.Return">
-											<expression tag="Null"/>
-										</expression>
+									<expression tag="Symbolic.Return">
+										<expression tag="Null"/>
 									</expression>
 								</expression>
-								<expression tag="Symbolic.Symbol" Name="r"/>
-								<expression tag="Math.Number" Value="1"/>
-								<expression tag="Symbolic.Symbol" Name="n"/>
 							</expression>
+							<expression tag="Symbolic.Symbol" Name="r"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
 						</expression>
-					</expression>
-				</expression>
-				<expression tag="Symbolic.Local">
-					<expression tag="Symbolic.Assignment">
-						<expression tag="Symbolic.Symbol" Name="step"/>
-						<expression tag="Math.Number" Value="0"/>
 					</expression>
 				</expression>
 				<expression tag="Programming.ForIn">
-					<expression tag="Programming.Block" Description="Description" Expanded="True">
-						<expression tag="Symbolic.Assignment">
-							<expression tag="Symbolic.Symbol" Name="step"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="step"/>
-								<expression tag="Math.Number" Value="1"/>
-							</expression>
-						</expression>
-						<expression tag="Symbolic.Function">
-							<expression tag="Symbolic.Symbol" Name="Do"/>
-							<expression tag="List.List">
-								<expression tag="Symbolic.Symbol" Name="char"/>
-								<expression tag="Symbolic.Symbol" Name="step"/>
-							</expression>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Do"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="char"/>
 						</expression>
 					</expression>
 					<expression tag="Symbolic.Symbol" Name="char"/>
 					<expression tag="String.Split">
-						<expression tag="Symbolic.Symbol" Name="program"/>
+						<expression tag="Symbolic.Symbol" Name="result"/>
 					</expression>
 				</expression>
 			</expression>
@@ -1438,8 +1417,14 @@
 				<expression tag="Symbolic.Symbol" Name="g"/>
 				<expression tag="Math.Number" Value="0"/>
 			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="step"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="Execute L-system"/>
+				<expression tag="Symbolic.Symbol" Name="Interpret L-system"/>
 				<expression tag="List.List">
 					<expression tag="Symbolic.Function">
 						<expression tag="Symbolic.Symbol" Name="Fibonacci word"/>
@@ -1451,9 +1436,7 @@
 						<expression tag="List.List">
 							<expression tag="String.String" Value="0"/>
 							<expression tag="Symbolic.Lambda">
-								<expression tag="List.List">
-									<expression tag="Symbolic.Symbol" Name="step"/>
-								</expression>
+								<expression tag="List.List"/>
 								<expression tag="Programming.Block" Description="Description" Expanded="True">
 									<expression tag="Graphics.Turtle.ForwardDrawing">
 										<expression tag="Symbolic.Symbol" Name="g"/>
@@ -1471,18 +1454,32 @@
 											<expression tag="Math.Number" Value="90"/>
 										</expression>
 									</expression>
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="step"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="step"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
 								</expression>
 							</expression>
 						</expression>
 						<expression tag="List.List">
 							<expression tag="String.String" Value="1"/>
 							<expression tag="Symbolic.Lambda">
-								<expression tag="List.List">
-									<expression tag="Symbolic.Symbol" Name="step"/>
-								</expression>
-								<expression tag="Graphics.Turtle.ForwardDrawing">
-									<expression tag="Symbolic.Symbol" Name="g"/>
-									<expression tag="Math.Number" Value="2"/>
+								<expression tag="List.List"/>
+								<expression tag="Programming.Block" Description="Description" Expanded="True">
+									<expression tag="Graphics.Turtle.ForwardDrawing">
+										<expression tag="Symbolic.Symbol" Name="g"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Symbolic.Assignment">
+										<expression tag="Symbolic.Symbol" Name="step"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="step"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
 								</expression>
 							</expression>
 						</expression>
@@ -1519,7 +1516,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1692239280000"/>
+				<expression tag="Time.Time" Value="1713153540000"/>
 			</expression>
 		</expression>
 	</expression>
