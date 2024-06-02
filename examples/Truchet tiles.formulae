@@ -770,7 +770,7 @@
 	<expression tag="Formulae.Script.Row" type="2">
 		<expression tag="Symbolic.Assignment">
 			<expression tag="Symbolic.Function">
-				<expression tag="Symbolic.Symbol" Name="Tileset D"/>
+				<expression tag="Symbolic.Symbol" Name="Tileset D1"/>
 				<expression tag="List.List">
 					<expression tag="Symbolic.Symbol" Name="size"/>
 				</expression>
@@ -968,7 +968,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Symbolic.Function">
-			<expression tag="Symbolic.Symbol" Name="Tileset D"/>
+			<expression tag="Symbolic.Symbol" Name="Tileset D1"/>
 			<expression tag="List.List">
 				<expression tag="Math.Number" Value="50"/>
 			</expression>
@@ -990,6 +990,7 @@
 					<expression tag="Symbolic.Symbol" Name="rows"/>
 					<expression tag="Symbolic.Symbol" Name="cols"/>
 					<expression tag="Symbolic.Symbol" Name="size"/>
+					<expression tag="Symbolic.Symbol" Name="tiles"/>
 				</expression>
 			</expression>
 			<expression tag="Programming.Block" Description="Description" Expanded="True">
@@ -1015,17 +1016,6 @@
 							</expression>
 							<expression tag="Math.Arithmetic.Multiplication">
 								<expression tag="Symbolic.Symbol" Name="rows"/>
-								<expression tag="Symbolic.Symbol" Name="size"/>
-							</expression>
-						</expression>
-					</expression>
-				</expression>
-				<expression tag="Symbolic.Local">
-					<expression tag="Symbolic.Assignment">
-						<expression tag="Symbolic.Symbol" Name="tiles"/>
-						<expression tag="Symbolic.Function">
-							<expression tag="Symbolic.Symbol" Name="Tileset D"/>
-							<expression tag="List.List">
 								<expression tag="Symbolic.Symbol" Name="size"/>
 							</expression>
 						</expression>
@@ -1253,11 +1243,323 @@
 				<expression tag="Math.Number" Value="15"/>
 				<expression tag="Math.Number" Value="15"/>
 				<expression tag="Math.Number" Value="20"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Tileset D1"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="20"/>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAAAXNSR0IArs4c6QAAIABJREFUeF7tnb2uLUlWhHMMXgCMNgAL7BnxDCCBBBjwAPwIkEACCxcJkNrFAgkkQPw8ABiABBI8A+q2py3AwIAXGAPu6j41XXMnT1WszK8qY1dmO1eayZ07KmKtOFWVmbG/UUr5v6L99w1tmDTqx0op35ZG6oN+vJTyhT78cOSM+Ja+fcVD1l8gUftSRf0IfeMiFGL+q5TyIyozwrhfKKX8nTAuM+QXSyl/n/nAwdjZ8C19+wuHrL9A85+llB/uh/XlDI/RVzWsfyyl/DxEXkzzBx+M8vfB+WKqP3ybl5h2NnxL3/6qIesv0PxDKeXn+mF9OcNj9FUN67dKKX8GkRfTxN1V3MWQ/8XdVfyVI/6bDd/St79qyPoLNL9ZSvnTflhfzvAYfRXD+u9Syo+WUr4DkfcrpZS/gub6eJpfLaX8defcs+Fb+nYWzO7jRP1t0/1AKeU/PpjWJ53wHqWvYli/8eH91V90krb/+P+UUn4QnG8/1f+WUn6oc+7Z8C19Owtm93Gi/vZofv3De6w/74T3KH3PDOtPSim/00nY/uP/Wkr5SXC+2lT/Vkr5qcbvmA3f0rexUA4+1lN/tWn/uJTy240wH6fvkWHRF/s3pZRfaiQ++7G/LaX8cvJDs+Fb+iYLJDG8pf6Opm8xrUfqWzOseOb9PfAx8Kff5iK3RSi1E8vCcUv9LyeDZ8O39FWqp3+MWn/qN0Utfyq803q0vpthxT6Nfy+l/NOHF+x/2fmCPTZdfvPDnqhvvf1LrwaqAm/jYvXm8w+rkp+9/Rv/+2z4lr7ZquHGf1x/PZub40X8r5VSfraU8hO7fVrT6Nu7+/U9AnvkXgbTw95Xm2f3Bn1Fg/QgXPp+tZGTukHo0eLl+rfHsNRbVJXQWGH5XWFbQmw7+KMLVxrfw/sUfKoeS986U3T90Y9wj9a31bBaXgIeEdmysnLHit6G+Yn46Je8S1/VKurj6Jfkj9S3xbBos+pZUbljZe/J+GpFvfTVjYeuvztM66X1zRoWsZFtXw6xkhK76Hv+i93AV61AzoBvz/3SN1+JdP3RGz0fpW/GsKijAnsCf0bYdnBWQrEt4Z/PBjX+/zPg26hZ+rYVCV1/9FGaR+mbMSzyMGaQSB4Wne2wMs1fzLf0bTOs+BRdf/Rh5cfomzEsMu4iCCTjOGaLg6H5i/mWvu2GRdcfHQfzGH0zhkUGigWBZODZbIF7NH8x39K33bDo+qMD9x6jb8awlGTSjORkpOyMkcYkf6Hb0jdTvd879or6y/SmgvwR+qqkLEGUkjgeQxeMqp2KfOFTmaqPo/kj/yC596+MTy36dcvbV8z0Lbn7I8PC118vzq9MaH1lf1ENa71U7C9A8qW2+0vZha+/XpwXpWh9ZX9RDWst2/YXILltwH3Ze+HrrxfnbT+0vrK/KIZFZ5y/0sa4GTK6t9aiNo666+uOb291RP25928Kn2JYdMb5Kx09mCGje98gxNEcd33d8e31IOrPvX9T+M4Mi05EeMXDnS1JDUcPBD2HT935W/hK6dG3Vjc99efev2l8R4b1iifRN8HpoulJbKgVYQu+O8ygh7+F72ulW/Q9+iPXUn/u/duEr2ZYdMb5UwLKnpLRrb4OVgP83PV1x6fqodafe/924QvDuiKDfaYI2CsiiN35W/g0m3m5COK3yyL1Rf3l7HcJFVnuyBC3JfACgRXO3xtzx48ULHx9v4KONnCPGG+fvaN/e2B+D74ew1IzzlWwox5BZsvodn9Emg0fXX9qv43q3y58rYbVs3Lh+hI6vWJxwvx6Cd33Eno2/uj6OypPh/5twtdiWC0rFq+yzN+0cnFwcXc0Xc+K1MLXtw2B5o+uv1ppOvVvGl/WsIiM8z1Ix42Ks2V0u2+knA0fXX/7fnPs3xS+rGERGecbQNejILNldLsfVZkNH11/e0Nw7N8UvoxhkYcxA6TzYWD5MKb4BpE+LOrO38InFsY7w+j6i69x7l8ZX8awyLiLAOgctyLHXYh1ScdxuPO38ImF8c4wuv7ia5z7V8aXMSwyUCwAkhniwwLFxLqk8bnzt/CJhfHOMDnQLvE1zv0blyHhyxgWGdkaAOlI2bOD3Altv9z9/+3MB4SxJD53/hY+oSAOhlxRf+79K+F7kmFJF5yoI9pQF74E+ZWhpOFfYQju+NzrT+IvY1jSLVuiJslHQvmWcuF7lwFnfelHavqRyx2fe3/I/GUM6xEv7RKGRS4KyC8VF74qA/SiBf1S2x2fe/3J/GUM6xHLoglDILddxNcu/hLkfzSU3hZCbxtwx+defzJ/GcOKiyYyprdapDaO7mt74Ws3BVd96Y2jqQxxgU53fO79keIva1hExvSeQOJozn6+hU/osIMhjvzRR3NSGeICne743PsjxV/WsOLiX/akt1B8tSE9h4tr8y3+dCHow8V0IoI7Pvf6S/PXYlhBwkuf+Nb75bsjadNa/J2LkC7mkynpJAR3fEd0ONRfE3+thhVkqBnT56X51Qg1wE+db+FTmaqPG8UfHeDXlSFeocYdn6r6S+rbY1gbMS8VsVpKuSKDXS2S2rjFXykzRWDPGJGM6fsKP0JxhcAYgS/wIx7u/PWY/R0/8uD+By74++aHbTPfevs3NsX2/kf2Rw+W79O3th2ezpimb6EXvp4SKMWdP/Xq6FcIL5lxXiHr0foend+ZbUWl6SXgQXct/lTryY+jF0GeuHLrXn9Hqr+r79mBw9lWVmjTWvzlzejsE7RZOayYXbWi515/tes+1PfMsGJCOmM6tVHsrHoXPoGh4yHu+u7R0xuNXz7jXFD/UfoqhkVnTKe24guCLHwCSQdD3PnboF9xlOvlM84F6R+lr2JYwclsh0Xlw5hCwSz+RJJOhq3D6O08uvdvXJmkr2pYs8VxyHEXYg0t/kSiDoatuJ92Dt3rL65M0lc1rNkCz+RAMbGGFn8iUQfDVuBjO4fu9RdXJumrGtaMkbIqN0oZLf4Ulo7HrMjqdg7d6y+uTNI305TShAlOM9+tTEvjIzOw3QvmCnwz8Sc3nFLIb2Pc+4PEJ9df5kulWzZREPqRS76lFPHFMDLj3P2WnMY3G390/bn3B41Prr+MYUkvxURDoF9qyy/tRHwxjMywd3/pSeObjT+6/tz7g8Yn11/GsKRlR9EQ6G0D8bUkvpiPzGB3X1am8c3GH11/7v1B45PrL2NY1MY9euPo5pEUvr3nEhnxK0Nc/Cv2zjB3/uj6c+8PGl9K34xhhTDE0Qj6aM6+zgl8+/mIjPOVId5nWO780fXn3h80vpS+WcMKcXoOn9KHi2ut0IOvNl/PSX73E/M0vtn4o+vPvT9ofOn6azGsVtOiL/bo7zZtWi0n+t1PytP4jvR4In90/bn3B42vqf5aDWt7PPy0lPLJyR0/HeCnPmDQAW9qBvbKEK8r9BT+6Ppz7w8aX1d/9BhWCPdeRK1txKpabQfjPs5gj6HOEbVXRCT30Phq/PVc66v2B9m/aP1tP0JBAnQXGCWw52LfPvtqP0JxhUH30HgHfzP1R48Wl2fs1341h74FVAlQH+FofHQGtnq9K0NcZao+bhR/dP2pLIzqDxqfOl9V36Of+aJfsrm/pEyvWKjMV8b1rDzSK1O1+VrwzcbfbP1B9+/RfO/W39nvEt4hSs+KHo2vaeUiaVwtK2Z3FksPvtn4o+uP/mPkjq92vYf1d2ZYMSG9UWwPktjoSeOjM7D317syxJPu/tFwR/7o+nPvDxpfqj8Uw6K34m8AqaM0ND46A3svyMoQ7zMsR/7o+nPvDxpfqj8Uw4oJ6cOOMSd5WJnGJx/GTPQfeZia5i/mI/HNxh9df7S+7vjk+lMNi46TCIDOcTVy3EXCsMi4Gpq/mI/ENxt/s/XHsPpTDYsO7IoLdg4ElAPFEoZFBgLS/MV8JL7Z+JutP4bVn2pYAbB3V/zHvU1HGpP45MjWhGGRkcHxtTR/JL4Z+SPr7wp93fFJ9fckw5IuWDSYGRuO5O+KhiPxzajvVIblfsu7HmlEJz4YRj4SDntkEGlYj6wiUQfDyFc6cv+qd1juLxXXS+P+AiRfug97KSvSsBYFRKIOhpGLZnL/qob1mGVRUafZluWDFnJbQ8xHbluh8c2m72P6VzEs941xew9yzGCn8W3zURtvZ8OXyhAX/8Btw4j6o/V9VP8qhuV+9GBfU44Z7DS+/XzE0abZ8KUyxJOGRdQfre+j+vfMsF7x8GRL0sBWJHckDvTgq/VPz+Hx2nxPxjebvo/r31eOlzn649eSOHBH0sCGuQXf0fXSpvVEfLPpe4dZbTV5W/29YoCfepc+KkOcxqfOpwa8qfOp/KnzjcLXlSGuXlxl3Cj+3AMGVUqr/L1KRLJ6kbVxd2SIk/i+6Jjs8ojaUoo7vqCPztjvkOTL1dfPSymfvf17BX/uEc4Yf727X+8I2XfPYL+iQcgCvII/d3xYg7xNRBsgyV/Ptb5c//YYlnqLT9+iumew0/jc+XPHpza0mhHvrq96vS/Zv62G1fKSjX4JeMeKzyZ+y8oZjc+dP3d8R438RH3pRRoLfVsMq8WsNvLoi75j5adnxYzG586fO75aEz9ZX3obzHB9s4ZFbFSkN7K5Z7DT+Nz5c8e3b2IiI95d3/31vnz/ZgyLOgpCHxVwz2Cn8bnz545v38BERry7vtv1PqJ/M4ZFHmalD2O6H2al8bnz544vmpg87O2ub1zvI/o3Y1hknAQdV+MeF0Ljc+fPHV80MBmn465vXO8j+jdjWGRgFx0I6B7IRuNz588dXzQwGVjorm9c7yP6N2NYdIZ45rvP9pa4R95egc+dP3d87pHLJH/RP4/o3wwp9AW7FwyJ74qCmQnfFYZP8ncFvkxvvvofdLk/MqSQt5Tut+Q0PvqWfDZ89CMXzR+Nb7ZHark/MoZFvrRzf+lJ46Nfes6Gj36pTfNH45tt0ULuj4xhkcui7svKND56WXk2fPS2AZo/Gt9s20Lk/sgYFrXxbP+8TWRgz5bRTfNHbyyk8bnrS+OjN97S+Gh9U/WXMayYmNjav79gIgN7toxumr/9fEvfs9fX3///0/VHH22i8Q2tv6xhBdiew8+1cmg5Kb/NQyci0Phq8znx547PXV8aH324mMY3vD9aDOsK02o5MU8nIRz9bW3BdzQfbVpPxOeuL42PNisan0V/tBrW9nj4aSnlk/xddPUTagb2bBndKr0qf+p8asCbOp+Kz11fGh8dgEjjo/VV56vWX49hxRffkSEe30NH1Kqk1cbdkdE9Ez53fa/AR0YkXxGBbVt/V/wIhTuBMxbgTA1yhb62DdwD7O2zd/xIC1Z/d/zMF52BrWr0lIxumj/6EYTG564vjU+dj35Ef8n+uPOHVO9YsdjEb1l5pPHRL1Fnw3fUyA760vjuXKRx4K+pP+7+qfo7Vi56VsxofE2iHFTubPhqVDjpS+Orzee0ojy8/s4MKwikN7LRGdh7kWfI6Kb5W/qqD2Xn44j6238LvZGXwDe0/hTDoo8K0BnYe4FnyOim+Vv6nhuROoKov+27rjgKR+AbWn+KYQWBsx3GnO0w69JXtaT3x5EZ8fEtM4UNyPWnGtZscRezxYUsffsNi8yIDzQzxTnJ9aca1myBYrMFsi19+w2LzIgPNDMFZsr1pxpWENi7K35fEldEyq7I276mW/r28UfWXyCZLZJcqr+MYS1B+gpaEkT8CnfDv6LhSP5mxPeI/s0Y1rrlFd2kMky+5RW/gn5kja911pfmj37kcsfnrq+ML2NY66Wi6CaVYfJLRfEr6EWB+FpnfWn+6Jfa7vjc9ZXxZQxrLduKblIZJi/bil9Bb7uIr3XWl+aP3jbgjs9dXxlfxrBiUiKDfevJKzbGEfjoDGx6YyaNb++RBH+0vjR/s+Fz1zeFL2tYRAb7HiB99IDAR2dg00dfaHx7PQj+aH1p/mbD565vCl/WsGLylpPeR0869OHOHnwrEcFLX/rweK0Oe+rPHV/tenv6g+Yvja/FsOJLek7M33HRLfiGn0Q/eX9F4zv6uhb+6D9Kd5jBhrnFtNzxuevbhK/VsOLL1Izukz787v9NB5Sp+OgMbDogj8an6qHyp86n6kvzNxs+9XpH6duFr8ewti9+tYzzwE1nxGMRsKUU94jpL9SKq4x77zcASP464L37GwXu+Hqu+aX6NwzrigYhBb4C3zQCv12os0H3aLEMcLL+rR13oDO66Vt8Gp/aMGoGtjqf+oikzqfio/mj9VWvV+VvNnzu+nbhOzqftVbMvm6dl15ZeccB3PVdL/FV666Pc9e3Cd/ZgVJ6ZYpeWaHx1aR3WDFrWlER6p3mj9a3dgktK3rbPLPhc9c3je/MsELooRnOQtPR+PZfSWRg7+ejN8oS+Gj+1kZPoWgPhtD8ueubwqcY1tAMZ0F7Gt/+K4kM7G2+K44iEfho/tZRGqFoD4bQ/Lnrm8KnGFZwSx+2pQ+L0vjimp0PA9P4aP5ofeN6yYzz2fC56yvjUw2LjjOh4zhofNEgznErND6aP1rfuF4y43w2fO76yvhUw6ID4+jAMxpfNIhzoB2Nj+aP1jeul8w4nw2fu74yPtWwrojkVb9beSNwBb5HRMoq5L1tHv62OFYdRuob30lnnM+E74r+IPmT8alfKk+oVnMphTSEK/Cp3CiXfAU+kj93Q7iCP3d93fENqT+VFPmWTenetzHkIxeNj35koPHRj4Tuj1w0f+76uuMbVn+qYckvxRKGRb7UpvHRL2VpfPRLd/eX2jR/7vq64xtWf6phycuOCcMitw3Q+Ohlbxofva3BfdsAzZ+7vu74htWfYljuGeI0PnrjHo1v/zdhhgx2mj93fd3xDa0/xbDcM8RpfPTRCBrfvmBmyGCn+XPX1x3f0Po7M6ymE9WJx8IY2pOEQOOjD8fS+GrU9vBXm8/pcDHNn7u+7viG19+RYaVPUieNaj+8JRGBxkcXC43viN4W/o7mazEtd/4Wvo4GPfnobfVXMyz3DHEaHx3wRuNTy2xURrc7fwufWkF9426pv6siknsu/eOM6ZjLOeJ3xghn9wjsha+nA/s+e2lG/BU/QnGFwfRQeCmBPcDePvtqBt1zye9lsPfM+Wr6XvEjHiR/V/Qv9gekx7BGZYir4qj41PnUDHF1PhVfVwZ2BQz9iKRe7yj+Fr46Ay9Zf62G1bIyRa/4HBViCz76JTSNj+aPfgntzt/C9zUDLf1hUX8thtWzInDHylkPvlpRt6yYHTVHDz6avztMy4k/d33d8Q2vv6xhOWaI70Um8O3nWxns6gNVfZwjf+76uuNLZbAL5ZPaKJs1LMcM8T0nBL5tvpXBLlTbwRBX/tz1dceXymAXSih1FCljWM6HlYMXEl/MR2aI0/jcDwO787fwCU5yMGRY/WUMyzkOJrgl8cV8ZIY4jc89bsWdv4Wvz7CG1V/GsJwD94J+El/MR2aI0/jcA+3c+Vv4+gxrWP1lDIuMRL0i8pbEF3LSGeIkviv4OzsIny1xZ/7c9XXHN6z+MoblXtDu+NwNayZ8MxoCqe8w/lTDojOm6Vtyd3zuj4Sz4aPrb/GXvf/+/vHSKx3VsOiMafqlpzs+95fus+Gj62/x129Y0qKZalh0xnRcHrltwB1fXC+57YJeVp4NH11/i79+w5L6QzGs1MauBG5qY6E7vj0lRAY7nXE+G77teqn6W/wlmv5k6Gl/KIaV2jqfxE4c3XDHt6eEyGCnM85nw7e/XqL+Fn/Jpj8YftofZ4blfjjWHV9Nm5aT8ts89In52fDVrpc+nP1kfYfzd2RYd5jBRkBL0bjjO/q705LYQJ+Unw3f0fW21N/i72sGbuOvZljuAW/u+NQbZDUD2z0j3h2fqgcdMPgUfa342wwLizBVr+6dce9F6Lrj67nsOyKSZ8I3YwQxqa81f727w1/VYEgDdP8Riihm+kc8yAa5At/St0ehUmz56zEs9Rba/RGOxkdnsKulNyqj2x3f0ldVqD7Oir9Ww2p5yeb+kpzGd8eK3lZiLStTs+Fb+vYZlwV/LYbVYlYbVfRF08usNL47VvZaVhw33mbDt/T1Mq10/WUNi9ho577Rk8ZHZ2DvS47IsJ8N39K3z7SG8pcxLOoog/tRGhofnYG9Lzciw342fEvfPsMayl/GsGY6rEwfpl6HlfuahOZv6dunxzD+MoZFZpy7x8HQ+OgM7Cg3KY5DrMvZ8C19xcJ4Z9gw/jKGRWacuwfu0fjoDOyoIynwTKzL2fAtfcXCeGfYMP4yhkVndGe+W6HXGd8VGdhk5O2M+Mj6W/wpHfr+GJk/VTR5wgRu9bvVKWnDIg0hroHGR/Lnrq87viv0JevvCv6G4FOLnn5koG8po2DIR1b6kYvGR/Pnrq87Plpfuv5o/obhUw2LfilLv7QLAslFAfqlNo2P5s9dX3d8tL50/dH8DcOnGpb7snIQSG67iPmkjGn1eRXGN2xZWbze2fC51x/dv3R/yPgUw6IzxOmNZ1sPURtb9z15mjEtNnAMo/DR/Lnr647Pvf5o/uj+SOFTDIvOEKe39u8JJI4O7ec7zZhOGFYMJfDR/Lnr647Pvf5o/uj+SOE7Myz6RD99+LTmFz2Hs2vztSQhHPlYDz6aP3d93fG51x/NH90faXxHhpU+SX1yt0E321WmUJu3JxGBKmqaP3d93fG51x/N39H1tvRHE76aYdEZ3XQAmPoUpgYMqvOpGd3qfCo+mj93fd3x0fqq86n1R/NnhS8M64qIXzJiVSWsNu69COeeOT/OYL8iA5vkz11fd3w9tXJH/QW+aSKwz36XUBFrNTCbga1w/t6YOxrkCoPuueZVfz3sfbV95/NSymdv/1obYI9hqRniKp2jHpHoDHb6EY7mT51vlL7u+Gh96fqj+bPC12pYDitn9Evo9IrFgxcZHPQ9otcBn3v90fzR/dGEr8WwWlYErlpRoYumaeXi4OJofNSKI73ic5W+tXlX/an3UPVxPfzR/ZHWN2tYRIb4HqTjRko645ze6Enzt5/PUV93fLS+dP3R/A3FlzUsIkN8I9D1qAqdcU4fpaH52xe0o77u+Gh96fqj+RuKL2NY6zBw+604fRg4kMx02Duud9Vfe/3R/MmHlROQJX0zhkVmiMd1kHEws8Wt0PzFfM76uuNzrz+av2FxNRnDIjPEg0AycG+2QDuav5jPWV93fO71R/M3LBAwY1hkJGoQuCKDE/fLlaE0f+76uuM7CxLIqP2YSOPERUv6ZgzLXRAS3zLURKVVhs7YcDPV37D+UA3L/ZaXxkc/ctH46Ftyd3zujzQ0f+71NwyfaljuLxVpfPRLbRof/dLTHZ/7S2OaP/f6G4ZPNSx6WZ5eFqXx0dsGaHzu/NH43JflaX3d628YPsWw6I1xqQxn4VUKjW/7SteNre780fj2JUBk7NP4Zqu/of2hGBZ99CCV4SwYFo1v/5WOR4fc+aPx7fUgMvZpfLPV39D+ODMs+vAufeKbxlfzx5XBLvzVeBtC61v75p6kBhrfbPU3vD+ODIsWgz7pTeM7assW06LxufNH4zvSoyVxgMZH6+tefxb4aoZFB5TRGdM0PvX+YVTAoDt/ND5Vj1EZ57PVn6rHLf2xGdZMGeKqALVx70UQz8TfFRnsPZrcEfFL6ttzrXfUnzW+3t25r5oh7l6APUVzR8Y5iS/mcv4RhSsy7N3rzxZfj2Gpt4BqcY/KEHe/xXfnj8ZnlSGuXlxlnNof7vVnha/VsFpeQh9p37PyQ61cuL9EdeePxkev6NH4LF5CNxpqS/9a9EeLYbVcLL3iQxfLNt8dojyZv5ouLSt62zz0yh6Nj/pj+Sr1N7w/soZFbKTci+yYIe6+EdCdPxrf0Azx5B0M0R/u9TcUX8awqKMq+xpwzBB3P2rhzh+Nb2iGeMKwqP5wr7+h+DKGNVOGuPth1ugjKQM70XDO+rofpg6aSf7c628YvoxhkRnsIbBzhrh7XIg7fzQ+Ok6Hxhfzkf3hXn/D8GUMi8xgD4GdM8TdA9nc+aPx0YGFNL6Yj+wP9/obhi9jWLNliGe4UZ68ZuNPyuhWiCuluEcux2XQ+rrX3xB86pdeUTDqdys1vfApLB2PoRuONKwrDMEdH9kfj+FPJYW+JadvKRe+fsMiH2ncH7nc8dH9QT+yDuNPNSz6pSf90m7h6zcs8qWx+0ttd3x0f9CLAsP4Uw2LXlaml0UXvn7DIpflZ9t2Mdu2hmH6KoblnoG98PWbVcxAbXzcoyEy2Lf5ZsE3dGNmspRu11cxLPcM7IUvWWUHw4mjJfvpiQz2/Xwz4Bt69CVZSrfre2ZY9Il5+vDkwpesMGE4fTjbIYnj6LKd8NH9Ubvul9b3yLDok/K0GAuf4D6NQ+ii7klsuKPpHPDR/XEk/cvqWzMsOqObDgBb+BpdKPkxNYBOnVbNYFfnewo+uj8ezV8Y1hUZ3WTE6sJXynfUKoTHvWoEdg8Nd0RMk/3Rc60vp+/Z7xIqZNwhsILjvTELXylkg6w/IH5/QKbRt8ewRmWwq+a18NWZoh9B6Az22fCp9aw+Aj+av1bDclpZqQm+8J23Af2Sd63YnnPeOqLlJfkj9W0xLIcVlSPhFz69LeiiXiu3OvfqyBaz2uZ+nL5Zw3LMYN8Lv/CpbfD1OHqjIp3BPhu+vYLERtlH8Zc1LMcM9r3AC1/esOijIHQG+2z4NgWpo0iP4i9jWDNliEfRzHQYeB1Gzxv9/hM0f3T90fiGhQ1kDMs5gz0EXvjam46OM1lxP+1abJ8k434eo2/GsJwz2EPkha+9SejAuBWo2K7F9kkyUPEx+mYMyz1SduHra5Kzg/CZ2VdkdYat+lg6svoR+i7Der+wnAsmUNP4SMN3Nyx3/mbEJxlqxrDWI1f7X036ljyQkI8M9CO1+yOhO3+z4ZP7I2NY66V2u2HRLz0DCflSll60cH/p7s7fbPjk/sgY1trW0G5Y9LIyvewd85H6Dlv2Tkg007YVWl+6/uQedsYaAAAHNklEQVT+yBhWgLw9wzlRgK746I17GyXUxsI9xYS+7hn77vzNhi/VH1nDuj3DOWlYjvjooxF7SoijG/v5CP7cM/bd+ZsNX6o/soYVZK4kBN1F6cOntW/uORxbm69HX/fEBnf+ZsOX7o8WwwpSVyLCuWmlxTif8t0RtGm16Oue1HBErwN/s+Fr6o9WwwpyV0Z3vcToADXVx9SAN3U+VV/3jH31ekfxNxu+rv7oMayN6BVBzEYQqwVcG3dHRnd87zc/rCp+6+3f2HPV+x8Z8duD5Q7+vugA+Kr4MH3Xj1CU8pdlZXR39FD6o3f8gcMaZP1Ii1d/1LbDr4zudA82fUB9BOm6ha4go/VVL35Uxr47f7PhU+ul2h9H53fcV3zc8dEvUZteUh6AoPk7ut6elcfavC0vyd35mw1fU3+cHTh0X/lxx0c12zYPXdQ0f7XrbVlxbCpm4U+3O3+z4Uv3x5lhxYQro1voBHEIsdEztdFOwEXru/9Kx4x9d/5mw7evl9P+UAxrZXQLXS8MoY7SpI4yCLhoffdf6Zix787fbPi2epH6QzGsmND9MKs7vuCQPGwrHxYVDOsKfWNO8jD1bPy560vjk/VVDcs9LsQdXwhCxsHIcRyiYdH8xdc6xxG58zcbPrk/VMNyD2RzxxeCkIF7cuCZaFg0f/G1zoGP7vzNhk/uD9Ww3CNv3fGFIHSksaqd4llX8EdGLs/In7u+JD5Z38yXOjecfMFK976NIRtuGUKC+MpQd/6uwJfpTYVd5/6V+cuQ4vxII99SKsq+jSEfadYjV4L4ylB3/mh89CMh3R80Ppm/jGE5vzSWX9ol+oZ8abxeaieIrwx154/GR790p/uDxifzlzEs52V5eVk00Tfksjy97SIug8RH80cve7vzR+Oj+XuMvhnDkjZ2CYZAb4zbvpLCt78Ex4xzGh/NH60vnRFP80fjo/l7lL4Zw4oLP906LxgWffRg/5UEvv18jhnnND6aP1pfOiOe5o/GR/P3KH2zhhUX33JSfiONPtxZ88cefLX5epIG7khE6MFH80fr684fjY/m73H6thhWq2ndIcYmEG1aLYkDdyQhbNfbgu/oZriFP1pfd/5ofDR/j9S31bC2x8NPSymfnDwG0gFlwlPnl0PUgDx1vlEZ5zQ+dT6VP1pfOiNevd5R+tL8qdf7kvr2GFYQ817GNBlRqwpQG3dHBnZ8L51x3nPNK4K4h72vVl8/L6V89vbvFfq69weJLzaFYv2x/QgFCbCnXO4wQJTAnot9++xqkD4S7+CvB+Gr/QHpudbLbxBqv5oz2y2qe8Y5jc9dX7Vh1Ix4mj8anzrfqEc4Gp86X1Xfo5/5mu0lIL3icyRMy8oejc9dX3f+aHzuL8lpfE38nf0u4R1F3bIitV0sjY9e+amJ0rOiR+Oj+atdb4++7vzR+Gj+HqfvmWEFgbNtZHPPOKfxueu7b2IiI57mj8a3n4/YCP0ofRXDmu2ogHvGOY3PXd99AxMZ8TR/NL5tPuqo2aP0VQwrCFyHMdVXhe+PIw8rz3bYNlh15o/GF/OtsIFKL6mGRcdJBBTnuBo57iLhY85xNe76Bs3O/NH43PuDxifzpxoWHdgVAJ0DAeVAsYRhOQcCuusbNDvzR+Nz7w8an8yfalgxYe+u+I97+xGRrQnDco9cdtfXnT8SX5SVc39cgU/ib5RhyRnOgwxhmCCJ66ULWioYEd/SVyTqnWHu/A3DpxoW/cjg/sg17JY3UefkI7V8Sy7iW/qKRL0zzJ2/YfhUw6Jfyrq/1B72UjFR5+SihfzSU8S39BWJemeYO3/D8KmGRW9roJflQ3dy2TvmI5eVZ8O39O0zLHf+huFTDIveeEZnYO9Lg8hg3+ajNu7Nhm/p22dW7vwNxacYFr21n87A3pcHkcG+n484GjEbvqVvn2G58zcU35lh0Ycn6cSBWmm0JCEclRh9ePfJ+Ja+pfTo687fcHx3xsvQSQNHJtOTiFCblzatJ+Jb+n5dOS36uvNnge+OAD/3jG71Bl4NUFPnUzPE1flG4Vv61hVS9XXnzwrfFRHJ7hHEX6gOUBl3eQRsKcUdX9CCZXR3aLF99I4I4h6YrxbhbK1v73GMOxr4CgLJDPsrDNodn3sDL/56FOr77KUG3WNY9CPIqIxuOuOczhB3x6eW99JXZao+bhR/Kupb8LUaFv0SumVlhV6xcF8Rdcd3VNhLX7Xt6+Mc+LPQt8WwaLNqWVHZyKNXLmhTmA1fraiXvn1m5cTfcH2zhkVvpHTM6KY3ytIZ4u749kW99O0zK0f+huqbMawrjqo4ZnTTR5HoDHF3fPuCXvr2GZYjf0P1zRiW82Fg+jCm+2Fvd3xR1ORh9Nn0dedvGL6MYc0UZ+Iep+OOLwraOYN98dd35zdM34xhzRQY5x5Y6I4vCto5g33x129YQ/TNGNZskbwZbs7kvyJS1h2fe+Ty4u+sao///yH6/j/1znQNIfQtxAAAAABJRU5ErkJggg=="/>
+		<expression tag="Graphics.RasterGraphics" Value="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"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Tileset D2"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="size"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="tiles"/>
+						<expression tag="List.CreateList">
+							<expression tag="Graphics.CreateRasterGraphics">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Symbolic.Symbol" Name="size"/>
+							</expression>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Programming.Block" Description="Description" Expanded="True">
+					<expression tag="Symbolic.Local">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="path"/>
+							<expression tag="Graphics.CreatePath"/>
+						</expression>
+					</expression>
+					<expression tag="Graphics.PathLinePosPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="3"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="Graphics.PathLineToPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="3"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+					<expression tag="Graphics.PathLineToPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+					</expression>
+					<expression tag="Graphics.FillPath">
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="tiles"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="path"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.Block" Description="Description" Expanded="True">
+					<expression tag="Symbolic.Local">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="path"/>
+							<expression tag="Graphics.CreatePath"/>
+						</expression>
+					</expression>
+					<expression tag="Graphics.PathLinePosPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Graphics.PathLineToPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="3"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+					</expression>
+					<expression tag="Graphics.PathLineToPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="3"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+					</expression>
+					<expression tag="Graphics.FillPath">
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="tiles"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="path"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.Block" Description="Description" Expanded="True">
+					<expression tag="Symbolic.Local">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="path"/>
+							<expression tag="Graphics.CreatePath"/>
+						</expression>
+					</expression>
+					<expression tag="Graphics.PathLinePosPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Graphics.PathLineToPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+					</expression>
+					<expression tag="Graphics.PathLineToPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Graphics.FillPath">
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="tiles"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="path"/>
+					</expression>
+					<expression tag="Graphics.AddTranslation">
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="tiles"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+					</expression>
+					<expression tag="Graphics.FillPath">
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="tiles"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="path"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.Block" Description="Description" Expanded="True">
+					<expression tag="Symbolic.Local">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="path"/>
+							<expression tag="Graphics.CreatePath"/>
+						</expression>
+					</expression>
+					<expression tag="Graphics.PathLinePosPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+					<expression tag="Graphics.PathLineToPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="3"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+					</expression>
+					<expression tag="Graphics.PathLineToPos">
+						<expression tag="Symbolic.Symbol" Name="path"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Graphics.FillPath">
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="tiles"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="path"/>
+					</expression>
+					<expression tag="Graphics.AddTranslation">
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="tiles"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Symbol" Name="size"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="size"/>
+					</expression>
+					<expression tag="Graphics.FillPath">
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="tiles"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="path"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="tiles"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Tileset D2"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="50"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAO1JREFUaEPV2FkOg0AMA9Dh5IWTtwwSqOyzxImdA8R6Ub48JPyMKaUPOmYAB7ggsgEJcUMgIa4IFMQdgYCEIKwhYQhLSCjCChKOsIBQIHohNIgeCBWiFUKHaIFQImohtIgaCDWiFEKPKIFIIN4gMogniBTiDiKHuIJIIo4QWcQ/RBqxQuQRK+QL7rY81k+511KHTPOlRnXIglB/rQ2hDNkhVCEnhCLkEqEGuUUoQR4RKpBXhAKkCMEOKUYwQ6oQrJBqBCOkCcEGaUYwQboQLJBuBAPEBBENMUNEQkwRURBzRAQEgvCGwBCeECgiQ36G2EqastZmGAAAAABJRU5ErkJggg=="/>
+			<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAO1JREFUaEPd2FkOwkAMA9D05JSTg6ZSEdBtljix6wPEesqfJzN7GT6zmT2RNVMQpBigmEgIFBMNgWEyIBBMFsQdkwlxxWRD3DAMEBcMC2QYwwQZwrBBujGMkC4MK6QZwwxpwrBDqjEKkCqMCuQSowQ5xahBDjGKkF2MKmSDUYb8YNQhH8wdIAumQMre9ECOZxG3C2R9jzRmhchjviHSmH+ILGYPIok5gshhziBSmCuIDKYGIoGphdBjWiDUmFYILaYHQonphdBhRiBUmFEIDcYDQoHxgqRjPCGpGG9IGgYBScGgIOEYJCQUg4aEYd7O40qZsVdqjAAAAABJRU5ErkJggg=="/>
+			<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAPdJREFUaEPV2FkOwzAIBFBy8iYnb+tKidpm88LADAcAPYN/ZjKzp2FrebefsSPMJjAkBFEeCQkJQyAhoQgUJByBgKQgvCFpCE9IKsILko7wgFAgRiE0iBEIFaIXQofogVAiWiG0iBYINaIWQo+ogUgg7iAyiCuIFOIMIoc4gkgi/iGyiG+INGKFlMwJnjtF5FroGRH955JrqVe5poc65INY/4jqRjaEMuQHoQrZIRQhhwg1yClCCXKJUIHcIhQgVQh2SDWCGdKEYIU0IxghXQg2SDeCCTKEYIEMIxggLohsiBsiE+KKyIK4IzIgEEQ0BIaIhEARBfICBqVJm/ZRQ9wAAAAASUVORK5CYII="/>
+			<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAPFJREFUaEPd2FkOg0AMA9Dh5IWTt5oKUKEss8SJTQ5g60n58pB8bkwpvZBVAzJ8lw3FeEKyC4bxhsAwERAIJgpijomEmGKiIWYYBogJhgXSjWGCdGHYIM0YRkgThhVSjWGGVGHYIcUYBUgRRgVyi1GCXGLUIKcYRcghRhXyh1GGbDDqkBXzBMgXkyF5OJsc9y1IVYa8571JGrNAll+TxfxCpDF7iCzmCCKJOYPIYa4gUpg7iAymBCKBKYXQY2og1JhaCC2mBUKJaYXQYXogVJheCA3GAkKBsYKEYywhoRhrSBgGAQnBoCDuGCTEFYOGuGE+qu5Jm23+Sd8AAAAASUVORK5CYII="/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Truchet tiles D"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="15"/>
+				<expression tag="Math.Number" Value="15"/>
+				<expression tag="Math.Number" Value="20"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Tileset D2"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="20"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Graphics.RasterGraphics" Value="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"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
