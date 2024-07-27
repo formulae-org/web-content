@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.expression">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -234,7 +234,7 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Attributes por serialization"/>
+					<expression tag="String.Text" Value="Attributes for serialization"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
@@ -261,31 +261,10 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Examples:"/>
 			</expression>
-			<expression tag="Typesetting.BulletedList">
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The serialization of the number"/>
-					<expression tag="Math.Number" Value="12"/>
-					<expression tag="String.Text" Value="is"/>
-					<expression tag="String.String" Value="&lt;expression tag=&quot;Math.Number&quot; Value=&quot;12&quot;/&gt;"/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The serialization of the number"/>
-					<expression tag="Math.Number" Value="336324354.8457648"/>
-					<expression tag="String.Text" Value="is"/>
-					<expression tag="String.String" Value="&lt;expression tag=&quot;Math.Number&quot; Value=&quot;336324354.8457648&quot;/&gt;"/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The serialization of the integer zero"/>
-					<expression tag="Math.Number" Value="0"/>
-					<expression tag="String.Text" Value="is"/>
-					<expression tag="String.String" Value="&lt;expression tag=&quot;Math.Number&quot; Value=&quot;0&quot;/&gt;"/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The serialization of the decimal zero"/>
-					<expression tag="Math.Number" Value="0."/>
-					<expression tag="String.Text" Value="is"/>
-					<expression tag="String.String" Value="&lt;expression tag=&quot;Math.Number&quot; Value=&quot;0.&quot;/&gt;"/>
-				</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The serialization of the number"/>
+				<expression tag="Math.Number" Value="12"/>
+				<expression tag="String.Text" Value="is:"/>
 			</expression>
 		</expression>
 	</expression>
@@ -298,12 +277,24 @@
 		<expression tag="String.String" Value="&lt;expression tag=&quot;Math.Number&quot; Value=&quot;12&quot;/&gt;"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Serialization of the number"/>
+			<expression tag="Math.Number" Value="336324354.8457648"/>
+			<expression tag="String.Text" Value=":"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Expression.Serialize">
 			<expression tag="Math.Number" Value="336324354.8457648"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="String.String" Value="&lt;expression tag=&quot;Math.Number&quot; Value=&quot;336324354.8457648&quot;/&gt;"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Serialization of the integer zero:"/>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Expression.Serialize">
@@ -314,12 +305,22 @@
 		<expression tag="String.String" Value="&lt;expression tag=&quot;Math.Number&quot; Value=&quot;0&quot;/&gt;"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Serialization of the decimal zero:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Expression.Serialize">
 			<expression tag="Math.Number" Value="0."/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="String.String" Value="&lt;expression tag=&quot;Math.Number&quot; Value=&quot;0.&quot;/&gt;"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Deserialization:"/>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Expression.Deserialize">
@@ -330,12 +331,21 @@
 		<expression tag="Math.Number" Value="12.345"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Deserialization with invalid values:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Expression.Deserialize">
 			<expression tag="String.String" Value="&lt;expression Value=&quot;12,345&quot; tag=&quot;Math.Number&quot;/&gt;"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="String.String" Value="Invalid number: 12,345"/>
+		<expression tag="Expression.Deserialize">
+			<expression tag="Error" Description="Error: Invalid number">
+				<expression tag="String.String" Value="&lt;expression Value=&quot;12,345&quot; tag=&quot;Math.Number&quot;/&gt;"/>
+			</expression>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
@@ -376,7 +386,12 @@
 				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Date of creation: February 15, 2021. Date of last modification: February 15, 2021"/>
+				<expression tag="String.Text" Value="Date of creation:"/>
+				<expression tag="Time.Time" Value="1613368800000"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Date of last modification:"/>
+				<expression tag="Time.Time" Value="1722053520000"/>
 			</expression>
 		</expression>
 	</expression>
