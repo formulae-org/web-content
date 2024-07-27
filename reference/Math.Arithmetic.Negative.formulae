@@ -1,12 +1,15 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.math.arithmetic,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Math.Number"/>
+					<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
+				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression asociated with the arithmetic negative of another expression."/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -33,7 +36,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="This expression has exactly one subexpression, the expression to be arithmetically negated."/>
 			</expression>
 		</expression>
 	</expression>
@@ -47,6 +50,55 @@
 					<expression tag="String.Text" Value="Visualization"/>
 				</expression>
 			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The negative of the expression"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value="is"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The minus sign is aligned with the horizontal baseline of its subexpression, so the negative of"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+				<expression tag="String.Text" Value="is shown as"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=". The negative of"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="String.Text" Value="is shown as"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Null"/>
+			<expression tag="Null"/>
+			<expression tag="Null"/>
 			<expression tag="Null"/>
 		</expression>
 	</expression>
