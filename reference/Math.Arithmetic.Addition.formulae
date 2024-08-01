@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.visualization,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.visualization,org.formulae.list,org.formulae.math.complex,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -36,15 +36,33 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Name"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The name of this expression dependens on locale. In english is"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Addition"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Subexpressions"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The addition expressions has 2 or more subexpressions, the addends. There is not limit in the number of subexpressions."/>
+				<expression tag="String.Text" Value="The addition expressions has 2 or more subexpressions, the addends. There is not a practical limit in the number of subexpressions."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Names."/>
+					<expression tag="String.Text" Value="Names of subexpressions."/>
 				</expression>
 				<expression tag="String.Text" Value="Every subexpression  has the same name:"/>
 				<expression tag="Typesetting.ItalicChunk">
@@ -75,21 +93,33 @@
 				<expression tag="String.Text" Value="The plus signs are aligned with the horizontal baseline of every subexpression, see the following example:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
-				<expression tag="Math.Arithmetic.Addition">
-					<expression tag="Visualization.Metrics">
-						<expression tag="Visualization.Rectangle" Width="10" Height="10" HorizontalBaseline="5" VerticalBaseline="5"/>
-					</expression>
-					<expression tag="Visualization.Metrics">
-						<expression tag="Visualization.Rectangle" Width="10" Height="30" HorizontalBaseline="15" VerticalBaseline="5"/>
-					</expression>
-					<expression tag="Visualization.Metrics">
-						<expression tag="Visualization.Rectangle" Width="25" Height="20" HorizontalBaseline="5" VerticalBaseline="5"/>
-					</expression>
-					<expression tag="Visualization.Metrics">
-						<expression tag="Visualization.Rectangle" Width="50" Height="50" HorizontalBaseline="45" VerticalBaseline="25"/>
-					</expression>
-					<expression tag="Visualization.Metrics">
-						<expression tag="Visualization.Rectangle" Width="10" Height="10" HorizontalBaseline="5" VerticalBaseline="5"/>
+				<expression tag="Visualization.Metrics">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="10" Height="10" HorizontalBaseline="5" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="10" Height="30" HorizontalBaseline="15" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="25" Height="20" HorizontalBaseline="5" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="50" Height="50" HorizontalBaseline="45" VerticalBaseline="25"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="10" Height="10" HorizontalBaseline="5" VerticalBaseline="5"/>
+							</expression>
+						</expression>
 					</expression>
 				</expression>
 			</expression>
@@ -166,7 +196,346 @@
 					<expression tag="String.Text" Value="Creation"/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BulletedList">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Append addend."/>
+						</expression>
+						<expression tag="String.Text" Value="If you press the [+] key, an addend will be created at right of the current selected expression. However, if the currently selected expression is already an addend (its parent expression is an addition), a new addend is created at right."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Prepend addend."/>
+						</expression>
+						<expression tag="String.Text" Value="If you press the [ALT] + [+], the behavior is the same as the previous part exception that the new addend will be created at left of the selected expression."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Append addend!"/>
+						</expression>
+						<expression tag="String.Text" Value="Sometimes you want creat an addition even if the selected expression is an addend (to create an addition that contains an addition as addend). If you press [CTRL] + [+], an addition will always be created, containing the selected expression and a new Null expresion at right."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Prepend addend!."/>
+						</expression>
+						<expression tag="String.Text" Value="If you press [CTRL] +[ALT] + [+], the behavior is the same as the previous part exception that the new addend will be created at left of the selected expression."/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It can be exemplified as follows:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Edition"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Sample expression"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Keys pressed"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Result"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Append addend"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+							<expression tag="String.Text" Value="[+]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Prepend addend"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+							<expression tag="String.Text" Value="[ALT] + [+]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Append addend"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[+]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Prepend addend"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[ALT] + [+]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Append addend!"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[CTRL] + [+]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Prepend addend!"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[CTRL] + [ALT] + [+]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Editions for &quot;subtraction&quot;"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There is no expression for substraction in Fōrmulæ. The &quot;subtraction&quot;"/>
+				<expression tag="Visualization.Italic" Value="True" Set="True">
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="a - b"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="in internally"/>
+				<expression tag="Visualization.Italic" Value="True" Set="True">
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="a + (-b)"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The editions are basically the same that those used for addition, excepting that:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The new expression is not a"/>
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
+					</expression>
+					<expression tag="String.Text" Value="expressions, but the"/>
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
+					</expression>
+					<expression tag="String.Text" Value="of a"/>
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
+					</expression>
+					<expression tag="String.Text" Value="expression."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The key [-] is used instead of the [+] key "/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It can be exemplified as follows:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Edition"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Sample expression"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Keys pressed"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Result"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Create subtrahend"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+							<expression tag="String.Text" Value="[-]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Create minuend"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+							<expression tag="String.Text" Value="[ALT] + [-]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Create subtrahend"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[-]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Create minuend"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[ALT] + [-]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Create subtrahend!"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[CTRL] + [-]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Visualization.Selected">
+											<expression tag="Null"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Create minuend!"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[CTRL] + [ALT] + [-]"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Visualization.Selected">
+											<expression tag="Null"/>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -368,49 +737,359 @@
 		<expression tag="Math.Number" Value="5"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Addition of addition"/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Addition of addition"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer."/>
 			</expression>
-			<expression tag="String.Text" Value="reducer."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for addends that are also additions. It integrates the addends of the nested addition as addends of the upper-level addition. In other words, they reduces the expression:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="to"/>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+					<expression tag="Symbolic.Symbol" Name="c"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Addition of imaginary factors"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer of the"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Complex package."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for imaginary factors (multiplication between a numeric expression and the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Complex.Imaginary" Description="imaginary unit"/>
+				<expression tag="String.Text" Value="), in order to add them together. See the following examples:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Complex.Imaginary"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Complex.Imaginary"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Complex.Imaginary"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Math.Complex.Imaginary"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Math.Complex.Imaginary"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Symbol" Name="x"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Complex.Imaginary"/>
+			</expression>
+			<expression tag="Math.Complex.Imaginary"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Addition of lists"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer of the"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="List package."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for addens being lists with same cardinality, and makes addition for elemnts with the same index, it is, the result of"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="is"/>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="c"/>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It can takes any number (&gt;2) lists:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Complex.Imaginary"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Complex.Imaginary"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Symbolic.Symbol" Name="a"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Complex.Imaginary"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Addition of imaginary factors"/>
+			<expression tag="String.Text" Value="Because a matrix is a list of (same cardinality) sublists, the reducer can be applid recursively to add matrices:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Complex.Imaginary"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="23"/>
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+				</expression>
 			</expression>
-			<expression tag="String.Text" Value="reducer of the"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Complex package."/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Number" Value="45"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="2.5"/>
+						<expression tag="Math.Complex.Imaginary"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Complex.Imaginary"/>
+					</expression>
+					<expression tag="Math.Number" Value="8"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="46"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="a"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="2.5"/>
+					<expression tag="Math.Complex.Imaginary"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="79"/>
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Addition of lists"/>
+			<expression tag="String.Text" Value="A &quot;subtraction&quot; of lists (or matrices) can be performed:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="2"/>
 			</expression>
-			<expression tag="String.Text" Value="reducer of the"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="List package."/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="2"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Addition of time"/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Addition of time"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer of the"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Time package."/>
+				</expression>
 			</expression>
-			<expression tag="String.Text" Value="reducer of the"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Time package."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer operates on an addition of exactly two addends. The first one must be a"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Time.Time" Description="Time"/>
+				</expression>
+				<expression tag="String.Text" Value="expression, and the second one must be a integer"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Number"/>
+				</expression>
+				<expression tag="String.Text" Value="expression. It adds to the time the number of milliseconds of the second addend:"/>
 			</expression>
 		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Time.Time" Value="10871700000"/>
+			<expression tag="Math.Number" Value="733274452764"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Time.Time" Value="744146152764"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="There are 1,000 x 60 x 60 x 24 x 365 = 31,536,000,000 milliseconds in a year:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Time.Time" Value="1441047403907"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="31536000000"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Time.Time" Value="1409511403907"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Rule"/>
@@ -425,7 +1104,27 @@
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="The"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
+					<expression tag="String.Text" Value="expression"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
+					<expression tag="String.Text" Value="expression"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
 					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Math.Arithmetic.Negative"/>
+					<expression tag="String.Text" Value="expression"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Complex.Imaginary" Description="Math.Complex.Imaginary"/>
+					<expression tag="String.Text" Value="expression"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Time.Time" Description="Time.Time"/>
 					<expression tag="String.Text" Value="expression"/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
@@ -460,7 +1159,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1722357480000"/>
+				<expression tag="Time.Time" Value="1722456120000"/>
 			</expression>
 		</expression>
 	</expression>

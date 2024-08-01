@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.symbolic,org.formulae.math.arithmetic,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.list,org.formulae.symbolic,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -40,6 +40,24 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Name"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The name of this expression dependens on locale. In english is"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Negative"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Subexpressions"/>
 				</expression>
 			</expression>
@@ -59,7 +77,56 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The negative of an expression is shown as a minus sign, before the expression. The minus sign is aligned with the horizontal baseline of the expression, for example:"/>
+				<expression tag="String.Text" Value="The negative of an expression is shown as a minus sign, before the expression, according with the following:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The minus sign is drawn aligned with the horizontal baseline of the subexpression."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The horizontal baselines of the negative expression and the subexpression are the same."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The vertical baseline of the negative expressionis such that it is aligned with the vertical baseline of the subexpression."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Metrics">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="10" Height="30" HorizontalBaseline="15" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Metrics">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="50" Height="30" HorizontalBaseline="20" VerticalBaseline="10"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Metrics">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Selected">
+								<expression tag="Visualization.Metrics">
+									<expression tag="Visualization.Rectangle" Width="35" Height="50" HorizontalBaseline="10" VerticalBaseline="30"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="See the following examples:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="List.Table">
@@ -163,19 +230,10 @@
 								<expression tag="String.Text" Value="Addition expression"/>
 							</expression>
 							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="String.Text" Value="Addend to be set as negative"/>
-							</expression>
-							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="String.Text" Value="Result"/>
+								<expression tag="String.Text" Value="Comments"/>
 							</expression>
 						</expression>
 						<expression tag="List.List">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-							<expression tag="String.Text" Value="the first one"/>
 							<expression tag="Math.Arithmetic.Addition">
 								<expression tag="Math.Arithmetic.Negative">
 									<expression tag="Symbolic.Symbol" Name="a"/>
@@ -183,14 +241,9 @@
 								<expression tag="Symbolic.Symbol" Name="b"/>
 								<expression tag="Symbolic.Symbol" Name="c"/>
 							</expression>
+							<expression tag="String.Text" Value="the first addend is a negative expression"/>
 						</expression>
 						<expression tag="List.List">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-							<expression tag="String.Text" Value="the second one"/>
 							<expression tag="Math.Arithmetic.Addition">
 								<expression tag="Symbolic.Symbol" Name="a"/>
 								<expression tag="Math.Arithmetic.Negative">
@@ -198,14 +251,9 @@
 								</expression>
 								<expression tag="Symbolic.Symbol" Name="c"/>
 							</expression>
+							<expression tag="String.Text" Value="the second addend is a negative expression"/>
 						</expression>
 						<expression tag="List.List">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-							<expression tag="String.Text" Value="the last one"/>
 							<expression tag="Math.Arithmetic.Addition">
 								<expression tag="Symbolic.Symbol" Name="a"/>
 								<expression tag="Symbolic.Symbol" Name="b"/>
@@ -213,6 +261,7 @@
 									<expression tag="Symbolic.Symbol" Name="c"/>
 								</expression>
 							</expression>
+							<expression tag="String.Text" Value="the last addend is a negative expression"/>
 						</expression>
 					</expression>
 				</expression>

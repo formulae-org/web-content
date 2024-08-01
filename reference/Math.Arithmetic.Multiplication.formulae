@@ -1,16 +1,16 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.visualization,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Tag"/>
+					<expression tag="String.Text" Value="Math.Arithmetic.Multiplication"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.ItalicChunk">
-					<expression tag="String.Text" Value="Tag"/>
+					<expression tag="String.Text" Value="Math.Arithmetic.Multiplication"/>
 				</expression>
-				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression associated with ..."/>
+				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression associated with the arithmetic multiplication."/>
 			</expression>
 		</expression>
 	</expression>
@@ -25,7 +25,25 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="The multiplication expression represents the arithmetic multiplication, where its subexpressions are the factors."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Name"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The name of this expression dependens on locale. In english is"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Multiplication"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -40,7 +58,16 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="The multiplication expressions has 2 or more subexpressions, the factors. There is not a practical limit in the number of subexpressions."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Names of subexpressions."/>
+				</expression>
+				<expression tag="String.Text" Value="Every subexpression  has the same name:"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="&quot;Factor&quot;"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -55,7 +82,81 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="A multiplication is shown in infix form, using a constant width space between every facor, such as"/>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+					<expression tag="Symbolic.Symbol" Name="c"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The horizontal baselines of all subexpression are aligned, see the following example:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Metrics">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="10" Height="10" HorizontalBaseline="5" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="10" Height="30" HorizontalBaseline="15" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="25" Height="20" HorizontalBaseline="5" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="50" Height="50" HorizontalBaseline="45" VerticalBaseline="25"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="10" Height="10" HorizontalBaseline="5" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Parentheses."/>
+				</expression>
+				<expression tag="String.Text" Value="An addition is shown between parentheses automatically when it is needed, e.g. when it is an addend of another addition. For example, if the second addend of the addition"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+					<expression tag="Symbolic.Symbol" Name="c"/>
+				</expression>
+				<expression tag="String.Text" Value="is edited to be the addition"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Symbolic.Symbol" Name="z"/>
+				</expression>
+				<expression tag="String.Text" Value=", the new expression is shown as"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="c"/>
+				</expression>
+				<expression tag="String.Text" Value=". Another example is the following exponentiation, where the base is an addition:"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -179,11 +280,11 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of creation:"/>
-				<expression tag="Time.Time" Value="1613368800000"/>
+				<expression tag="Time.Time" Value="1722474000000"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1722053520000"/>
+				<expression tag="Time.Time" Value="1722474000000"/>
 			</expression>
 		</expression>
 	</expression>
