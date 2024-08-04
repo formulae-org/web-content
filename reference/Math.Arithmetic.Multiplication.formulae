@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.visualization,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.visualization,org.formulae.list,org.formulae.math.complex,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -90,7 +90,14 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The horizontal baselines of all subexpression are aligned, see the following example:"/>
+				<expression tag="Typesetting.BulletedList">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="The subexpressions are placed vertically is such that their horizontal baselines are aligned with an imaginary line, which becomes the horizontal baseline of the multiplication expression."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="The vertical baseline of the multiplication is the half of its width."/>
+					</expression>
+				</expression>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Visualization.Metrics">
@@ -127,33 +134,36 @@
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Parentheses."/>
 				</expression>
-				<expression tag="String.Text" Value="An addition is shown between parentheses automatically when it is needed, e.g. when it is an addend of another addition. For example, if the second addend of the addition"/>
-				<expression tag="Math.Arithmetic.Addition">
+				<expression tag="String.Text" Value="A multiplication is shown between parentheses automatically when it is needed, e.g. when it is a factor of another multiplication. For example, if the second factor of the multiplication"/>
+				<expression tag="Math.Arithmetic.Multiplication">
 					<expression tag="Symbolic.Symbol" Name="a"/>
 					<expression tag="Symbolic.Symbol" Name="b"/>
 					<expression tag="Symbolic.Symbol" Name="c"/>
 				</expression>
-				<expression tag="String.Text" Value="is edited to be the addition"/>
-				<expression tag="Math.Arithmetic.Addition">
+				<expression tag="String.Text" Value="is edited to be the multiplication"/>
+				<expression tag="Math.Arithmetic.Multiplication">
 					<expression tag="Symbolic.Symbol" Name="x"/>
 					<expression tag="Symbolic.Symbol" Name="y"/>
 					<expression tag="Symbolic.Symbol" Name="z"/>
 				</expression>
 				<expression tag="String.Text" Value=", the new expression is shown as"/>
-				<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Arithmetic.Multiplication">
 					<expression tag="Symbolic.Symbol" Name="a"/>
-					<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
 						<expression tag="Symbolic.Symbol" Name="x"/>
 						<expression tag="Symbolic.Symbol" Name="y"/>
 						<expression tag="Symbolic.Symbol" Name="z"/>
 					</expression>
 					<expression tag="Symbolic.Symbol" Name="c"/>
 				</expression>
-				<expression tag="String.Text" Value=". Another example is the following exponentiation, where the base is an addition:"/>
+				<expression tag="String.Text" Value=". Another example is when a multiplicatiosn is the base of an"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="exponentiation:"/>
+				</expression>
 				<expression tag="Math.Arithmetic.Exponentiation">
-					<expression tag="Math.Arithmetic.Addition">
-						<expression tag="Symbolic.Symbol" Name="x"/>
-						<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
 					</expression>
 					<expression tag="Symbolic.Symbol" Name="n"/>
 				</expression>
@@ -176,19 +186,161 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Actions"/>
+				<expression tag="Typesetting.BulletedList">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Append factor."/>
+						</expression>
+						<expression tag="String.Text" Value="If you press the [*] key, a factor will be created at right of the current selected expression. However, if the currently selected expression is already a factor  (its parent expression is a multiplication), a new factor is created at right."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Prepend factor."/>
+						</expression>
+						<expression tag="String.Text" Value="If you press the [ALT] + [*], the behavior is the same as the previous part exception that the new factor will be created at left of the selected expression."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Append factor!"/>
+						</expression>
+						<expression tag="String.Text" Value="Sometimes you want create a maultiplication even if the selected expression is a factor (to create a multiplication that contains a multiplication as factor). If you press [CTRL] + [*], a multiplication will always be created, containing the selected expression and a new Null expresion at right."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Prepend factor!."/>
+						</expression>
+						<expression tag="String.Text" Value="If you press [CTRL] +[ALT] + [*], the behavior is the same as the previous part exception that the new multiplication will be created at left of the selected expression."/>
+					</expression>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="It can be exemplified as follows:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Edition"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Sample expression"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Keys pressed"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Result"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Append factor"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+							<expression tag="String.Text" Value="[*]"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Prepend factor"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+							<expression tag="String.Text" Value="[ALT] + [*]"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Append factor"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[*]"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Prepend factor"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[ALT] + [*]"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Append factor!"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[CTRL] + [*]"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Prepend factor!"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="String.Text" Value="[CTRL] + [ALT] + [*]"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -200,7 +352,9 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="When a multiplication expression is deleted, this is, when the key [DELETE] is pressed when the selected expression is a multiplication, the multiplication is replaced by the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
+				<expression tag="String.Text" Value="expression."/>
 			</expression>
 		</expression>
 	</expression>
@@ -215,22 +369,1010 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="The following are the known reducers associated with the multiplication expression, in the order they are applied:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Name"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Package"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Priority"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Special"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Multiplication of numeric factors"/>
+							<expression tag="String.Text" Value="Arithmetic"/>
+							<expression tag="String.Text" Value="High"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Multiplication of multiplication"/>
+							<expression tag="String.Text" Value="Arithmetic"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Multiplication of negatives"/>
+							<expression tag="String.Text" Value="Algabra"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Multiplication distributive over addition"/>
+							<expression tag="String.Text" Value="Algabra"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Product containing imaginary unit"/>
+							<expression tag="String.Text" Value="Complex"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Multiplication of scalar by list"/>
+							<expression tag="String.Text" Value="List"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Multiplication of matrices"/>
+							<expression tag="String.Text" Value="List"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Rule"/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Multiplication of numeric factors"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches on the factors for numerical ones."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If the multiplication contains no numerical factors, it does nothing:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Symbolic.Symbol" Name="y"/>
+			<expression tag="Symbolic.Symbol" Name="z"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Symbolic.Symbol" Name="y"/>
+			<expression tag="Symbolic.Symbol" Name="z"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If the multiplication contains two or more numerical factors, it multiplies them togehter, and the result is put as the first factor:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="23"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="92"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If the multiplication contains only one numeric factor, it is moved to be the first factor:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Symbolic.Symbol" Name="z"/>
+			<expression tag="Math.Number" Value="0.75"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="0.75"/>
+			<expression tag="Symbolic.Symbol" Name="z"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If the result of multiplying the numerical factors is the integer or decimal one, it is not put at the first position, it disappears:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Symbol" Name="x"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Unless if is the only one &quot;factor&quot;:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Attributes for serialization"/>
-				</expression>
+				<expression tag="String.Text" Value="There cannot exist a multiplication with zero or one factors."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="In the following examples, the result is not a multipliction of one element, just the resulting element:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Symbolic.Symbol" Name="w"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Symbolic.Symbol" Name="w"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="15"/>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Multiplication of multiplication"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for factors that are also multiplications. It integrates the factors of the nested multiplication as factors of the upper-level multiplication:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+				<expression tag="Symbolic.Symbol" Name="c"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="y"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Symbolic.Symbol" Name="a"/>
+			<expression tag="Symbolic.Symbol" Name="b"/>
+			<expression tag="Symbolic.Symbol" Name="c"/>
+			<expression tag="Symbolic.Symbol" Name="y"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Multiplication of negatives"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
+				</expression>
+				<expression tag="String.Text" Value="factors and counts them"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the count is an even number, all the"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negatives"/>
+					<expression tag="String.Text" Value="are cancelled out"/>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="If the count is an odd number, all the"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negatives"/>
+						<expression tag="String.Text" Value="are cancelled out and:"/>
+					</expression>
+					<expression tag="Typesetting.BulletedList">
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="If the first factor is not numerical, it creates a new (first) factor with the value -1"/>
+						</expression>
+						<expression tag="String.Text" Value="If the first factor is numerical, it reverses its sign"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Symbolic.Symbol" Name="a"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Symbolic.Symbol" Name="b"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="c"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Symbolic.Symbol" Name="d"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Symbolic.Symbol" Name="a"/>
+			<expression tag="Symbolic.Symbol" Name="b"/>
+			<expression tag="Symbolic.Symbol" Name="c"/>
+			<expression tag="Symbolic.Symbol" Name="d"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Symbolic.Symbol" Name="a"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Symbolic.Symbol" Name="b"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="c"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+				<expression tag="Symbolic.Symbol" Name="c"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Symbolic.Symbol" Name="v"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Symbolic.Symbol" Name="w"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Symbolic.Symbol" Name="t"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="e"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Symbolic.Symbol" Name="z"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Symbolic.Symbol" Name="v"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Symbolic.Symbol" Name="w"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Symbolic.Symbol" Name="t"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="e"/>
+				<expression tag="Symbolic.Symbol" Name="z"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="2.5"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Symbolic.Symbol" Name="y"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="2.5"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Symbolic.Symbol" Name="y"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Multiplication distributive over addition"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searchs for factors that are also"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Additions"/>
+				<expression tag="String.Text" Value="in order to apply the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Distributive_property" Description="distributive property."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="23"/>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Number" Value="46"/>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="5.1"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Symbolic.Symbol" Name="z"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="10.2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Symbolic.Symbol" Name="z"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="5.1"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Symbolic.Symbol" Name="z"/>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Product containing imaginary unit"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Complex.Imaginary" Description="maginary unit"/>
+				<expression tag="String.Text" Value="factors in a multiplication and counts them. "/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If the number is greater than 1, it substitutes all these factors for ine of the following values:"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="Math.Complex.Imaginary"/>
+				<expression tag="String.Text" Value="or"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Complex.Imaginary"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Complex.Imaginary"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Complex.Imaginary"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Multiplication of scalar by list"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for multiplications with exactly two factors, being the first a non"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/List.List" Description="List"/>
+				<expression tag="String.Text" Value="expression, and the second one being a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/List.List" Description="List"/>
+				<expression tag="String.Text" Value="expression."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The reducer distributed the scalar expression over the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/List.List" Description="List"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Symbolic.Symbol" Name="z"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="4"/>
+				<expression tag="Symbolic.Symbol" Name="z"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="String.Text" Value="Because a list can contain lists, the reducer can be recursively applied:"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="1.5"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Symbolic.Symbol" Name="w"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="7.5"/>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="1.5"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="1.5"/>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Symbolic.Symbol" Name="w"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1.5"/>
+				<expression tag="Math.Number" Value="3."/>
+				<expression tag="Math.Number" Value="4.5"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Because a matrix is a list containing same cardinality sublists, the reducer can be recursively applied, enabling it to be used in matrices:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="0"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="a"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Multiplication of matrices"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for factors being matrices with same dimensions, and performs a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Matrix_multiplication" Description="matrix multiplication"/>
+				<expression tag="String.Text" Value="between them. The order is the same order they appears in the multiplication"/>
+			</expression>
+			<expression tag="String.Text" Value="Examples:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="88"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Symbolic.Symbol" Name="c"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="539"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Symbolic.Symbol" Name="a"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Number" Value="12"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="27"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="6"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1346"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="c"/>
+					<expression tag="Symbolic.Symbol" Name="d"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="4"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Symbolic.Symbol" Name="a"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Symbolic.Symbol" Name="a"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="6"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="c"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="4"/>
+						<expression tag="Symbolic.Symbol" Name="d"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Symbolic.Symbol" Name="d"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="6"/>
+						<expression tag="Symbolic.Symbol" Name="d"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="What is the result of"/>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="..."/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="?"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="5"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="2520"/>
+				<expression tag="Math.Number" Value="2788"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="3930"/>
+				<expression tag="Math.Number" Value="4348"/>
 			</expression>
 		</expression>
 	</expression>
@@ -265,8 +1407,6 @@
 					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/org.formulae.arithmetic" Description="Arithmetic package"/>
 				</expression>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Categories/Expressions that can be created with keyboard shortcuts" Description="Expressions that can be created with keyboard shortcuts"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Categories/Expressions with serialization attributes" Description="Expressions with serialization attributes"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Categories/Expressions with interactive actions" Description="Expressions with interactive actions"/>
 			</expression>
 		</expression>
 	</expression>
@@ -284,7 +1424,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1722474000000"/>
+				<expression tag="Time.Time" Value="1722743580000"/>
 			</expression>
 		</expression>
 	</expression>
