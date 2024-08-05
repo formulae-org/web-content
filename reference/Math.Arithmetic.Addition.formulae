@@ -570,15 +570,62 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The following are the known reducers associated with the addition expression, in the order they are applied:"/>
 			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Name"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Package"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Priority"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Special"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Addition of numeric addends"/>
+							<expression tag="String.Text" Value="Arithmetic"/>
+							<expression tag="String.Text" Value="High"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Addition of addition"/>
+							<expression tag="String.Text" Value="Arithmetic"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Addition of imaginary factors"/>
+							<expression tag="String.Text" Value="Complex"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Addition of lists"/>
+							<expression tag="String.Text" Value="List"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Addition of time"/>
+							<expression tag="String.Text" Value="Time"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The"/>
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Addition of numeric addends"/>
 				</expression>
-				<expression tag="String.Text" Value="reducer of the"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Arithmetic package."/>
-				</expression>
+				<expression tag="String.Text" Value="reducer"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="This reducer searches on the addends for numerical ones."/>
@@ -751,29 +798,28 @@
 				<expression tag="String.Text" Value="reducer."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="This reducer searches for addends that are also additions. It integrates the addends of the nested addition as addends of the upper-level addition. In other words, they reduces the expression:"/>
+				<expression tag="String.Text" Value="This reducer searches for addends that are also additions. It integrates the addends of the nested addition as addends of the upper-level addition:"/>
 			</expression>
-			<expression tag="Typesetting.Centering">
-				<expression tag="Math.Arithmetic.Addition">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-					<expression tag="Math.Arithmetic.Addition">
-						<expression tag="Symbolic.Symbol" Name="a"/>
-						<expression tag="Symbolic.Symbol" Name="b"/>
-						<expression tag="Symbolic.Symbol" Name="c"/>
-					</expression>
-					<expression tag="Symbolic.Symbol" Name="y"/>
-				</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+				<expression tag="Symbolic.Symbol" Name="c"/>
 			</expression>
-			<expression tag="String.Text" Value="to"/>
-			<expression tag="Typesetting.Centering">
-				<expression tag="Math.Arithmetic.Addition">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-					<expression tag="Symbolic.Symbol" Name="a"/>
-					<expression tag="Symbolic.Symbol" Name="b"/>
-					<expression tag="Symbolic.Symbol" Name="c"/>
-					<expression tag="Symbolic.Symbol" Name="y"/>
-				</expression>
-			</expression>
+			<expression tag="Symbolic.Symbol" Name="y"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Symbolic.Symbol" Name="a"/>
+			<expression tag="Symbolic.Symbol" Name="b"/>
+			<expression tag="Symbolic.Symbol" Name="c"/>
+			<expression tag="Symbolic.Symbol" Name="y"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -783,10 +829,7 @@
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Addition of imaginary factors"/>
 				</expression>
-				<expression tag="String.Text" Value="reducer of the"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Complex package."/>
-				</expression>
+				<expression tag="String.Text" Value="reducer"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="This reducer searches for imaginary factors (multiplication between a numeric expression and the"/>
@@ -859,10 +902,7 @@
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Addition of lists"/>
 				</expression>
-				<expression tag="String.Text" Value="reducer of the"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="List package."/>
-				</expression>
+				<expression tag="String.Text" Value="reducer"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="This reducer searches for addens being lists with same cardinality, and makes addition for elemnts with the same index, it is, the result of"/>
@@ -1053,10 +1093,7 @@
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Addition of time"/>
 				</expression>
-				<expression tag="String.Text" Value="reducer of the"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Time package."/>
-				</expression>
+				<expression tag="String.Text" Value="reducer"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="This reducer operates on an addition of exactly two addends. The first one must be a"/>

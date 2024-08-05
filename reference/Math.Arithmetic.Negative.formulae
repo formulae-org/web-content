@@ -342,26 +342,148 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The following are the known reducers associated with the negative expression, in the order they are applied:"/>
 			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Name"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Package"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Priority"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Special"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Negative of numeric"/>
+							<expression tag="String.Text" Value="Arithmetic"/>
+							<expression tag="String.Text" Value="High"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Negative of negative"/>
+							<expression tag="String.Text" Value="Algebra"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Negative of addition"/>
+							<expression tag="String.Text" Value="Algebra"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Negative of multiplication"/>
+							<expression tag="String.Text" Value="Algebra"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Negative of list"/>
+							<expression tag="String.Text" Value="List"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The"/>
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Negative of numeric"/>
 				</expression>
-				<expression tag="String.Text" Value="reducer of the"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Arithmetic package."/>
-				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="This reducer operates on negative expressions with numeric subexpressions. Given this combination, this reducer replaces the (negative) expression with the numeric argument with the signed changed. If the numeric argument is zero, no sign is changed (in Fōrmulæ, there is no &quot;negative zero&quot;)."/>
 			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Expression"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Expression after reducer is applied"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Number" Value="5"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="5"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="2.5"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Math.Number" Value="2.5"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Number" Value="3"/>
+										<expression tag="Math.Number" Value="4"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Number" Value="3"/>
+										<expression tag="Math.Number" Value="4"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The"/>
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Negative of negative"/>
 				</expression>
-				<expression tag="String.Text" Value="reducer of the"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Algebra package."/>
-				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="This reducer operates on negative expressions of negative expressions. The double negations are cancelled out:"/>
 			</expression>
 		</expression>
@@ -423,16 +545,17 @@
 		<expression tag="Symbolic.Symbol" Name="x"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Negative of addition"/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Negative of addition"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
 			</expression>
-			<expression tag="String.Text" Value="reducer of the"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Algebra package."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer operates on negative expressions of an addition. The negative is distributed over the addends:"/>
 			</expression>
-			<expression tag="String.Text" Value="This reducer operates on negative expressions of an addition. The negative is distributed over the addends:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -458,29 +581,155 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Negative of multiplication"/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Negative of multiplication"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
 			</expression>
-			<expression tag="String.Text" Value="reducer of the"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Algebra package."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer operates on negative expressions of a multiplication. It creates a new factor of the multiplication expression at the first position with value -1"/>
 			</expression>
-			<expression tag="String.Text" Value="This reducer operates on negative expressions of a multiplication. It creates a new factor of the multiplication expression at the first position with value -1"/>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Expression"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Expression after reducer is applied"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Visualization.Parentheses">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="y"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Visualization.Parentheses">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Visualization.Selected">
+											<expression tag="Math.Number" Value="5"/>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="y"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Visualization.Parentheses">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Visualization.Selected">
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Arithmetic.Division">
+													<expression tag="Math.Number" Value="3"/>
+													<expression tag="Math.Number" Value="4"/>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Number" Value="3"/>
+										<expression tag="Math.Number" Value="4"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="y"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Visualization.Parentheses">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Visualization.Selected">
+											<expression tag="Math.Number" Value="0.85"/>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="0.85"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="y"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Visualization.Parentheses">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Visualization.Selected">
+											<expression tag="Math.Arithmetic.Negative">
+												<expression tag="Math.Number" Value="1"/>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="y"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Negative of a list"/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Negative of list"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
 			</expression>
-			<expression tag="String.Text" Value="reducer of the"/>
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="List package."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer operates on negative expressions of a list. The negative is distributed over the elements of the list:"/>
 			</expression>
-			<expression tag="String.Text" Value="This reducer operates on negative expressions of a list. The negative is distributed over the elements of the list:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
