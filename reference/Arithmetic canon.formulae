@@ -288,7 +288,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Is equivalent to to the multiplication:"/>
+				<expression tag="String.Text" Value="Is equivalent to the multiplication:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Math.Arithmetic.Multiplication">
@@ -309,7 +309,27 @@
 					<expression tag="String.Text" Value="Conversion between representations"/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It is possibe to converta from normal to internal representation and turning back."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Every time you create an expression and"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="&lt;ENTER&gt;"/>
+				</expression>
+				<expression tag="String.Text" Value="in order to be computed, the program converts the expression you have enetered to"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="internal representation,"/>
+				</expression>
+				<expression tag="String.Text" Value="computes it, and the result is converted to"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="normal representation"/>
+				</expression>
+				<expression tag="String.Text" Value="and presented as such."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following are examples of normal vs internal representation of several expressions:"/>
+			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="List.Table">
 					<expression tag="List.List">
@@ -486,17 +506,17 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="There is no expression for subtraction. The operation that we represent as"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="a - b"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
 				</expression>
 				<expression tag="String.Text" Value="is a"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Math.Arithmetic.Addition"/>
-				<expression tag="String.Text" Value="expression, where the second addend is a"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Math.Arithmetic.Negative"/>
-				<expression tag="String.Text" Value="expression. In other words, it is"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="a + (-b)"/>
-				</expression>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Addition"/>
+				<expression tag="String.Text" Value="expression, where first subexpression is the minuend, and the second subexpression is a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
+				<expression tag="String.Text" Value="expression. containing the subtrahend, as it is shown:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Diagramming.Tree" Expanded="True">
@@ -512,7 +532,13 @@
 					</expression>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="However, if the expression is gling to be computed, it is previously converted to"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="internal representation"/>
+				</expression>
+				<expression tag="String.Text" Value="as follows:"/>
+			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Math.Arithmetic.Addition">
 					<expression tag="Symbolic.Symbol" Name="a"/>
@@ -526,7 +552,13 @@
 					</expression>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Notice then that under"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="internal representation,"/>
+				</expression>
+				<expression tag="String.Text" Value="there are neither subtraction, nor negative expressions, but there is negative numbers."/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
