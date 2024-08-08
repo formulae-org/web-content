@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.symbolic">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.symbolic,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -7,7 +7,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The Fōrmulæ programming language is oriented to visualize, manipulate and compute with scientific entities. The most fundamental entity is the number."/>
+				<expression tag="String.Text" Value="This article explains the standard procedures to follow when performing visualization, edition and reduction of arithmetic expressions."/>
 			</expression>
 		</expression>
 	</expression>
@@ -48,7 +48,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="The normal representation is used for visualization and edition of expressions."/>
 			</expression>
 		</expression>
 	</expression>
@@ -81,33 +81,38 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Other kind of numbers can be represented using well known expressions:"/>
 			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Negative numbers."/>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Negative numbers."/>
+					</expression>
+					<expression tag="String.Text" Value="A negative number can be created using a"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
+					<expression tag="String.Text" Value="expression, containing a"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
+					<expression tag="String.Text" Value="expression."/>
 				</expression>
-				<expression tag="String.Text" Value="A negative number can be created using a"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-				<expression tag="String.Text" Value="expression, containing a "/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
-				<expression tag="String.Text" Value="expression."/>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Rational numbers."/>
+					</expression>
+					<expression tag="String.Text" Value="A rational number can be created using a"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Division" Description="Division"/>
+					<expression tag="String.Text" Value="expression, containing two"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
+					<expression tag="String.Text" Value="expressions representing integer numbers, as its subexpressions, the numerator and the denominator."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Negative rational numbers."/>
+					</expression>
+					<expression tag="String.Text" Value="A negative rational number can be cretaed using a"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
+					<expression tag="String.Text" Value="expression containing a rational number as defined in the previous line."/>
+				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Rational numbers."/>
-				</expression>
-				<expression tag="String.Text" Value="A rational number can be created using a"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Division" Description="Division"/>
-				<expression tag="String.Text" Value="expression, containing two"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
-				<expression tag="String.Text" Value="expressions representing integer numbers, as its subexpressions, the numerator and the denominator."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Negative rational numbers."/>
-				</expression>
-				<expression tag="String.Text" Value="A negative rational number can be cretaed using a"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-				<expression tag="String.Text" Value="expression containing a rational number as defined in the previous line."/>
+				<expression tag="String.Text" Value="Examples:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="List.Table">
@@ -192,7 +197,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="The internal representation is used for expression reduction."/>
 			</expression>
 		</expression>
 	</expression>
@@ -206,9 +211,9 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Under internal representation, numbers are represented with the"/>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
-				<expression tag="String.Text" Value="expressions, which unlike"/>
+				<expression tag="String.Text" Value="expressions. Unlike"/>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
-				<expression tag="String.Text" Value="expressions, can hold (integer and decimal) numbers, negative numbers, ratioanl numbers and negative rational numbers as a single unit."/>
+				<expression tag="String.Text" Value="expressions, internal numbers can hold (integer and decimal) numbers, negative numbers, ratioanl numbers and negative rational numbers as a single unit."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
@@ -495,6 +500,60 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="For developers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Visualization/edition development"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="According to this cannon, you can create visualizations and editions for"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
+				<expression tag="String.Text" Value="but not for"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
+				<expression tag="String.Text" Value="expressions."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Reduction development"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following guidelines must be followed:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="You must assume that any expression will not contain any"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
+					<expression tag="String.Text" Value="but"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
+					<expression tag="String.Text" Value="expressions. Conversely, you must create and manipulate"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
+					<expression tag="String.Text" Value="expressions only."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="You must assume that any expression will not contain any"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
+					<expression tag="String.Text" Value="expression. Conversely, you must not create"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
+					<expression tag="String.Text" Value="expressions."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="You should not create reducers for both"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
+					<expression tag="String.Text" Value="or"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
+					<expression tag="String.Text" Value="expressions, they will never be invoked."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Rule"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -533,7 +592,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="However, if the expression is gling to be computed, it is previously converted to"/>
+				<expression tag="String.Text" Value="However, if the expression is going to be computed, it is previously converted to"/>
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="internal representation"/>
 				</expression>
@@ -565,6 +624,46 @@
 		<expression tag="Typesetting.Rule"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Null"/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/org.formulae.arithmetic" Description="Arithmetic package"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Categories:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Canons" Description="Fōrmulæ canons"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Date of creation:"/>
+				<expression tag="Time.Time" Value="1590607320000"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Date of last modification:"/>
+				<expression tag="Time.Time" Value="1723084260000"/>
+			</expression>
+		</expression>
 	</expression>
 </expression>
