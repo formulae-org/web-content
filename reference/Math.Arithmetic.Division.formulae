@@ -40,7 +40,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The name of this expression dependens on locale. In english is"/>
+				<expression tag="String.Text" Value="The name of this expression dependens on locale. In English is"/>
 				<expression tag="Typesetting.ItalicChunk">
 					<expression tag="String.Text" Value="Division"/>
 				</expression>
@@ -112,7 +112,7 @@
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The numerator and the denominator are centrally aligned"/>
+					<expression tag="String.Text" Value="The numerator and the denominator are vertically center aligned."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="The horizontal baseline of the division is aligned with the horizontal line."/>
@@ -170,27 +170,19 @@
 				<expression tag="Typesetting.BulletedList">
 					<expression tag="Typesetting.Paragraph">
 						<expression tag="Typesetting.BoldChunk">
-							<expression tag="String.Text" Value="Append addend."/>
+							<expression tag="String.Text" Value="Create denominator"/>
 						</expression>
-						<expression tag="String.Text" Value="If you press the [+] key, an addend will be created at right of the current selected expression. However, if the currently selected expression is already an addend (its parent expression is an addition), a new addend is created at right."/>
+						<expression tag="String.Text" Value="If you press the [/] key, a division expression is created, the selected expression becomes the numerator, and a new"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
+						<expression tag="String.Text" Value="expression is created as a denominator, which becomes the new selected expression."/>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
 						<expression tag="Typesetting.BoldChunk">
-							<expression tag="String.Text" Value="Prepend addend."/>
+							<expression tag="String.Text" Value="Create numerator"/>
 						</expression>
-						<expression tag="String.Text" Value="If you press the [ALT] + [+], the behavior is the same as the previous part exception that the new addend will be created at left of the selected expression."/>
-					</expression>
-					<expression tag="Typesetting.Paragraph">
-						<expression tag="Typesetting.BoldChunk">
-							<expression tag="String.Text" Value="Append addend!"/>
-						</expression>
-						<expression tag="String.Text" Value="Sometimes you want creat an addition even if the selected expression is an addend (to create an addition that contains an addition as addend). If you press [CTRL] + [+], an addition will always be created, containing the selected expression and a new Null expresion at right."/>
-					</expression>
-					<expression tag="Typesetting.Paragraph">
-						<expression tag="Typesetting.BoldChunk">
-							<expression tag="String.Text" Value="Prepend addend!."/>
-						</expression>
-						<expression tag="String.Text" Value="If you press [CTRL] +[ALT] + [+], the behavior is the same as the previous part exception that the new addend will be created at left of the selected expression."/>
+						<expression tag="String.Text" Value="If you press the [ALT]+[/] key, a division expression is created, the selected expression becomes the denominator, and a new"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
+						<expression tag="String.Text" Value="expression is created as a numerator, which becomes the new selected expression."/>
 					</expression>
 				</expression>
 			</expression>
@@ -215,12 +207,12 @@
 							</expression>
 						</expression>
 						<expression tag="List.List">
-							<expression tag="String.Text" Value="Append addend"/>
+							<expression tag="String.Text" Value="Create denominator"/>
 							<expression tag="Visualization.Selected">
 								<expression tag="Symbolic.Symbol" Name="x"/>
 							</expression>
-							<expression tag="String.Text" Value="[+]"/>
-							<expression tag="Math.Arithmetic.Addition">
+							<expression tag="String.Text" Value="[/]"/>
+							<expression tag="Math.Arithmetic.Division">
 								<expression tag="Symbolic.Symbol" Name="x"/>
 								<expression tag="Visualization.Selected">
 									<expression tag="Null"/>
@@ -228,96 +220,16 @@
 							</expression>
 						</expression>
 						<expression tag="List.List">
-							<expression tag="String.Text" Value="Prepend addend"/>
+							<expression tag="String.Text" Value="Create numerator"/>
 							<expression tag="Visualization.Selected">
 								<expression tag="Symbolic.Symbol" Name="x"/>
 							</expression>
-							<expression tag="String.Text" Value="[ALT] + [+]"/>
-							<expression tag="Math.Arithmetic.Addition">
+							<expression tag="String.Text" Value="[ALT] + [/]"/>
+							<expression tag="Math.Arithmetic.Division">
 								<expression tag="Visualization.Selected">
 									<expression tag="Null"/>
 								</expression>
 								<expression tag="Symbolic.Symbol" Name="x"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Append addend"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Visualization.Selected">
-									<expression tag="Symbolic.Symbol" Name="b"/>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-							<expression tag="String.Text" Value="[+]"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="Visualization.Selected">
-									<expression tag="Null"/>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Prepend addend"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Visualization.Selected">
-									<expression tag="Symbolic.Symbol" Name="b"/>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-							<expression tag="String.Text" Value="[ALT] + [+]"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Visualization.Selected">
-									<expression tag="Null"/>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Append addend!"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Visualization.Selected">
-									<expression tag="Symbolic.Symbol" Name="b"/>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-							<expression tag="String.Text" Value="[CTRL] + [+]"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Math.Arithmetic.Addition">
-									<expression tag="Symbolic.Symbol" Name="b"/>
-									<expression tag="Visualization.Selected">
-										<expression tag="Null"/>
-									</expression>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Prepend addend!"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Visualization.Selected">
-									<expression tag="Symbolic.Symbol" Name="b"/>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-							<expression tag="String.Text" Value="[CTRL] + [ALT] + [+]"/>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Math.Arithmetic.Addition">
-									<expression tag="Visualization.Selected">
-										<expression tag="Null"/>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="b"/>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="c"/>
 							</expression>
 						</expression>
 					</expression>
@@ -333,7 +245,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="When an addition expression is deleted, this is, when the key [DELETE] is pressed when the selected expression is an addition, the addition is replaced by the"/>
+				<expression tag="String.Text" Value="When a division expression is deleted, this is, when the key [DELETE] is pressed when the selected expression is an division, the the entire division is replaced by the"/>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
 				<expression tag="String.Text" Value="expression."/>
 			</expression>
@@ -376,7 +288,7 @@
 							<expression tag="String.Text" Value="No"/>
 						</expression>
 						<expression tag="List.List">
-							<expression tag="String.Text" Value="Division of clomplex numbers"/>
+							<expression tag="String.Text" Value="Division of complex numbers"/>
 							<expression tag="String.Text" Value="Complex"/>
 							<expression tag="String.Text" Value="Normal"/>
 							<expression tag="String.Text" Value="No"/>
