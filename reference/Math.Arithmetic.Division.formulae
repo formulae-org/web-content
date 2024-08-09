@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -25,7 +25,25 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="The division expression represents the arithmetic division between its two subexpressions."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Name"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The name of this expression dependens on locale. In english is"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Division"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -40,7 +58,38 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="This expression has exactly two expressions."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Names of subexpressions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Position"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Name"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Visualization.Italic" Value="True" Set="True">
+								<expression tag="String.Text" Value="Numerator"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Visualization.Italic" Value="True" Set="True">
+								<expression tag="String.Text" Value="Denominator"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -55,7 +104,37 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="A division is shown as the numerator above the denominator, with an horizontal line between them, such as"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The numerator and the denominator are centrally aligned"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The horizontal baseline of the division is aligned with the horizontal line."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.Centering">
+					<expression tag="Visualization.Metrics">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Visualization.Selected">
+								<expression tag="Visualization.Metrics">
+									<expression tag="Visualization.Rectangle" Width="15" Height="25" HorizontalBaseline="10" VerticalBaseline="10"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Visualization.Metrics">
+									<expression tag="Visualization.Rectangle" Width="50" Height="10" HorizontalBaseline="5" VerticalBaseline="30"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -137,8 +216,6 @@
 					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/org.formulae.arithmetic" Description="Arithmetic package"/>
 				</expression>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Categories/Expressions that can be created with keyboard shortcuts" Description="Expressions that can be created with keyboard shortcuts"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Categories/Expressions with serialization attributes" Description="Expressions with serialization attributes"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Categories/Expressions with interactive actions" Description="Expressions with interactive actions"/>
 			</expression>
 		</expression>
 	</expression>
