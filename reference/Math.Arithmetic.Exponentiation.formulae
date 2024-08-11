@@ -1,16 +1,16 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.programming,org.formulae.relation,org.formulae.math.complex,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Tag"/>
+					<expression tag="String.Text" Value="Math.Arithmetic.Exponentiation"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.ItalicChunk">
-					<expression tag="String.Text" Value="Tag"/>
+					<expression tag="String.Text" Value="Math.Arithmetic.Exponentiation"/>
 				</expression>
-				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression associated with ..."/>
+				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression associated with the arithmetic exponentiation."/>
 			</expression>
 		</expression>
 	</expression>
@@ -25,7 +25,25 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="The exponentiation expression represents the arithmetic exponentiation its two subexpressions."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Name"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The name of this expression depends on locale. In English is"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Exponentiation"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -40,7 +58,38 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="This expression has exactly two expressions."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Names of subexpressions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Position"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Name"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Visualization.Italic" Value="True" Set="True">
+								<expression tag="String.Text" Value="Base"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Visualization.Italic" Value="True" Set="True">
+								<expression tag="String.Text" Value="Exponent"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -55,7 +104,40 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="A exponentiation is shown as the exponent ar right and above the base, such as"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The numerator and the denominator are vertically center aligned."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The horizontal baseline of the division is aligned with the horizontal line."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following figure illustrates the form of visualization:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.Centering">
+					<expression tag="Visualization.Metrics">
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Visualization.Selected">
+								<expression tag="Visualization.Metrics">
+									<expression tag="Visualization.Rectangle" Width="50" Height="10" HorizontalBaseline="5" VerticalBaseline="30"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Visualization.Metrics">
+									<expression tag="Visualization.Rectangle" Width="15" Height="25" HorizontalBaseline="10" VerticalBaseline="10"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -75,19 +157,73 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Actions"/>
+				<expression tag="Typesetting.BulletedList">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Create exponent"/>
+						</expression>
+						<expression tag="String.Text" Value="If you press the [^] key, a exponentiation expression is created, the selected expression becomes the base, and a new"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
+						<expression tag="String.Text" Value="expression is created as an exponent, which becomes the new selected expression."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Create base"/>
+						</expression>
+						<expression tag="String.Text" Value="If you press the [ALT]+[^] key, a exponentiation expression is created, the selected expression becomes the exponent, and a new"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
+						<expression tag="String.Text" Value="expression is created as the base, which becomes the new selected expression."/>
+					</expression>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="It can be exemplified as follows:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Edition"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Sample expression"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Keys pressed"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Result"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Create exponent"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+							<expression tag="String.Text" Value="[^]"/>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Create base"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+							<expression tag="String.Text" Value="[ALT] + [^]"/>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -99,7 +235,9 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="When a exponentiation expression is deleted, this is, when the key [DELETE] is pressed when the selected expression is a exponentiation, the the entire exponentiation is replaced by the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
+				<expression tag="String.Text" Value="expression."/>
 			</expression>
 		</expression>
 	</expression>
@@ -114,22 +252,405 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="The following are the known reducers associated with the division expression, in the order they are applied:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Name"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Package"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Priority"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Special"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Division of numeric"/>
+							<expression tag="String.Text" Value="Arithmetic"/>
+							<expression tag="String.Text" Value="High"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Division of complex numbers"/>
+							<expression tag="String.Text" Value="Complex"/>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="No"/>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Rule"/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Division of numeric"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for numeric numerator and denominator, in order to perform the division, acoording to the rules of"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Arithmetic_canon" Description="Arithmetic canon"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If one or both subexpressions are decimal, the result is necessarily decimal:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="2.5"/>
+			<expression tag="Math.Number" Value="2."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1.25"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="8."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0.125"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="3162.6667"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Number" Value="632.53334"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Number o significant digits is observed:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Math.Arithmetic.SetPrecision">
+				<expression tag="Math.Number" Value="100"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="3."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0.3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Rounding mode is also observed:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Math.Arithmetic.SetRoundingMode">
+				<expression tag="Math.Arithmetic.RoundingMode.TowardsMinusInfinity"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="3."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0.33333333333333333333"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Math.Arithmetic.SetRoundingMode">
+				<expression tag="Math.Arithmetic.RoundingMode.TowardsInfinity"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="3."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0.33333333333333333334"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If both subexpressions are integer, the actual division not performed, in order to keep the value exact."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If it possible, the result will be put in the simplest form:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="45"/>
+			<expression tag="Math.Number" Value="745"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="9"/>
+			<expression tag="Math.Number" Value="149"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Sometimes the result is an integer"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="2816985195"/>
+				<expression tag="Math.Number" Value="37"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Number" Value="76134735"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If the division cannot be simplified, it is left as it is:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="7"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="7"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Division by zero leads to infinity:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="0"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Infinity"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Number" Value="0."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Infinity"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Attributes for serialization"/>
+					<expression tag="String.Text" Value="Division of complex numbers"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for division expressions where one or both its subexpressions are complex numbers, in order to perform the operation."/>
+			</expression>
+			<expression tag="String.Text" Value="The operation is performed according with the following identity:"/>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Equals">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Math.Complex.Imaginary"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="c"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="d"/>
+								<expression tag="Math.Complex.Imaginary"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="c"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+									<expression tag="Symbolic.Symbol" Name="d"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Symbolic.Symbol" Name="c"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+										<expression tag="Symbolic.Symbol" Name="c"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Arithmetic.Multiplication">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+											<expression tag="Symbolic.Symbol" Name="d"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Symbolic.Symbol" Name="c"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Symbolic.Symbol" Name="d"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Complex.Imaginary"/>
+						</expression>
+					</expression>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="Examples:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="8"/>
+						<expression tag="Math.Complex.Imaginary"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="34"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="17"/>
+				</expression>
+				<expression tag="Math.Complex.Imaginary"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Complex.Imaginary"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Complex.Imaginary"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="0.5"/>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Complex.Imaginary"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Math.Complex.Imaginary"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Number" Value="1.3846153846153846153"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="3.076923076923076923"/>
+					<expression tag="Math.Complex.Imaginary"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -150,7 +671,8 @@
 					<expression tag="String.Text" Value="expression"/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The Arithmetic canon"/>
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Arithmetic_canon" Description="Arithmetic canon"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
@@ -164,8 +686,6 @@
 					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/org.formulae.arithmetic" Description="Arithmetic package"/>
 				</expression>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Categories/Expressions that can be created with keyboard shortcuts" Description="Expressions that can be created with keyboard shortcuts"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Categories/Expressions with serialization attributes" Description="Expressions with serialization attributes"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Categories/Expressions with interactive actions" Description="Expressions with interactive actions"/>
 			</expression>
 		</expression>
 	</expression>
@@ -179,11 +699,11 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of creation:"/>
-				<expression tag="Time.Time" Value="1613368800000"/>
+				<expression tag="Time.Time" Value="1723175340000"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1722053520000"/>
+				<expression tag="Time.Time" Value="1723314180000"/>
 			</expression>
 		</expression>
 	</expression>
