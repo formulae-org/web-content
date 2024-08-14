@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.math.complex,org.formulae.programming,org.formulae.relation,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.relation,org.formulae.math.complex,org.formulae.programming,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -823,27 +823,125 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Complex results"/>
 			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Equals">
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Math.Constant.Euler"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Math.Transcendental.NaturalLogarithm">
+									<expression tag="Math.Arithmetic.AbsoluteValue">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Trigonometric.Cosine">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+									<expression tag="Math.Trigonometric.ArcTangent2">
+										<expression tag="Math.Number" Value="0"/>
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Trigonometric.Sine">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+										<expression tag="Math.Trigonometric.ArcTangent2">
+											<expression tag="Math.Number" Value="0"/>
+											<expression tag="Symbolic.Symbol" Name="a"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Complex.Imaginary"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Negative integer base, integer exponent"/>
+				<expression tag="String.Text" Value="Exponentiation can lead to complex results when the base is a"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
+				<expression tag="String.Text" Value="number and exponent is not an integer number:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Visualization.CrossedOut">
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Number" Value="2."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Visualization.CrossedOut">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="3.9999999999999999997"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="0.00000000000000000050114706623602307353"/>
+						<expression tag="Math.Complex.Imaginary"/>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Math.Arithmetic.Exponentiation">
 			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="2."/>
+			</expression>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="4."/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Exponentiation">
+			<expression tag="Math.Arithmetic.Negative">
 				<expression tag="Math.Number" Value="5"/>
 			</expression>
-			<expression tag="Math.Number" Value="2."/>
+			<expression tag="Math.Number" Value="2.3"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Math.Number" Value="24.999999999999999998"/>
+			<expression tag="Math.Number" Value="23.814951164162906019"/>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="32.77846821925775057"/>
+				<expression tag="Math.Complex.Imaginary"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Exponentiation">
 			<expression tag="Math.Arithmetic.Negative">
-				<expression tag="Math.Arithmetic.Multiplication">
-					<expression tag="Math.Number" Value="0.0000000000000000031321691639751442096"/>
-					<expression tag="Math.Complex.Imaginary"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="2"/>
 				</expression>
+			</expression>
+			<expression tag="Math.Number" Value="2.45"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Number" Value="0.422431238063674001"/>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="2.6671258691705754402"/>
+				<expression tag="Math.Complex.Imaginary"/>
 			</expression>
 		</expression>
 	</expression>
@@ -855,19 +953,22 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Math.Arithmetic.Exponentiation">
 			<expression tag="Math.Arithmetic.Negative">
-				<expression tag="Math.Number" Value="2.5"/>
+				<expression tag="Math.Number" Value="3.2"/>
 			</expression>
-			<expression tag="Math.Number" Value="3.7"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Math.Number" Value="17.442017479480417518"/>
 			<expression tag="Math.Arithmetic.Negative">
-				<expression tag="Math.Arithmetic.Multiplication">
-					<expression tag="Math.Number" Value="24.00687751529903477"/>
-					<expression tag="Math.Complex.Imaginary"/>
-				</expression>
+				<expression tag="Math.Number" Value="1.0857670466379626282"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="1.8806036899609580265"/>
+				<expression tag="Math.Complex.Imaginary"/>
 			</expression>
 		</expression>
 	</expression>
