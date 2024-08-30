@@ -617,18 +617,13 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Math.Arithmetic.Exponentiation">
-				<expression tag="Math.Number" Value="2"/>
-				<expression tag="Math.Number" Value="65"/>
-			</expression>
-			<expression tag="Math.Arithmetic.Negative">
-				<expression tag="Math.Number" Value="1"/>
-			</expression>
+		<expression tag="Math.Arithmetic.Exponentiation">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="64"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="36893488147419103231"/>
+		<expression tag="Math.Number" Value="18446744073709551616"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
@@ -645,6 +640,11 @@
 		<expression tag="Math.Number" Value="9."/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="We can request the result with any precision:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Math.Numeric">
 			<expression tag="Math.Arithmetic.Exponentiation">
 				<expression tag="Math.Number" Value="10"/>
@@ -658,7 +658,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Rational base"/>
+			<expression tag="String.Text" Value="With rationals numbers the result is not a single number, however some simplifications can be applied:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -683,6 +683,11 @@
 				<expression tag="Math.Number" Value="1"/>
 				<expression tag="Math.Number" Value="3"/>
 			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Or we can ask for a decimal but approximated answer:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -808,8 +813,43 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Raising to zero or one"/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Exponent zero."/>
+				</expression>
+				<expression tag="String.Text" Value="The result is usually"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="String.Text" Value="when both base and exponent are integers, and"/>
+				<expression tag="String.Text" Value="1.0"/>
+				<expression tag="String.Text" Value="otherwise."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Zero raised to zero is a special case. The rule used by Fōrmulæ is as follows:"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="String.Text" Value="is"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="String.Text" Value=", but"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Number" Value="0."/>
+				</expression>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="0."/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="0."/>
+					<expression tag="Math.Number" Value="0."/>
+				</expression>
+				<expression tag="String.Text" Value="leads to"/>
+				<expression tag="Math.Infinity"/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -823,14 +863,6 @@
 				<expression tag="Math.Arithmetic.Exponentiation">
 					<expression tag="Symbolic.Symbol" Name="x"/>
 					<expression tag="Math.Number" Value="0."/>
-				</expression>
-				<expression tag="Math.Arithmetic.Exponentiation">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-					<expression tag="Math.Number" Value="1"/>
-				</expression>
-				<expression tag="Math.Arithmetic.Exponentiation">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-					<expression tag="Math.Number" Value="1."/>
 				</expression>
 			</expression>
 			<expression tag="Symbolic.Symbol" Name="x"/>
@@ -871,14 +903,6 @@
 						<expression tag="Symbolic.Symbol" Name="x"/>
 						<expression tag="Math.Number" Value="0."/>
 					</expression>
-					<expression tag="Math.Arithmetic.Exponentiation">
-						<expression tag="Symbolic.Symbol" Name="x"/>
-						<expression tag="Math.Number" Value="1"/>
-					</expression>
-					<expression tag="Math.Arithmetic.Exponentiation">
-						<expression tag="Symbolic.Symbol" Name="x"/>
-						<expression tag="Math.Number" Value="1."/>
-					</expression>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Arithmetic.Negative">
@@ -889,15 +913,6 @@
 					</expression>
 					<expression tag="Math.Number" Value="1"/>
 					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Math.Arithmetic.Negative">
-						<expression tag="Math.Arithmetic.Division">
-							<expression tag="Math.Number" Value="1"/>
-							<expression tag="Math.Number" Value="2"/>
-						</expression>
-					</expression>
-					<expression tag="Math.Arithmetic.Negative">
-						<expression tag="Math.Number" Value="0.5"/>
-					</expression>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Arithmetic.Negative">
@@ -905,12 +920,6 @@
 					</expression>
 					<expression tag="Math.Number" Value="1."/>
 					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Math.Arithmetic.Negative">
-						<expression tag="Math.Number" Value="2.5"/>
-					</expression>
-					<expression tag="Math.Arithmetic.Negative">
-						<expression tag="Math.Number" Value="2.5"/>
-					</expression>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Arithmetic.Negative">
@@ -918,40 +927,26 @@
 					</expression>
 					<expression tag="Math.Number" Value="1"/>
 					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Math.Arithmetic.Negative">
-						<expression tag="Math.Number" Value="3"/>
-					</expression>
-					<expression tag="Math.Arithmetic.Negative">
-						<expression tag="Math.Number" Value="3."/>
-					</expression>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="0"/>
 					<expression tag="Math.Number" Value="1"/>
 					<expression tag="Math.Infinity"/>
-					<expression tag="Math.Number" Value="0"/>
-					<expression tag="Math.Number" Value="0."/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="0."/>
-					<expression tag="Math.Number" Value="1."/>
 					<expression tag="Math.Infinity"/>
-					<expression tag="Math.Number" Value="0."/>
-					<expression tag="Math.Number" Value="0."/>
+					<expression tag="Math.Infinity"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="8"/>
 					<expression tag="Math.Number" Value="1"/>
 					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Math.Number" Value="8"/>
-					<expression tag="Math.Number" Value="8."/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Number" Value="4.5"/>
 					<expression tag="Math.Number" Value="1."/>
 					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Math.Number" Value="4.5"/>
-					<expression tag="Math.Number" Value="4.5"/>
 				</expression>
 				<expression tag="List.List">
 					<expression tag="Math.Arithmetic.Division">
@@ -960,11 +955,6 @@
 					</expression>
 					<expression tag="Math.Number" Value="1"/>
 					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Math.Arithmetic.Division">
-						<expression tag="Math.Number" Value="3"/>
-						<expression tag="Math.Number" Value="4"/>
-					</expression>
-					<expression tag="Math.Number" Value="0.75"/>
 				</expression>
 			</expression>
 		</expression>
@@ -975,54 +965,8 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="List.CreateTable">
-			<expression tag="List.List">
-				<expression tag="Symbolic.Symbol" Name="x"/>
-				<expression tag="Math.Arithmetic.Exponentiation">
-					<expression tag="Math.Number" Value="0"/>
-					<expression tag="Symbolic.Symbol" Name="x"/>
-				</expression>
-				<expression tag="Math.Arithmetic.Exponentiation">
-					<expression tag="Math.Number" Value="0."/>
-					<expression tag="Symbolic.Symbol" Name="x"/>
-				</expression>
-				<expression tag="Math.Arithmetic.Exponentiation">
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Symbolic.Symbol" Name="x"/>
-				</expression>
-				<expression tag="Math.Arithmetic.Exponentiation">
-					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Symbolic.Symbol" Name="x"/>
-				</expression>
-			</expression>
-			<expression tag="Symbolic.Symbol" Name="x"/>
-			<expression tag="List.List">
-				<expression tag="Math.Arithmetic.Negative">
-					<expression tag="Math.Arithmetic.Division">
-						<expression tag="Math.Number" Value="1"/>
-						<expression tag="Math.Number" Value="2"/>
-					</expression>
-				</expression>
-				<expression tag="Math.Arithmetic.Negative">
-					<expression tag="Math.Number" Value="2.5"/>
-				</expression>
-				<expression tag="Math.Arithmetic.Negative">
-					<expression tag="Math.Number" Value="3"/>
-				</expression>
-				<expression tag="Math.Number" Value="0"/>
-				<expression tag="Math.Number" Value="0."/>
-				<expression tag="Math.Number" Value="8"/>
-				<expression tag="Math.Number" Value="4.5"/>
-				<expression tag="Math.Arithmetic.Division">
-					<expression tag="Math.Number" Value="3"/>
-					<expression tag="Math.Number" Value="4"/>
-				</expression>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.Table">
-			<expression tag="List.List">
+		<expression tag="Visualization.CrossedOut">
+			<expression tag="List.CreateTable">
 				<expression tag="List.List">
 					<expression tag="Symbolic.Symbol" Name="x"/>
 					<expression tag="Math.Arithmetic.Exponentiation">
@@ -1033,15 +977,8 @@
 						<expression tag="Math.Number" Value="0."/>
 						<expression tag="Symbolic.Symbol" Name="x"/>
 					</expression>
-					<expression tag="Math.Arithmetic.Exponentiation">
-						<expression tag="Math.Number" Value="1"/>
-						<expression tag="Symbolic.Symbol" Name="x"/>
-					</expression>
-					<expression tag="Math.Arithmetic.Exponentiation">
-						<expression tag="Math.Number" Value="1."/>
-						<expression tag="Symbolic.Symbol" Name="x"/>
-					</expression>
 				</expression>
+				<expression tag="Symbolic.Symbol" Name="x"/>
 				<expression tag="List.List">
 					<expression tag="Math.Arithmetic.Negative">
 						<expression tag="Math.Arithmetic.Division">
@@ -1049,66 +986,91 @@
 							<expression tag="Math.Number" Value="2"/>
 						</expression>
 					</expression>
-					<expression tag="Math.Infinity"/>
-					<expression tag="Math.Infinity"/>
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Math.Number" Value="1."/>
-				</expression>
-				<expression tag="List.List">
 					<expression tag="Math.Arithmetic.Negative">
 						<expression tag="Math.Number" Value="2.5"/>
 					</expression>
-					<expression tag="Math.Infinity"/>
-					<expression tag="Math.Infinity"/>
-					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Math.Number" Value="1."/>
-				</expression>
-				<expression tag="List.List">
 					<expression tag="Math.Arithmetic.Negative">
 						<expression tag="Math.Number" Value="3"/>
 					</expression>
-					<expression tag="Math.Infinity"/>
-					<expression tag="Math.Infinity"/>
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Math.Number" Value="1."/>
-				</expression>
-				<expression tag="List.List">
 					<expression tag="Math.Number" Value="0"/>
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Math.Number" Value="1."/>
-				</expression>
-				<expression tag="List.List">
 					<expression tag="Math.Number" Value="0."/>
-					<expression tag="Math.Infinity"/>
-					<expression tag="Math.Infinity"/>
-					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Math.Number" Value="1."/>
-				</expression>
-				<expression tag="List.List">
 					<expression tag="Math.Number" Value="8"/>
-					<expression tag="Math.Number" Value="0"/>
-					<expression tag="Math.Number" Value="0."/>
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Math.Number" Value="1."/>
-				</expression>
-				<expression tag="List.List">
 					<expression tag="Math.Number" Value="4.5"/>
-					<expression tag="Math.Number" Value="0."/>
-					<expression tag="Math.Number" Value="0."/>
-					<expression tag="Math.Number" Value="1."/>
-					<expression tag="Math.Number" Value="1."/>
-				</expression>
-				<expression tag="List.List">
 					<expression tag="Math.Arithmetic.Division">
 						<expression tag="Math.Number" Value="3"/>
 						<expression tag="Math.Number" Value="4"/>
 					</expression>
-					<expression tag="Math.Number" Value="0."/>
-					<expression tag="Math.Number" Value="0."/>
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Math.Number" Value="1."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Visualization.CrossedOut">
+			<expression tag="List.Table">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Math.Number" Value="0."/>
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Infinity"/>
+						<expression tag="Math.Infinity"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="2.5"/>
+						</expression>
+						<expression tag="Math.Infinity"/>
+						<expression tag="Math.Infinity"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="Math.Infinity"/>
+						<expression tag="Math.Infinity"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Infinity"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0."/>
+						<expression tag="Math.Infinity"/>
+						<expression tag="Math.Infinity"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="8"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0."/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="4.5"/>
+						<expression tag="Math.Number" Value="0."/>
+						<expression tag="Math.Number" Value="0."/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Math.Number" Value="0."/>
+						<expression tag="Math.Number" Value="0."/>
+					</expression>
 				</expression>
 			</expression>
 		</expression>
