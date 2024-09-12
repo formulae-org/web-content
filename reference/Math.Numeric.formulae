@@ -238,12 +238,58 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If you select the option Math ▶ Numeric at the left panel, a Math.Numeric expression is created, the selected expression becomes its unique argument, and it remains as the selected expression."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If you want to create the second argument, select the first argument and press the [INSERT] key, the second argument will  be created as the"/>
 				<expression tag="Null"/>
+				<expression tag="String.Text" Value="expression, which becomes the selected expression."/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Null"/>
+		<expression tag="Typesetting.Centering">
+			<expression tag="List.Table">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Sample expression"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Edition"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Result"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Visualization.Selected">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+						</expression>
+						<expression tag="String.Text" Value="Math ▶ Numeric"/>
+						<expression tag="Math.Numeric">
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Numeric">
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="[INSERT]"/>
+						<expression tag="Math.Numeric">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Null"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
@@ -268,7 +314,63 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="String.Text" Value="The following are the known reducers associated with the numeric expression, in the order they are applied:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.Centering">
+					<expression tag="List.Table">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="Visualization.Bold" Value="True" Set="True">
+									<expression tag="String.Text" Value="Name"/>
+								</expression>
+								<expression tag="Visualization.Bold" Value="True" Set="True">
+									<expression tag="String.Text" Value="Package"/>
+								</expression>
+								<expression tag="Visualization.Bold" Value="True" Set="True">
+									<expression tag="String.Text" Value="Priority"/>
+								</expression>
+								<expression tag="Visualization.Bold" Value="True" Set="True">
+									<expression tag="String.Text" Value="Special"/>
+								</expression>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Numeric of a number"/>
+								<expression tag="String.Text" Value="Arithmetic"/>
+								<expression tag="String.Text" Value="High"/>
+								<expression tag="String.Text" Value="No"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Visualization.HorizontalArray">
+									<expression tag="String.Text" Value="Numeric of"/>
+									<expression tag="Visualization.Italic" Value="True" Set="True">
+										<expression tag="String.Text" Value="π"/>
+									</expression>
+								</expression>
+								<expression tag="String.Text" Value="Arithmetic"/>
+								<expression tag="String.Text" Value="Normal"/>
+								<expression tag="String.Text" Value="No"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Visualization.HorizontalArray">
+									<expression tag="String.Text" Value="Numeric of"/>
+									<expression tag="Visualization.Italic" Value="True" Set="True">
+										<expression tag="String.Text" Value="e"/>
+									</expression>
+								</expression>
+								<expression tag="String.Text" Value="Arithmetic"/>
+								<expression tag="String.Text" Value="Normal"/>
+								<expression tag="String.Text" Value="No"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="String.Text" Value="Numeric expansion"/>
+								<expression tag="String.Text" Value="Arithmetic"/>
+								<expression tag="String.Text" Value="Low"/>
+								<expression tag="String.Text" Value="No"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -279,8 +381,43 @@
 					<expression tag="String.Text" Value="Numeric of a number"/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="String.Text" Value="This reducer searches for Numeric expression containing integer or rational numbers and converts them to their decimal equivalences."/>
 		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Number" Value="5"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="5."/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="4"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0.75"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If the decimal of a rational number is periodic, the values is rounded to the current precision and rounding mode:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="7"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0.28571428571428571428"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
@@ -292,8 +429,27 @@
 					</expression>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for Numeric expressions of π, and reduces to its decimal value, rounded to the current precision and rounding mode:"/>
+			</expression>
 		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Constant.Pi"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="3.1415926535897932384"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Constant.Pi"/>
+			<expression tag="Math.Number" Value="100"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
@@ -305,8 +461,31 @@
 					</expression>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for Numeric expressions of"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="e"/>
+				</expression>
+				<expression tag="String.Text" Value=", and reduces to its decimal value, rounded to the current precision and rounding mode:"/>
+			</expression>
 		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Constant.Euler"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2.7182818284590452353"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Constant.Euler"/>
+			<expression tag="Math.Number" Value="100"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
