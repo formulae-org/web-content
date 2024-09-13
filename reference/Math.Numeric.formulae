@@ -124,11 +124,11 @@
 			<expression tag="Math.Arithmetic.SquareRoot">
 				<expression tag="Math.Number" Value="2"/>
 			</expression>
-			<expression tag="Math.Number" Value="50"/>
+			<expression tag="Math.Number" Value="100"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="1.4142135623730950488016887242096980785696718753769"/>
+		<expression tag="Math.Number" Value="1.414213562373095048801688724209698078569671875376948073176679737990732478462107038850387534327641572"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Rule"/>
@@ -210,7 +210,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="This expression is visualized as a function with name &quot;N&quot;. The, the version with one parameter is shown as"/>
+				<expression tag="String.Text" Value="This expression is visualized as a function with mnemonic &quot;N&quot;. The, the version with one parameter is shown as"/>
 				<expression tag="Math.Numeric">
 					<expression tag="Symbolic.Symbol" Name="x"/>
 				</expression>
@@ -218,6 +218,45 @@
 				<expression tag="Math.Numeric">
 					<expression tag="Symbolic.Symbol" Name="x"/>
 					<expression tag="Symbolic.Symbol" Name="precision"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="As any other expression with visualization as function, the following applies:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The horizontal baselines of its subexpressions are horizontally aligned, so the memonic, and this baseline is the horizontal baseline of the entire expression."/>
+				</expression>
+				<expression tag="String.Text" Value="The subexpressions are separated with a semicolor and they are shown around parentheses."/>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The vertical baseline of the expression is at half of its width."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Metrics">
+					<expression tag="Math.Numeric">
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="28" Height="16" HorizontalBaseline="7" VerticalBaseline="8"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Metrics">
+					<expression tag="Math.Numeric">
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="6" Height="19" HorizontalBaseline="12" VerticalBaseline="2"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="21" Height="28" HorizontalBaseline="1" VerticalBaseline="16"/>
+							</expression>
+						</expression>
+					</expression>
 				</expression>
 			</expression>
 		</expression>
@@ -292,18 +331,6 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Deletion"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Rule"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -343,7 +370,7 @@
 							<expression tag="List.List">
 								<expression tag="String.Text" Value="Numeric of a number"/>
 								<expression tag="String.Text" Value="Arithmetic"/>
-								<expression tag="String.Text" Value="High"/>
+								<expression tag="String.Text" Value="Normal"/>
 								<expression tag="String.Text" Value="No"/>
 							</expression>
 							<expression tag="List.List">
@@ -387,7 +414,70 @@
 					<expression tag="String.Text" Value="Numeric with precision"/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for Numeric expressions with two arguments. It changes the current precision to the precision provided as the second argument, then it proceed like a 1-argument version. Finally the original precision is restored."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Number" Value="100"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0.3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If the second arguments is not a positive integer number, it is put inside an error expression, and the reduction is not performed:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="String.String" Value="a string"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Error" Description="Expression must be a positive integer number">
+				<expression tag="String.String" Value="a string"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The expression"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Numeric">
+					<expression tag="Symbolic.Symbol" Name="expression"/>
+					<expression tag="Symbolic.Symbol" Name="precision"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Is equivalent to"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.WithPrecision">
+					<expression tag="Math.Numeric">
+						<expression tag="Symbolic.Symbol" Name="expression"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="precision"/>
+				</expression>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -511,15 +601,34 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="This reducer searches for Numeric expessions applied to any kind of expressions. Substitutes every subexpression"/>
-				<expression tag="Symbolic.Symbol" Name="s"/>
-				<expression tag="String.Text" Value="of the target expression to"/>
-				<expression tag="Math.Numeric">
-					<expression tag="Symbolic.Symbol" Name="s"/>
-				</expression>
-				<expression tag="String.Text" Value=". If the target expression has no subexpressions, it does nothing"/>
+				<expression tag="String.Text" Value="This reducer searches for Numeric expessions applied to any kind of expressions. Notice that this reducer has a low priority, so it is applied only if none of the previous reducers were applied."/>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It does the following:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="It substitutes every subexpression"/>
+					<expression tag="Symbolic.Symbol" Name="s"/>
+					<expression tag="String.Text" Value="of the target expression by"/>
+					<expression tag="Math.Numeric">
+						<expression tag="Symbolic.Symbol" Name="s"/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the target expression"/>
+					<expression tag="Symbolic.Symbol" Name="e"/>
+					<expression tag="String.Text" Value="has no subexpressions, it reduces to itself, this is,"/>
+					<expression tag="Math.Numeric">
+						<expression tag="Symbolic.Symbol" Name="e"/>
+					</expression>
+					<expression tag="String.Text" Value="reduces to"/>
+					<expression tag="Symbolic.Symbol" Name="e"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Example:"/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -544,195 +653,219 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Centering">
-			<expression tag="List.Table">
-				<expression tag="List.List">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The reduction process were performed as follows:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
 					<expression tag="List.List">
-						<expression tag="Math.Numeric">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Step"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Explanation"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Numeric">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Trigonometric.Sine">
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+										<expression tag="Math.Number" Value="3."/>
+									</expression>
+									<expression tag="Math.Constant.Pi"/>
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+							<expression tag="String.Text" Value="Original expression"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Numeric">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Trigonometric.Sine">
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+										<expression tag="Math.Number" Value="3."/>
+									</expression>
+									<expression tag="Math.Constant.Pi"/>
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+							</expression>
+							<expression tag="String.Text" Value="Precision set to 5 digits"/>
+						</expression>
+						<expression tag="List.List">
 							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Math.Arithmetic.Division">
-									<expression tag="Math.Trigonometric.Sine">
-										<expression tag="Math.Number" Value="2"/>
-									</expression>
-									<expression tag="Math.Number" Value="3."/>
-								</expression>
-								<expression tag="Math.Constant.Pi"/>
-								<expression tag="Symbolic.Symbol" Name="x"/>
-							</expression>
-							<expression tag="Math.Number" Value="5"/>
-						</expression>
-						<expression tag="String.Text" Value="Original expression"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Numeric">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Math.Arithmetic.Division">
-									<expression tag="Math.Trigonometric.Sine">
-										<expression tag="Math.Number" Value="2"/>
-									</expression>
-									<expression tag="Math.Number" Value="3."/>
-								</expression>
-								<expression tag="Math.Constant.Pi"/>
-								<expression tag="Symbolic.Symbol" Name="x"/>
-							</expression>
-						</expression>
-						<expression tag="String.Text" Value="Precision set to 5 digits"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Numeric">
-								<expression tag="Math.Arithmetic.Division">
-									<expression tag="Math.Trigonometric.Sine">
-										<expression tag="Math.Number" Value="2"/>
-									</expression>
-									<expression tag="Math.Number" Value="3."/>
-								</expression>
-							</expression>
-							<expression tag="Math.Numeric">
-								<expression tag="Math.Constant.Pi"/>
-							</expression>
-							<expression tag="Math.Numeric">
-								<expression tag="Symbolic.Symbol" Name="x"/>
-							</expression>
-						</expression>
-						<expression tag="String.Text" Value="Numeric expansion (over the entire expression)"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Arithmetic.Division">
 								<expression tag="Math.Numeric">
-									<expression tag="Math.Trigonometric.Sine">
-										<expression tag="Math.Number" Value="2"/>
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Trigonometric.Sine">
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+										<expression tag="Math.Number" Value="3."/>
 									</expression>
 								</expression>
 								<expression tag="Math.Numeric">
-									<expression tag="Math.Number" Value="3."/>
+									<expression tag="Math.Constant.Pi"/>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Symbolic.Symbol" Name="x"/>
 								</expression>
 							</expression>
-							<expression tag="Math.Numeric">
-								<expression tag="Math.Constant.Pi"/>
-							</expression>
-							<expression tag="Math.Numeric">
-								<expression tag="Symbolic.Symbol" Name="x"/>
-							</expression>
+							<expression tag="String.Text" Value="Numeric expansion (over the entire expression)"/>
 						</expression>
-						<expression tag="String.Text" Value="Numeric expansion (over the division)"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Arithmetic.Division">
-								<expression tag="Math.Trigonometric.Sine">
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Division">
 									<expression tag="Math.Numeric">
-										<expression tag="Math.Number" Value="2"/>
+										<expression tag="Math.Trigonometric.Sine">
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Numeric">
+										<expression tag="Math.Number" Value="3."/>
 									</expression>
 								</expression>
 								<expression tag="Math.Numeric">
-									<expression tag="Math.Number" Value="3."/>
-								</expression>
-							</expression>
-							<expression tag="Math.Numeric">
-								<expression tag="Math.Constant.Pi"/>
-							</expression>
-							<expression tag="Math.Numeric">
-								<expression tag="Symbolic.Symbol" Name="x"/>
-							</expression>
-						</expression>
-						<expression tag="String.Text" Value="Numeric expansion (over the sine expression)"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Arithmetic.Division">
-								<expression tag="Math.Trigonometric.Sine">
-									<expression tag="Math.Number" Value="2."/>
+									<expression tag="Math.Constant.Pi"/>
 								</expression>
 								<expression tag="Math.Numeric">
-									<expression tag="Math.Number" Value="3."/>
+									<expression tag="Symbolic.Symbol" Name="x"/>
 								</expression>
 							</expression>
-							<expression tag="Math.Numeric">
-								<expression tag="Math.Constant.Pi"/>
-							</expression>
-							<expression tag="Math.Numeric">
-								<expression tag="Symbolic.Symbol" Name="x"/>
-							</expression>
+							<expression tag="String.Text" Value="Numeric expansion (over the division)"/>
 						</expression>
-						<expression tag="String.Text" Value="Numeric of a number. N(2) reduces to 2.0"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Arithmetic.Division">
-								<expression tag="Math.Number" Value="0.90929"/>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Trigonometric.Sine">
+										<expression tag="Math.Numeric">
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Numeric">
+										<expression tag="Math.Number" Value="3."/>
+									</expression>
+								</expression>
 								<expression tag="Math.Numeric">
-									<expression tag="Math.Number" Value="3."/>
+									<expression tag="Math.Constant.Pi"/>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Symbolic.Symbol" Name="x"/>
 								</expression>
 							</expression>
-							<expression tag="Math.Numeric">
-								<expression tag="Math.Constant.Pi"/>
+							<expression tag="String.Text" Value="Numeric expansion (over the sine expression)"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Trigonometric.Sine">
+										<expression tag="Math.Number" Value="2."/>
+									</expression>
+									<expression tag="Math.Numeric">
+										<expression tag="Math.Number" Value="3."/>
+									</expression>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Math.Constant.Pi"/>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
 							</expression>
-							<expression tag="Math.Numeric">
+							<expression tag="String.Text" Value="Numeric of a number. N(2) reduces to 2.0"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Number" Value="0.90929"/>
+									<expression tag="Math.Numeric">
+										<expression tag="Math.Number" Value="3."/>
+									</expression>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Math.Constant.Pi"/>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="Visualization.Bold" Value="True" Set="True">
+									<expression tag="String.Text" Value="Sine"/>
+								</expression>
+								<expression tag="String.Text" Value="of a decimal number, using current precision"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Number" Value="0.90929"/>
+									<expression tag="Math.Number" Value="3."/>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Math.Constant.Pi"/>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+							</expression>
+							<expression tag="String.Text" Value="Numeric expansion. There is no reducer for decimal numbers, so N(3.0) reduces to just 3.0"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="0.30309"/>
+								<expression tag="Math.Numeric">
+									<expression tag="Math.Constant.Pi"/>
+								</expression>
+								<expression tag="Math.Numeric">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Division" Description="Division"/>
+								<expression tag="String.Text" Value="of decimal numbers, using current precision"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="0.30309"/>
+								<expression tag="Math.Number" Value="3.1415"/>
+								<expression tag="Math.Numeric">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+							</expression>
+							<expression tag="String.Text" Value="Numeric of π, using current precision"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="0.30309"/>
+								<expression tag="Math.Number" Value="3.1415"/>
 								<expression tag="Symbolic.Symbol" Name="x"/>
 							</expression>
+							<expression tag="String.Text" Value="Numeric expansion. There is no reducer for a symbol, so it is reduced to itself"/>
 						</expression>
-						<expression tag="String.Text" Value="Sine of a decimal number, using current precision"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Arithmetic.Division">
-								<expression tag="Math.Number" Value="0.90929"/>
-								<expression tag="Math.Number" Value="3."/>
-							</expression>
-							<expression tag="Math.Numeric">
-								<expression tag="Math.Constant.Pi"/>
-							</expression>
-							<expression tag="Math.Numeric">
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="3.4445"/>
 								<expression tag="Symbolic.Symbol" Name="x"/>
 							</expression>
-						</expression>
-						<expression tag="String.Text" Value="Numeric expansion. There is no reducer for a decimal number, so it is reduced to itself"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Number" Value="0.30309"/>
-							<expression tag="Math.Numeric">
-								<expression tag="Math.Constant.Pi"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Addition"/>
+								<expression tag="String.Text" Value="of number expressions"/>
 							</expression>
-							<expression tag="Math.Numeric">
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="3.4445"/>
 								<expression tag="Symbolic.Symbol" Name="x"/>
 							</expression>
+							<expression tag="String.Text" Value="Precision restored, and final result"/>
 						</expression>
-						<expression tag="String.Text" Value="Division of decimal numbers, using current precision"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Number" Value="0.30309"/>
-							<expression tag="Math.Number" Value="3.1415"/>
-							<expression tag="Math.Numeric">
-								<expression tag="Symbolic.Symbol" Name="x"/>
-							</expression>
-						</expression>
-						<expression tag="String.Text" Value="Numeric of π, using current precision"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Number" Value="0.30309"/>
-							<expression tag="Math.Number" Value="3.1415"/>
-							<expression tag="Symbolic.Symbol" Name="x"/>
-						</expression>
-						<expression tag="String.Text" Value="Numeric expansion. There is no reducer for a symbol, so it is reduced to itself"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Number" Value="3.4445"/>
-							<expression tag="Symbolic.Symbol" Name="x"/>
-						</expression>
-						<expression tag="String.Text" Value="Addition of number expressions"/>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Number" Value="3.4445"/>
-							<expression tag="Symbolic.Symbol" Name="x"/>
-						</expression>
-						<expression tag="String.Text" Value="Precision restored, and final result"/>
 					</expression>
 				</expression>
 			</expression>
@@ -761,8 +894,11 @@
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="Expression in the"/>
+					<expression tag="String.Text" Value="Expressions in the"/>
 					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/org.formulae.arithmetic" Description="Arithmetic package"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Expressions related to precision"/>
 				</expression>
 			</expression>
 		</expression>
@@ -781,7 +917,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1726184100000"/>
+				<expression tag="Time.Time" Value="1726205040000"/>
 			</expression>
 		</expression>
 	</expression>
