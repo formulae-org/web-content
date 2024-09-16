@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.symbolic,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.list,org.formulae.visualization,org.formulae.diagramming,org.formulae.programming,org.formulae.symbolic,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -12,47 +12,6 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Rule"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Normal representation vs internal representation"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="There are two forms of representing expressions, according with what we are going to use them."/>
-			</expression>
-			<expression tag="Typesetting.BulletedList">
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="Typesetting.BoldChunk">
-						<expression tag="String.Text" Value="Normal representation."/>
-					</expression>
-					<expression tag="String.Text" Value="This form or representation is suitable for visualization and edition (creating, changing) expressions."/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="Typesetting.BoldChunk">
-						<expression tag="String.Text" Value="Internal representation."/>
-					</expression>
-					<expression tag="String.Text" Value="This form of representation is suitable for reduction, that is, to compute or to programmaticaly manipulate expressions."/>
-				</expression>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Normal representation"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The normal representation is used for visualization and edition of expressions."/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
@@ -60,9 +19,9 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="In normal representation, numbers are represented with the"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
-				<expression tag="String.Text" Value="Expression. They must have the following properties:"/>
+				<expression tag="String.Text" Value="In Fōrmulæ, numbers are represented with the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Number"/>
+				<expression tag="String.Text" Value="Expression. They have the following properties:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
@@ -79,6 +38,55 @@
 				<expression tag="String.Text" Value="There are two types: Integer and decimal numbers. Integer numbers can represent only integer values, while decimal numbers can represent both integer and fractional values."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There must exist a way to visually differentiate between integer and decimal numbers:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Integer numbers are usually shown as is, e.g."/>
+					<expression tag="Math.Number" Value="567"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Decimal numbers always show a decimal point, even when thay are integers., in such that case thay are shown as 23. or 23.0 (it is usually configurable)."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Examples:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Example"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Description"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="String.Text" Value="Integer number"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="12.34"/>
+							<expression tag="String.Text" Value="Decimal number"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="5."/>
+							<expression tag="String.Text" Value="Decimal number"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="String.Text" Value="Integer zero"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0."/>
+							<expression tag="String.Text" Value="Decimal zero"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Other kind of numbers can be represented using well known expressions:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
@@ -89,7 +97,7 @@
 					<expression tag="String.Text" Value="A negative number can be created using a"/>
 					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
 					<expression tag="String.Text" Value="expression, containing a"/>
-					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Number"/>
 					<expression tag="String.Text" Value="expression."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
@@ -99,7 +107,7 @@
 					<expression tag="String.Text" Value="A rational number can be created using a"/>
 					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Division" Description="Division"/>
 					<expression tag="String.Text" Value="expression, containing two"/>
-					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Number"/>
 					<expression tag="String.Text" Value="expressions representing integer numbers, as its subexpressions, the numerator and the denominator."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
@@ -141,7 +149,7 @@
 								<expression tag="Math.Number" Value="12.5"/>
 							</expression>
 							<expression tag="Diagramming.Tree" Expanded="True">
-								<expression tag="String.Text" Value="Negative"/>
+								<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
 								<expression tag="Diagramming.Tree" Expanded="True">
 									<expression tag="Math.Number" Value="12.5"/>
 								</expression>
@@ -154,7 +162,7 @@
 								<expression tag="Math.Number" Value="3"/>
 							</expression>
 							<expression tag="Diagramming.Tree" Expanded="True">
-								<expression tag="String.Text" Value="Division"/>
+								<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Division" Description="Division"/>
 								<expression tag="Diagramming.Tree" Expanded="True">
 									<expression tag="Math.Number" Value="2"/>
 								</expression>
@@ -172,9 +180,9 @@
 								</expression>
 							</expression>
 							<expression tag="Diagramming.Tree" Expanded="True">
-								<expression tag="String.Text" Value="Negative"/>
+								<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
 								<expression tag="Diagramming.Tree" Expanded="True">
-									<expression tag="String.Text" Value="Division"/>
+									<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Division" Description="Division"/>
 									<expression tag="Diagramming.Tree" Expanded="True">
 										<expression tag="Math.Number" Value="4"/>
 									</expression>
@@ -187,368 +195,166 @@
 					</expression>
 				</expression>
 			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Fōrmulæ supports arbitrary precision numbers."/>
+			</expression>
 		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Internal representation"/>
+					<expression tag="String.Text" Value="Number of significant digits"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The internal representation is used for expression reduction."/>
+				<expression tag="String.Text" Value="In Fōrmulæ, it is  a measure of the number of slots required for storing a given number. In this context, a slot is a hypotetical storage unit intended to hold a single digit, it is neither a requirement nor recommendatios of how numberas might be stored."/>
 			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Internal numbers"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Under internal representation, numbers are represented with the"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
-				<expression tag="String.Text" Value="expressions. Unlike"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
-				<expression tag="String.Text" Value="expressions, internal numbers can hold (integer and decimal) numbers, negative numbers, ratioanl numbers and negative rational numbers as a single unit."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
-				<expression tag="String.Text" Value="expressions cannot be interactively created, and they are not visible to the user. In order to represent such those expressions, we will use normal expressions shown in"/>
-				<expression tag="Visualization.Selected">
-					<expression tag="String.Text" Value="gray background."/>
-				</expression>
-				<expression tag="String.Text" Value="The following are examples of representations of"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
-				<expression tag="String.Text" Value="expressions:"/>
-			</expression>
+			<expression tag="String.Text" Value="For example:"/>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="Visualization.Selected">
-						<expression tag="Math.Number" Value="5"/>
-					</expression>
-					<expression tag="String.Text" Value="(a postive integer number)"/>
+					<expression tag="String.Text" Value="To store the integer number 234, we require 3 slots, because the tree digits of 234 are significant."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="Visualization.Selected">
-						<expression tag="Math.Arithmetic.Negative">
-							<expression tag="String.Text" Value="2.5"/>
-						</expression>
+					<expression tag="String.Text" Value="To store the decimal number 405.23 we require 5 slots. It is assumed that and indicator of the position of the decimal point is available. This is usually known as the"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="scale."/>
 					</expression>
-					<expression tag="String.Text" Value="(a negative decimal number)"/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="Visualization.Selected">
-						<expression tag="Math.Number" Value="0"/>
-					</expression>
-					<expression tag="String.Text" Value="(integer zero)"/>
+					<expression tag="String.Text" Value="To stote the decimal number -12.34000067 we require 10 slots. It is assumed that an indicator of the sign is available."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="Visualization.Selected">
-						<expression tag="Math.Number" Value="0."/>
+					<expression tag="String.Text" Value="To store the integer number 76,300 only 3 slots are required (for the digits 7, 6 and 3) because we can use the"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="scale"/>
 					</expression>
-					<expression tag="String.Text" Value="(decimal zero)"/>
+					<expression tag="String.Text" Value="to indicate that the decimal point is 4 places at the right of the digit 7"/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="Visualization.Selected">
-						<expression tag="Math.Arithmetic.Division">
-							<expression tag="Math.Number" Value="3"/>
-							<expression tag="Math.Number" Value="4"/>
-						</expression>
+					<expression tag="String.Text" Value="To store the decimal number 0.0000052 only 2 slots are required (for the digits 5 and 2), because we can use the"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="scale"/>
 					</expression>
-					<expression tag="String.Text" Value="(a positive rational)"/>
+					<expression tag="String.Text" Value="to indicate that the decimal point is 5 places at the left of the digit 5"/>
 				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="Visualization.Selected">
-						<expression tag="Math.Arithmetic.Negative">
-							<expression tag="Math.Arithmetic.Division">
-								<expression tag="Math.Number" Value="5"/>
-								<expression tag="Math.Number" Value="2"/>
-							</expression>
-						</expression>
-					</expression>
-					<expression tag="String.Text" Value="(a negative rational)"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A formal definition of the number of significant digits of a number would be: the number of digits of the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Significand" Description="mantissa"/>
+				<expression tag="String.Text" Value="when the number is expressed in"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Normalized_number" Description="normalized scientific notation."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There are a"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Number of significant digits"/>
 				</expression>
+				<expression tag="String.Text" Value="expression already included in the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/org.formulae.arithmetic" Description="Arithmetic package"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Negative expressions"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Under internal representation,"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-				<expression tag="String.Text" Value="expressions are not used. Any negative expression:"/>
-			</expression>
-			<expression tag="Typesetting.Centering">
-				<expression tag="Math.Arithmetic.Negative">
-					<expression tag="Symbolic.Symbol" Name="x"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Is equivalent to the multiplication:"/>
-			</expression>
-			<expression tag="Typesetting.Centering">
-				<expression tag="Math.Arithmetic.Multiplication">
-					<expression tag="Visualization.Selected">
-						<expression tag="Math.Arithmetic.Negative">
-							<expression tag="Math.Number" Value="1"/>
-						</expression>
-					</expression>
-					<expression tag="Symbolic.Symbol" Name="x"/>
-				</expression>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Conversion between representations"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="It is possibe to converta from normal to internal representation and turning back."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Every time you create an expression and"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="&lt;ENTER&gt;"/>
-				</expression>
-				<expression tag="String.Text" Value="in order to be computed, the program converts the expression you have enetered to"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="internal representation,"/>
-				</expression>
-				<expression tag="String.Text" Value="computes it, and the result is converted to"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="normal representation"/>
-				</expression>
-				<expression tag="String.Text" Value="and presented as such."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The following are examples of normal vs internal representation of several expressions:"/>
-			</expression>
-			<expression tag="Typesetting.Centering">
-				<expression tag="List.Table">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
 					<expression tag="List.List">
-						<expression tag="List.List">
-							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="String.Text" Value="Normal form"/>
-							</expression>
-							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="String.Text" Value="Internal form"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Math.Number" Value="5"/>
-								<expression tag="Math.Arithmetic.Negative">
-									<expression tag="Math.Arithmetic.Multiplication">
-										<expression tag="Math.Number" Value="2"/>
-										<expression tag="Symbolic.Symbol" Name="x"/>
-									</expression>
-								</expression>
-								<expression tag="Math.Arithmetic.Multiplication">
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Number" Value="2"/>
-										<expression tag="Math.Number" Value="3"/>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="y"/>
-								</expression>
-								<expression tag="Math.Arithmetic.Negative">
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Number" Value="1"/>
-										<expression tag="Math.Number" Value="2"/>
-									</expression>
-								</expression>
-							</expression>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Visualization.Selected">
-									<expression tag="Math.Number" Value="5"/>
-								</expression>
-								<expression tag="Math.Arithmetic.Multiplication">
-									<expression tag="Visualization.Selected">
-										<expression tag="Math.Arithmetic.Negative">
-											<expression tag="Math.Number" Value="2"/>
-										</expression>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="x"/>
-								</expression>
-								<expression tag="Math.Arithmetic.Multiplication">
-									<expression tag="Visualization.Selected">
-										<expression tag="Math.Arithmetic.Division">
-											<expression tag="Math.Number" Value="2"/>
-											<expression tag="Math.Number" Value="3"/>
-										</expression>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="y"/>
-								</expression>
-								<expression tag="Visualization.Selected">
-									<expression tag="Math.Arithmetic.Negative">
-										<expression tag="Math.Arithmetic.Division">
-											<expression tag="Math.Number" Value="1"/>
-											<expression tag="Math.Number" Value="2"/>
-										</expression>
-									</expression>
-								</expression>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="Math.Arithmetic.Negative">
-								<expression tag="Visualization.Parentheses">
-									<expression tag="Math.Arithmetic.Multiplication">
-										<expression tag="Symbolic.Symbol" Name="x"/>
-										<expression tag="Symbolic.Symbol" Name="y"/>
-									</expression>
-								</expression>
-							</expression>
-							<expression tag="Math.Arithmetic.Multiplication">
-								<expression tag="Visualization.Selected">
-									<expression tag="Math.Arithmetic.Negative">
-										<expression tag="Math.Number" Value="1"/>
-									</expression>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="x"/>
-								<expression tag="Symbolic.Symbol" Name="y"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Math.Arithmetic.Multiplication">
-									<expression tag="Math.Number" Value="2.5"/>
-									<expression tag="Symbolic.Symbol" Name="x"/>
-								</expression>
-								<expression tag="Math.Number" Value="1"/>
-							</expression>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Math.Arithmetic.Multiplication">
-									<expression tag="Visualization.Selected">
-										<expression tag="Math.Number" Value="2.5"/>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="x"/>
-								</expression>
-								<expression tag="Visualization.Selected">
-									<expression tag="Math.Number" Value="1"/>
-								</expression>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="x"/>
-								<expression tag="Math.Arithmetic.Negative">
-									<expression tag="Symbolic.Symbol" Name="y"/>
-								</expression>
-							</expression>
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="x"/>
-								<expression tag="Math.Arithmetic.Multiplication">
-									<expression tag="Visualization.Selected">
-										<expression tag="Math.Arithmetic.Negative">
-											<expression tag="Math.Number" Value="1"/>
-										</expression>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="y"/>
-								</expression>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="Math.Arithmetic.Negative">
-								<expression tag="Visualization.Parentheses">
-									<expression tag="Math.Arithmetic.Multiplication">
-										<expression tag="Math.Arithmetic.Division">
-											<expression tag="Math.Number" Value="1"/>
-											<expression tag="Math.Number" Value="2"/>
-										</expression>
-										<expression tag="Symbolic.Symbol" Name="a"/>
-										<expression tag="Symbolic.Symbol" Name="b"/>
-										<expression tag="Math.Arithmetic.Exponentiation">
-											<expression tag="Symbolic.Symbol" Name="c"/>
-											<expression tag="Math.Number" Value="2"/>
-										</expression>
-									</expression>
-								</expression>
-							</expression>
-							<expression tag="Math.Arithmetic.Multiplication">
-								<expression tag="Visualization.Selected">
-									<expression tag="Math.Arithmetic.Negative">
-										<expression tag="Math.Arithmetic.Division">
-											<expression tag="Math.Number" Value="1"/>
-											<expression tag="Math.Number" Value="2"/>
-										</expression>
-									</expression>
-								</expression>
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="Math.Arithmetic.Exponentiation">
-									<expression tag="Symbolic.Symbol" Name="c"/>
-									<expression tag="Visualization.Selected">
-										<expression tag="Math.Number" Value="2"/>
-									</expression>
-								</expression>
-							</expression>
-						</expression>
+						<expression tag="Math.Number" Value="8"/>
+						<expression tag="Math.Number" Value="1500000"/>
+						<expression tag="Math.Number" Value="12.776"/>
+						<expression tag="Math.Number" Value="1.0000000000001"/>
+						<expression tag="Math.Number" Value="14.5"/>
+						<expression tag="Math.Number" Value="145"/>
+						<expression tag="Math.Number" Value="1450000"/>
+						<expression tag="Math.Number" Value="0.0000145"/>
 					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.CreateTable">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Arithmetic.SignificantDigits">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Arithmetic.SignificantDigits">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1500000"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="12.776"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1.0000000000001"/>
+					<expression tag="Math.Number" Value="14"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="14.5"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="145"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1450000"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0.0000145"/>
+					<expression tag="Math.Number" Value="3"/>
 				</expression>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Null"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="For developers"/>
+					<expression tag="String.Text" Value="Precision"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The precision is a definition of the maximum number of significant digits an operation can have. Using a precision of"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="String.Text" Value="(digits) means that the result of the operations can be, at most, of"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="String.Text" Value="significant digits."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In Fōrmulæ, precision only applies to operations that produce"/>
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Visualization/edition development"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="According to this cannon, you can create visualizations and editions for"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
-				<expression tag="String.Text" Value="but not for"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
-				<expression tag="String.Text" Value="expressions."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Reduction development"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The following guidelines must be followed:"/>
-			</expression>
-			<expression tag="Typesetting.BulletedList">
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="You must assume that any expression will not contain any"/>
-					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
-					<expression tag="String.Text" Value="but"/>
-					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
-					<expression tag="String.Text" Value="expressions. Conversely, you must create and manipulate"/>
-					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.InternalNumber" Description="Math.InternalNumber"/>
-					<expression tag="String.Text" Value="expressions only."/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="You must assume that any expression will not contain any"/>
-					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-					<expression tag="String.Text" Value="expression. Conversely, you must not create"/>
-					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-					<expression tag="String.Text" Value="expressions."/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="You should not create reducers for both"/>
-					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Number" Description="Math.Number"/>
-					<expression tag="String.Text" Value="or"/>
-					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-					<expression tag="String.Text" Value="expressions, they will never be invoked."/>
+					<expression tag="String.Text" Value="decimal numbers"/>
 				</expression>
 			</expression>
 		</expression>
@@ -575,48 +381,30 @@
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Addition"/>
 				<expression tag="String.Text" Value="expression, where first subexpression is the minuend, and the second subexpression is a"/>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-				<expression tag="String.Text" Value="expression. containing the subtrahend, as it is shown:"/>
+				<expression tag="String.Text" Value="expression. containing the subtrahend, in other ords, it is:"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Visualization.Parentheses">
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=", as it is shown:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Diagramming.Tree" Expanded="True">
-					<expression tag="String.Text" Value="Addition"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Addition"/>
 					<expression tag="Diagramming.Tree" Expanded="True">
 						<expression tag="Symbolic.Symbol" Name="a"/>
 					</expression>
 					<expression tag="Diagramming.Tree" Expanded="True">
-						<expression tag="String.Text" Value="Negative"/>
+						<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
 						<expression tag="Diagramming.Tree" Expanded="True">
 							<expression tag="Symbolic.Symbol" Name="b"/>
 						</expression>
 					</expression>
 				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="However, if the expression is going to be computed, it is previously converted to"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="internal representation"/>
-				</expression>
-				<expression tag="String.Text" Value="as follows:"/>
-			</expression>
-			<expression tag="Typesetting.Centering">
-				<expression tag="Math.Arithmetic.Addition">
-					<expression tag="Symbolic.Symbol" Name="a"/>
-					<expression tag="Math.Arithmetic.Multiplication">
-						<expression tag="Visualization.Selected">
-							<expression tag="Math.Arithmetic.Negative">
-								<expression tag="Math.Number" Value="1"/>
-							</expression>
-						</expression>
-						<expression tag="Symbolic.Symbol" Name="b"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Notice then that under"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="internal representation,"/>
-				</expression>
-				<expression tag="String.Text" Value="there are neither subtraction, nor negative expressions, but there is negative numbers."/>
 			</expression>
 		</expression>
 	</expression>
@@ -662,7 +450,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1723084260000"/>
+				<expression tag="Time.Time" Value="1726435920000"/>
 			</expression>
 		</expression>
 	</expression>
