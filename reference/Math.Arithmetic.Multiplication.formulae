@@ -191,25 +191,59 @@
 						<expression tag="Typesetting.BoldChunk">
 							<expression tag="String.Text" Value="Append factor."/>
 						</expression>
-						<expression tag="String.Text" Value="If you press the [*] key, a factor will be created at right of the current selected expression. However, if the currently selected expression is already a factor  (its parent expression is a multiplication), a new factor is created at right."/>
+						<expression tag="String.Text" Value="If you press the key"/>
+						<expression tag="Visualization.Key">
+							<expression tag="String.Text" Value="*"/>
+						</expression>
+						<expression tag="String.Text" Value=", a factor will be created at right of the current selected expression. However, if the currently selected expression is already a factor  (its parent expression is a multiplication), a new factor is created at right."/>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
 						<expression tag="Typesetting.BoldChunk">
 							<expression tag="String.Text" Value="Prepend factor."/>
 						</expression>
-						<expression tag="String.Text" Value="If you press the [ALT] + [*], the behavior is the same as the previous part exception that the new factor will be created at left of the selected expression."/>
+						<expression tag="String.Text" Value="If you press the keys"/>
+						<expression tag="Visualization.HorizontalArray">
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value="ALT"/>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value="*"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value=", the behavior is the same as the previous part exception that the new factor will be created at left of the selected expression."/>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
 						<expression tag="Typesetting.BoldChunk">
 							<expression tag="String.Text" Value="Append factor!"/>
 						</expression>
-						<expression tag="String.Text" Value="Sometimes you want create a maultiplication even if the selected expression is a factor (to create a multiplication that contains a multiplication as factor). If you press [CTRL] + [*], a multiplication will always be created, containing the selected expression and a new Null expresion at right."/>
+						<expression tag="String.Text" Value="Sometimes you want create a maultiplication even if the selected expression is a factor (to create a multiplication that contains a multiplication as factor). If you press the keys"/>
+						<expression tag="Visualization.HorizontalArray">
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value="CTRL"/>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value="*"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value=", a multiplication will always be created, containing the selected expression and a new Null expresion at right."/>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
 						<expression tag="Typesetting.BoldChunk">
 							<expression tag="String.Text" Value="Prepend factor!."/>
 						</expression>
-						<expression tag="String.Text" Value="If you press [CTRL] +[ALT] + [*], the behavior is the same as the previous part exception that the new multiplication will be created at left of the selected expression."/>
+						<expression tag="String.Text" Value="If you press the keys"/>
+						<expression tag="Visualization.HorizontalArray">
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value="CTRL"/>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value="ALT"/>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value="*"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value=", the behavior is the same as the previous part exception that the new multiplication will be created at left of the selected expression."/>
 					</expression>
 				</expression>
 			</expression>
@@ -238,7 +272,9 @@
 							<expression tag="Visualization.Selected">
 								<expression tag="Symbolic.Symbol" Name="x"/>
 							</expression>
-							<expression tag="String.Text" Value="[*]"/>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value="*"/>
+							</expression>
 							<expression tag="Math.Arithmetic.Multiplication">
 								<expression tag="Symbolic.Symbol" Name="x"/>
 								<expression tag="Visualization.Selected">
@@ -251,7 +287,14 @@
 							<expression tag="Visualization.Selected">
 								<expression tag="Symbolic.Symbol" Name="x"/>
 							</expression>
-							<expression tag="String.Text" Value="[ALT] + [*]"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="ALT"/>
+								</expression>
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="*"/>
+								</expression>
+							</expression>
 							<expression tag="Math.Arithmetic.Multiplication">
 								<expression tag="Visualization.Selected">
 									<expression tag="Null"/>
@@ -268,7 +311,9 @@
 								</expression>
 								<expression tag="Symbolic.Symbol" Name="c"/>
 							</expression>
-							<expression tag="String.Text" Value="[*]"/>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value="*"/>
+							</expression>
 							<expression tag="Math.Arithmetic.Multiplication">
 								<expression tag="Symbolic.Symbol" Name="a"/>
 								<expression tag="Symbolic.Symbol" Name="b"/>
@@ -287,7 +332,14 @@
 								</expression>
 								<expression tag="Symbolic.Symbol" Name="c"/>
 							</expression>
-							<expression tag="String.Text" Value="[ALT] + [*]"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="ALT"/>
+								</expression>
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="*"/>
+								</expression>
+							</expression>
 							<expression tag="Math.Arithmetic.Multiplication">
 								<expression tag="Symbolic.Symbol" Name="a"/>
 								<expression tag="Visualization.Selected">
@@ -306,7 +358,14 @@
 								</expression>
 								<expression tag="Symbolic.Symbol" Name="c"/>
 							</expression>
-							<expression tag="String.Text" Value="[CTRL] + [*]"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="CTRL"/>
+								</expression>
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="*"/>
+								</expression>
+							</expression>
 							<expression tag="Math.Arithmetic.Multiplication">
 								<expression tag="Symbolic.Symbol" Name="a"/>
 								<expression tag="Math.Arithmetic.Multiplication">
@@ -327,7 +386,17 @@
 								</expression>
 								<expression tag="Symbolic.Symbol" Name="c"/>
 							</expression>
-							<expression tag="String.Text" Value="[CTRL] + [ALT] + [*]"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="CTRL"/>
+								</expression>
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="ALT"/>
+								</expression>
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="*"/>
+								</expression>
+							</expression>
 							<expression tag="Math.Arithmetic.Multiplication">
 								<expression tag="Symbolic.Symbol" Name="a"/>
 								<expression tag="Math.Arithmetic.Multiplication">
