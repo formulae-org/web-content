@@ -991,50 +991,26 @@
 								</expression>
 							</expression>
 							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="Visualization.VerticalArray">
-									<expression tag="Relation.Greater">
-										<expression tag="Symbolic.Symbol" Name="f"/>
-										<expression tag="Math.Number" Value="0."/>
-									</expression>
-									<expression tag="Relation.NotIn">
-										<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="Relation.NotIn">
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="String.Text" Value="ℤ"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="Relation.In">
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Arithmetic.Exponentiation">
 										<expression tag="String.Text" Value="ℤ"/>
+										<expression tag="String.Text" Value="+"/>
 									</expression>
 								</expression>
 							</expression>
 							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="Visualization.VerticalArray">
-									<expression tag="Relation.Less">
-										<expression tag="Symbolic.Symbol" Name="f"/>
-										<expression tag="Math.Number" Value="0."/>
-									</expression>
-									<expression tag="Relation.NotIn">
-										<expression tag="Symbolic.Symbol" Name="f"/>
+								<expression tag="Relation.In">
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Arithmetic.Exponentiation">
 										<expression tag="String.Text" Value="ℤ"/>
-									</expression>
-								</expression>
-							</expression>
-							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="Visualization.VerticalArray">
-									<expression tag="Relation.Greater">
-										<expression tag="Symbolic.Symbol" Name="f"/>
-										<expression tag="Math.Number" Value="0."/>
-									</expression>
-									<expression tag="Relation.In">
-										<expression tag="Symbolic.Symbol" Name="f"/>
-										<expression tag="String.Text" Value="ℤ"/>
-									</expression>
-								</expression>
-							</expression>
-							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="Visualization.VerticalArray">
-									<expression tag="Relation.Less">
-										<expression tag="Symbolic.Symbol" Name="f"/>
-										<expression tag="Math.Number" Value="0."/>
-									</expression>
-									<expression tag="Relation.In">
-										<expression tag="Symbolic.Symbol" Name="f"/>
-										<expression tag="String.Text" Value="ℤ"/>
+										<expression tag="String.Text" Value="-"/>
 									</expression>
 								</expression>
 							</expression>
@@ -1045,21 +1021,18 @@
 								</expression>
 							</expression>
 							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="Relation.Greater">
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Symbolic.Symbol" Name="x"/>
-										<expression tag="Symbolic.Symbol" Name="y"/>
-									</expression>
-									<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Symbolic.Symbol" Name="y"/>
 								</expression>
 							</expression>
 							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="Relation.Less">
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Math.Arithmetic.Multiplication">
 										<expression tag="Symbolic.Symbol" Name="y"/>
+										<expression tag="Math.Complex.Imaginary"/>
 									</expression>
-									<expression tag="Math.Number" Value="0"/>
 								</expression>
 							</expression>
 						</expression>
@@ -1106,17 +1079,6 @@
 								</expression>
 							</expression>
 							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
-									<expression tag="Math.Numeric">
-										<expression tag="Symbolic.Symbol" Name="n"/>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="f"/>
-								</expression>
-								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Decimal"/>
-								</expression>
-							</expression>
-							<expression tag="Visualization.VerticalArray">
 								<expression tag="Math.Numeric">
 									<expression tag="Math.Arithmetic.Exponentiation">
 										<expression tag="Symbolic.Symbol" Name="n"/>
@@ -1131,10 +1093,15 @@
 							</expression>
 							<expression tag="Visualization.VerticalArray">
 								<expression tag="Math.Numeric">
-									<expression tag="Math.Arithmetic.Exponentiation">
-										<expression tag="Symbolic.Symbol" Name="n"/>
-										<expression tag="Math.Arithmetic.ToInteger">
-											<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Number" Value="1"/>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+											<expression tag="Math.Arithmetic.ToInteger">
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Symbolic.Symbol" Name="f"/>
+												</expression>
+											</expression>
 										</expression>
 									</expression>
 								</expression>
@@ -1144,54 +1111,57 @@
 							</expression>
 							<expression tag="Math.Number" Value="1."/>
 							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Visualization.Selected">
 									<expression tag="Math.Arithmetic.Exponentiation">
 										<expression tag="Symbolic.Symbol" Name="n"/>
-										<expression tag="Symbolic.Symbol" Name="x"/>
-									</expression>
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Number" Value="1"/>
-										<expression tag="Symbolic.Symbol" Name="y"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
 									</expression>
 								</expression>
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Symbolic"/>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+									<expression tag="Math.Numeric">
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
+									<expression tag="String.Text" Value="Decimal"/>
 								</expression>
 							</expression>
 							<expression tag="Visualization.VerticalArray">
-								<expression tag="Relation.Equals">
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Number" Value="1"/>
-										<expression tag="Math.Arithmetic.Exponentiation">
-											<expression tag="Math.Arithmetic.Exponentiation">
-												<expression tag="Symbolic.Symbol" Name="n"/>
-												<expression tag="Math.Arithmetic.Negative">
-													<expression tag="Symbolic.Symbol" Name="x"/>
-												</expression>
-											</expression>
-											<expression tag="Math.Arithmetic.Division">
-												<expression tag="Math.Number" Value="1"/>
-												<expression tag="Symbolic.Symbol" Name="y"/>
-											</expression>
-										</expression>
-									</expression>
+								<expression tag="Visualization.Selected">
 									<expression tag="Math.Arithmetic.Exponentiation">
-										<expression tag="Math.Arithmetic.Exponentiation">
-											<expression tag="Symbolic.Symbol" Name="n"/>
-											<expression tag="Math.Arithmetic.Negative">
-												<expression tag="Symbolic.Symbol" Name="x"/>
-											</expression>
-										</expression>
-										<expression tag="Math.Arithmetic.Negative">
-											<expression tag="Math.Arithmetic.Division">
-												<expression tag="Math.Number" Value="1"/>
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Math.Arithmetic.Multiplication">
 												<expression tag="Symbolic.Symbol" Name="y"/>
+												<expression tag="Math.Complex.Imaginary"/>
 											</expression>
 										</expression>
 									</expression>
 								</expression>
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Symbolic"/>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
 								</expression>
 							</expression>
 						</expression>
@@ -1232,16 +1202,9 @@
 									<expression tag="Math.Numeric">
 										<expression tag="Symbolic.Symbol" Name="n"/>
 									</expression>
+									<expression tag="Math.Number" Value="0."/>
 									<expression tag="Symbolic.Symbol" Name="f"/>
-								</expression>
-							</expression>
-							<expression tag="Symbolic.Function">
-								<expression tag="Symbolic.Symbol" Name="complexp"/>
-								<expression tag="List.List">
-									<expression tag="Math.Numeric">
-										<expression tag="Symbolic.Symbol" Name="n"/>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0."/>
 								</expression>
 							</expression>
 							<expression tag="Visualization.VerticalArray">
@@ -1259,10 +1222,15 @@
 							</expression>
 							<expression tag="Visualization.VerticalArray">
 								<expression tag="Math.Numeric">
-									<expression tag="Math.Arithmetic.Exponentiation">
-										<expression tag="Symbolic.Symbol" Name="n"/>
-										<expression tag="Math.Arithmetic.ToInteger">
-											<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Number" Value="1"/>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+											<expression tag="Math.Arithmetic.ToInteger">
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Symbolic.Symbol" Name="f"/>
+												</expression>
+											</expression>
 										</expression>
 									</expression>
 								</expression>
@@ -1272,54 +1240,59 @@
 							</expression>
 							<expression tag="Math.Number" Value="1."/>
 							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Visualization.Selected">
 									<expression tag="Math.Arithmetic.Exponentiation">
 										<expression tag="Symbolic.Symbol" Name="n"/>
-										<expression tag="Symbolic.Symbol" Name="x"/>
-									</expression>
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Number" Value="1"/>
-										<expression tag="Symbolic.Symbol" Name="y"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
 									</expression>
 								</expression>
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Symbolic"/>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+										<expression tag="Math.Numeric">
+											<expression tag="Math.Arithmetic.Division">
+												<expression tag="Symbolic.Symbol" Name="x"/>
+												<expression tag="Symbolic.Symbol" Name="y"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+									</expression>
 								</expression>
 							</expression>
 							<expression tag="Visualization.VerticalArray">
-								<expression tag="Relation.Equals">
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Number" Value="1"/>
-										<expression tag="Math.Arithmetic.Exponentiation">
-											<expression tag="Math.Arithmetic.Exponentiation">
-												<expression tag="Symbolic.Symbol" Name="n"/>
-												<expression tag="Math.Arithmetic.Negative">
-													<expression tag="Symbolic.Symbol" Name="x"/>
-												</expression>
-											</expression>
-											<expression tag="Math.Arithmetic.Division">
-												<expression tag="Math.Number" Value="1"/>
-												<expression tag="Symbolic.Symbol" Name="y"/>
-											</expression>
-										</expression>
-									</expression>
+								<expression tag="Visualization.Selected">
 									<expression tag="Math.Arithmetic.Exponentiation">
-										<expression tag="Math.Arithmetic.Exponentiation">
-											<expression tag="Symbolic.Symbol" Name="n"/>
-											<expression tag="Math.Arithmetic.Negative">
-												<expression tag="Symbolic.Symbol" Name="x"/>
-											</expression>
-										</expression>
-										<expression tag="Math.Arithmetic.Negative">
-											<expression tag="Math.Arithmetic.Division">
-												<expression tag="Math.Number" Value="1"/>
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Math.Arithmetic.Multiplication">
 												<expression tag="Symbolic.Symbol" Name="y"/>
+												<expression tag="Math.Complex.Imaginary"/>
 											</expression>
 										</expression>
 									</expression>
 								</expression>
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Symbolic"/>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="n"/>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
 								</expression>
 							</expression>
 						</expression>
@@ -1331,15 +1304,42 @@
 								</expression>
 							</expression>
 							<expression tag="Math.Number" Value="0"/>
-							<expression tag="Math.Infinity"/>
+							<expression tag="Undefined"/>
 							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Piecewise">
+								<expression tag="Math.Number" Value="0."/>
+								<expression tag="Relation.Greater">
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+								<expression tag="Math.Infinity"/>
+								<expression tag="Relation.Less">
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
 							<expression tag="Math.Number" Value="0."/>
-							<expression tag="Math.Infinity"/>
-							<expression tag="Math.Number" Value="0."/>
-							<expression tag="Math.Infinity"/>
-							<expression tag="Math.Infinity"/>
+							<expression tag="Undefined"/>
+							<expression tag="Undefined"/>
+							<expression tag="Math.Arithmetic.Piecewise">
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Relation.Greater">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+								<expression tag="Math.Infinity"/>
+								<expression tag="Relation.Less">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
 							<expression tag="Math.Number" Value="0"/>
-							<expression tag="Math.Infinity"/>
 						</expression>
 						<expression tag="List.List">
 							<expression tag="Visualization.Bold" Value="True" Set="True">
@@ -1404,15 +1404,6 @@
 									<expression tag="String.Text" Value="Decimal"/>
 								</expression>
 							</expression>
-							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
-									<expression tag="Symbolic.Symbol" Name="d"/>
-									<expression tag="Symbolic.Symbol" Name="f"/>
-								</expression>
-								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Decimal"/>
-								</expression>
-							</expression>
 							<expression tag="Math.Number" Value="1."/>
 							<expression tag="Visualization.VerticalArray">
 								<expression tag="Math.Arithmetic.Exponentiation">
@@ -1428,18 +1419,17 @@
 									<expression tag="String.Text" Value="Decimal"/>
 								</expression>
 							</expression>
-							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="complexp"/>
+								<expression tag="List.List">
 									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="0."/>
 									<expression tag="Math.Numeric">
-										<expression tag="Math.Arithmetic.Division">
-											<expression tag="Symbolic.Symbol" Name="x"/>
-											<expression tag="Symbolic.Symbol" Name="y"/>
-										</expression>
+										<expression tag="Symbolic.Symbol" Name="x"/>
 									</expression>
-								</expression>
-								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Decimal"/>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
 								</expression>
 							</expression>
 						</expression>
@@ -1483,14 +1473,9 @@
 								<expression tag="Symbolic.Symbol" Name="complexp"/>
 								<expression tag="List.List">
 									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="0."/>
 									<expression tag="Symbolic.Symbol" Name="f"/>
-								</expression>
-							</expression>
-							<expression tag="Symbolic.Function">
-								<expression tag="Symbolic.Symbol" Name="complexp"/>
-								<expression tag="List.List">
-									<expression tag="Symbolic.Symbol" Name="d"/>
-									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0."/>
 								</expression>
 							</expression>
 							<expression tag="Visualization.VerticalArray">
@@ -1516,23 +1501,26 @@
 								<expression tag="Symbolic.Symbol" Name="complexp"/>
 								<expression tag="List.List">
 									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="0."/>
 									<expression tag="Math.Numeric">
 										<expression tag="Math.Arithmetic.Division">
 											<expression tag="Symbolic.Symbol" Name="x"/>
 											<expression tag="Symbolic.Symbol" Name="y"/>
 										</expression>
 									</expression>
+									<expression tag="Math.Number" Value="0."/>
 								</expression>
 							</expression>
 							<expression tag="Symbolic.Function">
 								<expression tag="Symbolic.Symbol" Name="complexp"/>
 								<expression tag="List.List">
 									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="0."/>
 									<expression tag="Math.Numeric">
-										<expression tag="Math.Arithmetic.Division">
-											<expression tag="Symbolic.Symbol" Name="x"/>
-											<expression tag="Symbolic.Symbol" Name="y"/>
-										</expression>
+										<expression tag="Symbolic.Symbol" Name="x"/>
+									</expression>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="y"/>
 									</expression>
 								</expression>
 							</expression>
@@ -1587,15 +1575,6 @@
 								</expression>
 							</expression>
 							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
-									<expression tag="Symbolic.Symbol" Name="d"/>
-									<expression tag="Symbolic.Symbol" Name="f"/>
-								</expression>
-								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Decimal"/>
-								</expression>
-							</expression>
-							<expression tag="Visualization.VerticalArray">
 								<expression tag="Math.Numeric">
 									<expression tag="Math.Arithmetic.Exponentiation">
 										<expression tag="Math.Arithmetic.ToInteger">
@@ -1640,18 +1619,17 @@
 									<expression tag="String.Text" Value="Decimal"/>
 								</expression>
 							</expression>
-							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="complexp"/>
+								<expression tag="List.List">
 									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="0."/>
 									<expression tag="Math.Numeric">
-										<expression tag="Math.Arithmetic.Division">
-											<expression tag="Symbolic.Symbol" Name="x"/>
-											<expression tag="Symbolic.Symbol" Name="y"/>
-										</expression>
+										<expression tag="Symbolic.Symbol" Name="x"/>
 									</expression>
-								</expression>
-								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Decimal"/>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
 								</expression>
 							</expression>
 						</expression>
@@ -1699,14 +1677,9 @@
 								<expression tag="Symbolic.Symbol" Name="complexp"/>
 								<expression tag="List.List">
 									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="0."/>
 									<expression tag="Symbolic.Symbol" Name="f"/>
-								</expression>
-							</expression>
-							<expression tag="Symbolic.Function">
-								<expression tag="Symbolic.Symbol" Name="complexp"/>
-								<expression tag="List.List">
-									<expression tag="Symbolic.Symbol" Name="d"/>
-									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0."/>
 								</expression>
 							</expression>
 							<expression tag="Visualization.VerticalArray">
@@ -1744,23 +1717,26 @@
 								<expression tag="Symbolic.Symbol" Name="complexp"/>
 								<expression tag="List.List">
 									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="0."/>
 									<expression tag="Math.Numeric">
 										<expression tag="Math.Arithmetic.Division">
 											<expression tag="Symbolic.Symbol" Name="x"/>
 											<expression tag="Symbolic.Symbol" Name="y"/>
 										</expression>
 									</expression>
+									<expression tag="Math.Number" Value="0."/>
 								</expression>
 							</expression>
 							<expression tag="Symbolic.Function">
 								<expression tag="Symbolic.Symbol" Name="complexp"/>
 								<expression tag="List.List">
 									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Math.Number" Value="0."/>
 									<expression tag="Math.Numeric">
-										<expression tag="Math.Arithmetic.Division">
-											<expression tag="Symbolic.Symbol" Name="x"/>
-											<expression tag="Symbolic.Symbol" Name="y"/>
-										</expression>
+										<expression tag="Symbolic.Symbol" Name="x"/>
+									</expression>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="y"/>
 									</expression>
 								</expression>
 							</expression>
@@ -1773,15 +1749,42 @@
 								</expression>
 							</expression>
 							<expression tag="Math.Number" Value="0."/>
-							<expression tag="Math.Infinity"/>
-							<expression tag="Math.Infinity"/>
+							<expression tag="Undefined"/>
+							<expression tag="Undefined"/>
+							<expression tag="Math.Arithmetic.Piecewise">
+								<expression tag="Math.Number" Value="0."/>
+								<expression tag="Relation.Greater">
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+								<expression tag="Math.Infinity"/>
+								<expression tag="Relation.Less">
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
 							<expression tag="Math.Number" Value="0."/>
-							<expression tag="Math.Infinity"/>
+							<expression tag="Undefined"/>
+							<expression tag="Undefined"/>
+							<expression tag="Math.Arithmetic.Piecewise">
+								<expression tag="Math.Number" Value="0."/>
+								<expression tag="Relation.Greater">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+								<expression tag="Math.Infinity"/>
+								<expression tag="Relation.Less">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
 							<expression tag="Math.Number" Value="0."/>
-							<expression tag="Math.Infinity"/>
-							<expression tag="Math.Infinity"/>
-							<expression tag="Math.Number" Value="0."/>
-							<expression tag="Math.Infinity"/>
 						</expression>
 						<expression tag="List.List">
 							<expression tag="Visualization.Bold" Value="True" Set="True">
@@ -1870,7 +1873,20 @@
 									<expression tag="String.Text" Value="Decimal"/>
 								</expression>
 							</expression>
+							<expression tag="Math.Number" Value="1."/>
 							<expression tag="Visualization.VerticalArray">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+											<expression tag="Symbolic.Symbol" Name="b"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
+								</expression>
 								<expression tag="Math.Arithmetic.Exponentiation">
 									<expression tag="Math.Numeric">
 										<expression tag="Math.Arithmetic.Division">
@@ -1878,57 +1894,50 @@
 											<expression tag="Symbolic.Symbol" Name="b"/>
 										</expression>
 									</expression>
-									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Numeric">
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
 								</expression>
 								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
 									<expression tag="String.Text" Value="Decimal"/>
 								</expression>
 							</expression>
-							<expression tag="Math.Number" Value="1."/>
 							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Division">
 											<expression tag="Symbolic.Symbol" Name="a"/>
-											<expression tag="Symbolic.Symbol" Name="x"/>
-										</expression>
-										<expression tag="Math.Arithmetic.Exponentiation">
 											<expression tag="Symbolic.Symbol" Name="b"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Addition">
 											<expression tag="Symbolic.Symbol" Name="x"/>
-										</expression>
-									</expression>
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Number" Value="1"/>
-										<expression tag="Symbolic.Symbol" Name="y"/>
-									</expression>
-								</expression>
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Symbolic"/>
-								</expression>
-							</expression>
-							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Arithmetic.Exponentiation">
-											<expression tag="Symbolic.Symbol" Name="b"/>
-											<expression tag="Math.Arithmetic.Negative">
-												<expression tag="Symbolic.Symbol" Name="x"/>
-											</expression>
-										</expression>
-										<expression tag="Math.Arithmetic.Exponentiation">
-											<expression tag="Symbolic.Symbol" Name="a"/>
-											<expression tag="Math.Arithmetic.Negative">
-												<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Symbolic.Symbol" Name="y"/>
+												<expression tag="Math.Complex.Imaginary"/>
 											</expression>
 										</expression>
 									</expression>
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Number" Value="1"/>
-										<expression tag="Symbolic.Symbol" Name="y"/>
-									</expression>
 								</expression>
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Symbolic"/>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Numeric">
+											<expression tag="Math.Arithmetic.Division">
+												<expression tag="Symbolic.Symbol" Name="a"/>
+												<expression tag="Symbolic.Symbol" Name="b"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
 								</expression>
 							</expression>
 						</expression>
@@ -1986,19 +1995,9 @@
 											<expression tag="Symbolic.Symbol" Name="b"/>
 										</expression>
 									</expression>
+									<expression tag="Math.Number" Value="0."/>
 									<expression tag="Symbolic.Symbol" Name="f"/>
-								</expression>
-							</expression>
-							<expression tag="Symbolic.Function">
-								<expression tag="Symbolic.Symbol" Name="complexp"/>
-								<expression tag="List.List">
-									<expression tag="Math.Numeric">
-										<expression tag="Math.Arithmetic.Division">
-											<expression tag="Symbolic.Symbol" Name="a"/>
-											<expression tag="Symbolic.Symbol" Name="b"/>
-										</expression>
-									</expression>
-									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0."/>
 								</expression>
 							</expression>
 							<expression tag="Visualization.VerticalArray">
@@ -2031,95 +2030,522 @@
 							</expression>
 							<expression tag="Math.Number" Value="1."/>
 							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Division">
 											<expression tag="Symbolic.Symbol" Name="a"/>
-											<expression tag="Symbolic.Symbol" Name="x"/>
-										</expression>
-										<expression tag="Math.Arithmetic.Exponentiation">
 											<expression tag="Symbolic.Symbol" Name="b"/>
-											<expression tag="Symbolic.Symbol" Name="x"/>
 										</expression>
-									</expression>
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Number" Value="1"/>
-										<expression tag="Symbolic.Symbol" Name="y"/>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
 									</expression>
 								</expression>
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Symbolic"/>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Numeric">
+											<expression tag="Math.Arithmetic.Division">
+												<expression tag="Symbolic.Symbol" Name="a"/>
+												<expression tag="Symbolic.Symbol" Name="b"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+										<expression tag="Math.Numeric">
+											<expression tag="Math.Arithmetic.Division">
+												<expression tag="Symbolic.Symbol" Name="x"/>
+												<expression tag="Symbolic.Symbol" Name="y"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+									</expression>
 								</expression>
 							</expression>
 							<expression tag="Visualization.VerticalArray">
-								<expression tag="Math.Arithmetic.Exponentiation">
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Arithmetic.Exponentiation">
-											<expression tag="Symbolic.Symbol" Name="b"/>
-											<expression tag="Math.Arithmetic.Negative">
-												<expression tag="Symbolic.Symbol" Name="x"/>
-											</expression>
-										</expression>
-										<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Division">
 											<expression tag="Symbolic.Symbol" Name="a"/>
-											<expression tag="Math.Arithmetic.Negative">
-												<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Symbolic.Symbol" Name="b"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Symbolic.Symbol" Name="y"/>
+												<expression tag="Math.Complex.Imaginary"/>
 											</expression>
 										</expression>
-									</expression>
-									<expression tag="Math.Arithmetic.Division">
-										<expression tag="Math.Number" Value="1"/>
-										<expression tag="Symbolic.Symbol" Name="y"/>
 									</expression>
 								</expression>
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="Symbolic"/>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Numeric">
+											<expression tag="Math.Arithmetic.Division">
+												<expression tag="Symbolic.Symbol" Name="a"/>
+												<expression tag="Symbolic.Symbol" Name="b"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+									<expression tag="Math.Complex.Imaginary"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="EXP"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+											<expression tag="Symbolic.Symbol" Name="m"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Complex.Imaginary"/>
+										<expression tag="Symbolic.Symbol" Name="m"/>
+									</expression>
+								</expression>
+								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
+									<expression tag="String.Text" Value="???"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="EXP"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+											<expression tag="Symbolic.Symbol" Name="m"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Complex.Imaginary"/>
+										<expression tag="Symbolic.Symbol" Name="m"/>
+									</expression>
+								</expression>
+								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
+									<expression tag="String.Text" Value="???"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="complexp"/>
+								<expression tag="List.List">
+									<expression tag="Math.Number" Value="0."/>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0."/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="EXP"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+											<expression tag="Math.Arithmetic.ToInteger">
+												<expression tag="Symbolic.Symbol" Name="f"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Complex.Imaginary"/>
+										<expression tag="Math.Arithmetic.ToInteger">
+											<expression tag="Symbolic.Symbol" Name="f"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
+									<expression tag="String.Text" Value="???"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="EXP"/>
+										<expression tag="List.List">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+											<expression tag="Math.Arithmetic.ToInteger">
+												<expression tag="Symbolic.Symbol" Name="f"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Complex.Imaginary"/>
+										<expression tag="Math.Arithmetic.ToInteger">
+											<expression tag="Symbolic.Symbol" Name="f"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Visualization.Color" Red="0" Green="0.5019607843137255" Blue="0" Alpha="1">
+									<expression tag="String.Text" Value="???"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="1."/>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Multiplication">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+											<expression tag="Math.Complex.Imaginary"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Number" Value="0."/>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Math.Arithmetic.Division">
+												<expression tag="Symbolic.Symbol" Name="x"/>
+												<expression tag="Symbolic.Symbol" Name="y"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Multiplication">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+											<expression tag="Math.Complex.Imaginary"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Symbolic.Symbol" Name="y"/>
+												<expression tag="Math.Complex.Imaginary"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Number" Value="0."/>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+										<expression tag="Math.Complex.Imaginary"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Symbolic.Symbol" Name="b"/>
+												<expression tag="Math.Complex.Imaginary"/>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="m"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="m"/>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Symbolic.Symbol" Name="b"/>
+												<expression tag="Math.Complex.Imaginary"/>
+											</expression>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="m"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="m"/>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="complexp"/>
+								<expression tag="List.List">
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0."/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="complexp"/>
+								<expression tag="List.List">
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0."/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="complexp"/>
+								<expression tag="List.List">
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+									<expression tag="Math.Numeric">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="f"/>
+									<expression tag="Math.Number" Value="0."/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="1."/>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Symbolic.Symbol" Name="b"/>
+												<expression tag="Math.Complex.Imaginary"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Math.Arithmetic.Division">
+												<expression tag="Symbolic.Symbol" Name="x"/>
+												<expression tag="Symbolic.Symbol" Name="y"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="0."/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Symbolic.Symbol" Name="b"/>
+												<expression tag="Math.Complex.Imaginary"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Symbolic.Symbol" Name="y"/>
+												<expression tag="Math.Complex.Imaginary"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Function">
+									<expression tag="Symbolic.Symbol" Name="complexp"/>
+									<expression tag="List.List">
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="b"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="x"/>
+										</expression>
+										<expression tag="Math.Numeric">
+											<expression tag="Symbolic.Symbol" Name="y"/>
+										</expression>
+									</expression>
 								</expression>
 							</expression>
 						</expression>
 					</expression>
 				</expression>
 			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The"/>
-				<expression tag="Symbolic.Symbol" Name="complexp"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="complexp"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+						<expression tag="Symbolic.Symbol" Name="d"/>
+					</expression>
+				</expression>
 				<expression tag="String.Text" Value="function, is used when the result is complex, is defined as:"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Given the negative number"/>
-				<expression tag="Symbolic.Symbol" Name="a"/>
-				<expression tag="String.Text" Value="and a non-integer number"/>
-				<expression tag="Symbolic.Symbol" Name="b"/>
-				<expression tag="String.Text" Value=":"/>
+				<expression tag="String.Text" Value="The exponentiation"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Symbolic.Symbol" Name="b"/>
+							<expression tag="Math.Complex.Imaginary"/>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="c"/>
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Symbolic.Symbol" Name="d"/>
+							<expression tag="Math.Complex.Imaginary"/>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Let us take:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Relation.Equals">
+					<expression tag="Symbolic.Symbol" Name="r"/>
+					<expression tag="Math.Arithmetic.SquareRoot">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Equals">
+					<expression tag="Symbolic.Symbol" Name="θ"/>
+					<expression tag="Math.Trigonometric.ArcTangent2">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="a"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Equals">
 					<expression tag="Symbolic.Symbol" Name="f"/>
-					<expression tag="Math.Arithmetic.Exponentiation">
-						<expression tag="Math.Constant.Euler"/>
-						<expression tag="Math.Arithmetic.Multiplication">
-							<expression tag="Symbolic.Symbol" Name="b"/>
-							<expression tag="Math.Transcendental.NaturalLogarithm">
-								<expression tag="Math.Arithmetic.AbsoluteValue">
-									<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="r"/>
+							<expression tag="Symbolic.Symbol" Name="c"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Math.Constant.Euler"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="d"/>
+									<expression tag="Symbolic.Symbol" Name="θ"/>
 								</expression>
 							</expression>
 						</expression>
 					</expression>
 				</expression>
-				<expression tag="Null"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Relation.Equals">
 					<expression tag="Symbolic.Symbol" Name="arg"/>
-					<expression tag="Math.Arithmetic.Multiplication">
-						<expression tag="Symbolic.Symbol" Name="b"/>
-						<expression tag="Math.Trigonometric.ArcTangent2">
-							<expression tag="Math.Number" Value="0"/>
-							<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Visualization.Spurious">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="d"/>
+								<expression tag="Math.Transcendental.NaturalLogarithm">
+									<expression tag="Symbolic.Symbol" Name="r"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="c"/>
+								<expression tag="Symbolic.Symbol" Name="θ"/>
+							</expression>
 						</expression>
 					</expression>
 				</expression>
@@ -2130,8 +2556,20 @@
 			<expression tag="Typesetting.Centering">
 				<expression tag="Relation.Equals">
 					<expression tag="Math.Arithmetic.Exponentiation">
-						<expression tag="Symbolic.Symbol" Name="a"/>
-						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Math.Complex.Imaginary"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="c"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="d"/>
+								<expression tag="Math.Complex.Imaginary"/>
+							</expression>
+						</expression>
 					</expression>
 					<expression tag="Visualization.Spurious">
 						<expression tag="Math.Arithmetic.Addition">
@@ -2151,6 +2589,13 @@
 						</expression>
 					</expression>
 				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Examples:"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The following expression calculates every possible combination with sample values:"/>

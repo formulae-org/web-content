@@ -662,7 +662,11 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="When an addition expression is deleted, this is, when the key [DELETE] is pressed when the selected expression is an addition, the addition is replaced by the"/>
+				<expression tag="String.Text" Value="When an addition expression is deleted, this is, when the"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="DELETE"/>
+				</expression>
+				<expression tag="String.Text" Value=" key is pressed when the selected expression is an addition, the addition is replaced by the"/>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Null" Description="Null"/>
 				<expression tag="String.Text" Value="expression."/>
 			</expression>
@@ -707,12 +711,6 @@
 						<expression tag="List.List">
 							<expression tag="String.Text" Value="Addition of addition"/>
 							<expression tag="String.Text" Value="Arithmetic"/>
-							<expression tag="String.Text" Value="Normal"/>
-							<expression tag="String.Text" Value="No"/>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Addition of imaginary factors"/>
-							<expression tag="String.Text" Value="Complex"/>
 							<expression tag="String.Text" Value="Normal"/>
 							<expression tag="String.Text" Value="No"/>
 						</expression>
@@ -762,6 +760,29 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If the addition contains only one numeric addend, it is moved to be the first addend:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="c"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="23"/>
+				<expression tag="Math.Number" Value="7"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="23"/>
+				<expression tag="Math.Number" Value="7"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="c"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
 			<expression tag="String.Text" Value="If the addition contains two or more numerical addends, it sums them togehter, and the result is put as the first addend:"/>
 		</expression>
 	</expression>
@@ -799,29 +820,6 @@
 		<expression tag="Math.Arithmetic.Addition">
 			<expression tag="Math.Number" Value="4."/>
 			<expression tag="Symbolic.Symbol" Name="a"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="If the addition contains only one numeric addend, it is moved to be the first addend:"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Symbolic.Symbol" Name="c"/>
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Number" Value="23"/>
-				<expression tag="Math.Number" Value="7"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Number" Value="23"/>
-				<expression tag="Math.Number" Value="7"/>
-			</expression>
-			<expression tag="Symbolic.Symbol" Name="c"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -1313,7 +1311,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1722456120000"/>
+				<expression tag="Time.Time" Value="1736310240000"/>
 			</expression>
 		</expression>
 	</expression>

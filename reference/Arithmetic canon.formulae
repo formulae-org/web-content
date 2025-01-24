@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.list,org.formulae.visualization,org.formulae.diagramming,org.formulae.programming,org.formulae.symbolic,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.list,org.formulae.visualization,org.formulae.diagramming,org.formulae.math.complex,org.formulae.programming,org.formulae.symbolic,org.formulae.relation,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -118,6 +118,12 @@
 					<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
 					<expression tag="String.Text" Value="expression containing a rational number as defined in the previous line."/>
 				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Complex numbers."/>
+					</expression>
+					<expression tag="Null"/>
+				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Examples:"/>
@@ -188,6 +194,45 @@
 									</expression>
 									<expression tag="Diagramming.Tree" Expanded="True">
 										<expression tag="Math.Number" Value="5"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Complex number"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="0.5"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Math.Number" Value="2"/>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+										<expression tag="Math.Complex.Imaginary"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Addition"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Math.Number" Value="0.5"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Multiplication" Description="Multiplication"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Division" Description="Division"/>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="2"/>
+											</expression>
+											<expression tag="Diagramming.Tree" Expanded="True">
+												<expression tag="Math.Number" Value="3"/>
+											</expression>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Complex.Imaginary"/>
+										</expression>
 									</expression>
 								</expression>
 							</expression>
@@ -368,7 +413,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Operations with integer or rational numbers are not affected by the precision, the results can have as many number of significant digits as neccesary:"/>
+				<expression tag="String.Text" Value="Operations with integer numbers are not affected by the precision, the results can have as many number of significant digits as neccesary:"/>
 			</expression>
 		</expression>
 	</expression>
@@ -380,6 +425,11 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="Math.Number" Value="25932226554527421492677609332734390"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Since rational numbers are formed using two integer numbers, their numerators and denominators can hold an arbitrary number of digits each:"/>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Math.Arithmetic.Exponentiation">
@@ -725,12 +775,12 @@
 						</expression>
 						<expression tag="List.List">
 							<expression tag="Math.Arithmetic.RoundingMode.TowardsMinusInfinity"/>
-							<expression tag="String.Text" Value="Choose the option that is numerically lesser."/>
+							<expression tag="String.Text" Value="Choose the option that is numerically less"/>
 							<expression tag="String.Text" Value="Floor"/>
 						</expression>
 						<expression tag="List.List">
 							<expression tag="Math.Arithmetic.RoundingMode.TowardsInfinity"/>
-							<expression tag="String.Text" Value="Choose the option that is numerically greater."/>
+							<expression tag="String.Text" Value="Choose the option that is numerically greater"/>
 							<expression tag="String.Text" Value="Ceiling"/>
 						</expression>
 						<expression tag="List.List">
@@ -745,7 +795,7 @@
 						</expression>
 						<expression tag="List.List">
 							<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfTowardsMinusInfinity"/>
-							<expression tag="String.Text" Value="Choose the nearest option. If a tie, choose the option that is numerically lesser"/>
+							<expression tag="String.Text" Value="Choose the nearest option. If a tie, choose the option that is numerically less"/>
 							<expression tag="String.Text" Value="Rounding"/>
 						</expression>
 						<expression tag="List.List">
@@ -757,6 +807,312 @@
 							<expression tag="Math.Arithmetic.RoundingMode.Nearest.HalfEven"/>
 							<expression tag="String.Text" Value="Choose the nearest option. If a tie, choose the option where it last digit is even"/>
 							<expression tag="String.Text" Value="Rounding"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Performing arithmetic operations according to the number type"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Matematically, there is no difference between the expression"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="Math.Trigonometric.Sine">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="Math.Trigonometric.Sine">
+						<expression tag="Math.Number" Value="0.5"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=", they correspond to the same number. The same happens with the expressions"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="Math.Trigonometric.Cosine">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="Math.Trigonometric.Cosine">
+						<expression tag="Math.Number" Value="3."/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="However, if you try to evaluate the expressions in Fōrmulæ, they behave quite different:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Trigonometric.Sine">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Trigonometric.Sine">
+					<expression tag="Math.Number" Value="0.5"/>
+				</expression>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Trigonometric.Cosine">
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Math.Trigonometric.Cosine">
+					<expression tag="Math.Number" Value="3."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="List.List">
+				<expression tag="Math.Trigonometric.Sine">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="0.47942553860420300027"/>
+			</expression>
+			<expression tag="List.List">
+				<expression tag="Math.Trigonometric.Cosine">
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="0.98999249660044545727"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Centering">
+			<expression tag="List.Table">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Operation"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Integer, decimal, rational and complex numbers"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Square root"/>
+						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+							<expression tag="String.Text" Value="✔"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="String.Text" Value="Decimal, natural and binary logarithm"/>
+						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+							<expression tag="String.Text" Value="✔"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Visualization.VerticalArray">
+							<expression tag="String.Text" Value="Trigonometric"/>
+							<expression tag="String.Text" Value="sine, cosine, tangent, cotangent, secant, cosecant"/>
+						</expression>
+						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+							<expression tag="String.Text" Value="✔"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Visualization.VerticalArray">
+							<expression tag="String.Text" Value="Inverse trigonometric"/>
+							<expression tag="String.Text" Value="sine, cosine, tangent, cotangent, secant, cosecant"/>
+						</expression>
+						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+							<expression tag="String.Text" Value="✔"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Visualization.VerticalArray">
+							<expression tag="String.Text" Value="Hyperbolic"/>
+							<expression tag="String.Text" Value="sine, cosine, tangent, cotangent, secant, cosecant"/>
+						</expression>
+						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+							<expression tag="String.Text" Value="✔"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Visualization.VerticalArray">
+							<expression tag="String.Text" Value="Inverse hyperbolic"/>
+							<expression tag="String.Text" Value="sine, cosine, tangent, cotangent, secant, cosecant"/>
+						</expression>
+						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+							<expression tag="String.Text" Value="✔"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Performing arithmetic operations mixing numbers of different types"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following arithmetic operations can mix numbers of different types:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Operation"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Integer, decimal and rational numbers"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Complex cumbers"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Addition"/>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Multiplication"/>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Division"/>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Exponentiation"/>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Transcendental.Logarithm">
+								<expression tag="String.Text" Value="arg"/>
+								<expression tag="String.Text" Value="base"/>
+							</expression>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Relation.Compare">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Visualization.HorizontalArray">
+									<expression tag="Relation.Equals">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+									<expression tag="String.Text" Value=","/>
+									<expression tag="Relation.Different">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+								</expression>
+								<expression tag="Visualization.HorizontalArray">
+									<expression tag="Relation.Greater">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+									<expression tag="String.Text" Value=","/>
+									<expression tag="Relation.GreaterOrEquals">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+								</expression>
+								<expression tag="Visualization.HorizontalArray">
+									<expression tag="Relation.Less">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+									<expression tag="String.Text" Value=","/>
+									<expression tag="Relation.LessOrEquals">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+									<expression tag="String.Text" Value="✗"/>
+								</expression>
+								<expression tag="String.Text" Value="Complex numbers are not comparable"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Div, Mod, and DivMod operations"/>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+									<expression tag="String.Text" Value="✗"/>
+								</expression>
+								<expression tag="String.Text" Value="There is no notion of integerness for complex numbers"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="atan2"/>
+							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="✔"/>
+							</expression>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+									<expression tag="String.Text" Value="✗"/>
+								</expression>
+								<expression tag="String.Text" Value="atan2 is only defined for real numbers"/>
+							</expression>
 						</expression>
 					</expression>
 				</expression>
