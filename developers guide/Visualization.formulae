@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.graphics.raster,org.formulae.visualization">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.graphics.raster,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.symbolic,org.formulae.logic,org.formulae.expression,org.formulae.list">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -56,9 +56,26 @@
 					</expression>
 				</expression>
 			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Estas mètricas son definidas en las clases de expresiòn por medio de los siguientes atributos:"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Atributos y métodos"/>
+				</expression>
 			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Estas métricas son definidas en las clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression"/>
+				</expression>
+				<expression tag="String.Text" Value="por medio de los siguientes atributos y métodos:"/>
+			</expression>
+			<expression tag="String.Text" Value="Atributos:"/>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="Un atributo"/>
@@ -108,18 +125,7 @@
 				<expression tag="Internet.UniformResourceLocator" Value="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" Description="Number"/>
 				<expression tag="String.Text" Value="que soporta valores de punto flotante."/>
 			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Rule"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Métodos"/>
-				</expression>
-			</expression>
+			<expression tag="String.Text" Value="Métodos:"/>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Los siguientes métodos relativos a la visualización deben implementarse."/>
 			</expression>
@@ -154,6 +160,17 @@
 					<expression tag="Typesetting.Paragraph">
 						<expression tag="String.Text" Value="Este método realiza el dibujo de la expresión."/>
 					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Los argumentos"/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="x"/>
+						</expression>
+						<expression tag="String.Text" Value="e"/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="y"/>
+						</expression>
+						<expression tag="String.Text" Value="indican la posición absoluta del origen del rectángulo de la expresión actual, decir de su esquina superior izquierda."/>
+					</expression>
 				</expression>
 			</expression>
 		</expression>
@@ -168,123 +185,127 @@
 					<expression tag="String.Text" Value="Reglas"/>
 				</expression>
 			</expression>
-			<expression tag="Typesetting.BulletedList">
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="No todas las instancias de una clase serán visualizadas, puede ser que existan expresiones que se crean para realizar cálculos intermedios, siendo la expresión resultante la única que se visualiza."/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="El framewok garantiza que nunca será realizada una llamada al método"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="display(context, x, y)"/>
-					</expression>
-					<expression tag="String.Text" Value="si no ha existido una llamada previa al método"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="prepareDisplay(context)"/>
-					</expression>
-					<expression tag="String.Text" Value="(para un mismo objeto expresión)."/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="Las llamadas a los métodos"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="prepareDisplay(context)"/>
-					</expression>
-					<expression tag="String.Text" Value="y"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="display(context, x, y)"/>
-					</expression>
-					<expression tag="String.Text" Value="no son una a una (para una misma expresión), por cada llamada del método"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="prepareDisplay(context)"/>
-					</expression>
-					<expression tag="String.Text" Value="pueden existir una o varias llamadas al método"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="display(context, x, y)"/>
-					</expression>
-					<expression tag="String.Text" Value="."/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="Si bien el método"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="prepareDisplay(context)"/>
-					</expression>
-					<expression tag="String.Text" Value="no realiza el dibujo de la expresión, si puede realizar operaciones gráficas necesarias para el cálculo de métricas, por ejemplo cambiar atributos gráficos como el tipo o estilo de letra."/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="Si la expresión requiere métricas adicionales a las comúnes, puede crearlas. Sin embargo, la forma correcta de hacerlo es que estos sean creados por la llamada al método"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="prepareDisplay(context)"/>
-					</expression>
-					<expression tag="String.Text" Value="y NO como atributos propios de la definición de la clase. A  su vez, estos atributos sólo deberán ser utilizados (consultados) por el método"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="display(context, x, y)"/>
-					</expression>
-					<expression tag="String.Text" Value="."/>
-				</expression>
-				<expression tag="Typesetting.MultiParagraph">
-					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El contexto gráfico"/>
-						<expression tag="Visualization.Code">
-							<expression tag="String.Text" Value="context"/>
-						</expression>
-						<expression tag="String.Text" Value="preserva estado, como el tipo de letra o el color de dibujo. Si este debe ser modificado como parte del trabajo que deben hacer los métodos"/>
-						<expression tag="Visualization.Code">
-							<expression tag="String.Text" Value="prepareDisplay(context)"/>
-						</expression>
-						<expression tag="String.Text" Value="y"/>
-						<expression tag="Visualization.Code">
-							<expression tag="String.Text" Value="display(context, x, y)"/>
-						</expression>
-						<expression tag="String.Text" Value=", estos deberán dejar el estado de este contexto en la misma situación en que estaba al principio de la llamada. Esto se logra típicamente guardando el valor del atributo o atributos a ser cambiados, de forma tal que antes de concluír la ejecución del método, puedan ser restaurados."/>
-					</expression>
-					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El siguiente es un ejemplo del método"/>
-						<expression tag="Visualization.Code">
-							<expression tag="String.Text" Value="display(context, x, y)"/>
-						</expression>
-						<expression tag="String.Text" Value="para una expresión que realiza operaciones de dibujo en un color diferente al predefinido:"/>
-					</expression>
-					<expression tag="Visualization.CodeBlock" Value="display(context, x, y) {&#10;&#9;let bkpStrokeStyle = context.strokeStyle;    // guardar el estilo&#10;&#9;context.strokeStyle = &quot;red&quot;;                 // cambiar el estilo&#10;&#9;&#10;&#9;// Realizar las operaciones gráficas&#10;&#9;// aquellas que utilicen el atributo, por ejemplo trazo de líneas&#10;&#9;// serán dibujadas en color rojo&#10;&#9;&#10;&#9;context.strokeStyle = bkpStrokeStyle;      // restaurar el estilo&#10;}"/>
-				</expression>
-				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="Si bien son varias las métricas que contiene una expresión, El método"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="prepareDisplay(context)"/>
-					</expression>
-					<expression tag="String.Text" Value="debe calcular y asignar las métricas"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="width"/>
-					</expression>
-					<expression tag="String.Text" Value=","/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="height"/>
-					</expression>
-					<expression tag="String.Text" Value=","/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="horzBaseline"/>
-					</expression>
-					<expression tag="String.Text" Value="y"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="vertBaseline"/>
-					</expression>
-					<expression tag="String.Text" Value="de si misma, pero NO las mètricas"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="x"/>
-					</expression>
-					<expression tag="String.Text" Value="e"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="y"/>
-					</expression>
-					<expression tag="String.Text" Value=", ya que estas sólo deben ser calculadas y asignadas por la expresión padre. Por esta misma razón, una expresón debe calcular y asignar las métricas"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="x"/>
-					</expression>
-					<expression tag="String.Text" Value="e"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="y"/>
-					</expression>
-					<expression tag="String.Text" Value="de CADA UNA de sus subexpresiones."/>
-				</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="No todas las instancias de una clase serán visualizadas, puede ser que existan expresiones que se crean para realizar cálculos intermedios, siendo la expresión resultante la única que se visualiza."/>
 			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El framewok garantiza que nunca será realizada una llamada al método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display(context, x, y)"/>
+				</expression>
+				<expression tag="String.Text" Value="si no ha existido una llamada previa al método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay(context)"/>
+				</expression>
+				<expression tag="String.Text" Value="(para un mismo objeto expresión)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Las llamadas a los métodos"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay(context)"/>
+				</expression>
+				<expression tag="String.Text" Value="y"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display(context, x, y)"/>
+				</expression>
+				<expression tag="String.Text" Value="no son una a una (para una misma expresión), por cada llamada del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay(context)"/>
+				</expression>
+				<expression tag="String.Text" Value="pueden existir una o varias llamadas al método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display(context, x, y)"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Si bien el método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay(context)"/>
+				</expression>
+				<expression tag="String.Text" Value="no realiza el dibujo de la expresión, si puede realizar operaciones gráficas necesarias para el cálculo de métricas, por ejemplo cambiar atributos gráficos como el tipo o estilo de letra."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Si la expresión requiere métricas adicionales a las comúnes, puede crearlas. Sin embargo, la forma correcta de hacerlo es que estos sean creados por la llamada al método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay(context)"/>
+				</expression>
+				<expression tag="String.Text" Value="y NO como atributos propios de la definición de la clase. A  su vez, estos atributos sólo deberán ser utilizados (consultados) por el método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display(context, x, y)"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El contexto gráfico"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="context"/>
+				</expression>
+				<expression tag="String.Text" Value="preserva estado, como el tipo de letra o el color de dibujo. Si este debe ser modificado como parte del trabajo que deben hacer los métodos"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay(context)"/>
+				</expression>
+				<expression tag="String.Text" Value="y"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display(context, x, y)"/>
+				</expression>
+				<expression tag="String.Text" Value=", estos deberán dejar el estado de este contexto en la misma situación en que estaba al principio de la llamada. Esto se logra típicamente guardando el valor del atributo o atributos a ser cambiados, de forma tal que antes de concluír la ejecución del método, puedan ser restaurados."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El siguiente es un ejemplo del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display(context, x, y)"/>
+				</expression>
+				<expression tag="String.Text" Value="para una expresión que realiza operaciones de dibujo en un color diferente al predefinido:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="display(context, x, y) {&#10;&#9;let bkpStrokeStyle = context.strokeStyle;    // guardar el estilo&#10;&#9;context.strokeStyle = &quot;red&quot;;                 // cambiar el estilo&#10;&#9;&#10;&#9;// Realizar las operaciones gráficas&#10;&#9;// aquellas que utilicen el atributo, por ejemplo trazo de líneas&#10;&#9;// serán dibujadas en color rojo&#10;&#9;&#10;&#9;context.strokeStyle = bkpStrokeStyle;      // restaurar el estilo&#10;}"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Si bien son varias las métricas que contiene una expresión, El método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay(context)"/>
+				</expression>
+				<expression tag="String.Text" Value="debe calcular y asignar las métricas"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="width"/>
+				</expression>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="height"/>
+				</expression>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="horzBaseline"/>
+				</expression>
+				<expression tag="String.Text" Value="y"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="vertBaseline"/>
+				</expression>
+				<expression tag="String.Text" Value="de si misma, pero NO las mètricas"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="x"/>
+				</expression>
+				<expression tag="String.Text" Value="e"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="y"/>
+				</expression>
+				<expression tag="String.Text" Value=", ya que estas sólo deben ser calculadas y asignadas por la expresión padre. Por esta misma razón, una expresón debe calcular y asignar las métricas"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="x"/>
+				</expression>
+				<expression tag="String.Text" Value="e"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="y"/>
+				</expression>
+				<expression tag="String.Text" Value="de CADA UNA de sus subexpresiones."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Cuando la expresión tiene subexpresiones, lo mas común es que el método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay(context)"/>
+				</expression>
+				<expression tag="String.Text" Value="llame a este mismo método para cada una de las subexpresiones antes de calcular y asignar las métricas, puestas que el cálculo de las métricas de la expresión actual seguramente se requerirá las métricas de cada una de las subexpresiones. Nótese que no es una forma de recursividad, puesto que el método no se invoca para la misma expresión, sino para las subexpresiones."/>
+			</expression>
+			<expression tag="Null"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -293,8 +314,332 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Null"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ejemplo"/>
+				</expression>
 			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Se utilizará la expresión de suma para ejemplificar la implementación de la visualización. Es útil estructurar o incluso dibujar en papel un diagrama como el siguiente, que muestre los tamaños, posiciones y métricas tanto de la expresión a visualizar (en este caso la suma) como las de las subexpresiones (los sumandos):"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Metrics">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="10" Height="10" HorizontalBaseline="5" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="10" Height="30" HorizontalBaseline="15" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="25" Height="20" HorizontalBaseline="5" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="50" Height="50" HorizontalBaseline="45" VerticalBaseline="25"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="10" Height="10" HorizontalBaseline="5" VerticalBaseline="5"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay(context)"/>
+				</expression>
+				<expression tag="String.Text" Value="debe realizar lo siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Primeramente se deben tener calculadas las métricas de las subexpresiones (los sumandos), llamando al método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="prepareDisplay(context)"/>
+					</expression>
+					<expression tag="String.Text" Value="de cada una de ellas."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Calcular el ancho del texto del símbolo (+) en la fuente actual."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Posteriormente se deben calcular y fijar las posiciones"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="x"/>
+					</expression>
+					<expression tag="String.Text" Value="e"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="y"/>
+					</expression>
+					<expression tag="String.Text" Value="de cada una de ellas de tal forma que queden dispuestas una al lado de otra, permitiendo un espacio para dibujar los símbolos (+), y asegurándose que las líneas base horizontales de cada una de ellas queden alineadas."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Finalmente la expresión de suma ya puede calcular sus propias métricas. Nótese que su línea base horizontal se fija para que también quede alineada a las lìneas base horizontales de los sumandos. La línea base vertical queda a la mitad del ancho de la expresión."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display(context, x, y)"/>
+				</expression>
+				<expression tag="String.Text" Value="debe realizar lo siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Dibujar sus subexpresiones, llamando al método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="display(context, x, y)"/>
+					</expression>
+					<expression tag="String.Text" Value="de cada uana de ellas."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Dibujar el símbolo (+) entre cada una de las subexpresiones."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Posiblemente existe confusión entre los argumentos"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="x"/>
+				</expression>
+				<expression tag="String.Text" Value="e"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="y"/>
+				</expression>
+				<expression tag="String.Text" Value="y los atributos del mismo nombre de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression"/>
+				</expression>
+				<expression tag="String.Text" Value=". Lo siguiente es una versión aproximada del código del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display(context, x, y)"/>
+				</expression>
+				<expression tag="String.Text" Value=":"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="Suma = class extends Expression {&#10;&#9;:&#10;&#9;&#10;&#9;prepareDisplay(context) ...&#10;&#9;&#10;&#9;display(context, x, y) {&#10;&#9;&#9;// dibujar cada uno de los sumandos&#10;&#9;&#9;&#10;&#9;&#9;let child;&#10;&#9;&#9;for (let i = 0, n = this.children.length; i &lt; n; ++i) {&#10;&#9;&#9;&#9;child = this.children[i];&#10;&#9;&#9;&#9;child.display(context, x + child.x, y + child.y);&#10;&#9;&#9;}&#10;&#9;&#9;&#10;&#9;&#9;// dibujar los símbolos de suma&#10;&#9;&#9;:&#10;&#9;}&#10;&#9;&#10;&#9;:&#10;}"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Artefactos visuales"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En este apartado, no debe entenderse el término &quot;artefacto&quot; en el sentido (negativo) que habitualmente tiene dentro de las técnicas de representación visual, ya sean defectos o anomalías, por ejemplo los"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Patr%C3%B3n_de_muar%C3%A9" Description="patrones de moiré."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En su lugar, deben verse desde el punto de la"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Semiolog%C3%ADa" Description="semiología,"/>
+				<expression tag="String.Text" Value="es decir, son elementos simbólicos de naturaleza arbitraria y convencional, pactados"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Est%C3%A1ndar_de_facto" Description="de facto"/>
+				<expression tag="String.Text" Value="para una sociedad o cultura. Desde este punto de vista, el estudio de los artefactos visuales son sujetos de estudio del campo de la"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Interacci%C3%B3n_persona-computadora" Description="interacción hombre-máquina."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="También debe entenderse que un artefacto no forma parte esencial de una expresión, sino que es un elemento visual adicional, utilizado para confirmar la semántica, o para eliminar ambigüedad en la semántica de una expresión."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Paréntesis"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Uno de los artefactos visuales mas conocidos son los paréntesis, de uso ámplio tanto en las matemáticas como en los lenguajes de programación textuales."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Considere la siguiente expresión, provista como árbol invertido:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.Text" Value="×"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.Text" Value="+"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Symbolic.Symbol" Name="c"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Uno de los beneficios de estructurar expresiones de esta forma es que no existe ambigüedad en como se agrupan las expresiones unas con otras. No son necesarios los conceptos como la"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Orden_de_evaluaci%C3%B3n" Description="precedencia"/>
+				<expression tag="String.Text" Value="o la"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Operator_associativity" Description="asociatividad."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Sin embargo, al momento de mostrar la expresión de una forma natural para los humanos o para lenguajes de programación textuales, si es necesario mostrar paréntesis en algunas ocasiones. Para nuestro ejemplo, la expresión debe mostrarse como:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Sin éstos, la expresión tiene un significado distinto:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="c"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La idea de las visualizaciones en el lengueje Fōrmulæ es que estas determinen por si solas cuando las expresiones deban mostrarse con paréntesis, sin que el usuario final tenga que especificarlos expresamente, dicho de otra manera, los paréntesis son artefactos visuales que la implementación de visualización de expresiones deben automáticamente ser determinados y mostrados. No existe una expresión de parémtesis cuya función sea agrupar un conjunto de expresiones."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El mecanismo mas común para determinar la precedencia y asociatividad de operaciones es utilizar una tabla que indique los valores de precedencia (usualmente como un número), y aquellos que tengan la misma, aparecer en un mismo rango pero indicando una asociatividad distinta (típicamente como una lista ordenada, de mayor a menor asociatividad)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Sin embargo, eso no puede hacerse con el lenguaje Fōrmulæ, ya que no cuenta con un conjunto predefinido de operadores, en cualquier momento puede el lenguaje extenderse con expresiones nuevas."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En Fōrmulæ, existe una regla relativamente simple: Una expresión no decide si debe mostrarse a si misma entre paréntesis, sino una expresión padre decide si una (o varias) de sus subexpresiones deben mostrarse entre paréntesis (como parte de su implementación del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay(context)"/>
+				</expression>
+				<expression tag="String.Text" Value="), así como realmente hacerlo dentro de su implementación del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display(context, x, y)"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La expresión reconoce la naturaleza &quot;visual&quot; de cada una de sus subexpresiones ya que existen métodos de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression"/>
+				</expression>
+				<expression tag="String.Text" Value="que lo indican. Dichos métodos son:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="El método"/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="parenthesesAsOperator()"/>
+						</expression>
+						<expression tag="String.Text" Value="regresa un valor booleano y su implementación por defecto regresa"/>
+						<expression tag="Logic.False"/>
+						<expression tag="String.Text" Value=". Una implementación de expresión puede sobrrescribirlo para indicar que la visualización de la expresión distribuye sus subexpresiones una a una de una manera primordialmente horizontal. Básicamente indica que si una expresión &quot;hermana&quot; se coloca a la izquierda  o a la derecha de la expresión actual, generará una apariencia que confundirá la semántica de las expresiones."/>
+						<expression tag="String.Text" Value="El ejercicio previo de suma donde un sumando es una multiplicación es un ejemplo de este tipo, las expresión de suma debería implementar el método"/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="parenthesesAsOperator()"/>
+						</expression>
+						<expression tag="String.Text" Value="para regresar un velor"/>
+						<expression tag="Logic.True"/>
+						<expression tag="String.Text" Value="."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Algunos ejemplos de expresiones de este tipo son aquellas sque se visualizan como operaciones infijas de asociatividad baja, como la suma, pero no la multiplicación, por ser de asociatividad alta."/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="El método"/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="parenthesesWhenSuperSubscripted()"/>
+						</expression>
+						<expression tag="String.Text" Value="regresa un valor booleano y su implementación por defecto regresa"/>
+						<expression tag="Logic.False"/>
+						<expression tag="String.Text" Value=". Una implementación de expresión puede sobrrescribirlo para indicar que la expresi+on tiene dos subexpresiones, y que la segunda se muestra ya sea como superíndice o como subíndice de la primera."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Ejemplos de expresiones de este tipo son la exponenciación o la operación de obtener una subexpresión de otra, como en"/>
+						<expression tag="Expression.Child">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+						</expression>
+						<expression tag="String.Text" Value="(obtener el i-sima subexpresión de"/>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="String.Text" Value=")."/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Nótese que aunque una expresión reescriba alguno de los métodos"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="parenthesesAsOperator()"/>
+				</expression>
+				<expression tag="String.Text" Value="y"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="parenthesesWhenSuperSubscripted()"/>
+				</expression>
+				<expression tag="String.Text" Value=", para que regresen el valor"/>
+				<expression tag="Logic.True"/>
+				<expression tag="String.Text" Value=", NO significa que estos deban mostrarse dentro de paréntesis, la expresión padre deberá decidir, de acuerdo a su propia forma de visualización, si la subexpresión deba mostrarse en paréntesis. Por ejemplo, la expresión de suma debe regresar el valor"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="verdadero"/>
+				</expression>
+				<expression tag="String.Text" Value="en la implementación del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="parenthesesAsOperator()"/>
+				</expression>
+				<expression tag="String.Text" Value=", el cual es de utilidad de una expresión padre de multiplicación, para que muestre paréntesis como en el ejemplo"/>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=", sin embargo para la expresión de división no es de utilidad, puesto que esta propiedad no le sirve para determinar si la subexpresión deba mostrarse en paréntesis, como en"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=". Otras expresiones nunca llaman a los métodos"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="parenthesesAsOperator()"/>
+				</expression>
+				<expression tag="String.Text" Value="o"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="parenthesesWhenSuperSubscripted()"/>
+				</expression>
+				<expression tag="String.Text" Value="debido a que sus subexpresiones nunca se muestran con paréntesis, sin importar de qué tipo de subexpresión sean, por ejemplo en una raíz cuadrada"/>
+				<expression tag="Math.Arithmetic.SquareRoot">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="String.Text" Value="o en una lista o arreglo"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Symbolic.Symbol" Name="z"/>
+				</expression>
+			</expression>
+			<expression tag="Null"/>
+			<expression tag="Null"/>
 			<expression tag="Null"/>
 		</expression>
 	</expression>
