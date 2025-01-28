@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.graphics.raster,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.symbolic,org.formulae.logic,org.formulae.expression,org.formulae.list">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.graphics.raster,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.symbolic,org.formulae.expression,org.formulae.list">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -449,7 +449,7 @@
 				<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Interacci%C3%B3n_persona-computadora" Description="interacción hombre-máquina."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="También debe entenderse que un artefacto no forma parte esencial de una expresión, sino que es un elemento visual adicional, utilizado para confirmar la semántica, o para eliminar ambigüedad en la semántica de una expresión."/>
+				<expression tag="String.Text" Value="También debe entenderse que un artefacto no forma parte esencial de una expresión, sino que es un elemento visual adicional, utilizado para indicar la semántica, para eliminar ambigüedad en la semántica, o simplemente como elemento decorativo."/>
 			</expression>
 		</expression>
 	</expression>
@@ -548,15 +548,18 @@
 							<expression tag="String.Text" Value="parenthesesAsOperator()"/>
 						</expression>
 						<expression tag="String.Text" Value="regresa un valor booleano y su implementación por defecto regresa"/>
-						<expression tag="Logic.False"/>
-						<expression tag="String.Text" Value=". Una implementación de expresión puede sobrrescribirlo para indicar que la visualización de la expresión distribuye sus subexpresiones una a una de una manera primordialmente horizontal. Básicamente indica que si una expresión &quot;hermana&quot; se coloca a la izquierda  o a la derecha de la expresión actual, generará una apariencia que confundirá la semántica de las expresiones."/>
+						<expression tag="Typesetting.ItalicChunk">
+							<expression tag="String.Text" Value="falso."/>
+						</expression>
+						<expression tag="String.Text" Value="Una implementación de expresión puede sobrrescribirlo para indicar que la visualización de la expresión distribuye sus subexpresiones una a una de una manera primordialmente horizontal. Básicamente indica que si una expresión &quot;hermana&quot; se coloca a la izquierda  o a la derecha de la expresión actual, generará una apariencia que confundirá la semántica de las expresiones."/>
 						<expression tag="String.Text" Value="El ejercicio previo de suma donde un sumando es una multiplicación es un ejemplo de este tipo, las expresión de suma debería implementar el método"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="parenthesesAsOperator()"/>
 						</expression>
-						<expression tag="String.Text" Value="para regresar un velor"/>
-						<expression tag="Logic.True"/>
-						<expression tag="String.Text" Value="."/>
+						<expression tag="String.Text" Value="para regresar un valor"/>
+						<expression tag="Typesetting.ItalicChunk">
+							<expression tag="String.Text" Value="verdadero."/>
+						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
 						<expression tag="String.Text" Value="Algunos ejemplos de expresiones de este tipo son aquellas sque se visualizan como operaciones infijas de asociatividad baja, como la suma, pero no la multiplicación, por ser de asociatividad alta."/>
@@ -569,8 +572,10 @@
 							<expression tag="String.Text" Value="parenthesesWhenSuperSubscripted()"/>
 						</expression>
 						<expression tag="String.Text" Value="regresa un valor booleano y su implementación por defecto regresa"/>
-						<expression tag="Logic.False"/>
-						<expression tag="String.Text" Value=". Una implementación de expresión puede sobrrescribirlo para indicar que la expresi+on tiene dos subexpresiones, y que la segunda se muestra ya sea como superíndice o como subíndice de la primera."/>
+						<expression tag="Typesetting.ItalicChunk">
+							<expression tag="String.Text" Value="falso."/>
+						</expression>
+						<expression tag="String.Text" Value="Una implementación de expresión puede sobrrescribirlo para indicar que la expresi+on tiene dos subexpresiones, y que la segunda se muestra ya sea como superíndice o como subíndice de la primera."/>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
 						<expression tag="String.Text" Value="Ejemplos de expresiones de este tipo son la exponenciación o la operación de obtener una subexpresión de otra, como en"/>
@@ -594,8 +599,10 @@
 					<expression tag="String.Text" Value="parenthesesWhenSuperSubscripted()"/>
 				</expression>
 				<expression tag="String.Text" Value=", para que regresen el valor"/>
-				<expression tag="Logic.True"/>
-				<expression tag="String.Text" Value=", NO significa que estos deban mostrarse dentro de paréntesis, la expresión padre deberá decidir, de acuerdo a su propia forma de visualización, si la subexpresión deba mostrarse en paréntesis. Por ejemplo, la expresión de suma debe regresar el valor"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="verdadero,"/>
+				</expression>
+				<expression tag="String.Text" Value="NO significa que estos deban mostrarse dentro de paréntesis, la expresión padre deberá decidir, de acuerdo a su propia forma de visualización, si la subexpresión deba mostrarse en paréntesis. Por ejemplo, la expresión de suma debe regresar el valor"/>
 				<expression tag="Typesetting.ItalicChunk">
 					<expression tag="String.Text" Value="verdadero"/>
 				</expression>
@@ -627,19 +634,175 @@
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="parenthesesWhenSuperSubscripted()"/>
 				</expression>
-				<expression tag="String.Text" Value="debido a que sus subexpresiones nunca se muestran con paréntesis, sin importar de qué tipo de subexpresión sean, por ejemplo en una raíz cuadrada"/>
+				<expression tag="String.Text" Value="debido a que sus subexpresiones nunca se muestran con paréntesis, sin importar de que tipo sean, por ejemplo en una raíz cuadrada"/>
 				<expression tag="Math.Arithmetic.SquareRoot">
-					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
 				</expression>
-				<expression tag="String.Text" Value="o en una lista o arreglo"/>
+				<expression tag="String.Text" Value="(nunca se utiliza de la forma"/>
+				<expression tag="Math.Arithmetic.SquareRoot">
+					<expression tag="Visualization.Parentheses">
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="10"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="), o los elementos de una lista o arreglo:"/>
 				<expression tag="List.List">
 					<expression tag="Symbolic.Symbol" Name="x"/>
 					<expression tag="Symbolic.Symbol" Name="y"/>
 					<expression tag="Symbolic.Symbol" Name="z"/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="drawParenthesesAround(context, x, y)"/>
+				</expression>
+				<expression tag="String.Text" Value="Dibuja el par de paréntesis alrededor de la expresión que lo invoca. Los argumentos"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="x"/>
+				</expression>
+				<expression tag="String.Text" Value="e"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="y"/>
+				</expression>
+				<expression tag="String.Text" Value="definen la posición absoluta del origen de la expresión. Debe ser invocado exclsuivamente dentro del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display(context, x, y)"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Transitabilidad"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="(traversability)"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Si bien el entorno en que se muestran y editan expresiones es gráfico, y por lo tanto utilizable con la ayuda de un dispositivo que permita operaciones"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Point_and_click" Description="point and click"/>
+				<expression tag="String.Text" Value="(por ejemplo un ratón). Sin embargo, usuarios y programadores mas experimentados encuentran útil para la edición de expresiones, la utilización adicional del teclado."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La transitabilidad es la capacidad de seleccionar"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="cualquier"/>
+				</expression>
+				<expression tag="String.Text" Value="expresión o subexpresión, por muy compleja que sea,  sólamente utilizando las teclas de flecha, y la tecla"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="ESC"/>
+				</expression>
+				<expression tag="String.Text" Value=". Se puede resumir en lo siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Dado una expresión que está seleccionada, sea o no una expresión final, la utilización de una de las teclas de flecha hace que se seleccione una expresión, siempre final, acorde a la dirección seleccionada. La nueva expresión no necesariamente debe ser &quot;hermana&quot; de la expresión seleccionada actualmente."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="La utilización de la tecla"/>
+					<expression tag="Visualization.Key">
+						<expression tag="String.Text" Value="ESC"/>
+					</expression>
+					<expression tag="String.Text" Value="hace que la expresión padre de la expresión seleccionada, de existir, pase a ser la nueva expresión seleccionada."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Las implementaciones de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression"/>
+				</expression>
+				<expression tag="String.Text" Value="deben definir comportamiento relativo a la transitabilidad sobreescribiendo los siguientes métodos:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El atributo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Expression.UP"/>
+					</expression>
+					<expression tag="String.Text" Value="sirve para indicar la dirección hacia arriba."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El atributo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Expression.DOWN"/>
+					</expression>
+					<expression tag="String.Text" Value="sirve para indicar la dirección hacia abajo."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El atributo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Expression.PREVIOUS"/>
+					</expression>
+					<expression tag="String.Text" Value="sirve para indicar la dirección hacia atras en el sentido del texto, corresponde a la izquierda en texto"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="izquierda a derecha"/>
+					</expression>
+					<expression tag="String.Text" Value="y a la derecha en texto"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="derecha a izquierda"/>
+					</expression>
+					<expression tag="String.Text" Value="utilizado en algunos idiomas como el árabe o el hebreo."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El atributo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Expression.NEXT"/>
+					</expression>
+					<expression tag="String.Text" Value="sirve para indicar la dirección hacia adelante en el sentido del texto, corresponde a la derecha en texto"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="izquierda a derecha"/>
+					</expression>
+					<expression tag="String.Text" Value="y a la izquierda en texto"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="derecha a izquierda."/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Los siguientes métodos regresan una referencia a objeto"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Expression.moveOut(direction)"/>
+					</expression>
+					<expression tag="String.Text" Value="(no reescribible) se invoca cuando una expresión delega a su expresión padre la petición de moverse en la dirección indicada. Puede regresar el valor"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="nulo"/>
+					</expression>
+					<expression tag="String.Text" Value="indicando que la expresión no cuenta con expresipon padre."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Expression.moveAcross(i, direction)"/>
+					</expression>
+					<expression tag="String.Text" Value="es invocado"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Expression.moveTo(direction)"/>
+					</expression>
+					<expression tag="String.Text" Value="es invocado"/>
+				</expression>
+			</expression>
 			<expression tag="Null"/>
 		</expression>
 	</expression>
