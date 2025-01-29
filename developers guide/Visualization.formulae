@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.graphics.raster,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.symbolic,org.formulae.expression,org.formulae.list">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.graphics.raster,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.symbolic,org.formulae.expression,org.formulae.list,org.formulae.math.complex,org.formulae.relation">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -718,6 +718,240 @@
 					<expression tag="String.Text" Value="hace que la expresión padre de la expresión seleccionada, de existir, pase a ser la nueva expresión seleccionada."/>
 				</expression>
 			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Ejemplo"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Tecla"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Resultado"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="c"/>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value=" ▸ "/>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="c"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Visualization.Selected">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="c"/>
+									<expression tag="Symbolic.Symbol" Name="d"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value=" ▸ "/>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Visualization.Selected">
+										<expression tag="Symbolic.Symbol" Name="c"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="d"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value=" ▾ "/>
+							</expression>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Arithmetic.SquareRoot">
+									<expression tag="Visualization.Selected">
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value=" ◂ "/>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+								<expression tag="Math.Arithmetic.SquareRoot">
+									<expression tag="Symbolic.Symbol" Name="y"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Visualization.Selected">
+										<expression tag="Visualization.Parentheses">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Symbolic.Symbol" Name="a"/>
+												<expression tag="Symbolic.Symbol" Name="b"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="c"/>
+										<expression tag="Symbolic.Symbol" Name="d"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value=" ▾ "/>
+							</expression>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="c"/>
+										<expression tag="Symbolic.Symbol" Name="d"/>
+									</expression>
+								</expression>
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+								<expression tag="Math.Trigonometric.Sine">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value=" ▸ "/>
+							</expression>
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Trigonometric.Sine">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Visualization.Selected">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+										</expression>
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Visualization.Selected">
+										<expression tag="Math.Number" Value="3"/>
+									</expression>
+									<expression tag="Math.Complex.Imaginary"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value=" ▸ "/>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Math.Number" Value="3"/>
+									<expression tag="Visualization.Selected">
+										<expression tag="Math.Complex.Imaginary"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="3"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Visualization.Selected">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value=" ▴ "/>
+							</expression>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Arithmetic.SquareRoot">
+									<expression tag="Visualization.Selected">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Key">
+								<expression tag="String.Text" Value="ESC"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Math.Arithmetic.SquareRoot">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Las implementaciones de la clase"/>
 				<expression tag="Visualization.Code">
@@ -786,24 +1020,212 @@
 					<expression tag="Typesetting.ItalicChunk">
 						<expression tag="String.Text" Value="nulo"/>
 					</expression>
-					<expression tag="String.Text" Value="indicando que la expresión no cuenta con expresipon padre."/>
+					<expression tag="String.Text" Value="indicando que la expresión no cuenta con expresión padre."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="El método"/>
 					<expression tag="Visualization.Code">
 						<expression tag="String.Text" Value="Expression.moveAcross(i, direction)"/>
 					</expression>
-					<expression tag="String.Text" Value="es invocado"/>
+					<expression tag="String.Text" Value="Dado el índice de subexpresión y una dirección, este método indica a cuál de sus otras subexpresiones se debe &quot;mover&quot; la selección. Si"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="child"/>
+					</expression>
+					<expression tag="String.Text" Value="es la subexpresión de &quot;destino&quot;, no debe regresar esta, sino el valor devuelto por"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="child.moveTo(direction)"/>
+					</expression>
+					<expression tag="String.Text" Value="a fin de que dicha subexpresión elija, recursivamente, la expresión final. Si ninguna de las subexpresiones es aplicable, debe regresar"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="this.moveOut(direction)"/>
+					</expression>
+					<expression tag="String.Text" Value="a fin de delegar la decisión a la expresión padre."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="El método"/>
 					<expression tag="Visualization.Code">
 						<expression tag="String.Text" Value="Expression.moveTo(direction)"/>
 					</expression>
-					<expression tag="String.Text" Value="es invocado"/>
+					<expression tag="String.Text" Value="Este método debe regresar la subexpresión que debe ser seleccionada cuando se &quot;incide&quot; desde la dirección especificada &quot;desde afuera&quot; hacia la expresión actual. Al iual que el caso anterior, una vez determinada debe devolver el valor generado por el método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Expression.moveTo(direction)"/>
+					</expression>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Nota. Si la expresión que se está implementando es final, es decir, si no tiene subexpresiones, no es necesario implementar los métodos"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.moveAcross(i, direction)"/>
+				</expression>
+				<expression tag="String.Text" Value="y"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.moveTo(direction)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ejemplo."/>
+				</expression>
+				<expression tag="String.Text" Value="Expresión que se muestra de manera"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Notaci%C3%B3n_de_infijo" Description="infija."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Para implementar el método"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Expression.moveAcross(i, direction)"/>
+				</expression>
+				<expression tag="String.Text" Value=", refiérase a la siguiente figura, que es una expresión con"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="String.Text" Value="subexpresiones"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.FontSizeIncrement" Increment="6">
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+							<expression tag="String.Text" Value="⇠"/>
+						</expression>
+						<expression tag="Visualization.VerticalArray">
+							<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="⇡"/>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Null"/>
+							</expression>
+							<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="⇣"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="⇄"/>
+						<expression tag="Visualization.VerticalArray">
+							<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="⇡"/>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Null"/>
+							</expression>
+							<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="⇣"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="⇄"/>
+						<expression tag="Visualization.VerticalArray">
+							<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="⇡"/>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Null"/>
+							</expression>
+							<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="⇣"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="⇄ ⋯ ⇄"/>
+						<expression tag="Visualization.VerticalArray">
+							<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="⇡"/>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Null"/>
+							</expression>
+							<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+								<expression tag="String.Text" Value="⇣"/>
+							</expression>
+						</expression>
+						<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+							<expression tag="String.Text" Value="⇢"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Se puede observar lo siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Solamente se puede seleccionar la subexpresión que está a la derecha, si para el índice de expresión seleccionada"/>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="String.Text" Value="(basado en 1, no en 0) se cumple:"/>
+					<expression tag="Relation.LessOrEquals">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Visualization.Spurious">
+							<expression tag="Relation.Less">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Solamente se puede seleccionar la subexpresión que está a la izquierda, si para el índice de expresión seleccionada"/>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="String.Text" Value="se cumple:"/>
+					<expression tag="Relation.Less">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Visualization.Spurious">
+							<expression tag="Relation.LessOrEquals">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Cualquier otra combinación de índice y dirección, hace que la selección deba &quot;salir&quot; de la expresión"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Por lo que una implementación del método quedaría como sigue:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="moveAcross(i, direction) {&#10;&#9;if (direction == Expression.PREVIOUS) {&#10;&#9;&#9;if (i &gt; 0) {&#10;&#9;&#9;&#9;return this.children[i - 1].moveTo(direction);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;else if (direction == Expression.NEXT) {&#10;&#9;&#9;if (i &lt; this.children.length - 1) {&#10;&#9;&#9;&#9;return this.children[i + 1].moveTo(direction);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;return this.moveOut(direction);&#10;}&#10;"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Para implementar el método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.moveTo(direction)"/>
+				</expression>
+				<expression tag="String.Text" Value=", refiérase a la siguiente figura:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.FontSizeIncrement" Increment="6">
+					<expression tag="Visualization.HorizontalArray">
+						<expression tag="String.Text" Value="⇢"/>
+						<expression tag="Visualization.VerticalArray">
+							<expression tag="String.Text" Value="⇣"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Null"/>
+							</expression>
+							<expression tag="String.Text" Value="⇡"/>
+						</expression>
+						<expression tag="String.Text" Value="+"/>
+						<expression tag="Visualization.Selected">
+							<expression tag="Null"/>
+						</expression>
+						<expression tag="String.Text" Value="+"/>
+						<expression tag="Visualization.Selected">
+							<expression tag="Null"/>
+						</expression>
+						<expression tag="String.Text" Value="+ ⋯ +"/>
+						<expression tag="Visualization.Selected">
+							<expression tag="Null"/>
+						</expression>
+						<expression tag="String.Text" Value="⇠"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Se puede observar lo siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Si la dirección es a la izquerda (desde el punto de vista de &quot;afuera&quot;), la subexpresión a seleccionar es la última."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Cualquier otra dirección, hace que la subexpresión a seleccionar sea la primera."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Por lo que una implementación del método quedaría como sigue:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="moveTo(direction) {&#10;&#9;if (direction == Expression.PREVIOUS) {&#10;&#9;&#9;return this.children[this.children.length - 1].moveTo(direction);&#10;&#9;}&#10;&#9;else {&#10;&#9;&#9;return this.children[0].moveTo(direction);&#10;&#9;}&#10;}"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
