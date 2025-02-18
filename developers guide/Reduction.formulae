@@ -1,0 +1,106 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.visualization">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Guía del desarrollador"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Capítulo 4. Reducción"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La reducción se refiere a las reglas para transformar una expresión (o parte de ella) en otra."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El siguiente ejemplo parecerá trivial, pero refleja de una manera muy sencilla la reducción. La expresión"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="String.Text" Value="es transformada en la expresión"/>
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="String.Text" Value="debido a que existe un reductor que tramsforma la primera expresión en la segunda, y que obedece a una regla simple, la de adición aritmética."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Pese al nombre &quot;reducción&quot;, la nueva expresión no necesariamente debe ser mas pequeña, sino mas útil o mas simple."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Sesión"/>
+				</expression>
+			</expression>
+			<expression tag="Null"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Reductores"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Un reductor es una pieza de código que se asocia a un"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag."/>
+				</expression>
+				<expression tag="String.Text" Value="El código se encarga de analizar la expresión para ver si cumple las condiciones para que pueda ser transformada en otra expresión, y hacerlo si se cumplen."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Un reductor debe cumplir con la siguiente forma:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="nombre = async (expression, session) =&gt; {&#10;&#9;:&#10;&#9;&#10;&#9;siempre debe regresar un valor booleano (true o false)&#10;};"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Es decir, el reductor debe cumplir con lo siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Ser un método marcado como asícrono."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Recibir un primer argumento, que es una referencia a la expresión  para la cual se está invocando el reductor."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Recibir un segundo argumento, que es una referencia a la sesión."/>
+				</expression>
+				<expression tag="String.Text" Value="Siempre debe regresar un valor booleano, que indica si el reductor hizo cambios a la expresión o no."/>
+			</expression>
+			<expression tag="Null"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Proceso de reducción"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El proceso de reducción es un algoritmo para aplicar reductores a una expresión, por muy compleja que sea. también es comúnmente llamado el &quot;motor de reduccion&quot;."/>
+			</expression>
+			<expression tag="Null"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Null"/>
+	</expression>
+</expression>

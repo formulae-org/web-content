@@ -631,21 +631,38 @@
 					<expression tag="String.Text" Value="reconocida (por ejemplo la utilizada en"/>
 					<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Unix" Description="Unix"/>
 					<expression tag="String.Text" Value="para una zona de tiempo preestablecida, por jemplo"/>
-					<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Tiempo_universal_coordinado" Description="UTC."/>
+					<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Tiempo_universal_coordinado" Description="UTC"/>
+					<expression tag="String.Text" Value=")."/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Para el ejemplo, se utilizó el último:"/>
 			</expression>
 			<expression tag="Visualization.CodeBlock" Value="Time = class extends Expression {&#10;&#9;getTag() {&#10;&#9;&#9;return &quot;Time.Time&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;getName() {&#10;&#9;&#9;return &quot;Tiempo&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;canHaveChildren(count) {&#10;&#9;&#9;return count == 0;&#10;&#9;}&#10;&#9;&#10;&#9;set(name, value) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;this.date = number;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;super.set(name, value);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;get(name) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;return this.date;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;return super.get(name);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;getSerializationNames() {&#10;&#9;&#9;return [ &quot;Value&quot; ];&#10;&#9;}&#10;&#9;&#10;&#9;async getSerializationStrings() {&#10;&#9;&#9;return [ this.date.getMilliseconds().toString() ];&#10;&#9;}&#10;&#9;&#10;&#9;setSerializationStrings(strings, promises) {&#10;&#9;&#9;this.date = new Date(Number(strings[0]);&#10;&#9;}&#10;}"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El formato en que se realizará la serialización lo define el framework, típicamente es"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/XML" Description="XML"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="De esta forma, la siguiente expresión (en el capítulo siguiente se verá el definir como codificar la visualización de expresiones), que se visualiza como:"/>
+			</expression>
 			<expression tag="Time.Time" Value="1737435120000"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Será serializada como:"/>
+			</expression>
 			<expression tag="Visualization.CodeBlock" Value="&lt;expression tag=&quot;Time.Time&quot; Value=&quot;1737435120000&quot;/&gt;"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como segundo ejemplo, la siguiente expresión:"/>
+			</expression>
 			<expression tag="Math.Arithmetic.Addition">
 				<expression tag="Math.Number" Value="3"/>
 				<expression tag="Math.Arithmetic.Division">
 					<expression tag="Math.Number" Value="2"/>
 					<expression tag="Math.Number" Value="5"/>
 				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Es serializada como:"/>
 			</expression>
 			<expression tag="Visualization.CodeBlock" Value="&lt;expression tag=&quot;Math.Arithmetic.Addition&quot;&gt;&#10;&#9;&lt;expression tag=&quot;Math.Number&quot; Value=&quot;3&quot;/&gt;&#10;&#9;&lt;expression tag=&quot;Math.Arithmetic.Division&quot;&gt;&#10;&#9;&#9;&lt;expression tag=&quot;Math.Number&quot; Value=&quot;2&quot;/&gt;&#10;&#9;&#9;&lt;expression tag=&quot;Math.Number&quot; Value=&quot;5&quot;/&gt;&#10;&#9;&lt;/expression&gt;&#10;&lt;/expression&gt;"/>
 		</expression>
@@ -730,7 +747,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Fecha de última modificación:"/>
-				<expression tag="Time.Time" Value="1737435120000"/>
+				<expression tag="Time.Time" Value="1738178160000"/>
 			</expression>
 		</expression>
 	</expression>
