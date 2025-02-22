@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.visualization">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.visualization,org.formulae.diagramming,org.formulae.logic,org.formulae.list,org.formulae.math.complex,org.formulae.symbolic">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -39,7 +39,32 @@
 					<expression tag="String.Text" Value="Sesión"/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Una vez que se crea una expresión y desea &quot;ejecutarse&quot;, el usuario presiona la tecla"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="ENTER"/>
+				</expression>
+				<expression tag="String.Text" Value=". Desde ese momento y hasta que el sistema entrega el &quot;resultado&quot;, se dice que es una sesión de reducción, o simplemente sesión. Una sesión conserva el siguiente conjunto de parámetros que afectan la ejecución:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Una referencia a una cadena que representa el"/>
+					<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Configuraci%C3%B3n_regional" Description="&quot;locale&quot; o configuración regional,"/>
+					<expression tag="String.Text" Value="por ejemplo"/>
+					<expression tag="String.String" Value="es-MX"/>
+					<expression tag="String.Text" Value="para referirse al idioma español en México."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Una referencia a una cadena que representa la zona de tiempo, por ejemplo"/>
+					<expression tag="String.String" Value="America/Mexico_City"/>
+				</expression>
+				<expression tag="String.Text" Value="Un número entero que indica la precisión, para la realización de cálculos numéricos."/>
+				<expression tag="String.Text" Value="Un tipo de redondeo, para la realización de cálculos numéricos."/>
+				<expression tag="String.Text" Value="Una bandera que indica si los cálculos numericos se realizarán con precisión normal o arbitraria."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Todos ellos (excepto el último) pueden cambiarse durante la ejecución."/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -60,6 +85,29 @@
 				<expression tag="String.Text" Value="El código se encarga de analizar la expresión para ver si cumple las condiciones para que pueda ser transformada en otra expresión, y hacerlo si se cumplen."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Dado un"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="String.Text" Value="pueden existir cero, uno o varios reductores asociados a él."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Motor de reducción"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El proceso de reducción es un algoritmo para aplicar reductores a una expresión, por muy compleja que sea. también es comúnmente llamado el &quot;motor de reduccion&quot;."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La idea del proceso de reducción es aplicar los reductores disponibles hasta que ya no haya mas reductores por aplicar. En ese momento se concluye el proceso y la expresión es entregada como resultado."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Programacion de un reductor"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Un reductor debe cumplir con la siguiente forma:"/>
 			</expression>
 			<expression tag="Visualization.CodeBlock" Value="nombre = async (expression, session) =&gt; {&#10;&#9;:&#10;&#9;&#10;&#9;siempre debe regresar un valor booleano (true o false)&#10;};"/>
@@ -78,6 +126,663 @@
 				</expression>
 				<expression tag="String.Text" Value="Siempre debe regresar un valor booleano, que indica si el reductor hizo cambios a la expresión o no."/>
 			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Reglas"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Cuando un reductor es invocado, ya ha sucedido la reducción de sus subexpresiones."/>
+				</expression>
+				<expression tag="String.Text" Value="El motor de reducción primero reduce las subexpresiones de una expresión, antes de invocar los reductores de la misma"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Por ejemplo, véase la siguiente expresión, mostrada en forma de árbol inverso. También debe suponerse que existen dos reductores, uno para realizar la adición y otro para la multiplicación de números:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.Text" Value="Multiplicación"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.Text" Value="Suma"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El motor de reducción asegura que será invocado primero el reductor de la suma, dejando la expresión como:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.Text" Value="Multiplicación"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Entonces se invoca el reductor de la multiplicaión, dejando el árbol como:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Math.Number" Value="30"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como ya no existen reductores por aplicar, la reducción termina."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="El código del reductor primero debe verificar si la expresión es adecuada para la reducción pretendida"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Generalmente la asociación del"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="String.Text" Value="no es suficiente. Típicamente es necesario hacer dicha validación lo mas anticipadamente posible y regresar el valor"/>
+				<expression tag="Logic.False"/>
+				<expression tag="String.Text" Value="cuando se determine que el reductor no es aplicable."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como un ejemplo, considérese un reductor para realizar adición numérica. El reductor debe verificar primero si las subexpresiones (los sumandos) son números."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Utilizar el valor de retorno correcto"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Recuerda que el valor de retorno significa que la expresión ha cambiado y es importante para el motor de reducción, ya que si un reductor no aplica a una expresión dada (no la cambia), intentará con otro u otros (recuerda que un"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="String.Text" Value="puede tener varios reductores asociados). Si el reductor efectívamente cambió la expresión por otra diferente, es importante que se devuelva el valor"/>
+				<expression tag="Logic.True"/>
+				<expression tag="String.Text" Value="a fin de que el motor de reducción NO intente aplicar otros reductores."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Cálculos numéricos en la reducción"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Tipos de datos para almacenar números"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Precisión \ Tipo de número"/>
+							<expression tag="String.Text" Value="ℤ"/>
+							<expression tag="String.Text" Value="ℝ"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Precisión simple"/>
+							<expression tag="String.Text" Value="NumberI"/>
+							<expression tag="String.Text" Value="NumberD"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Precisión arbitraria"/>
+							<expression tag="String.Text" Value="BigInt"/>
+							<expression tag="String.Text" Value="Decimal"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="ℚ = { (n, d) | n ∈ ℤ, d ∈ ℤ, d ≠ 0 }"/>
+				</expression>
+				<expression tag="String.Text" Value="es decir, los números racionales son el conjunto de pares (n, d), de numerador y denominador, en donde ámbos son números enteros, y el denominador no puede ser cero."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="ℂ = { (r, i) | r ∈ {ℤ, ℝ, ℚ}, i ∈ {ℤ, ℝ, ℚ}, i ≠ 0 }"/>
+				</expression>
+				<expression tag="String.Text" Value="es decir, los números complejos son el conjunto de pares (r, i), de real e imaginario, en donde ámbos son números enteros, decimales o racionales, y el valor imaginario no puede ser cero."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como seguramente te habrás dado cuenta, los números son expresiones con"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Number"/>
+				</expression>
+				<expression tag="String.Text" Value=". Las reglas que rigen la semántica de los números están definidas en el"/>
+				<expression tag="Internet.UniformResourceLocator" Value="?script=reference/Arithmetic_canon" Description="canon de aritmética"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="De dicho canon, se puede obtener la siguiente información:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Los números que pueden almacenarse en una expresión"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Math.Number"/>
+					</expression>
+					<expression tag="String.Text" Value="son valores enteros y decimales NO negativos."/>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Los números negativos pueden crearse con el uso de la expresión"/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
+						</expression>
+						<expression tag="String.Text" Value=", de esta manera la expresión"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+						<expression tag="String.Text" Value="puede crearse como:"/>
+					</expression>
+					<expression tag="Typesetting.Centering">
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.Text" Value="Negative"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="No existen expresiones para definir números racionales ni números complejos, sin embargo el usuario puede crearlos como combinaciones de expresiones del tipo"/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="Math.Number"/>
+						</expression>
+						<expression tag="String.Text" Value=","/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
+						</expression>
+						<expression tag="String.Text" Value=","/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="Math.Arithmetic.Division"/>
+						</expression>
+						<expression tag="String.Text" Value=","/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="Math.Arithmetic.Multiplication"/>
+						</expression>
+						<expression tag="String.Text" Value="y"/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="Math.Complex.ImaginaryUnitUnit"/>
+						</expression>
+						<expression tag="String.Text" Value=", por ejemplo el número racional"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+						<expression tag="String.Text" Value="es expresado como:"/>
+					</expression>
+					<expression tag="Typesetting.Centering">
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.Text" Value="Division"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Mientras que el número complejo"/>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Number" Value="2.5"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Number" Value="3"/>
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+									<expression tag="Math.Complex.ImaginaryUnit"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="es expresado como:"/>
+					</expression>
+					<expression tag="Typesetting.Centering">
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.Text" Value="Adición"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Math.Number" Value="2.5"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.Text" Value="Negativo"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.Text" Value="Multiplicación"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.Text" Value="División"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="5"/>
+										</expression>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Complex.ImaginaryUnit"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Sin embargo, el"/>
+				<expression tag="Internet.UniformResourceLocator" Value="?script=reference/Arithmetic_canon" Description="canon de aritmética"/>
+				<expression tag="String.Text" Value="es un conjunto de reglas para formar expresiones desde el punto de vista del usuario, no de la reducción."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Para la reducción, las expresiones varían en lo siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="1. La reducción usa la expresión"/>
+				</expression>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.InternalNumber"/>
+				</expression>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="en lugar de"/>
+				</expression>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Number"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Esta expresión difiere de la expresión"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Number"/>
+				</expression>
+				<expression tag="String.Text" Value="en lo siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Los números representados por la expresión"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Math.InternalNumber"/>
+					</expression>
+					<expression tag="String.Text" Value="pueden ser negativos."/>
+				</expression>
+				<expression tag="String.Text" Value="Puede representar números racionales, ya que es capaz de almacenar dos números (exclusivamente enteros), un o para el numerador y otro para el denominador."/>
+				<expression tag="String.Text" Value="Puede representar números complejos, ya que es capaz de almacenar dos números (que pueden ser enteros, decimales o racionales), uno para la parte real y otro para la parte imaginaria."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="2. En la reducción, no existe la expresión"/>
+				</expression>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Durante la reducción no existe la expresión de negativo aritmético, ya que cualquier expresión de la forma"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Symbolic.Symbol" Name="expresión"/>
+				</expression>
+				<expression tag="String.Text" Value="representada como:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.Text" Value="Negativo"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Symbolic.Symbol" Name="expresión"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Es transformada a la expresión:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.Text" Value="Multiplicación"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.Text" Value="(-1)"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Symbolic.Symbol" Name="expresión"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En donde la expresión"/>
+				<expression tag="String.Text" Value="(-1)"/>
+				<expression tag="String.Text" Value="tiene el tag"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.InternalNumber"/>
+				</expression>
+				<expression tag="String.Text" Value="y por lo tanto acepta valores negativos"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Cada vez que se inicia un proceso de reducción, el framework transforma las expresiones antes mencionadas a su correspondiente forma para el proceso de reducción. Una vez que el proceso de reducción ha concluido, se inicia el proceso contrario."/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Expresión"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="En formato de árbol invertido"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Convertida para reducción"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.HorizontalArray">
+									<expression tag="Visualization.Code">
+										<expression tag="String.Text" Value="Math.Number"/>
+									</expression>
+									<expression tag="Visualization.Parentheses">
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.HorizontalArray">
+									<expression tag="Visualization.Code">
+										<expression tag="String.Text" Value="Math.InternalNumber"/>
+									</expression>
+									<expression tag="Visualization.Parentheses">
+										<expression tag="Math.Number" Value="5"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="2.5"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.Code">
+									<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Visualization.HorizontalArray">
+										<expression tag="Visualization.Code">
+											<expression tag="String.Text" Value="Math.Number"/>
+										</expression>
+										<expression tag="Visualization.Parentheses">
+											<expression tag="Math.Number" Value="2.5"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.HorizontalArray">
+									<expression tag="Visualization.Code">
+										<expression tag="String.Text" Value="Math.InternalNumber"/>
+									</expression>
+									<expression tag="Visualization.Parentheses">
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="2.5"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.Code">
+									<expression tag="String.Text" Value="Math.Arithmetic.Division"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Visualization.HorizontalArray">
+										<expression tag="Visualization.Code">
+											<expression tag="String.Text" Value="Math.Number"/>
+										</expression>
+										<expression tag="Visualization.Parentheses">
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Visualization.HorizontalArray">
+										<expression tag="Visualization.Code">
+											<expression tag="String.Text" Value="Math.Number"/>
+										</expression>
+										<expression tag="Visualization.Parentheses">
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.HorizontalArray">
+									<expression tag="Visualization.Code">
+										<expression tag="String.Text" Value="Math.InternalNumber"/>
+									</expression>
+									<expression tag="Visualization.Parentheses">
+										<expression tag="Math.Arithmetic.Division">
+											<expression tag="Math.Number" Value="2"/>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Math.Number" Value="3"/>
+									<expression tag="Math.Complex.ImaginaryUnit"/>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.Code">
+									<expression tag="String.Text" Value="Math.Arithmetic.Addition"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Visualization.HorizontalArray">
+										<expression tag="Visualization.Code">
+											<expression tag="String.Text" Value="Math.Number"/>
+										</expression>
+										<expression tag="Visualization.Parentheses">
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Visualization.Code">
+										<expression tag="String.Text" Value="Math.Arithmetic.Multiplication"/>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Visualization.HorizontalArray">
+											<expression tag="Visualization.Code">
+												<expression tag="String.Text" Value="Math.Number"/>
+											</expression>
+											<expression tag="Visualization.Parentheses">
+												<expression tag="Math.Number" Value="3"/>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Complex.ImaginaryUnit"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.HorizontalArray">
+									<expression tag="Visualization.Code">
+										<expression tag="String.Text" Value="Math.InternalNumber"/>
+									</expression>
+									<expression tag="Visualization.Parentheses">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Math.Number" Value="2"/>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="3"/>
+												<expression tag="Math.Complex.ImaginaryUnit"/>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Symbolic.Symbol" Name="y"/>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.Code">
+									<expression tag="String.Text" Value="Math.Arithmetic.Addition"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Visualization.Code">
+										<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.Code">
+									<expression tag="String.Text" Value="Math.Arithmetic.Addition"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Visualization.Code">
+										<expression tag="String.Text" Value="Math.Arithmetic.Multiplication"/>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Visualization.HorizontalArray">
+											<expression tag="Visualization.Code">
+												<expression tag="String.Text" Value="Math.InternalNumber"/>
+											</expression>
+											<expression tag="Visualization.Parentheses">
+												<expression tag="Math.Arithmetic.Negative">
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Implicaciones para la reducción"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Lo anterior desde luego que tiene implicaciones para el proceso de reducción, de los mas evidentes son:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Durante la reducción, nunca se encontrarán expresiones con tags"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Math.Number"/>
+					</expression>
+					<expression tag="String.Text" Value="ni"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
+					</expression>
+					<expression tag="String.Text" Value=", pero si"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Math.InternalNumber"/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Por lo tanto, tampoco existirán reductores asociados a los tags"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Math.Number"/>
+					</expression>
+					<expression tag="String.Text" Value="ni"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
+					</expression>
+					<expression tag="String.Text" Value=", puesto que de existir nunca serían invocados."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El código de tus reductores, nunca deberá crear expresiones con tags"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Math.Number"/>
+					</expression>
+					<expression tag="String.Text" Value="ni"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
+					</expression>
+					<expression tag="String.Text" Value="pero si del tipo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Math.InternalNumber"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Métodos de apoyo"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Para simplificar al proceso de reducción cuando están involucradas expresiones numéricas, el framewrok ofrece los siguientes métodos: "/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="CanonicalArithmetic.createInternalNumber(n, session)"/>
+					</expression>
+					<expression tag="Null"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ámbito"/>
+				</expression>
+			</expression>
 			<expression tag="Null"/>
 		</expression>
 	</expression>
@@ -88,11 +793,21 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Proceso de reducción"/>
+					<expression tag="String.Text" Value="Reductores especiales"/>
 				</expression>
 			</expression>
+			<expression tag="Null"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="El proceso de reducción es un algoritmo para aplicar reductores a una expresión, por muy compleja que sea. también es comúnmente llamado el &quot;motor de reduccion&quot;."/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Orden de aplicación de reductores"/>
+				</expression>
 			</expression>
 			<expression tag="Null"/>
 		</expression>
