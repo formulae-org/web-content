@@ -1,0 +1,443 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.diagramming,org.formulae.visualization,org.formulae.logic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Fōrmulæ. Guía del desarrollador"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Preparativos"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Antes de empezar a colaborar, deberás tener en tu equipo un copia del proyecto. En este apartado conocerás como está estructurado."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Estructura general"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Es necesario crear un directorio específico para el proyecto. El nombre no importa. Debajo de este directorio debe existir la siguiente estructira:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Visualization.Italic" Value="True" Set="True">
+						<expression tag="String.Text" Value="raíz"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="formulae"/>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="lib"/>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="packages"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="org.formulae.math.arithmetic"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="org.formulae.logic"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="..."/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Visualization.Italic" Value="True" Set="True">
+								<expression tag="String.Text" Value="tu paquete"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="content"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En la directorio raiz se deberán encontrar los siguientes archivos"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El archivo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="index.html"/>
+					</expression>
+					<expression tag="String.Text" Value="que contiene la página principal."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El archivo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="formulae.css"/>
+					</expression>
+					<expression tag="String.Text" Value="que contiene los estilos básicos"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El directorio"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="formulae"/>
+				</expression>
+				<expression tag="String.Text" Value="contiene la programación base. Contiene lo siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Las clases base"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El código del"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="front-end"/>
+					</expression>
+					<expression tag="String.Text" Value="como"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="aplicación web"/>
+					</expression>
+					<expression tag="String.Text" Value="es decir, el programa que permite la visualización y edición de expresiones en un navegador web."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El código del motor de reducción"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="Si tu eres un programador que va a crear paquetes, el código de este directorio no es algo que modificarás, pero si es necesario que exista para que puedas hacer tu trabajo."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El directorio"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="lib"/>
+				</expression>
+				<expression tag="String.Text" Value="contiene librerías que pueden ser utilizadas por el código base o paquetes. Por ahora, sólamente la librería"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://github.com/MikeMcl/decimal.js" Description="decimal.js"/>
+				<expression tag="String.Text" Value="es utilizada."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El directorio"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="packages"/>
+				</expression>
+				<expression tag="String.Text" Value="Recuerda que en Fōrmulæ la funcionalidad es modular, ya que se crea en unidades llamadas"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="paquetes."/>
+				</expression>
+				<expression tag="String.Text" Value="Cada paquete reside en su propio subdirectorio. Es importante hacer una lista de los paquetes que realmente necesitarás, no tiene caso descargar código que no utilizarás nunca o no tengas interés en probar."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El directorio"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="content"/>
+				</expression>
+				<expression tag="String.Text" Value="contiene archivos de tipo"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value=".formulae"/>
+				</expression>
+				<expression tag="String.Text" Value="es decir, creados con Fōrmulæ, y contienen la base documental, conformada principalmente de ejemplos, referencia, tutoriales, artículos y guias de desarrollo. El archivo que estas vieńdo pertenece a esta última categoría. Si eres un programador que va a crear paquetes no es obligatorio que tengas todo el contenido, despúes de todo si quisieras acceder él (por ejemplo ver las referencias o guías de usuario) puedes acceder a el a través del sitio web, tal y como lo haces con esta página."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Repositorios"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El repositorio para el código base"/>
+				<expression tag="String.Text" Value="se encuentra en GitHub como"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://github.com/formulae-org/formulae-js" Description="formulae-js"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La librería"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://github.com/MikeMcl/decimal.js" Description="decimal.js"/>
+				<expression tag="String.Text" Value="puede ser descargada"/>
+				<expression tag="Internet.UniformResourceLocator" Value="lib/decimal.min.js" Description="aquí."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Cada paquete tiene su propio repositorio en"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://github.com/formulae-org#the-packages" Description="GitHub"/>
+				<expression tag="String.Text" Value="No es necesario crear todos los directorios de los paquetes, auqnue algunos son estrictamente indispensables, por ejemplo el de aritmética. La lista definitiva que usarás depende mucho de los paquetes en que desees contribuír."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El repositorio para el contenido se encuentra en"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://github.com/formulae-org/web-content" Description="web-content"/>
+				<expression tag="String.Text" Value="sin embargo, no es estrictamente necesario que lo clones, a menos que vayas a participar también en la edición de contenido."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Estructura de un paquete"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Cada paquete, y por lo tanto el paquete que vas a crear, tiene una estructura como la siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="Visualization.Italic" Value="True" Set="True">
+						<expression tag="String.Text" Value="paquete"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="expression.js"/>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="edition.js"/>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="reduction.js"/>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="i18n"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="messages.json"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="messages_es.json"/>
+							</expression>
+						</expression>
+						<expression tag="String.Text" Value="..."/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="messages_it.json"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Visualization.HorizontalArray">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="img"/>
+							</expression>
+							<expression tag="String.Text" Value="(opcional)"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El archivo"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="expression.js"/>
+				</expression>
+				<expression tag="String.Text" Value="contiene el código referido a la definición y visualización de expresiones, véase los apartados de"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=developers_guide/Expressions" Description="definición"/>
+				<expression tag="String.Text" Value="y"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=developers_guide/Visualization" Description="visualización"/>
+				<expression tag="String.Text" Value="de expresiones."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El archivo"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="edition.js"/>
+				</expression>
+				<expression tag="String.Text" Value="contiene el código referido a la edición de expresiones, véase el apartado"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=developers_guide/Edition" Description="edición de expresiones"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El archivo"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="reduction.js"/>
+				</expression>
+				<expression tag="String.Text" Value="contiene el código referido a la transformación o reducción de expresiones, véase el apartado"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=developers_guide/Reduction" Description="reducción de expresiones"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El directorio"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="i18n"/>
+				</expression>
+				<expression tag="String.Text" Value="es relativo a la internacionalización (acortada comúnmente como"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="i18n),"/>
+				</expression>
+				<expression tag="String.Text" Value="véase el apartado"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=developers_guide/Internationalization" Description="internacionalización"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El directorio"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="img"/>
+				</expression>
+				<expression tag="String.Text" Value="es opcional, es utilizado para contener las imágenes requeridas por el módulo, básicamente como íconos, , véase el apartado"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=developers_guide/Edition" Description="edición de expresiones"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Definición de paquetes a cargar, incluído el tuyo"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En el archivo"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="formulae.js"/>
+				</expression>
+				<expression tag="String.Text" Value="buscar el siguiente código:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="Formulae.packages.set(&quot;org.formulae.math.arithmetic&quot;, new Formulae.PackageInfo(&quot;Arithmetic&quot;,            true,  false));&#10;Formulae.packages.set(&quot;org.formulae.algebra&quot;,         new Formulae.PackageInfo(&quot;Algebra&quot;,               true,  false));&#10;Formulae.packages.set(&quot;org.formulae.math.complex&quot;,    new Formulae.PackageInfo(&quot;Complex&quot;,               true,  false));&#10;Formulae.packages.set(&quot;org.formulae.relation&quot;,        new Formulae.PackageInfo(&quot;Relation&quot;,              true,  false));&#10;Formulae.packages.set(&quot;org.formulae.logic&quot;,           new Formulae.PackageInfo(&quot;Logic&quot;,                 true,  false));&#10;Formulae.packages.set(&quot;org.formulae.expression&quot;,      new Formulae.PackageInfo(&quot;Expression management&quot;, true,  false));&#10;:"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El primer argumento de la llamada"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.packages.set"/>
+				</expression>
+				<expression tag="String.Text" Value="es el nombre del directorio."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Lo argumentos con los que se invoca el constructor de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.PackageInfo"/>
+				</expression>
+				<expression tag="String.Text" Value="son:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Un nombre descriptivo del paquete."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Un valor booleano indicando si el paquete se debe cargar automáticamente. Se recomienda usar el valor"/>
+					<expression tag="Logic.True"/>
+					<expression tag="String.Text" Value="para que no lo tengas que recargar en cada momento que hagas cambios en la programación."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Un valor booleano indicando si las clases que conforman el paquete deberán contar con una clase común. Para tu paquete, es mejor empezar utilizando un valor"/>
+					<expression tag="Logic.False"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="De la lista completa de paquetes, de la lista que no son de tu interés, hay que modificar para que todos esos tengan"/>
+				<expression tag="Logic.False"/>
+				<expression tag="String.Text" Value="en el segundo argumento el constructor de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.PackageInfo"/>
+				</expression>
+				<expression tag="String.Text" Value="para que el framework no intente cargarlos."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Para el paquete que vas a crear, simplemente añade una nueva línea con la información del mismo."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ejecución"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El proyecto no se ejecuta simplemente invocando la página"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="index.html"/>
+				</expression>
+				<expression tag="String.Text" Value="ya que existe funcionalidad que exige que el proyecto se ejecute en un servidor web real, aunque sea localmente."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Por lo anterior, es necesario utilizar alguno. No es requerido alguno en particular, se suguere algunos de los siguientes:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Con"/>
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Node.js"/>
+						</expression>
+						<expression tag="String.Text" Value="usar el paquete"/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="http-server"/>
+						</expression>
+					</expression>
+					<expression tag="String.Text" Value="Instalar el paquete, posteriormente ubicarse en el directorio raíz y ejecutar:"/>
+					<expression tag="Visualization.CodeBlock" Value="http-server"/>
+					<expression tag="String.Text" Value="El puerto por defecto es el 8080"/>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Con"/>
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Python,"/>
+						</expression>
+						<expression tag="String.Text" Value="utilizar el módulo"/>
+						<expression tag="Internet.UniformResourceLocator" Value="https://docs.python.org/es/3.13/library/http.server.html" Description="http.server"/>
+						<expression tag="String.Text" Value="el cual ya viene preinstalado."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Para iniciar el servidor web, ubicarse en el directorio raíz y ejecutar:"/>
+					</expression>
+					<expression tag="Visualization.CodeBlock" Value="python3 -m http.server [puerto]"/>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="El puerto por defecto es el 8000"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Una vez que corre el servidor web, para invocar el sistema Fōrmulæ, en una pestaña de tu navegador, utilizar la URL:"/>
+			</expression>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="localhost:&lt;puerto&gt;"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El servidor web responderá con el contenido del archivo"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="index.html"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Autor: Laurence Ruiz Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Ultima vez modificado:"/>
+				<expression tag="Time.Time" Value="1740794880000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
