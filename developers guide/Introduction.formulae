@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.diagramming,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -14,7 +14,7 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Fōrmulæ es un"/>
 				<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Framework" Description="framework"/>
-				<expression tag="String.Text" Value="de software para a la definición, manipulación, visualización, edición y transformación de expresiones por ejemplo matemáticas o de cualquer tipo."/>
+				<expression tag="String.Text" Value="de software para a la definición, manipulación, visualización, edición y transformación de expresiones de todo tipo, por ejemplo matemáticas."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Como framework, es un conjunto de conceptos, reglas, además de un"/>
@@ -30,7 +30,169 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Tipo de software"/>
+					<expression tag="String.Text" Value="Conceptos"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Expresión"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Una expresión es una representación de una entidad del mundo real. No necesariamente deben ser objetos materiales, pueden ser ideas, abstracciones matemáticas, estructuras de programación, etc."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Existen expresiones que están definidas en términos de otras expresiones (o que contienen otras expresiones)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Esto permite la creación de complejas expresiones matemáticas o de cualquier tipo, por ejemplo la expresión"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+						<expression tag="Math.Arithmetic.SquareRoot">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="4"/>
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Symbolic.Symbol" Name="c"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Symbolic.Symbol" Name="a"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="es representada como:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.Text" Value="División"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.Text" Value="Suma"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.Text" Value="Negativo"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="String.Text" Value="Raíz cuadrada"/>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.Text" Value="Suma"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.Text" Value="Exponenciación"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.Text" Value="Negativo"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="String.Text" Value="Multiplicación"/>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Math.Number" Value="4"/>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Symbolic.Symbol" Name="a"/>
+										</expression>
+										<expression tag="Diagramming.Tree" Expanded="True">
+											<expression tag="Symbolic.Symbol" Name="c"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="String.Text" Value="Multiplicación"/>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Diagramming.Tree" Expanded="True">
+							<expression tag="Symbolic.Symbol" Name="a"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Esta representación es comúnmente conocida como de &quot;arbol invertido&quot; y es muy utilizada por los programadores ya que muestra como se interconectan las expresiones con sus subexpresiones utilizando los mecanismos propios de un lenguaje de programación (apuntadores, referencias, etc.)"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Expresión raíz"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En una expresión, la expresión raíz es aquella que se encuentra en la parte mas alta de la expresión, una vez que se encuentra representada como árbol invertido. De una manera mas formal, es la única expresión que no cuenta con expresión padre."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En la expresión de ejemplo, la expresión de división es la expresión raíz."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Expresión terminal"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Una expresión terminal es aquella que no tiene subexpresiones. En el ejemplo, las expresiones de número son todas ellas expresiones terminales."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Operaciones con expresiones"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Las siguientes son las &quot;operaciones&quot; con expresiones que se pueden hacer con el framework:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Definición de expresiones."/>
+					</expression>
+					<expression tag="String.Text" Value="Es la generación de atributos para las expresiones, como un identificador, cantidad de subexpresiones que puede tener, etc."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Visualización de expresiones."/>
+					</expression>
+					<expression tag="Null"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Edición de expresiones."/>
+					</expression>
+					<expression tag="Null"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Reducción de expresiones."/>
+					</expression>
+					<expression tag="Null"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Modularidad"/>
 				</expression>
 			</expression>
 			<expression tag="Null"/>
