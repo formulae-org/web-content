@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.diagramming,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.diagramming,org.formulae.programming,org.formulae.logic,org.formulae.relation,org.formulae.list,org.formulae.visualization,org.formulae.color,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -151,36 +151,36 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Operaciones con expresiones"/>
+					<expression tag="String.Text" Value="Gestión de expresiones"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Las siguientes son las &quot;operaciones&quot; con expresiones que se pueden hacer con el framework:"/>
+				<expression tag="String.Text" Value="Las siguientes son las &quot;gestiones&quot; que se pueden realizar con las expresiones, con la ayuda del framework:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="Typesetting.BoldChunk">
 						<expression tag="String.Text" Value="Definición de expresiones."/>
 					</expression>
-					<expression tag="String.Text" Value="Es la generación de atributos para las expresiones, como un identificador, cantidad de subexpresiones que puede tener, etc."/>
+					<expression tag="String.Text" Value="Es la generación de atributos comúnes a las expresiones, como un identificador, cantidad de subexpresiones que puede tener, etc."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="Typesetting.BoldChunk">
 						<expression tag="String.Text" Value="Visualización de expresiones."/>
 					</expression>
-					<expression tag="Null"/>
+					<expression tag="String.Text" Value="Si bien la representación de expresiones como árboles invertidos tiene muchas ventajas desde el punto de vista de la programación, para el usuario final es mucho mejor la representación de expresiones en una forma mas natural, en una forma en que los humanos estamos acostumbrados a representarlas, por ejemplo cuando las dibujamos en papel. Esto incluye notación matemática, pero también otras notaciones, por ejemplo representación de programas como diagramas de flujo o como código indentado, etc."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="Typesetting.BoldChunk">
 						<expression tag="String.Text" Value="Edición de expresiones."/>
 					</expression>
-					<expression tag="Null"/>
+					<expression tag="String.Text" Value="De la misma forma que para la visualización, se requiere que la edición de expresiones se realice de una manera natural y cómoda."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="Typesetting.BoldChunk">
 						<expression tag="String.Text" Value="Reducción de expresiones."/>
 					</expression>
-					<expression tag="Null"/>
+					<expression tag="String.Text" Value="La reducción es la transformación de expresiones en otras, no necesariamente mas sencillas o mas pequeñas, sino mas informativas o mas útiles. Cualquier cálculo matemático e inclusive la computación de programas puede realizarse en términos de reducción de expresiones."/>
 				</expression>
 			</expression>
 		</expression>
@@ -195,7 +195,140 @@
 					<expression tag="String.Text" Value="Modularidad"/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La mayoría de los lenguajes de programación o aplicaciones son monolíticos, que significa que todo el programa o aplicación proviene de un conjunto bien definido de programas fuente. Desde luego que dicho código puede desarrollarse por varias personas, sin embargo, el alcance y la funcionalidad están previamente delimitados, el sistema o lenguaje no tendrá capacidades mas allá de las previamente especificadas."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El framework Fōrmulæ permite que la programación de las gestiones de expresiones (definición, visualización, edición y reducción) pueda llevarse a cabo en unidades independientes llamadas"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="paquetes."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Los paquetes se crean típicamente por campo de las ciencias, por ejemplo hay un paquete para aritmética, otro para el manejo de cadenas de caracteres, otro para programación, etc."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Las aplicaciones que hacen uso del framework deben ser capaces de cargar de manera dinámica los paquetes que el usuario requiere, dependiendo de los campos de las ciencias que necesita o en base a sus preferencias personales."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Véase el siguiente ejemplo:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Programming.While">
+					<expression tag="Logic.True"/>
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.If">
+							<expression tag="Relation.Different">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Number" Value="128"/>
+							</expression>
+							<expression tag="Symbolic.Return">
+								<expression tag="Math.Arithmetic.Summation">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Symbolic.Symbol" Name="n"/>
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="No obstante que la expresión contiene visualización de diferentes paquetes (programación, lógica, aritmética, operaciones relacionales), los cuales fueron desarrollados de manera independiente entre si, el programa utilizado para visualizar la expresión completa es capaz de cargar dinámicamente esos paquetes y hacer que las expresiones que contiene interoperen unas con otras de una manera natural y consistente."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Aplicaciones"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="Fōrmulæ no es un producto final, sino un framework con el cual se pueden crear varias aplicaciones, dependiendo de las gestiones que estas utilicen."/>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Definición"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Visualización"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Edición"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Reducción"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Producto obtenido"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+							<expression tag="String.Text" Value="Visor de documentos"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+							<expression tag="String.Text" Value="Editor de documentos"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="String.Text" Value="Entorno de programación"/>
+								<expression tag="String.Text" Value="Las expresiones se puedev visualiar, editar y ejecutar"/>
+								<expression tag="String.Text" Value="Es la aplicación que está usando ahora"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="String.Text" Value="Librería para evaluación de fórmulas matemáticas"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="Color.Color" Red="0" Green="0" Blue="0" Alpha="0"/>
+							<expression tag="String.Text" Value="✓"/>
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="String.Text" Value="Visor de documentos interactivos"/>
+								<expression tag="String.Text" Value="Se pueden ejecutar las expresiones o programas que contiene"/>
+								<expression tag="String.Text" Value="pero no pueden modificarse"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -208,7 +341,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Fecha de última modificación:"/>
-				<expression tag="Time.Time" Value="1740438840000"/>
+				<expression tag="Time.Time" Value="1741232820000"/>
 			</expression>
 		</expression>
 	</expression>

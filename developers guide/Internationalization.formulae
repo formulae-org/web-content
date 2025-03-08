@@ -1,0 +1,385 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Fōrmulæ. Guía del desarrollador"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Internacionalización"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Hasta ahora, en los ejemplos que se han mostrado, cuando se tiene que especificar una cadena de caracteres que representa una decripción, hemos utilizado cadenas literales, es decir, la colocación de la literal directamente en código."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Sin embargo, si quieremos que nuestros programas puedan verse en otras regiones del mundo, va a ser requerida la utilización de cadenas localizadas, es decir, que las cadenas sean obtenidas de acuerdo a le región en donde se está usando el programa."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Códigos de idiomas"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El estándar"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/ISO_639-1" Description="ISO 639-1"/>
+				<expression tag="String.Text" Value="define un conjunto de códigos de dos caracteres (siempre en minúsculas) para asociar idiomas. Algunos ejemplos son:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Idioma"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Código"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Inglés"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="en"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Español"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="es"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Italiano"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="it"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Códigos de paises"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El estándar"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/ISO_3166-1_alfa-2" Description="ISO 3166-1 alfa-2"/>
+				<expression tag="String.Text" Value="define un conjunto de códigos de dos caracteres (siempre en mayúsculas) para asociar paises. Algunos ejemplos son:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="País"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Código"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="México"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="MX"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="España"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="ES"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Suiza"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="CH"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Códigos de locales"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Un local es una región que comparte un mismo conjunto de entidades, como por ejemplo el idioma, la divisa, etc."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Es común que los locales se definan de la forma"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="ii-PP"/>
+				</expression>
+				<expression tag="String.Text" Value="donde"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="ii"/>
+				</expression>
+				<expression tag="String.Text" Value="es el código del idioma y"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="PP"/>
+				</expression>
+				<expression tag="String.Text" Value="es el código del país, por ejemplo"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Locale"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Código"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Español de México"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="es-MX"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Español de España"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="es-ES"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Francés de Francia"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="fr-FR"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Francés de Canadá"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="fr-CA"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Si bien hay locales que pareciera que son equivalentes, siempre existen diferencias regionales, por ejemplo en el locale"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="es-MX"/>
+				</expression>
+				<expression tag="String.Text" Value="el número 1,234.56"/>
+				<expression tag="String.Text" Value="en el locale"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="es-ES"/>
+				</expression>
+				<expression tag="String.Text" Value="debe ser representado como 1.234,56"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Archivos de mensajes"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Cada paquete tiene asociado un directorio llamado"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="i18n"/>
+				</expression>
+				<expression tag="String.Text" Value="que es donde se almacenan los archivos de mensajes."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Se tiene un archivo de mensajes por cada"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="local,"/>
+				</expression>
+				<expression tag="String.Text" Value="es decir por cada región. Estos archivos son del tipo JSON."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Esto archivos pueden tener las siguientes nomenclaturas:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="messages.json"/>
+				</expression>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="messages_&lt;ii&gt;.json"/>
+				</expression>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="messages_&lt;ii&gt;-&lt;PP&gt;.json"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Donde"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="ii"/>
+				</expression>
+				<expression tag="String.Text" Value="es un código del idioma y"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="PP"/>
+				</expression>
+				<expression tag="String.Text" Value="es un código del país."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Siempre debe existir el archivo"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="messages.json"/>
+				</expression>
+				<expression tag="String.Text" Value="que contiene los mensajes por defecto. Este valor por defecto siempre es referido al idioma inglés en Estados Unidos de Norteamérica."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Selección del archivo de mensajes"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Dado un locale"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="ii-PP"/>
+				</expression>
+				<expression tag="String.Text" Value="(el locale del navegador), el framework selecciona el archivo de la siguiente manera:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Si existe el archivo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="messages_&lt;ii&gt;-&lt;PP&gt;.json"/>
+					</expression>
+					<expression tag="String.Text" Value=", entonces es el que selecciona."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="En otro caso, si existe el archivo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="messages_&lt;ii&gt;.json"/>
+					</expression>
+					<expression tag="String.Text" Value=", entonces es el que selecciona."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="En otro caso, selecciona el archivo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="messages.json"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Por ejemplo, si el locale es"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="pt-BR"/>
+				</expression>
+				<expression tag="String.Text" Value="(portugués en Brasil), el framework buscara el archivo de mensajes en el siguiente orden: El archivo"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="messages_pt-BR.json"/>
+				</expression>
+				<expression tag="String.Text" Value=", el archivo"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="messages_pt.json"/>
+				</expression>
+				<expression tag="String.Text" Value="y finalmente el archivo"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="messages.json"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Estructira de los archivos de mensajes"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Por ser un archivo de fomato JSON, este consiste en una serie de pares etiqueta-valor, en donde la etiqueta es una cadena de texto y el valor puede ser de algunos tipos, aunque, para efectos de internacionalización, es tpipcamente una cadena de caracteres."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Todos los archivos de mensajes que residen en el mismo directorio"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="i18n"/>
+				</expression>
+				<expression tag="String.Text" Value=", y por lo tanto que pertenecen a un mismo paquete, debe contener las mismas etiquetas, lo que varía son sus valores, los cuales son los adecuados para el idioma o locale."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Los siguientes son dos archivos hipotéticos para un paquete de aritmética:"/>
+			</expression>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="messages.json"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="{&#10;&#9;&quot;addition&quot;       : &quot;Addition&quot;,&#10;&#9;&quot;multiplication&quot; : &quot;Multiplication&quot;,&#10;&#9;&quot;division&quot;       : &quot;Division&quot;,&#10;&#9;&quot;exponentiation&quot; : &quot;Exponentiation&quot;&#10;}"/>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="messages_es.json"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="{&#10;&#9;&quot;addition&quot;       : &quot;Suma&quot;,&#10;&#9;&quot;multiplication&quot; : &quot;Multiplicación&quot;,&#10;&#9;&quot;division&quot;       : &quot;División&quot;,&#10;&#9;&quot;exponentiation&quot; : &quot;Exponenciación&quot;&#10;}"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Los siguientes son tres archivos hipotéticos para un paquete de manejo de archivos:"/>
+			</expression>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="messages.json"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="{&#10;&#9;:&#10;&#9;&quot;file&quot; : &quot;File&quot;,&#10;&#9;:&#10;}"/>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="messages_es.json"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="{&#10;&#9;:&#10;&#9;&quot;file&quot; : &quot;Archivo&quot;,&#10;&#9;:&#10;}"/>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="messages_es-ES.json"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="{&#10;&#9;:&#10;&#9;&quot;file&quot; : &quot;Fichero&quot;,&#10;&#9;:&#10;}"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Utilización de mensajes en código"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Una vez que el framework determina el archivo de mensajes a ser utilizado, el contenido de este archivo lo asocia como la propiedad"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="messages"/>
+				</expression>
+				<expression tag="String.Text" Value="a cada una de las clases utilizadas para la definición, visualización, edidión y reducción de expresiones, por lo que es directamente e inmediatamente utilizable por esas clases."/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="export class ArithmeticPackage extends Formulae.ExpressionPackage {};&#10;&#10;const Addition = class extends ... {&#10;&#9;:&#10;&#9;getName() { return ArithmeticPackage.messages.addition; }&#10;&#9;:&#10;};"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Autor: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Fecha de última modificación:"/>
+				<expression tag="Time.Time" Value="1741449540000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
