@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.visualization,org.formulae.diagramming,org.formulae.logic,org.formulae.list,org.formulae.math.complex,org.formulae.symbolic">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.visualization,org.formulae.diagramming,org.formulae.logic,org.formulae.list,org.formulae.math.complex,org.formulae.symbolic,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -780,19 +780,6 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Ámbito"/>
-				</expression>
-			</expression>
-			<expression tag="Null"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Rule"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Reductores especiales"/>
 				</expression>
 			</expression>
@@ -816,6 +803,65 @@
 		<expression tag="Typesetting.Rule"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Null"/>
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Registro de las reductores que conforman el paquete"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como ya se vió en el apartado de"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=developers_guide/Introduction" Description="introducción,"/>
+				<expression tag="String.Text" Value="la definición de clases que desciben las expresiones se colocan en un archivo fuente de nombre"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="reduction.js"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La esrtructura general de este archivo es:"/>
+			</expression>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="reduction.js"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="export class ArithmeticPackage extends Formulae.ReductionPackage {};&#10;&#10;const addition = async (addition, session) =&gt; {&#10;&#9;:&#10;};&#10;&#10;const multiplication = async (addition, session) =&gt; {&#10;&#9;:&#10;};&#10;&#10;const division = async (addition, session) =&gt; {&#10;&#9;:&#10;};&#10;&#10;ArithmeticPackage.setReducers = () =&gt; {&#10;&#9;ReductionManager.addReducer(&quot;Math.Arithmetic.Addition&quot;,       addition,        &quot;ArithmeticPackage.addition&quot;);&#10;&#9;ReductionManager.addReducer(&quot;Math.Arithmetic.Multiplication&quot;, multiplication,  &quot;ArithmeticPackage.multiplication&quot;);&#10;&#9;ReductionManager.addReducer(&quot;Math.Arithmetic.Division&quot;,       division,        &quot;ArithmeticPackage.divisionN&quot;);&#10;};"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La primera parte es la definición de la clase que representará a nuestro paquete, en lo que respecta a la definición de expresiones que contiene. La clase deberá extender la clase base"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.ExpressionPackage"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Posteriormente se incluyen las definiciones de las clases que representan las expresiones del paquete."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Finalmente, debe ir la definición (de hecho la reescritura) del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="setExpressions(module)"/>
+				</expression>
+				<expression tag="String.Text" Value="de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.ExpressionPackage"/>
+				</expression>
+				<expression tag="String.Text" Value="(el cual originalmente no hace nada). Este método va a ser invocado por el framework cada vez que el paquete se carga por primera vez. Este método contiene las llamadas al método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.setExpression(module, tag, expressionClass)"/>
+				</expression>
+				<expression tag="String.Text" Value="visto en el apartado anterior."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Autor: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Fecha de última modificación:"/>
+				<expression tag="Time.Time" Value="1741569480000"/>
+			</expression>
+		</expression>
 	</expression>
 </expression>

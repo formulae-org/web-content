@@ -57,10 +57,16 @@
 					<expression tag="List.List">
 						<expression tag="List.List">
 							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="String.Text" Value="Arbol invertido y la expresión seleccionada"/>
+								<expression tag="Visualization.VerticalArray">
+									<expression tag="String.Text" Value="Arbol invertido, mostrando"/>
+									<expression tag="String.Text" Value="la expresión seleccionada"/>
+								</expression>
 							</expression>
 							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="String.Text" Value="Visualización de la expresión seleccionada"/>
+								<expression tag="Visualization.VerticalArray">
+									<expression tag="String.Text" Value="Visualización de"/>
+									<expression tag="String.Text" Value="la expresión seleccionada"/>
+								</expression>
 							</expression>
 						</expression>
 						<expression tag="List.List">
@@ -812,14 +818,14 @@
 				<expression tag="Typesetting.ItalicChunk">
 					<expression tag="String.Text" Value="tag"/>
 				</expression>
-				<expression tag="String.Text" Value="de la expresión seleccionada. El código asociado no necesariamente debe alterar la expresión seleccionada, sino que puede ser una operación asociada con la expresión."/>
+				<expression tag="String.Text" Value="de la expresión seleccionada. El código asociado no necesariamente debe alterar la expresión seleccionada, sino que puede ser una operación cualquiera asociada con la expresión."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Un"/>
 				<expression tag="Typesetting.ItalicChunk">
 					<expression tag="String.Text" Value="tag"/>
 				</expression>
-				<expression tag="String.Text" Value="puede tener asociada cero, una o varias acciones. En caso de varias, una de ellas (la que primero se dá de alta) tiene &quot;precedencia&quot;. La acción con precedencia se ejecuta al presionar la tecla de"/>
+				<expression tag="String.Text" Value="puede tener asociada cero, una o varias acciones. En caso de varias, una de ellas (la que primero se dá de alta) tiene prioridad. La acción con prioridad se ejecuta al presionar la tecla de"/>
 				<expression tag="Visualization.Key">
 					<expression tag="String.Text" Value="ESPACIO"/>
 				</expression>
@@ -869,6 +875,121 @@
 					</expression>
 				</expression>
 			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Añadiendo una acción al entorno."/>
+				</expression>
+				<expression tag="String.Text" Value="Para añdir una acción, hay que realizar una llamada al siguiente método:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.addAction(tag, action)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En donde:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="tag"/>
+					</expression>
+					<expression tag="String.Text" Value="es el tag al cual se le va a asociar la acción."/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="tags,"/>
+					</expression>
+					<expression tag="String.Text" Value="es decir, es de la forma"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="nodo1.nodo2,....,nodN"/>
+					</expression>
+					<expression tag="String.Text" Value="es decir consta de un conunto de cadenas separadas por punto que especifican la ubicación en el árbols de ediciones. Las subacdenas, a diferencia de los"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="tags"/>
+					</expression>
+					<expression tag="String.Text" Value="pueden contener espacios y caracteres especiales. Un ejemplo es"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Matemáticas.Aritmética"/>
+					</expression>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="action"/>
+					</expression>
+					<expression tag="String.Text" Value="es un"/>
+					<expression tag="String.Text" Value="objeto que contiene el código que será llamado cuando el usuario selecciona la acción."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como ejemplo, el siguiente código sirve para dar de alta la acción para modificar el valor de una expresión de número:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="Formulae.addAction(&quot;Math.Number&quot;, actionNumber);"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Registro de las ediciones y acciones que conforman el paquete"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como ya se vió en el apartado de"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=developers_guide/Introduction" Description="introducción,"/>
+				<expression tag="String.Text" Value="la definición de ediciones y acciones se colocan en un archivo fuente de nombre"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="edition.js"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La esrtructura general de este archivo es:"/>
+			</expression>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="edition.js"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="export class ArithmeticPackage extends Formulae.EditionPackage {};&#10;&#10;const editionNumber = function() {&#10;&#9;:&#10;};&#10;&#10;const actionNumber = {&#10;&#9;:&#10;};&#10;&#10;ArithmeticPackage.setEditions = function() {&#10;&#9;Formulae.addEdition(&quot;Matemáticas.Aritmética&quot;, null, &quot;Número&quot;,         editionNumber);&#10;&#9;Formulae.addEdition(&quot;Matemáticas.Aritmética&quot;, null, &quot;Suma&quot;,           () =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Addition&quot;,       false));&#10;&#9;Formulae.addEdition(&quot;Matemáticas.Aritmética&quot;, null, &quot;Multiplicación&quot;, () =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Multiplication&quot;, false));&#10;&#9;Formulae.addEdition(&quot;Matemáticas.Aritmética&quot;, null, &quot;Exponenciación&quot;, () =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Exponentiation&quot;, false));&#10;};&#10;&#10;ArithmeticPackage.setActions = function() {&#10;&#9;Formulae.addAction(&quot;Math.Number&quot;, actionNumber);&#10;};"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La primera parte es la definición de la clase que representará a nuestro paquete, en lo que respecta a la definición de expresiones que contiene. La clase deberá extender la clase base"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.ExpressionPackage"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Posteriormente se incluyen las definiciones de las clases que representan las ediciones y acciones del paquete."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como paso siguiente, debe ir la definición (de hecho la reescritura) del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="setEditions(module)"/>
+				</expression>
+				<expression tag="String.Text" Value="de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.EditionPackage"/>
+				</expression>
+				<expression tag="String.Text" Value="(el cual originalmente no hace nada). Este método va a ser invocado por el framework cada vez que el paquete se carga por primera vez. Este método contiene las llamadas al método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.addEdition(spec, image, name, edition)"/>
+				</expression>
+				<expression tag="String.Text" Value="visto en apartado anterior."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Finalmente, en caso de que hubiera acciones, debe ir la definición (de hecho la reescritura) del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="setActions()"/>
+				</expression>
+				<expression tag="String.Text" Value="de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.EditionPackage"/>
+				</expression>
+				<expression tag="String.Text" Value="(el cual originalmente no hace nada). Este método va a ser invocado por el framework cada vez que el paquete se carga por primera vez. Este método contiene las llamadas al método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.addAction(tag, action)"/>
+				</expression>
+				<expression tag="String.Text" Value="visto en apartado anterior."/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -881,7 +1002,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Fecha de última modificación:"/>
-				<expression tag="Time.Time" Value="1739816280000"/>
+				<expression tag="Time.Time" Value="1741568580000"/>
 			</expression>
 		</expression>
 	</expression>

@@ -598,6 +598,95 @@
 				</expression>
 				<expression tag="String.Text" Value=". Existen clases plantilla que contienen funcionalidad común para nuevas subclases."/>
 			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Dichas plantillas de clases son las siguientes:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="Expression.FixedExpression = class extends Expression {&#10;&#9;canInsertChildAt(index) { return false; }&#10;&#9;canRemoveChildAt(index) { return false; }&#10;}&#10;&#10;Expression.NullaryExpression = class extends Expression.FixedExpression {&#10;&#9;canHaveChildren(count) { return count == 0; }&#10;&#9;isReduced() { return true; }&#10;}&#10;&#10;Expression.UnaryExpression = class extends Expression.FixedExpression {&#10;&#9;canHaveChildren(count) { return count == 1; }&#10;}&#10;&#10;Expression.BinaryExpression = class extends Expression.FixedExpression {&#10;&#9;canHaveChildren(count) { return count == 2; }&#10;}&#10;&#10;Expression.OperatorExpression = class extends Expression {&#10;&#9;canHaveChildren(count)  { return count &gt;= 2; }&#10;}"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Fábrica de clases"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La creación de expresiones se realiza a través de una"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="fábrica de clases."/>
+				</expression>
+				<expression tag="String.Text" Value="La intención de esta fábrica de clases es que se puedan crear expresiones a partir únicamente de su"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="String.Text" Value="sin importar de qué paquete proceden."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.setExpression(module, tag, expressionClass)"/>
+				</expression>
+				<expression tag="String.Text" Value="registra la clase del argumento"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="expressionClass"/>
+				</expression>
+				<expression tag="String.Text" Value="en la fábrica de clases, para que entregue una expresión de dicha clase cuando se invoque con el tag indicado."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Registro de las expresiones que conforman el paquete"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como ya se vió en el apartado de"/>
+				<expression tag="Internet.UniformResourceLocator" Value="/?script=developers_guide/Introduction" Description="introducción,"/>
+				<expression tag="String.Text" Value="la definición de clases que desciben las expresiones se colocan en un archivo fuente de nombre"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="expression.js"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La esrtructura general de este archivo es:"/>
+			</expression>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="expression.js"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="export class ArithmeticPackage extends Formulae.ExpressionPackage {};&#10;&#10;const Number = class ... {&#10;&#9;:&#10;};&#10;&#10;const Addition = class ... {&#10;&#9;:&#10;};&#10;&#10;const Multiplication = class ... {&#10;&#9;:&#10;};&#10;&#10;ArithmeticPackage.setExpressions = function(module) {&#10;&#9;Formulae.setExpression(module, &quot;Math.Number&quot;,                    Number);&#10;&#9;Formulae.setExpression(module, &quot;Math.Arithmetic.Addition&quot;,       Addition);&#10;&#9;Formulae.setExpression(module, &quot;Math.Arithmetic.Multiplication&quot;, Multiplication);&#10;&#9;:&#10;};"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La primera parte es la definición de la clase que representará a nuestro paquete, en lo que respecta a la definición de expresiones que contiene. La clase deberá extender la clase base"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.ExpressionPackage"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Posteriormente se incluyen las definiciones de las clases que representan las expresiones del paquete."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Finalmente, debe ir la definición (de hecho la reescritura) del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="setExpressions(module)"/>
+				</expression>
+				<expression tag="String.Text" Value="de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.ExpressionPackage"/>
+				</expression>
+				<expression tag="String.Text" Value="(el cual originalmente no hace nada). Este método va a ser invocado por el framework cada vez que el paquete se carga por primera vez. Este método contiene las llamadas al método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.setExpression(module, tag, expressionClass)"/>
+				</expression>
+				<expression tag="String.Text" Value="visto en el apartado anterior."/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -615,24 +704,11 @@
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="new"/>
 				</expression>
-				<expression tag="String.Text" Value=", ya que eso obligaría a tener en código duro la clase que representará una expresión dada. Es permitido que existan mas de una clase para un"/>
-				<expression tag="Typesetting.ItalicChunk">
-					<expression tag="String.Text" Value="tag"/>
-				</expression>
-				<expression tag="String.Text" Value="dado."/>
+				<expression tag="String.Text" Value=", ya que eso obligaría a tener en código duro la clase que representará una expresión dada."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Antes de utilizar la fábrica de clases, es necesario registrar las clases que seán utilizadas."/>
-				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Formulae.setExpression(tag, clazz)"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La creación de expresiones se realiza a través de una"/>
-				<expression tag="Typesetting.ItalicChunk">
-					<expression tag="String.Text" Value="fábrica de clases."/>
-				</expression>
-				<expression tag="String.Text" Value="Dicha fábrica de clases se accede por medio del método"/>
+				<expression tag="String.Text" Value="Como ya se ha visto, la creación de expresiones se realiza a través de la fábrica de clases."/>
+				<expression tag="String.Text" Value="Esto se realiza medio del método"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Formulae.createExpression(tag, ...children)"/>
 				</expression>
@@ -649,6 +725,12 @@
 				<expression tag="String.Text" Value="podría ser:"/>
 			</expression>
 			<expression tag="Visualization.CodeBlock" Value="let n3 = Formulae.createExpression(&quot;Math.Number&quot;); n3.set(&quot;Value&quot;, 3);&#10;let n2 = Formulae.createExpression(&quot;Math.Number&quot;); n2.set(&quot;Value&quot;, 2);&#10;let n5 = Formulae.createExpression(&quot;Math.Number&quot;); n5.set(&quot;Value&quot;, 5);&#10;&#10;let expression = Formulae.createExpression(&#10;&#9;&quot;Math.Arithmetic.Addition&quot;,&#10;&#9;n3,&#10;&#9;Formulae.createExpression(&#10;&#9;&#9;&quot;Math.Arithmetic.Division&quot;,&#10;&#9;&#9;n2,&#10;&#9;&#9;n5&#10;&#9;)&#10;);"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Nota."/>
+				</expression>
+				<expression tag="String.Text" Value="Para la definición de expresiones no es necesario crear expresiones, se muestra el código de creación de expresiones ya que si será utilizado en los siguientes capítulos."/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -661,7 +743,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Fecha de última modificación:"/>
-				<expression tag="Time.Time" Value="1738178160000"/>
+				<expression tag="Time.Time" Value="1741541640000"/>
 			</expression>
 		</expression>
 	</expression>
