@@ -760,7 +760,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Para simplificar al proceso de reducción cuando están involucradas expresiones numéricas, el framewrok ofrece los siguientes métodos: "/>
+				<expression tag="String.Text" Value="Para simplificar al proceso de reducción cuando están involucradas expresiones numéricas, el framework ofrece los siguientes métodos: "/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
@@ -783,7 +783,91 @@
 					<expression tag="String.Text" Value="Reductores especiales"/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Hasta ahora, el código de un reductor se ejecuta posteriormente a que se han ejecutado y agotado los reductores de todas y cada una de sus subexpresiones."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Existe una clase de reductores, llamados"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="reductores especiales,"/>
+				</expression>
+				<expression tag="String.Text" Value="los cuales son ejecutados sin que se hayan ejecutado los reductores de sus subexpresiones, de hecho estos nunca se invocan por el motor de reducción, si el reductor desea invocar el proceso de reducción en algunas o todas sus subexpresiones, deberá hacerlo por si mismo. De igual manera puede ser que el reductor decida no llamar la reducción en ninguna de sus subexpresiones."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A continuación se presenta un ejemplo de reductor especial."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Un símbolo puede tener un valor asociado, dígamos que el símbolo"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value="tiene asociado el valor 5, entonces cualquier ocurrencia del símbolo es sustituída por el valor que se asignó:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="8"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="3"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Ahora, si deseamos fijarle un valor diferente, utilizamos una expresión de asignación:"/>
+			</expression>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="12.5"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Si el reductor de la asignación fuera normal (no especial), y por lo tanto se redujeran las subexpresiones primero, el primer paso en la reducción sería:"/>
+			</expression>
+			<expression tag="Symbolic.Assignment">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="12.5"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Lo cual carece de sentido. Por esta razón, el reductor de la asignación debe ser especial. Este reductor también deberá validar que la parte izquerda de la asignación sea valido, por ejemplo que sea un símbolo. Por otro lado, dicho reductor si deberá reducir la parte derecha de la asignación."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Si un reductor (especial) necesita reducir una de sus subexpresiones, puede hacerlo a través de los siguientes métodos:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="async ReductionSession.reduce(expression)"/>
+					</expression>
+					<expression tag="String.Text" Value="reduce la expresión dada. No regresa valores."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="async ReductionSession.reduceAndGet(expression, index)"/>
+					</expression>
+					<expression tag="String.Text" Value="reduce la expresión dada. Es necesario proveer el número de subexpresión. Regresa la expresió ya reducida."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Debido a que estos métodos son asíncronos, lo normal es llamarlos con la palabra clave"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="await"/>
+				</expression>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -793,7 +877,7 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Orden de aplicación de reductores"/>
+					<expression tag="String.Text" Value="Precedencia y orden de aplicación de reductores"/>
 				</expression>
 			</expression>
 			<expression tag="Null"/>
@@ -806,13 +890,97 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Registro de las reductores que conforman el paquete"/>
+					<expression tag="String.Text" Value="Adición de un reductor al motor de reducción."/>
+				</expression>
+				<expression tag="String.Text" Value="Para añadir un reductor, hay que realizar una llamada al siguiente método:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="ReductionManager.addReducer(tag, reductionClass, description, [options])"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En donde:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="tag"/>
+					</expression>
+					<expression tag="String.Text" Value="es el tag al cual se le va a asociar el reductor."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="reductionClass"/>
+					</expression>
+					<expression tag="String.Text" Value="es la clase del reductor."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="description"/>
+					</expression>
+					<expression tag="String.Text" Value="es una cadena de caracteres informativa."/>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="options"/>
+						</expression>
+						<expression tag="String.Text" Value="es un objeto, no obligatorio, utilizado para definir las siguientes opciones:"/>
+					</expression>
+					<expression tag="Typesetting.BulletedList">
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="El atributo"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="special"/>
+							</expression>
+							<expression tag="String.Text" Value="puede adquirir un valor booleano. Un valor"/>
+							<expression tag="Logic.True"/>
+							<expression tag="String.Text" Value="indicará que el reductor es especial. Su valor por defecto es"/>
+							<expression tag="Logic.False"/>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="El atributo"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="precedence"/>
+							</expression>
+							<expression tag="String.Text" Value="puede adquirir los valores"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="ReductionManager.PRECEDENCE_HIGH"/>
+							</expression>
+							<expression tag="String.Text" Value=","/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="ReductionManager.PRECEDENCE_NORMAL"/>
+							</expression>
+							<expression tag="String.Text" Value="o"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="ReductionManager.PRECEDENCE_LOW"/>
+							</expression>
+							<expression tag="String.Text" Value=", para indicar precedecnia alta, normal (el valor por defecto) o baja."/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como ejemplo, el siguiente código sirve para añadir un reductor especial al motor, de precedencia baja:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="ReductionManager.addReducer(&quot;Math.Arithmetic.Addition&quot;, additionClass, &quot;Adición&quot;, { special: true, precedence: ReductionManager.PRECEDENCE_LOW });"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Registro de los reductores que conforman el paquete"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Como ya se vió en el apartado de"/>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=developers_guide/Introduction" Description="introducción,"/>
-				<expression tag="String.Text" Value="la definición de clases que desciben las expresiones se colocan en un archivo fuente de nombre"/>
+				<expression tag="String.Text" Value="la definición de clases los reductores se colocan en un archivo fuente de nombre"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="reduction.js"/>
 				</expression>
@@ -823,28 +991,28 @@
 			<expression tag="Visualization.Code">
 				<expression tag="String.Text" Value="reduction.js"/>
 			</expression>
-			<expression tag="Visualization.CodeBlock" Value="export class ArithmeticPackage extends Formulae.ReductionPackage {};&#10;&#10;const addition = async (addition, session) =&gt; {&#10;&#9;:&#10;};&#10;&#10;const multiplication = async (addition, session) =&gt; {&#10;&#9;:&#10;};&#10;&#10;const division = async (addition, session) =&gt; {&#10;&#9;:&#10;};&#10;&#10;ArithmeticPackage.setReducers = () =&gt; {&#10;&#9;ReductionManager.addReducer(&quot;Math.Arithmetic.Addition&quot;,       addition,        &quot;ArithmeticPackage.addition&quot;);&#10;&#9;ReductionManager.addReducer(&quot;Math.Arithmetic.Multiplication&quot;, multiplication,  &quot;ArithmeticPackage.multiplication&quot;);&#10;&#9;ReductionManager.addReducer(&quot;Math.Arithmetic.Division&quot;,       division,        &quot;ArithmeticPackage.divisionN&quot;);&#10;};"/>
+			<expression tag="Visualization.CodeBlock" Value="export class ArithmeticPackage extends Formulae.ReductionPackage {};&#10;&#10;const addition = async (addition, session) =&gt; {&#10;&#9;:&#10;};&#10;&#10;const multiplication = async (multiplication, session) =&gt; {&#10;&#9;:&#10;};&#10;&#10;const division = async (division, session) =&gt; {&#10;&#9;:&#10;};&#10;&#10;ArithmeticPackage.setReducers = () =&gt; {&#10;&#9;ReductionManager.addReducer(&quot;Math.Arithmetic.Addition&quot;,       addition,       &quot;ArithmeticPackage.addition&quot;);&#10;&#9;ReductionManager.addReducer(&quot;Math.Arithmetic.Multiplication&quot;, multiplication, &quot;ArithmeticPackage.multiplication&quot;);&#10;&#9;ReductionManager.addReducer(&quot;Math.Arithmetic.Division&quot;,       division,       &quot;ArithmeticPackage.division&quot;);&#10;};"/>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La primera parte es la definición de la clase que representará a nuestro paquete, en lo que respecta a la definición de expresiones que contiene. La clase deberá extender la clase base"/>
+				<expression tag="String.Text" Value="La primera parte es la definición de la clase que representará a nuestro paquete, en lo que respecta a los reductores que contiene. La clase deberá extender la clase base"/>
 				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Formulae.ExpressionPackage"/>
+					<expression tag="String.Text" Value="Formulae.ReductionPackage"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Posteriormente se incluyen las definiciones de las clases que representan las expresiones del paquete."/>
+				<expression tag="String.Text" Value="Posteriormente se incluyen las definiciones de las clases de los reductores del paquete."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Finalmente, debe ir la definición (de hecho la reescritura) del método"/>
 				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="setExpressions(module)"/>
+					<expression tag="String.Text" Value="setReducers(module)"/>
 				</expression>
 				<expression tag="String.Text" Value="de la clase"/>
 				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Formulae.ExpressionPackage"/>
+					<expression tag="String.Text" Value="Formulae.ReductionPackage"/>
 				</expression>
 				<expression tag="String.Text" Value="(el cual originalmente no hace nada). Este método va a ser invocado por el framework cada vez que el paquete se carga por primera vez. Este método contiene las llamadas al método"/>
 				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Formulae.setExpression(module, tag, expressionClass)"/>
+					<expression tag="String.Text" Value="Formulae.addReducer(tag, reductionClass, description)"/>
 				</expression>
 				<expression tag="String.Text" Value="visto en el apartado anterior."/>
 			</expression>
@@ -860,7 +1028,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Fecha de última modificación:"/>
-				<expression tag="Time.Time" Value="1741569480000"/>
+				<expression tag="Time.Time" Value="1741666320000"/>
 			</expression>
 		</expression>
 	</expression>
