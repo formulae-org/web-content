@@ -264,14 +264,25 @@
 				<expression tag="String.Text" Value="es decir, los números complejos son el conjunto de pares (r, i), de real e imaginario, en donde ámbos son números enteros, decimales o racionales, y el valor imaginario no puede ser cero."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Como seguramente te habrás dado cuenta, los números son expresiones con"/>
+				<expression tag="String.Text" Value="Como seguramente te habrás dado cuenta, un número es una expresión con"/>
 				<expression tag="Typesetting.ItalicChunk">
 					<expression tag="String.Text" Value="tag"/>
 				</expression>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Math.Number"/>
 				</expression>
-				<expression tag="String.Text" Value=". Las reglas que rigen la semántica de los números están definidas en el"/>
+				<expression tag="String.Text" Value="y que tiene estado interno, el cual es o bien un objeto del tipo"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="BigInteger"/>
+				</expression>
+				<expression tag="String.Text" Value="(para almacenar números enteros) o del tipo"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Decimal"/>
+				</expression>
+				<expression tag="String.Text" Value="(para almacenar números decimales)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Las reglas que rigen la semántica de los números están definidas en el"/>
 				<expression tag="Internet.UniformResourceLocator" Value="?script=reference/Arithmetic_canon" Description="canon de aritmética"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
@@ -768,6 +779,12 @@
 					<expression tag="Visualization.Code">
 						<expression tag="String.Text" Value="CanonicalArithmetic.createInternalNumber(n, session)"/>
 					</expression>
+					<expression tag="String.Text" Value="crea una expresión del tipo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="InternalNumber"/>
+					</expression>
+					<expression tag="String.Text" Value="a partir del número"/>
+					<expression tag="Null"/>
 					<expression tag="Null"/>
 				</expression>
 			</expression>
@@ -863,7 +880,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Debido a que estos métodos son asíncronos, lo normal es llamarlos con la palabra clave"/>
+				<expression tag="String.Text" Value="Debido a que estos métodos son asíncronos, normalmente son llamarlos con la palabra clave"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="await"/>
 				</expression>
@@ -877,10 +894,35 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Precedencia y orden de aplicación de reductores"/>
+					<expression tag="String.Text" Value="Prioridad y orden de aplicación de reductores"/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Existen tres  grupos de prioridad de los reductores: alta, normal y baja, que definen el orden en que se invocarán (para un mismo tag). Por cada grupo el orden en que se invocan es el orden en que fueron registrados en el motor de reducción."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Los reductores pueden provenir de diversos paquetes. El poder fijar la prioridad alta (o baja) para un reductor ayuda a asegurar que dicho reductor se ejecutará primero (o depués) de los de prioridad normal, sin importar los paquetes (o mejor dicho) del orden en que fueron cargados los paquetes."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Por ejemplo, si se registran los siguientes reductores (para un mismo tag) en el orden siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="R1, prioridad baja"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="R2, prioridad alta"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="R3, prioridad normal"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="R4, prioridad alta"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El orden en que serán invocados será R2, R4, R3, R1"/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -890,7 +932,7 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Adición de un reductor al motor de reducción."/>
+					<expression tag="String.Text" Value="Registrar un reductor en el motor de reducción."/>
 				</expression>
 				<expression tag="String.Text" Value="Para añadir un reductor, hay que realizar una llamada al siguiente método:"/>
 			</expression>
@@ -934,9 +976,8 @@
 							<expression tag="Visualization.Code">
 								<expression tag="String.Text" Value="special"/>
 							</expression>
-							<expression tag="String.Text" Value="puede adquirir un valor booleano. Un valor"/>
-							<expression tag="Logic.True"/>
-							<expression tag="String.Text" Value="indicará que el reductor es especial. Su valor por defecto es"/>
+							<expression tag="String.Text" Value="puede adquirir un valor booleano"/>
+							<expression tag="String.Text" Value="que indicará si el reductor es especial. Su valor por defecto es"/>
 							<expression tag="Logic.False"/>
 						</expression>
 						<expression tag="Typesetting.Paragraph">
@@ -1028,7 +1069,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Fecha de última modificación:"/>
-				<expression tag="Time.Time" Value="1741666320000"/>
+				<expression tag="Time.Time" Value="1741728120000"/>
 			</expression>
 		</expression>
 	</expression>
