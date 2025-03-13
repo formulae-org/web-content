@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.visualization,org.formulae.diagramming,org.formulae.logic,org.formulae.list,org.formulae.math.complex,org.formulae.symbolic,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.visualization,org.formulae.diagramming,org.formulae.logic,org.formulae.math.complex,org.formulae.symbolic,org.formulae.list,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -230,39 +230,6 @@
 					<expression tag="String.Text" Value="Tipos de datos para almacenar números"/>
 				</expression>
 			</expression>
-			<expression tag="Typesetting.Centering">
-				<expression tag="List.Table">
-					<expression tag="List.List">
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Precisión \ Tipo de número"/>
-							<expression tag="String.Text" Value="ℤ"/>
-							<expression tag="String.Text" Value="ℝ"/>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Precisión simple"/>
-							<expression tag="String.Text" Value="NumberI"/>
-							<expression tag="String.Text" Value="NumberD"/>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Precisión arbitraria"/>
-							<expression tag="String.Text" Value="BigInt"/>
-							<expression tag="String.Text" Value="Decimal"/>
-						</expression>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.ItalicChunk">
-					<expression tag="String.Text" Value="ℚ = { (n, d) | n ∈ ℤ, d ∈ ℤ, d ≠ 0 }"/>
-				</expression>
-				<expression tag="String.Text" Value="es decir, los números racionales son el conjunto de pares (n, d), de numerador y denominador, en donde ámbos son números enteros, y el denominador no puede ser cero."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.ItalicChunk">
-					<expression tag="String.Text" Value="ℂ = { (r, i) | r ∈ {ℤ, ℝ, ℚ}, i ∈ {ℤ, ℝ, ℚ}, i ≠ 0 }"/>
-				</expression>
-				<expression tag="String.Text" Value="es decir, los números complejos son el conjunto de pares (r, i), de real e imaginario, en donde ámbos son números enteros, decimales o racionales, y el valor imaginario no puede ser cero."/>
-			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Como seguramente te habrás dado cuenta, un número es una expresión con"/>
 				<expression tag="Typesetting.ItalicChunk">
@@ -404,14 +371,22 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Sin embargo, el"/>
 				<expression tag="Internet.UniformResourceLocator" Value="?script=reference/Arithmetic_canon" Description="canon de aritmética"/>
-				<expression tag="String.Text" Value="es un conjunto de reglas para formar expresiones desde el punto de vista del usuario, no de la reducción."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Para la reducción, las expresiones varían en lo siguiente:"/>
+				<expression tag="String.Text" Value="es un conjunto de reglas para formar expresiones desde el punto de vista del usuario final,  no de la reducción."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="1. La reducción usa la expresión"/>
+					<expression tag="String.Text" Value="Expresiones numéricas durante la reducción"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Durante la reducción, las expresiones numéricas y la forma de organizarlas varía ligeramente, a fin de facilitar la representación y la forma misma de cálculo de expresiones numéricas."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Cuando se invoca la ejecución de una expresión, iniciando la reducción. el framewrok se encarga de transformar las expresiones numéricas (y otras) a formato requerido para la reducción. Una vez que la reducción termina, también el framework se encarga de transformar la expresión resultante al formato original."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="1. En la reducción se usa la expresión"/>
 				</expression>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Math.InternalNumber"/>
@@ -424,26 +399,41 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Esta expresión difiere de la expresión"/>
+				<expression tag="String.Text" Value="El valor interno de una expresión"/>
 				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Math.Number"/>
+					<expression tag="String.Text" Value="Math.InternalNumber"/>
 				</expression>
-				<expression tag="String.Text" Value="en lo siguiente:"/>
+				<expression tag="String.Text" Value="puede ser uno de los siguientes objetos:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="Los números representados por la expresión"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="Math.InternalNumber"/>
+					<expression tag="String.Text" Value="Un número entero, representado por un objeto de las clase"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="NumberI"/>
 					</expression>
-					<expression tag="String.Text" Value="pueden ser negativos."/>
+					<expression tag="String.Text" Value="o"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="BigInt,"/>
+					</expression>
+					<expression tag="String.Text" Value="dependiendo si se utiliza precisión simple o arbitraria, y pueden ser positivos, negativos o cero."/>
 				</expression>
-				<expression tag="String.Text" Value="Puede representar números racionales, ya que es capaz de almacenar dos números (exclusivamente enteros), un o para el numerador y otro para el denominador."/>
-				<expression tag="String.Text" Value="Puede representar números complejos, ya que es capaz de almacenar dos números (que pueden ser enteros, decimales o racionales), uno para la parte real y otro para la parte imaginaria."/>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Un número decimal, representado por un objeto de las clase"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="NumberD"/>
+					</expression>
+					<expression tag="String.Text" Value="o"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="Decimal"/>
+					</expression>
+					<expression tag="String.Text" Value="dependiendo si se utiliza precisión simple o arbitraria, y pueden ser positivos, negativos o cero."/>
+				</expression>
+				<expression tag="String.Text" Value="Un número racional, que se almacena internamente como dos objetos de tipo entero, uno para el numerador y otro para el denominador. Pueden ser negativos o positivos. El dnominador no puede ser cero."/>
+				<expression tag="String.Text" Value="Un número complejo, se almacena internamente como dos como dos objetos de tipo entero, decimal o racional, uno para la parte real y otro para la parte imaginaria (la cual no puede ser cero)."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="2. En la reducción, no existe la expresión"/>
+					<expression tag="String.Text" Value="2. En la reducción no existe la expresión"/>
 				</expression>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Math.Arithmetic.Negative"/>
@@ -722,7 +712,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Lo anterior desde luego que tiene implicaciones para el proceso de reducción, de los mas evidentes son:"/>
+				<expression tag="String.Text" Value="Lo anterior presenta las siguientes implicaciones para el proceso de reducción, de los mas evidentes son:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
@@ -775,18 +765,42 @@
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="El método"/>
 					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="CanonicalArithmetic.createInternalNumber(n, session)"/>
+						<expression tag="String.Text" Value="CanonicalArithmetic.createInternalNumber(n, session)."/>
 					</expression>
-					<expression tag="String.Text" Value="crea una expresión del tipo"/>
+					<expression tag="String.Text" Value="Crea una expresión del tipo"/>
 					<expression tag="Visualization.Code">
 						<expression tag="String.Text" Value="InternalNumber"/>
 					</expression>
-					<expression tag="String.Text" Value="a partir del número"/>
-					<expression tag="Null"/>
-					<expression tag="Null"/>
+					<expression tag="String.Text" Value="a partir del número referido."/>
 				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.getNativeInteger(expr)."/>
+					</expression>
+					<expression tag="String.Text" Value="Si la expresión indicada es de tipo número interno, y el valor de su estado interno es un número entero, o decimal con valor entero, y que puede almacenarse en valor del obeto"/>
+					<expression tag="Visualization.Italic" Value="True" Set="True">
+						<expression tag="String.Text" Value="Number"/>
+					</expression>
+					<expression tag="String.Text" Value="nativo de Javascript lo regresa, en caso contrario regresa"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="undefined"/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.getNativeBigInteger(expr)."/>
+					</expression>
+					<expression tag="String.Text" Value="Si la expresión indicada es de tipo número interno, y el valor de su estado interno es un número entero, o decimal con valor entero, y que puede almacenarse en valor del obeto"/>
+					<expression tag="Visualization.Italic" Value="True" Set="True">
+						<expression tag="String.Text" Value="BigInteger"/>
+					</expression>
+					<expression tag="String.Text" Value="nativo de Javascript lo regresa, en caso contrario regresa"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="undefined"/>
+					</expression>
+				</expression>
+				<expression tag="Null"/>
 			</expression>
 		</expression>
 	</expression>
@@ -816,7 +830,7 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Un símbolo puede tener un valor asociado, dígamos que el símbolo"/>
 				<expression tag="Symbolic.Symbol" Name="x"/>
-				<expression tag="String.Text" Value="tiene asociado el valor 5, entonces cualquier ocurrencia del símbolo es sustituída por el valor que se asignó:"/>
+				<expression tag="String.Text" Value="tiene asociado el valor 5, entonces cualquier ocurrencia del símbolo es sustituída por el valor que tiene asociado."/>
 			</expression>
 		</expression>
 	</expression>
@@ -1069,7 +1083,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Fecha de última modificación:"/>
-				<expression tag="Time.Time" Value="1741728120000"/>
+				<expression tag="Time.Time" Value="1741822560000"/>
 			</expression>
 		</expression>
 	</expression>
