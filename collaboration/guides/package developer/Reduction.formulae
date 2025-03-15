@@ -40,7 +40,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Una vez que se crea una expresión y desea &quot;ejecutarse&quot;, el usuario presiona la tecla"/>
+				<expression tag="String.Text" Value="Una vez que se crea una expresión y desea que se &quot;ejecute&quot;, presiona la tecla"/>
 				<expression tag="Visualization.Key">
 					<expression tag="String.Text" Value="ENTER"/>
 				</expression>
@@ -415,7 +415,7 @@
 					<expression tag="Typesetting.ItalicChunk">
 						<expression tag="String.Text" Value="BigInt,"/>
 					</expression>
-					<expression tag="String.Text" Value="dependiendo si se utiliza precisión simple o arbitraria, y pueden ser positivos, negativos o cero."/>
+					<expression tag="String.Text" Value="dependiendo si se utiliza precisión simple o arbitraria respectivamente, y pueden ser positivos, negativos o cero."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="Un número decimal, representado por un objeto de las clase"/>
@@ -424,12 +424,12 @@
 					</expression>
 					<expression tag="String.Text" Value="o"/>
 					<expression tag="Typesetting.ItalicChunk">
-						<expression tag="String.Text" Value="Decimal"/>
+						<expression tag="String.Text" Value="Decimal,"/>
 					</expression>
-					<expression tag="String.Text" Value="dependiendo si se utiliza precisión simple o arbitraria, y pueden ser positivos, negativos o cero."/>
+					<expression tag="String.Text" Value="dependiendo si se utiliza precisión simple o arbitraria respectivamente, y pueden ser positivos, negativos o cero."/>
 				</expression>
-				<expression tag="String.Text" Value="Un número racional, que se almacena internamente como dos objetos de tipo entero, uno para el numerador y otro para el denominador. Pueden ser negativos o positivos. El dnominador no puede ser cero."/>
-				<expression tag="String.Text" Value="Un número complejo, se almacena internamente como dos como dos objetos de tipo entero, decimal o racional, uno para la parte real y otro para la parte imaginaria (la cual no puede ser cero)."/>
+				<expression tag="String.Text" Value="Un número racional, que se almacena internamente como dos objetos de tipo entero, uno para el numerador y otro para el denominador. Pueden ser negativos o positivos. El denominador no puede ser cero."/>
+				<expression tag="String.Text" Value="Un número complejo, que se almacena internamente como dos objetos de tipo entero, decimal o racional, uno para la parte real y otro para la parte imaginaria. La parte imaginaria no puede ser cero."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
@@ -766,7 +766,7 @@
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="CanonicalArithmetic.createInternalNumber(n, session)."/>
+						<expression tag="String.Text" Value="Arithmetic.createInternalNumber(n, session)."/>
 					</expression>
 					<expression tag="String.Text" Value="Crea una expresión del tipo"/>
 					<expression tag="Visualization.Code">
@@ -800,7 +800,91 @@
 						<expression tag="String.Text" Value="undefined"/>
 					</expression>
 				</expression>
-				<expression tag="Null"/>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.getInteger(expr)."/>
+					</expression>
+					<expression tag="String.Text" Value="Regresa el número que tiene como valor interno la expresión dada, o"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="undefined"/>
+					</expression>
+					<expression tag="String.Text" Value="si la expresión no es un número interno, o su valor asociado no en un número entero."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.getDecimal(expr)."/>
+					</expression>
+					<expression tag="String.Text" Value="Regresa el número que tiene como valor interno la expresión dada, o"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="undefined"/>
+					</expression>
+					<expression tag="String.Text" Value="si la expresión no es un número interno."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.createInteger(n, session)."/>
+					</expression>
+					<expression tag="String.Text" Value="Crea un número entero a partir del número dado como objeto de la clase nativa"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="Number."/>
+					</expression>
+					<expression tag="String.Text" Value="regresando un objeto del tipo"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="NumberI"/>
+					</expression>
+					<expression tag="String.Text" Value="si la sesión indica que se está utilizando precisión simple, o un objeto del tipo"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="BigInteger"/>
+					</expression>
+					<expression tag="String.Text" Value="si la sesión indica que se está utilizando precisión arbitraria. Si el número nativo no es un entero genera una excepción."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.createDecimal(n, session)."/>
+					</expression>
+					<expression tag="String.Text" Value="Crea un número decimal a partir del número dado como objeto de la clase nativa"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="Number."/>
+					</expression>
+					<expression tag="String.Text" Value="regresando un objeto del tipo"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="NumberD"/>
+					</expression>
+					<expression tag="String.Text" Value="si la sesión indica que se está utilizando precisión simple, o un objeto del tipo"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="Decimal"/>
+					</expression>
+					<expression tag="String.Text" Value="si la sesión indica que se está utilizando precisión arbitraria."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.createRational(n, d)."/>
+					</expression>
+					<expression tag="String.Text" Value="Regresa un número racional a partir de dos números enteros que representan el numerador y denominador. Lanza una excepción del tipo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.ConversionError"/>
+					</expression>
+					<expression tag="String.Text" Value="si alguno de los valores no es un número entero. Lanza una excepción del tipo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.DivisionByZeroError"/>
+					</expression>
+					<expression tag="String.Text" Value="si el valor del denominador es cero. El resutado puede ser distinto al introducido, por ejemplo si se invoca con valores 3 y 6 regresa el racional"/>
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="String.Text" Value="también puede regresar un número entero si el numerador es múltiplo del denominador, por ejemplo, si se invoca con valores 12 y 3, regresa el número entero 4."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.createComplex(r, i)."/>
+					</expression>
+					<expression tag="String.Text" Value="Regresa un número complejo a partir de dos números que representan la parte real y la parte imaginaria. Los números pueden ser enteros, decimales o racionales, y no es necesario que sean del mismo tipo ámbos. Lanza una excepción del tipo"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Arithmetic.ConversionError"/>
+					</expression>
+					<expression tag="String.Text" Value="si alguno o ámbos los valores no son números enteros, decimales o racionales."/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -1059,7 +1143,7 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Finalmente, debe ir la definición (de hecho la reescritura) del método"/>
 				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="setReducers(module)"/>
+					<expression tag="String.Text" Value="setReducers()"/>
 				</expression>
 				<expression tag="String.Text" Value="de la clase"/>
 				<expression tag="Visualization.Code">
@@ -1083,7 +1167,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Fecha de última modificación:"/>
-				<expression tag="Time.Time" Value="1741822560000"/>
+				<expression tag="Time.Time" Value="1741903920000"/>
 			</expression>
 		</expression>
 	</expression>

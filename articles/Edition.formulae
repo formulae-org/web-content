@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.visualization,org.formulae.graphics.raster,org.formulae.time,org.formulae.color">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.visualization,org.formulae.list,org.formulae.graphics.raster,org.formulae.time,org.formulae.color">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -81,7 +81,11 @@
 					<expression tag="Typesetting.ItalicChunk">
 						<expression tag="String.Text" Value="escaping."/>
 					</expression>
-					<expression tag="String.Text" Value="When you press the &lt;ESC&gt; key of your keyboard, the expression that encloses the selected expression (or its parent expression) becomes the selected expression. Usually using the arrows and escaping work together when editing expressions."/>
+					<expression tag="String.Text" Value="When you press the"/>
+					<expression tag="Visualization.Key">
+						<expression tag="String.Text" Value="ESC"/>
+					</expression>
+					<expression tag="String.Text" Value="key of your keyboard, the expression that encloses the selected expression (or its parent expression) becomes the selected expression. Usually using the arrows and escaping work together when editing expressions."/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
@@ -124,21 +128,22 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The follwing are examples of some shortcuts. For a complete list, go to the page"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="page"/>
-				</expression>
+				<expression tag="String.Text" Value="The follwing are examples of some shortcuts."/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="Typesetting.BoldChunk">
-							<expression tag="String.Text" Value="&lt;N&gt;"/>
+						<expression tag="Visualization.Key">
+							<expression tag="String.Text" Value="N"/>
 						</expression>
 						<expression tag="String.Text" Value="key: Creates a number. It substitutes the selected expression for a number expression, typed by the user."/>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="As an exercise, change the next null expression and change it by a number (select it and press &lt;N&gt;)"/>
+						<expression tag="String.Text" Value="As an exercise, change the next null expression and change it by a number (select it and press"/>
+						<expression tag="Visualization.Key">
+							<expression tag="String.Text" Value="N"/>
+						</expression>
+						<expression tag="String.Text" Value=")"/>
 					</expression>
 					<expression tag="Typesetting.Centering">
 						<expression tag="Null"/>
@@ -146,10 +151,35 @@
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="&lt;&quot;&gt;: Creates a string. It substitutes the selected expression by a string expression, typed by the user."/>
+						<expression tag="Visualization.Key">
+							<expression tag="String.Text" Value="&quot;"/>
+						</expression>
+						<expression tag="String.Text" Value="key: Creates a string. It substitutes the selected expression by a string expression, typed by the user."/>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="As an exercise, change the following null expression for a string expression (select it and press &lt;&quot;&gt;)."/>
+						<expression tag="String.Text" Value="As an exercise, change the following null expression for a string expression (select it and press"/>
+						<expression tag="Visualization.Key">
+							<expression tag="String.Text" Value="&quot;"/>
+						</expression>
+						<expression tag="String.Text" Value=")"/>
+					</expression>
+					<expression tag="Typesetting.Centering">
+						<expression tag="Null"/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Visualization.Key">
+							<expression tag="String.Text" Value="T"/>
+						</expression>
+						<expression tag="String.Text" Value="key: Creates a text. It substitutes the selected expression by a text expression, typed by the user."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="As an exercise, change the following null expression for a text expression (select it and press"/>
+						<expression tag="Visualization.Key">
+							<expression tag="String.Text" Value="T"/>
+						</expression>
+						<expression tag="String.Text" Value=")"/>
 					</expression>
 					<expression tag="Typesetting.Centering">
 						<expression tag="Null"/>
@@ -204,7 +234,11 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Expression can be deleted by the using of the &lt;DEL&gt; key."/>
+				<expression tag="String.Text" Value="Expression can be deleted by the using of the"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="DEL"/>
+				</expression>
+				<expression tag="String.Text" Value="key."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The deletion operation tries to be as less destructive as possible, according to the following rules:"/>
@@ -219,7 +253,7 @@
 							<expression tag="String.Text" Value="If the selected expression has no subexpressions, it is replaced by the null expression. For example, the expression"/>
 							<expression tag="Math.Arithmetic.Addition">
 								<expression tag="Math.Number" Value="2"/>
-								<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Selected">
 									<expression tag="Math.Number" Value="3"/>
 								</expression>
 								<expression tag="Math.Number" Value="4"/>
@@ -227,11 +261,13 @@
 							<expression tag="String.Text" Value="becomes"/>
 							<expression tag="Math.Arithmetic.Addition">
 								<expression tag="Math.Number" Value="2"/>
-								<expression tag="Null"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
 								<expression tag="Math.Number" Value="4"/>
 							</expression>
 							<expression tag="String.Text" Value="after the deletion. ("/>
-							<expression tag="Visualization.Metrics">
+							<expression tag="Visualization.Selected">
 								<expression tag="Symbolic.Symbol" Name="x"/>
 							</expression>
 							<expression tag="String.Text" Value="is used to define the selected expression)"/>
@@ -240,7 +276,7 @@
 							<expression tag="String.Text" Value="If the selected expression contains only one subexpression, the latter takes the place of the selected expression. For example, the expression"/>
 							<expression tag="Math.Arithmetic.Addition">
 								<expression tag="Math.Number" Value="2"/>
-								<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Selected">
 									<expression tag="Math.Arithmetic.SquareRoot">
 										<expression tag="Math.Number" Value="3"/>
 									</expression>
@@ -258,7 +294,7 @@
 						<expression tag="Typesetting.Paragraph">
 							<expression tag="String.Text" Value="If the selected expression contains more than one subexpression, it is replaced by the null expression. This is the most &quot;destructive&quot; deletion. For example, the expression"/>
 							<expression tag="Math.Arithmetic.SquareRoot">
-								<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Selected">
 									<expression tag="Math.Arithmetic.Addition">
 										<expression tag="Math.Number" Value="2"/>
 										<expression tag="Math.Number" Value="3"/>
@@ -267,7 +303,9 @@
 							</expression>
 							<expression tag="String.Text" Value="becomes"/>
 							<expression tag="Math.Arithmetic.SquareRoot">
-								<expression tag="Null"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
 							</expression>
 							<expression tag="String.Text" Value="after the deletion."/>
 						</expression>
@@ -282,7 +320,7 @@
 							<expression tag="String.Text" Value="If the nature of its parent expression &quot;accepts&quot; having one less subexpression, the selected (null) expression is just deleted. For example the expression"/>
 							<expression tag="Math.Arithmetic.Addition">
 								<expression tag="Math.Number" Value="2"/>
-								<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Selected">
 									<expression tag="Null"/>
 								</expression>
 								<expression tag="Math.Number" Value="4"/>
@@ -295,7 +333,7 @@
 							<expression tag="String.Text" Value="after the deletion. However, in the following example:"/>
 							<expression tag="Math.Arithmetic.Addition">
 								<expression tag="Math.Number" Value="2"/>
-								<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Selected">
 									<expression tag="Null"/>
 								</expression>
 							</expression>
@@ -305,12 +343,14 @@
 							<expression tag="String.Text" Value="If the nature of the parent expression does not accept having one less subexpression, but the parent expression has exactly two subexpressions (this is, the selected expression has exactly one &quot;sibling&quot;), the parent expression is replaced by the &quot;sibling&quot;. For example, the expression"/>
 							<expression tag="Math.Arithmetic.Addition">
 								<expression tag="Math.Number" Value="2"/>
-								<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Selected">
 									<expression tag="Null"/>
 								</expression>
 							</expression>
 							<expression tag="String.Text" Value="becomes"/>
-							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Visualization.Selected">
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
 							<expression tag="String.Text" Value="after the deletion."/>
 						</expression>
 						<expression tag="Typesetting.Paragraph">
@@ -318,7 +358,7 @@
 							<expression tag="String.SubstringToPos">
 								<expression tag="String.String" Value="Hello"/>
 								<expression tag="Math.Number" Value="2"/>
-								<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Selected">
 									<expression tag="Null"/>
 								</expression>
 							</expression>
@@ -371,17 +411,38 @@
 						</expression>
 						<expression tag="List.List">
 							<expression tag="String.Text" Value="Cut"/>
-							<expression tag="String.Text" Value="&lt;CTRL&gt;&lt;X&gt;"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="CTRL"/>
+								</expression>
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="X"/>
+								</expression>
+							</expression>
 							<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAIBJREFUOE+lk1EOgDAIQ9kBuP9BOQBmRibBYqrbH2R0ryUbsnkGMe8i0t5jBNAbS5QRqASznuecZQQyQYj9IsgknwQmAbJBW2iH2QwgegTDhPgILqeKBFxVxcyCMNYmpX/vMil2frkQVdXNbFFF3fVRiHsEl5WaQTiEfWYLrx/2AMtLORHpVB5bAAAAAElFTkSuQmCC"/>
 						</expression>
 						<expression tag="List.List">
 							<expression tag="String.Text" Value="Copy"/>
-							<expression tag="String.Text" Value="&lt;CTRL&gt;&lt;C&gt;"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="CTRL"/>
+								</expression>
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="C"/>
+								</expression>
+							</expression>
 							<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAF9JREFUOE/Nk8ESABAIRPX/H81kRhNt0XThSPvaRdSKi4r6dgK6A3QbIcDLnvSJipEb4+QG0OcLuGmyAK5nkOiyAH3HU5sBaLG4+BNgcoLP5UaAOSuAaFTgK6RnqzyNA5E9HRHvT/ztAAAAAElFTkSuQmCC"/>
 						</expression>
 						<expression tag="List.List">
 							<expression tag="String.Text" Value="Paste"/>
-							<expression tag="String.Text" Value="&lt;CTRL&gt;&lt;V&gt;"/>
+							<expression tag="Visualization.HorizontalArray">
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="CTRL"/>
+								</expression>
+								<expression tag="Visualization.Key">
+									<expression tag="String.Text" Value="V"/>
+								</expression>
+							</expression>
 							<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAF1JREFUOE9jZKAQMBLQ/x9JHqtafAaANCPLo/PBZuMyAGYzSB6mEVkM7jBsBiBrwOYCFJcQMgA9iJBdhNMLWP2KZBLRLsAVQaMGINLFII4FkNOQMxG2xIQ3KZOUwQFaqB4RsxHwIAAAAABJRU5ErkJggg=="/>
 						</expression>
 					</expression>
@@ -393,11 +454,15 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Examples: For each of the following expressions, select it and press &lt;SPACE&gt;"/>
+				<expression tag="String.Text" Value="Examples: For each of the following expressions, select it and press"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="SPACE"/>
+				</expression>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Math.Number" Value="123456.78"/>
 				<expression tag="String.String" Value="This is a string"/>
+				<expression tag="String.Text" Value="This is a text"/>
 				<expression tag="Internet.UniformResourceLocator" Value="https://formulae.org" Description="This is a web hyperlnk"/>
 				<expression tag="Time.Time" Value="8254800000"/>
 				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
@@ -414,7 +479,11 @@
 				<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAJgAAACuCAYAAADK4cSRAAAAAXNSR0IArs4c6QAAFH5JREFUeF7tnQeQFEUXx9+Rs+AhIKAgSVCwSEKRKZUgCghWEUpBCSYEBATKQFAkZxDJSrRUBBQFDEQRTsFEUD6SkpMEJWfuq9+rGms5b+/mhttzdvd1FQXs9vR0//vXr3u39v8mJi4uLl6smAKpqEDFihUlXbp0+icGwKpVq5aKzVtT0azAd999J/nzF5Cs2bJKrpw5DbBohiEUYwew06fPSGzsrVKocGEDLBQiR3ObAPa/bdulUMGCUrJkSQMsmmEIxdgBbOOmzVK4cGEpU7q0ARYKkaO5TQMsmmc/DcZugKWByNF8CwMsmmc/DcZugKWByNF8C98Bdv36dVm6dKksX75c/v77b8mcObNUqFBBWrVqJblz5w75XC1YsEDv26FDB2nTpo2MHTtWYmNjg973s88+k0OHDsnzzz8ftM7vv/+u7bz99tsh739KbhAfHy8DBgyQV199VTJlyhT00h07dsjEiRN1DCktvgNsypQpsmfPHnnuueekSJEicuHCBfnkk09k3bp1Mnz4cMmRI0dKx5ii+oGAAU7+/Pklffr0NwXY5cuX5a+//tK2/FSuXbsmrVu3lrlz50YHYExoz549Zfz48ZI3b94b5mLQoEH6RV2LFi00stSpU0fOnDkjJ06ckPr160vt2rW1PiB+/vnnQiTMli2bPP3001K0aFEh0uzatUuuXLki586dU2i6dOkit9566w33SSyCEdGmTp2q3+Xw79OnT0u7du3knnvu0XadCPbll1/KsmXL5PXXX7+h3cAI5rYfSdXj/u+++64cPnxYx3n//ferLr1795a2bdtKuXLlZO3atRp1Zs6cqfBMnjxZihUrplo5ZdKkSbJq1SopUaKEvPbaa3Ly5EmZMWOGXLp0ScfJ6y+99JLQ/9GjR0upUqX0nlmzZpWOHTvKnXfemex68VUEW716tXz66aeJhuIvvvhCfvjhB+nXr58ChpD16tWTs2fPSo8ePWTgwIEKzjvvvKNhH7h27twpY8aM0deAjm135MiRKjji58mTR1dwYAkGGNBwLZB98803ChL3dAC74447JC4uTrebhFE2IWBu+kG7werRD44NDz74oFy9elUnv3LlygrI+fPnVZsJEybI5s2b5cUXX5T77rtP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"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The first part is for options that apply to the selected expression. There can be zero, one or more options. If one or more options are available, the first one is the action that takes place when pressing the &lt;SPACE&gt; key. The second part are the options for cut, copy and paste operations."/>
+				<expression tag="String.Text" Value="The first part is for options that apply to the selected expression. There can be zero, one or more options. If one or more options are available, the first one is the action that takes place when pressing the"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="SPACE"/>
+				</expression>
+				<expression tag="String.Text" Value="key. The second part are the options for cut, copy and paste operations."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
@@ -508,7 +577,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1626240420000"/>
+				<expression tag="Time.Time" Value="1741991220000"/>
 			</expression>
 		</expression>
 	</expression>
