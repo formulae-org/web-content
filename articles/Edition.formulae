@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.visualization,org.formulae.list,org.formulae.graphics.raster,org.formulae.time,org.formulae.color">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.visualization,org.formulae.list,org.formulae.graphics.raster,org.formulae.time,org.formulae.color,org.formulae.programming,org.formulae.relation">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -197,7 +197,18 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="There are expressions that accept a variable number of subexpressions, for example expressions additions or lists. For these kind of expressions, you can add a new (null) subexpression, after or before a given subexpression (the selected expression). For inserting after, press &lt;INS&gt;, to insert before, insert &lt;ALT&gt;&lt;INS&gt;. The follwing expression is a list of numbers:"/>
+				<expression tag="String.Text" Value="There are expressions that accept a variable number of subexpressions, for example expressions additions or lists. For these kind of expressions, you can add a new (null) subexpression, after or before a given subexpression (the selected expression). For inserting after, press"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="INSERT"/>
+				</expression>
+				<expression tag="String.Text" Value=", to insert before, press"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="ALT"/>
+				</expression>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="INSERT"/>
+				</expression>
+				<expression tag="String.Text" Value=". The follwing expression is a list of numbers:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="List.List">
@@ -220,7 +231,18 @@
 				<expression tag="String.Text" Value="?"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="When an expression does not accept more expressions that it has, pressing &lt;INS&gt; or &lt;ALT&gt;&lt;INS&gt; has no effect. Exponentiation requires exactly two (and only two) subexpressions: the base and the exponent. Try to &quot;insert&quot; expressions on the following exponentiation expression:"/>
+				<expression tag="String.Text" Value="When an expression does not accept more expressions that it has, pressing"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="INSERT"/>
+				</expression>
+				<expression tag="String.Text" Value="or"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="ALT"/>
+				</expression>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="INSERT"/>
+				</expression>
+				<expression tag="String.Text" Value="has no effect. Exponentiation requires exactly two (and only two) subexpressions: the base and the exponent. Try to &quot;insert&quot; expressions on the following exponentiation expression:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Math.Arithmetic.Exponentiation">
@@ -351,7 +373,7 @@
 							<expression tag="Visualization.Selected">
 								<expression tag="Math.Number" Value="2"/>
 							</expression>
-							<expression tag="String.Text" Value="after the deletion."/>
+							<expression tag="String.Text" Value="after the deletion of the selected expression."/>
 						</expression>
 						<expression tag="Typesetting.Paragraph">
 							<expression tag="String.Text" Value="If none of the two previous conditions are fulfilled, the deletion is not performed. For example, in the following expression:"/>
@@ -463,9 +485,31 @@
 				<expression tag="Math.Number" Value="123456.78"/>
 				<expression tag="String.String" Value="This is a string"/>
 				<expression tag="String.Text" Value="This is a text"/>
+				<expression tag="Symbolic.Symbol" Name="This is a symbol"/>
 				<expression tag="Internet.UniformResourceLocator" Value="https://formulae.org" Description="This is a web hyperlnk"/>
 				<expression tag="Time.Time" Value="8254800000"/>
 				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+				<expression tag="Programming.Block" Description="This is a &quot;collapsed&quot; block of code" Expanded="False">
+					<expression tag="Symbolic.Local">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+					<expression tag="Programming.While">
+						<expression tag="Relation.Less">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="10"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
@@ -572,6 +616,7 @@
 					</expression>
 				</expression>
 			</expression>
+			<expression tag="Typesetting.Rule"/>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
 			</expression>
