@@ -435,14 +435,22 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="There is no expression for substraction in Fōrmulæ. The &quot;subtraction&quot;"/>
 				<expression tag="Visualization.Italic" Value="True" Set="True">
-					<expression tag="Visualization.Bold" Value="True" Set="True">
-						<expression tag="String.Text" Value="a - b"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
 					</expression>
 				</expression>
 				<expression tag="String.Text" Value="in internally"/>
 				<expression tag="Visualization.Italic" Value="True" Set="True">
-					<expression tag="Visualization.Bold" Value="True" Set="True">
-						<expression tag="String.Text" Value="a + (-b)"/>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Visualization.Parentheses">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+						</expression>
 					</expression>
 				</expression>
 			</expression>
@@ -737,7 +745,7 @@
 				<expression tag="String.Text" Value="reducer"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="This reducer searches on the addends for numerical ones."/>
+				<expression tag="String.Text" Value="This reducer searches for numerical addends, that is, expression that are integer, decimal, rational or complex numbers."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="If the addition contains no numerical addends, it does nothing:"/>
@@ -898,59 +906,14 @@
 		<expression tag="Math.Number" Value="5"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Addition of addition"/>
-				</expression>
-				<expression tag="String.Text" Value="reducer."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="This reducer searches for addends that are also additions. It integrates the addends of the nested addition as addends of the upper-level addition:"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Symbolic.Symbol" Name="x"/>
-			<expression tag="Math.Arithmetic.Addition">
-				<expression tag="Symbolic.Symbol" Name="a"/>
-				<expression tag="Symbolic.Symbol" Name="b"/>
-				<expression tag="Symbolic.Symbol" Name="c"/>
-			</expression>
-			<expression tag="Symbolic.Symbol" Name="y"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Symbolic.Symbol" Name="x"/>
-			<expression tag="Symbolic.Symbol" Name="a"/>
-			<expression tag="Symbolic.Symbol" Name="b"/>
-			<expression tag="Symbolic.Symbol" Name="c"/>
-			<expression tag="Symbolic.Symbol" Name="y"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Addition of imaginary factors"/>
-				</expression>
-				<expression tag="String.Text" Value="reducer"/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="This reducer searches for imaginary factors (multiplication between a numeric expression and the"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Complex.ImaginaryUnit" Description="imaginary unit"/>
-				<expression tag="String.Text" Value="), in order to add them together. See the following examples:"/>
-			</expression>
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Complex numbers can be used:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Math.Arithmetic.Addition">
 			<expression tag="Math.Arithmetic.Multiplication">
-				<expression tag="Math.Number" Value="2"/>
+				<expression tag="Math.Number" Value="2."/>
 				<expression tag="Math.Complex.ImaginaryUnit"/>
 			</expression>
 			<expression tag="Math.Arithmetic.Negative">
@@ -964,7 +927,7 @@
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="Math.Arithmetic.Addition">
 			<expression tag="Math.Arithmetic.Negative">
-				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="3."/>
 			</expression>
 			<expression tag="Math.Complex.ImaginaryUnit"/>
 		</expression>
@@ -1003,6 +966,40 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="Math.Number" Value="0"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Addition of addition"/>
+				</expression>
+				<expression tag="String.Text" Value="reducer."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for addends that are also additions. It integrates the addends of the nested addition as addends of the upper-level addition:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Symbolic.Symbol" Name="b"/>
+				<expression tag="Symbolic.Symbol" Name="c"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="y"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Symbolic.Symbol" Name="a"/>
+			<expression tag="Symbolic.Symbol" Name="b"/>
+			<expression tag="Symbolic.Symbol" Name="c"/>
+			<expression tag="Symbolic.Symbol" Name="y"/>
+		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
@@ -1311,7 +1308,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1736310240000"/>
+				<expression tag="Time.Time" Value="1742594580000"/>
 			</expression>
 		</expression>
 	</expression>
