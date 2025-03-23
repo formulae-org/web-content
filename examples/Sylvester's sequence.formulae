@@ -1,0 +1,177 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Sylvester's sequence"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Sylvester%27s_sequence" Description="Sylvester's sequence"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In number theory,"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Sylvester's sequence"/>
+				</expression>
+				<expression tag="String.Text" Value="is an integer sequence in which each term of the sequence is the product of the previous terms, plus one."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Its values grow doubly exponentially, and the sum of its reciprocals forms a series of unit fractions that converges to 1 more rapidly than any other series of unit fractions with the same number of terms"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Further, the sum of the first k terms of the infinite series of reciprocals provides the closest possible underestimate of 1 by any k-term Egyptian fraction."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Task:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Write a routine (function, procedure, generator, whatever) to calculate Sylvester's sequence."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Use that routine to show the values of the first 10 elements in the sequence."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show the sum of the reciprocals of the first 10 elements on the sequence, ideally as an exact fraction."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Solution"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Sylvester's sequence"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="product"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="term"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="term"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="product"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="term"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="product"/>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="product"/>
+								<expression tag="Symbolic.Symbol" Name="term"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Sylvester's sequence"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="7"/>
+			<expression tag="Math.Number" Value="43"/>
+			<expression tag="Math.Number" Value="1807"/>
+			<expression tag="Math.Number" Value="3263443"/>
+			<expression tag="Math.Number" Value="10650056950807"/>
+			<expression tag="Math.Number" Value="113423713055421844361000443"/>
+			<expression tag="Math.Number" Value="12864938683278671740537145998360961546653259485195807"/>
+			<expression tag="Math.Number" Value="165506647324519964198468195444439180017513152706377497841851388766535868639572406808911988131737645185443"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Summation">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Symbolic.Symbol" Name="t"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="t"/>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Sylvester's sequence"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Division">
+			<expression tag="Math.Number" Value="27392450308603031423410234291674686281194364367580914627947367941608692026226993634332118404582438634929548737283992369758487974306317730580753883429460344956410077034761330476016739454649828385541500213920805"/>
+			<expression tag="Math.Number" Value="27392450308603031423410234291674686281194364367580914627947367941608692026226993634332118404582438634929548737283992369758487974306317730580753883429460344956410077034761330476016739454649828385541500213920806"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1742745660000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
