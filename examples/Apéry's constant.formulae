@@ -1,0 +1,551 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.relation,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Apéry's constant"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Ap%C3%A9ry%27s_constant" Description="Apéry's constant"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Apéry's constant is the sum of the reciprocals of the positive cubes, that is, it is defined as the number:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Equals">
+					<expression tag="String.Text" Value="ζ(3)"/>
+					<expression tag="Visualization.Spurious">
+						<expression tag="Math.Arithmetic.Summation">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Visualization.Italic" Value="True" Set="True">
+										<expression tag="String.Text" Value="k"/>
+									</expression>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Italic" Value="True" Set="True">
+								<expression tag="String.Text" Value="k"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Visualization.Italic" Value="True" Set="True">
+								<expression tag="String.Text" Value="n"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Where ζ is the Riemann zeta function."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Approximately equal to:"/>
+				<expression tag="Math.Number" Value="1.202056903159594285399738161511449990764986292340498881792271555341838205786313090186455873609335258"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This constant was known and studied by many early mathematicians, but was not named until 1978, after Roger Apéry, who was first to prove it was an irrational number."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="ζ(3) by summing reciprocal cubes is easy to calculate, but converges very slowly. The first 1,000 terms are only accurate to 6 decimal places."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There have been many fast convergence representations developed / discovered that generate correct digits much more quickly."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="One of the earliest, discovered in the late 1800s by A. Markov and later widely published by Apéry is:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Equals">
+					<expression tag="String.Text" Value="ζ(3)"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Summation">
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Visualization.Italic" Value="True" Set="True">
+											<expression tag="String.Text" Value="k"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Arithmetic.Exponentiation">
+										<expression tag="Math.Arithmetic.Factorial">
+											<expression tag="Visualization.Italic" Value="True" Set="True">
+												<expression tag="String.Text" Value="k"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Arithmetic.Factorial">
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="2"/>
+												<expression tag="Visualization.Italic" Value="True" Set="True">
+													<expression tag="String.Text" Value="k"/>
+												</expression>
+											</expression>
+										</expression>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Visualization.Italic" Value="True" Set="True">
+												<expression tag="String.Text" Value="k"/>
+											</expression>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Italic" Value="True" Set="True">
+								<expression tag="String.Text" Value="k"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Much better than direct calculation of ζ(3), but still only yielding about 0.63 correct digits per iteration."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Several even faster converging representions are available. The fastest known to date, yielding about 5.04 correct digits per term, is by Sebastian Wedeniwski."/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Equals">
+					<expression tag="String.Text" Value="ζ(3)"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="24"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Summation">
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+									<expression tag="Visualization.Italic" Value="True" Set="True">
+										<expression tag="String.Text" Value="k"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Math.Arithmetic.Factorial">
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Math.Arithmetic.Multiplication">
+														<expression tag="Math.Number" Value="2"/>
+														<expression tag="Visualization.Italic" Value="True" Set="True">
+															<expression tag="String.Text" Value="k"/>
+														</expression>
+													</expression>
+													<expression tag="Math.Number" Value="1"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Math.Arithmetic.Factorial">
+												<expression tag="Math.Arithmetic.Multiplication">
+													<expression tag="Math.Number" Value="2"/>
+													<expression tag="Visualization.Italic" Value="True" Set="True">
+														<expression tag="String.Text" Value="k"/>
+													</expression>
+												</expression>
+											</expression>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Math.Arithmetic.Factorial">
+												<expression tag="Visualization.Italic" Value="True" Set="True">
+													<expression tag="String.Text" Value="k"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="126392"/>
+												<expression tag="Math.Arithmetic.Exponentiation">
+													<expression tag="Visualization.Italic" Value="True" Set="True">
+														<expression tag="String.Text" Value="k"/>
+													</expression>
+													<expression tag="Math.Number" Value="5"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="412708"/>
+												<expression tag="Math.Arithmetic.Exponentiation">
+													<expression tag="Visualization.Italic" Value="True" Set="True">
+														<expression tag="String.Text" Value="k"/>
+													</expression>
+													<expression tag="Math.Number" Value="4"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="531578"/>
+												<expression tag="Math.Arithmetic.Exponentiation">
+													<expression tag="Visualization.Italic" Value="True" Set="True">
+														<expression tag="String.Text" Value="k"/>
+													</expression>
+													<expression tag="Math.Number" Value="3"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="336367"/>
+												<expression tag="Math.Arithmetic.Exponentiation">
+													<expression tag="Visualization.Italic" Value="True" Set="True">
+														<expression tag="String.Text" Value="k"/>
+													</expression>
+													<expression tag="Math.Number" Value="2"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="104000"/>
+												<expression tag="Visualization.Italic" Value="True" Set="True">
+													<expression tag="String.Text" Value="k"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Number" Value="12463"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Arithmetic.Factorial">
+											<expression tag="Math.Arithmetic.Addition">
+												<expression tag="Math.Arithmetic.Multiplication">
+													<expression tag="Math.Number" Value="3"/>
+													<expression tag="Visualization.Italic" Value="True" Set="True">
+														<expression tag="String.Text" Value="k"/>
+													</expression>
+												</expression>
+												<expression tag="Math.Number" Value="2"/>
+											</expression>
+										</expression>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Math.Arithmetic.Factorial">
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Math.Arithmetic.Multiplication">
+														<expression tag="Math.Number" Value="4"/>
+														<expression tag="Visualization.Italic" Value="True" Set="True">
+															<expression tag="String.Text" Value="k"/>
+														</expression>
+													</expression>
+													<expression tag="Math.Number" Value="3"/>
+												</expression>
+											</expression>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Italic" Value="True" Set="True">
+								<expression tag="String.Text" Value="k"/>
+							</expression>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="String.Text" Value="n"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Task. Show the value of Apéry's constant calculated at least three different ways."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show the value of at least the first 1,000 terms of ζ(3) by direct summing of reciprocal cubes, truncated to 100 decimal digits."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show the value of the first 158 terms of Markov / Apéry representation truncated to 100 decimal digits."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Show the value of the first 20 terms of Wedeniwski representation truncated to 100 decimal digits."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="M₁"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Summation">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Symbolic.Symbol" Name="k"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="k"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.N">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="M₁"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1000"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Number" Value="100"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1.202056403659344285483071411511599990348321270903177513503654096611857257192140083613008412326047311"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="M₂"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Summation">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="k"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Math.Arithmetic.Factorial">
+									<expression tag="Symbolic.Symbol" Name="k"/>
+								</expression>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Arithmetic.Factorial">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="2"/>
+										<expression tag="Symbolic.Symbol" Name="k"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Symbolic.Symbol" Name="k"/>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="k"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.N">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="M₂"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="158"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Number" Value="100"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1.202056903159594285399738161511449990764986292340498881792271555341838205786313090186455873609335258"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="M₃"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="24"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Summation">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Exponentiation">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="k"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Arithmetic.Factorial">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="2"/>
+												<expression tag="Symbolic.Symbol" Name="k"/>
+											</expression>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Arithmetic.Factorial">
+										<expression tag="Math.Arithmetic.Multiplication">
+											<expression tag="Math.Number" Value="2"/>
+											<expression tag="Symbolic.Symbol" Name="k"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Arithmetic.Factorial">
+										<expression tag="Symbolic.Symbol" Name="k"/>
+									</expression>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="126392"/>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Symbolic.Symbol" Name="k"/>
+											<expression tag="Math.Number" Value="5"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="412708"/>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Symbolic.Symbol" Name="k"/>
+											<expression tag="Math.Number" Value="4"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="531578"/>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Symbolic.Symbol" Name="k"/>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="336367"/>
+										<expression tag="Math.Arithmetic.Exponentiation">
+											<expression tag="Symbolic.Symbol" Name="k"/>
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Multiplication">
+										<expression tag="Math.Number" Value="104000"/>
+										<expression tag="Symbolic.Symbol" Name="k"/>
+									</expression>
+									<expression tag="Math.Number" Value="12463"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Math.Arithmetic.Factorial">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Math.Arithmetic.Multiplication">
+											<expression tag="Math.Number" Value="3"/>
+											<expression tag="Symbolic.Symbol" Name="k"/>
+										</expression>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Exponentiation">
+									<expression tag="Math.Arithmetic.Factorial">
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Math.Arithmetic.Multiplication">
+												<expression tag="Math.Number" Value="4"/>
+												<expression tag="Symbolic.Symbol" Name="k"/>
+											</expression>
+											<expression tag="Math.Number" Value="3"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Number" Value="3"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="k"/>
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.N">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="M₃"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="20"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Number" Value="100"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1.202056903159594285399738161511449990764986292340498881792271555341838205786313090186455873609335258"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1742964180000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
