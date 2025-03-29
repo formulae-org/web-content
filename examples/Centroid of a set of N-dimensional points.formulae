@@ -1,0 +1,500 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.programming,org.formulae.expression,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Centroid of a set of n-dimensional points"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Centroid_of_a_set_of_N-dimensional_points" Description="Centroid of a set of N-dimensional points"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In analytic geometry, the centroid of a set of points is a point in the same domain as the set. The centroid point is chosen to show a property which can be calculated for that set.&#10;&#10;Consider the centroid defined as the arithmetic mean of a set of points of arbitrary dimension."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Task"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Create a function in your chosen programming language to calculate such a centroid using an arbitrary number of points of arbitrary dimension."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Test your function with the following groups of points"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="8"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="10"/>
+						<expression tag="Math.Number" Value="10"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="3.1"/>
+						<expression tag="Math.Number" Value="6.5"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+						<expression tag="Math.Number" Value="3.4"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Math.Number" Value="9"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Centroid"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="points"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="points"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="dimensions"/>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="points"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.CreateList">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Arithmetic.Summation">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="points"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="i"/>
+									<expression tag="Symbolic.Symbol" Name="d"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="d"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="dimensions"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test cases"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="cases"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="8"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="5"/>
+								<expression tag="Math.Number" Value="5"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="10"/>
+								<expression tag="Math.Number" Value="10"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="3.1"/>
+								<expression tag="Math.Number" Value="6.5"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="2"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="5"/>
+								</expression>
+								<expression tag="Math.Number" Value="3.4"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="7"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="4"/>
+								</expression>
+								<expression tag="Math.Number" Value="9"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="3"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+							<expression tag="List.List">
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="1"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.CreateTable">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="case"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Centroid"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="case"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="case"/>
+				<expression tag="Symbolic.Symbol" Name="cases"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="case"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Centroid"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="case"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="8"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="4"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="10"/>
+							<expression tag="Math.Number" Value="10"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="15"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="15"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="3.1"/>
+							<expression tag="Math.Number" Value="6.5"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+							<expression tag="Math.Number" Value="3.4"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="7"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="4"/>
+							</expression>
+							<expression tag="Math.Number" Value="9"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="3"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Number" Value="3"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1.475"/>
+						</expression>
+						<expression tag="Math.Number" Value="5.475"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1743199560000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
