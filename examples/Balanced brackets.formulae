@@ -1,0 +1,194 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.relation,org.formulae.logic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Balanced brackets"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Balanced_brackets" Description="Balanced brackets"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Determine whether a string is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Are brackets balanced"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="s"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="count"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="count"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="count"/>
+								<expression tag="Programming.Conditional">
+									<expression tag="Relation.Equals">
+										<expression tag="String.SubstringToN">
+											<expression tag="Symbolic.Symbol" Name="s"/>
+											<expression tag="Symbolic.Symbol" Name="i"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+										<expression tag="String.String" Value="["/>
+									</expression>
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Return">
+								<expression tag="Logic.False"/>
+							</expression>
+							<expression tag="Relation.Less">
+								<expression tag="Symbolic.Symbol" Name="count"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="String.Length">
+						<expression tag="Symbolic.Symbol" Name="s"/>
+					</expression>
+				</expression>
+				<expression tag="Relation.Equals">
+					<expression tag="Symbolic.Symbol" Name="count"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test cases"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="cases"/>
+					<expression tag="List.List">
+						<expression tag="String.String" Value=""/>
+						<expression tag="String.String" Value="[]"/>
+						<expression tag="String.String" Value="[][]"/>
+						<expression tag="String.String" Value="[[][]]"/>
+						<expression tag="String.String" Value="]["/>
+						<expression tag="String.String" Value="][]["/>
+						<expression tag="String.String" Value="[]][[]"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.CreateTable">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="case"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Are brackets balanced"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="case"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="case"/>
+				<expression tag="Symbolic.Symbol" Name="cases"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="case"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Are brackets balanced"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="case"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value=""/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="[]"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="[][]"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="[[][]]"/>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="]["/>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="][]["/>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="String.String" Value="[]][[]"/>
+					<expression tag="Logic.False"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1743301080000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
