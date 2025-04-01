@@ -67,34 +67,31 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Symbolic.Assignment">
-			<expression tag="Symbolic.Symbol" Name="list"/>
-			<expression tag="Programming.Block" Description="Description" Expanded="True">
-				<expression tag="Symbolic.Local">
-					<expression tag="Symbolic.Assignment">
-						<expression tag="Symbolic.Symbol" Name="result"/>
-						<expression tag="List.List"/>
-					</expression>
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
 				</expression>
-				<expression tag="Programming.ForFromTo">
-					<expression tag="Programming.InvertedIf">
-						<expression tag="Expression.Append">
-							<expression tag="Symbolic.Symbol" Name="result"/>
+			</expression>
+			<expression tag="Programming.InvertedForFromTo">
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Expression.Append">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Is additive prime"/>
+						<expression tag="List.List">
 							<expression tag="Symbolic.Symbol" Name="n"/>
 						</expression>
-						<expression tag="Symbolic.Function">
-							<expression tag="Symbolic.Symbol" Name="Is additive prime"/>
-							<expression tag="List.List">
-								<expression tag="Symbolic.Symbol" Name="n"/>
-							</expression>
-						</expression>
 					</expression>
-					<expression tag="Symbolic.Symbol" Name="n"/>
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Math.Number" Value="500"/>
 				</expression>
-				<expression tag="Symbolic.Symbol" Name="result"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="500"/>
 			</expression>
+			<expression tag="Symbolic.Symbol" Name="list"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
@@ -165,7 +162,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Expression.Cardinality">
-			<expression tag="Symbolic.Symbol" Name="list"/>
+			<expression tag="Expression.LastResult"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
@@ -190,7 +187,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1686717960000"/>
+				<expression tag="Time.Time" Value="1743391500000"/>
 			</expression>
 		</expression>
 	</expression>
