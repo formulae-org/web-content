@@ -1,0 +1,562 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.expression,org.formulae.relation,org.formulae.logic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Continued fraction convergents"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Continued_fraction_convergents" Description="Continued fraction convergents"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Given a positive real number, if we truncate its continued fraction representation at a certain depth, we obtain a rational approximation to the real number. The sequence of successively better such approximations is its convergent sequence."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Task:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Print the results for"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="415"/>
+					<expression tag="Math.Number" Value="93"/>
+				</expression>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="649"/>
+					<expression tag="Math.Number" Value="200"/>
+				</expression>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="Math.Arithmetic.SquareRoot">
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="String.Text" Value=","/>
+				<expression tag="Math.Arithmetic.SquareRoot">
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+				<expression tag="String.Text" Value="and the golden ratio"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Arithmetic.SquareRoot">
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="We need first a function to generate the continued fraction of a number, within a max number of levels:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Continued fraction"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="max"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Symbol" Name="integer part"/>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.Until">
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="integer part"/>
+							<expression tag="Math.Arithmetic.Floor">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="result"/>
+							<expression tag="Symbolic.Symbol" Name="integer part"/>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Symbolic.Symbol" Name="integer part"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Math.Number" Value="1"/>
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+							</expression>
+							<expression tag="Relation.Different">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Logic.Disjunction">
+						<expression tag="Relation.Equals">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Number" Value="0"/>
+						</expression>
+						<expression tag="Relation.Equals">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Symbolic.Symbol" Name="max"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="result"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Continued fraction"/>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="415"/>
+					<expression tag="Math.Number" Value="93"/>
+				</expression>
+				<expression tag="Math.Number" Value="100"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Number" Value="6"/>
+			<expression tag="Math.Number" Value="7"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="The following is a function to generate the continued fraction convergents, up to a given limit:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Continued fraction convergents"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="max"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="continued"/>
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="Continued fraction"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="max"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="truncated"/>
+						<expression tag="List.List"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Symbol" Name="y"/>
+				</expression>
+				<expression tag="Programming.ForFromTo">
+					<expression tag="Programming.Block" Description="Description" Expanded="True">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="y"/>
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="continued"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+							</expression>
+						</expression>
+						<expression tag="Programming.InvertedForFromTo">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="y"/>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="continued"/>
+										<expression tag="Symbolic.Symbol" Name="j"/>
+									</expression>
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Number" Value="1"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="j"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="truncated"/>
+							<expression tag="Symbolic.Symbol" Name="y"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Expression.Cardinality">
+						<expression tag="Symbolic.Symbol" Name="continued"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="truncated"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Continued fraction convergents"/>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="415"/>
+					<expression tag="Math.Number" Value="93"/>
+				</expression>
+				<expression tag="Math.Number" Value="100"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="58"/>
+				<expression tag="Math.Number" Value="13"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="415"/>
+				<expression tag="Math.Number" Value="93"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Continued fraction convergents"/>
+			<expression tag="List.List">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="649"/>
+					<expression tag="Math.Number" Value="200"/>
+				</expression>
+				<expression tag="Math.Number" Value="100"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="13"/>
+				<expression tag="Math.Number" Value="4"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="159"/>
+				<expression tag="Math.Number" Value="49"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="649"/>
+				<expression tag="Math.Number" Value="200"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Continued fraction convergents"/>
+			<expression tag="List.List">
+				<expression tag="Math.Numeric">
+					<expression tag="Math.Arithmetic.SquareRoot">
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="15"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="17"/>
+				<expression tag="Math.Number" Value="12"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="41"/>
+				<expression tag="Math.Number" Value="29"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="99"/>
+				<expression tag="Math.Number" Value="70"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="239"/>
+				<expression tag="Math.Number" Value="169"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="577"/>
+				<expression tag="Math.Number" Value="408"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1393"/>
+				<expression tag="Math.Number" Value="985"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3363"/>
+				<expression tag="Math.Number" Value="2378"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="8119"/>
+				<expression tag="Math.Number" Value="5741"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="19601"/>
+				<expression tag="Math.Number" Value="13860"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="47321"/>
+				<expression tag="Math.Number" Value="33461"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="114243"/>
+				<expression tag="Math.Number" Value="80782"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="275807"/>
+				<expression tag="Math.Number" Value="195025"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Continued fraction convergents"/>
+			<expression tag="List.List">
+				<expression tag="Math.Numeric">
+					<expression tag="Math.Arithmetic.SquareRoot">
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="15"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="Math.Number" Value="4"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="38"/>
+				<expression tag="Math.Number" Value="17"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="161"/>
+				<expression tag="Math.Number" Value="72"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="682"/>
+				<expression tag="Math.Number" Value="305"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="2889"/>
+				<expression tag="Math.Number" Value="1292"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="12238"/>
+				<expression tag="Math.Number" Value="5473"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="51841"/>
+				<expression tag="Math.Number" Value="23184"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="219602"/>
+				<expression tag="Math.Number" Value="98209"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="930249"/>
+				<expression tag="Math.Number" Value="416020"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3940598"/>
+				<expression tag="Math.Number" Value="1762289"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="16692641"/>
+				<expression tag="Math.Number" Value="7465176"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="70711162"/>
+				<expression tag="Math.Number" Value="31622993"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="299537289"/>
+				<expression tag="Math.Number" Value="133957148"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="1268860318"/>
+				<expression tag="Math.Number" Value="567451585"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Continued fraction convergents"/>
+			<expression tag="List.List">
+				<expression tag="Math.Numeric">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Arithmetic.SquareRoot">
+								<expression tag="Math.Number" Value="5"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="15"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="3"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="5"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="8"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="13"/>
+				<expression tag="Math.Number" Value="8"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="21"/>
+				<expression tag="Math.Number" Value="13"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="34"/>
+				<expression tag="Math.Number" Value="21"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="55"/>
+				<expression tag="Math.Number" Value="34"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="89"/>
+				<expression tag="Math.Number" Value="55"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="144"/>
+				<expression tag="Math.Number" Value="89"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="233"/>
+				<expression tag="Math.Number" Value="144"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="377"/>
+				<expression tag="Math.Number" Value="233"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="610"/>
+				<expression tag="Math.Number" Value="377"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="987"/>
+				<expression tag="Math.Number" Value="610"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1743655620000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
