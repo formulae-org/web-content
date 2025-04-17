@@ -1,0 +1,326 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.visualization,org.formulae.expression,org.formulae.logic,org.formulae.relation,org.formulae.math.arithmetic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Department numbers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Department_numbers" Description="Department numbers"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There is a highly organized city that has decided to assign a number to each of their departments:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Police department"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Sanitation department"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Fire department"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Each department can have a number between 1 and 7 (inclusive)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The three department numbers are to be unique (different from each other) and must add up to 12."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The Chief of the Police doesn't like odd numbers and wants to have an even number for his department."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Task"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Write a computer program which outputs all valid combinations."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="matrix"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Police"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Sanitation"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Fire"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Programming.Cycle">
+				<expression tag="Programming.Cycle">
+					<expression tag="Programming.Cycle">
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Expression.Append">
+								<expression tag="Symbolic.Symbol" Name="matrix"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="p"/>
+									<expression tag="Symbolic.Symbol" Name="s"/>
+									<expression tag="Symbolic.Symbol" Name="f"/>
+								</expression>
+							</expression>
+							<expression tag="Logic.Conjunction">
+								<expression tag="Relation.Different">
+									<expression tag="Symbolic.Symbol" Name="p"/>
+									<expression tag="Symbolic.Symbol" Name="s"/>
+								</expression>
+								<expression tag="Relation.Different">
+									<expression tag="Symbolic.Symbol" Name="s"/>
+									<expression tag="Symbolic.Symbol" Name="f"/>
+								</expression>
+								<expression tag="Relation.Equals">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="p"/>
+										<expression tag="Symbolic.Symbol" Name="s"/>
+										<expression tag="Symbolic.Symbol" Name="f"/>
+									</expression>
+									<expression tag="Math.Number" Value="12"/>
+								</expression>
+								<expression tag="Math.Arithmetic.IsEven">
+									<expression tag="Symbolic.Symbol" Name="p"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.FromRange">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="s"/>
+					<expression tag="List.FromRange">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="p"/>
+				<expression tag="List.FromRange">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="Symbolic.Symbol" Name="matrix"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="Police"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="Sanitation"/>
+					</expression>
+					<expression tag="Visualization.Bold" Value="True" Set="True">
+						<expression tag="String.Text" Value="Fire"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="7"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="4"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="2"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="A slightly optimized version"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="matrix"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Police"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Sanitation"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Fire"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Programming.Cycle">
+				<expression tag="Programming.Cycle">
+					<expression tag="Programming.Cycle">
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Expression.Append">
+								<expression tag="Symbolic.Symbol" Name="matrix"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="p"/>
+									<expression tag="Symbolic.Symbol" Name="s"/>
+									<expression tag="Symbolic.Symbol" Name="f"/>
+								</expression>
+							</expression>
+							<expression tag="Logic.Conjunction">
+								<expression tag="Relation.Different">
+									<expression tag="Symbolic.Symbol" Name="p"/>
+									<expression tag="Symbolic.Symbol" Name="s"/>
+								</expression>
+								<expression tag="Relation.Different">
+									<expression tag="Symbolic.Symbol" Name="s"/>
+									<expression tag="Symbolic.Symbol" Name="f"/>
+								</expression>
+								<expression tag="Relation.Equals">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="p"/>
+										<expression tag="Symbolic.Symbol" Name="s"/>
+										<expression tag="Symbolic.Symbol" Name="f"/>
+									</expression>
+									<expression tag="Math.Number" Value="12"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="f"/>
+						<expression tag="List.FromRange">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="7"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="s"/>
+					<expression tag="List.FromRange">
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="p"/>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="6"/>
+				</expression>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="Symbolic.Symbol" Name="matrix"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Rule"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1744861440000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
