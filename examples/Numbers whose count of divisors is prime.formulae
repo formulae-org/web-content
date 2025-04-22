@@ -1,0 +1,258 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.logic,org.formulae.relation,org.formulae.visualization,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Numbers whose count of divisors is prime"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Numbers_whose_count_of_divisors_is_prime" Description="Numbers whose count of divisors is prime"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Find positive integers n which count of divisors is prime, but not equal to 2, where   n &lt; 100,000"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="List.List"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="number of divisors"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.ForFromTo">
+				<expression tag="Programming.Block" Description="Description" Expanded="True">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="number of divisors"/>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Math.Arithmetic.Divisors">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Expression.Append">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+						<expression tag="Logic.Conjunction">
+							<expression tag="Relation.Different">
+								<expression tag="Symbolic.Symbol" Name="number of divisors"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+							<expression tag="Math.Arithmetic.IsPrime">
+								<expression tag="Symbolic.Symbol" Name="number of divisors"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="100000"/>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="List.ToMatrix">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Number" Value="16"/>
+					<expression tag="Math.Number" Value="25"/>
+					<expression tag="Math.Number" Value="49"/>
+					<expression tag="Math.Number" Value="64"/>
+					<expression tag="Math.Number" Value="81"/>
+					<expression tag="Math.Number" Value="121"/>
+					<expression tag="Math.Number" Value="169"/>
+					<expression tag="Math.Number" Value="289"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="361"/>
+					<expression tag="Math.Number" Value="529"/>
+					<expression tag="Math.Number" Value="625"/>
+					<expression tag="Math.Number" Value="729"/>
+					<expression tag="Math.Number" Value="841"/>
+					<expression tag="Math.Number" Value="961"/>
+					<expression tag="Math.Number" Value="1024"/>
+					<expression tag="Math.Number" Value="1369"/>
+					<expression tag="Math.Number" Value="1681"/>
+					<expression tag="Math.Number" Value="1849"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2209"/>
+					<expression tag="Math.Number" Value="2401"/>
+					<expression tag="Math.Number" Value="2809"/>
+					<expression tag="Math.Number" Value="3481"/>
+					<expression tag="Math.Number" Value="3721"/>
+					<expression tag="Math.Number" Value="4096"/>
+					<expression tag="Math.Number" Value="4489"/>
+					<expression tag="Math.Number" Value="5041"/>
+					<expression tag="Math.Number" Value="5329"/>
+					<expression tag="Math.Number" Value="6241"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6889"/>
+					<expression tag="Math.Number" Value="7921"/>
+					<expression tag="Math.Number" Value="9409"/>
+					<expression tag="Math.Number" Value="10201"/>
+					<expression tag="Math.Number" Value="10609"/>
+					<expression tag="Math.Number" Value="11449"/>
+					<expression tag="Math.Number" Value="11881"/>
+					<expression tag="Math.Number" Value="12769"/>
+					<expression tag="Math.Number" Value="14641"/>
+					<expression tag="Math.Number" Value="15625"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="16129"/>
+					<expression tag="Math.Number" Value="17161"/>
+					<expression tag="Math.Number" Value="18769"/>
+					<expression tag="Math.Number" Value="19321"/>
+					<expression tag="Math.Number" Value="22201"/>
+					<expression tag="Math.Number" Value="22801"/>
+					<expression tag="Math.Number" Value="24649"/>
+					<expression tag="Math.Number" Value="26569"/>
+					<expression tag="Math.Number" Value="27889"/>
+					<expression tag="Math.Number" Value="28561"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="29929"/>
+					<expression tag="Math.Number" Value="32041"/>
+					<expression tag="Math.Number" Value="32761"/>
+					<expression tag="Math.Number" Value="36481"/>
+					<expression tag="Math.Number" Value="37249"/>
+					<expression tag="Math.Number" Value="38809"/>
+					<expression tag="Math.Number" Value="39601"/>
+					<expression tag="Math.Number" Value="44521"/>
+					<expression tag="Math.Number" Value="49729"/>
+					<expression tag="Math.Number" Value="51529"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="52441"/>
+					<expression tag="Math.Number" Value="54289"/>
+					<expression tag="Math.Number" Value="57121"/>
+					<expression tag="Math.Number" Value="58081"/>
+					<expression tag="Math.Number" Value="59049"/>
+					<expression tag="Math.Number" Value="63001"/>
+					<expression tag="Math.Number" Value="65536"/>
+					<expression tag="Math.Number" Value="66049"/>
+					<expression tag="Math.Number" Value="69169"/>
+					<expression tag="Math.Number" Value="72361"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="73441"/>
+					<expression tag="Math.Number" Value="76729"/>
+					<expression tag="Math.Number" Value="78961"/>
+					<expression tag="Math.Number" Value="80089"/>
+					<expression tag="Math.Number" Value="83521"/>
+					<expression tag="Math.Number" Value="85849"/>
+					<expression tag="Math.Number" Value="94249"/>
+					<expression tag="Math.Number" Value="96721"/>
+					<expression tag="Math.Number" Value="97969"/>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Alternate solution:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="List.List"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="number of divisors"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.InvertedForFromTo">
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Expression.Append">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="Logic.Conjunction">
+						<expression tag="Relation.Different">
+							<expression tag="Symbolic.Assignment">
+								<expression tag="Symbolic.Symbol" Name="number of divisors"/>
+								<expression tag="Expression.Cardinality">
+									<expression tag="Math.Arithmetic.Divisors">
+										<expression tag="Symbolic.Symbol" Name="n"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+						<expression tag="Math.Arithmetic.IsPrime">
+							<expression tag="Symbolic.Symbol" Name="number of divisors"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="100000"/>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="List.ToMatrix">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Rule"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1745290380000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
