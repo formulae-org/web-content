@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.list,org.formulae.visualization,org.formulae.diagramming,org.formulae.math.complex,org.formulae.programming,org.formulae.symbolic,org.formulae.relation,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.list,org.formulae.visualization,org.formulae.diagramming,org.formulae.math.complex,org.formulae.programming,org.formulae.symbolic,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -878,13 +878,16 @@
 				<expression tag="String.Text" Value="This is because Fōrmulæ tries to deliver exact results as much as possible. If an operation cannot be performed exactly, it will not be finihsed, it will remain as is, UNLESS at least one of their operands as provided as a decimal. Providing a decimal number indicates that the operation is required to terminate, even when the result will be inexact. In such that case, the result will be a decimal, rounded with the current precision and rounding mode."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Addition and multiplication"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The expressions"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-				<expression tag="String.Text" Value=","/>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Addition"/>
-				<expression tag="String.Text" Value=","/>
+				<expression tag="String.Text" Value="and"/>
 				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Multiplication" Description="Multiplication"/>
-				<expression tag="String.Text" Value="always evaluate if they operans are numbers (integer, decimal or rational)."/>
+				<expression tag="String.Text" Value="always evaluate if their operands are numbers (integer, decimal or rational)."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="These expressions are also"/>
@@ -985,11 +988,9 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Of course, The expressions"/>
-			<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-			<expression tag="String.Text" Value=","/>
+			<expression tag="String.Text" Value="Of course, The expressions of"/>
 			<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Addition"/>
-			<expression tag="String.Text" Value=","/>
+			<expression tag="String.Text" Value="and"/>
 			<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Multiplication" Description="Multiplication"/>
 			<expression tag="String.Text" Value="can mix integer and rational numbers, producing both integer or rational numbers. Rational numbers, being exact, can take as many digits as needed."/>
 		</expression>
@@ -1251,9 +1252,107 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Operations with complex numbers"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Operations with complex numbers"/>
+				</expression>
 			</expression>
-			<expression tag="Null"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Operations with complex numbers can be performed separating the real and imaginay parts and operating them according with the rules for complex numbers, e.g. the addition of the complex number"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Math.Complex.ImaginaryUnit"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="c"/>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Symbolic.Symbol" Name="d"/>
+						<expression tag="Math.Complex.ImaginaryUnit"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="can be solved as"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="b"/>
+							<expression tag="Symbolic.Symbol" Name="d"/>
+						</expression>
+						<expression tag="Math.Complex.ImaginaryUnit"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=". The rules to operate the numbers are then the described in the previous two bullets."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Example:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="3.5"/>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Arithmetic.Division">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Math.Complex.ImaginaryUnit"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Number" Value="17.5"/>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+				<expression tag="Math.Complex.ImaginaryUnit"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Number" Value="5.5"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="Math.Complex.ImaginaryUnit"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Number" Value="5"/>
+				</expression>
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Complex.ImaginaryUnit"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Number" Value="28.4"/>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="41.6"/>
+				<expression tag="Math.Complex.ImaginaryUnit"/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -1285,243 +1384,65 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Transcendental functions"/>
-				</expression>
-			</expression>
-			<expression tag="Null"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Other mathematical expressions"/>
-				</expression>
-			</expression>
-			<expression tag="Null"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Rule"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Visualization.CrossedOut">
-						<expression tag="String.Text" Value="Types of mathematical operations"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Operations with integer accuracy"/>
-				</expression>
-				<expression tag="String.Text" Value="They are mathematical operations that comply with the following:"/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BulletedList">
-					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Both the operands and their result are numbers (integer, decimal, rational or complex)."/>
-					</expression>
-					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="If all their operands are integer or rational, its result is always integer or rational, and it is exact, it taks as many digits as necessary, independently of the current precision."/>
-					</expression>
-					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="If at least one of their operands is decimal, the result will be decimal. It may be inexact because it could be rounded according to the current precision and rounding mode."/>
-					</expression>
-					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Operations with complex numbers can be performed separating the real and imaginay parts and operating them according with the rules for complex numbers, e.g. the addition of the complex number"/>
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Symbolic.Symbol" Name="a"/>
-							<expression tag="Math.Arithmetic.Multiplication">
-								<expression tag="Symbolic.Symbol" Name="b"/>
-								<expression tag="Math.Complex.ImaginaryUnit"/>
-							</expression>
-						</expression>
-						<expression tag="String.Text" Value="and"/>
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Symbolic.Symbol" Name="c"/>
-							<expression tag="Math.Arithmetic.Multiplication">
-								<expression tag="Symbolic.Symbol" Name="d"/>
-								<expression tag="Math.Complex.ImaginaryUnit"/>
-							</expression>
-						</expression>
-						<expression tag="String.Text" Value="can be solved as"/>
-						<expression tag="Math.Arithmetic.Addition">
-							<expression tag="Math.Arithmetic.Addition">
-								<expression tag="Symbolic.Symbol" Name="a"/>
-								<expression tag="Symbolic.Symbol" Name="c"/>
-							</expression>
-							<expression tag="Math.Arithmetic.Multiplication">
-								<expression tag="Math.Arithmetic.Addition">
-									<expression tag="Symbolic.Symbol" Name="b"/>
-									<expression tag="Symbolic.Symbol" Name="d"/>
-								</expression>
-								<expression tag="Math.Complex.ImaginaryUnit"/>
-							</expression>
-						</expression>
-						<expression tag="String.Text" Value=". The rules to operate the numbers are then the described in the previous two bullets."/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Expressions that fall under this category are"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-				<expression tag="String.Text" Value=","/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Addition"/>
-				<expression tag="String.Text" Value=","/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Multiplication" Description="Multiplication"/>
-				<expression tag="String.Text" Value=","/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Exponentiation" Description="Exponentiation"/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Notice that the"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Division" Description="Division"/>
-				<expression tag="String.Text" Value="expression is not in this category, because the division of integer numbers does not necessary produce an integer."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Examples:"/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The following is an example of an operation where all their operands are integer:"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Math.Number" Value="2"/>
-			<expression tag="Math.Number" Value="3"/>
-			<expression tag="Math.Number" Value="4"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="9"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="If at least one operand is decimal, the result will be decimal"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Math.Number" Value="2.5"/>
-			<expression tag="Math.Number" Value="5"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="7.5"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Even if the one operand is decimal with an integer value, the result will be decimal:"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Multiplication">
-			<expression tag="Math.Number" Value="2"/>
-			<expression tag="Math.Number" Value="3."/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="6."/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Exponentiation of integer numbers usually generates integer results:"/>
+			<expression tag="String.Text" Value="However, if the result has an integer value, it will be answered as an integer, and it will be exact."/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Math.Arithmetic.Exponentiation">
-			<expression tag="Math.Number" Value="12"/>
-			<expression tag="Math.Number" Value="7"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="35831808"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="if one operand is decimal, the result will be decimal, and the result is generated with the defined precision:"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Exponentiation">
-			<expression tag="Math.Number" Value="12"/>
-			<expression tag="Math.Number" Value="5.1"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="319024.73371524725967"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Exponentiation of integer numbers can lead to a rational number:"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Exponentiation">
-			<expression tag="Math.Number" Value="2"/>
-			<expression tag="Math.Arithmetic.Negative">
-				<expression tag="Math.Number" Value="5"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Arithmetic.Division">
-			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="64"/>
 			<expression tag="Math.Number" Value="32"/>
 		</expression>
 	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Multiplication">
-			<expression tag="Math.Number" Value="346376546324537848234685324762547325473264"/>
-			<expression tag="Math.Number" Value="36265464835248716327486324862365473254736254763254763254732654732"/>
-		</expression>
-	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="12561506460487425335310783402270037964955740496357058521758850778002822647698451232841234901022987009085248"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Multiplication">
-			<expression tag="Math.Number" Value="346376546324537848234685324762547325473264."/>
-			<expression tag="Math.Number" Value="36265464835248716327486324862365473254736254763254763254732654732"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="12561506460487425335000000000000000000000000000000000000000000000000000000000000000000000000000000000000000."/>
+		<expression tag="Math.Number" Value="6277101735386680763835789423207666416102355444464034512896"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="The following is an example of an operation involving complex numbers"/>
+			<expression tag="String.Text" Value="Of course, giving one operand as decimal, the result will be decimal and rounded"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Multiplication">
-			<expression tag="Math.Number" Value="5"/>
-			<expression tag="Math.Arithmetic.Addition">
-				<expression tag="Math.Number" Value="3.5"/>
-				<expression tag="Math.Arithmetic.Multiplication">
-					<expression tag="Math.Arithmetic.Division">
-						<expression tag="Math.Number" Value="2"/>
-						<expression tag="Math.Number" Value="3"/>
-					</expression>
-					<expression tag="Math.Complex.ImaginaryUnit"/>
-				</expression>
+		<expression tag="Math.Arithmetic.Exponentiation">
+			<expression tag="Math.Number" Value="64"/>
+			<expression tag="Math.Number" Value="32."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="6277101735386680763800000000000000000000000000000000000000."/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Of course, giving one operand as a decimal number, will result in a decimal number even if it has an integer value"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Exponentiation">
+			<expression tag="Math.Number" Value="10."/>
+			<expression tag="Math.Number" Value="3"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1000."/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Sometimes, exponentiation of decimal numbers produce a complex one:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Exponentiation">
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="14.5"/>
 			</expression>
+			<expression tag="Math.Number" Value="2.12"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Math.Number" Value="17.5"/>
+			<expression tag="Math.Number" Value="269.45033221308145296"/>
 			<expression tag="Math.Arithmetic.Multiplication">
-				<expression tag="Math.Arithmetic.Division">
-					<expression tag="Math.Number" Value="10"/>
-					<expression tag="Math.Number" Value="3"/>
-				</expression>
+				<expression tag="Math.Number" Value="106.68293350300982982"/>
 				<expression tag="Math.Complex.ImaginaryUnit"/>
 			</expression>
 		</expression>
@@ -1530,645 +1451,356 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Operations with no integer accuracy"/>
-				</expression>
-				<expression tag="String.Text" Value="They are mathematical operations that comply with the following:"/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BulletedList">
-					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Both the operands and their result are numbers (integer, decimal, rational or complex)."/>
-					</expression>
-					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="The exact result is usually a number that, if represented as a decimal, would require a infinite number of digits, even when their operands are integer of rational numbers."/>
-					</expression>
+					<expression tag="String.Text" Value="Transcendental expressions"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Expressions that fall under this category are"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Negative" Description="Negative"/>
-				<expression tag="String.Text" Value=","/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Addition" Description="Addition"/>
-				<expression tag="String.Text" Value=","/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Multiplication" Description="Multiplication"/>
-				<expression tag="String.Text" Value=","/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Exponentiation" Description="Exponentiation"/>
+				<expression tag="String.Text" Value="Expressions that correspond with"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Transcendental_function" Description="transcendental functions"/>
+				<expression tag="String.Text" Value="are so called because they usually result in"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Transcendental_number" Description="transcendental numbers"/>
+				<expression tag="String.Text" Value="and therefore, they would require a infinite numbers of digits to be represented exactly, so they always generate decimal numbers, rounded with the current precision and rounding mode."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Notice that the"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=reference/Math.Arithmetic.Division" Description="Division"/>
-				<expression tag="String.Text" Value="expression is not in this category, because the division of integer numbers does not necessary produce an integer."/>
+				<expression tag="String.Text" Value="Examples of transcendental expressions:"/>
 			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Examples:"/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The following is an example of an operation where all their operands are integer:"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Null"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Visualization.CrossedOut">
-						<expression tag="String.Text" Value="Integer-closed operations"/>
-					</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The square root expression"/>
 				</expression>
-			</expression>
-			<expression tag="String.Text" Value="Integer-closed operations refers to mathematical operations in which integer operands always produce integer results, e.g. the addition is an integer-closed operations because adding integer numbers always results in an integer."/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Rule"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Visualization.CrossedOut">
-						<expression tag="String.Text" Value="Performing arithmetic operations according to the number type"/>
-					</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The logarithm expressions"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The trigonometric, inverse trigonometric, hyperbolic and inverse hyperbolic expressions"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Matematically, there is no difference between the expression"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Math.Trigonometric.Sine">
-						<expression tag="Math.Arithmetic.Division">
-							<expression tag="Math.Number" Value="1"/>
-							<expression tag="Math.Number" Value="2"/>
-						</expression>
-					</expression>
-				</expression>
-				<expression tag="String.Text" Value="and"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Math.Trigonometric.Sine">
-						<expression tag="Math.Number" Value="0.5"/>
-					</expression>
-				</expression>
-				<expression tag="String.Text" Value=", they correspond to the same number. The same happens with the expressions"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Math.Trigonometric.Cosine">
-						<expression tag="Math.Number" Value="3"/>
-					</expression>
-				</expression>
-				<expression tag="String.Text" Value="and"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Math.Trigonometric.Cosine">
-						<expression tag="Math.Number" Value="3."/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="However, if you try to evaluate the expressions in Fōrmulæ, they behave quite different:"/>
+				<expression tag="String.Text" Value="Transcendental expression will not terminate when its operand is integer or rational:"/>
 			</expression>
 		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="List.List">
-			<expression tag="List.List">
-				<expression tag="Math.Trigonometric.Sine">
-					<expression tag="Math.Arithmetic.Division">
-						<expression tag="Math.Number" Value="1"/>
-						<expression tag="Math.Number" Value="2"/>
-					</expression>
-				</expression>
-				<expression tag="Math.Trigonometric.Sine">
-					<expression tag="Math.Number" Value="0.5"/>
-				</expression>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="Math.Trigonometric.Cosine">
-					<expression tag="Math.Number" Value="3"/>
-				</expression>
-				<expression tag="Math.Trigonometric.Cosine">
-					<expression tag="Math.Number" Value="3."/>
-				</expression>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
-			<expression tag="List.List">
-				<expression tag="Math.Trigonometric.Sine">
-					<expression tag="Math.Arithmetic.Division">
-						<expression tag="Math.Number" Value="1"/>
-						<expression tag="Math.Number" Value="2"/>
-					</expression>
-				</expression>
-				<expression tag="Math.Number" Value="0.47942553860420300027"/>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="Math.Trigonometric.Cosine">
-					<expression tag="Math.Number" Value="3"/>
-				</expression>
-				<expression tag="Math.Arithmetic.Negative">
-					<expression tag="Math.Number" Value="0.98999249660044545727"/>
-				</expression>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Centering">
-			<expression tag="List.Table">
-				<expression tag="List.List">
-					<expression tag="List.List">
-						<expression tag="Visualization.Bold" Value="True" Set="True">
-							<expression tag="String.Text" Value="Operation"/>
-						</expression>
-						<expression tag="Visualization.Bold" Value="True" Set="True">
-							<expression tag="String.Text" Value="Integer, decimal, rational and complex numbers"/>
-						</expression>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="String.Text" Value="Square root"/>
-						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-							<expression tag="String.Text" Value="✔"/>
-						</expression>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="String.Text" Value="Decimal, natural and binary logarithm"/>
-						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-							<expression tag="String.Text" Value="✔"/>
-						</expression>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Visualization.VerticalArray">
-							<expression tag="String.Text" Value="Trigonometric"/>
-							<expression tag="String.Text" Value="sine, cosine, tangent, cotangent, secant, cosecant"/>
-						</expression>
-						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-							<expression tag="String.Text" Value="✔"/>
-						</expression>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Visualization.VerticalArray">
-							<expression tag="String.Text" Value="Inverse trigonometric"/>
-							<expression tag="String.Text" Value="sine, cosine, tangent, cotangent, secant, cosecant"/>
-						</expression>
-						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-							<expression tag="String.Text" Value="✔"/>
-						</expression>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Visualization.VerticalArray">
-							<expression tag="String.Text" Value="Hyperbolic"/>
-							<expression tag="String.Text" Value="sine, cosine, tangent, cotangent, secant, cosecant"/>
-						</expression>
-						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-							<expression tag="String.Text" Value="✔"/>
-						</expression>
-					</expression>
-					<expression tag="List.List">
-						<expression tag="Visualization.VerticalArray">
-							<expression tag="String.Text" Value="Inverse hyperbolic"/>
-							<expression tag="String.Text" Value="sine, cosine, tangent, cotangent, secant, cosecant"/>
-						</expression>
-						<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-							<expression tag="String.Text" Value="✔"/>
-						</expression>
-					</expression>
-				</expression>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Rule"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Visualization.CrossedOut">
-						<expression tag="String.Text" Value="Performing arithmetic operations mixing numbers of different types"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The following arithmetic operations can mix numbers of different types:"/>
-			</expression>
-			<expression tag="Typesetting.Centering">
-				<expression tag="List.Table">
-					<expression tag="List.List">
-						<expression tag="List.List">
-							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="String.Text" Value="Operation"/>
-							</expression>
-							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="String.Text" Value="Integer, decimal and rational numbers"/>
-							</expression>
-							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="String.Text" Value="Complex cumbers"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Addition"/>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Multiplication"/>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Division"/>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Exponentiation"/>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="Math.Transcendental.Logarithm">
-								<expression tag="String.Text" Value="arg"/>
-								<expression tag="String.Text" Value="base"/>
-							</expression>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="Visualization.VerticalArray">
-								<expression tag="Relation.Compare">
-									<expression tag="Symbolic.Symbol" Name="a"/>
-									<expression tag="Symbolic.Symbol" Name="b"/>
-								</expression>
-								<expression tag="Visualization.HorizontalArray">
-									<expression tag="Relation.Equals">
-										<expression tag="Symbolic.Symbol" Name="a"/>
-										<expression tag="Symbolic.Symbol" Name="b"/>
-									</expression>
-									<expression tag="String.Text" Value=","/>
-									<expression tag="Relation.Different">
-										<expression tag="Symbolic.Symbol" Name="a"/>
-										<expression tag="Symbolic.Symbol" Name="b"/>
-									</expression>
-								</expression>
-								<expression tag="Visualization.HorizontalArray">
-									<expression tag="Relation.Greater">
-										<expression tag="Symbolic.Symbol" Name="a"/>
-										<expression tag="Symbolic.Symbol" Name="b"/>
-									</expression>
-									<expression tag="String.Text" Value=","/>
-									<expression tag="Relation.GreaterOrEquals">
-										<expression tag="Symbolic.Symbol" Name="a"/>
-										<expression tag="Symbolic.Symbol" Name="b"/>
-									</expression>
-								</expression>
-								<expression tag="Visualization.HorizontalArray">
-									<expression tag="Relation.Less">
-										<expression tag="Symbolic.Symbol" Name="a"/>
-										<expression tag="Symbolic.Symbol" Name="b"/>
-									</expression>
-									<expression tag="String.Text" Value=","/>
-									<expression tag="Relation.LessOrEquals">
-										<expression tag="Symbolic.Symbol" Name="a"/>
-										<expression tag="Symbolic.Symbol" Name="b"/>
-									</expression>
-								</expression>
-							</expression>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-							<expression tag="Visualization.VerticalArray">
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="✗"/>
-								</expression>
-								<expression tag="String.Text" Value="Complex numbers are not comparable"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="Div, Mod, and DivMod operations"/>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-							<expression tag="Visualization.VerticalArray">
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="✗"/>
-								</expression>
-								<expression tag="String.Text" Value="There is no notion of integerness for complex numbers"/>
-							</expression>
-						</expression>
-						<expression tag="List.List">
-							<expression tag="String.Text" Value="atan2"/>
-							<expression tag="Visualization.Color" Red="0" Green="0.4980392156862745" Blue="0" Alpha="1">
-								<expression tag="String.Text" Value="✔"/>
-							</expression>
-							<expression tag="Visualization.VerticalArray">
-								<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
-									<expression tag="String.Text" Value="✗"/>
-								</expression>
-								<expression tag="String.Text" Value="atan2 is only defined for real numbers"/>
-							</expression>
-						</expression>
-					</expression>
-				</expression>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Rule"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Visualization.CrossedOut">
-						<expression tag="String.Text" Value="Symbolic vs. numeric programming languages"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Most programming languages are numeric, it means (among other features) that all the numeric expressions must be completed, because the results are usually stored and processed as a single unit (usually as an integer of floating point number). For example, take the expression"/>
-				<expression tag="Math.Arithmetic.Division">
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Math.Number" Value="3"/>
-				</expression>
-				<expression tag="String.Text" Value=", the division is always performed, even when it makes the result inexact 0.33333333.. (the number of digits depends on the precision)."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Symbolic programming langauges (like Fōrmulæ), on the other hand, allow the management of compound and complex expressions. It makes possible, for example, the representation and solution of equations. The expression"/>
-				<expression tag="Math.Arithmetic.Division">
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Math.Number" Value="3"/>
-				</expression>
-				<expression tag="String.Text" Value="is usually left as it is, because it is exact and it can be operated with other expressions without losing its exactitude, such as follows:"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Multiplication">
-			<expression tag="Math.Number" Value="3"/>
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Number" Value="1"/>
-				<expression tag="Math.Number" Value="3"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="1"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Let us see other examples:"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Division">
-			<expression tag="Math.Arithmetic.SquareRoot">
-				<expression tag="Math.Number" Value="2"/>
-			</expression>
-			<expression tag="Math.Arithmetic.Exponentiation">
-				<expression tag="Math.Number" Value="3"/>
-				<expression tag="Math.Number" Value="2"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Arithmetic.Multiplication">
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Number" Value="1"/>
-				<expression tag="Math.Number" Value="9"/>
-			</expression>
-			<expression tag="Math.Arithmetic.SquareRoot">
-				<expression tag="Math.Number" Value="2"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Division">
-			<expression tag="Math.Number" Value="12"/>
-			<expression tag="Math.Number" Value="15"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Arithmetic.Division">
-			<expression tag="Math.Number" Value="4"/>
-			<expression tag="Math.Number" Value="5"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Math.Constant.Pi"/>
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Number" Value="0"/>
-				<expression tag="Math.Number" Value="3"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Constant.Pi"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Transcendental.NaturalLogarithm">
-			<expression tag="Math.Arithmetic.Addition">
-				<expression tag="Math.Number" Value="88"/>
-				<expression tag="Math.Number" Value="50"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Transcendental.NaturalLogarithm">
-			<expression tag="Math.Number" Value="138"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Mixing integer and decimal numbers in arithmetic operations"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Visualization.CrossedOut">
-						<expression tag="String.Text" Value="Decimal-aware expressions"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The expressions for negative, addition, multiplication, division, exponentiation, square root, logarithms, trigonometric/hyperbolic expressions (and their inverses) are called decimal-aware expressions, because if a decimal number is used as one or several of their operands, the result will be calculated numerically (as a decimal number) using the current precision and rounding mode."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="See the following examples:"/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.Addition">
-			<expression tag="Math.Number" Value="2"/>
-			<expression tag="Math.Number" Value="3.5"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="5.5"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Math.Trigonometric.Sine">
-			<expression tag="Math.Number" Value="4.5"/>
+			<expression tag="Math.Number" Value="48"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Trigonometric.Sine">
+			<expression tag="Math.Number" Value="48"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="With decimal numbers they will terminate, with a result as decimal and rounded"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Trigonometric.Sine">
+			<expression tag="Math.Number" Value="48."/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="Math.Arithmetic.Negative">
-			<expression tag="Math.Number" Value="0.97753011766509705538"/>
+			<expression tag="Math.Number" Value="0.76825466132366679904"/>
 		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="List.List">
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Number" Value="1"/>
-				<expression tag="Math.Number" Value="3"/>
-			</expression>
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Number" Value="1."/>
-				<expression tag="Math.Number" Value="3"/>
-			</expression>
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Number" Value="1"/>
-				<expression tag="Math.Number" Value="3."/>
-			</expression>
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Number" Value="1."/>
-				<expression tag="Math.Number" Value="3."/>
-			</expression>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
-			<expression tag="Math.Arithmetic.Division">
-				<expression tag="Math.Number" Value="1"/>
-				<expression tag="Math.Number" Value="3"/>
-			</expression>
-			<expression tag="Math.Number" Value="0.33333333333333333333"/>
-			<expression tag="Math.Number" Value="0.33333333333333333333"/>
-			<expression tag="Math.Number" Value="0.33333333333333333333"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.SquareRoot">
-			<expression tag="Math.Number" Value="26.5"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="5.1478150704935001578"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Notice that the rule is followed even if the result fits as an exact integer:"/>
+			<expression tag="String.Text" Value="With decimal numbers they will terminate, with a result as decimal even if it has an integer value:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.SquareRoot">
-			<expression tag="Math.Number" Value="100."/>
+		<expression tag="Math.Trigonometric.Tangent">
+			<expression tag="Math.Number" Value="0."/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="10."/>
+		<expression tag="Math.Number" Value="0."/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.SquareRoot">
+			<expression tag="Math.Number" Value="81."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="9."/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="Visualization.CrossedOut">
-						<expression tag="String.Text" Value="Enforcing numeric calculations for decimal-aware expressions"/>
-					</expression>
+					<expression tag="String.Text" Value="Other mathematical expressions"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Symbolic computation is cool, but there are times when you want to perform a operation numerically, just like regular programming languages do."/>
+				<expression tag="String.Text" Value="Other expressions has every one its own rules. Let us show several examples:"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Of course, acoording to the last section, you could use decimal numbers always, but it is unnatural and prone to errors."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The"/>
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="numeric"/>
-				</expression>
-				<expression tag="String.Text" Value="mode"/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="In this mode, all decimal-aware expression perform the calculation numerically, even if their operands contains no decimal numbers."/>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The"/>
-				<expression tag="String.Text" Value="N"/>
-				<expression tag="String.Text" Value="expression."/>
+				<expression tag="String.Text" Value="The IntegerPart of a number, as its name says, extract the integer part of integer, decimal or rational numbers. Complex numbers has no integer part. It will always answer with an integer number, because it is just its expected functionallity:"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.N">
-			<expression tag="List.List">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.IntegerPart">
+				<expression tag="Math.Number" Value="35"/>
+			</expression>
+			<expression tag="Math.Arithmetic.IntegerPart">
 				<expression tag="Math.Arithmetic.Division">
-					<expression tag="Math.Number" Value="1"/>
-					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Number" Value="78"/>
+					<expression tag="Math.Number" Value="23"/>
 				</expression>
-				<expression tag="Math.Transcendental.NaturalLogarithm">
-					<expression tag="Math.Number" Value="45"/>
-				</expression>
-				<expression tag="Math.Arithmetic.Addition">
-					<expression tag="Math.Number" Value="2"/>
-					<expression tag="Math.Number" Value="3"/>
-				</expression>
-				<expression tag="Math.Arithmetic.Addition">
-					<expression tag="Math.Arithmetic.Division">
-						<expression tag="Math.Number" Value="5"/>
-						<expression tag="Math.Number" Value="2"/>
-					</expression>
-					<expression tag="Math.Arithmetic.Negative">
-						<expression tag="Math.Arithmetic.Multiplication">
-							<expression tag="Math.Number" Value="8"/>
-							<expression tag="Math.Complex.ImaginaryUnit"/>
-						</expression>
-					</expression>
-				</expression>
-				<expression tag="Math.Number" Value="5"/>
+			</expression>
+			<expression tag="Math.Arithmetic.IntegerPart">
+				<expression tag="Math.Number" Value="123.456"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="List.List">
-			<expression tag="Math.Number" Value="0.33333333333333333333"/>
-			<expression tag="Math.Number" Value="3.8066624897703197573"/>
-			<expression tag="Math.Number" Value="5."/>
+			<expression tag="Math.Number" Value="35"/>
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="123"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Similarly, the FractionalPart expression always returns a decimal or rational number:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.FractionalPart">
+				<expression tag="Math.Number" Value="45"/>
+			</expression>
+			<expression tag="Math.Arithmetic.FractionalPart">
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Number" Value="78"/>
+					<expression tag="Math.Number" Value="23"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.FractionalPart">
+				<expression tag="Math.Number" Value="123.456"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Number" Value="0."/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="9"/>
+				<expression tag="Math.Number" Value="23"/>
+			</expression>
+			<expression tag="Math.Number" Value="0.456"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Numeric mode"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Fōrmulæ is a symbolic system, if prefers managing expressions literally because it preserves accuracy."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The opposite of"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="symbolic computation"/>
+				</expression>
+				<expression tag="String.Text" Value="is"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="numeric computation."/>
+				</expression>
+				<expression tag="String.Text" Value="In a numeric form of computation, it is imperative that mathematical expressions always evaluate, even if the results are not exact."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Numeric computation is used by most of programming languages."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In programming languajes, there is a data type for integer numbers, and another one for decimal numbers. The rules for combinig integer and decimal numbers in a mathematical operation are similar to Fōrmulæ: operations with integers usually result in a integer, operations with decimals usually result in a decimal, and combining both usually results in a decimal."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If you want to use Fōrmulæ in the same way than numeric languages, you can change the mode from symbolic to numeric."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="To use the numeric mode, you use the"/>
+				<expression tag="Visualization.Selected">
+					<expression tag="Math.Numeric">
+						<expression tag="Symbolic.Symbol" Name="e"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="expression. It  computes the expression"/>
+				<expression tag="Visualization.Selected">
+					<expression tag="Symbolic.Symbol" Name="e"/>
+				</expression>
+				<expression tag="String.Text" Value="in numeric mode."/>
+			</expression>
+			<expression tag="String.Text" Value="Examples:"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In numeric mode, transcendental expressions always evaluate (as a decimal number, rounded), even if the operand is an integer or rational number:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.List">
+			<expression tag="Math.Trigonometric.Tangent">
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Numeric">
+				<expression tag="Math.Trigonometric.Tangent">
+					<expression tag="Math.Number" Value="3"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Trigonometric.Tangent">
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="0.14254654307427780529"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.SquareRoot">
+				<expression tag="Math.Number" Value="50"/>
+			</expression>
+			<expression tag="Math.Numeric">
+				<expression tag="Math.Arithmetic.SquareRoot">
+					<expression tag="Math.Number" Value="50"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.List">
+			<expression tag="Math.Arithmetic.SquareRoot">
+				<expression tag="Math.Number" Value="50"/>
+			</expression>
+			<expression tag="Math.Number" Value="7.071067811865475244"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="However, mathematical expressions that return integer numbers keep doing the same:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
 			<expression tag="Math.Arithmetic.Addition">
-				<expression tag="Math.Number" Value="2.5"/>
-				<expression tag="Math.Arithmetic.Negative">
-					<expression tag="Math.Arithmetic.Multiplication">
-						<expression tag="Math.Number" Value="8."/>
-						<expression tag="Math.Complex.ImaginaryUnit"/>
+				<expression tag="Math.Number" Value="88"/>
+				<expression tag="Math.Number" Value="24"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="112"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Complex mathematical expressions will always terminate, provided their inputs are always numbers:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Trigonometric.Sine">
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Math.Transcendental.NaturalLogarithm">
+					<expression tag="Math.Arithmetic.SquareRoot">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Math.Number" Value="88"/>
+								<expression tag="Math.Number" Value="3.5"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="48"/>
+							</expression>
+						</expression>
 					</expression>
 				</expression>
 			</expression>
-			<expression tag="Math.Number" Value="5."/>
 		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0.048710228645447358761"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Number" Value="7"/>
+				<expression tag="Math.Number" Value="6"/>
+			</expression>
+			<expression tag="Math.Number" Value="50"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1.1666666666666666666666666666666666666666666666666"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Constant.Euler"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2.7182818284590452353"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Constant.Pi"/>
+			<expression tag="Math.Number" Value="50"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="3.1415926535897932384626433832795028841971693993751"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Numeric">
+			<expression tag="Math.Trigonometric.Cosine">
+				<expression tag="Math.Arithmetic.Multiplication">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Constant.Pi"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0.99999999999999999999"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Math.SetAsNumeric"/>
+			<expression tag="Math.Arithmetic.Division">
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Math.Arithmetic.SquareRoot">
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="0.6180339887498948482"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Rule"/>
