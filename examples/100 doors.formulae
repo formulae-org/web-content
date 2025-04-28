@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.logic,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.color,org.formulae.graphics.raster,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.logic,org.formulae.symbolic,org.formulae.list,org.formulae.programming,org.formulae.math.arithmetic,org.formulae.expression,org.formulae.visualization,org.formulae.color,org.formulae.graphics.raster,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -88,22 +88,25 @@
 					<expression tag="Math.Number" Value="1"/>
 					<expression tag="Math.Number" Value="100"/>
 				</expression>
-				<expression tag="Math.Matrix.Transpose">
-					<expression tag="List.CreateList">
-						<expression tag="List.List">
-							<expression tag="Symbolic.Symbol" Name="i"/>
-							<expression tag="Programming.Conditional">
-								<expression tag="Expression.Child">
-									<expression tag="Symbolic.Symbol" Name="doors"/>
-									<expression tag="Symbolic.Symbol" Name="i"/>
+				<expression tag="List.Table">
+					<expression tag="List.ToMatrix">
+						<expression tag="List.CreateList">
+							<expression tag="Visualization.VerticalArray">
+								<expression tag="Programming.Conditional">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="doors"/>
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+									<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+									<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
 								</expression>
-								<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
-								<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
 							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="100"/>
 						</expression>
-						<expression tag="Symbolic.Symbol" Name="i"/>
-						<expression tag="Math.Number" Value="1"/>
-						<expression tag="Math.Number" Value="100"/>
+						<expression tag="Math.Number" Value="10"/>
 					</expression>
 				</expression>
 			</expression>
@@ -116,210 +119,428 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="List.List">
+		<expression tag="List.Table">
 			<expression tag="List.List">
-				<expression tag="Math.Number" Value="1"/>
-				<expression tag="Math.Number" Value="2"/>
-				<expression tag="Math.Number" Value="3"/>
-				<expression tag="Math.Number" Value="4"/>
-				<expression tag="Math.Number" Value="5"/>
-				<expression tag="Math.Number" Value="6"/>
-				<expression tag="Math.Number" Value="7"/>
-				<expression tag="Math.Number" Value="8"/>
-				<expression tag="Math.Number" Value="9"/>
-				<expression tag="Math.Number" Value="10"/>
-				<expression tag="Math.Number" Value="11"/>
-				<expression tag="Math.Number" Value="12"/>
-				<expression tag="Math.Number" Value="13"/>
-				<expression tag="Math.Number" Value="14"/>
-				<expression tag="Math.Number" Value="15"/>
-				<expression tag="Math.Number" Value="16"/>
-				<expression tag="Math.Number" Value="17"/>
-				<expression tag="Math.Number" Value="18"/>
-				<expression tag="Math.Number" Value="19"/>
-				<expression tag="Math.Number" Value="20"/>
-				<expression tag="Math.Number" Value="21"/>
-				<expression tag="Math.Number" Value="22"/>
-				<expression tag="Math.Number" Value="23"/>
-				<expression tag="Math.Number" Value="24"/>
-				<expression tag="Math.Number" Value="25"/>
-				<expression tag="Math.Number" Value="26"/>
-				<expression tag="Math.Number" Value="27"/>
-				<expression tag="Math.Number" Value="28"/>
-				<expression tag="Math.Number" Value="29"/>
-				<expression tag="Math.Number" Value="30"/>
-				<expression tag="Math.Number" Value="31"/>
-				<expression tag="Math.Number" Value="32"/>
-				<expression tag="Math.Number" Value="33"/>
-				<expression tag="Math.Number" Value="34"/>
-				<expression tag="Math.Number" Value="35"/>
-				<expression tag="Math.Number" Value="36"/>
-				<expression tag="Math.Number" Value="37"/>
-				<expression tag="Math.Number" Value="38"/>
-				<expression tag="Math.Number" Value="39"/>
-				<expression tag="Math.Number" Value="40"/>
-				<expression tag="Math.Number" Value="41"/>
-				<expression tag="Math.Number" Value="42"/>
-				<expression tag="Math.Number" Value="43"/>
-				<expression tag="Math.Number" Value="44"/>
-				<expression tag="Math.Number" Value="45"/>
-				<expression tag="Math.Number" Value="46"/>
-				<expression tag="Math.Number" Value="47"/>
-				<expression tag="Math.Number" Value="48"/>
-				<expression tag="Math.Number" Value="49"/>
-				<expression tag="Math.Number" Value="50"/>
-				<expression tag="Math.Number" Value="51"/>
-				<expression tag="Math.Number" Value="52"/>
-				<expression tag="Math.Number" Value="53"/>
-				<expression tag="Math.Number" Value="54"/>
-				<expression tag="Math.Number" Value="55"/>
-				<expression tag="Math.Number" Value="56"/>
-				<expression tag="Math.Number" Value="57"/>
-				<expression tag="Math.Number" Value="58"/>
-				<expression tag="Math.Number" Value="59"/>
-				<expression tag="Math.Number" Value="60"/>
-				<expression tag="Math.Number" Value="61"/>
-				<expression tag="Math.Number" Value="62"/>
-				<expression tag="Math.Number" Value="63"/>
-				<expression tag="Math.Number" Value="64"/>
-				<expression tag="Math.Number" Value="65"/>
-				<expression tag="Math.Number" Value="66"/>
-				<expression tag="Math.Number" Value="67"/>
-				<expression tag="Math.Number" Value="68"/>
-				<expression tag="Math.Number" Value="69"/>
-				<expression tag="Math.Number" Value="70"/>
-				<expression tag="Math.Number" Value="71"/>
-				<expression tag="Math.Number" Value="72"/>
-				<expression tag="Math.Number" Value="73"/>
-				<expression tag="Math.Number" Value="74"/>
-				<expression tag="Math.Number" Value="75"/>
-				<expression tag="Math.Number" Value="76"/>
-				<expression tag="Math.Number" Value="77"/>
-				<expression tag="Math.Number" Value="78"/>
-				<expression tag="Math.Number" Value="79"/>
-				<expression tag="Math.Number" Value="80"/>
-				<expression tag="Math.Number" Value="81"/>
-				<expression tag="Math.Number" Value="82"/>
-				<expression tag="Math.Number" Value="83"/>
-				<expression tag="Math.Number" Value="84"/>
-				<expression tag="Math.Number" Value="85"/>
-				<expression tag="Math.Number" Value="86"/>
-				<expression tag="Math.Number" Value="87"/>
-				<expression tag="Math.Number" Value="88"/>
-				<expression tag="Math.Number" Value="89"/>
-				<expression tag="Math.Number" Value="90"/>
-				<expression tag="Math.Number" Value="91"/>
-				<expression tag="Math.Number" Value="92"/>
-				<expression tag="Math.Number" Value="93"/>
-				<expression tag="Math.Number" Value="94"/>
-				<expression tag="Math.Number" Value="95"/>
-				<expression tag="Math.Number" Value="96"/>
-				<expression tag="Math.Number" Value="97"/>
-				<expression tag="Math.Number" Value="98"/>
-				<expression tag="Math.Number" Value="99"/>
-				<expression tag="Math.Number" Value="100"/>
-			</expression>
-			<expression tag="List.List">
-				<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
-				<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+				<expression tag="List.List">
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="2"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="5"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="6"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="7"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="9"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="11"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="12"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="13"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="14"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="15"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="16"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="17"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="18"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="19"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="20"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="21"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="22"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="23"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="24"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="25"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="26"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="27"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="28"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="29"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="30"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="31"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="32"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="33"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="34"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="35"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="36"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="37"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="38"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="39"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="40"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="41"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="42"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="43"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="44"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="45"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="46"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="47"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="48"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="49"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="50"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="51"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="52"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="53"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="54"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="55"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="56"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="57"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="58"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="59"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="60"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="61"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="62"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="63"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="64"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="65"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="66"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="67"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="68"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="69"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="70"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="71"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="72"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="73"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="74"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="75"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="76"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="77"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="78"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="79"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="80"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="81"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="82"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="83"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="84"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="85"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="86"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="87"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="88"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="89"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="90"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="91"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="92"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="93"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="94"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="95"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="96"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="97"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="98"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="99"/>
+					</expression>
+					<expression tag="Visualization.VerticalArray">
+						<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+						<expression tag="Math.Number" Value="100"/>
+					</expression>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -327,7 +548,7 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Improvement"/>
+					<expression tag="String.Text" Value="Improvements"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
@@ -533,7 +754,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1621711380000"/>
+				<expression tag="Time.Time" Value="1745808420000"/>
 			</expression>
 		</expression>
 	</expression>

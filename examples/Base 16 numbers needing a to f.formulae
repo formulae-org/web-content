@@ -1,0 +1,483 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.programming,org.formulae.symbolic,org.formulae.list,org.formulae.expression,org.formulae.math.arithmetic,org.formulae.visualization,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Base 16 numbers needing a to f"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Base_16_numbers_needing_a_to_f" Description="Base 16 numbers needing a to f"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Show in decimal notation all positive integers (less than 501) which, when converted to hexadecimal notation, cannot be written without using at least one non-decimal digit ('a' to 'f')."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="List.List"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.InvertedForFromTo">
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Expression.Append">
+						<expression tag="Symbolic.Symbol" Name="list"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="String.Matches">
+						<expression tag="String.ToString">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Math.Number" Value="16"/>
+						</expression>
+						<expression tag="String.RegularExpression" Value="[a-f]"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="500"/>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="List.ToMatrix">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="Math.Number" Value="20"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="11"/>
+					<expression tag="Math.Number" Value="12"/>
+					<expression tag="Math.Number" Value="13"/>
+					<expression tag="Math.Number" Value="14"/>
+					<expression tag="Math.Number" Value="15"/>
+					<expression tag="Math.Number" Value="26"/>
+					<expression tag="Math.Number" Value="27"/>
+					<expression tag="Math.Number" Value="28"/>
+					<expression tag="Math.Number" Value="29"/>
+					<expression tag="Math.Number" Value="30"/>
+					<expression tag="Math.Number" Value="31"/>
+					<expression tag="Math.Number" Value="42"/>
+					<expression tag="Math.Number" Value="43"/>
+					<expression tag="Math.Number" Value="44"/>
+					<expression tag="Math.Number" Value="45"/>
+					<expression tag="Math.Number" Value="46"/>
+					<expression tag="Math.Number" Value="47"/>
+					<expression tag="Math.Number" Value="58"/>
+					<expression tag="Math.Number" Value="59"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="60"/>
+					<expression tag="Math.Number" Value="61"/>
+					<expression tag="Math.Number" Value="62"/>
+					<expression tag="Math.Number" Value="63"/>
+					<expression tag="Math.Number" Value="74"/>
+					<expression tag="Math.Number" Value="75"/>
+					<expression tag="Math.Number" Value="76"/>
+					<expression tag="Math.Number" Value="77"/>
+					<expression tag="Math.Number" Value="78"/>
+					<expression tag="Math.Number" Value="79"/>
+					<expression tag="Math.Number" Value="90"/>
+					<expression tag="Math.Number" Value="91"/>
+					<expression tag="Math.Number" Value="92"/>
+					<expression tag="Math.Number" Value="93"/>
+					<expression tag="Math.Number" Value="94"/>
+					<expression tag="Math.Number" Value="95"/>
+					<expression tag="Math.Number" Value="106"/>
+					<expression tag="Math.Number" Value="107"/>
+					<expression tag="Math.Number" Value="108"/>
+					<expression tag="Math.Number" Value="109"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="110"/>
+					<expression tag="Math.Number" Value="111"/>
+					<expression tag="Math.Number" Value="122"/>
+					<expression tag="Math.Number" Value="123"/>
+					<expression tag="Math.Number" Value="124"/>
+					<expression tag="Math.Number" Value="125"/>
+					<expression tag="Math.Number" Value="126"/>
+					<expression tag="Math.Number" Value="127"/>
+					<expression tag="Math.Number" Value="138"/>
+					<expression tag="Math.Number" Value="139"/>
+					<expression tag="Math.Number" Value="140"/>
+					<expression tag="Math.Number" Value="141"/>
+					<expression tag="Math.Number" Value="142"/>
+					<expression tag="Math.Number" Value="143"/>
+					<expression tag="Math.Number" Value="154"/>
+					<expression tag="Math.Number" Value="155"/>
+					<expression tag="Math.Number" Value="156"/>
+					<expression tag="Math.Number" Value="157"/>
+					<expression tag="Math.Number" Value="158"/>
+					<expression tag="Math.Number" Value="159"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="160"/>
+					<expression tag="Math.Number" Value="161"/>
+					<expression tag="Math.Number" Value="162"/>
+					<expression tag="Math.Number" Value="163"/>
+					<expression tag="Math.Number" Value="164"/>
+					<expression tag="Math.Number" Value="165"/>
+					<expression tag="Math.Number" Value="166"/>
+					<expression tag="Math.Number" Value="167"/>
+					<expression tag="Math.Number" Value="168"/>
+					<expression tag="Math.Number" Value="169"/>
+					<expression tag="Math.Number" Value="170"/>
+					<expression tag="Math.Number" Value="171"/>
+					<expression tag="Math.Number" Value="172"/>
+					<expression tag="Math.Number" Value="173"/>
+					<expression tag="Math.Number" Value="174"/>
+					<expression tag="Math.Number" Value="175"/>
+					<expression tag="Math.Number" Value="176"/>
+					<expression tag="Math.Number" Value="177"/>
+					<expression tag="Math.Number" Value="178"/>
+					<expression tag="Math.Number" Value="179"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="180"/>
+					<expression tag="Math.Number" Value="181"/>
+					<expression tag="Math.Number" Value="182"/>
+					<expression tag="Math.Number" Value="183"/>
+					<expression tag="Math.Number" Value="184"/>
+					<expression tag="Math.Number" Value="185"/>
+					<expression tag="Math.Number" Value="186"/>
+					<expression tag="Math.Number" Value="187"/>
+					<expression tag="Math.Number" Value="188"/>
+					<expression tag="Math.Number" Value="189"/>
+					<expression tag="Math.Number" Value="190"/>
+					<expression tag="Math.Number" Value="191"/>
+					<expression tag="Math.Number" Value="192"/>
+					<expression tag="Math.Number" Value="193"/>
+					<expression tag="Math.Number" Value="194"/>
+					<expression tag="Math.Number" Value="195"/>
+					<expression tag="Math.Number" Value="196"/>
+					<expression tag="Math.Number" Value="197"/>
+					<expression tag="Math.Number" Value="198"/>
+					<expression tag="Math.Number" Value="199"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="200"/>
+					<expression tag="Math.Number" Value="201"/>
+					<expression tag="Math.Number" Value="202"/>
+					<expression tag="Math.Number" Value="203"/>
+					<expression tag="Math.Number" Value="204"/>
+					<expression tag="Math.Number" Value="205"/>
+					<expression tag="Math.Number" Value="206"/>
+					<expression tag="Math.Number" Value="207"/>
+					<expression tag="Math.Number" Value="208"/>
+					<expression tag="Math.Number" Value="209"/>
+					<expression tag="Math.Number" Value="210"/>
+					<expression tag="Math.Number" Value="211"/>
+					<expression tag="Math.Number" Value="212"/>
+					<expression tag="Math.Number" Value="213"/>
+					<expression tag="Math.Number" Value="214"/>
+					<expression tag="Math.Number" Value="215"/>
+					<expression tag="Math.Number" Value="216"/>
+					<expression tag="Math.Number" Value="217"/>
+					<expression tag="Math.Number" Value="218"/>
+					<expression tag="Math.Number" Value="219"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="220"/>
+					<expression tag="Math.Number" Value="221"/>
+					<expression tag="Math.Number" Value="222"/>
+					<expression tag="Math.Number" Value="223"/>
+					<expression tag="Math.Number" Value="224"/>
+					<expression tag="Math.Number" Value="225"/>
+					<expression tag="Math.Number" Value="226"/>
+					<expression tag="Math.Number" Value="227"/>
+					<expression tag="Math.Number" Value="228"/>
+					<expression tag="Math.Number" Value="229"/>
+					<expression tag="Math.Number" Value="230"/>
+					<expression tag="Math.Number" Value="231"/>
+					<expression tag="Math.Number" Value="232"/>
+					<expression tag="Math.Number" Value="233"/>
+					<expression tag="Math.Number" Value="234"/>
+					<expression tag="Math.Number" Value="235"/>
+					<expression tag="Math.Number" Value="236"/>
+					<expression tag="Math.Number" Value="237"/>
+					<expression tag="Math.Number" Value="238"/>
+					<expression tag="Math.Number" Value="239"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="240"/>
+					<expression tag="Math.Number" Value="241"/>
+					<expression tag="Math.Number" Value="242"/>
+					<expression tag="Math.Number" Value="243"/>
+					<expression tag="Math.Number" Value="244"/>
+					<expression tag="Math.Number" Value="245"/>
+					<expression tag="Math.Number" Value="246"/>
+					<expression tag="Math.Number" Value="247"/>
+					<expression tag="Math.Number" Value="248"/>
+					<expression tag="Math.Number" Value="249"/>
+					<expression tag="Math.Number" Value="250"/>
+					<expression tag="Math.Number" Value="251"/>
+					<expression tag="Math.Number" Value="252"/>
+					<expression tag="Math.Number" Value="253"/>
+					<expression tag="Math.Number" Value="254"/>
+					<expression tag="Math.Number" Value="255"/>
+					<expression tag="Math.Number" Value="266"/>
+					<expression tag="Math.Number" Value="267"/>
+					<expression tag="Math.Number" Value="268"/>
+					<expression tag="Math.Number" Value="269"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="270"/>
+					<expression tag="Math.Number" Value="271"/>
+					<expression tag="Math.Number" Value="282"/>
+					<expression tag="Math.Number" Value="283"/>
+					<expression tag="Math.Number" Value="284"/>
+					<expression tag="Math.Number" Value="285"/>
+					<expression tag="Math.Number" Value="286"/>
+					<expression tag="Math.Number" Value="287"/>
+					<expression tag="Math.Number" Value="298"/>
+					<expression tag="Math.Number" Value="299"/>
+					<expression tag="Math.Number" Value="300"/>
+					<expression tag="Math.Number" Value="301"/>
+					<expression tag="Math.Number" Value="302"/>
+					<expression tag="Math.Number" Value="303"/>
+					<expression tag="Math.Number" Value="314"/>
+					<expression tag="Math.Number" Value="315"/>
+					<expression tag="Math.Number" Value="316"/>
+					<expression tag="Math.Number" Value="317"/>
+					<expression tag="Math.Number" Value="318"/>
+					<expression tag="Math.Number" Value="319"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="330"/>
+					<expression tag="Math.Number" Value="331"/>
+					<expression tag="Math.Number" Value="332"/>
+					<expression tag="Math.Number" Value="333"/>
+					<expression tag="Math.Number" Value="334"/>
+					<expression tag="Math.Number" Value="335"/>
+					<expression tag="Math.Number" Value="346"/>
+					<expression tag="Math.Number" Value="347"/>
+					<expression tag="Math.Number" Value="348"/>
+					<expression tag="Math.Number" Value="349"/>
+					<expression tag="Math.Number" Value="350"/>
+					<expression tag="Math.Number" Value="351"/>
+					<expression tag="Math.Number" Value="362"/>
+					<expression tag="Math.Number" Value="363"/>
+					<expression tag="Math.Number" Value="364"/>
+					<expression tag="Math.Number" Value="365"/>
+					<expression tag="Math.Number" Value="366"/>
+					<expression tag="Math.Number" Value="367"/>
+					<expression tag="Math.Number" Value="378"/>
+					<expression tag="Math.Number" Value="379"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="380"/>
+					<expression tag="Math.Number" Value="381"/>
+					<expression tag="Math.Number" Value="382"/>
+					<expression tag="Math.Number" Value="383"/>
+					<expression tag="Math.Number" Value="394"/>
+					<expression tag="Math.Number" Value="395"/>
+					<expression tag="Math.Number" Value="396"/>
+					<expression tag="Math.Number" Value="397"/>
+					<expression tag="Math.Number" Value="398"/>
+					<expression tag="Math.Number" Value="399"/>
+					<expression tag="Math.Number" Value="410"/>
+					<expression tag="Math.Number" Value="411"/>
+					<expression tag="Math.Number" Value="412"/>
+					<expression tag="Math.Number" Value="413"/>
+					<expression tag="Math.Number" Value="414"/>
+					<expression tag="Math.Number" Value="415"/>
+					<expression tag="Math.Number" Value="416"/>
+					<expression tag="Math.Number" Value="417"/>
+					<expression tag="Math.Number" Value="418"/>
+					<expression tag="Math.Number" Value="419"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="420"/>
+					<expression tag="Math.Number" Value="421"/>
+					<expression tag="Math.Number" Value="422"/>
+					<expression tag="Math.Number" Value="423"/>
+					<expression tag="Math.Number" Value="424"/>
+					<expression tag="Math.Number" Value="425"/>
+					<expression tag="Math.Number" Value="426"/>
+					<expression tag="Math.Number" Value="427"/>
+					<expression tag="Math.Number" Value="428"/>
+					<expression tag="Math.Number" Value="429"/>
+					<expression tag="Math.Number" Value="430"/>
+					<expression tag="Math.Number" Value="431"/>
+					<expression tag="Math.Number" Value="432"/>
+					<expression tag="Math.Number" Value="433"/>
+					<expression tag="Math.Number" Value="434"/>
+					<expression tag="Math.Number" Value="435"/>
+					<expression tag="Math.Number" Value="436"/>
+					<expression tag="Math.Number" Value="437"/>
+					<expression tag="Math.Number" Value="438"/>
+					<expression tag="Math.Number" Value="439"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="440"/>
+					<expression tag="Math.Number" Value="441"/>
+					<expression tag="Math.Number" Value="442"/>
+					<expression tag="Math.Number" Value="443"/>
+					<expression tag="Math.Number" Value="444"/>
+					<expression tag="Math.Number" Value="445"/>
+					<expression tag="Math.Number" Value="446"/>
+					<expression tag="Math.Number" Value="447"/>
+					<expression tag="Math.Number" Value="448"/>
+					<expression tag="Math.Number" Value="449"/>
+					<expression tag="Math.Number" Value="450"/>
+					<expression tag="Math.Number" Value="451"/>
+					<expression tag="Math.Number" Value="452"/>
+					<expression tag="Math.Number" Value="453"/>
+					<expression tag="Math.Number" Value="454"/>
+					<expression tag="Math.Number" Value="455"/>
+					<expression tag="Math.Number" Value="456"/>
+					<expression tag="Math.Number" Value="457"/>
+					<expression tag="Math.Number" Value="458"/>
+					<expression tag="Math.Number" Value="459"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="460"/>
+					<expression tag="Math.Number" Value="461"/>
+					<expression tag="Math.Number" Value="462"/>
+					<expression tag="Math.Number" Value="463"/>
+					<expression tag="Math.Number" Value="464"/>
+					<expression tag="Math.Number" Value="465"/>
+					<expression tag="Math.Number" Value="466"/>
+					<expression tag="Math.Number" Value="467"/>
+					<expression tag="Math.Number" Value="468"/>
+					<expression tag="Math.Number" Value="469"/>
+					<expression tag="Math.Number" Value="470"/>
+					<expression tag="Math.Number" Value="471"/>
+					<expression tag="Math.Number" Value="472"/>
+					<expression tag="Math.Number" Value="473"/>
+					<expression tag="Math.Number" Value="474"/>
+					<expression tag="Math.Number" Value="475"/>
+					<expression tag="Math.Number" Value="476"/>
+					<expression tag="Math.Number" Value="477"/>
+					<expression tag="Math.Number" Value="478"/>
+					<expression tag="Math.Number" Value="479"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="480"/>
+					<expression tag="Math.Number" Value="481"/>
+					<expression tag="Math.Number" Value="482"/>
+					<expression tag="Math.Number" Value="483"/>
+					<expression tag="Math.Number" Value="484"/>
+					<expression tag="Math.Number" Value="485"/>
+					<expression tag="Math.Number" Value="486"/>
+					<expression tag="Math.Number" Value="487"/>
+					<expression tag="Math.Number" Value="488"/>
+					<expression tag="Math.Number" Value="489"/>
+					<expression tag="Math.Number" Value="490"/>
+					<expression tag="Math.Number" Value="491"/>
+					<expression tag="Math.Number" Value="492"/>
+					<expression tag="Math.Number" Value="493"/>
+					<expression tag="Math.Number" Value="494"/>
+					<expression tag="Math.Number" Value="495"/>
+					<expression tag="Math.Number" Value="496"/>
+					<expression tag="Math.Number" Value="497"/>
+					<expression tag="Math.Number" Value="498"/>
+					<expression tag="Math.Number" Value="499"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="500"/>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+					<expression tag="Visualization.Invisible">
+						<expression tag="Null"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1745789760000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
