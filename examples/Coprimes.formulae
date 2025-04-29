@@ -1,0 +1,175 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.symbolic,org.formulae.list,org.formulae.relation,org.formulae.math.arithmetic,org.formulae.programming,org.formulae.logic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Coprimes"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Coprimes" Description="Coprimes"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Symbolic.Symbol" Name="p"/>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="Symbolic.Symbol" Name="q"/>
+				<expression tag="String.Text" Value="are coprimes if they have no common factors other than 1."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Task"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="Given the input pairs: [21, 15], [17, 23], [36, 12], [18, 29], [60, 15] display whether they are coprimes."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A list of integers are coprime if their GCD is 1."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Are coprimes"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+				</expression>
+			</expression>
+			<expression tag="Relation.Equals">
+				<expression tag="Math.Arithmetic.GreatestCommonDivisor">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="cases"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="21"/>
+							<expression tag="Math.Number" Value="15"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="17"/>
+							<expression tag="Math.Number" Value="23"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="36"/>
+							<expression tag="Math.Number" Value="12"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="18"/>
+							<expression tag="Math.Number" Value="29"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="60"/>
+							<expression tag="Math.Number" Value="15"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.CreateTable">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="Relation.Equals">
+						<expression tag="Math.Arithmetic.GreatestCommonDivisor">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+						</expression>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="list"/>
+				<expression tag="Symbolic.Symbol" Name="cases"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="list"/>
+					<expression tag="Relation.Equals">
+						<expression tag="Math.Arithmetic.GreatestCommonDivisor">
+							<expression tag="Symbolic.Symbol" Name="list"/>
+						</expression>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="21"/>
+						<expression tag="Math.Number" Value="15"/>
+					</expression>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="17"/>
+						<expression tag="Math.Number" Value="23"/>
+					</expression>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="36"/>
+						<expression tag="Math.Number" Value="12"/>
+					</expression>
+					<expression tag="Logic.False"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="18"/>
+						<expression tag="Math.Number" Value="29"/>
+					</expression>
+					<expression tag="Logic.True"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="60"/>
+						<expression tag="Math.Number" Value="15"/>
+					</expression>
+					<expression tag="Logic.False"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1745919000000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
