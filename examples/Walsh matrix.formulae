@@ -1,0 +1,1212 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.relation,org.formulae.list,org.formulae.visualization,org.formulae.programming,org.formulae.expression,org.formulae.graphics.raster,org.formulae.color,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Walsh matrix"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Walsh_matrix" Description="Walsh matrix"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Walsh matrix"/>
+				</expression>
+				<expression tag="String.Text" Value="is a specific square matrix of dimensions"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="String.Text" Value=", where"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="String.Text" Value="is some particular natural number. The elements of the matrix are either"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="String.Text" Value="or"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="String.Text" Value="and its rows as well as columns are orthogonal, i.e. dot product is zero. Each row of a Walsh matrix corresponds to a Walsh function."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Walsh matrices are a special case of Hadamard matrices. The naturally ordered Hadamard (Walsh) matrix is defined by the recursive formula below, and the sequency-ordered Hadamard (Walsh) matrix is formed by rearranging the rows so that the number of sign changes in a row is in increasing order."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="To generate a naturally ordered Walsh matrix:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Equals">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="W"/>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Equals">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="W"/>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Math.Number" Value="2"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="and in general"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.Equals">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="W"/>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Exponentiation">
+								<expression tag="Math.Number" Value="2"/>
+								<expression tag="Symbolic.Symbol" Name="k"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Visualization.Spurious">
+						<expression tag="Relation.Equals">
+							<expression tag="List.List">
+								<expression tag="List.List">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="W"/>
+										<expression tag="List.List">
+											<expression tag="Math.Arithmetic.Exponentiation">
+												<expression tag="Math.Number" Value="2"/>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="k"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="W"/>
+										<expression tag="List.List">
+											<expression tag="Math.Arithmetic.Exponentiation">
+												<expression tag="Math.Number" Value="2"/>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="k"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="W"/>
+										<expression tag="List.List">
+											<expression tag="Math.Arithmetic.Exponentiation">
+												<expression tag="Math.Number" Value="2"/>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="k"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Symbolic.Function">
+											<expression tag="Symbolic.Symbol" Name="W"/>
+											<expression tag="List.List">
+												<expression tag="Math.Arithmetic.Exponentiation">
+													<expression tag="Math.Number" Value="2"/>
+													<expression tag="Math.Arithmetic.Addition">
+														<expression tag="Symbolic.Symbol" Name="k"/>
+														<expression tag="Math.Arithmetic.Negative">
+															<expression tag="Math.Number" Value="1"/>
+														</expression>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Spurious">
+								<expression tag="Math.Matrix.KroneckerProduct">
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="W"/>
+										<expression tag="List.List">
+											<expression tag="Math.Number" Value="2"/>
+										</expression>
+									</expression>
+									<expression tag="Symbolic.Function">
+										<expression tag="Symbolic.Symbol" Name="W"/>
+										<expression tag="List.List">
+											<expression tag="Math.Arithmetic.Exponentiation">
+												<expression tag="Math.Number" Value="2"/>
+												<expression tag="Math.Arithmetic.Addition">
+													<expression tag="Symbolic.Symbol" Name="k"/>
+													<expression tag="Math.Arithmetic.Negative">
+														<expression tag="Math.Number" Value="1"/>
+													</expression>
+												</expression>
+											</expression>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Relation.LessOrEquals">
+					<expression tag="String.Text" Value="for 2"/>
+					<expression tag="Visualization.Spurious">
+						<expression tag="Relation.In">
+							<expression tag="Symbolic.Symbol" Name="k"/>
+							<expression tag="String.Text" Value="ℕ"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Task"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Write a routine that, given a natural number k, returns a naturally ordered Walsh matrix of order"/>
+					<expression tag="Math.Arithmetic.Exponentiation">
+						<expression tag="Math.Number" Value="2"/>
+						<expression tag="Symbolic.Symbol" Name="k"/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Display a few sample generated matrices."/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="Traditionally, Walsh matrices use 1 &amp; -1 to denote the different cell values in text mode, or green and red blocks in image mode. You may use whichever display mode is most convenient for your particular language."/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Stretch. generate sequency ordered Walsh matrices."/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="A sequency ordered Walsh matrix has the rows sorted by number of sign changes."/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+			<expression tag="String.Text" Value="Let us start defining the Hadamard matrix:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Symbol" Name="H"/>
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="1"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Task 1. Writing the (recursive) routine:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="W"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="order"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Programming.InvertedIf">
+					<expression tag="Symbolic.Return">
+						<expression tag="Symbolic.Symbol" Name="H"/>
+					</expression>
+					<expression tag="Relation.LessOrEquals">
+						<expression tag="Symbolic.Symbol" Name="order"/>
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Matrix.KroneckerProduct">
+					<expression tag="Symbolic.Symbol" Name="H"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="W"/>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="order"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Task 2. Displaying a few samples:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="order"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="W"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="order"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="order"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="3"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="order"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="W"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="order"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="Image mode, the matrix is passed as parameter:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Matrix image"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="matrix"/>
+					<expression tag="Symbolic.Symbol" Name="size"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="block" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Expression.Cardinality">
+							<expression tag="Symbolic.Symbol" Name="matrix"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="g"/>
+						<expression tag="Graphics.CreateRasterGraphics">
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Symbolic.Symbol" Name="size"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Multiplication">
+								<expression tag="Symbolic.Symbol" Name="n"/>
+								<expression tag="Symbolic.Symbol" Name="size"/>
+							</expression>
+							<expression tag="Color.Color" Red="1" Green="0" Blue="0" Alpha="1"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Graphics.SetColor">
+					<expression tag="Symbolic.Symbol" Name="g"/>
+					<expression tag="Color.Color" Red="0" Green="1" Blue="0" Alpha="1"/>
+				</expression>
+				<expression tag="Programming.Cycle">
+					<expression tag="Programming.Cycle">
+						<expression tag="Programming.InvertedIf">
+							<expression tag="Graphics.FillRectanglePosSize">
+								<expression tag="Symbolic.Symbol" Name="g"/>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="size"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Symbolic.Symbol" Name="size"/>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="y"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="size"/>
+								<expression tag="Symbolic.Symbol" Name="size"/>
+							</expression>
+							<expression tag="Relation.Equals">
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="matrix"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="x"/>
+										<expression tag="Symbolic.Symbol" Name="y"/>
+									</expression>
+								</expression>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="y"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="g"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="order"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Matrix image"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="W"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="order"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="order"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="5"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="order"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Matrix image"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="W"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="order"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAB1JREFUKFNjZPjP8J8BD2AcAAX/GVEdhOEG6isAABsmE/k/uHRQAAAAAElFTkSuQmCC"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAADpJREFUOE9jZPjP8J+BAsA4DA34z4gaIIxoIYQhjx4Gw8AA9CSB7iV0eYLpYAgaQNDJaOkCIwyGngEAJEM38SwCnE4AAAAASUVORK5CYII="/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAIxJREFUWEftljEOwDAIA+H/j6Zz3eFkJVIZnDUiMcZguqamfjwdAOsYmH4LokUh1++VgesfUAIBQCLUkujIUI3oPcYHwDoGsGbgHG78xwvcB2zRSQIBcGzHVDJaNQJgHwOuHZM30HvYhrSQBMB1BtzRin0O3oFdcDxoAsBlgCintnR3RJwDpyonUQfAA87or+E2s4TLAAAAAElFTkSuQmCC"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAcZJREFUeF7t28ESwyAIBNDk/z86PZce3jDUSWq3V0fRZWFB0/O4juv4498ZAMKAhMBbDrjO94Rwlgyx3XjNAdsdUA4MACUJ/j0DaklQAanjNUf83HzVAQGgqEIYUBDYLgS2p3yRxY9eIADsHvNhQCn1JYO6KlDIaL6SqOaP7QeA4X3A2APD+6ix/TBg2AypMlRzpd5B9xFT+6wDVm8gABQExBjFvBxWx8MAJUEhLp2+XeehMnwXCADoDcIAIPBzISDKd7Ps3TJH+7oWnxYa3ADu7ZfbDwAohZd74GkMUFb/9rhyzrftfThUhdDqDQSAYZ0xdRArwakBzX8cA7rdWLcu0IGn63Xnj7vBrsEA0Hx3WM3IMEAy2KWsSl8lRRVe3fXVjFEFAkAzZrseEiPkwamDwoBpN9j1eFc2p+trPlVgdVKSzOkA0/0FgITAza/DUgGNSyU4X4WQFpAMaf50PAAMvy9gHSAPbccAyZIO3NX5rj1Rvr2eVEAHkg63N6Tv+0H5tr0AcPMnMm2PrWZAt/RUkuzGrEJK9rr7pwoo6WlDAaBJ2TCgICAGiYFi8LgbVBJrx2STMVOZDgCqAxSTYQD+avv0EHgBZy1f35OYrP4AAAAASUVORK5CYII="/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Graphics.RasterGraphics" Value="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"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Matrix image"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="W"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Graphics.RasterGraphics" Value="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"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Stretch task. Sequency ordered Walsh matrices."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In order to sort the rows, we use the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Decorate-sort-undecorate_idiom#F%C5%8Drmul%C3%A6" Description="Decorate-sort-undecorate idiom:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Decorate-sort-undecorate sorting"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="array"/>
+					<expression tag="Symbolic.Symbol" Name="key"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="False">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="decorated list"/>
+						<expression tag="List.CreateList">
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="e"/>
+								<expression tag="Symbolic.LambdaApplication">
+									<expression tag="Symbolic.Symbol" Name="key"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="e"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="e"/>
+							<expression tag="Symbolic.Symbol" Name="array"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="sorted"/>
+						<expression tag="List.Sort">
+							<expression tag="Symbolic.Symbol" Name="decorated list"/>
+							<expression tag="Symbolic.Lambda">
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Relation.Compare">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="undecorated list"/>
+						<expression tag="List.CreateList">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="pair"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="pair"/>
+							<expression tag="Symbolic.Symbol" Name="sorted"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="Symbolic.Symbol" Name="undecorated list"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="String.Text" Value="The &quot;key&quot; is the calculation of changes of sign:"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="W⁰"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="order"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Decorate-sort-undecorate sorting"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="W"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="order"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Lambda">
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="row"/>
+						</expression>
+						<expression tag="Math.Arithmetic.Summation">
+							<expression tag="Programming.Conditional">
+								<expression tag="Relation.Equals">
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="row"/>
+										<expression tag="Symbolic.Symbol" Name="i"/>
+									</expression>
+									<expression tag="Expression.Child">
+										<expression tag="Symbolic.Symbol" Name="row"/>
+										<expression tag="Math.Arithmetic.Addition">
+											<expression tag="Symbolic.Symbol" Name="i"/>
+											<expression tag="Math.Number" Value="1"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Number" Value="0"/>
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="i"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Expression.Cardinality">
+									<expression tag="Symbolic.Symbol" Name="row"/>
+								</expression>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="order"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="W⁰"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="order"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="order"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="3"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="order"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="W⁰"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="order"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="order"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Matrix image"/>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="W⁰"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="order"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Number" Value="4"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="order"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="5"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="order"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Matrix image"/>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Function">
+								<expression tag="Symbolic.Symbol" Name="W⁰"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="order"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Number" Value="4"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAB1JREFUKFNjZPjP8J8BD2AcAAX/GVEdhOEG6isAABsmE/k/uHRQAAAAAElFTkSuQmCC"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAADRJREFUOE9jZPjP8J+BAsA4Agz4z4g/gAiGwRA0gKCT0VINRhgMQwMY0fyM7kWCYTD4DQAA84A38Uz17RkAAAAASUVORK5CYII="/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAHFJREFUWEftl0EKACEMA9v/P7reu4dBoqhsvBZxTAbBjIqKgysN8HwClZpAsgMG2J6AfAC8MuiAAa5PIKFjuoDsgAGWJ4CdqZ23/R8HDPBcAh14VkrZAQNsT6B3OispAaIDBrg+AQLEef8ZkTTL578HGJ7ar+GdjcNbAAAAAElFTkSuQmCC"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAVJJREFUeF7tmcEOgzAMQ+n/fzTcgzSrclOv4u3asQzn2QliXPd1Xx/+DASAACwQzYB7ZAMongEIAAGHWyCOsJlgdgYgQNrDEOBlSNwCw+yga0EEcB+G7A5AgOdhuwGKALtAusOivswABDDnfDzlIeB3xsQtoCzWTRACpKcABIiQ/XsLqD+oOqzWIPf31fV2BqgCCNC8RyiBVYMgwJ0CSmG3Q+3XI4B4N9jeAbGrt9eHgEJAu+Lpjpf6rymAAOZqepqAEFBDcHcHa73de0WcAAQomQMBm8ekbYE4wkWw2QxDAHcKQEA6xE63QE39WQ+7BMYzAAFMhCHAzCBpgTiizYQggNoDIKAZwfpqTIXa6jEZt8DsDc8+LSqCESCdARAg5rgSyM0Q2wLSY80hqgRS5wjgZgAECMSVQNXD6vurz+MWWH1DyvOv87QFEMC0kC3g1wl4AAVBX98UxRZYAAAAAElFTkSuQmCC"/>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Graphics.RasterGraphics" Value="iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAABItJREFUeF7tnNtu4zAMBZP//+gssG92AQ+KU+VY5vRVkCiRw4tEp+/X5/V5+TdWA28BGGv7/wcXgNn2F4Dh9heAz3s2AuNTgAAMvwUIgACMzgH1FDDeA8uvMAJQ9v+3AJQtUBYvANOvYUaArgu2PbBdA42vAQSgfA2se0A5BNfP3+4G1hUgANn3ABpw7xomrgEEQACqGhhfxIUpzAgQ4rt7BBwPQGrA3SOQAIQvkQIQKjCMwK/UAEaA8CEoVaAAZBpI9V9PAW0PztT/2j4CCUBIQBvgVL4ACED3KTglOM2Bof1NAakB2gCMl592AwUgiyF1AAUgM+D2DiAAAnDZT9qe8LBb9vTz4zXw6Qog/3/6+QUACBCAsNlTr3JNAZeIj48A5OFPB1gAIMIJwMNTgBEAvgcgBVEVfXcPovPdff+kfzwfPQTRArQBUiCtT/NJPq1P81fLp/VX779eA9ABSUFkQFqf5q+WT+uv3r8AAAFkIAKIDEjr03yST+sLgABcfxCymkBanwgmD0jXp/kkn/ZP69N8ko/rTy8CScGkQDJAuj7NJ/m0//EpgBRMCiQDpOvTfJJP+xcA6BWQAskAZEBan+aTfFw/TQG0QdoAHSBdn+aTfNo/rU/zSX66Ps2PIwAJuLsCyAC0/93PLwDh9wACMD2Hbn7+8RFgdYinCNFOQQIQfg+QAiQA4VNsaoD2fAEQgEsNLAe0/Q5AOXK1AsgD2/tbLb9eA6w+IAEkAOEnYW0DpvIFQAAuGUgBu/v88Sng7gaiFBbvf3oRGCswfAmsyxeA6ypguQe2ARIAATgw+Hji2x53M/k/ikABuI4I9Zz9xwAJwMne0xxAAATg+LuAaR5wPu/TQvw5of047/kWIACzbgXjU4AR4NQLMAIYAb7aHBnvgadr3bcdsJ4CBODobwLwxw8dVAWfx799CzjLEwAB+GoKHp8C2h7YToECUC7CBOD0w4xpOVgABOCQ87/uAOlTcJ3g6SE8PH9cAwjAsWj/ugcLQPchZXcHMAKE3wMIwOZFXGrA3d8RxkcAAQjbwakC07f41APT/afy015FvP/p18BYgWEVPh6A1INSA06PQPUaQACyd4RUfwJwCgG/fchJDZBGsFS+AAhA9ruANsHKD1NI+xaQhjABEIConToeQCNA1kzaPgIRAOM9JHzouTsgeAsQgGdHCAGAdvDTHUAABOD6HeDpHkA5msapmXN3/Y2PAGRgGhcAeEq9uwJpfzQuAAJw0AAB89sff9J6KYD1FEAHpPFUAfQ9wGr5VCPQeLp/AShHMDIwjQvA5tc4MjCNC4AAXDbDKIWNTwHkYTSeeiAZiMbTGkgAoNkjAIu7YUQ4jcceIADdp2AyMI0LwHW3kiJYnAJQgBHk8qGoXUMIQHiL2N0BBEAAshpgdw+YXkOMjwBUZK4ebwMoAPAPLgQgvCdTimhXwasNTOsbAcJuHCn47uPjAaAIsXp8egSq1wCrDUzrCwD8jyBS4O7jAiAAUT/97jUG7W98Ctg9gsX7T38cGm9g8TXT/UG3UADCduruAAvAbAD+AYwnv/mxVFYqAAAAAElFTkSuQmCC"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Symbolic.Function">
+			<expression tag="Symbolic.Symbol" Name="Matrix image"/>
+			<expression tag="List.List">
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="W⁰"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="8"/>
+					</expression>
+				</expression>
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Graphics.RasterGraphics" Value="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"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1746408600000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
