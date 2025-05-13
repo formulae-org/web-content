@@ -1,0 +1,308 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.symbolic,org.formulae.relation,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Map range"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Map_range" Description="Map range"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Given two ranges"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a₁"/>
+					<expression tag="Symbolic.Symbol" Name="a₂"/>
+				</expression>
+				<expression tag="String.Text" Value="and"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="b₁"/>
+					<expression tag="Symbolic.Symbol" Name="b₂"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Then a value"/>
+				<expression tag="Symbolic.Symbol" Name="s"/>
+				<expression tag="String.Text" Value="in the range"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a₁"/>
+					<expression tag="Symbolic.Symbol" Name="a₂"/>
+				</expression>
+				<expression tag="String.Text" Value="is linearly mapped to a value"/>
+				<expression tag="Symbolic.Symbol" Name="t"/>
+				<expression tag="String.Text" Value="in the range"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="b₁"/>
+					<expression tag="Symbolic.Symbol" Name="b₂"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="where"/>
+				<expression tag="Relation.Equals">
+					<expression tag="Symbolic.Symbol" Name="t"/>
+					<expression tag="Visualization.Spurious">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="b₁"/>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Arithmetic.Multiplication">
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="s"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Symbolic.Symbol" Name="a₁"/>
+										</expression>
+									</expression>
+									<expression tag="Math.Arithmetic.Addition">
+										<expression tag="Symbolic.Symbol" Name="b₂"/>
+										<expression tag="Math.Arithmetic.Negative">
+											<expression tag="Symbolic.Symbol" Name="b₁"/>
+										</expression>
+									</expression>
+								</expression>
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="a₂"/>
+									<expression tag="Math.Arithmetic.Negative">
+										<expression tag="Symbolic.Symbol" Name="a₁"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Task"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Write a function/subroutine/... that takes two ranges and a real number, and returns the mapping of the real number from the first to the second range."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Use this function to map values from the range"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="10"/>
+					</expression>
+					<expression tag="String.Text" Value="to the range"/>
+					<expression tag="List.List">
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Math.Number" Value="0"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="Map range"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a₁"/>
+					<expression tag="Symbolic.Symbol" Name="a₂"/>
+					<expression tag="Symbolic.Symbol" Name="b₁"/>
+					<expression tag="Symbolic.Symbol" Name="b₂"/>
+					<expression tag="Symbolic.Symbol" Name="s"/>
+				</expression>
+			</expression>
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="b₁"/>
+				<expression tag="Math.Arithmetic.Division">
+					<expression tag="Math.Arithmetic.Multiplication">
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="s"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Symbolic.Symbol" Name="a₁"/>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Addition">
+							<expression tag="Symbolic.Symbol" Name="b₂"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Symbolic.Symbol" Name="b₁"/>
+							</expression>
+						</expression>
+					</expression>
+					<expression tag="Math.Arithmetic.Addition">
+						<expression tag="Symbolic.Symbol" Name="a₂"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Symbol" Name="a₁"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="List.CreateTable">
+			<expression tag="List.List">
+				<expression tag="Symbolic.Symbol" Name="s"/>
+				<expression tag="Symbolic.Function">
+					<expression tag="Symbolic.Symbol" Name="Map range"/>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Math.Number" Value="10"/>
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Math.Number" Value="1"/>
+						</expression>
+						<expression tag="Math.Number" Value="0"/>
+						<expression tag="Symbolic.Symbol" Name="s"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="s"/>
+			<expression tag="Math.Number" Value="0"/>
+			<expression tag="Math.Number" Value="10"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="s"/>
+					<expression tag="Symbolic.Function">
+						<expression tag="Symbolic.Symbol" Name="Map range"/>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Math.Number" Value="10"/>
+							<expression tag="Math.Arithmetic.Negative">
+								<expression tag="Math.Number" Value="1"/>
+							</expression>
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Symbolic.Symbol" Name="s"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="0"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Number" Value="1"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="9"/>
+							<expression tag="Math.Number" Value="10"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="4"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="3"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="Math.Number" Value="10"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="5"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="2"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="6"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="7"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="Math.Number" Value="10"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="5"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="9"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Math.Arithmetic.Division">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Math.Number" Value="10"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Math.Number" Value="0"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1747109040000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
