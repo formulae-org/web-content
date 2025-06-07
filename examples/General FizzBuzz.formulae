@@ -1,0 +1,478 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.programming,org.formulae.expression,org.formulae.relation,org.formulae.visualization,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="General FizzBuzz"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This exercise shows a solution for the"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/General_FizzBuzz" Description="General FizzBuzz"/>
+				<expression tag="String.Text" Value="problem, described in the website"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/Rosetta_Code" Description="Rosetta code."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary of the description from Rosetta Code"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Write a generalized version of"/>
+				<expression tag="Internet.UniformResourceLocator" Value="https://rosettacode.org/wiki/FizzBuzz" Description="FizzBuzz"/>
+				<expression tag="String.Text" Value="that works for any list of factors, along with their words."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This is basically a &quot;fizzbuzz&quot; implementation where the user supplies the parameters."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For example, given:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="String.String" Value="Fizz"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="String.String" Value="Buzz"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="String.String" Value="Baxx"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It means replacing every multiple of 3 with &quot;Fizz&quot;, every multiple of 5 with &quot;Buzz&quot;, and every multiple of 7 with &quot;Baxx&quot;."/>
+			</expression>
+			<expression tag="String.Text" Value="For instance, the number 15 is a multiple of both 3 and 5; print &quot;FizzBuzz&quot;."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If the max number was 105 instead of 20, you would print &quot;FizzBuzzBaxx&quot; because it's a multiple of 3, 5, and 7."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Solution"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="2">
+		<expression tag="Symbolic.Assignment">
+			<expression tag="Symbolic.Function">
+				<expression tag="Symbolic.Symbol" Name="GeneralFizzBuzz"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="spec"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+			</expression>
+			<expression tag="Programming.Block" Description="Description" Expanded="True">
+				<expression tag="Symbolic.Local">
+					<expression tag="Symbolic.Assignment">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="String.String" Value=""/>
+					</expression>
+				</expression>
+				<expression tag="Programming.InvertedForFromTo">
+					<expression tag="Programming.InvertedIf">
+						<expression tag="Symbolic.Assignment">
+							<expression tag="Symbolic.Symbol" Name="result"/>
+							<expression tag="String.Concatenation">
+								<expression tag="Symbolic.Symbol" Name="result"/>
+								<expression tag="Expression.Child">
+									<expression tag="Symbolic.Symbol" Name="spec"/>
+									<expression tag="List.List">
+										<expression tag="Symbolic.Symbol" Name="r"/>
+										<expression tag="Math.Number" Value="2"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="Math.Arithmetic.Divides">
+							<expression tag="Expression.Child">
+								<expression tag="Symbolic.Symbol" Name="spec"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="r"/>
+									<expression tag="Math.Number" Value="1"/>
+								</expression>
+							</expression>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="r"/>
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Expression.Cardinality">
+						<expression tag="Symbolic.Symbol" Name="spec"/>
+					</expression>
+				</expression>
+				<expression tag="Programming.Conditional">
+					<expression tag="Relation.Equals">
+						<expression tag="Symbolic.Symbol" Name="result"/>
+						<expression tag="String.String" Value=""/>
+					</expression>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.ToText">
+							<expression tag="Symbolic.Symbol" Name="result"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Test case"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="spec"/>
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="3"/>
+							<expression tag="String.String" Value="Fizz"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="5"/>
+							<expression tag="String.String" Value="Buzz"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="7"/>
+							<expression tag="String.String" Value="Baxx"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="List.Table">
+				<expression tag="List.ToMatrix">
+					<expression tag="List.CreateList">
+						<expression tag="Symbolic.Function">
+							<expression tag="Symbolic.Symbol" Name="GeneralFizzBuzz"/>
+							<expression tag="List.List">
+								<expression tag="Symbolic.Symbol" Name="spec"/>
+								<expression tag="Symbolic.Symbol" Name="n"/>
+							</expression>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="120"/>
+					</expression>
+					<expression tag="Math.Number" Value="10"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="List.Table">
+			<expression tag="List.List">
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="1"/>
+					<expression tag="Math.Number" Value="2"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="4"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Baxx"/>
+					</expression>
+					<expression tag="Math.Number" Value="8"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="11"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="13"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Baxx"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBuzz"/>
+					</expression>
+					<expression tag="Math.Number" Value="16"/>
+					<expression tag="Math.Number" Value="17"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="19"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBaxx"/>
+					</expression>
+					<expression tag="Math.Number" Value="22"/>
+					<expression tag="Math.Number" Value="23"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+					<expression tag="Math.Number" Value="26"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Baxx"/>
+					</expression>
+					<expression tag="Math.Number" Value="29"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBuzz"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="31"/>
+					<expression tag="Math.Number" Value="32"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="34"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="BuzzBaxx"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="37"/>
+					<expression tag="Math.Number" Value="38"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="41"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBaxx"/>
+					</expression>
+					<expression tag="Math.Number" Value="43"/>
+					<expression tag="Math.Number" Value="44"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBuzz"/>
+					</expression>
+					<expression tag="Math.Number" Value="46"/>
+					<expression tag="Math.Number" Value="47"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Baxx"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="52"/>
+					<expression tag="Math.Number" Value="53"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Baxx"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="58"/>
+					<expression tag="Math.Number" Value="59"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBuzz"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="61"/>
+					<expression tag="Math.Number" Value="62"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBaxx"/>
+					</expression>
+					<expression tag="Math.Number" Value="64"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="67"/>
+					<expression tag="Math.Number" Value="68"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="BuzzBaxx"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="71"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="73"/>
+					<expression tag="Math.Number" Value="74"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBuzz"/>
+					</expression>
+					<expression tag="Math.Number" Value="76"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Baxx"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="79"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="82"/>
+					<expression tag="Math.Number" Value="83"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBaxx"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+					<expression tag="Math.Number" Value="86"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="88"/>
+					<expression tag="Math.Number" Value="89"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBuzz"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Baxx"/>
+					</expression>
+					<expression tag="Math.Number" Value="92"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="94"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="97"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Baxx"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Math.Number" Value="101"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="103"/>
+					<expression tag="Math.Number" Value="104"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBuzzBaxx"/>
+					</expression>
+					<expression tag="Math.Number" Value="106"/>
+					<expression tag="Math.Number" Value="107"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="109"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+				</expression>
+				<expression tag="List.List">
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Baxx"/>
+					</expression>
+					<expression tag="Math.Number" Value="113"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Buzz"/>
+					</expression>
+					<expression tag="Math.Number" Value="116"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Fizz"/>
+					</expression>
+					<expression tag="Math.Number" Value="118"/>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="Baxx"/>
+					</expression>
+					<expression tag="Visualization.Color" Red="1" Green="0" Blue="0" Alpha="1">
+						<expression tag="String.Text" Value="FizzBuzz"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also:"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Other"/>
+					<expression tag="Internet.UniformResourceLocator" Value="/?script=articles/Rosetta_Code_examples" Description="Rosetta code"/>
+					<expression tag="String.Text" Value="examples"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1748927460000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
