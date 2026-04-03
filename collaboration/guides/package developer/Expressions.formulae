@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.diagramming,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.diagramming,org.formulae.time,org.formulae.internet">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -75,7 +75,7 @@
 							<expression tag="String.Text" Value="Math.Arithmetic.Addition."/>
 						</expression>
 						<expression tag="String.Text" Value="Las palabras siempre van capitalizadas, sin espacios ni caracteres especiales. Si un nombre requiere el uso de varias palabras, este se forma en un estilo"/>
-						<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Camel_case" Description="CamelCase"/>
+						<expression tag="Internet.Hyperlink" Value="https://en.wikipedia.org/wiki/Camel_case" Description="CamelCase"/>
 						<expression tag="String.Text" Value="es decir, cada palabra es captalizada y no se usan artículos como &quot;de&quot;, &quot;para&quot;, etc. por ejemplo"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="Math.Complex.ImaginaryUnit"/>
@@ -476,7 +476,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="El método de conversión de estado interno a/desde cadenas debe ser claro, sencillo y no depender de fectores de región o idioma, en otras palabras, debe ser una"/>
-				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/Pure_function" Description="función pura."/>
+				<expression tag="Internet.Hyperlink" Value="https://en.wikipedia.org/wiki/Pure_function" Description="función pura."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Una vez definido el método de conversión, es necesario implementar los siguientes métodos:"/>
@@ -537,15 +537,15 @@
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="Utilizar el estándar"/>
-					<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/ISO_8601" Description="ISO 8601."/>
+					<expression tag="Internet.Hyperlink" Value="https://en.wikipedia.org/wiki/ISO_8601" Description="ISO 8601."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="Utilizar el número de milisegundos transcurridos desde un punto de tiempo de referencia, por ejemplo desde una"/>
-					<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/%C3%89poca_(inform%C3%A1tica)" Description="época,"/>
+					<expression tag="Internet.Hyperlink" Value="https://es.wikipedia.org/wiki/%C3%89poca_(inform%C3%A1tica)" Description="época,"/>
 					<expression tag="String.Text" Value="reconocida (por ejemplo la utilizada en"/>
-					<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Unix" Description="Unix"/>
+					<expression tag="Internet.Hyperlink" Value="https://es.wikipedia.org/wiki/Unix" Description="Unix"/>
 					<expression tag="String.Text" Value="para una zona de tiempo preestablecida, por jemplo"/>
-					<expression tag="Internet.UniformResourceLocator" Value="https://es.wikipedia.org/wiki/Tiempo_universal_coordinado" Description="UTC"/>
+					<expression tag="Internet.Hyperlink" Value="https://es.wikipedia.org/wiki/Tiempo_universal_coordinado" Description="UTC"/>
 					<expression tag="String.Text" Value=")."/>
 				</expression>
 			</expression>
@@ -555,7 +555,7 @@
 			<expression tag="Visualization.CodeBlock" Value="Time = class extends Expression {&#10;&#9;getTag() {&#10;&#9;&#9;return &quot;Time.Time&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;getName() {&#10;&#9;&#9;return &quot;Tiempo&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;canHaveChildren(count) {&#10;&#9;&#9;return count == 0;&#10;&#9;}&#10;&#9;&#10;&#9;set(name, value) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;this.date = number;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;super.set(name, value);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;get(name) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;return this.date;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;return super.get(name);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;getSerializationNames() {&#10;&#9;&#9;return [ &quot;Value&quot; ];&#10;&#9;}&#10;&#9;&#10;&#9;async getSerializationStrings() {&#10;&#9;&#9;return [ this.date.getMilliseconds().toString() ];&#10;&#9;}&#10;&#9;&#10;&#9;setSerializationStrings(strings, promises) {&#10;&#9;&#9;this.date = new Date(Number(strings[0]);&#10;&#9;}&#10;}"/>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="El formato en que se realizará la serialización lo define el framework, típicamente es"/>
-				<expression tag="Internet.UniformResourceLocator" Value="https://en.wikipedia.org/wiki/XML" Description="XML"/>
+				<expression tag="Internet.Hyperlink" Value="https://en.wikipedia.org/wiki/XML" Description="XML"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="De esta forma, la siguiente expresión (en el capítulo siguiente se verá el definir como codificar la visualización de expresiones), que se visualiza como:"/>
@@ -650,7 +650,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Como ya se vió en el apartado de"/>
-				<expression tag="Internet.UniformResourceLocator" Value="/?script=collaboration/guides/package_developer/Introduction" Description="introducción,"/>
+				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Introduction" Description="introducción,"/>
 				<expression tag="String.Text" Value="la definición de clases que desciben las expresiones se colocan en un archivo fuente de nombre"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="expression.js"/>
