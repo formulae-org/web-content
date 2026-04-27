@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.math.arithmetic,org.formulae.list,org.formulae.visualization,org.formulae.symbolic,org.formulae.logic,org.formulae.time,org.formulae.internet">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.internet,org.formulae.math.arithmetic,org.formulae.list,org.formulae.symbolic,org.formulae.logic,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -7,7 +7,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.ItalicChunk">
+				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Math.Arithmetic.Numeric"/>
 				</expression>
 				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression that"/>
@@ -30,7 +30,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The"/>
-				<expression tag="Typesetting.ItalicChunk">
+				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Math.Arithmetic.Numeric"/>
 				</expression>
 				<expression tag="String.Text" Value="expression takes another expression (given as its first subexpression) and"/>
@@ -44,8 +44,15 @@
 					<expression tag="String.Text" Value="Numerical computation."/>
 				</expression>
 				<expression tag="String.Text" Value="According to the"/>
-				<expression tag="Internet.Hyperlink" Value="/?script=reference/Arithmetic_canon" Description="Arithmetic canon,"/>
-				<expression tag="String.Text" Value="In Fōrmulæ, exact results are preferred. See the following calculation:"/>
+				<expression tag="Internet.Hyperlink" Value="/?script=reference/Arithmetic_canon" Description="Arithmetic canon"/>
+				<expression tag="String.Text" Value=", in Fōrmulæ, exact results are preferred. See the following calculation:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The name of this expression depends on locale. In English, it is"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Numeric"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
 			</expression>
 		</expression>
 	</expression>
@@ -76,7 +83,7 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Also, according to the"/>
 				<expression tag="Internet.Hyperlink" Value="/?script=reference/Arithmetic_canon" Description="Arithmetic canon,"/>
-				<expression tag="String.Text" Value="if a decimal number is provided, the calculation is performed, producing a value that might be no exact but aproximated, according to the current precision and rounding mode:"/>
+				<expression tag="String.Text" Value="if a decimal number is provided, the calculation is performed, producing a value that might not be exact but approximated, according to the current precision and rounding mode:"/>
 			</expression>
 		</expression>
 	</expression>
@@ -129,24 +136,6 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
 		<expression tag="Math.Number" Value="1.414213562373095048801688724209698078569671875376948073176679737990732478462107038850387534327641572"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Rule"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.MultiParagraph">
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Name"/>
-				</expression>
-			</expression>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The name of this expression depends on locale. In English is"/>
-				<expression tag="Typesetting.ItalicChunk">
-					<expression tag="String.Text" Value="Numeric"/>
-				</expression>
-			</expression>
-		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Rule"/>
@@ -210,7 +199,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="This expression is visualized as a function with mnemonic &quot;N&quot;. The, the version with one parameter is shown as"/>
+				<expression tag="String.Text" Value="This expression is visualized as a function with mnemonic &quot;Numeric&quot;. The version with one parameter is shown as"/>
 				<expression tag="Math.Arithmetic.Numeric">
 					<expression tag="Symbolic.Symbol" Name="x"/>
 				</expression>
@@ -225,9 +214,11 @@
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The horizontal baselines of its subexpressions are horizontally aligned, so the memonic, and this baseline is the horizontal baseline of the entire expression."/>
+					<expression tag="String.Text" Value="The horizontal baselines of its subexpressions are horizontally aligned, so the mnemonic, and this baseline is the horizontal baseline of the entire expression."/>
 				</expression>
-				<expression tag="String.Text" Value="The subexpressions are separated with a semicolor and they are shown around parentheses."/>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The subexpressions are separated with a semicolon and they are enclosed in parentheses."/>
+				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="The vertical baseline of the expression is at half of its width."/>
 				</expression>
@@ -337,6 +328,27 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Deletion"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If the expression has one subexpression (no precision argument), pressing"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="DELETE"/>
+				</expression>
+				<expression tag="String.Text" Value="removes the expression; its subexpression takes its place and remains selected."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If the expression has two subexpressions (with a precision argument), it is replaced by a"/>
+				<expression tag="Null"/>
+				<expression tag="String.Text" Value="expression, which becomes selected."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Rule"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -387,7 +399,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="This reducer does the following"/>
+				<expression tag="String.Text" Value="This reducer does the following:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
@@ -437,9 +449,8 @@
 					<expression tag="String.Text" Value="reduction parameter."/>
 				</expression>
 			</expression>
-			<expression tag="Null"/>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="This reducer searches for Numeric expressions with two arguments. It changes the current precision to the precision provided as the second argument, then it proceed like a 1-argument version. Finally the original precision is restored."/>
+				<expression tag="String.Text" Value="This reducer searches for Numeric expressions with two arguments. It changes the current precision to the precision provided as the second argument, then it proceeds like a 1-argument version. Finally the original precision is restored."/>
 			</expression>
 		</expression>
 	</expression>
@@ -457,7 +468,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="If the second arguments is not a positive integer number, it is put inside an error expression, and the reduction is not performed:"/>
+			<expression tag="String.Text" Value="If the second argument is not a positive integer number, it is put inside an error expression, and the reduction is not performed:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -492,7 +503,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Is equivalent to"/>
+				<expression tag="String.Text" Value="is equivalent to"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Math.Arithmetic.WithPrecision">
@@ -505,13 +516,34 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Additional information"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The following subsections describe reducers registered for other expressions that activate when numeric mode is true — that is, when the reduction is running inside a"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Arithmetic.Numeric"/>
+				</expression>
+				<expression tag="String.Text" Value="expression."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Numeric of a number"/>
 				</expression>
 			</expression>
-			<expression tag="String.Text" Value="This reducer searches for Numeric expression containing integer or rational numbers and converts them to their decimal equivalences."/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer searches for Numeric expression containing integer or rational numbers and converts them to their decimal equivalents."/>
+			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -535,7 +567,7 @@
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="If the decimal of a rational number is periodic, the values is rounded to the current precision and rounding mode:"/>
+			<expression tag="String.Text" Value="If the decimal of a rational number is periodic, the value is rounded to the current precision and rounding mode:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -624,33 +656,34 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="See also:"/>
+					<expression tag="String.Text" Value="See also"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="The"/>
 					<expression tag="Internet.Hyperlink" Value="/?script=reference/Arithmetic_canon" Description="Arithmetic canon"/>
+					<expression tag="String.Text" Value="."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="The"/>
 					<expression tag="Typesetting.ItalicChunk">
 						<expression tag="String.Text" Value="WithPrecision"/>
 					</expression>
-					<expression tag="String.Text" Value="expression"/>
+					<expression tag="String.Text" Value="expression."/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Categories:"/>
+					<expression tag="String.Text" Value="Categories"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
-				<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Expressions_that_set_the_numeric_parameter_in_reduction" Description="Expressions that set the numeric parameter in reduction"/>
-				<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Expressions_related_to_precision" Description="Expressions related to precision"/>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="Expressions in the"/>
-					<expression tag="Internet.Hyperlink" Value="/?script=reference/org.formulae.arithmetic" Description="Arithmetic package"/>
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Expressions related to precision" Description="Expressions related to precision"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Expressions in the org.formulae.math.arithmetic package" Description="Expressions in the org.formulae.math.arithmetic package"/>
 				</expression>
 			</expression>
 		</expression>
@@ -669,7 +702,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1763428800000"/>
+				<expression tag="Time.Time" Value="1777006620000"/>
 			</expression>
 		</expression>
 	</expression>
