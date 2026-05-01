@@ -1,0 +1,421 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.symbolic,org.formulae.math.arithmetic,org.formulae.list,org.formulae.internet,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Math.Arithmetic.Ceiling"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Arithmetic.Ceiling"/>
+				</expression>
+				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression associated with the ceiling of another expression."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Definition"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Arithmetic.Ceiling"/>
+				</expression>
+				<expression tag="String.Text" Value="expression represents the ceiling of its Argument."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="For a real number"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value=", the ceiling"/>
+				<expression tag="Math.Arithmetic.Ceiling">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="String.Text" Value="is the smallest integer greater than or equal to"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value=". It rounds toward"/>
+				<expression tag="Math.Infinity"/>
+				<expression tag="String.Text" Value=". For example, ⌈2.3⌉ = 3 and ⌈−2.3⌉ = −2."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When a Scale is given, the expression represents the ceiling rounded to the precision specified by Scale rather than to the nearest integer."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The name of this expression depends on locale. In English, it is"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Ceiling"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Subexpressions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This expression has one or two subexpressions."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The first subexpression, named"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Argument"/>
+				</expression>
+				<expression tag="String.Text" Value=", is the expression whose ceiling is to be computed."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The second subexpression, named"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Scale"/>
+				</expression>
+				<expression tag="String.Text" Value=", is optional. When present, it must be an integer and specifies the rounding precision: a positive value of"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="String.Text" Value="rounds up to"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="String.Text" Value="decimal places; a value of 0 is equivalent to omitting the Scale; a negative value of"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="String.Text" Value="rounds up to the nearest"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Visualization"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When the expression has one subexpression, the Argument is rendered enclosed between ceiling brackets, as in"/>
+				<expression tag="Math.Arithmetic.Ceiling">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The Argument is placed 3 pixels to the right of the left bracket and 3 pixels below the top of the expression."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The width of the expression is the width of the Argument plus 6 pixels — 3 on each side for the brackets."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The height of the expression is the height of the Argument plus 6 pixels — 3 above and 3 below."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The horizontal baseline of the ceiling expression coincides with the horizontal baseline of the Argument."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The vertical baseline of the ceiling expression coincides with the vertical baseline of the Argument."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Metrics">
+					<expression tag="Math.Arithmetic.Ceiling">
+						<expression tag="Visualization.Selected">
+							<expression tag="Visualization.Metrics">
+								<expression tag="Visualization.Rectangle" Width="30" Height="30" HorizontalBaseline="15" VerticalBaseline="15"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The ceiling brackets act as natural delimiters — no automatic parenthesization of the Argument is ever required, regardless of the complexity of the Argument expression:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Expression"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Ceiling of the expression"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Symbolic.Symbol" Name="x"/>
+							<expression tag="Math.Arithmetic.Ceiling">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Ceiling">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Ceiling">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When the expression has two subexpressions, it is rendered in function notation as"/>
+				<expression tag="Math.Arithmetic.Ceiling">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Edition"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Creation"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There is one way to create a ceiling expression:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The edition panel at the left, in the path"/>
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Math → Arithmetic → ⌈▮⌉ Ceiling"/>
+					</expression>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The selected expression is replaced by a ceiling expression with the selected expression as its Argument."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="After the replacement, the Argument remains as the selected expression."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Deletion"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Deleting a ceiling expression (pressing the"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="DELETE"/>
+				</expression>
+				<expression tag="String.Text" Value="key when the selected expression is a ceiling expression) will remove the ceiling expression only; its Argument takes its place and becomes the new selected expression."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Reduction"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This expression has one reducer."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ceiling of numeric"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer applies when the Argument has been reduced to a number. If the Argument has not been reduced to a number, the reducer does not apply and the expression is left unchanged:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Ceiling">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Ceiling">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="Without Scale."/>
+			</expression>
+			<expression tag="String.Text" Value="If no Scale is given, the Argument is rounded up to the nearest integer toward"/>
+			<expression tag="Math.Infinity"/>
+			<expression tag="String.Text" Value=":"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Ceiling">
+			<expression tag="Math.Number" Value="2.3"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="3"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Ceiling">
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="2.3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Negative">
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="Typesetting.BoldChunk">
+				<expression tag="String.Text" Value="With Scale."/>
+			</expression>
+			<expression tag="String.Text" Value="If a Scale is given, it must reduce to an integer; otherwise the reduction raises an error. A positive Scale of"/>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="String.Text" Value="rounds the Argument up to"/>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="String.Text" Value="decimal places:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Ceiling">
+			<expression tag="Math.Number" Value="2.754"/>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2.76"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="A negative Scale of"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+			<expression tag="String.Text" Value="rounds the Argument up to the nearest"/>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Math.Number" Value="10"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+			<expression tag="String.Text" Value=":"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Ceiling">
+			<expression tag="Math.Number" Value="254"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="260"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Math.Arithmetic.Floor" Description="Math.Arithmetic.Floor"/>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Arithmetic_canon" Description="Arithmetic canon"/>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Categories"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Expressions in the org.formulae.math.arithmetic package" Description="Expressions in the org.formulae.math.arithmetic package"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Expressions related to rounding" Description="Expressions related to rounding"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Date of creation:"/>
+				<expression tag="Time.Time" Value="1777527600000"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Date of last modification:"/>
+				<expression tag="Time.Time" Value="1777527600000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

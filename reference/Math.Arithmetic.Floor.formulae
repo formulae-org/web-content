@@ -1,16 +1,16 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.relation,org.formulae.symbolic,org.formulae.math.arithmetic,org.formulae.math.complex,org.formulae.list,org.formulae.internet,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.symbolic,org.formulae.math.arithmetic,org.formulae.list,org.formulae.internet,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Math.Arithmetic.AbsoluteValue"/>
+					<expression tag="String.Text" Value="Math.Arithmetic.Floor"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Math.Arithmetic.AbsoluteValue"/>
+					<expression tag="String.Text" Value="Math.Arithmetic.Floor"/>
 				</expression>
-				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression associated with the absolute value of another expression."/>
+				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression associated with the floor of another expression."/>
 			</expression>
 		</expression>
 	</expression>
@@ -27,44 +27,32 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The"/>
 				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Math.Arithmetic.AbsoluteValue"/>
+					<expression tag="String.Text" Value="Math.Arithmetic.Floor"/>
 				</expression>
-				<expression tag="String.Text" Value="expression represents the absolute value of its subexpression."/>
+				<expression tag="String.Text" Value="expression represents the floor of its Argument."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="For a real or rational number x, the absolute value is its non-negative magnitude: it equals x if x is non-negative, and −x if x is negative."/>
+				<expression tag="String.Text" Value="For a real number"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value=", the floor"/>
+				<expression tag="Math.Arithmetic.Floor">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+				</expression>
+				<expression tag="String.Text" Value="is the greatest integer less than or equal to"/>
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="String.Text" Value=". It rounds toward"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Math.Infinity"/>
+				</expression>
+				<expression tag="String.Text" Value=". For example, ⌊2.7⌋ = 2 and ⌊−2.7⌋ = −3."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="For a complex number"/>
-				<expression tag="Relation.Equals">
-					<expression tag="Symbolic.Symbol" Name="z"/>
-					<expression tag="Math.Arithmetic.Addition">
-						<expression tag="Symbolic.Symbol" Name="a"/>
-						<expression tag="Math.Arithmetic.Multiplication">
-							<expression tag="Symbolic.Symbol" Name="b"/>
-							<expression tag="Math.Complex.ImaginaryUnit"/>
-						</expression>
-					</expression>
-				</expression>
-				<expression tag="String.Text" Value=", the absolute value (also called the modulus) is the distance from the origin in the complex plane, given by"/>
-				<expression tag="Math.Arithmetic.SquareRoot">
-					<expression tag="Math.Arithmetic.Addition">
-						<expression tag="Math.Arithmetic.Exponentiation">
-							<expression tag="Symbolic.Symbol" Name="a"/>
-							<expression tag="Math.Number" Value="2"/>
-						</expression>
-						<expression tag="Math.Arithmetic.Exponentiation">
-							<expression tag="Symbolic.Symbol" Name="b"/>
-							<expression tag="Math.Number" Value="2"/>
-						</expression>
-					</expression>
-				</expression>
-				<expression tag="String.Text" Value="."/>
+				<expression tag="String.Text" Value="When a Scale is given, the expression represents the floor rounded to the precision specified by Scale rather than to the nearest integer."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="The name of this expression depends on locale. In English, it is"/>
 				<expression tag="Typesetting.ItalicChunk">
-					<expression tag="String.Text" Value="Absolute value"/>
+					<expression tag="String.Text" Value="Floor"/>
 				</expression>
 				<expression tag="String.Text" Value="."/>
 			</expression>
@@ -81,11 +69,34 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="This expression has exactly one subexpression, named"/>
+				<expression tag="String.Text" Value="This expression has one or two subexpressions."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The first subexpression, named"/>
 				<expression tag="Typesetting.ItalicChunk">
 					<expression tag="String.Text" Value="Argument"/>
 				</expression>
-				<expression tag="String.Text" Value=", the expression whose absolute value is to be computed."/>
+				<expression tag="String.Text" Value=", is the expression whose floor is to be computed."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The second subexpression, named"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Scale"/>
+				</expression>
+				<expression tag="String.Text" Value=", is optional. When present, it must be an integer and specifies the rounding precision: a positive value of"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="String.Text" Value="rounds down to"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="String.Text" Value="decimal places; a value of 0 is equivalent to omitting the Scale; a negative value of"/>
+				<expression tag="Math.Arithmetic.Negative">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="String.Text" Value="rounds down to the nearest"/>
+				<expression tag="Math.Arithmetic.Exponentiation">
+					<expression tag="Math.Number" Value="10"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
 			</expression>
 		</expression>
 	</expression>
@@ -100,32 +111,32 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The absolute value of an expression is shown as the Argument enclosed between two vertical bars, one on each side, such as"/>
-				<expression tag="Math.Arithmetic.AbsoluteValue">
+				<expression tag="String.Text" Value="When the expression has one subexpression, the Argument is rendered enclosed between floor brackets, as in"/>
+				<expression tag="Math.Arithmetic.Floor">
 					<expression tag="Symbolic.Symbol" Name="x"/>
 				</expression>
 				<expression tag="String.Text" Value="."/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The Argument is placed 3 pixels to the right of the left bar and 3 pixels below the top of the expression."/>
+					<expression tag="String.Text" Value="The Argument is placed 3 pixels to the right of the left bracket and 3 pixels below the top of the expression."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The width of the expression is the width of the Argument plus 6 pixels — 3 on each side for the bars."/>
+					<expression tag="String.Text" Value="The width of the expression is the width of the Argument plus 6 pixels — 3 on each side for the brackets."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="The height of the expression is the height of the Argument plus 6 pixels — 3 above and 3 below."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The horizontal baseline of the absolute value expression coincides with the horizontal baseline of the Argument."/>
+					<expression tag="String.Text" Value="The horizontal baseline of the floor expression coincides with the horizontal baseline of the Argument."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The vertical baseline of the absolute value expression coincides with the vertical baseline of the Argument."/>
+					<expression tag="String.Text" Value="The vertical baseline of the floor expression coincides with the vertical baseline of the Argument."/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Visualization.Metrics">
-					<expression tag="Math.Arithmetic.AbsoluteValue">
+					<expression tag="Math.Arithmetic.Floor">
 						<expression tag="Visualization.Selected">
 							<expression tag="Visualization.Metrics">
 								<expression tag="Visualization.Rectangle" Width="30" Height="30" HorizontalBaseline="15" VerticalBaseline="15"/>
@@ -135,7 +146,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The two bars act as natural delimiters — no automatic parenthesization of the Argument is ever required, regardless of the complexity of the Argument expression:"/>
+				<expression tag="String.Text" Value="The floor brackets act as natural delimiters — no automatic parenthesization of the Argument is ever required, regardless of the complexity of the Argument expression:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="List.Table">
@@ -145,12 +156,12 @@
 								<expression tag="String.Text" Value="Expression"/>
 							</expression>
 							<expression tag="Visualization.Bold" Value="True" Set="True">
-								<expression tag="String.Text" Value="Absolute value"/>
+								<expression tag="String.Text" Value="Floor of the expression"/>
 							</expression>
 						</expression>
 						<expression tag="List.List">
 							<expression tag="Symbolic.Symbol" Name="x"/>
-							<expression tag="Math.Arithmetic.AbsoluteValue">
+							<expression tag="Math.Arithmetic.Floor">
 								<expression tag="Symbolic.Symbol" Name="x"/>
 							</expression>
 						</expression>
@@ -159,7 +170,7 @@
 								<expression tag="Symbolic.Symbol" Name="a"/>
 								<expression tag="Symbolic.Symbol" Name="b"/>
 							</expression>
-							<expression tag="Math.Arithmetic.AbsoluteValue">
+							<expression tag="Math.Arithmetic.Floor">
 								<expression tag="Math.Arithmetic.Division">
 									<expression tag="Symbolic.Symbol" Name="a"/>
 									<expression tag="Symbolic.Symbol" Name="b"/>
@@ -171,7 +182,7 @@
 								<expression tag="Symbolic.Symbol" Name="a"/>
 								<expression tag="Symbolic.Symbol" Name="b"/>
 							</expression>
-							<expression tag="Math.Arithmetic.AbsoluteValue">
+							<expression tag="Math.Arithmetic.Floor">
 								<expression tag="Math.Arithmetic.Addition">
 									<expression tag="Symbolic.Symbol" Name="a"/>
 									<expression tag="Symbolic.Symbol" Name="b"/>
@@ -180,6 +191,14 @@
 						</expression>
 					</expression>
 				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When the expression has two subexpressions, it is rendered in function notation as"/>
+				<expression tag="Math.Arithmetic.Floor">
+					<expression tag="Symbolic.Symbol" Name="x"/>
+					<expression tag="Symbolic.Symbol" Name="n"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
 			</expression>
 		</expression>
 	</expression>
@@ -199,19 +218,19 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="There is one way to create an absolute value expression:"/>
+				<expression tag="String.Text" Value="There is one way to create a floor expression:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="The edition panel at the left, in the path"/>
 					<expression tag="Typesetting.BoldChunk">
-						<expression tag="String.Text" Value="Math → Arithmetic → ∣▮∣ Absolute value"/>
+						<expression tag="String.Text" Value="Math → Arithmetic → ⌊▮⌋ Floor"/>
 					</expression>
 					<expression tag="String.Text" Value="."/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The selected expression is replaced by an absolute value expression with the selected expression as its Argument."/>
+				<expression tag="String.Text" Value="The selected expression is replaced by a floor expression with the selected expression as its Argument."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="After the replacement, the Argument remains as the selected expression."/>
@@ -226,11 +245,11 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Deleting an absolute value expression (pressing the"/>
+				<expression tag="String.Text" Value="Deleting a floor expression (pressing the"/>
 				<expression tag="Visualization.Key">
 					<expression tag="String.Text" Value="DELETE"/>
 				</expression>
-				<expression tag="String.Text" Value="key when the selected expression is an absolute value expression) will remove the absolute value expression only; its Argument takes its place and becomes the new selected expression."/>
+				<expression tag="String.Text" Value="key when the selected expression is a floor expression) will remove the floor expression only; its Argument takes its place and becomes the new selected expression."/>
 			</expression>
 		</expression>
 	</expression>
@@ -253,7 +272,7 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Absolute value of numeric"/>
+					<expression tag="String.Text" Value="Floor of numeric"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
@@ -262,119 +281,92 @@
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.AbsoluteValue">
+		<expression tag="Math.Arithmetic.Floor">
 			<expression tag="Symbolic.Symbol" Name="x"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Arithmetic.AbsoluteValue">
+		<expression tag="Math.Arithmetic.Floor">
 			<expression tag="Symbolic.Symbol" Name="x"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="String.Text" Value="Three cases are handled when the Argument is an internal number."/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
 			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Non-negative real Argument."/>
+				<expression tag="String.Text" Value="Without Scale."/>
 			</expression>
-			<expression tag="String.Text" Value="If the Argument is a non-negative integer, decimal or rational number, the absolute value expression is replaced by the Argument itself:"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.AbsoluteValue">
-			<expression tag="Math.Number" Value="5"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="5"/>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Typesetting.Paragraph">
-			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Negative real Argument."/>
-			</expression>
-			<expression tag="String.Text" Value="If the Argument is a negative integer, decimal or rational number, the absolute value expression is replaced by the negation of the Argument:"/>
-		</expression>
-	</expression>
-	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.AbsoluteValue">
+			<expression tag="String.Text" Value="If no Scale is given, the Argument is rounded down to the nearest integer toward"/>
 			<expression tag="Math.Arithmetic.Negative">
-				<expression tag="Math.Arithmetic.Division">
-					<expression tag="Math.Number" Value="3"/>
-					<expression tag="Math.Number" Value="4"/>
-				</expression>
+				<expression tag="Math.Infinity"/>
+			</expression>
+			<expression tag="String.Text" Value=":"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Floor">
+			<expression tag="Math.Number" Value="2.7"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Floor">
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="2.7"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Arithmetic.Division">
+		<expression tag="Math.Arithmetic.Negative">
 			<expression tag="Math.Number" Value="3"/>
-			<expression tag="Math.Number" Value="4"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Paragraph">
 			<expression tag="Typesetting.BoldChunk">
-				<expression tag="String.Text" Value="Complex Argument."/>
+				<expression tag="String.Text" Value="With Scale."/>
 			</expression>
-			<expression tag="String.Text" Value="If the Argument is a complex number"/>
-			<expression tag="Relation.Equals">
-				<expression tag="Symbolic.Symbol" Name="z"/>
-				<expression tag="Math.Arithmetic.Addition">
-					<expression tag="Symbolic.Symbol" Name="a"/>
-					<expression tag="Math.Arithmetic.Multiplication">
-						<expression tag="Symbolic.Symbol" Name="b"/>
-						<expression tag="Math.Complex.ImaginaryUnit"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="String.Text" Value=", the absolute value expression is replaced by the value of"/>
-			<expression tag="Math.Arithmetic.SquareRoot">
-				<expression tag="Math.Arithmetic.Addition">
-					<expression tag="Math.Arithmetic.Exponentiation">
-						<expression tag="Symbolic.Symbol" Name="a"/>
-						<expression tag="Math.Number" Value="2"/>
-					</expression>
-					<expression tag="Math.Arithmetic.Exponentiation">
-						<expression tag="Symbolic.Symbol" Name="b"/>
-						<expression tag="Math.Number" Value="2"/>
-					</expression>
-				</expression>
-			</expression>
-			<expression tag="String.Text" Value=". In the following example,"/>
-			<expression tag="Relation.Equals">
-				<expression tag="Math.Arithmetic.Addition">
-					<expression tag="Math.Arithmetic.Exponentiation">
-						<expression tag="Math.Number" Value="3"/>
-						<expression tag="Math.Number" Value="2"/>
-					</expression>
-					<expression tag="Math.Arithmetic.Exponentiation">
-						<expression tag="Math.Number" Value="4"/>
-						<expression tag="Math.Number" Value="2"/>
-					</expression>
-				</expression>
-				<expression tag="Math.Number" Value="25"/>
-			</expression>
-			<expression tag="String.Text" Value=", whose square root is the exact integer 5:"/>
+			<expression tag="String.Text" Value="If a Scale is given, it must reduce to an integer; otherwise the reduction raises an error. A positive Scale of"/>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="String.Text" Value="rounds the Argument down to"/>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="String.Text" Value="decimal places:"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
-		<expression tag="Math.Arithmetic.AbsoluteValue">
-			<expression tag="Math.Arithmetic.Addition">
-				<expression tag="Math.Number" Value="3"/>
-				<expression tag="Math.Arithmetic.Multiplication">
-					<expression tag="Math.Number" Value="4"/>
-					<expression tag="Math.Complex.ImaginaryUnit"/>
-				</expression>
+		<expression tag="Math.Arithmetic.Floor">
+			<expression tag="Math.Number" Value="2.756"/>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2.75"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="A negative Scale of"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+			<expression tag="String.Text" Value="rounds the Argument down to the nearest"/>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Math.Number" Value="10"/>
+				<expression tag="Symbolic.Symbol" Name="n"/>
+			</expression>
+			<expression tag="String.Text" Value=":"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Floor">
+			<expression tag="Math.Number" Value="256"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="1"/>
 			</expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="1">
-		<expression tag="Math.Number" Value="5"/>
+		<expression tag="Math.Number" Value="250"/>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.Rule"/>
@@ -388,9 +380,8 @@
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="The"/>
-					<expression tag="Internet.Hyperlink" Value="/?script=reference/Math.Arithmetic.SquareRoot" Description="Math.Arithmetic.SquareRoot"/>
-					<expression tag="String.Text" Value="expression (used when computing the modulus of a complex Argument)."/>
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Math.Arithmetic.Ceiling" Description="Math.Arithmetic.Ceiling"/>
+					<expression tag="String.Text" Value="."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="String.Text" Value="The"/>
@@ -407,6 +398,9 @@
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Expressions in the org.formulae.math.arithmetic package" Description="Expressions in the org.formulae.math.arithmetic package"/>
 				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Expressions related to rounding" Description="Expressions related to rounding"/>
+				</expression>
 			</expression>
 		</expression>
 	</expression>
@@ -420,11 +414,11 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of creation:"/>
-				<expression tag="Time.Time" Value="1777179420000"/>
+				<expression tag="Time.Time" Value="1777442145000"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1777435380000"/>
+				<expression tag="Time.Time" Value="1777523880000"/>
 			</expression>
 		</expression>
 	</expression>

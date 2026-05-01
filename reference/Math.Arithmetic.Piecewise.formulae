@@ -1,0 +1,369 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.logic,org.formulae.symbolic,org.formulae.internet,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Math.Arithmetic.Piecewise"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Arithmetic.Piecewise"/>
+				</expression>
+				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression associated with a piecewise-defined value."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Definition"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Arithmetic.Piecewise"/>
+				</expression>
+				<expression tag="String.Text" Value="expression represents a piecewise-defined value: a set of cases, each pairing a value with a boolean condition, with an optional fallback value — the otherwise clause — for when no condition is satisfied."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The cases are tested in order. The expression reduces to the value of the first case whose condition reduces to"/>
+				<expression tag="Logic.True"/>
+				<expression tag="String.Text" Value=". If no condition is satisfied and an otherwise clause is present, the expression reduces to the otherwise value. If no condition is satisfied and there is no otherwise clause, the expression reduces to a Null expression."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The name of this expression is"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Piecewise"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Subexpressions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This expression has at least 2 subexpressions; there is no upper bound on the number of subexpressions."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The subexpressions are organized in two structural groups:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Cases"/>
+					</expression>
+					<expression tag="String.Text" Value=": pairs of subexpressions at consecutive positions. The first of each pair (at even indices 0, 2, 4, …) is the value; the second (at odd indices 1, 3, 5, …) is the condition — an expression expected to reduce to a boolean."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Otherwise"/>
+					</expression>
+					<expression tag="String.Text" Value="(optional): a single additional subexpression at the end, present only when the total number of subexpressions is odd. It gives the fallback value when no case condition is satisfied."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Visualization"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The expression renders as a left curly brace enclosing the cases stacked vertically. For each case, the value appears on the left and the condition appears to the right, separated by the keyword"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="if"/>
+				</expression>
+				<expression tag="String.Text" Value=". If an otherwise clause is present, its value appears on the left — aligned with the case values — and the keyword"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="otherwise"/>
+				</expression>
+				<expression tag="String.Text" Value="appears to its right, aligned with the"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="if"/>
+				</expression>
+				<expression tag="String.Text" Value="keywords above."/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="All value expressions and the otherwise expression start 14 pixels from the left edge of the curly brace."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Consecutive cases are separated by a 10-pixel vertical gap."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="All condition expressions are left-aligned at the same horizontal position, immediately to the right of the"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="if"/>
+					</expression>
+					<expression tag="String.Text" Value="keyword. The keyword column is placed 10 pixels to the right of the widest value expression."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The horizontal baseline is half the total height — the expression is vertically centred."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The vertical baseline is half the total width."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A two-case piecewise expression with no otherwise clause:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.Piecewise">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="P"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+					<expression tag="Symbolic.Symbol" Name="Q"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A one-case piecewise expression with an otherwise clause:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Math.Arithmetic.Piecewise">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="P"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Edition"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Creation"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There is one way to create a piecewise expression:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The edition panel at the left, in the path"/>
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Math → Arithmetic → Piecewise"/>
+					</expression>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The selected expression is replaced by a piecewise expression with 2 subexpressions. The previously selected expression becomes the first subexpression (the initial value), and a Null expression is inserted as the condition."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Deletion"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Deleting a piecewise expression (pressing the"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="DELETE"/>
+				</expression>
+				<expression tag="String.Text" Value="key when the selected expression is a piecewise expression) will replace it with a Null expression. All subexpressions are discarded."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Reduction"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This expression has one reducer."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Piecewise"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer is special, meaning it runs before child expressions are automatically reduced. The reducer evaluates the case conditions one by one in order:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If a condition reduces to"/>
+					<expression tag="Logic.True"/>
+					<expression tag="String.Text" Value=", the piecewise expression is replaced by the corresponding value, which is then reduced."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If a condition reduces to"/>
+					<expression tag="Logic.False"/>
+					<expression tag="String.Text" Value=", the next case is tested."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If the first condition does not reduce to a boolean, reduction is deferred and the expression is left unchanged."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If any subsequent condition (not the first) does not reduce to a boolean, a reduction error is raised."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="After all case conditions have been tested without a match:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If an otherwise clause is present, the piecewise expression is replaced by the otherwise value, which is then reduced."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="If there is no otherwise clause, the piecewise expression is replaced by a Null expression."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When the first condition is"/>
+				<expression tag="Logic.True"/>
+				<expression tag="String.Text" Value=", the expression reduces to the first value:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Piecewise">
+			<expression tag="Math.Number" Value="42"/>
+			<expression tag="Logic.True"/>
+			<expression tag="Math.Number" Value="0"/>
+			<expression tag="Logic.False"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="42"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="When the first condition is"/>
+			<expression tag="Logic.False"/>
+			<expression tag="String.Text" Value="and the second is"/>
+			<expression tag="Logic.True"/>
+			<expression tag="String.Text" Value=", the expression reduces to the second value:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Piecewise">
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Logic.False"/>
+			<expression tag="Math.Number" Value="2"/>
+			<expression tag="Logic.True"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="2"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="When no condition is satisfied and an otherwise clause is present, the expression reduces to the otherwise value:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Piecewise">
+			<expression tag="Math.Number" Value="42"/>
+			<expression tag="Logic.False"/>
+			<expression tag="Math.Number" Value="99"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="99"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="When no condition is satisfied and there is no otherwise clause, the expression reduces to Null:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Piecewise">
+			<expression tag="Math.Number" Value="42"/>
+			<expression tag="Logic.False"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Null"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Null" Description="Null"/>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Arithmetic_canon" Description="Arithmetic canon"/>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Categories"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Expressions in the org.formulae.math.arithmetic package" Description="Expressions in the org.formulae.math.arithmetic package"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Date of creation:"/>
+				<expression tag="Time.Time" Value="1777650000000"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Date of last modification:"/>
+				<expression tag="Time.Time" Value="1777650000000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

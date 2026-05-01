@@ -1,0 +1,740 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.list,org.formulae.math.complex,org.formulae.programming,org.formulae.internet,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Math.Arithmetic.Product"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Arithmetic.Product"/>
+				</expression>
+				<expression tag="String.Text" Value="is the Fōrmulæ tag for the expression associated with the product of a sequence of values."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Definition"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Arithmetic.Product"/>
+				</expression>
+				<expression tag="String.Text" Value="expression represents the capital-pi product operator"/>
+				<expression tag="Math.Arithmetic.Product">
+					<expression tag="Symbolic.Symbol" Name="f(i)"/>
+					<expression tag="Symbolic.Symbol" Name="i"/>
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+				</expression>
+				<expression tag="String.Text" Value=". It computes the product of an expression — the factor — evaluated at each value of an iteration variable ranging over a finite sequence."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The expression supports four forms, determined by the number of subexpressions:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Repetition form"/>
+					</expression>
+					<expression tag="String.Text" Value="(2 subexpressions): multiplies the factor by itself N times, where N is an integer. The result is equivalent to N copies of the factor joined by multiplication."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Symbol and list form"/>
+					</expression>
+					<expression tag="String.Text" Value="(3 subexpressions): multiplies the factor with the iteration variable taking each value from a list in turn."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Symbol, lower bound, and upper bound form"/>
+					</expression>
+					<expression tag="String.Text" Value="(4 subexpressions): multiplies the factor for the iteration variable ranging from the lower bound to the upper bound, with a step of 1."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Symbol, lower bound, upper bound, and step form"/>
+					</expression>
+					<expression tag="String.Text" Value="(5 subexpressions): multiplies the factor for the iteration variable ranging from the lower bound to the upper bound, advancing by the given step at each iteration. The step may be negative, in which case the iteration runs downward and continues while the variable remains greater than or equal to the upper bound."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="When the iteration produces no terms — because the range is empty or the list is empty — the result is 1."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The name of this expression depends on locale. In English, it is"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Product"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Subexpressions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This expression has between 2 and 5 subexpressions. The number of subexpressions determines the form."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The first subexpression (index 1), named"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Expression to be used to create the product"/>
+				</expression>
+				<expression tag="String.Text" Value=", is the factor — the expression evaluated at each step of the iteration. It is present in all forms."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The second subexpression (index 2), named"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Symbol to be used over the iteration"/>
+				</expression>
+				<expression tag="String.Text" Value=", serves different roles depending on the form:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="In the repetition form (2 subexpressions): an integer N specifying how many copies of the factor to multiply."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="In all other forms (3–5 subexpressions): a"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Symbolic.Symbol"/>
+					</expression>
+					<expression tag="String.Text" Value="serving as the iteration variable. The factor is evaluated with this symbol bound to the current iteration value at each step."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The third subexpression (index 3), present only in the 3-subexpression form, is named"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="List containing the elements to be iterated over"/>
+				</expression>
+				<expression tag="String.Text" Value=". It is a list of values to iterate over."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the 4- and 5-subexpression forms, the third subexpression (index 3) is named"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Starting value of iteration"/>
+				</expression>
+				<expression tag="String.Text" Value="(the lower bound), the fourth (index 4) is named"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Ending value of iteration"/>
+				</expression>
+				<expression tag="String.Text" Value="(the upper bound), and — in the 5-subexpression form — the fifth (index 5) is named"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Step of the iteration"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Visualization"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The expression is rendered as a large Π symbol (at twice the current font size) with the factor to its right at normal size. All other subexpressions are rendered at a smaller font size (4 points below the current size) and placed above and below the Π symbol according to the form:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Repetition form"/>
+					</expression>
+					<expression tag="String.Text" Value="(2 subexpressions): the count N appears above the Π; nothing appears below."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="3-subexpression form"/>
+					</expression>
+					<expression tag="String.Text" Value=": the symbol appears below the Π; the list appears above."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="4-subexpression form"/>
+					</expression>
+					<expression tag="String.Text" Value=": the symbol and lower bound appear below as symbol=lower; the upper bound appears above."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="5-subexpression form"/>
+					</expression>
+					<expression tag="String.Text" Value=": the symbol and lower bound appear below as symbol=lower; the upper bound and step appear above as upper, step."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The expression's horizontal baseline coincides with the horizontal baseline of the factor (child 0). The top and bottom clusters are centered horizontally over the Π symbol. The total width is 5 pixels more than the maximum of the Π symbol width, the top cluster width, and the bottom cluster width, plus the width of the factor."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Since"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Math.Arithmetic.Product"/>
+				</expression>
+				<expression tag="String.Text" Value="overrides"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="parenthesesAsOperator()"/>
+				</expression>
+				<expression tag="String.Text" Value="to return"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="true"/>
+				</expression>
+				<expression tag="String.Text" Value=", the expression is automatically enclosed in parentheses when it appears as a subexpression in a context that requires it (e.g., as an argument to Factorial)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The four forms render as follows:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Form"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Subexpressions"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Rendered"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Repetition"/>
+							<expression tag="String.Text" Value="2"/>
+							<expression tag="Math.Arithmetic.Product">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Symbolic.Symbol" Name="N"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Symbol + list"/>
+							<expression tag="String.Text" Value="3"/>
+							<expression tag="Math.Arithmetic.Product">
+								<expression tag="Symbolic.Symbol" Name="f(x)"/>
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="List.List">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+									<expression tag="Symbolic.Symbol" Name="c"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Symbol + range"/>
+							<expression tag="String.Text" Value="4"/>
+							<expression tag="Math.Arithmetic.Product">
+								<expression tag="Symbolic.Symbol" Name="f(i)"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Symbol + range + step"/>
+							<expression tag="String.Text" Value="5"/>
+							<expression tag="Math.Arithmetic.Product">
+								<expression tag="Symbolic.Symbol" Name="f(i)"/>
+								<expression tag="Symbolic.Symbol" Name="i"/>
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+								<expression tag="Symbolic.Symbol" Name="s"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Edition"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Creation"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There are four ways to create a product expression, one for each form. All are found in the edition panel at the left, in the path"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Math → Arithmetic → ∏"/>
+				</expression>
+				<expression tag="String.Text" Value=". Each entry is represented by an icon showing the form:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Icon"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="product4"/>
+					</expression>
+					<expression tag="String.Text" Value=": creates a 4-subexpression product (symbol, lower bound, upper bound, factor)."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Icon"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="product5"/>
+					</expression>
+					<expression tag="String.Text" Value=": creates a 5-subexpression product (symbol, lower bound, upper bound, step, factor)."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Icon"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="product3"/>
+					</expression>
+					<expression tag="String.Text" Value=": creates a 3-subexpression product (symbol, list, factor)."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Icon"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="product2"/>
+					</expression>
+					<expression tag="String.Text" Value=": creates a 2-subexpression product (count N, factor)."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In all cases the selected expression is replaced by the new product expression, all subexpressions initially set to Null. The factor (child 0) becomes the new selected expression."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Deletion"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Deleting a product expression (pressing the"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="DELETE"/>
+				</expression>
+				<expression tag="String.Text" Value="key when the selected expression is a product expression) will replace it with a Null expression. All subexpressions are discarded."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Reduction"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This expression has two reducers, applied in the order shown. Both are special reducers — they run before the subexpressions are reduced, and manage reduction of subexpressions themselves."/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Name"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Package"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Priority"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Special"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Product (range)"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="org.formulae.math.arithmetic"/>
+							</expression>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="Yes"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Product (list)"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="org.formulae.math.arithmetic"/>
+							</expression>
+							<expression tag="String.Text" Value="Normal"/>
+							<expression tag="String.Text" Value="Yes"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Product (range)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer handles the 2-, 4-, and 5-subexpression forms."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="In the repetition form (2 subexpressions): the factor (child 0) and the count N (child 1) are reduced. N must be an integer; otherwise the reducer does not apply. The result is a Multiplication of N copies of the reduced factor, which is then reduced. If N is 0, the result is 1; if N is 1, the result is the factor itself:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="4"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="81"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Math.Number" Value="3"/>
+			<expression tag="Math.Number" Value="0"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="In the 4-subexpression form: child 1 must be a"/>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="Symbolic.Symbol"/>
+			</expression>
+			<expression tag="String.Text" Value="; children 2 and 3 must reduce to non-complex numbers (the lower and upper bounds). The iteration step is 1."/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="i"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="4"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="576"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="6"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="720"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Math.Arithmetic.Addition">
+				<expression tag="Symbolic.Symbol" Name="n"/>
+				<expression tag="Math.Complex.ImaginaryUnit"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="4"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Addition">
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="10"/>
+			</expression>
+			<expression tag="Math.Arithmetic.Multiplication">
+				<expression tag="Math.Number" Value="40"/>
+				<expression tag="Math.Complex.ImaginaryUnit"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value=""/>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="Math.Arithmetic.Product"/>
+			</expression>
+			<expression tag="String.Text" Value="expressions can be nested:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Math.Arithmetic.Product">
+				<expression tag="Symbolic.Symbol" Name="j"/>
+				<expression tag="Symbolic.Symbol" Name="j"/>
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Symbolic.Symbol" Name="i"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="4"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="288"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="If the lower bound exceeds the upper bound, the result is 1:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Math.Number" Value="5"/>
+			<expression tag="Math.Number" Value="1"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="In the 5-subexpression form: child 4 must reduce to a non-complex, non-zero number (the step). If the step is positive the iteration continues while the variable is less than or equal to the upper bound; if the step is negative, while the variable is greater than or equal to the upper bound:"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Number" Value="9"/>
+			<expression tag="Math.Number" Value="2"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="945"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Symbolic.Symbol" Name="i"/>
+			<expression tag="Math.Number" Value="4"/>
+			<expression tag="Math.Number" Value="1"/>
+			<expression tag="Math.Arithmetic.Negative">
+				<expression tag="Math.Number" Value="1"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="24"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Product (list)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This reducer handles the 3-subexpression form. Child 1 must be a"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Symbolic.Symbol"/>
+				</expression>
+				<expression tag="String.Text" Value="and child 2 must be a"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="List.List"/>
+				</expression>
+				<expression tag="String.Text" Value=". The factor is evaluated once for each element of the list, with the symbol bound to that element. The results are multiplied together:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="List.List">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Math.Number" Value="3"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Arithmetic.Multiplication">
+			<expression tag="Math.Number" Value="9"/>
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="a"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Paragraph">
+			<expression tag="String.Text" Value="What is the product of the digits of the number"/>
+			<expression tag="Math.Number" Value="12345"/>
+			<expression tag="String.Text" Value="?"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Symbolic.Symbol" Name="d"/>
+			<expression tag="Symbolic.Symbol" Name="d"/>
+			<expression tag="Math.Arithmetic.Digits">
+				<expression tag="Math.Number" Value="12345"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="120"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Math.Arithmetic.Exponentiation">
+				<expression tag="Symbolic.Symbol" Name="x"/>
+				<expression tag="Math.Number" Value="2"/>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="List.FromRange">
+				<expression tag="Math.Number" Value="1"/>
+				<expression tag="Math.Number" Value="5"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="14400"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Math.Arithmetic.Product">
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="Symbolic.Symbol" Name="x"/>
+			<expression tag="List.List"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="1"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Additional information"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The product expression creates a local scope for the iterating symbol. It means that if a symbol with the same name is already defined, it will not be affected. See the following example:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Programming.Block" Description="Description" Expanded="True">
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="n"/>
+					<expression tag="Math.Number" Value="234.5"/>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Local">
+				<expression tag="Symbolic.Assignment">
+					<expression tag="Symbolic.Symbol" Name="prod"/>
+					<expression tag="Math.Arithmetic.Product">
+						<expression tag="Math.Arithmetic.Multiplication">
+							<expression tag="Symbolic.Symbol" Name="n"/>
+							<expression tag="Symbolic.Symbol" Name="n"/>
+						</expression>
+						<expression tag="Symbolic.Symbol" Name="n"/>
+						<expression tag="Math.Number" Value="1"/>
+						<expression tag="Math.Number" Value="3"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Symbolic.Symbol" Name="n"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Math.Number" Value="234.5"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="See also"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Math.Arithmetic.Multiplication" Description="Math.Arithmetic.Multiplication"/>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Math.Arithmetic.Summation" Description="Math.Arithmetic.Summation"/>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="The"/>
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Arithmetic_canon" Description="Arithmetic canon"/>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Categories"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Expressions in the org.formulae.math.arithmetic package" Description="Expressions in the org.formulae.math.arithmetic package"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Internet.Hyperlink" Value="/?script=reference/Categories/Iterated operators" Description="Iterated operators"/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Date of creation:"/>
+				<expression tag="Time.Time" Value="1777625400000"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Date of last modification:"/>
+				<expression tag="Time.Time" Value="1777625400000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
