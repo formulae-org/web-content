@@ -1,0 +1,579 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.list">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="AI configuration"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Fōrmulæ can send prompts to AI language model providers. When you press Enter on a row whose root expression is a paragraph or multi-paragraph, the content is sent to the active AI connection, and the AI's response appears as an output row."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Three provider types are supported: OpenAI-compatible (covering a wide range of providers and local models), Anthropic, and Google (Gemini)."/>
+			</expression>
+			<expression tag="Typesetting.Rule"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="About AI providers"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There are three kinds of AI providers:"/>
+			</expression>
+			<expression tag="Typesetting.NumberedList">
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Cloud providers"/>
+						</expression>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="An AI provider is a cloud service that runs a large language model and makes it accessible via an API. You send a prompt; the model returns a response. Most providers charge per token (unit of text) processed, with no fixed monthly fee."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Notice that, even when most cloud providers allow the use of their chatbot through their webpages freely, the connection from an external app (like Fōrmulæ) has a charge."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="A given AI provider usually offers several AI models for different capabilities and prices. For example, OpenAI ("/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="gpt-4o"/>
+						</expression>
+						<expression tag="String.Text" Value=","/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="gpt-4o-mini"/>
+						</expression>
+						<expression tag="String.Text" Value=", etc.), Anthropic ("/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="claude-sonnet-4-6"/>
+						</expression>
+						<expression tag="String.Text" Value=","/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="claude-opus-4-7"/>
+						</expression>
+						<expression tag="String.Text" Value=", etc.),"/>
+						<expression tag="String.Text" Value=" or Google ("/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="gemini-2.5-pro"/>
+						</expression>
+						<expression tag="String.Text" Value=","/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="gemini-2.5-flash"/>
+						</expression>
+						<expression tag="String.Text" Value=", etc) and so on."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="To use a cloud provider, create an account on their website, then generate an API key from your account dashboard. The key authenticates your requests; keep it private and do not share it."/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Gateways"/>
+						</expression>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="A gateway is an intermediary service that routes requests to one of hundreds of available cloud providers chosen by the user. It has the advantage that it requires a single API key. Gateway providers usually charge a fee, additional to the cost of the selected cloud provider."/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Local providers"/>
+						</expression>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="They are tools that allow you to download and run AI models directly on your own computer, offline and privately. They handle all the complex setup and management behind the scenes."/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Modality"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="All models support"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="text to text"/>
+				</expression>
+				<expression tag="String.Text" Value="mode: the model accepts text and generates text."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="There are models that are able to use other type of content, such as images, audio, video or documents. They are commonly named"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="multimodal"/>
+				</expression>
+				<expression tag="String.Text" Value="models."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The support of certain modality for a model is not necessarily symmetric, for example, there are"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="text → (text, image)"/>
+				</expression>
+				<expression tag="String.Text" Value=", or"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="(text, audio) → text"/>
+				</expression>
+				<expression tag="String.Text" Value=", etc."/>
+			</expression>
+			<expression tag="Typesetting.Rule"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="So, what kind of provider should I use?"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It depends on your particular needs, the diversity of models you want to use, and your budget."/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="I want to start quickly"/>
+						</expression>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="In this case, the recommended option is to make a subscription with your favorite cloud provider (OpenAI, Anthropic, Google, Meta, etc), generate an API key, choose a model and skip to the next section."/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="I want to test with different models"/>
+						</expression>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="Using a gateway is your option."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="There are available free models, but using it is not actually 100% free, see below."/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="I want to use one or several local models"/>
+						</expression>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="The option is to use a local provider. It is free and private, but it requires a computer with good capacities of memory and storage."/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="I am looking for economic options"/>
+						</expression>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="The recommendation is to look the available AI providers for the models they offer. There are cheap and even free models. Also, they usually offer special programs for students."/>
+					</expression>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="If you want to access arbitrary free models, the quick conclusion is that there is no completely free option, but there exist"/>
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="cheap"/>
+						</expression>
+						<expression tag="String.Text" Value="options to access free models. See the following two:"/>
+					</expression>
+					<expression tag="Typesetting.NumberedList">
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="String.Text" Value="The"/>
+							<expression tag="Typesetting.BoldChunk">
+								<expression tag="String.Text" Value="OpenRouter"/>
+							</expression>
+							<expression tag="String.Text" Value="gateway offers access to free models. However, to get the API key a minimal fee is required. It even offers a &quot;model&quot; named"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="openrouter/free"/>
+							</expression>
+							<expression tag="String.Text" Value="that selects free models at random from the models available."/>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="Typesetting.BoldChunk">
+								<expression tag="String.Text" Value="Ollama"/>
+							</expression>
+							<expression tag="String.Text" Value="is a local provider, intended initially to download and run AI model locally, but it can also be used to access cloud free models (acting much like a gateway). It also requires a subscription with a small fee."/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Once you have an API key and a model name, you can proceed to the AI connection configuration."/>
+			</expression>
+			<expression tag="Typesetting.Rule"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Types of AI connections"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="A bit of history: The first AI provider was"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="ChatGPT"/>
+				</expression>
+				<expression tag="String.Text" Value="from"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="OpenAI."/>
+				</expression>
+				<expression tag="String.Text" Value="Several other providers emerged. Most of them adopted the parameters for connecting to the"/>
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="OpenAI"/>
+				</expression>
+				<expression tag="String.Text" Value="models, so it became a de facto standard, while others did not."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="As a result, there are two types of AI connections:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="OpenAI-compatible."/>
+					</expression>
+					<expression tag="String.Text" Value="Most of  the cloud providers, and even most of the gateways and local providers use this standard."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="No OpenAI-compatible."/>
+					</expression>
+					<expression tag="String.Text" Value="They use their own set of parameters. Notable cases are"/>
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Claude, from Anthropic"/>
+					</expression>
+					<expression tag="String.Text" Value="and"/>
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Gemini, from Google."/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Rule"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Opening the AI connections panel"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Click the settings icon in the toolbar to open the Settings panel. Under the General section, find the &quot;AI connections&quot; row and click &quot;Manage…&quot;. The connection manager dialog opens, listing all defined connections."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Adding a connection"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Click &quot;Add…&quot; at the bottom of the connection manager. Adding a connection is a two-step process:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Step 1 — Name and provider."/>
+				</expression>
+				<expression tag="String.Text" Value=" Enter a name for the connection (e.g. &quot;My Claude&quot;) and choose a provider type from the dropdown. Click &quot;Next →&quot;."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Step 2 — Provider configuration."/>
+				</expression>
+				<expression tag="String.Text" Value=" Fill in the provider-specific fields described below. Click &quot;Save&quot;. The new connection appears in the list and is activated automatically if it is the first one defined."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Standard (OpenAI-compatible)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Choose the &quot;OpenAI-compatible&quot; provider type for any service that exposes the OpenAI Chat Completions API. Fill in three fields:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Base URL"/>
+					</expression>
+					<expression tag="String.Text" Value=" — the API root URL for the provider (e.g. https://api.openai.com/v1)."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="API key"/>
+					</expression>
+					<expression tag="String.Text" Value=" — your authentication key for that provider. For local Ollama, enter any non-empty string."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Model"/>
+					</expression>
+					<expression tag="String.Text" Value=" — the model identifier to request."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Supported providers and example model names:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Provider or gateway"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Base URL"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Model examples"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="OpenAI"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="https://api.openai.com/v1"/>
+							</expression>
+							<expression tag="String.Text" Value="gpt-4o, gpt-4o-mini, o1"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Meta"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="https://api.llama.com/v1"/>
+							</expression>
+							<expression tag="String.Text" Value="Llama-4-Scout, Llama-4-Maverick"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Groq"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="https://api.groq.com/openai/v1"/>
+							</expression>
+							<expression tag="String.Text" Value="llama-3.3-70b-versatile, mixtral-8x7b-32768"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Fireworks AI"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="https://api.fireworks.ai/inference/v1"/>
+							</expression>
+							<expression tag="String.Text" Value="accounts/fireworks/models/llama-v3p3-70b-instruct"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Together AI"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="https://api.together.xyz/v1"/>
+							</expression>
+							<expression tag="String.Text" Value="meta-llama/Llama-3.3-70B-Instruct-Turbo"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="DeepInfra"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="https://api.deepinfra.com/v1/openai"/>
+							</expression>
+							<expression tag="String.Text" Value="meta-llama/Llama-3.3-70B-Instruct"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Azure OpenAI"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="https://{resource}.openai.azure.com/openai/deployments/{deployment}/v1"/>
+							</expression>
+							<expression tag="String.Text" Value="(set by deployment)"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="OpenRouter (gateway)"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="https://openrouter.ai/api/v1"/>
+							</expression>
+							<expression tag="String.Text" Value="anthropic/claude-opus-4-5, openai/gpt-4o, google/gemini-2.5-flash"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Ollama (local)"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="http://localhost:11434/v1"/>
+							</expression>
+							<expression tag="String.Text" Value="llama3.2, qwen2.5, deepseek-r1"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Anthropic"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Choose the &quot;Anthropic&quot; provider type to connect directly to the Anthropic API. Three fields:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="API key"/>
+					</expression>
+					<expression tag="String.Text" Value=" — your Anthropic API key."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Model"/>
+					</expression>
+					<expression tag="String.Text" Value=" — the Claude model identifier. The field offers autocomplete suggestions."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Max tokens"/>
+					</expression>
+					<expression tag="String.Text" Value=" — maximum tokens in the response (default: 4096)."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Model"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Description"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="claude-opus-4-7"/>
+							</expression>
+							<expression tag="String.Text" Value="Most capable Claude model"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="claude-sonnet-4-6"/>
+							</expression>
+							<expression tag="String.Text" Value="Balanced capability and speed"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="claude-haiku-4-5-20251001"/>
+							</expression>
+							<expression tag="String.Text" Value="Fastest and most compact"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Note: Anthropic models are also reachable via OpenRouter using the OpenAI-compatible provider type."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Google (Gemini)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Choose the &quot;Google (Gemini)&quot; provider type to connect to the Gemini API. Three fields:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="API key"/>
+					</expression>
+					<expression tag="String.Text" Value=" — your Google AI Studio API key."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Model"/>
+					</expression>
+					<expression tag="String.Text" Value=" — the Gemini model identifier. The field offers autocomplete suggestions."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Image generation"/>
+					</expression>
+					<expression tag="String.Text" Value=" — enable only when using a model that supports image output (e.g. gemini-2.0-flash-preview-image-generation)."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Model"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Description"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="gemini-2.5-pro"/>
+							</expression>
+							<expression tag="String.Text" Value="Most capable Gemini model"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="gemini-2.5-flash"/>
+							</expression>
+							<expression tag="String.Text" Value="Fast and efficient — recommended default"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="gemini-2.0-flash"/>
+							</expression>
+							<expression tag="String.Text" Value="Previous-generation flash model"/>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="gemini-2.0-flash-preview-image-generation"/>
+							</expression>
+							<expression tag="String.Text" Value="Flash with image generation support"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Rule"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Managing connections"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The connection manager lists all defined connections. Each row shows the name, provider, an Active radio button, and Edit / Delete buttons."/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Activate"/>
+					</expression>
+					<expression tag="String.Text" Value=" — click the radio button in the Active column to make a connection current. The selection is saved immediately."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Edit"/>
+					</expression>
+					<expression tag="String.Text" Value=" — click Edit to update the provider-specific fields for a connection."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Delete"/>
+					</expression>
+					<expression tag="String.Text" Value=" — click Delete and confirm to remove a connection. If it was the active connection, the next one in the list becomes active automatically."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Connection settings are stored in the browser's localStorage and persist across sessions."/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
