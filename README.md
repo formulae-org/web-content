@@ -1,17 +1,22 @@
 # web-content
 
-### Introduction
+This repository is the **content of the [formulae.org](https://formulae.org) website** — and it is itself written in Fōrmulæ.
 
-Fōrmulæ is a very unusual programming language, it is not textual but structural. It has the advantage that every construct ‒or 'expression'‒ of the language can have its own method of visualization. In fact, there are expressions having more than one form of visualization, so final users can choose which of them will be used.
+Fōrmulæ is a visual environment where information is a tree-structured *expression* rather than text. That is not limited to formulas and programs: an expression can also be a document — text, headings, paragraphs, tables, hyperlinks, images, colors, and live Fōrmulæ code, all composed and pretty-printed. So the website's pages are **not HTML**; each page is a Fōrmulæ expression.
 
-Furthermore, this extends beyond programming expressions. For example, you can create documents containing text, formatting options, tables, hyperlinks, media files, Fōrmulæ code, etc.
+## What's here
 
-The entire Fōrmulæ website content, such as the main page, examples, reference, tutorials, articles, etc. are **not** in HTML format but in Fōrmulæ format itself.
+- **`articles/`** — the main page, blog, FAQ, terms, and topical articles (worked examples by category, image processing, randomness, …).
+- **`showcases/`** — one curated, pre-evaluated session per package (arithmetic, logic, strings, programming, …): explanatory text interleaved with worked examples and their results. *(Formerly called "tutorials"; they survey a package rather than guide you step by step.)*
+- **`examples/`** — standalone example scripts and programs.
+- **`reference/`** — per-expression reference pages and category indexes.
 
-Even though Fōrmulæ expressions are defined structurally, textual representation of such those expressions can be generated, in order to be stored or transported. The most common format for textual representations is XML, but it could be also JSON or others.
+Each page is served by the web app via `?script=<path>` — for example, [`?script=showcases/Arithmetic`](https://formulae.org/?script=showcases/Arithmetic).
 
-### Repository
+## Format
 
-This repository contains the official set of XML files of the entire Fōrmulæ website.
+Although Fōrmulæ expressions are defined structurally, they can be written out as text for storage and transport — most commonly **XML**, as in this repository (JSON and other formats are also possible). You can read the raw XML here, but to see how a page actually looks, open it in the [Fōrmulæ website](https://formulae.org).
 
-Please notice that the repository contains only directories and XML files, you can see the ‒raw‒ XML format of course, but if you want to see how these documents look, see them in the Fōrmulæ website.
+## License
+
+See [`LICENSE.md`](LICENSE.md).
