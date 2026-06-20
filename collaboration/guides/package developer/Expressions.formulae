@@ -1,14 +1,14 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.diagramming,org.formulae.time,org.formulae.internet">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.internet,org.formulae.math.arithmetic,org.formulae.symbolic,org.formulae.diagramming,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Guía del desarrollador"/>
+					<expression tag="String.Text" Value="Developer's guide"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Definición de expresiones"/>
+					<expression tag="String.Text" Value="Defining expressions"/>
 				</expression>
 			</expression>
 		</expression>
@@ -16,12 +16,14 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Una expresión es una abstracción que contiene los siguientes atributos básicos:"/>
+				<expression tag="String.Text" Value="An expression is an abstraction that contains the following basic attributes:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
-				<expression tag="String.Text" Value="Una cadena de caracteres, denominada &quot;Tag&quot;, que define el tipo de expresión."/>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="Una colección de cero, una o varias subexpresiones."/>
+					<expression tag="String.Text" Value="A string, called the &quot;Tag&quot;, that defines the type of expression."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="A collection of zero, one, or several subexpressions."/>
 				</expression>
 			</expression>
 		</expression>
@@ -32,17 +34,17 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La clase"/>
+				<expression tag="String.Text" Value="The class"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Expression"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Toda expresión debe ser un objeto de una clase derivada de la clase"/>
+				<expression tag="String.Text" Value="Every expression must be an object of a class derived from the class"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Expression."/>
 				</expression>
-				<expression tag="String.Text" Value="Esta clase tiene muchos atributos y métodos, los cuales se irán explicando gradualmente."/>
+				<expression tag="String.Text" Value="This class has many attributes and methods, which will be explained gradually."/>
 			</expression>
 		</expression>
 	</expression>
@@ -50,33 +52,33 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Métodos relativos a la definición de la expresión"/>
+					<expression tag="String.Text" Value="Methods related to the definition of the expression"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="getTag()"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método debe regresar el"/>
+						<expression tag="String.Text" Value="This method must return the"/>
 						<expression tag="Typesetting.BoldChunk">
 							<expression tag="String.Text" Value="tag"/>
 						</expression>
-						<expression tag="String.Text" Value="de la expresión. El tag es una cadena de caracterees de la forma"/>
+						<expression tag="String.Text" Value="of the expression. The tag is a string of the form"/>
 						<expression tag="Typesetting.BoldChunk">
-							<expression tag="String.Text" Value="Campo.SubCampo.SubSubCampo. ... .Expresión"/>
+							<expression tag="String.Text" Value="Field.SubField.SubSubField. ... .Expression"/>
 						</expression>
-						<expression tag="String.Text" Value="(palabras separadas por puntos). Las palabaras son nombres en inglés, y excepto la última son los nombres del campo, subcampo, subsubcampo, etc. de la ciencia, y el último nombre es el de la expresión. Por ejemplo, la suma aritmética tiene el tag"/>
+						<expression tag="String.Text" Value="(words separated by dots). The words are English names, and except for the last one they are the names of the field, subfield, subsubfield, etc. of the science, and the last name is that of the expression. For example, arithmetic addition has the tag"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="Math.Arithmetic.Addition."/>
 						</expression>
-						<expression tag="String.Text" Value="Las palabras siempre van capitalizadas, sin espacios ni caracteres especiales. Si un nombre requiere el uso de varias palabras, este se forma en un estilo"/>
+						<expression tag="String.Text" Value="The words are always capitalized, with no spaces or special characters. If a name requires several words, it is formed in a"/>
 						<expression tag="Internet.Hyperlink" Value="https://en.wikipedia.org/wiki/Camel_case" Description="CamelCase"/>
-						<expression tag="String.Text" Value="es decir, cada palabra es captalizada y no se usan artículos como &quot;de&quot;, &quot;para&quot;, etc. por ejemplo"/>
+						<expression tag="String.Text" Value="that is, each word is capitalized and connecting words such as &quot;of&quot;, &quot;for&quot;, etc. are not used, for example"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="Math.Complex.ImaginaryUnit"/>
 						</expression>
@@ -84,44 +86,44 @@
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="getName()"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método debe regresar una cadena de caracteres con el nombre descriptivo de la expresión. Un ejemplo sería &quot;Adición aritmética&quot;."/>
+						<expression tag="String.Text" Value="This method must return a string with the descriptive name of the expression. An example would be &quot;Arithmetic addition&quot;."/>
 					</expression>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Métodos relativos a la definición de subexpresiones"/>
+					<expression tag="String.Text" Value="Methods related to the definition of subexpressions"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="canHaveChildren(count)"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método debe regresar un valor booleano indicando si el número de subexpresiones que se proporciona como entrada es válido para la expresión. Por ejemplo, es una expresión que es una operación estrictamente binaria, por ejemplo una división o exponenciación, el único valor para el cual regresaría verdadero es para"/>
+						<expression tag="String.Text" Value="This method must return a boolean value indicating whether the number of subexpressions provided as input is valid for the expression. For example, if an expression is a strictly binary operation, such as a division or exponentiation, the only value for which it would return true is"/>
 						<expression tag="Math.Number" Value="2"/>
 						<expression tag="String.Text" Value="."/>
 					</expression>
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="getChildName(index)"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método debe regresar el nombre del la subexpresión referenciada con su índice o posición. Si la expresión no contiene subexpresiones no es necesario que se implemente este método, ya que nunca será llamado."/>
+						<expression tag="String.Text" Value="This method must return the name of the subexpression referenced by its index or position. If the expression contains no subexpressions, it is not necessary to implement this method, since it will never be called."/>
 					</expression>
 				</expression>
 			</expression>
@@ -131,39 +133,39 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Ejemplos"/>
+					<expression tag="String.Text" Value="Examples"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="De acuerdo con lo visto hasta ahora, una expresión para representar la adición aritmética sería como sigue. Se entiende que una suma no puede tener cero o un sólo sumando. Además todas su subexpresiones reciben el mismo nombre: &quot;Sumando&quot;:"/>
+				<expression tag="String.Text" Value="Based on what we have seen so far, an expression to represent arithmetic addition would be as follows. It is understood that a sum cannot have zero or a single addend. Moreover, all its subexpressions receive the same name: &quot;Addend&quot;:"/>
 			</expression>
-			<expression tag="Visualization.CodeBlock" Value="Addition = class extends Expression {&#10;&#9;getTag() {&#10;&#9;&#9;return &quot;Math.Arithmetic.Addition&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;getName() {&#10;&#9;&#9;return &quot;Adición aritmética&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;canHaveChildren(count) {&#10;&#9;&#9;return count &gt;= 2;&#10;&#9;}&#10;&#9;&#10;&#9;getChildName(index) {&#10;&#9;&#9;return &quot;Sumando&quot;;&#10;&#9;}&#10;}"/>
+			<expression tag="Visualization.CodeBlock" Value="Addition = class extends Expression {&#10;&#9;getTag() {&#10;&#9;&#9;return &quot;Math.Arithmetic.Addition&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;getName() {&#10;&#9;&#9;return &quot;Arithmetic addition&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;canHaveChildren(count) {&#10;&#9;&#9;return count &gt;= 2;&#10;&#9;}&#10;&#9;&#10;&#9;getChildName(index) {&#10;&#9;&#9;return &quot;Addend&quot;;&#10;&#9;}&#10;}"/>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Ahora veamos el caso de una división, la cual puede tener dos y sólo dos subexpresiones, las culaes reciben diferentes nombres:"/>
+				<expression tag="String.Text" Value="Now let us look at the case of a division, which can have two and only two subexpressions, which receive different names:"/>
 			</expression>
-			<expression tag="Visualization.CodeBlock" Value="Division = class extends Expression {&#10;&#9;getTag() {&#10;&#9;&#9;return &quot;Math.Arithmetic.Division&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;getName() {&#10;&#9;&#9;return &quot;División aritmética&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;canHaveChildren(count) {&#10;&#9;&#9;return count == 2;&#10;&#9;}&#10;&#9;&#10;&#9;getChildName(index) {&#10;&#9;&#9;return index == 0 ? &quot;Dividendo&quot; : &quot;Divisor&quot;;&#10;&#9;}&#10;}"/>
+			<expression tag="Visualization.CodeBlock" Value="Division = class extends Expression {&#10;&#9;getTag() {&#10;&#9;&#9;return &quot;Math.Arithmetic.Division&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;getName() {&#10;&#9;&#9;return &quot;Arithmetic division&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;canHaveChildren(count) {&#10;&#9;&#9;return count == 2;&#10;&#9;}&#10;&#9;&#10;&#9;getChildName(index) {&#10;&#9;&#9;return index == 0 ? &quot;Dividend&quot; : &quot;Divisor&quot;;&#10;&#9;}&#10;}"/>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Propiedades existentes"/>
+					<expression tag="String.Text" Value="Existing properties"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La clase"/>
+				<expression tag="String.Text" Value="The class"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Expression"/>
 				</expression>
-				<expression tag="String.Text" Value="tiene varias propiedades ya definidas, por lo que se vuelven comúnes a cualquier expresión:"/>
+				<expression tag="String.Text" Value="has several already-defined properties, which therefore become common to any expression:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="La propiedad"/>
+						<expression tag="String.Text" Value="The property"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="children"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Es un arreglo de referencias a objetos derivados de subclases de la clase"/>
+						<expression tag="String.Text" Value="It is an array of references to objects derived from subclasses of the class"/>
 						<expression tag="Typesetting.BoldChunk">
 							<expression tag="String.Text" Value="Expression"/>
 						</expression>
@@ -171,128 +173,130 @@
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="La propiedad"/>
+						<expression tag="String.Text" Value="The property"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="parent"/>
 						</expression>
 					</expression>
-					<expression tag="String.Text" Value="Es una referencia a la expresión padre. Puede ser que tenga un valor indefinido, si la expresión actual no es una subexpresión de otra."/>
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="It is a reference to the parent expression. It may have an undefined value if the current expression is not a subexpression of another."/>
+					</expression>
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="La propiedad"/>
+						<expression tag="String.Text" Value="The property"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="index"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Es el número de subexpresión respecto a su expresión padre, en caso de tener alguna."/>
+						<expression tag="String.Text" Value="It is the subexpression number relative to its parent expression, if it has one."/>
 					</expression>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Estas propiedades se muestran con una intención informativa. El código de programador de expresiones puede hacer uso de ellas de sólo lectura, pero no se pretende que las modifique directamente, ya que se puede llegar a situaciones inconsistentes, por ejemplo que una expresión X tenga una subexpresión que no referencíe a X como expresión padre."/>
+				<expression tag="String.Text" Value="These properties are shown for informational purposes. The expression programmer's code may use them read-only, but it is not intended to modify them directly, since inconsistent situations can arise, for example an expression X having a subexpression that does not reference X as its parent expression."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Métodos para manipular subexpresiones"/>
+					<expression tag="String.Text" Value="Methods for manipulating subexpressions"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La clase"/>
+				<expression tag="String.Text" Value="The class"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Expression"/>
 				</expression>
-				<expression tag="String.Text" Value="tiene varios métodos existentes para la manipulación de subexpresiones. Estos métodos manipulan las propiedades"/>
+				<expression tag="String.Text" Value="has several existing methods for manipulating subexpressions. These methods manipulate the properties"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="parent"/>
 				</expression>
-				<expression tag="String.Text" Value="y"/>
+				<expression tag="String.Text" Value="and"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="child"/>
 				</expression>
-				<expression tag="String.Text" Value="de las expresiones involucradas para que queden en un estado consistente."/>
+				<expression tag="String.Text" Value="of the expressions involved so that they remain in a consistent state."/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="setChild(index, child)"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método reemplaza la subexpresión (referenciada por posición), de la expresión actual, por la expresión que se pasa como argumento."/>
+						<expression tag="String.Text" Value="This method replaces the subexpression (referenced by position) of the current expression with the expression passed as an argument."/>
 					</expression>
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="addChild(child)"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método inserta una subexpresión al final de las subexpresiones existentes."/>
+						<expression tag="String.Text" Value="This method inserts a subexpression at the end of the existing subexpressions."/>
 					</expression>
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="addChildAt(index, child)"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método inserta una subexpresión en la posición indicada como argumento. Este número indica la posición que ocupará la subexpresión proporcionada. El valor puede ir desde cero (al inicio) o"/>
+						<expression tag="String.Text" Value="This method inserts a subexpression at the position indicated as an argument. This number indicates the position the provided subexpression will occupy. The value can range from zero (at the start) to"/>
 						<expression tag="Symbolic.Symbol" Name="n"/>
-						<expression tag="String.Text" Value="(al final) si la expresión actual cuenta con"/>
+						<expression tag="String.Text" Value="(at the end) if the current expression has"/>
 						<expression tag="Symbolic.Symbol" Name="n"/>
-						<expression tag="String.Text" Value="subexpresiones."/>
+						<expression tag="String.Text" Value="subexpressions."/>
 					</expression>
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="removeChildAt(index)"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método elimina la subexpresión referenciada por posición. La subexpresión no es eliminada, sólamente es &quot;desconectada&quot; como subexpresión de la expresión actual, por lo que queda &quot;huérfana&quot;, es decir ya no es mas una subexpresión de alguna expresión. Regresa una referencia a subexpresión desconectada."/>
+						<expression tag="String.Text" Value="This method removes the subexpression referenced by position. The subexpression is not deleted, only &quot;disconnected&quot; as a subexpression of the current expression, so it becomes &quot;orphaned&quot;, that is, it is no longer a subexpression of any expression. It returns a reference to the disconnected subexpression."/>
 					</expression>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Otros métodos de interés"/>
+					<expression tag="String.Text" Value="Other methods of interest"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="clone()"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método crea una copia de la expresión actual. Las subexpresiones son a su vez duplicadas (deep copy). Al final se obtiene una expresión que es idéntica a la original con la excepción de que la propiedad"/>
+						<expression tag="String.Text" Value="This method creates a copy of the current expression. The subexpressions are in turn duplicated (deep copy). The result is an expression identical to the original, except that the property"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="parent"/>
 						</expression>
-						<expression tag="String.Text" Value="de su expresión raíz queda con valor nulo, por lo que es una expresión &quot;huérfana&quot;."/>
+						<expression tag="String.Text" Value="of its root expression is left null, so it is an &quot;orphaned&quot; expression."/>
 					</expression>
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="replaceBy(replacer)"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método hace que la expresión actual sea &quot;desconectada&quot; de la expresión a la cual pertenece (es decir se deconecta de su padre), para ser susituída por la expresión que se especifica como argumento. Npotese que este método sólo puede funcionar si la expresión actual tiene un valor no nulo de la propiedad"/>
+						<expression tag="String.Text" Value="This method causes the current expression to be &quot;disconnected&quot; from the expression it belongs to (that is, it is disconnected from its parent), to be replaced by the expression specified as an argument. Note that this method can only work if the current expression has a non-null value for the property"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="parent"/>
 						</expression>
@@ -308,19 +312,19 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La clase"/>
+				<expression tag="String.Text" Value="The class"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="ExpressionHandler"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="El método"/>
+				<expression tag="String.Text" Value="The method"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="replaceBy(replacer)"/>
 				</expression>
-				<expression tag="String.Text" Value="se utiliza ámpliamente, principalmente para la reducción (transformacion de expresiones en otras expresiones), por ejemplo, la expresión"/>
+				<expression tag="String.Text" Value="is widely used, mainly for reduction (the transformation of expressions into other expressions); for example, the expression"/>
 				<expression tag="Diagramming.Tree" Expanded="True">
-					<expression tag="String.Text" Value="Adición"/>
+					<expression tag="String.Text" Value="Addition"/>
 					<expression tag="Diagramming.Tree" Expanded="True">
 						<expression tag="Math.Number" Value="2"/>
 					</expression>
@@ -328,33 +332,33 @@
 						<expression tag="Math.Number" Value="3"/>
 					</expression>
 				</expression>
-				<expression tag="String.Text" Value="puede reducirse a la expresión"/>
+				<expression tag="String.Text" Value="can be reduced to the expression"/>
 				<expression tag="Diagramming.Tree" Expanded="True">
 					<expression tag="Math.Number" Value="5"/>
 				</expression>
-				<expression tag="String.Text" Value=", sin embargo, no se puede realizar una llamada al método"/>
+				<expression tag="String.Text" Value=", however, a call cannot be made to the method"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="replaceBy(replacer)"/>
 				</expression>
-				<expression tag="String.Text" Value="de la expresión de adición, puesto que no tiene expresión padre."/>
+				<expression tag="String.Text" Value="of the addition expression, since it has no parent expression."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La clase"/>
+				<expression tag="String.Text" Value="The class"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="ExpressionHandler"/>
 				</expression>
-				<expression tag="String.Text" Value="actúa como una expresión comodín, de formal tal que ya se puede aplicar el método"/>
+				<expression tag="String.Text" Value="acts as a wildcard expression, so that the method"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="replaceBy(replacer)"/>
 				</expression>
-				<expression tag="String.Text" Value="en cualquiera de las expresiones y subexpresiones, puesto que todas tienen una expresión padre."/>
+				<expression tag="String.Text" Value="can now be applied to any of the expressions and subexpressions, since they all have a parent expression."/>
 			</expression>
 			<expression tag="Typesetting.Centering">
 				<expression tag="Visualization.HorizontalArray">
 					<expression tag="Diagramming.Tree" Expanded="True">
 						<expression tag="String.Text" Value="Handler"/>
 						<expression tag="Diagramming.Tree" Expanded="True">
-							<expression tag="String.Text" Value="Adición"/>
+							<expression tag="String.Text" Value="Addition"/>
 							<expression tag="Diagramming.Tree" Expanded="True">
 								<expression tag="Math.Number" Value="2"/>
 							</expression>
@@ -375,11 +379,11 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Se recomienda, por órden, siempre que se tenga que administrar un conjunto de expresiones, siempre utilizar un objeto de la clase"/>
+				<expression tag="String.Text" Value="It is recommended, for the sake of order, that whenever you have to manage a set of expressions, you always use an object of the class"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="ExpressionHandler"/>
 				</expression>
-				<expression tag="String.Text" Value="para cada una de ellas."/>
+				<expression tag="String.Text" Value="for each of them."/>
 			</expression>
 		</expression>
 	</expression>
@@ -390,47 +394,51 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Expresiones con"/>
+					<expression tag="String.Text" Value="Expressions with"/>
 					<expression tag="Typesetting.ItalicChunk">
-						<expression tag="String.Text" Value="valores internos"/>
+						<expression tag="String.Text" Value="internal values"/>
 					</expression>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Existen expresiones que, aún teniéndo el mismo"/>
+				<expression tag="String.Text" Value="There are expressions that, even having the same"/>
 				<expression tag="Typesetting.ItalicChunk">
 					<expression tag="String.Text" Value="tag"/>
 				</expression>
-				<expression tag="String.Text" Value="pueden adoptar un número finito o infinito de entidades. Un caso típico son los números, que aunque comparten el tag"/>
+				<expression tag="String.Text" Value="can take on a finite or infinite number of entities. A typical case is numbers, which although they share the tag"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Math.Number"/>
 				</expression>
-				<expression tag="String.Text" Value="un objeto puede ser utilizado para representar el número 48, y otro para el número 12.5, y se consideran diferentes. Cada objeto de este tipo además almacena el número mismo, como una entidad propia del lenguaje subyacente."/>
+				<expression tag="String.Text" Value="one object can be used to represent the number 48, and another for the number 12.5, and they are considered different. Each object of this type also stores the number itself, as an entity of the underlying language."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Algunos ejemplos de otras expresiones de este tipo son:"/>
+				<expression tag="String.Text" Value="Some examples of other expressions of this type are:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
-				<expression tag="String.Text" Value="Las expresiones que representan cadenas de caracteres, las cuales almacenan la cadena real representada en el lenguaje de la implementación."/>
-				<expression tag="String.Text" Value="Las expresiones que representan fechas, las cuales almacenan internamente la fecha en el tipo de datos del lenguaje de implementación."/>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Expressions that represent strings, which store the actual string represented in the implementation language."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Expressions that represent dates, which internally store the date in the data type of the implementation language."/>
+				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="A fin de que una expresión soporte valores internos, se debe definir uno (o varios)"/>
+				<expression tag="String.Text" Value="In order for an expression to support internal values, one (or several)"/>
 				<expression tag="Visualization.Italic" Value="True" Set="True">
-					<expression tag="String.Text" Value="atributos"/>
+					<expression tag="String.Text" Value="attributes"/>
 				</expression>
-				<expression tag="String.Text" Value="y además se deben implementar los siguientes métodos:"/>
+				<expression tag="String.Text" Value="must be defined, and the following methods must also be implemented:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="set(name, value)"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método fija el valor dado para el atributo especificado por el argumento"/>
+						<expression tag="String.Text" Value="This method sets the given value for the attribute specified by the argument"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="name"/>
 						</expression>
@@ -438,18 +446,18 @@
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="get(name)"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método regresa el valor asociado al argumento especificado"/>
+						<expression tag="String.Text" Value="This method returns the value associated with the specified argument"/>
 					</expression>
 				</expression>
 			</expression>
-			<expression tag="Visualization.CodeBlock" Value="Number = class extends Expression {&#10;&#9;getTag() {&#10;&#9;&#9;return &quot;Math.Number&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;getName() {&#10;&#9;&#9;return &quot;Número&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;canHaveChildren(count) {&#10;&#9;&#9;return count == 0;&#10;&#9;}&#10;&#9;&#10;&#9;set(name, value) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;this.number = number;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;super.set(name, value);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;get(name) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;return this.number;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;return super.get(name);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;:&#10;}"/>
-			<expression tag="Visualization.CodeBlock" Value="let numberExpression = ...                    // aún no se ha visto como crear expresiones&#10;&#10;numberExpression.set(&quot;Value&quot;, 5.25);          // fijarle el número a la expresión&#10;&#10;console.log(numberExpression.get(&quot;Value&quot;));   // debe mostrar 5.25"/>
+			<expression tag="Visualization.CodeBlock" Value="Number = class extends Expression {&#10;&#9;getTag() {&#10;&#9;&#9;return &quot;Math.Number&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;getName() {&#10;&#9;&#9;return &quot;Number&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;canHaveChildren(count) {&#10;&#9;&#9;return count == 0;&#10;&#9;}&#10;&#9;&#10;&#9;set(name, value) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;this.number = value;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;super.set(name, value);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;get(name) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;return this.number;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;return super.get(name);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;:&#10;}"/>
+			<expression tag="Visualization.CodeBlock" Value="let numberExpression = ...                    // we haven't seen how to create expressions yet&#10;&#10;numberExpression.set(&quot;Value&quot;, 5.25);          // set the number on the expression&#10;&#10;console.log(numberExpression.get(&quot;Value&quot;));   // should display 5.25"/>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -459,49 +467,49 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Serialización/deserialización de expresiones"/>
+					<expression tag="String.Text" Value="Serialization/deserialization of expressions"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La serialización se refiere a la conversión de entidades (por ejemplo objetos) en una forma que pueda ser almacenada y trasportada, típicamente en forma de cadenas de caracteres. El proceso inverso es conocido como"/>
+				<expression tag="String.Text" Value="Serialization refers to the conversion of entities (for example objects) into a form that can be stored and transported, typically as strings. The reverse process is known as"/>
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="deserialización."/>
+					<expression tag="String.Text" Value="deserialization."/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Para expresiones que no cuentan con valores internos, el framewrok es capaz de serializarlas y deserializarlas automáticamente"/>
+				<expression tag="String.Text" Value="For expressions that do not have internal values, the framework is able to serialize and deserialize them automatically."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Para expresiones con valores internos, es necesario convertir el estado interno de la expresión en una o varias cadenas, referenciadas por nombre, y viceversa (convertir de cadenas a estado interno). Estas cadenas no necesariamente deben corresponderse con los atributos de los valores internos, aunque es común que sea asi."/>
+				<expression tag="String.Text" Value="For expressions with internal values, it is necessary to convert the internal state of the expression into one or more strings, referenced by name, and vice versa (convert from strings to internal state). These strings do not necessarily have to correspond to the attributes of the internal values, although it is common for them to do so."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="El método de conversión de estado interno a/desde cadenas debe ser claro, sencillo y no depender de fectores de región o idioma, en otras palabras, debe ser una"/>
-				<expression tag="Internet.Hyperlink" Value="https://en.wikipedia.org/wiki/Pure_function" Description="función pura."/>
+				<expression tag="String.Text" Value="The method for converting internal state to/from strings must be clear, simple, and not depend on region or language factors; in other words, it must be a"/>
+				<expression tag="Internet.Hyperlink" Value="https://en.wikipedia.org/wiki/Pure_function" Description="pure function."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Una vez definido el método de conversión, es necesario implementar los siguientes métodos:"/>
+				<expression tag="String.Text" Value="Once the conversion method is defined, the following methods must be implemented:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="getSerializationNames()"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método debe regresar un arreglo de cadena de caracteres que define el nombre de las cadenas de serialización. Deberá contener al menos una cadena."/>
+						<expression tag="String.Text" Value="This method must return an array of strings that defines the names of the serialization strings. It must contain at least one string."/>
 					</expression>
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="async getSerializationStrings()"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método debe regresar una promesa que se cumplirá con un arreglo de cadenas de caracteres, que contienen las cadenas de serialización que definen el estado interno de la expresión. El orden de aparición de las cadenas debe ser el mismo que el provisto por el método"/>
+						<expression tag="String.Text" Value="This method must return a promise that will resolve with an array of strings, containing the serialization strings that define the internal state of the expression. The order in which the strings appear must be the same as that provided by the method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="getSerializationNames()"/>
 						</expression>
@@ -509,64 +517,64 @@
 				</expression>
 				<expression tag="Typesetting.MultiParagraph">
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método"/>
+						<expression tag="String.Text" Value="The method"/>
 						<expression tag="Visualization.Code">
 							<expression tag="String.Text" Value="setSerializationStrings(strings, promises)"/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="Este método crea el estado interno de la expresión a partir de un arreglo de cadenas de caracteres, es decir, proporcional la deserialización. El orden de aparición de las cadenas debe ser el mismo que el provisto por el método"/>
+						<expression tag="String.Text" Value="This method creates the internal state of the expression from an array of strings; that is, it provides deserialization. The order in which the strings appear must be the same as that provided by the method"/>
 						<expression tag="Visualization.Code">
-							<expression tag="String.Text" Value="setSerializationStrings(strings, promises)."/>
+							<expression tag="String.Text" Value="getSerializationNames()."/>
 						</expression>
 					</expression>
 					<expression tag="Typesetting.Paragraph">
-						<expression tag="String.Text" Value="El método recibe tambien un arreglo de promesas. La intención de este arreglo es que el método pueda añadir promesas a dicho arreglo"/>
+						<expression tag="String.Text" Value="The method also receives an array of promises. The purpose of this array is so that the method can add promises to it"/>
 					</expression>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Ejemplo."/>
+					<expression tag="String.Text" Value="Example."/>
 				</expression>
-				<expression tag="String.Text" Value="Supóngase que se pretende crear la expresión referida a una fecha (con hora), es decir, un punto en el tiempo. La expresión deberá manatener un valor internamente para contener dicho tiempo."/>
+				<expression tag="String.Text" Value="Suppose we want to create the expression for a date (with time), that is, a point in time. The expression must maintain a value internally to hold that time."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Existen varias formas de conversión de un objeto de fecha a cadena, dentro de los mas apropiados se tiene:"/>
+				<expression tag="String.Text" Value="There are several ways to convert a date object to a string; among the most appropriate are:"/>
 			</expression>
 			<expression tag="Typesetting.BulletedList">
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="Utilizar el estándar"/>
+					<expression tag="String.Text" Value="Use the standard"/>
 					<expression tag="Internet.Hyperlink" Value="https://en.wikipedia.org/wiki/ISO_8601" Description="ISO 8601."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
-					<expression tag="String.Text" Value="Utilizar el número de milisegundos transcurridos desde un punto de tiempo de referencia, por ejemplo desde una"/>
-					<expression tag="Internet.Hyperlink" Value="https://es.wikipedia.org/wiki/%C3%89poca_(inform%C3%A1tica)" Description="época,"/>
-					<expression tag="String.Text" Value="reconocida (por ejemplo la utilizada en"/>
+					<expression tag="String.Text" Value="Use the number of milliseconds elapsed since a reference point in time, for example since a recognized"/>
+					<expression tag="Internet.Hyperlink" Value="https://es.wikipedia.org/wiki/%C3%89poca_(inform%C3%A1tica)" Description="epoch,"/>
+					<expression tag="String.Text" Value="(for example the one used in"/>
 					<expression tag="Internet.Hyperlink" Value="https://es.wikipedia.org/wiki/Unix" Description="Unix"/>
-					<expression tag="String.Text" Value="para una zona de tiempo preestablecida, por jemplo"/>
+					<expression tag="String.Text" Value="for a preset time zone, for example"/>
 					<expression tag="Internet.Hyperlink" Value="https://es.wikipedia.org/wiki/Tiempo_universal_coordinado" Description="UTC"/>
 					<expression tag="String.Text" Value=")."/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Para el ejemplo, se utilizó el último:"/>
+				<expression tag="String.Text" Value="For the example, the last one was used:"/>
 			</expression>
-			<expression tag="Visualization.CodeBlock" Value="Time = class extends Expression {&#10;&#9;getTag() {&#10;&#9;&#9;return &quot;Time.Time&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;getName() {&#10;&#9;&#9;return &quot;Tiempo&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;canHaveChildren(count) {&#10;&#9;&#9;return count == 0;&#10;&#9;}&#10;&#9;&#10;&#9;set(name, value) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;this.date = number;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;super.set(name, value);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;get(name) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;return this.date;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;return super.get(name);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;getSerializationNames() {&#10;&#9;&#9;return [ &quot;Value&quot; ];&#10;&#9;}&#10;&#9;&#10;&#9;async getSerializationStrings() {&#10;&#9;&#9;return [ this.date.getMilliseconds().toString() ];&#10;&#9;}&#10;&#9;&#10;&#9;setSerializationStrings(strings, promises) {&#10;&#9;&#9;this.date = new Date(Number(strings[0]);&#10;&#9;}&#10;}"/>
+			<expression tag="Visualization.CodeBlock" Value="Time = class extends Expression {&#10;&#9;getTag() {&#10;&#9;&#9;return &quot;Time.Time&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;getName() {&#10;&#9;&#9;return &quot;Time&quot;;&#10;&#9;}&#10;&#9;&#10;&#9;canHaveChildren(count) {&#10;&#9;&#9;return count == 0;&#10;&#9;}&#10;&#9;&#10;&#9;set(name, value) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;this.date = value;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;super.set(name, value);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;get(name) {&#10;&#9;&#9;if (name === &quot;Value&quot;) {&#10;&#9;&#9;&#9;return this.date;&#10;&#9;&#9;}&#10;&#9;&#9;else {&#10;&#9;&#9;&#9;return super.get(name);&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;getSerializationNames() {&#10;&#9;&#9;return [ &quot;Value&quot; ];&#10;&#9;}&#10;&#9;&#10;&#9;async getSerializationStrings() {&#10;&#9;&#9;return [ this.date.getTime().toString() ];&#10;&#9;}&#10;&#9;&#10;&#9;setSerializationStrings(strings, promises) {&#10;&#9;&#9;this.date = new Date(Number(strings[0]));&#10;&#9;}&#10;}"/>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="El formato en que se realizará la serialización lo define el framework, típicamente es"/>
+				<expression tag="String.Text" Value="The format in which serialization is performed is defined by the framework; typically it is"/>
 				<expression tag="Internet.Hyperlink" Value="https://en.wikipedia.org/wiki/XML" Description="XML"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="De esta forma, la siguiente expresión (en el capítulo siguiente se verá el definir como codificar la visualización de expresiones), que se visualiza como:"/>
+				<expression tag="String.Text" Value="In this way, the following expression (the next chapter will show how to code the visualization of expressions), which is displayed as:"/>
 			</expression>
 			<expression tag="Time.Time" Value="1737435120000"/>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Será serializada como:"/>
+				<expression tag="String.Text" Value="It will be serialized as:"/>
 			</expression>
 			<expression tag="Visualization.CodeBlock" Value="&lt;expression tag=&quot;Time.Time&quot; Value=&quot;1737435120000&quot;/&gt;"/>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Como segundo ejemplo, la siguiente expresión:"/>
+				<expression tag="String.Text" Value="As a second example, the following expression:"/>
 			</expression>
 			<expression tag="Math.Arithmetic.Addition">
 				<expression tag="Math.Number" Value="3"/>
@@ -576,7 +584,7 @@
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Es serializada como:"/>
+				<expression tag="String.Text" Value="It is serialized as:"/>
 			</expression>
 			<expression tag="Visualization.CodeBlock" Value="&lt;expression tag=&quot;Math.Arithmetic.Addition&quot;&gt;&#10;&#9;&lt;expression tag=&quot;Math.Number&quot; Value=&quot;3&quot;/&gt;&#10;&#9;&lt;expression tag=&quot;Math.Arithmetic.Division&quot;&gt;&#10;&#9;&#9;&lt;expression tag=&quot;Math.Number&quot; Value=&quot;2&quot;/&gt;&#10;&#9;&#9;&lt;expression tag=&quot;Math.Number&quot; Value=&quot;5&quot;/&gt;&#10;&#9;&lt;/expression&gt;&#10;&lt;/expression&gt;"/>
 		</expression>
@@ -588,18 +596,18 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Plantillas de clases"/>
+					<expression tag="String.Text" Value="Class templates"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Las clases para la creación de nuevas expresiones raramente se derivan de la clase"/>
+				<expression tag="String.Text" Value="The classes for creating new expressions are rarely derived from the class"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Expression"/>
 				</expression>
-				<expression tag="String.Text" Value=". Existen clases plantilla que contienen funcionalidad común para nuevas subclases."/>
+				<expression tag="String.Text" Value=". There are template classes that contain common functionality for new subclasses."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Dichas plantillas de clases son las siguientes:"/>
+				<expression tag="String.Text" Value="These class templates are the following:"/>
 			</expression>
 			<expression tag="Visualization.CodeBlock" Value="Expression.FixedExpression = class extends Expression {&#10;&#9;canInsertChildAt(index) { return false; }&#10;&#9;canRemoveChildAt(index) { return false; }&#10;}&#10;&#10;Expression.NullaryExpression = class extends Expression.FixedExpression {&#10;&#9;canHaveChildren(count) { return count == 0; }&#10;&#9;isReduced() { return true; }&#10;}&#10;&#10;Expression.UnaryExpression = class extends Expression.FixedExpression {&#10;&#9;canHaveChildren(count) { return count == 1; }&#10;}&#10;&#10;Expression.BinaryExpression = class extends Expression.FixedExpression {&#10;&#9;canHaveChildren(count) { return count == 2; }&#10;}&#10;&#10;Expression.OperatorExpression = class extends Expression {&#10;&#9;canHaveChildren(count)  { return count &gt;= 2; }&#10;}"/>
 		</expression>
@@ -611,30 +619,30 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Fábrica de clases"/>
+					<expression tag="String.Text" Value="Class factory"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La creación de expresiones se realiza a través de una"/>
+				<expression tag="String.Text" Value="The creation of expressions is done through a"/>
 				<expression tag="Typesetting.ItalicChunk">
-					<expression tag="String.Text" Value="fábrica de clases."/>
+					<expression tag="String.Text" Value="class factory."/>
 				</expression>
-				<expression tag="String.Text" Value="La intención de esta fábrica de clases es que se puedan crear expresiones a partir únicamente de su"/>
+				<expression tag="String.Text" Value="The purpose of this class factory is to be able to create expressions based only on their"/>
 				<expression tag="Typesetting.ItalicChunk">
 					<expression tag="String.Text" Value="tag"/>
 				</expression>
-				<expression tag="String.Text" Value="sin importar de qué paquete proceden."/>
+				<expression tag="String.Text" Value="regardless of which package they come from."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="El método"/>
+				<expression tag="String.Text" Value="The method"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Formulae.setExpression(module, tag, expressionClass)"/>
 				</expression>
-				<expression tag="String.Text" Value="registra la clase del argumento"/>
+				<expression tag="String.Text" Value="registers the class of the argument"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="expressionClass"/>
 				</expression>
-				<expression tag="String.Text" Value="en la fábrica de clases, para que entregue una expresión de dicha clase cuando se invoque con el tag indicado."/>
+				<expression tag="String.Text" Value="in the class factory, so that it returns an expression of that class when invoked with the indicated tag."/>
 			</expression>
 		</expression>
 	</expression>
@@ -645,47 +653,47 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Registro de las expresiones que conforman el paquete"/>
+					<expression tag="String.Text" Value="Registering the expressions that make up the package"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Como ya se vió en el apartado de"/>
-				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Introduction" Description="introducción,"/>
-				<expression tag="String.Text" Value="la definición de clases que desciben las expresiones se colocan en un archivo fuente de nombre"/>
+				<expression tag="String.Text" Value="As already seen in the section on"/>
+				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Introduction" Description="introduction,"/>
+				<expression tag="String.Text" Value="the definition of classes that describe the expressions is placed in a source file named"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="expression.js"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La esrtructura general de este archivo es:"/>
+				<expression tag="String.Text" Value="The general structure of this file is:"/>
 			</expression>
 			<expression tag="Visualization.Code">
 				<expression tag="String.Text" Value="expression.js"/>
 			</expression>
 			<expression tag="Visualization.CodeBlock" Value="export class ArithmeticPackage extends Formulae.ExpressionPackage {};&#10;&#10;const Number = class ... {&#10;&#9;:&#10;};&#10;&#10;const Addition = class ... {&#10;&#9;:&#10;};&#10;&#10;const Multiplication = class ... {&#10;&#9;:&#10;};&#10;&#10;ArithmeticPackage.setExpressions = function(module) {&#10;&#9;Formulae.setExpression(module, &quot;Math.Number&quot;,                    Number);&#10;&#9;Formulae.setExpression(module, &quot;Math.Arithmetic.Addition&quot;,       Addition);&#10;&#9;Formulae.setExpression(module, &quot;Math.Arithmetic.Multiplication&quot;, Multiplication);&#10;&#9;:&#10;};"/>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La primera parte es la definición de la clase que representará a nuestro paquete, en lo que respecta a la definición de expresiones que contiene. La clase deberá extender la clase base"/>
+				<expression tag="String.Text" Value="The first part is the definition of the class that will represent our package, with respect to the definition of expressions it contains. The class must extend the base class"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Formulae.ExpressionPackage"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Posteriormente se incluyen las definiciones de las clases que representan las expresiones del paquete."/>
+				<expression tag="String.Text" Value="Next, the definitions of the classes that represent the package's expressions are included."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Finalmente, debe ir la definición (de hecho la reescritura) del método"/>
+				<expression tag="String.Text" Value="Finally, there must be the definition (in fact the rewriting) of the method"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="setExpressions(module)"/>
 				</expression>
-				<expression tag="String.Text" Value="de la clase"/>
+				<expression tag="String.Text" Value="of the class"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Formulae.ExpressionPackage"/>
 				</expression>
-				<expression tag="String.Text" Value="(el cual originalmente no hace nada). Este método va a ser invocado por el framework cada vez que el paquete se carga por primera vez. Este método contiene las llamadas al método"/>
+				<expression tag="String.Text" Value="(which originally does nothing). This method will be invoked by the framework each time the package is loaded for the first time. This method contains the calls to the method"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Formulae.setExpression(module, tag, expressionClass)"/>
 				</expression>
-				<expression tag="String.Text" Value="visto en el apartado anterior."/>
+				<expression tag="String.Text" Value="seen in the previous section."/>
 			</expression>
 		</expression>
 	</expression>
@@ -696,25 +704,25 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Creación de expresiones"/>
+					<expression tag="String.Text" Value="Creating expressions"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="La creación de expresiones no se realiza utilizando el operador"/>
+				<expression tag="String.Text" Value="The creation of expressions is not done using the operator"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="new"/>
 				</expression>
-				<expression tag="String.Text" Value=", ya que eso obligaría a tener en código duro la clase que representará una expresión dada."/>
+				<expression tag="String.Text" Value=", since that would force hard-coding the class that will represent a given expression."/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Como ya se ha visto, la creación de expresiones se realiza a través de la fábrica de clases."/>
-				<expression tag="String.Text" Value="Esto se realiza medio del método"/>
+				<expression tag="String.Text" Value="As already seen, the creation of expressions is done through the class factory."/>
+				<expression tag="String.Text" Value="This is done by means of the method"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="Formulae.createExpression(tag, ...children)"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Por ejemplo, el código para crear la expresión del ejemplo anterior"/>
+				<expression tag="String.Text" Value="For example, the code to create the expression from the previous example"/>
 				<expression tag="Math.Arithmetic.Addition">
 					<expression tag="Math.Number" Value="3"/>
 					<expression tag="Math.Arithmetic.Division">
@@ -722,14 +730,14 @@
 						<expression tag="Math.Number" Value="5"/>
 					</expression>
 				</expression>
-				<expression tag="String.Text" Value="podría ser:"/>
+				<expression tag="String.Text" Value="could be:"/>
 			</expression>
 			<expression tag="Visualization.CodeBlock" Value="let n3 = Formulae.createExpression(&quot;Math.Number&quot;); n3.set(&quot;Value&quot;, 3);&#10;let n2 = Formulae.createExpression(&quot;Math.Number&quot;); n2.set(&quot;Value&quot;, 2);&#10;let n5 = Formulae.createExpression(&quot;Math.Number&quot;); n5.set(&quot;Value&quot;, 5);&#10;&#10;let expression = Formulae.createExpression(&#10;&#9;&quot;Math.Arithmetic.Addition&quot;,&#10;&#9;n3,&#10;&#9;Formulae.createExpression(&#10;&#9;&#9;&quot;Math.Arithmetic.Division&quot;,&#10;&#9;&#9;n2,&#10;&#9;&#9;n5&#10;&#9;)&#10;);"/>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Nota."/>
+					<expression tag="String.Text" Value="Note."/>
 				</expression>
-				<expression tag="String.Text" Value="Para la definición de expresiones no es necesario crear expresiones, se muestra el código de creación de expresiones ya que si será utilizado en los siguientes capítulos."/>
+				<expression tag="String.Text" Value="For the definition of expressions it is not necessary to create expressions; the expression-creation code is shown because it will indeed be used in the following chapters."/>
 			</expression>
 		</expression>
 	</expression>
@@ -739,11 +747,11 @@
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Autor: Laurence R. Ugalde"/>
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Fecha de última modificación:"/>
-				<expression tag="Time.Time" Value="1741541640000"/>
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1781784000000"/>
 			</expression>
 		</expression>
 	</expression>
