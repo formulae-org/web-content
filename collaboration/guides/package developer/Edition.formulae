@@ -3,7 +3,7 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
-					<expression tag="String.Text" Value="Developer's guide"/>
+					<expression tag="String.Text" Value="Fōrmulæ. Developer's guide"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
@@ -459,7 +459,7 @@
 					</expression>
 					<expression tag="String.Text" Value="that is, it is of the form"/>
 					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="node1.node2,....,nodeN"/>
+						<expression tag="String.Text" Value="node1.node2.….nodeN"/>
 					</expression>
 					<expression tag="String.Text" Value="that is, it consists of a set of dot-separated strings that specify the location in the edition tree. The substrings, unlike"/>
 					<expression tag="Typesetting.ItalicChunk">
@@ -467,7 +467,7 @@
 					</expression>
 					<expression tag="String.Text" Value="can contain spaces and special characters. An example is"/>
 					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="Mathematics.Arithmetic"/>
+						<expression tag="String.Text" Value="Math.Arithmetic"/>
 					</expression>
 					<expression tag="String.Text" Value="."/>
 				</expression>
@@ -498,7 +498,7 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="As an example, the following code is used to register the edit seen earlier for creating a division:"/>
 			</expression>
-			<expression tag="Visualization.CodeBlock" Value="const divisionEdition = () =&gt; {&#10;&#9;// Make the changes in the expression tree&#10;&#9;&#10;&#9;let nullExpression = Formulae.createExpression(&quot;Null&quot;);&#10;&#9;let divisionExpression = Formulae.createExpression(&quot;Math.Arithmetic.Division&quot;);&#10;&#9;&#10;&#9;Formulae.sExpression.replaceBy(divisionExpression);&#10;&#9;divisionExpression.addChild(Formulae.sExpression);&#10;&#9;divisionExpression.addChild(nullExpression);&#10;&#9;&#10;&#9;// Define the new selected expression&#10;&#9;&#10;&#9;Formulae.sHandler.prepareDisplay();&#10;&#9;Formulae.sHandler.display();&#10;&#9;Formulae.setSelected(Formulae.sHandler, nullExpression, false);&#10;};&#10;&#10;Formulae.addEdition(&#10;&#9;&quot;Mathematics.Arithmetic&quot;, // Location in the edition tree&#10;&#9;null,                     // No image&#10;&#9;&quot;Division&quot;,               // Name&#10;&#9;divisionEdition           // Edition&#10;);"/>
+			<expression tag="Visualization.CodeBlock" Value="const divisionEdition = () =&gt; {&#10;&#9;// Make the changes in the expression tree&#10;&#9;&#10;&#9;let nullExpression = Formulae.createExpression(&quot;Null&quot;);&#10;&#9;let divisionExpression = Formulae.createExpression(&quot;Math.Arithmetic.Division&quot;);&#10;&#9;&#10;&#9;Formulae.sExpression.replaceBy(divisionExpression);&#10;&#9;divisionExpression.addChild(Formulae.sExpression);&#10;&#9;divisionExpression.addChild(nullExpression);&#10;&#9;&#10;&#9;// Define the new selected expression&#10;&#9;&#10;&#9;Formulae.sHandler.prepareDisplay();&#10;&#9;Formulae.sHandler.display();&#10;&#9;Formulae.setSelected(Formulae.sHandler, nullExpression, false);&#10;};&#10;&#10;Formulae.addEdition(&#10;&#9;&quot;Math.Arithmetic&quot;, // Location in the edition tree&#10;&#9;null,                     // No image&#10;&#9;&quot;Division&quot;,               // Name&#10;&#9;divisionEdition           // Edition&#10;);"/>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="Typesetting.BoldChunk">
@@ -619,7 +619,7 @@
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="In this way, the previous example becomes more concise as follows:"/>
 			</expression>
-			<expression tag="Visualization.CodeBlock" Value="Formulae.addEdition(&#10;&#9;&quot;Mathematics.Arithmetic&quot;,&#10;&#9;null,&#10;&#9;&quot;Division&quot;,&#10;&#9;() =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Division&quot;, false)&#10;);"/>
+			<expression tag="Visualization.CodeBlock" Value="Formulae.addEdition(&#10;&#9;&quot;Math.Arithmetic&quot;,&#10;&#9;null,&#10;&#9;&quot;Division&quot;,&#10;&#9;() =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Division&quot;, false)&#10;);"/>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Edits with interactivity"/>
@@ -843,7 +843,7 @@
 				<expression tag="String.Text" Value="For example, refer to the following expression, which is a web link:"/>
 			</expression>
 			<expression tag="Typesetting.Centering">
-				<expression tag="Internet.Hyperlink" Value="formulae.org" Description="Link to the Fōrmulæ page"/>
+				<expression tag="Internet.Hyperlink" Value="https://formulae.org" Description="Link to the Fōrmulæ page"/>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="If you are in editing mode, right-clicking on the link will generate the following pop-up menu:"/>
@@ -902,21 +902,9 @@
 					<expression tag="Visualization.Code">
 						<expression tag="String.Text" Value="tag"/>
 					</expression>
-					<expression tag="String.Text" Value="is the tag to which the action will be associated."/>
-					<expression tag="Typesetting.ItalicChunk">
-						<expression tag="String.Text" Value="tags,"/>
-					</expression>
-					<expression tag="String.Text" Value="that is, it is of the form"/>
+					<expression tag="String.Text" Value="is the tag to which the action will be associated. It is a dot-separated tag, of the kind used to identify expressions. An example is"/>
 					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="node1.node2,....,nodeN"/>
-					</expression>
-					<expression tag="String.Text" Value="that is, it consists of a set of dot-separated strings that specify the location in the edition tree. The substrings, unlike"/>
-					<expression tag="Typesetting.ItalicChunk">
-						<expression tag="String.Text" Value="tags"/>
-					</expression>
-					<expression tag="String.Text" Value="can contain spaces and special characters. An example is"/>
-					<expression tag="Visualization.Code">
-						<expression tag="String.Text" Value="Mathematics.Arithmetic"/>
+						<expression tag="String.Text" Value="Math.Number"/>
 					</expression>
 					<expression tag="String.Text" Value="."/>
 				</expression>
@@ -946,7 +934,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="As already seen in the section on"/>
-				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Introduction" Description="introduction,"/>
+				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Preparation" Description="preparation,"/>
 				<expression tag="String.Text" Value="the definition of edits and actions is placed in a source file named"/>
 				<expression tag="Visualization.Code">
 					<expression tag="String.Text" Value="edition.js"/>
@@ -958,11 +946,11 @@
 			<expression tag="Visualization.Code">
 				<expression tag="String.Text" Value="edition.js"/>
 			</expression>
-			<expression tag="Visualization.CodeBlock" Value="export class ArithmeticPackage extends Formulae.EditionPackage {};&#10;&#10;const editionNumber = function() {&#10;&#9;:&#10;};&#10;&#10;const actionNumber = {&#10;&#9;:&#10;};&#10;&#10;ArithmeticPackage.setEditions = function() {&#10;&#9;Formulae.addEdition(&quot;Mathematics.Arithmetic&quot;, null, &quot;Number&quot;,         editionNumber);&#10;&#9;Formulae.addEdition(&quot;Mathematics.Arithmetic&quot;, null, &quot;Addition&quot;,           () =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Addition&quot;,       false));&#10;&#9;Formulae.addEdition(&quot;Mathematics.Arithmetic&quot;, null, &quot;Multiplication&quot;, () =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Multiplication&quot;, false));&#10;&#9;Formulae.addEdition(&quot;Mathematics.Arithmetic&quot;, null, &quot;Exponentiation&quot;, () =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Exponentiation&quot;, false));&#10;};&#10;&#10;ArithmeticPackage.setActions = function() {&#10;&#9;Formulae.addAction(&quot;Math.Number&quot;, actionNumber);&#10;};"/>
+			<expression tag="Visualization.CodeBlock" Value="export class ArithmeticPackage extends Formulae.EditionPackage {};&#10;&#10;const editionNumber = function() {&#10;&#9;:&#10;};&#10;&#10;const actionNumber = {&#10;&#9;:&#10;};&#10;&#10;ArithmeticPackage.setEditions = function() {&#10;&#9;Formulae.addEdition(&quot;Math.Arithmetic&quot;, null, &quot;Number&quot;,         editionNumber);&#10;&#9;Formulae.addEdition(&quot;Math.Arithmetic&quot;, null, &quot;Addition&quot;,           () =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Addition&quot;,       false));&#10;&#9;Formulae.addEdition(&quot;Math.Arithmetic&quot;, null, &quot;Multiplication&quot;, () =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Multiplication&quot;, false));&#10;&#9;Formulae.addEdition(&quot;Math.Arithmetic&quot;, null, &quot;Exponentiation&quot;, () =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Exponentiation&quot;, false));&#10;};&#10;&#10;ArithmeticPackage.setActions = function() {&#10;&#9;Formulae.addAction(&quot;Math.Number&quot;, actionNumber);&#10;};"/>
 			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="The first part is the definition of the class that will represent our package, with respect to the definition of expressions it contains. The class must extend the base class"/>
+				<expression tag="String.Text" Value="The first part is the definition of the class that will represent our package, with respect to the edits and actions it contains. The class must extend the base class"/>
 				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Formulae.ExpressionPackage"/>
+					<expression tag="String.Text" Value="Formulae.EditionPackage"/>
 				</expression>
 			</expression>
 			<expression tag="Typesetting.Paragraph">
@@ -1010,7 +998,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Last modified:"/>
-				<expression tag="Time.Time" Value="1781784000000"/>
+				<expression tag="Time.Time" Value="1781870400000"/>
 			</expression>
 		</expression>
 	</expression>
