@@ -1,0 +1,652 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.visualization,org.formulae.internet,org.formulae.diagramming,org.formulae.morse,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Fōrmulæ. Developer's guide"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Complete example: Morse code package"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="This final chapter walks through a complete, working package from beginning to end. The Morse code package"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="org.formulae.morse"/>
+				</expression>
+				<expression tag="String.Text" Value="is deliberately tiny, yet it exercises every concept from the previous chapters: defining expressions, drawing them on the canvas, adding menu entries, writing reducers, and translating every label."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Morse code represents each letter and digit as a sequence of short signals (dots) and long signals (dashes). Letters within a word are separated by a short gap, and words by a longer gap. The package models these four primitives directly, groups them into a message, and adds two reducers that convert between ordinary text and Morse."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="1. Package overview"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The package defines seven expressions:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Morse.Dot"/>
+					</expression>
+					<expression tag="String.Text" Value="— a dot, the short signal (·)"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Morse.Dash"/>
+					</expression>
+					<expression tag="String.Text" Value="— a dash, the long signal (−)"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Morse.InterLetter"/>
+					</expression>
+					<expression tag="String.Text" Value="— the separator between letters of a word (|)"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Morse.InterWord"/>
+					</expression>
+					<expression tag="String.Text" Value="— the separator between words (‖)"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Morse.Message"/>
+					</expression>
+					<expression tag="String.Text" Value="— a variadic container holding a sequence of symbols and separators"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Morse.TextToMorse"/>
+					</expression>
+					<expression tag="String.Text" Value="— converts plain text into a Morse.Message"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Morse.MorseToText"/>
+					</expression>
+					<expression tag="String.Text" Value="— converts a Morse.Message back into plain text"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The first four are leaf (nullary) expressions — the building blocks. "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.Message"/>
+				</expression>
+				<expression tag="String.Text" Value=" is a variadic container that holds a sequence of them, and the last two are functions that convert between a "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="String.Text"/>
+				</expression>
+				<expression tag="String.Text" Value=" and a "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.Message"/>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Every Fōrmulæ expression is a tree, and a Morse message is no exception. For instance, the letters "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="E"/>
+				</expression>
+				<expression tag="String.Text" Value=" (a single dot) and "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="T"/>
+				</expression>
+				<expression tag="String.Text" Value=" (a single dash), written together as the word "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="ET"/>
+				</expression>
+				<expression tag="String.Text" Value=", form this expression tree — two symbols with a separator between them:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Diagramming.Tree" Expanded="True">
+					<expression tag="String.Text" Value="Morse.Message"/>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Morse.Dot"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Morse.InterLetter"/>
+					</expression>
+					<expression tag="Diagramming.Tree" Expanded="True">
+						<expression tag="Morse.Dash"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="2. Files and registration"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The package lives in "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="packages/org.formulae.morse/"/>
+				</expression>
+				<expression tag="String.Text" Value=" and follows the standard layout:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="org.formulae.morse/&#10;&#9;expression.js        // expression types and their rendering&#10;&#9;edition.js           // menu entries&#10;&#9;reduction.js         // evaluation rules&#10;&#9;i18n/&#10;&#9;&#9;messages.json        // English labels (fallback)&#10;&#9;&#9;messages_es.json     // Spanish labels"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="It is listed in "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="packages.json"/>
+				</expression>
+				<expression tag="String.Text" Value=" so the loader knows it exists:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="{ &quot;name&quot;: &quot;org.formulae.morse&quot;, &quot;description&quot;: &quot;Morse Code&quot;, &quot;required&quot;: false, &quot;commonRequired&quot;: false }"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Because "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="required"/>
+				</expression>
+				<expression tag="String.Text" Value=" is "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="false"/>
+				</expression>
+				<expression tag="String.Text" Value=", the user turns the package on from the package settings. Each module exports a single class and — like every Fōrmulæ package — refers to the engine globals such as "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae"/>
+				</expression>
+				<expression tag="String.Text" Value=" and "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="ReductionManager"/>
+				</expression>
+				<expression tag="String.Text" Value=" directly, with no "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="import"/>
+				</expression>
+				<expression tag="String.Text" Value=" statements. Every file also opens with the project's standard GNU AGPL license header, omitted from the listings below for brevity."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="3. Defining and visualizing the expressions"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="expression.js"/>
+				</expression>
+				<expression tag="String.Text" Value=" defines all seven expression types. Here it is in full:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="&quot;use strict&quot;;&#10;&#10;export class MorsePackage extends Formulae.ExpressionPackage {}&#10;&#10;MorsePackage.setExpressions = function(module) {&#10;&#9;const self = this;&#10;&#10;&#9;// Nullary tokens: Dot, Dash, InterLetter, InterWord.&#10;&#9;// Each renders as a single literal character in its own accent color.&#10;&#9;const colors = {&#10;&#9;&#9;Dot:         &quot;#0066CC&quot;,&#10;&#9;&#9;Dash:        &quot;#CC0000&quot;,&#10;&#9;&#9;InterLetter: &quot;#666600&quot;,&#10;&#9;&#9;InterWord:   &quot;#660066&quot;&#10;&#9;};&#10;&#10;&#9;[&quot;Dot&quot;, &quot;Dash&quot;, &quot;InterLetter&quot;, &quot;InterWord&quot;].forEach(tag =&gt; {&#10;&#9;&#9;Formulae.setExpression(module, &quot;Morse.&quot; + tag, {&#10;&#9;&#9;&#9;clazz:         Expression.NullaryExpression,&#10;&#9;&#9;&#9;getTag:        () =&gt; &quot;Morse.&quot; + tag,&#10;&#9;&#9;&#9;getName:       () =&gt; self.messages[&quot;name&quot; + tag],&#10;&#9;&#9;&#9;getMnemonic:   () =&gt; self.messages[&quot;mnemonic&quot; + tag],&#10;&#9;&#9;&#9;getLiteral:    () =&gt; self.messages[&quot;literal&quot; + tag],&#10;&#9;&#9;&#9;color:         colors[tag],&#10;&#9;&#9;&#9;noParentheses: true&#10;&#9;&#9;});&#10;&#9;});&#10;&#10;&#9;// Variadic container: Message.&#10;&#9;// A full class, because it lays its symbols out in a row (no commas:&#10;&#9;// the InterLetter / InterWord tokens are themselves the visible separators).&#10;&#9;const Message = class extends Expression {&#10;&#9;&#9;getTag()            { return &quot;Morse.Message&quot;; }&#10;&#9;&#9;getName()           { return MorsePackage.messages.nameMessage; }&#10;&#9;&#9;getMnemonic()       { return MorsePackage.messages.mnemonicMessage; }&#10;&#9;&#9;getChildName(index) { return MorsePackage.messages.childrenMessage[0]; }&#10;&#9;&#9;canHaveChildren(count) { return count &gt;= 1; }&#10;&#10;&#9;&#9;prepareDisplay(context) {&#10;&#9;&#9;&#9;const gap = Math.round(context.fontInfo.size / 3);&#10;&#10;&#9;&#9;&#9;this.horzBaseline = context.fontInfo.semiHeight;&#10;&#9;&#9;&#9;let maxSemiHeight = context.fontInfo.semiHeight;&#10;&#9;&#9;&#9;this.width = 0;&#10;&#10;&#9;&#9;&#9;this.children.forEach((child, i) =&gt; {&#10;&#9;&#9;&#9;&#9;child.prepareDisplay(context);&#10;&#10;&#9;&#9;&#9;&#9;if (i &gt; 0) this.width += gap;&#10;&#9;&#9;&#9;&#9;child.x = this.width;&#10;&#9;&#9;&#9;&#9;this.width += child.width;&#10;&#10;&#9;&#9;&#9;&#9;if (child.horzBaseline &gt; this.horzBaseline) this.horzBaseline = child.horzBaseline;&#10;&#9;&#9;&#9;&#9;if (child.height - child.horzBaseline &gt; maxSemiHeight) maxSemiHeight = child.height - child.horzBaseline;&#10;&#9;&#9;&#9;});&#10;&#10;&#9;&#9;&#9;this.children.forEach(child =&gt; { child.y = this.horzBaseline - child.horzBaseline; });&#10;&#10;&#9;&#9;&#9;this.height = this.horzBaseline + maxSemiHeight;&#10;&#9;&#9;&#9;this.vertBaseline = Math.round(this.width / 2);&#10;&#9;&#9;}&#10;&#10;&#9;&#9;display(context, x, y) {&#10;&#9;&#9;&#9;this.children.forEach(child =&gt; child.display(context, x + child.x, y + child.y));&#10;&#9;&#9;}&#10;&#10;&#9;&#9;// No moveTo / moveAcross overrides: the base Expression class already&#10;&#9;&#9;// provides correct linear (left-to-right) keyboard traversal.&#10;&#9;};&#10;&#9;Formulae.setExpression(module, &quot;Morse.Message&quot;, Message);&#10;&#10;&#9;// Unary converters: TextToMorse, MorseToText. Rendered as f(x).&#10;&#9;[&quot;TextToMorse&quot;, &quot;MorseToText&quot;].forEach(tag =&gt; {&#10;&#9;&#9;Formulae.setExpression(module, &quot;Morse.&quot; + tag, {&#10;&#9;&#9;&#9;clazz:        Expression.Function,&#10;&#9;&#9;&#9;getTag:       () =&gt; &quot;Morse.&quot; + tag,&#10;&#9;&#9;&#9;getName:      () =&gt; self.messages[&quot;name&quot; + tag],&#10;&#9;&#9;&#9;getMnemonic:  () =&gt; self.messages[&quot;mnemonic&quot; + tag],&#10;&#9;&#9;&#9;getChildName: () =&gt; self.messages[&quot;children&quot; + tag][0],&#10;&#9;&#9;&#9;min:          1,&#10;&#9;&#9;&#9;max:          1,&#10;&#9;&#9;&#9;color:        &quot;#008800&quot;&#10;&#9;&#9;});&#10;&#9;});&#10;};&#10;"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The four leaf symbols are registered with the compact spec-object form. Each is an "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.NullaryExpression"/>
+				</expression>
+				<expression tag="String.Text" Value=" (no children) that draws itself as a single literal character — its "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="getLiteral"/>
+				</expression>
+				<expression tag="String.Text" Value=" value — in its own accent "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="color"/>
+				</expression>
+				<expression tag="String.Text" Value=". "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="noParentheses"/>
+				</expression>
+				<expression tag="String.Text" Value=" tells the editor never to wrap the symbol in parentheses."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.Message"/>
+				</expression>
+				<expression tag="String.Text" Value=" is a full class rather than a spec object, because it needs custom rendering: it lays its children out in a horizontal row. "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="prepareDisplay"/>
+				</expression>
+				<expression tag="String.Text" Value=" measures each child, sets its horizontal position "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="child.x"/>
+				</expression>
+				<expression tag="String.Text" Value=", and aligns them all on a common baseline; "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="display"/>
+				</expression>
+				<expression tag="String.Text" Value=" then draws each child. There is deliberately no "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="moveTo"/>
+				</expression>
+				<expression tag="String.Text" Value="/"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="moveAcross"/>
+				</expression>
+				<expression tag="String.Text" Value=" override: the base "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression"/>
+				</expression>
+				<expression tag="String.Text" Value=" class already provides correct left-to-right keyboard traversal for a simple sequence, so leaf tokens and linear containers like this one inherit it for free. "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="canHaveChildren"/>
+				</expression>
+				<expression tag="String.Text" Value=" enforces the variadic "/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="one-or-more"/>
+				</expression>
+				<expression tag="String.Text" Value=" arity."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Finally, "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.TextToMorse"/>
+				</expression>
+				<expression tag="String.Text" Value=" and "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.MorseToText"/>
+				</expression>
+				<expression tag="String.Text" Value=" are "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.Function"/>
+				</expression>
+				<expression tag="String.Text" Value="s — they render as "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="f(x)"/>
+				</expression>
+				<expression tag="String.Text" Value=" and take exactly one argument."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="4. Adding menu entries"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="edition.js"/>
+				</expression>
+				<expression tag="String.Text" Value=" makes the expressions reachable from the editor's menu, under a "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse"/>
+				</expression>
+				<expression tag="String.Text" Value=" submenu:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="&quot;use strict&quot;;&#10;&#10;export class MorsePackage extends Formulae.EditionPackage {}&#10;&#10;MorsePackage.setEditions = function() {&#10;&#9;const path = this.messages.pathMorse;&#10;&#10;&#9;// Nullary tokens: replacing edition&#10;&#9;[&quot;Dot&quot;, &quot;Dash&quot;, &quot;InterLetter&quot;, &quot;InterWord&quot;].forEach(tag =&gt; {&#10;&#9;&#9;Formulae.addEdition(path, null, this.messages[&quot;leaf&quot; + tag],&#10;&#9;&#9;() =&gt; Expression.replacingEdition(&quot;Morse.&quot; + tag));&#10;&#9;});&#10;&#10;&#9;// Variadic container: multiple edition (starts with 1 Null child)&#10;&#9;Formulae.addEdition(path, null, this.messages.leafMessage,&#10;&#9;&#9;() =&gt; Expression.multipleEdition(&quot;Morse.Message&quot;, 1, 0));&#10;&#10;&#9;// Unary converters: wrapper edition&#10;&#9;[&quot;TextToMorse&quot;, &quot;MorseToText&quot;].forEach(tag =&gt; {&#10;&#9;&#9;Formulae.addEdition(path, null, this.messages[&quot;leaf&quot; + tag],&#10;&#9;&#9;() =&gt; Expression.wrapperEdition(&quot;Morse.&quot; + tag));&#10;&#9;});&#10;};&#10;&#10;MorsePackage.setActions = function() {&#10;&#9;// No actions needed (no serialized attributes)&#10;};&#10;"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Three different edition helpers appear here. "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.replacingEdition"/>
+				</expression>
+				<expression tag="String.Text" Value=" puts a brand-new leaf in place of the current selection — used for the four symbols. "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.multipleEdition"/>
+				</expression>
+				<expression tag="String.Text" Value=" creates a "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.Message"/>
+				</expression>
+				<expression tag="String.Text" Value=" pre-filled with one empty slot, ready to fill in. "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.wrapperEdition"/>
+				</expression>
+				<expression tag="String.Text" Value=" wraps the current selection inside a new expression — ideal for the converters, so the user can select some text and wrap it in "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.TextToMorse"/>
+				</expression>
+				<expression tag="String.Text" Value=". "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="setActions"/>
+				</expression>
+				<expression tag="String.Text" Value=" is empty because none of these expressions carry editable serialized attributes."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="5. Reducing: converting text and Morse"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="reduction.js"/>
+				</expression>
+				<expression tag="String.Text" Value=" is where the package does its real work, through two reducers. First, the data and a few helpers:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="&quot;use strict&quot;;&#10;&#10;const MORSE_LOOKUP = {&#10;&#9;&quot;A&quot;: [&quot;Dot&quot;, &quot;Dash&quot;],&#10;&#9;&quot;B&quot;: [&quot;Dash&quot;, &quot;Dot&quot;, &quot;Dot&quot;, &quot;Dot&quot;],&#10;&#9;:&#10;&#9;&quot;9&quot;: [&quot;Dash&quot;, &quot;Dash&quot;, &quot;Dash&quot;, &quot;Dash&quot;, &quot;Dot&quot;]&#10;};&#10;&#10;const REVERSE_LOOKUP = (() =&gt; {&#10;&#9;const rev = {};&#10;&#9;for (const [char, symbols] of Object.entries(MORSE_LOOKUP)) {&#10;&#9;&#9;rev[symbols.join(&quot;,&quot;)] = char;&#10;&#9;}&#10;&#9;return rev;&#10;})();&#10;&#10;const isSymbol = (expr) =&gt; expr.getTag() === &quot;Morse.Dot&quot; || expr.getTag() === &quot;Morse.Dash&quot;;&#10;const isSeparator = (expr) =&gt; expr.getTag() === &quot;Morse.InterLetter&quot; || expr.getTag() === &quot;Morse.InterWord&quot;;&#10;const isInterLetter = (expr) =&gt; expr.getTag() === &quot;Morse.InterLetter&quot;;&#10;const isInterWord = (expr) =&gt; expr.getTag() === &quot;Morse.InterWord&quot;;&#10;&#10;const validateMorseStructure = (children) =&gt; {&#10;&#9;if (children.length === 0) return MorsePackage.messages.errorEmpty;&#10;&#10;&#9;if (!isSymbol(children[0])) return MorsePackage.messages.errorMustStart;&#10;&#9;if (!isSymbol(children[children.length - 1])) return MorsePackage.messages.errorMustEnd;&#10;&#10;&#9;for (let i = 0; i &lt; children.length - 1; i++) {&#10;&#9;&#9;const current = children[i];&#10;&#9;&#9;const next = children[i + 1];&#10;&#10;&#9;&#9;if (isSymbol(current) &amp;&amp; isSymbol(next)) {&#10;&#9;&#9;&#9;return MorsePackage.messages.errorConsecutiveSymbols.replace(&quot;{0}&quot;, i + 1);&#10;&#9;&#9;}&#10;&#9;&#9;if (isSeparator(current) &amp;&amp; isSeparator(next)) {&#10;&#9;&#9;&#9;return MorsePackage.messages.errorConsecutiveSeparators.replace(&quot;{0}&quot;, i + 1);&#10;&#9;&#9;}&#10;&#9;}&#10;&#10;&#9;return null;&#10;};&#10;&#10;const parseMorseMessage = (children) =&gt; {&#10;&#9;const words = [];&#10;&#9;let currentWord = [];&#10;&#9;let currentLetter = [];&#10;&#10;&#9;for (const child of children) {&#10;&#9;&#9;if (isSymbol(child)) {&#10;&#9;&#9;&#9;currentLetter.push(child.getTag() === &quot;Morse.Dot&quot; ? &quot;Dot&quot; : &quot;Dash&quot;);&#10;&#9;&#9;}&#10;&#9;&#9;else if (isInterLetter(child)) {&#10;&#9;&#9;&#9;if (currentLetter.length === 0) return null;&#10;&#9;&#9;&#9;currentWord.push(currentLetter.join(&quot;,&quot;));&#10;&#9;&#9;&#9;currentLetter = [];&#10;&#9;&#9;}&#10;&#9;&#9;else if (isInterWord(child)) {&#10;&#9;&#9;&#9;if (currentLetter.length === 0) return null;&#10;&#9;&#9;&#9;currentWord.push(currentLetter.join(&quot;,&quot;));&#10;&#9;&#9;&#9;words.push(currentWord);&#10;&#9;&#9;&#9;currentWord = [];&#10;&#9;&#9;&#9;currentLetter = [];&#10;&#9;&#9;}&#10;&#9;}&#10;&#10;&#9;if (currentLetter.length &gt; 0) {&#10;&#9;&#9;currentWord.push(currentLetter.join(&quot;,&quot;));&#10;&#9;}&#10;&#9;if (currentWord.length &gt; 0) {&#10;&#9;&#9;words.push(currentWord);&#10;&#9;}&#10;&#10;&#9;return words;&#10;};&#10;&#10;const buildMorseTree = (children) =&gt; {&#10;&#9;const message = Formulae.createExpression(&quot;Morse.Message&quot;);&#10;&#9;for (const childTag of children) {&#10;&#9;&#9;message.addChild(Formulae.createExpression(&quot;Morse.&quot; + childTag));&#10;&#9;}&#10;&#9;return message;&#10;};&#10;"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="MORSE_LOOKUP"/>
+				</expression>
+				<expression tag="String.Text" Value=" maps each character to its sequence of dots and dashes; "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="REVERSE_LOOKUP"/>
+				</expression>
+				<expression tag="String.Text" Value=" is derived from it once, for decoding. The small predicates classify a child as a symbol or a separator. "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="validateMorseStructure"/>
+				</expression>
+				<expression tag="String.Text" Value=" rejects malformed sequences (returning a localized message, or "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="null"/>
+				</expression>
+				<expression tag="String.Text" Value=" when the structure is sound), "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="parseMorseMessage"/>
+				</expression>
+				<expression tag="String.Text" Value=" groups the flat list of children into words and letters, and "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="buildMorseTree"/>
+				</expression>
+				<expression tag="String.Text" Value=" assembles a "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.Message"/>
+				</expression>
+				<expression tag="String.Text" Value=" from a list of tag names."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="And the two reducers themselves:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="const textToMorseReducer = async (expr, session) =&gt; {&#10;&#9;if (expr.children.length !== 1) return false;&#10;&#10;&#9;await session.reduce(expr.children[0]);&#10;&#9;const textExpr = expr.children[0];&#10;&#10;&#9;if (textExpr.getTag() !== &quot;String.Text&quot;) return false;&#10;&#10;&#9;const text = textExpr.get(&quot;Value&quot;);&#10;&#9;if (typeof text !== &quot;string&quot;) return false;&#10;&#10;&#9;const words = text.trim().split(/\s+/).filter(w =&gt; w.length &gt; 0);&#10;&#9;if (words.length === 0) {&#10;&#9;&#9;expr.replaceBy(Formulae.createExpression(&quot;Morse.Message&quot;));&#10;&#9;&#9;return true;&#10;&#9;}&#10;&#10;&#9;const allSymbols = [];&#10;&#10;&#9;for (let wi = 0; wi &lt; words.length; wi++) {&#10;&#9;&#9;const word = words[wi].toUpperCase();&#10;&#10;&#9;&#9;for (let ci = 0; ci &lt; word.length; ci++) {&#10;&#9;&#9;&#9;const char = word[ci];&#10;&#9;&#9;&#9;const morse = MORSE_LOOKUP[char];&#10;&#10;&#9;&#9;&#9;if (!morse) {&#10;&#9;&#9;&#9;&#9;ReductionManager.setInError(expr.children[0],&#10;&#9;&#9;&#9;&#9;&#9;MorsePackage.messages.errorInvalidChar.replace(&quot;{0}&quot;, char));&#10;&#9;&#9;&#9;&#9;throw new ReductionError();&#10;&#9;&#9;&#9;}&#10;&#10;&#9;&#9;&#9;allSymbols.push(...morse);&#10;&#10;&#9;&#9;&#9;if (ci &lt; word.length - 1) {&#10;&#9;&#9;&#9;&#9;allSymbols.push(&quot;InterLetter&quot;);&#10;&#9;&#9;&#9;}&#10;&#9;&#9;}&#10;&#10;&#9;&#9;if (wi &lt; words.length - 1) {&#10;&#9;&#9;&#9;allSymbols.push(&quot;InterWord&quot;);&#10;&#9;&#9;}&#10;&#9;}&#10;&#10;&#9;const message = buildMorseTree(allSymbols);&#10;&#9;expr.replaceBy(message);&#10;&#9;return true;&#10;};&#10;&#10;const morseToTextReducer = async (expr, session) =&gt; {&#10;&#9;if (expr.children.length !== 1) return false;&#10;&#10;&#9;await session.reduce(expr.children[0]);&#10;&#9;const messageExpr = expr.children[0];&#10;&#10;&#9;if (messageExpr.getTag() !== &quot;Morse.Message&quot;) return false;&#10;&#10;&#9;const children = messageExpr.children;&#10;&#10;&#9;const error = validateMorseStructure(children);&#10;&#9;if (error) {&#10;&#9;&#9;ReductionManager.setInError(messageExpr,&#10;&#9;&#9;&#9;MorsePackage.messages.errorInvalidSequence.replace(&quot;{0}&quot;, error));&#10;&#9;&#9;throw new ReductionError();&#10;&#9;}&#10;&#10;&#9;const words = parseMorseMessage(children);&#10;&#9;if (words === null) {&#10;&#9;&#9;ReductionManager.setInError(messageExpr,&#10;&#9;&#9;&#9;MorsePackage.messages.errorInvalidSequence.replace(&quot;{0}&quot;, MorsePackage.messages.errorInvalidStructure));&#10;&#9;&#9;throw new ReductionError();&#10;&#9;}&#10;&#10;&#9;let text = &quot;&quot;;&#10;&#10;&#9;for (let wi = 0; wi &lt; words.length; wi++) {&#10;&#9;&#9;const word = words[wi];&#10;&#10;&#9;&#9;for (let li = 0; li &lt; word.length; li++) {&#10;&#9;&#9;&#9;const letterKey = word[li];&#10;&#9;&#9;&#9;const char = REVERSE_LOOKUP[letterKey];&#10;&#10;&#9;&#9;&#9;if (!char) {&#10;&#9;&#9;&#9;&#9;ReductionManager.setInError(messageExpr,&#10;&#9;&#9;&#9;&#9;&#9;MorsePackage.messages.errorInvalidSequence.replace(&quot;{0}&quot;,&#10;&#9;&#9;&#9;&#9;&#9;&#9;MorsePackage.messages.errorUnknownPattern.replace(&quot;{0}&quot;, letterKey)));&#10;&#9;&#9;&#9;&#9;throw new ReductionError();&#10;&#9;&#9;&#9;}&#10;&#10;&#9;&#9;&#9;text += char;&#10;&#9;&#9;}&#10;&#10;&#9;&#9;if (wi &lt; words.length - 1) {&#10;&#9;&#9;&#9;text += &quot; &quot;;&#10;&#9;&#9;}&#10;&#9;}&#10;&#10;&#9;const textExpr = Formulae.createExpression(&quot;String.Text&quot;);&#10;&#9;textExpr.set(&quot;Value&quot;, text);&#10;&#9;expr.replaceBy(textExpr);&#10;&#9;return true;&#10;};&#10;&#10;export class MorsePackage extends Formulae.ReductionPackage {}&#10;&#10;MorsePackage.setReducers = function() {&#10;&#9;ReductionManager.addReducer(&quot;Morse.TextToMorse&quot;, textToMorseReducer, &quot;MorsePackage.textToMorseReducer&quot;);&#10;&#9;ReductionManager.addReducer(&quot;Morse.MorseToText&quot;, morseToTextReducer, &quot;MorsePackage.morseToTextReducer&quot;);&#10;};&#10;"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="textToMorseReducer"/>
+				</expression>
+				<expression tag="String.Text" Value=" first reduces its argument and checks that it is a "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="String.Text"/>
+				</expression>
+				<expression tag="String.Text" Value="; it then walks the text, looks up each character, and builds the resulting "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.Message"/>
+				</expression>
+				<expression tag="String.Text" Value=". If a character cannot be encoded, it flags the input with "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="ReductionManager.setInError"/>
+				</expression>
+				<expression tag="String.Text" Value=" and throws a "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="ReductionError"/>
+				</expression>
+				<expression tag="String.Text" Value=" to abort the reduction. "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="morseToTextReducer"/>
+				</expression>
+				<expression tag="String.Text" Value=" is the mirror image: it reduces its argument, confirms it is a "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.Message"/>
+				</expression>
+				<expression tag="String.Text" Value=", validates and parses the symbol sequence, and looks each letter up in "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="REVERSE_LOOKUP"/>
+				</expression>
+				<expression tag="String.Text" Value=" to rebuild the text. Both reducers reduce their child "/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="before"/>
+				</expression>
+				<expression tag="String.Text" Value=" inspecting its type, so a subexpression always has the chance to evaluate to the expected type first."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="6. Internationalization"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Every user-visible string comes from the message files in "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="i18n/"/>
+				</expression>
+				<expression tag="String.Text" Value=", never hard-coded. "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="messages.json"/>
+				</expression>
+				<expression tag="String.Text" Value=" holds the English labels, and also serves as the fallback:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="{&#10;&#9;&quot;pathMorse&quot;: &quot;Morse&quot;,&#10;&#9;&quot;nameDot&quot;: &quot;Dot&quot;,&#10;&#9;&quot;mnemonicDot&quot;: &quot;dot&quot;,&#10;&#9;&quot;literalDot&quot;: &quot;·&quot;,&#10;&#9;&quot;leafDot&quot;: &quot;· Dot&quot;,&#10;&#9;&quot;nameDash&quot;: &quot;Dash&quot;,&#10;&#9;&quot;mnemonicDash&quot;: &quot;dash&quot;,&#10;&#9;&quot;literalDash&quot;: &quot;−&quot;,&#10;&#9;&quot;leafDash&quot;: &quot;− Dash&quot;,&#10;&#9;&quot;nameInterLetter&quot;: &quot;Inter-letter&quot;,&#10;&#9;&quot;mnemonicInterLetter&quot;: &quot;interLetter&quot;,&#10;&#9;&quot;literalInterLetter&quot;: &quot;|&quot;,&#10;&#9;&quot;leafInterLetter&quot;: &quot;| Inter-letter&quot;,&#10;&#9;&quot;nameInterWord&quot;: &quot;Inter-word&quot;,&#10;&#9;&quot;mnemonicInterWord&quot;: &quot;interWord&quot;,&#10;&#9;&quot;literalInterWord&quot;: &quot;‖&quot;,&#10;&#9;&quot;leafInterWord&quot;: &quot;‖ Inter-word&quot;,&#10;&#9;&quot;nameMessage&quot;: &quot;Message&quot;,&#10;&#9;&quot;mnemonicMessage&quot;: &quot;message&quot;,&#10;&#9;&quot;childrenMessage&quot;: [&quot;Symbol&quot;],&#10;&#9;&quot;leafMessage&quot;: &quot;Message&quot;,&#10;&#9;&quot;nameTextToMorse&quot;: &quot;Text to Morse&quot;,&#10;&#9;&quot;mnemonicTextToMorse&quot;: &quot;textToMorse&quot;,&#10;&#9;&quot;childrenTextToMorse&quot;: [&quot;Text&quot;],&#10;&#9;&quot;leafTextToMorse&quot;: &quot;Text → Morse&quot;,&#10;&#9;&quot;nameMorseToText&quot;: &quot;Morse to Text&quot;,&#10;&#9;&quot;mnemonicMorseToText&quot;: &quot;morseToText&quot;,&#10;&#9;&quot;childrenMorseToText&quot;: [&quot;Message&quot;],&#10;&#9;&quot;leafMorseToText&quot;: &quot;Morse → Text&quot;,&#10;&#9;&quot;errorInvalidChar&quot;: &quot;Character '{0}' cannot be encoded in Morse&quot;,&#10;&#9;&quot;errorInvalidSequence&quot;: &quot;Invalid Morse sequence: {0}&quot;,&#10;&#9;&quot;errorEmpty&quot;: &quot;empty message&quot;,&#10;&#9;&quot;errorMustStart&quot;: &quot;must start with a symbol (dot or dash)&quot;,&#10;&#9;&quot;errorMustEnd&quot;: &quot;must end with a symbol (dot or dash)&quot;,&#10;&#9;&quot;errorConsecutiveSymbols&quot;: &quot;consecutive symbols without separator at position {0}&quot;,&#10;&#9;&quot;errorConsecutiveSeparators&quot;: &quot;consecutive separators at position {0}&quot;,&#10;&#9;&quot;errorUnknownPattern&quot;: &quot;unknown letter pattern: {0}&quot;,&#10;&#9;&quot;errorInvalidStructure&quot;: &quot;invalid structure&quot;&#10;}&#10;"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="messages_es.json"/>
+				</expression>
+				<expression tag="String.Text" Value=" provides the Spanish translation, with exactly the same set of keys:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="{&#10;&#9;&quot;pathMorse&quot;: &quot;Código Morse&quot;,&#10;&#9;&quot;nameDot&quot;: &quot;Punto&quot;,&#10;&#9;&quot;mnemonicDot&quot;: &quot;punto&quot;,&#10;&#9;&quot;literalDot&quot;: &quot;·&quot;,&#10;&#9;&quot;leafDot&quot;: &quot;· Punto&quot;,&#10;&#9;&quot;nameDash&quot;: &quot;Raya&quot;,&#10;&#9;&quot;mnemonicDash&quot;: &quot;raya&quot;,&#10;&#9;&quot;literalDash&quot;: &quot;−&quot;,&#10;&#9;&quot;leafDash&quot;: &quot;− Raya&quot;,&#10;&#9;&quot;nameInterLetter&quot;: &quot;Entre letras&quot;,&#10;&#9;&quot;mnemonicInterLetter&quot;: &quot;entreLetras&quot;,&#10;&#9;&quot;literalInterLetter&quot;: &quot;|&quot;,&#10;&#9;&quot;leafInterLetter&quot;: &quot;| Entre letras&quot;,&#10;&#9;&quot;nameInterWord&quot;: &quot;Entre palabras&quot;,&#10;&#9;&quot;mnemonicInterWord&quot;: &quot;entrePalabras&quot;,&#10;&#9;&quot;literalInterWord&quot;: &quot;‖&quot;,&#10;&#9;&quot;leafInterWord&quot;: &quot;‖ Entre palabras&quot;,&#10;&#9;&quot;nameMessage&quot;: &quot;Mensaje&quot;,&#10;&#9;&quot;mnemonicMessage&quot;: &quot;mensaje&quot;,&#10;&#9;&quot;childrenMessage&quot;: [&quot;Símbolo&quot;],&#10;&#9;&quot;leafMessage&quot;: &quot;Mensaje&quot;,&#10;&#9;&quot;nameTextToMorse&quot;: &quot;Texto a Morse&quot;,&#10;&#9;&quot;mnemonicTextToMorse&quot;: &quot;textoAMorse&quot;,&#10;&#9;&quot;childrenTextToMorse&quot;: [&quot;Texto&quot;],&#10;&#9;&quot;leafTextToMorse&quot;: &quot;Texto → Morse&quot;,&#10;&#9;&quot;nameMorseToText&quot;: &quot;Morse a Texto&quot;,&#10;&#9;&quot;mnemonicMorseToText&quot;: &quot;morseATexto&quot;,&#10;&#9;&quot;childrenMorseToText&quot;: [&quot;Mensaje&quot;],&#10;&#9;&quot;leafMorseToText&quot;: &quot;Morse → Texto&quot;,&#10;&#9;&quot;errorInvalidChar&quot;: &quot;El carácter '{0}' no se puede codificar en Morse&quot;,&#10;&#9;&quot;errorInvalidSequence&quot;: &quot;Secuencia Morse inválida: {0}&quot;,&#10;&#9;&quot;errorEmpty&quot;: &quot;mensaje vacío&quot;,&#10;&#9;&quot;errorMustStart&quot;: &quot;debe comenzar con un símbolo (punto o raya)&quot;,&#10;&#9;&quot;errorMustEnd&quot;: &quot;debe terminar con un símbolo (punto o raya)&quot;,&#10;&#9;&quot;errorConsecutiveSymbols&quot;: &quot;símbolos consecutivos sin separador en la posición {0}&quot;,&#10;&#9;&quot;errorConsecutiveSeparators&quot;: &quot;separadores consecutivos en la posición {0}&quot;,&#10;&#9;&quot;errorUnknownPattern&quot;: &quot;patrón de letra desconocido: {0}&quot;,&#10;&#9;&quot;errorInvalidStructure&quot;: &quot;estructura inválida&quot;&#10;}&#10;"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The key prefixes follow the usual conventions: "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="name*"/>
+				</expression>
+				<expression tag="String.Text" Value=" is the expression's human-readable name, "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="mnemonic*"/>
+				</expression>
+				<expression tag="String.Text" Value=" a short identifier, "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="literal*"/>
+				</expression>
+				<expression tag="String.Text" Value=" the character a leaf draws, "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="leaf*"/>
+				</expression>
+				<expression tag="String.Text" Value=" a menu-entry label, "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="path*"/>
+				</expression>
+				<expression tag="String.Text" Value=" the menu hierarchy, "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="children*"/>
+				</expression>
+				<expression tag="String.Text" Value=" the names of child slots, and "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="error*"/>
+				</expression>
+				<expression tag="String.Text" Value=" the reducer messages. Notice that the four colors are "/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="not"/>
+				</expression>
+				<expression tag="String.Text" Value=" here — color is not translatable text, so it lives in "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="expression.js"/>
+				</expression>
+				<expression tag="String.Text" Value=". Even the validation error details are built from these keys, so they are localized too."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="7. Trying it out"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="With the package enabled, wrap some text in "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.TextToMorse"/>
+				</expression>
+				<expression tag="String.Text" Value=" and evaluate it. Encoding "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="SOS"/>
+				</expression>
+				<expression tag="String.Text" Value=" gives a "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Morse.Message"/>
+				</expression>
+				<expression tag="String.Text" Value=":"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Morse.TextToMorse">
+			<expression tag="String.Text" Value="SOS"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Morse.Message">
+			<expression tag="Morse.Dot"/>
+			<expression tag="Morse.Dot"/>
+			<expression tag="Morse.Dot"/>
+			<expression tag="Morse.InterLetter"/>
+			<expression tag="Morse.Dash"/>
+			<expression tag="Morse.Dash"/>
+			<expression tag="Morse.Dash"/>
+			<expression tag="Morse.InterLetter"/>
+			<expression tag="Morse.Dot"/>
+			<expression tag="Morse.Dot"/>
+			<expression tag="Morse.Dot"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="The reverse direction works the same way."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Decoding that message recovers the original text:"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Morse.MorseToText">
+			<expression tag="Morse.Message">
+				<expression tag="Morse.Dot"/>
+				<expression tag="Morse.Dot"/>
+				<expression tag="Morse.Dot"/>
+				<expression tag="Morse.InterLetter"/>
+				<expression tag="Morse.Dash"/>
+				<expression tag="Morse.Dash"/>
+				<expression tag="Morse.Dash"/>
+				<expression tag="Morse.InterLetter"/>
+				<expression tag="Morse.Dot"/>
+				<expression tag="Morse.Dot"/>
+				<expression tag="Morse.Dot"/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="String.Text" Value="SOS"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Not every character has a Morse equivalent."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="If the text contains one that does not, the reducer reports the problem instead of producing a result: encoding "/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="SOS!"/>
+				</expression>
+				<expression tag="String.Text" Value=" flags the input with the message "/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="Character '!' cannot be encoded in Morse"/>
+				</expression>
+				<expression tag="String.Text" Value=" (shown in Spanish when the interface language is Spanish)."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Summary"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Though it fits in a few small files, the Morse package is a complete, self-contained Fōrmulæ package. It demonstrates:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="expression.js"/>
+					</expression>
+					<expression tag="String.Text" Value="— nullary, variadic, and function expression types; the compact spec-object form alongside a full custom-rendering class; accent colors; and inherited keyboard traversal."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="edition.js"/>
+					</expression>
+					<expression tag="String.Text" Value="— the replacing, multiple, and wrapper edition helpers, and a menu hierarchy."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="reduction.js"/>
+					</expression>
+					<expression tag="String.Text" Value="— two reducers, reducing children, type checks, building result trees, and error reporting."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="i18n/"/>
+					</expression>
+					<expression tag="String.Text" Value="— fully localized labels and error messages, with non-text data kept out of the message files."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Use it as a template: copy the directory, rename the package and its tags, and replace the four modules with your own domain."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="See also: "/>
+				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Expressions" Description="Defining expressions"/>
+				<expression tag="String.Text" Value=", "/>
+				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Visualization" Description="Visualizing expressions"/>
+				<expression tag="String.Text" Value=", "/>
+				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Edition" Description="Editing expressions"/>
+				<expression tag="String.Text" Value=", "/>
+				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Reduction" Description="Reducing expressions"/>
+				<expression tag="String.Text" Value=", and "/>
+				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Internationalization" Description="Internationalization"/>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Author: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Last modified:"/>
+				<expression tag="Time.Time" Value="1782216000000"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>
