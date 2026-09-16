@@ -1,4 +1,4 @@
-<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.internet,org.formulae.relation,org.formulae.symbolic,org.formulae.matrix,org.formulae.calculus,org.formulae.chemistry,org.formulae.graphics.raster,org.formulae.audio,org.formulae.time">
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.math.arithmetic,org.formulae.diagramming,org.formulae.internet,org.formulae.relation,org.formulae.symbolic,org.formulae.matrix,org.formulae.calculus,org.formulae.chemistry,org.formulae.graphics.raster,org.formulae.graphics.vector,org.formulae.audio,org.formulae.time">
 	<expression tag="Formulae.Script.Row" type="0">
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
@@ -1518,6 +1518,68 @@
 		<expression tag="Typesetting.MultiParagraph">
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Example. Generation of simple images"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Unlike the previous example, this one does not require an AI model with image capabilities. The model that produced this response cannot&#10;generate images at all; the drawings are vector graphics, whose SVG source is plain text, and the AI is instructed to draw this way&#10;whenever the figure is simple enough to be described with shapes."/>
+			</expression>
+			<expression tag="Typesetting.Rule"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Create a table with one row for each number from 3 to 6. Each row must show the number, the name of the polygon that has that many sides, and a drawing of that polygon."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Each polygon must have a black outline and be filled with a different pastel shade."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="1">
+		<expression tag="Typesetting.Centering">
+			<expression tag="List.Table">
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Sides"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Polygon"/>
+						</expression>
+						<expression tag="Visualization.Bold" Value="True" Set="True">
+							<expression tag="String.Text" Value="Drawing"/>
+						</expression>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="3"/>
+						<expression tag="String.Text" Value="Triangle"/>
+						<expression tag="Graphics.VectorGraphics" Value="&lt;svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'&gt;&lt;polygon points='30,10 50,50 10,50' fill='#FFB3BA' stroke='black' stroke-width='1'/&gt;&lt;/svg&gt;" Format="image/svg+xml"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="4"/>
+						<expression tag="String.Text" Value="Quadrilateral"/>
+						<expression tag="Graphics.VectorGraphics" Value="&lt;svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'&gt;&lt;rect x='15' y='15' width='30' height='30' fill='#BAFFC9' stroke='black' stroke-width='1'/&gt;&lt;/svg&gt;" Format="image/svg+xml"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="5"/>
+						<expression tag="String.Text" Value="Pentagon"/>
+						<expression tag="Graphics.VectorGraphics" Value="&lt;svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'&gt;&lt;polygon points='30,10 50,25 42,50 18,50 10,25' fill='#BAE1FF' stroke='black' stroke-width='1'/&gt;&lt;/svg&gt;" Format="image/svg+xml"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Math.Number" Value="6"/>
+						<expression tag="String.Text" Value="Hexagon"/>
+						<expression tag="Graphics.VectorGraphics" Value="&lt;svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'&gt;&lt;polygon points='30,10 47,20 47,40 30,50 13,40 13,20' fill='#FDFD96' stroke='black' stroke-width='1'/&gt;&lt;/svg&gt;" Format="image/svg+xml"/>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
 					<expression tag="String.Text" Value="Example. Multimodality: audio transcription"/>
 				</expression>
 			</expression>
@@ -1553,7 +1615,7 @@
 			</expression>
 			<expression tag="Typesetting.Paragraph">
 				<expression tag="String.Text" Value="Date of last modification:"/>
-				<expression tag="Time.Time" Value="1781461500000"/>
+				<expression tag="Time.Time" Value="1789591200000"/>
 			</expression>
 		</expression>
 	</expression>
