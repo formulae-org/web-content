@@ -1,0 +1,1017 @@
+<expression tag="Formulae.Script" Modules="org.formulae.typesetting,org.formulae.text.string,org.formulae.list,org.formulae.visualization,org.formulae.diagramming,org.formulae.symbolic,org.formulae.math.arithmetic,org.formulae.internet,org.formulae.graphics.raster,org.formulae.time">
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Guía del desarrollador"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Edición"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La edición se refiere a la creación de expresiones, o modificación de expresiones existentes, de una manera natural."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Introducción"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como ya es conocido, la estructura de datos con la que internamente las expresiones son representadas, es la de &quot;árbol invertido&quot;, ya que presenta propiedades interesantes, por ejemplo, el no requerir conceptos de precedencia o asociatividad."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Sin embargo, al igual que sucede con la visualización, no es aceptable que el usuario cree o modifique árboles invertidos directamente, él debe hacerlo de una manera más natural."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En este apartado se dará a conocer el esquema de edición creado para utilizarse en el entorno de trabajo Fōrmulæ."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Expresión seleccionada"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La edición de expresiones se basa en el concepto de"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="expresión seleccionada."/>
+				</expression>
+				<expression tag="String.Text" Value="Es la expresión sobre la cual se aplica la edición. Siempre se muestra en video inverso. Evidentemente puede ser parte o toda una expresión dada, véase los siguientes ejemplos:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="Visualization.VerticalArray">
+									<expression tag="String.Text" Value="Arbol invertido, mostrando"/>
+									<expression tag="String.Text" Value="la expresión seleccionada"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="Visualization.VerticalArray">
+									<expression tag="String.Text" Value="Visualización de"/>
+									<expression tag="String.Text" Value="la expresión seleccionada"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.Text" Value="Adición"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Visualization.Selected">
+										<expression tag="Symbolic.Symbol" Name="a"/>
+									</expression>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.Text" Value="Adición"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Visualization.Selected">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="Visualization.Selected">
+									<expression tag="String.Text" Value="Adición"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+							<expression tag="Visualization.Selected">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Propiedades y métodos relativos a la expresión seleccionada."/>
+				</expression>
+				<expression tag="String.Text" Value="Las siguientes propiedades y métodos aplican para definir o consultar la expresión seleccionada:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="La propiedad"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Formulae.sExpression"/>
+					</expression>
+					<expression tag="String.Text" Value="es una referencia a la expresión seleccionada."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="La propiedad"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Formulae.sHandler"/>
+					</expression>
+					<expression tag="String.Text" Value="es una referencia al manipulador de la expresión seleccionada."/>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="String.Text" Value="El método"/>
+						<expression tag="Visualization.Code">
+							<expression tag="String.Text" Value="Formulae.setSelected(handler, expression, removePrevious)"/>
+						</expression>
+						<expression tag="String.Text" Value="sirve para fijar la expresión seleccionada. La expresión seleccionada se muestra en video inverso. El método no regresa valores útiles. Los argumentos que recibe son:"/>
+					</expression>
+					<expression tag="Typesetting.BulletedList">
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="handler"/>
+							</expression>
+							<expression tag="String.Text" Value="es el manipulador de expresiones que contiene la expresión a ser seleccionada."/>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="expression"/>
+							</expression>
+							<expression tag="String.Text" Value="es la expresión a ser definida como la expresión seleccionada."/>
+						</expression>
+						<expression tag="Typesetting.Paragraph">
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="removePrevious"/>
+							</expression>
+							<expression tag="String.Text" Value="es un valor booleano para indicar que el método debe quitar de video inverso la expresión anteriormente seleccionada."/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Rule"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Expresión resaltada"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Al mover el cursor del ratón, puede verse que las diferentes expresiones por las que pasa se resaltan en un recuadro azul, para indicar que es la expresión resaltada. Esta expresión resaltada sirve para indicar que si se hace click con el ratón, la expresión resaltada va a pasar a ser la nueva expresión seleccionada."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Si se hace click con el ratón y no existe ninguna expresión resaltada, la expresión seleccionada permanece sin cambios."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Expresión nula"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La expresión nula, visualizada como"/>
+				<expression tag="Null"/>
+				<expression tag="String.Text" Value=", es una expresión muy utilizada. Si bien desde el punto de vista visual y de semántica no tiene valor, para la edición de expresiones es muy útil, ya que funciona como una expresión comodín, ocupa un lugar como subexpresión. Es parecido al numeral cero en nuestro sistema de numeración posicional: por sí solo significa &quot;no cantidad, o sin cantidad&quot;, pero a nivel estructural, en la organización posicional de los numerales ocupa un papel importante, tanto así que el &quot;descubrimiento&quot; (¿o &quot;invención&quot;?) del cero se considera un hito importantísimo para el desarrollo de las ciencias matemáticas."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ediciones"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Una edición es un conjunto de código cuya finalidad es alterar una expresión a partir de la expresión seleccionada (que es toda o una parte de dicha expresión). La modificación del árbol invertido se hace con los métodos ya mostrados en el apartado de &quot;Expresiones&quot;, por ejemplo para insertar o eliminar nodos."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Existen tres grandes tipos de ediciones:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Ediciones universales."/>
+					</expression>
+					<expression tag="String.Text" Value="Son piezas de código para realizar acciones específicas que funcionan para cualquier tipo de expresión. Como funcionan para cualquier expresión, de ahí su nombre (de &quot;universales&quot;). Su programación forma parte del framework mismo. Un ejemplo de este tipo de ediciones es la operación de"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="Eliminar"/>
+					</expression>
+					<expression tag="String.Text" Value="la expresión seleccionada, por medio del uso de la tecla"/>
+					<expression tag="Visualization.Key">
+						<expression tag="String.Text" Value="DEL"/>
+					</expression>
+					<expression tag="String.Text" Value=", o las operaciones de cortar/copiar/pegar."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Ediciones creacionales."/>
+					</expression>
+					<expression tag="String.Text" Value="Si tu eres creador de nuevas expresiones, además de definirlas y especificar como serán visualizadas, también deberás definir como pueden ser creadas. Todas las opciones que aparecen en el panel izquierdo son ediciones creacionales. Todas estas ediciones trabajan en base a la expresión seleccionada."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Acciones."/>
+					</expression>
+					<expression tag="String.Text" Value="Son piezas de código que se ejecutan a partir de que la expresión seleccionada es de un tipo (tag) específico."/>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ejemplo, expresiones con estado interno"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Veamos el ejemplo de expresiones con estado interno, por ejemplo los números, las cadenas o las fechas. Este tipo de expresiones típicamente cuentan con una edición creacional con la cual introducimos interactivamente el valor del estado interno necesario para la expresión, y además una acción, para modificar dicho estado interno."/>
+			</expression>
+			<expression tag="Typesetting.Rule"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ediciones creacionales"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Las ediciones creacionales son utilizadas para introducir nuevas expresiones en una expresión mayor."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Una edición creacional siempre toma en cuenta la expresión seleccionada."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Una edición creacional siempre define cuál va a ser la nueva expresión seleccionada al final de la edición. Puede ser la misma expresión que era la seleccionada antes de la edición."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Es común que una edición creacional cree además una o varias expresiones nulas."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ejemplo, edición para crear una división."/>
+				</expression>
+				<expression tag="String.Text" Value="Una posible edición para crear una división puede trabajar como sigue:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="La expresión seleccionada será el dividendo de la división"/>
+				</expression>
+				<expression tag="String.Text" Value="El divisor será una nueva expresión nula"/>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="La nueva expresión seleccionada será el divisor (la expresión nula)."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Véase los siguientes ejemplos:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Antes de la edición"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Después de la edición"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+								</expression>
+								<expression tag="Symbolic.Symbol" Name="b"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="a"/>
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Symbolic.Symbol" Name="b"/>
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Selected">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Visualization.Selected">
+										<expression tag="Symbolic.Symbol" Name="b"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Symbolic.Symbol" Name="b"/>
+								</expression>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Arithmetic.SquareRoot">
+								<expression tag="Visualization.Selected">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.SquareRoot">
+								<expression tag="Math.Arithmetic.Division">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Selected">
+								<expression tag="Math.Arithmetic.SquareRoot">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Division">
+								<expression tag="Math.Arithmetic.SquareRoot">
+									<expression tag="Symbolic.Symbol" Name="a"/>
+								</expression>
+								<expression tag="Visualization.Selected">
+									<expression tag="Null"/>
+								</expression>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Trigonometric.Cosine">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Visualization.Selected">
+										<expression tag="Math.Number" Value="1"/>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Trigonometric.Cosine">
+								<expression tag="Math.Arithmetic.Addition">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+									<expression tag="Math.Arithmetic.Division">
+										<expression tag="Math.Number" Value="1"/>
+										<expression tag="Visualization.Selected">
+											<expression tag="Null"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Añadiendo una edición al entorno."/>
+				</expression>
+				<expression tag="String.Text" Value="Para añadir una edición, y hacer que aparezca en el panel izquierdo del área de trabajo, hay que realizar una llamada al siguiente método:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.addEdition(spec, image, name, edition, options)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En donde:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="spec"/>
+					</expression>
+					<expression tag="String.Text" Value="es una cadena que especifica la ubicación de la edición en el árbol. Se conforma de una manera similar a la definición de"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="tags,"/>
+					</expression>
+					<expression tag="String.Text" Value="es decir, es de la forma"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="nodo1.nodo2,....,nodN"/>
+					</expression>
+					<expression tag="String.Text" Value="es decir consta de un conjunto de cadenas separadas por punto que especifican la ubicación en el árbol de ediciones. Las subcadenas, a diferencia de los"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="tags"/>
+					</expression>
+					<expression tag="String.Text" Value="pueden contener espacios y caracteres especiales. Un ejemplo es"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Matemáticas.Aritmética"/>
+					</expression>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="image"/>
+					</expression>
+					<expression tag="String.Text" Value="es una cadena de caracteres que determina cómo se muestra la edición en el panel. Si comienza con"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="&lt;expression"/></expression><expression tag="String.Text" Value=", se trata de una expresión serializada (el mismo XML utilizado en los archivos"/><expression tag="Visualization.Code"><expression tag="String.Text" Value=".formulae"/></expression><expression tag="String.Text" Value="), que el framework dibuja como un icono: una vista previa de la expresión que la edición produce (ver"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="Iconos de las ediciones,"/></expression><expression tag="String.Text" Value="más adelante). Cualquier otra cadena se muestra como texto simple."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="name"/>
+					</expression>
+					<expression tag="String.Text" Value="es una cadena de caracteres con la descripción de la edición. Se muestra como descripción emergente cuando el puntero del ratón está sobre la entrada. Un ejemplo es"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Raíz cuadrada"/>
+					</expression>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="edition"/>
+					</expression>
+					<expression tag="String.Text" Value="es una"/>
+					<expression tag="Internet.Hyperlink" Value="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function" Description="expresión de función"/>
+					<expression tag="String.Text" Value="que contiene el código que será llamado cuando el usuario selecciona la edición. La función no recibe argumentos ni se espera algún valor de retorno."/>
+				</expression><expression tag="Typesetting.Paragraph"><expression tag="Visualization.Code"><expression tag="String.Text" Value="options"/></expression><expression tag="String.Text" Value="es opcional. Si es"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="{ caption: true }"/></expression><expression tag="String.Text" Value=", el nombre se muestra además como una leyenda visible junto al icono. Si es"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="{ caption: &quot;…&quot; }"/></expression><expression tag="String.Text" Value=", se muestra la cadena indicada como leyenda. Ver"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="Iconos de las ediciones,"/></expression><expression tag="String.Text" Value="más adelante, para saber cuándo es apropiada una leyenda."/></expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como ejemplo, el siguiente código sirve para dar de alta la edición vista anteriormente para crear una división:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="const ediciónDivisión = () =&gt; {&#10;&#9;// Hacer los cambios en el árbol de expresiones&#10;&#9;&#10;&#9;let nullExpression = Formulae.createExpression(&quot;Null&quot;);&#10;&#9;let divisionExpression = Formulae.createExpression(&quot;Math.Arithmetic.Division&quot;);&#10;&#9;&#10;&#9;Formulae.sExpression.replaceBy(divisionExpression);&#10;&#9;divisionExpression.addChild(Formulae.sExpression);&#10;&#9;divisionExpression.addChild(nullExpression);&#10;&#9;&#10;&#9;// Definir la nueva expresión seleccionada&#10;&#9;&#10;&#9;Formulae.sHandler.prepareDisplay();&#10;&#9;Formulae.sHandler.display();&#10;&#9;Formulae.setSelected(Formulae.sHandler, nullExpression, false);&#10;};&#10;&#10;Formulae.addEdition(&#10;&#9;&quot;Matemáticas.Aritmética&quot;, // Ubicación en el árbol de ediciones&#10;&#9;'&lt;expression tag=&quot;Math.Arithmetic.Division&quot;&gt;' +&#10;&#9;&#9;'&lt;expression tag=&quot;Visualization.Selected&quot;&gt;&lt;expression tag=&quot;Null&quot;/&gt;&lt;/expression&gt;' +&#10;&#9;&#9;'&lt;expression tag=&quot;Null&quot;/&gt;' +&#10;&#9;'&lt;/expression&gt;',          // Icono (ver &quot;Iconos de las ediciones&quot;, a continuación)&#10;&#9;&quot;División&quot;,               // Nombre (se muestra como descripción emergente)&#10;&#9;ediciónDivisión           // Edición&#10;);"/><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Iconos de las ediciones."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="La mayoría de las entradas del panel izquierdo son iconos y no palabras. Un icono es una vista previa de la expresión que la edición produce, dibujada por el código de visualización de las propias expresiones, de modo que puede mostrar disposiciones bidimensionales (fracciones, matrices, sumatorias) y se adapta a los idiomas que se escriben de derecha a izquierda. El icono se proporciona, como el argumento"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="image"/></expression><expression tag="String.Text" Value=", en forma de expresión serializada, y utiliza una pequeña notación construida con expresiones existentes:"/></expression><expression tag="Typesetting.Centering"><expression tag="List.Table"><expression tag="List.List"><expression tag="List.List"><expression tag="Visualization.Bold" Value="True" Set="True"><expression tag="String.Text" Value="Elemento"/></expression><expression tag="Visualization.Bold" Value="True" Set="True"><expression tag="String.Text" Value="Se serializa como"/></expression><expression tag="Visualization.Bold" Value="True" Set="True"><expression tag="String.Text" Value="Significado"/></expression></expression><expression tag="List.List"><expression tag="Null"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Null"/></expression><expression tag="String.Text" Value="Un nuevo espacio vacío, creado por la edición"/></expression><expression tag="List.List"><expression tag="Visualization.Selected"><expression tag="Null"/></expression><expression tag="Visualization.Code"><expression tag="String.Text" Value="Visualization.Selected(Null)"/></expression><expression tag="String.Text" Value="El espacio que recibe la expresión seleccionada. Exactamente uno por icono (ninguno en una edición de reemplazo)"/></expression><expression tag="List.List"><expression tag="Visualization.HorizontalArray"><expression tag="Null"/><expression tag="String.Text" Value="!"/></expression><expression tag="Visualization.Code"><expression tag="String.Text" Value="Visualization.HorizontalArray(Null, &quot;!&quot;)"/></expression><expression tag="String.Text" Value="Un nuevo espacio de una variante forzada, que siempre crea una nueva expresión en lugar de extender una existente del mismo tipo"/></expression></expression></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Por ejemplo, el icono"/><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Visualization.Selected"><expression tag="Null"/></expression></expression><expression tag="String.Text" Value="de la raíz cuadrada, una edición envolvente, se escribe de la siguiente manera:"/></expression><expression tag="Visualization.CodeBlock" Value="&lt;expression tag=&quot;Math.Arithmetic.SquareRoot&quot;&gt;&#10;&#9;&lt;expression tag=&quot;Visualization.Selected&quot;&gt;&#10;&#9;&#9;&lt;expression tag=&quot;Null&quot;/&gt;&#10;&#9;&lt;/expression&gt;&#10;&lt;/expression&gt;"/><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="De manera similar, el icono de la edición para agregar un sumando es"/><expression tag="Math.Arithmetic.Addition"><expression tag="Visualization.Selected"><expression tag="Null"/></expression><expression tag="Null"/></expression><expression tag="String.Text" Value=", una suma cuya primera subexpresión es el espacio resaltado y cuya segunda es un nuevo espacio vacío, y el icono de su variante forzada es"/><expression tag="Math.Arithmetic.Addition"><expression tag="Visualization.Selected"><expression tag="Null"/></expression><expression tag="Visualization.HorizontalArray"><expression tag="Null"/><expression tag="String.Text" Value="!"/></expression></expression><expression tag="String.Text" Value=". Una edición de reemplazo simplemente muestra la expresión que produce, por ejemplo la constante π."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="No todas las ediciones se muestran mejor como icono. Existen dos alternativas:"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Texto simple."/></expression><expression tag="String.Text" Value="Si"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="image"/></expression><expression tag="String.Text" Value="no comienza con"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="&lt;expression"/></expression><expression tag="String.Text" Value=", se muestra como texto. Úsese para ediciones que solicitan un valor al usuario (números, cadenas, colores…), ya que su apariencia es ese valor, y para ediciones cuyo resultado se ve exactamente igual que la expresión seleccionada, como un párrafo, ya que ningún icono podría mostrarlas."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Icono con leyenda."/></expression><expression tag="String.Text" Value="Con la opción"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="{ caption: true }"/></expression><expression tag="String.Text" Value=", el nombre se muestra además junto al icono. Úsese solo cuando el icono es fiel pero no identifica la expresión por sí mismo, por ejemplo un arreglo horizontal, que se ve igual que dos expresiones una junto a la otra. Inténtese primero un mejor icono, y manténganse las leyendas como excepción, para que el panel siga estando formado principalmente por iconos."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="En todos los casos, el nombre se muestra como descripción emergente."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Precauciones."/></expression></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Un icono se deserializa como cualquier otra expresión, de modo que si una expresión requiere atributos serializados, su icono debe incluirlos. Por ejemplo, el icono de un bloque de programación incluye"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Description=&quot;x&quot; Expanded=&quot;True&quot;"/></expression><expression tag="String.Text" Value=". Los métodos auxiliares para generar iconos, descritos más adelante, generan iconos sin atributos, por lo que no pueden utilizarse para dichas expresiones."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Un icono que hace referencia a un tag no registrado, o al que le falta un atributo requerido, se muestra como un recuadro de error en lugar de la vista previa esperada. Verifíquense siempre los iconos en pantalla."/></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Las ediciones se crean después de que las expresiones de todos los paquetes han sido registradas, por lo que un icono puede utilizar expresiones de otros paquetes, como"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Visualization.Selected"/></expression><expression tag="String.Text" Value="."/></expression></expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Ediciones predefinidas"/>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Debido a que es común el tener código para crear las expresiones requeridas por las ediciones, existe un conjunto de ediciones predefinidas:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.replacingEdition(tag)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Este método crea una nueva expresión, a partir del"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="String.Text" Value="que se pasa como argumento. La expresión se crea sin subexpresiones, por lo que debería ser un tipo de expresión que no los requiere (por ejemplo una expresión de número). La nueva expresión sustituye a la actualmente seleccionada, y pasa a ser la nueva expresión seleccionada."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.wrapperEdition(tag)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Este método crea una nueva expresión a partir del"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="String.Text" Value="que se pasa como argumento. A la nueva expresión se le asigna una única subexpresión, la expresión actualmente seleccionada, por lo que debería ser un tipo de expresión que requiere una única subexpresión (por ejemplo una raíz cuadrada). La expresión actualmente seleccionada persiste como tal."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.binaryEdition(tag, nullFirst)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Este método crea una nueva expresión a partir del"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="String.Text" Value="que se pasa como argumento. La nueva expresión tendrá dos subexpresiones, una será la nueva expresión y la otra la expresión nula, por lo que debería ser un tipo de expresión que acepte por lo menos dos subexpresiones (por ejemplo una suma). La expresión actualmente seleccionada persiste como tal. El argumento"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="nullFirst"/>
+				</expression>
+				<expression tag="String.Text" Value="de tipo booleano, indica si la expresión nula quedará como la primera (verdadero) o como la segunda (falso)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Expression.multipleEdition(tag, n, i)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Este método crea una nueva expresión a partir del"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="String.Text" Value="que se pasa como argumento. La nueva expresión tendrá tantas subexpresiones como las indicadas por el argumento,"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="n"/>
+				</expression>
+				<expression tag="String.Text" Value="y una de ellas, la indicada por el argumento"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="i"/>
+				</expression>
+				<expression tag="String.Text" Value="será la nueva expresión y la otra la expresión nula, por lo que debería ser un tipo de expresión que acepte el número de subexpresiones indicado. La expresión actualmente seleccionada persiste como tal."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="De acuerdo a lo anterior, al siguiente tabla es una guía de cuál método llamar, basado en el número de subexpresiones que tendrá la nueva expresión:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Número de subexpresiones"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Método"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="0"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="Expression.replacingEdition(tag)"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="1"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="Expression.wrapperEdition(tag)"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Math.Number" Value="2"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="Expression.binaryEdition(tag, nullFirst)"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="String.Text" Value="Más de 2"/>
+							<expression tag="Visualization.Code">
+								<expression tag="String.Text" Value="Expression.multipleEdition(tag, n, i)"/>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="De esta forma, el ejemplo anterior queda más conciso de la siguiente manera:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="Formulae.addEdition(&#10;&#9;&quot;Matemáticas.Aritmética&quot;,&#10;&#9;'&lt;expression tag=&quot;Math.Arithmetic.Division&quot;&gt;&lt;expression tag=&quot;Visualization.Selected&quot;&gt;&lt;expression tag=&quot;Null&quot;/&gt;&lt;/expression&gt;&lt;expression tag=&quot;Null&quot;/&gt;&lt;/expression&gt;',&#10;&#9;&quot;División&quot;,&#10;&#9;() =&gt; Expression.binaryEdition(&quot;Math.Arithmetic.Division&quot;, false)&#10;);"/><expression tag="Typesetting.Paragraph"><expression tag="Typesetting.BoldChunk"><expression tag="String.Text" Value="Métodos auxiliares para generar iconos."/></expression><expression tag="String.Text" Value="Dado que la mayoría de las ediciones siguen los patrones anteriores, los siguientes métodos registran una edición junto con su icono, de modo que el XML del icono no tiene que escribirse a mano. Toman la ubicación y el nombre de la edición de los mensajes del paquete (ver el capítulo"/><expression tag="Typesetting.ItalicChunk"><expression tag="String.Text" Value="Internacionalización"/></expression><expression tag="String.Text" Value="), de las llaves"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="&quot;path&quot; + path"/></expression><expression tag="String.Text" Value="y"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="&quot;leaf&quot; + leaf"/></expression><expression tag="String.Text" Value=":"/></expression><expression tag="Typesetting.BulletedList"><expression tag="Typesetting.Paragraph"><expression tag="Visualization.Code"><expression tag="String.Text" Value="Formulae.addWrapperEditions(messages, path, prefix, leaves, options)"/></expression><expression tag="String.Text" Value="registra, por cada elemento"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="leaf"/></expression><expression tag="String.Text" Value="del arreglo"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="leaves"/></expression><expression tag="String.Text" Value=", una edición envolvente para el tag"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="prefix.leaf"/></expression><expression tag="String.Text" Value=", con un icono como"/><expression tag="Math.Arithmetic.SquareRoot"><expression tag="Visualization.Selected"><expression tag="Null"/></expression></expression><expression tag="String.Text" Value="."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Visualization.Code"><expression tag="String.Text" Value="Formulae.addBinaryEdition(messages, path, leaf, tag, first, options)"/></expression><expression tag="String.Text" Value="registra una edición binaria. La expresión seleccionada va a la primera subexpresión si"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="first"/></expression><expression tag="String.Text" Value="es verdadero (el valor por omisión), o a la segunda en caso contrario, y el icono se dibuja de acuerdo a ello."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Visualization.Code"><expression tag="String.Text" Value="Formulae.addBinaryEditions(messages, path, leaf1, leaf2, tag)"/></expression><expression tag="String.Text" Value="registra ambas variantes del anterior."/></expression><expression tag="Typesetting.Paragraph"><expression tag="Visualization.Code"><expression tag="String.Text" Value="Formulae.icon(tag, n, attrs)"/></expression><expression tag="String.Text" Value="no registra nada: devuelve el XML de un icono para"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="tag"/></expression><expression tag="String.Text" Value="con"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="n"/></expression><expression tag="String.Text" Value="subexpresiones, la primera resaltada y el resto vacías. El argumento opcional"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="attrs"/></expression><expression tag="String.Text" Value="contiene atributos serializados, precedidos por un espacio. Es útil junto con"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Expression.multipleEdition"/></expression><expression tag="String.Text" Value="."/></expression></expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="El argumento opcional"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="options"/></expression><expression tag="String.Text" Value="se pasa a"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Formulae.addEdition"/></expression><expression tag="String.Text" Value=". Con estos métodos, el ejemplo anterior se reduce a la siguiente línea, siempre que los mensajes del paquete contengan las llaves"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="pathArithmetic"/></expression><expression tag="String.Text" Value="y"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="leafDivision"/></expression><expression tag="String.Text" Value=":"/></expression><expression tag="Visualization.CodeBlock" Value="Formulae.addBinaryEdition(this.messages, &quot;Arithmetic&quot;, &quot;Division&quot;, &quot;Math.Arithmetic.Division&quot;);"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ediciones con interactividad"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Hay ocasiones en que la edición requiere algún grado de interactividad, por ejemplo para la creación de expresiones con valores internos como cadenas o fechas, es necesario solicitar al usuario la información de dicho estado interno."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Dicha interactividad se logra por medio de un cuadro de diálogo. Es responsabilidad del programador diseñar un elemento DOM, y responder a los diversos controles que contenga así como hacer validaciones. Parte de dichos controles es un botón &quot;Ok&quot; o &quot;Aceptar&quot;. Una vez creado ese elemento DOM, el framework proporciona los siguientes recursos:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Formulae.setModal(element)"/>
+					</expression>
+					<expression tag="String.Text" Value="sirve para colocar el elemento creado por el programador, en la interfaz del sistema de forma modal, es decir, inhabilitando la utilización de los elementos que ya se encontraban en la interfaz."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="El método"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Formulae.resetModal()"/>
+					</expression>
+					<expression tag="String.Text" Value="elimina de la interfaz de usuario cualquier elemento que se haya encontrado, volviendo a hacer disponibles los elementos de la interfaz. Este método se llama típicamente cuando el usuario ha terminado de usar el elemento DOM, por ejemplo, al presionar el botón &quot;Ok&quot; o &quot;Aceptar&quot;."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Otros ejemplos de ediciones"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Las ediciones no están limitadas a la creación de una única nueva expresión. A continuación se muestran ejemplos de ediciones interesantes:"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ejemplo 1. Sustracción"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En Fōrmulæ no existe una expresión para la sustracción, la expresión que se visualiza"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Math.Arithmetic.Negative">
+						<expression tag="Symbolic.Symbol" Name="b"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="es internamente una suma con un sumando negativo, como en"/>
+				<expression tag="Math.Arithmetic.Addition">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Visualization.Parentheses">
+						<expression tag="Math.Arithmetic.Negative">
+							<expression tag="Symbolic.Symbol" Name="b"/>
+						</expression>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value=". Sin embargo, como la sustracción sí es una operación común (para los humanos), existe una edición para &quot;crear&quot; una sustracción. Esta edición hace lo siguiente:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Crea una expresión de negación aritmética, y su única subexpresión es una nueva expresión nula"/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Se crea una expresión de suma, en donde el primer sumando es la expresión actualmente seleccionada y la segunda es la expresión de negación mostrada arriba."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="La expresión de suma sustituirá a la expresión actualmente seleccionada."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="String.Text" Value="Finalmente, la nueva expresión seleccionada, es la expresión nula creada en el paso 1."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Antes de la edición"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Después de la edición"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Visualmente"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Selected">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+							</expression>
+							<expression tag="Diagramming.Tree" Expanded="True">
+								<expression tag="String.Text" Value="Adición"/>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="Symbolic.Symbol" Name="x"/>
+								</expression>
+								<expression tag="Diagramming.Tree" Expanded="True">
+									<expression tag="String.Text" Value="Negativo"/>
+									<expression tag="Diagramming.Tree" Expanded="True">
+										<expression tag="Visualization.Selected">
+											<expression tag="Null"/>
+										</expression>
+									</expression>
+								</expression>
+							</expression>
+							<expression tag="Math.Arithmetic.Addition">
+								<expression tag="Symbolic.Symbol" Name="x"/>
+								<expression tag="Math.Arithmetic.Negative">
+									<expression tag="Visualization.Selected">
+										<expression tag="Null"/>
+									</expression>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Ejemplo 2. Creación de una matriz"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En Fōrmulæ existen las listas o arreglos, que se muestran como"/>
+				<expression tag="List.List">
+					<expression tag="Symbolic.Symbol" Name="a"/>
+					<expression tag="Symbolic.Symbol" Name="b"/>
+					<expression tag="Symbolic.Symbol" Name="c"/>
+				</expression>
+				<expression tag="String.Text" Value=". Si todos los elementos de una lista son a su vez listas de una misma cardinalidad, esta &quot;lista de listas&quot; se muestra como una matriz, como en"/>
+				<expression tag="List.List">
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="a"/>
+						<expression tag="Symbolic.Symbol" Name="b"/>
+						<expression tag="Symbolic.Symbol" Name="c"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="x"/>
+						<expression tag="Symbolic.Symbol" Name="y"/>
+						<expression tag="Symbolic.Symbol" Name="z"/>
+					</expression>
+					<expression tag="List.List">
+						<expression tag="Symbolic.Symbol" Name="p"/>
+						<expression tag="Symbolic.Symbol" Name="q"/>
+						<expression tag="Symbolic.Symbol" Name="r"/>
+					</expression>
+				</expression>
+				<expression tag="String.Text" Value="."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Si bien es posible crear una matriz paso a paso, existe una edición que dada una expresión (la expresión seleccionada), la clona para formar los elementos de una matriz, solicitando interactivamente el número de renglones y columnas. La nueva expresión seleccionada es la que queda en el primer renglón y columna de la matriz. Véase el siguiente ejemplo:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="List.Table">
+					<expression tag="List.List">
+						<expression tag="List.List">
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Antes de la edición"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Edición"/>
+							</expression>
+							<expression tag="Visualization.Bold" Value="True" Set="True">
+								<expression tag="String.Text" Value="Después de la edición"/>
+							</expression>
+						</expression>
+						<expression tag="List.List">
+							<expression tag="Visualization.Selected">
+								<expression tag="Math.Number" Value="0"/>
+							</expression>
+							<expression tag="Graphics.RasterGraphics" Value="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" Format="image/png"/>
+							<expression tag="List.List">
+								<expression tag="List.List">
+									<expression tag="Visualization.Selected">
+										<expression tag="Math.Number" Value="0"/>
+									</expression>
+									<expression tag="Math.Number" Value="0"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+								<expression tag="List.List">
+									<expression tag="Math.Number" Value="0"/>
+									<expression tag="Math.Number" Value="0"/>
+									<expression tag="Math.Number" Value="0"/>
+								</expression>
+							</expression>
+						</expression>
+					</expression>
+				</expression>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Acciones"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Una acción es una pieza de código que se asocia con el"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="String.Text" Value="de la expresión seleccionada. El código asociado no necesariamente debe alterar la expresión seleccionada, sino que puede ser una operación cualquiera asociada con la expresión."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Un"/>
+				<expression tag="Typesetting.ItalicChunk">
+					<expression tag="String.Text" Value="tag"/>
+				</expression>
+				<expression tag="String.Text" Value="puede tener asociada cero, una o varias acciones. En caso de varias, una de ellas (la que primero se dá de alta) tiene prioridad. La acción con prioridad se ejecuta al presionar la tecla de"/>
+				<expression tag="Visualization.Key">
+					<expression tag="String.Text" Value="ESPACIO"/>
+				</expression>
+				<expression tag="String.Text" Value="(siendo la expresión seleccionada la que tiene asociadas las acciones). Si se tienen varias acciones, la forma de escogerlas es haciendo click derecho con el ratón estando resaltada la expresión deseada, esto generará un menú emergente que contendrá las acciones disponibles, además de opciones comunes a todas las expresiones (como cortar, copiar o pegar)."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Por ejemplo, refiérase a la siguiente expresión, que es una liga Web:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Internet.Hyperlink" Value="formulae.org" Description="Liga para la página de Fōrmulæ"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Si te encuentras en modo de edición, hacer click derecho sobre la liga generará el siguiente menú emergente:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Graphics.RasterGraphics" Value="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" Format="image/png"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="El cual muestra que la expresión cuenta con tres acciones:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Abrir liga."/>
+					</expression>
+					<expression tag="String.Text" Value="Esta opción hará que el navegador en donde está ejecutando el entorno, abra una nueva pestaña con la dirección web asociada a la expresión. Nótese que esta opción es la de precedencia, por lo que puede activarse también con la tecla"/>
+					<expression tag="Visualization.Key">
+						<expression tag="String.Text" Value="ESPACIO"/>
+					</expression>
+					<expression tag="String.Text" Value="si la expresión de liga es la seleccionada."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Typesetting.BoldChunk">
+						<expression tag="String.Text" Value="Copiar la dirección."/>
+					</expression>
+					<expression tag="String.Text" Value="Esto hace que se copie al portapapeles la dirección asociada a la expresión."/>
+				</expression>
+				<expression tag="Typesetting.MultiParagraph">
+					<expression tag="Typesetting.Paragraph">
+						<expression tag="Typesetting.BoldChunk">
+							<expression tag="String.Text" Value="Editar liga."/>
+						</expression>
+						<expression tag="String.Text" Value="Esta opción hace que se abra un cuadro de diálogo para que se pueda editar la expresión de la liga web, como por ejemplo la dirección misma, o el texto con que aparece la liga, véase el siguiente ejemplo:"/>
+					</expression>
+					<expression tag="Typesetting.Centering">
+						<expression tag="Graphics.RasterGraphics" Value="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" Format="image/png"/>
+					</expression>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Añadiendo una acción al entorno."/>
+				</expression>
+				<expression tag="String.Text" Value="Para añadir una acción, hay que realizar una llamada al siguiente método:"/>
+			</expression>
+			<expression tag="Typesetting.Centering">
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.addAction(tag, action)"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="En donde:"/>
+			</expression>
+			<expression tag="Typesetting.BulletedList">
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="tag"/>
+					</expression>
+					<expression tag="String.Text" Value="es el tag al cual se le va a asociar la acción."/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="tags,"/>
+					</expression>
+					<expression tag="String.Text" Value="es decir, es de la forma"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="nodo1.nodo2,....,nodN"/>
+					</expression>
+					<expression tag="String.Text" Value="es decir consta de un conjunto de cadenas separadas por punto que especifican la ubicación en el árbol de ediciones. Las subcadenas, a diferencia de los"/>
+					<expression tag="Typesetting.ItalicChunk">
+						<expression tag="String.Text" Value="tags"/>
+					</expression>
+					<expression tag="String.Text" Value="pueden contener espacios y caracteres especiales. Un ejemplo es"/>
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="Matemáticas.Aritmética"/>
+					</expression>
+					<expression tag="String.Text" Value="."/>
+				</expression>
+				<expression tag="Typesetting.Paragraph">
+					<expression tag="Visualization.Code">
+						<expression tag="String.Text" Value="action"/>
+					</expression>
+					<expression tag="String.Text" Value="es un"/>
+					<expression tag="String.Text" Value="objeto que contiene el código que será llamado cuando el usuario selecciona la acción."/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como ejemplo, el siguiente código sirve para dar de alta la acción para modificar el valor de una expresión de número:"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="Formulae.addAction(&quot;Math.Number&quot;, actionNumber);"/>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="Typesetting.BoldChunk">
+					<expression tag="String.Text" Value="Registro de las ediciones y acciones que conforman el paquete"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como ya se vió en el apartado de"/>
+				<expression tag="Internet.Hyperlink" Value="/?script=collaboration/guides/package_developer/Introduction" Description="introducción,"/>
+				<expression tag="String.Text" Value="la definición de ediciones y acciones se colocan en un archivo fuente de nombre"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="edition.js"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La estructura general de este archivo es:"/>
+			</expression>
+			<expression tag="Visualization.Code">
+				<expression tag="String.Text" Value="edition.js"/>
+			</expression>
+			<expression tag="Visualization.CodeBlock" Value="export class ArithmeticPackage extends Formulae.EditionPackage {};&#10;&#10;const editionNumber = function() {&#10;&#9;:&#10;};&#10;&#10;const actionNumber = {&#10;&#9;:&#10;};&#10;&#10;ArithmeticPackage.setEditions = function() {&#10;&#9;Formulae.addEdition(&quot;Matemáticas.Aritmética&quot;, &quot;Número&quot;, &quot;Número&quot;, editionNumber); // Texto simple: solicita un valor&#10;&#9;Formulae.addBinaryEdition(this.messages, &quot;Arithmetic&quot;, &quot;Addition&quot;,       &quot;Math.Arithmetic.Addition&quot;);&#10;&#9;Formulae.addBinaryEdition(this.messages, &quot;Arithmetic&quot;, &quot;Multiplication&quot;, &quot;Math.Arithmetic.Multiplication&quot;);&#10;&#9;Formulae.addBinaryEdition(this.messages, &quot;Arithmetic&quot;, &quot;Exponentiation&quot;, &quot;Math.Arithmetic.Exponentiation&quot;);&#10;};&#10;&#10;ArithmeticPackage.setActions = function() {&#10;&#9;Formulae.addAction(&quot;Math.Number&quot;, actionNumber);&#10;};"/>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="La primera parte es la definición de la clase que representará a nuestro paquete, en lo que respecta a las ediciones y acciones que contiene. La clase deberá extender la clase base"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.EditionPackage"/>
+				</expression>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Posteriormente se incluyen las definiciones de las clases que representan las ediciones y acciones del paquete."/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Como paso siguiente, debe ir la definición (de hecho la reescritura) del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="setEditions()"/>
+				</expression>
+				<expression tag="String.Text" Value="de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.EditionPackage"/>
+				</expression>
+				<expression tag="String.Text" Value="(el cual originalmente no hace nada). Este método contiene las llamadas al método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.addEdition(spec, image, name, edition, options)"/>
+				</expression>
+				<expression tag="String.Text" Value="visto en el apartado anterior."/>
+			</expression><expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Este método no se invoca cuando el paquete se carga, sino la primera vez que el usuario entra al modo de edición, una vez que las expresiones de todos los paquetes han sido registradas. Se invoca nuevamente cada vez que el panel se reconstruye, por ejemplo cuando se cambia el idioma o se carga un nuevo paquete. Por lo tanto, no debe hacer otra cosa que registrar ediciones. Un paquete cuyos iconos dependen de su propia configuración debe reconstruir el panel, llamando a"/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Formulae.loadReloadEditions()"/></expression><expression tag="String.Text" Value=", cuando dicha configuración cambia."/></expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Finalmente, en caso de que hubiera acciones, debe ir la definición (de hecho la reescritura) del método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="setActions()"/>
+				</expression>
+				<expression tag="String.Text" Value="de la clase"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.EditionPackage"/>
+				</expression>
+				<expression tag="String.Text" Value="(el cual originalmente no hace nada). Este método va a ser invocado por el framework cada vez que el paquete se carga por primera vez. Este método contiene las llamadas al método"/>
+				<expression tag="Visualization.Code">
+					<expression tag="String.Text" Value="Formulae.addAction(tag, action)"/>
+				</expression>
+				<expression tag="String.Text" Value="visto en el apartado anterior."/>
+			</expression>
+		</expression>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.Rule"/>
+	</expression>
+	<expression tag="Formulae.Script.Row" type="0">
+		<expression tag="Typesetting.MultiParagraph">
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Autor: Laurence R. Ugalde"/>
+			</expression>
+			<expression tag="Typesetting.Paragraph">
+				<expression tag="String.Text" Value="Fecha de última modificación:"/>
+				<expression tag="Time.Time" Value="1781672329683"/>
+			</expression>
+		</expression>
+	</expression>
+</expression>

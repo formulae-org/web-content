@@ -292,34 +292,8 @@
 				</expression>
 				<expression tag="String.Text" Value=" submenu:"/>
 			</expression>
-			<expression tag="Visualization.CodeBlock" Value="&quot;use strict&quot;;&#10;&#10;export class MorsePackage extends Formulae.EditionPackage {}&#10;&#10;MorsePackage.setEditions = function() {&#10;&#9;const path = this.messages.pathMorse;&#10;&#10;&#9;// Nullary tokens: replacing edition&#10;&#9;[&quot;Dot&quot;, &quot;Dash&quot;, &quot;InterLetter&quot;, &quot;InterWord&quot;].forEach(tag =&gt; {&#10;&#9;&#9;Formulae.addEdition(path, null, this.messages[&quot;leaf&quot; + tag],&#10;&#9;&#9;() =&gt; Expression.replacingEdition(&quot;Morse.&quot; + tag));&#10;&#9;});&#10;&#10;&#9;// Variadic container: multiple edition (starts with 1 Null child)&#10;&#9;Formulae.addEdition(path, null, this.messages.leafMessage,&#10;&#9;&#9;() =&gt; Expression.multipleEdition(&quot;Morse.Message&quot;, 1, 0));&#10;&#10;&#9;// Unary converters: wrapper edition&#10;&#9;[&quot;TextToMorse&quot;, &quot;MorseToText&quot;].forEach(tag =&gt; {&#10;&#9;&#9;Formulae.addEdition(path, null, this.messages[&quot;leaf&quot; + tag],&#10;&#9;&#9;() =&gt; Expression.wrapperEdition(&quot;Morse.&quot; + tag));&#10;&#9;});&#10;};&#10;&#10;MorsePackage.setActions = function() {&#10;&#9;// No actions needed (no serialized attributes)&#10;};&#10;"/>
-			<expression tag="Typesetting.Paragraph">
-				<expression tag="String.Text" Value="Three different edition helpers appear here. "/>
-				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Expression.replacingEdition"/>
-				</expression>
-				<expression tag="String.Text" Value=" puts a brand-new leaf in place of the current selection — used for the four symbols. "/>
-				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Expression.multipleEdition"/>
-				</expression>
-				<expression tag="String.Text" Value=" creates a "/>
-				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Morse.Message"/>
-				</expression>
-				<expression tag="String.Text" Value=" pre-filled with one empty slot, ready to fill in. "/>
-				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Expression.wrapperEdition"/>
-				</expression>
-				<expression tag="String.Text" Value=" wraps the current selection inside a new expression — ideal for the converters, so the user can select some text and wrap it in "/>
-				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="Morse.TextToMorse"/>
-				</expression>
-				<expression tag="String.Text" Value=". "/>
-				<expression tag="Visualization.Code">
-					<expression tag="String.Text" Value="setActions"/>
-				</expression>
-				<expression tag="String.Text" Value=" is empty because none of these expressions carry editable serialized attributes."/>
-			</expression>
+			<expression tag="Visualization.CodeBlock" Value="&quot;use strict&quot;;&#10;&#10;export class MorsePackage extends Formulae.EditionPackage {}&#10;&#10;MorsePackage.setEditions = function() {&#10;&#9;const path = this.messages.pathMorse;&#10;&#10;&#9;// Nullary tokens: replacing edition. Each renders as its own produced literal —&#10;&#9;// engine-rendered rather than plain text, since the accent color (set via the&#10;&#9;// expression spec's `color` field) is meaningful and only the real render shows it.&#10;&#9;[&quot;Dot&quot;, &quot;Dash&quot;, &quot;InterLetter&quot;, &quot;InterWord&quot;].forEach(tag =&gt; {&#10;&#9;&#9;Formulae.addEdition(path, `&lt;expression tag=&quot;Morse.${tag}&quot;/&gt;`, this.messages[&quot;leaf&quot; + tag],&#10;&#9;&#9;() =&gt; Expression.replacingEdition(&quot;Morse.&quot; + tag));&#10;&#9;});&#10;&#10;&#9;// Variadic container: multiple edition (starts with 1 Null child)&#10;&#9;// Plain text: with a single child it renders only that child, so its icon would be indistinguishable from a bare slot&#10;&#9;Formulae.addEdition(&#10;&#9;&#9;path,&#10;&#9;&#9;this.messages.leafMessage,&#10;&#9;&#9;this.messages.leafMessage,&#10;&#9;&#9;() =&gt; Expression.multipleEdition(&quot;Morse.Message&quot;, 1, 0)&#10;&#9;);&#10;&#10;&#9;// Unary converters: wrapper edition&#10;&#9;Formulae.addWrapperEditions(this.messages, &quot;Morse&quot;, &quot;Morse&quot;, [&quot;TextToMorse&quot;, &quot;MorseToText&quot;]);&#10;};&#10;&#10;MorsePackage.setActions = function() {&#10;&#9;// No actions needed (no serialized attributes)&#10;};&#10;"/>
+			<expression tag="Typesetting.Paragraph"><expression tag="String.Text" Value="Two decisions are made for each edition: which edition helper builds the expression, and how its entry is shown in the panel. "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Expression.replacingEdition"/></expression><expression tag="String.Text" Value=" puts a brand-new leaf in place of the current selection — used for the four symbols. Their icon is the symbol itself, rendered by the engine (for example "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="&lt;expression tag=&quot;Morse.Dot&quot;/&gt;"/></expression><expression tag="String.Text" Value="), rather than plain text, because each symbol has its own accent color, which only a real rendering shows. "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Expression.multipleEdition"/></expression><expression tag="String.Text" Value=" creates a "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Morse.Message"/></expression><expression tag="String.Text" Value=" pre-filled with one empty slot, ready to fill in. Its entry is plain text: a message with a single child is drawn as just that child, so its icon would be indistinguishable from an empty slot. "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Formulae.addWrapperEditions"/></expression><expression tag="String.Text" Value=" registers the two converters in a single call, generating both the "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Expression.wrapperEdition"/></expression><expression tag="String.Text" Value=" that wraps the current selection — so the user can select some text and wrap it in "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="Morse.TextToMorse"/></expression><expression tag="String.Text" Value=" — and the icon showing the selection inside the converter. It takes the menu path and the names from the messages "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="pathMorse"/></expression><expression tag="String.Text" Value=", "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="leafTextToMorse"/></expression><expression tag="String.Text" Value=" and "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="leafMorseToText"/></expression><expression tag="String.Text" Value=". "/><expression tag="Visualization.Code"><expression tag="String.Text" Value="setActions"/></expression><expression tag="String.Text" Value=" is empty because none of these expressions carry editable serialized attributes."/></expression>
 		</expression>
 	</expression>
 	<expression tag="Formulae.Script.Row" type="0">
@@ -602,7 +576,7 @@
 					<expression tag="Visualization.Code">
 						<expression tag="String.Text" Value="edition.js"/>
 					</expression>
-					<expression tag="String.Text" Value="— the replacing, multiple, and wrapper edition helpers, and a menu hierarchy."/>
+					<expression tag="String.Text" Value="— the replacing, multiple, and wrapper edition helpers; the three ways of showing an entry in the panel (engine-rendered icon, plain text, and a helper-generated icon); and a menu hierarchy."/>
 				</expression>
 				<expression tag="Typesetting.Paragraph">
 					<expression tag="Visualization.Code">
